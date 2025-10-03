@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Grupo_E.ConsultarEstadoDeTracking
+namespace Grupo_E.EstadoDeEncomienda
 {
-    public partial class EstadoDeTrackingForm : Form
+    public partial class EstadoDeEncomiedaForm : Form
     {
-        public EstadoDeTrackingForm()
+        public EstadoDeEncomiedaForm()
         {
             InitializeComponent();
         }
 
-        private void EstadoDeTrackingForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

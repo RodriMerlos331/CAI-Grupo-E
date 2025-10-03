@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grupo_E.ConsultarEstadoDeTracking
+namespace Grupo_E.EstadoDeEncomienda
 {
-    internal class EstadoDeTrackingModel
+    internal class EstadoDeEncomiendaModel
     {
     }
 }
