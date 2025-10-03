@@ -70,11 +70,11 @@
     <Compile Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.Designer.cs">
       <DependentUpon>FormularioGeneracionHDRLargaDistancia.cs</DependentUpon>
     </Compile>
-    <Compile Include="GenerarHDR\Form1.cs">
+    <Compile Include="GenerarHDR\GenerarHDRForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenerarHDR\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GenerarHDR\GenerarHDRForm.Designer.cs">
+      <DependentUpon>GenerarHDRForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImposicionEnAgencia\Form1.cs">
       <SubType>Form</SubType>
@@ -108,11 +108,11 @@
     <Compile Include="RendicionHDRAgencia\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="RendicionHDRFletero\Form1.cs">
+    <Compile Include="RendicionHDRFletero\RendicionHDRForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RendicionHDRFletero\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="RendicionHDRFletero\RendicionHDRForm.Designer.cs">
+      <DependentUpon>RendicionHDRForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RetirarEnAgencia\Form1.cs">
       <SubType>Form</SubType>
@@ -136,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.resx">
       <DependentUpon>FormularioGeneracionHDRLargaDistancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarHDR\GenerarHDRForm.resx">
+      <DependentUpon>GenerarHDRForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

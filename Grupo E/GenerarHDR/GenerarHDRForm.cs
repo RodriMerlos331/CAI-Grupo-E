@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Grupo_E.RendicionHDRFletero
+namespace Grupo_E.GenerarHDR
 {
-    public partial class Form1 : Form
+    public partial class GenerarHDRForm : Form
     {
-        public Form1()
+        public GenerarHDRForm()
         {
             InitializeComponent();
         }
