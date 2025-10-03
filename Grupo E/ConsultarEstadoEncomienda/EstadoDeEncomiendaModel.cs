@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grupo_E.Rodrigo.EstadoDeEncomienda
+namespace Grupo_E.ConsultarEstadoEncomienda
 {
     internal class EstadoDeEncomiendaModel
     {

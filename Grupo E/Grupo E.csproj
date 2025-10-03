@@ -45,49 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abril\Form1.cs">
+    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abril\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Barbara\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Barbara\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Conrado\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Conrado\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Guillermo\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Guillermo\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Julieta\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Julieta\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Magali\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Magali\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Rodrigo\EstadoDeEncomienda\EstadoDeEncomiedaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rodrigo\EstadoDeEncomienda\EstadoDeEncomiedaForm.Designer.cs">
+    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.Designer.cs">
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rodrigo\EstadoDeEncomienda\EstadoDeEncomiendaModel.cs" />
+    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiendaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,10 +59,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rodrigo\EstadoDeEncomienda\EstadoDeEncomiedaForm.resx">
+    <EmbeddedResource Include="ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.resx">
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DespacharEncomienda\" />
+    <Folder Include="GeneracionHDRLargaDistancia\" />
+    <Folder Include="GenerarHDR\" />
+    <Folder Include="ImposicionEnAgencia\" />
+    <Folder Include="ImposicionEnCallCenter\" />
+    <Folder Include="ImposicionEnCD\" />
+    <Folder Include="RecepcionDeEncomiendaEnCD\" />
+    <Folder Include="RendicionHDRAgencia\" />
+    <Folder Include="RendicionHDRFletero\" />
+    <Folder Include="RetirarEnAgencia\" />
+    <Folder Include="RetirarEnCD\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
