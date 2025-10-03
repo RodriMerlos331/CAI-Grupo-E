@@ -64,6 +64,12 @@
     <Compile Include="GeneracionHDRLargaDistancia\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.Designer.cs">
+      <DependentUpon>FormularioGeneracionHDRLargaDistancia.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenerarHDR\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.resx">
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.resx">
+      <DependentUpon>FormularioGeneracionHDRLargaDistancia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
