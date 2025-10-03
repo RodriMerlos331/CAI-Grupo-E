@@ -58,12 +58,6 @@
     <Compile Include="DespacharEncomienda\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeneracionHDRLargaDistancia\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GeneracionHDRLargaDistancia\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.cs">
       <SubType>Form</SubType>
     </Compile>
