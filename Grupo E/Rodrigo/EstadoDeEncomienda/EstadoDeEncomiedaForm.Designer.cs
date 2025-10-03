@@ -1,4 +1,4 @@
-﻿namespace Grupo_E.EstadoDeEncomienda
+﻿namespace Grupo_E.Rodrigo.EstadoDeEncomienda
 {
     partial class EstadoDeEncomiedaForm
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Grupo_E.EstadoDeEncomienda
+namespace Grupo_E.Rodrigo.EstadoDeEncomienda
 {
     public partial class EstadoDeEncomiedaForm : Form
     {

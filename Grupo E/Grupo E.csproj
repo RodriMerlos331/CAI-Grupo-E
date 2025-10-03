@@ -45,13 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EstadoDeEncomienda\EstadoDeEncomiedaForm.cs">
+    <Compile Include="Rodrigo\EstadoDeEncomienda\EstadoDeEncomiedaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EstadoDeEncomienda\EstadoDeEncomiedaForm.Designer.cs">
+    <Compile Include="Rodrigo\EstadoDeEncomienda\EstadoDeEncomiedaForm.Designer.cs">
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EstadoDeEncomienda\EstadoDeEncomiendaModel.cs" />
+    <Compile Include="Rodrigo\EstadoDeEncomienda\EstadoDeEncomiendaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,9 +59,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EstadoDeEncomienda\EstadoDeEncomiedaForm.resx">
+    <EmbeddedResource Include="Rodrigo\EstadoDeEncomienda\EstadoDeEncomiedaForm.resx">
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abril\" />
+    <Folder Include="Barbara\" />
+    <Folder Include="Conrado\" />
+    <Folder Include="Guillermo\" />
+    <Folder Include="Julieta\" />
+    <Folder Include="Magali\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
