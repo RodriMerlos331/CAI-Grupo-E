@@ -153,6 +153,9 @@
     <EmbeddedResource Include="RendicionHDRFletero\RendicionHDRForm.resx">
       <DependentUpon>RendicionHDRForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RetirarEnAgencia\RetirarenAgencia.resx">
+      <DependentUpon>RetirarenAgencia.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
