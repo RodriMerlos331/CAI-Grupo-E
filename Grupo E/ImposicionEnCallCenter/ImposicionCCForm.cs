@@ -1,10 +1,13 @@
-namespace RetiroDomicilio._3._10
+using System.Security.Cryptography;
+
+namespace Grupo_E.ImposicionEnCallCenter
+
 {
-    public partial class ImposicionCCForm : Form
+    public partial class ImposicionCCForm : Form    
     {
         public ImposicionCCForm()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
 
         private void lblCodigoPostalRetiro_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace RetiroDomicilio._3._10
+﻿namespace Grupo_E.ImposicionEnCallCenter
 {
     partial class ImposicionCCForm
     {
@@ -842,9 +842,9 @@
         private System.Windows.Forms.GroupBox grpDatosBultoRetiroDomicilio;
         private System.Windows.Forms.ComboBox cmbTamanoBultoRetiro;
         private System.Windows.Forms.Label lblTamanoBultoRetiro;
-        private Button btnAceptarRetiro;
-        //private System.Windows.Forms.Button btnAceptarRetiroDomicilio;
-        // private Button b;
+        //private Button btnAceptarRetiro;
+        private System.Windows.Forms.Button btnAceptarRetiroDomicilio;
+       
     }
 }
  

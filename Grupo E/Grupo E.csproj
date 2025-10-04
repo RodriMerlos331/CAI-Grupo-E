@@ -70,17 +70,15 @@
     <Compile Include="GenerarHDR\GenerarHDRForm.Designer.cs">
       <DependentUpon>GenerarHDRForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImposicionEnAgencia\Form1.cs">
+    <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImposicionEnAgencia\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.Designer.cs">
+      <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImposicionEnCallCenter\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImposicionEnCallCenter\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.cs" />
+    <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.Designer.cs">
+      <DependentUpon>ImposicionCCForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImposicionEnCD\Form1.cs">
       <SubType>Form</SubType>
@@ -133,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarHDR\GenerarHDRForm.resx">
       <DependentUpon>GenerarHDRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImposicionEnAgencia\ImposicionEnAgencia.resx">
+      <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImposicionEnCallCenter\ImposicionCCForm.resx">
+      <DependentUpon>ImposicionCCForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
