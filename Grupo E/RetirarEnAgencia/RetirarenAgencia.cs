@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.RetirarEnAgencia
 {
-    public partial class Form1 : Form
+    public partial class RetirarenAgencia : Form
     {
-        public Form1()
+        public RetirarenAgencia()
         {
             InitializeComponent();
         }
