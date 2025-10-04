@@ -141,6 +141,9 @@
     <EmbeddedResource Include="ImposicionEnCD\ImposicionCD.resx">
       <DependentUpon>ImposicionCD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RendicionHDRFletero\RendicionHDRForm.resx">
+      <DependentUpon>RendicionHDRForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
