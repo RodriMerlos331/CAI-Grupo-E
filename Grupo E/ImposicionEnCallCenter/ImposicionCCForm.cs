@@ -1,4 +1,12 @@
-using System.Security.Cryptography;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Grupo_E.ImposicionEnCallCenter
 
@@ -10,6 +18,7 @@ namespace Grupo_E.ImposicionEnCallCenter
             InitializeComponent();
         }
 
+        
         private void lblCodigoPostalRetiro_Click(object sender, EventArgs e)
         {
 

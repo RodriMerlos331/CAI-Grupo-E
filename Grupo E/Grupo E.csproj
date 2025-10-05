@@ -76,16 +76,10 @@
     <Compile Include="GeneracionDeFacturas\GeneracionDeFacturas.Designer.cs">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.cs">
+    <Compile Include="Generar HDR - Fletero\GenerarHDRForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.Designer.cs">
-      <DependentUpon>FormularioGeneracionHDRLargaDistancia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GenerarHDR\GenerarHDRForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GenerarHDR\GenerarHDRForm.Designer.cs">
+    <Compile Include="Generar HDR - Fletero\GenerarHDRForm.Designer.cs">
       <DependentUpon>GenerarHDRForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.cs">
@@ -94,7 +88,9 @@
     <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.Designer.cs">
       <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.cs" />
+    <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.Designer.cs">
       <DependentUpon>ImposicionCCForm.cs</DependentUpon>
     </Compile>
@@ -124,11 +120,11 @@
     <Compile Include="RendicionHDRFletero\RendicionHDRForm.Designer.cs">
       <DependentUpon>RendicionHDRForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarHDRChofer\Rendición omnibus.cs">
+    <Compile Include="GestionarHDRChofer\GestionarHDRMediaDistancia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionarHDRChofer\Rendición omnibus.Designer.cs">
-      <DependentUpon>Rendición omnibus.cs</DependentUpon>
+    <Compile Include="GestionarHDRChofer\GestionarHDRMediaDistancia.Designer.cs">
+      <DependentUpon>GestionarHDRMediaDistancia.cs</DependentUpon>
     </Compile>
     <Compile Include="RetirarEnAgencia\RetirarenAgencia.cs">
       <SubType>Form</SubType>
@@ -159,10 +155,7 @@
     <EmbeddedResource Include="GeneracionDeFacturas\GeneracionDeFacturas.resx">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeneracionHDRLargaDistancia\FormularioGeneracionHDRLargaDistancia.resx">
-      <DependentUpon>FormularioGeneracionHDRLargaDistancia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GenerarHDR\GenerarHDRForm.resx">
+    <EmbeddedResource Include="Generar HDR - Fletero\GenerarHDRForm.resx">
       <DependentUpon>GenerarHDRForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImposicionEnAgencia\ImposicionEnAgencia.resx">
@@ -177,8 +170,8 @@
     <EmbeddedResource Include="RendicionHDRFletero\RendicionHDRForm.resx">
       <DependentUpon>RendicionHDRForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionarHDRChofer\Rendición omnibus.resx">
-      <DependentUpon>Rendición omnibus.cs</DependentUpon>
+    <EmbeddedResource Include="GestionarHDRChofer\GestionarHDRMediaDistancia.resx">
+      <DependentUpon>GestionarHDRMediaDistancia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RetirarEnAgencia\RetirarenAgencia.resx">
       <DependentUpon>RetirarenAgencia.cs</DependentUpon>
