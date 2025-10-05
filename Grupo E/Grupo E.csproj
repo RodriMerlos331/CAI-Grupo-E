@@ -112,11 +112,11 @@
     <Compile Include="RecepcionDeEncomiendaEnCD\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="RendicionHDRAgencia\Form1.cs">
+    <Compile Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RendicionHDRAgencia\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.Designer.cs">
+      <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RendicionHDRFletero\RendicionHDRForm.cs">
       <SubType>Form</SubType>
@@ -173,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImposicionEnCD\ImposicionCD.resx">
       <DependentUpon>ImposicionCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.resx">
+      <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RendicionHDRFletero\RendicionHDRForm.resx">
       <DependentUpon>RendicionHDRForm.cs</DependentUpon>
