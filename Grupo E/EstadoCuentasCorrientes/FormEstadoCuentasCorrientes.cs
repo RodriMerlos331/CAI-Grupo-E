@@ -26,5 +26,40 @@ namespace TUTASA.CuentasCorrientes
         {
 
         }
+
+        private void lblEstado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNroFactura_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNroFactura_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
