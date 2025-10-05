@@ -112,17 +112,23 @@
     <Compile Include="RendicionHDRFletero\RendicionHDRForm.Designer.cs">
       <DependentUpon>RendicionHDRForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RendiciónHDROmnibus\Rendición omnibus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RendiciónHDROmnibus\Rendición omnibus.Designer.cs">
+      <DependentUpon>Rendición omnibus.cs</DependentUpon>
+    </Compile>
     <Compile Include="RetirarEnAgencia\RetirarenAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RetirarEnAgencia\RetirarenAgencia.Designer.cs">
       <DependentUpon>RetirarenAgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="RetirarEnCD\Form1.cs">
+    <Compile Include="RetirarEnCD\RetirarEnCD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RetirarEnCD\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="RetirarEnCD\RetirarEnCD.Designer.cs">
+      <DependentUpon>RetirarEnCD.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -153,8 +159,14 @@
     <EmbeddedResource Include="RendicionHDRFletero\RendicionHDRForm.resx">
       <DependentUpon>RendicionHDRForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RendiciónHDROmnibus\Rendición omnibus.resx">
+      <DependentUpon>Rendición omnibus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RetirarEnAgencia\RetirarenAgencia.resx">
       <DependentUpon>RetirarenAgencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetirarEnCD\RetirarEnCD.resx">
+      <DependentUpon>RetirarEnCD.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.IdTrackertxt = new System.Windows.Forms.TextBox();
             this.BuscarEstadobtn = new System.Windows.Forms.Button();
-            this.Estadolbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.EstadoFechalbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.EstadoLocalidadlbl = new System.Windows.Forms.Label();
+            this.IdTrackertxt = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.EstadoLocalidadlbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.EstadoFechalbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Estadolbl = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.HistoriaEncomiendaList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,6 +50,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.BuscarEstadobtn);
             this.groupBox1.Controls.Add(this.IdTrackertxt);
             this.groupBox1.Location = new System.Drawing.Point(15, 21);
@@ -64,7 +66,23 @@
             this.groupBox1.Size = new System.Drawing.Size(1004, 94);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ID Tracker";
+            this.groupBox1.Text = "Búsqueda de encomienda";
+            // 
+            // BuscarEstadobtn
+            // 
+            this.BuscarEstadobtn.Location = new System.Drawing.Point(876, 38);
+            this.BuscarEstadobtn.Name = "BuscarEstadobtn";
+            this.BuscarEstadobtn.Size = new System.Drawing.Size(116, 23);
+            this.BuscarEstadobtn.TabIndex = 1;
+            this.BuscarEstadobtn.Text = "Buscar";
+            this.BuscarEstadobtn.UseVisualStyleBackColor = true;
+            // 
+            // IdTrackertxt
+            // 
+            this.IdTrackertxt.Location = new System.Drawing.Point(6, 40);
+            this.IdTrackertxt.Name = "IdTrackertxt";
+            this.IdTrackertxt.Size = new System.Drawing.Size(864, 20);
+            this.IdTrackertxt.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -81,6 +99,61 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Estado";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(535, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 15);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "XXXXXXXXX";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // EstadoLocalidadlbl
+            // 
+            this.EstadoLocalidadlbl.AutoSize = true;
+            this.EstadoLocalidadlbl.Location = new System.Drawing.Point(473, 51);
+            this.EstadoLocalidadlbl.Name = "EstadoLocalidadlbl";
+            this.EstadoLocalidadlbl.Size = new System.Drawing.Size(64, 15);
+            this.EstadoLocalidadlbl.TabIndex = 4;
+            this.EstadoLocalidadlbl.Text = "Localidad:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(306, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 15);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "XX/XX/XXXX   XX:XX";
+            // 
+            // EstadoFechalbl
+            // 
+            this.EstadoFechalbl.AutoSize = true;
+            this.EstadoFechalbl.Location = new System.Drawing.Point(223, 51);
+            this.EstadoFechalbl.Name = "EstadoFechalbl";
+            this.EstadoFechalbl.Size = new System.Drawing.Size(83, 15);
+            this.EstadoFechalbl.TabIndex = 2;
+            this.EstadoFechalbl.Text = "Fecha / Hora: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(101, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "XXXXXXXX";
+            // 
+            // Estadolbl
+            // 
+            this.Estadolbl.AutoSize = true;
+            this.Estadolbl.Location = new System.Drawing.Point(17, 51);
+            this.Estadolbl.Name = "Estadolbl";
+            this.Estadolbl.Size = new System.Drawing.Size(87, 15);
+            this.Estadolbl.TabIndex = 0;
+            this.Estadolbl.Text = "Estado actual: ";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.HistoriaEncomiendaList);
@@ -90,77 +163,6 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Historial";
-            // 
-            // IdTrackertxt
-            // 
-            this.IdTrackertxt.Location = new System.Drawing.Point(6, 40);
-            this.IdTrackertxt.Name = "IdTrackertxt";
-            this.IdTrackertxt.Size = new System.Drawing.Size(864, 20);
-            this.IdTrackertxt.TabIndex = 0;
-            // 
-            // BuscarEstadobtn
-            // 
-            this.BuscarEstadobtn.Location = new System.Drawing.Point(876, 38);
-            this.BuscarEstadobtn.Name = "BuscarEstadobtn";
-            this.BuscarEstadobtn.Size = new System.Drawing.Size(116, 23);
-            this.BuscarEstadobtn.TabIndex = 1;
-            this.BuscarEstadobtn.Text = "Buscar";
-            this.BuscarEstadobtn.UseVisualStyleBackColor = true;
-            // 
-            // Estadolbl
-            // 
-            this.Estadolbl.AutoSize = true;
-            this.Estadolbl.Location = new System.Drawing.Point(17, 51);
-            this.Estadolbl.Name = "Estadolbl";
-            this.Estadolbl.Size = new System.Drawing.Size(78, 13);
-            this.Estadolbl.TabIndex = 0;
-            this.Estadolbl.Text = "Estado actual: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(101, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "XXXXXXXX";
-            // 
-            // EstadoFechalbl
-            // 
-            this.EstadoFechalbl.AutoSize = true;
-            this.EstadoFechalbl.Location = new System.Drawing.Point(223, 51);
-            this.EstadoFechalbl.Name = "EstadoFechalbl";
-            this.EstadoFechalbl.Size = new System.Drawing.Size(77, 13);
-            this.EstadoFechalbl.TabIndex = 2;
-            this.EstadoFechalbl.Text = "Fecha / Hora: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "XX/XX/XXXX   XX:XX";
-            // 
-            // EstadoLocalidadlbl
-            // 
-            this.EstadoLocalidadlbl.AutoSize = true;
-            this.EstadoLocalidadlbl.Location = new System.Drawing.Point(473, 51);
-            this.EstadoLocalidadlbl.Name = "EstadoLocalidadlbl";
-            this.EstadoLocalidadlbl.Size = new System.Drawing.Size(56, 13);
-            this.EstadoLocalidadlbl.TabIndex = 4;
-            this.EstadoLocalidadlbl.Text = "Localidad:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(535, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "XXXXXXXXX";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // HistoriaEncomiendaList
             // 
@@ -233,6 +235,15 @@
             this.columnHeader10.Text = "Observaciones";
             this.columnHeader10.Width = 128;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "ID Tracking";
+            // 
             // EstadoDeEncomiedaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,5 +287,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace Grupo_E.RetirarEnAgencia
+﻿namespace Grupo_E.RetirarEnCD
 {
-    partial class RetirarenAgencia
+    partial class RetirarEnCD
     {
         /// <summary>
         /// Required designer variable.
@@ -48,19 +48,19 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(5, 327);
+            this.button3.Location = new System.Drawing.Point(12, 336);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(186, 23);
-            this.button3.TabIndex = 11;
+            this.button3.TabIndex = 7;
             this.button3.Text = "Entregar encomienda";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(203, 327);
+            this.button2.Location = new System.Drawing.Point(210, 336);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(198, 23);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -72,10 +72,10 @@
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Location = new System.Drawing.Point(5, 122);
+            this.groupBox2.Location = new System.Drawing.Point(12, 131);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(396, 187);
-            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de retiro";
             // 
@@ -134,12 +134,12 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(5, 3);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(396, 100);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Búsqueda del pedido en agencia";
+            this.groupBox1.Text = "Búsqueda del pedido en CD";
             // 
             // button4
             // 
@@ -175,18 +175,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de tracking";
             // 
-            // RetirarenAgencia
+            // RetirarEnCD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 363);
+            this.ClientSize = new System.Drawing.Size(417, 382);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "RetirarenAgencia";
-            this.Text = "Retirar en agencia";
+            this.Name = "RetirarEnCD";
+            this.Text = "Retiro en CD";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

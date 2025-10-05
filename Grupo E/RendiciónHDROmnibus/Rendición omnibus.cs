@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Grupo_E.ImposicionEnCD
+namespace Grupo_E.RendicionHDRLargaDistancia
 {
-    public partial class ImposicionCD : Form
+    public partial class Form1 : Form
     {
-        public ImposicionCD()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -22,7 +22,17 @@ namespace Grupo_E.ImposicionEnCD
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
