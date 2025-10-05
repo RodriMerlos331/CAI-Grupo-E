@@ -52,7 +52,9 @@
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiendaModel.cs" />
-    <Compile Include="CostoVsVentas\CostosVsVentas.cs" />
+    <Compile Include="CostoVsVentas\CostosVsVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CostoVsVentas\CostosVsVentas.Designer.cs">
       <DependentUpon>CostosVsVentas.cs</DependentUpon>
     </Compile>
@@ -62,7 +64,9 @@
     <Compile Include="DespacharEncomienda\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.cs" />
+    <Compile Include="EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.Designer.cs">
       <DependentUpon>FormEstadoCuentasCorrientes.cs</DependentUpon>
     </Compile>
@@ -120,10 +124,10 @@
     <Compile Include="RendicionHDRFletero\RendicionHDRForm.Designer.cs">
       <DependentUpon>RendicionHDRForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RendiciónHDROmnibus\Rendición omnibus.cs">
+    <Compile Include="GestionarHDRChofer\Rendición omnibus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RendiciónHDROmnibus\Rendición omnibus.Designer.cs">
+    <Compile Include="GestionarHDRChofer\Rendición omnibus.Designer.cs">
       <DependentUpon>Rendición omnibus.cs</DependentUpon>
     </Compile>
     <Compile Include="RetirarEnAgencia\RetirarenAgencia.cs">
@@ -173,7 +177,7 @@
     <EmbeddedResource Include="RendicionHDRFletero\RendicionHDRForm.resx">
       <DependentUpon>RendicionHDRForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RendiciónHDROmnibus\Rendición omnibus.resx">
+    <EmbeddedResource Include="GestionarHDRChofer\Rendición omnibus.resx">
       <DependentUpon>Rendición omnibus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RetirarEnAgencia\RetirarenAgencia.resx">

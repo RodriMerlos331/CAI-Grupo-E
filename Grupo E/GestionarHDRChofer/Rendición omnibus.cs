@@ -36,5 +36,10 @@ namespace Grupo_E.RendicionHDRLargaDistancia
         {
 
         }
+
+        private void listView4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
