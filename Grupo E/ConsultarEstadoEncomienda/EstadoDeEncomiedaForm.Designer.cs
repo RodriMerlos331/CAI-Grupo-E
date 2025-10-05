@@ -41,7 +41,6 @@
             this.Estadolbl = new System.Windows.Forms.Label();
             this.grbHistorial = new System.Windows.Forms.GroupBox();
             this.HistoriaEncomiendaList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -63,7 +62,7 @@
             this.grbBusquedaEncomienda.Controls.Add(this.IdTrackertxt);
             this.grbBusquedaEncomienda.Location = new System.Drawing.Point(15, 21);
             this.grbBusquedaEncomienda.Name = "grbBusquedaEncomienda";
-            this.grbBusquedaEncomienda.Size = new System.Drawing.Size(1004, 94);
+            this.grbBusquedaEncomienda.Size = new System.Drawing.Size(979, 94);
             this.grbBusquedaEncomienda.TabIndex = 0;
             this.grbBusquedaEncomienda.TabStop = false;
             this.grbBusquedaEncomienda.Text = "Búsqueda de encomienda";
@@ -79,18 +78,19 @@
             // 
             // btnEstadoBusqueda
             // 
-            this.btnEstadoBusqueda.Location = new System.Drawing.Point(876, 38);
+            this.btnEstadoBusqueda.Location = new System.Drawing.Point(856, 38);
             this.btnEstadoBusqueda.Name = "btnEstadoBusqueda";
             this.btnEstadoBusqueda.Size = new System.Drawing.Size(116, 23);
             this.btnEstadoBusqueda.TabIndex = 1;
             this.btnEstadoBusqueda.Text = "Buscar";
             this.btnEstadoBusqueda.UseVisualStyleBackColor = true;
+            this.btnEstadoBusqueda.Click += new System.EventHandler(this.btnEstadoBusqueda_Click);
             // 
             // IdTrackertxt
             // 
             this.IdTrackertxt.Location = new System.Drawing.Point(6, 40);
             this.IdTrackertxt.Name = "IdTrackertxt";
-            this.IdTrackertxt.Size = new System.Drawing.Size(864, 20);
+            this.IdTrackertxt.Size = new System.Drawing.Size(844, 20);
             this.IdTrackertxt.TabIndex = 0;
             // 
             // grbEstado
@@ -103,7 +103,7 @@
             this.grbEstado.Controls.Add(this.Estadolbl);
             this.grbEstado.Location = new System.Drawing.Point(17, 133);
             this.grbEstado.Name = "grbEstado";
-            this.grbEstado.Size = new System.Drawing.Size(1002, 107);
+            this.grbEstado.Size = new System.Drawing.Size(977, 107);
             this.grbEstado.TabIndex = 1;
             this.grbEstado.TabStop = false;
             this.grbEstado.Text = "Estado";
@@ -111,7 +111,7 @@
             // lbdescripcion3
             // 
             this.lbdescripcion3.AutoSize = true;
-            this.lbdescripcion3.Location = new System.Drawing.Point(535, 51);
+            this.lbdescripcion3.Location = new System.Drawing.Point(862, 51);
             this.lbdescripcion3.Name = "lbdescripcion3";
             this.lbdescripcion3.Size = new System.Drawing.Size(70, 13);
             this.lbdescripcion3.TabIndex = 5;
@@ -121,16 +121,16 @@
             // EstadoLocalidadlbl
             // 
             this.EstadoLocalidadlbl.AutoSize = true;
-            this.EstadoLocalidadlbl.Location = new System.Drawing.Point(473, 51);
+            this.EstadoLocalidadlbl.Location = new System.Drawing.Point(766, 51);
             this.EstadoLocalidadlbl.Name = "EstadoLocalidadlbl";
-            this.EstadoLocalidadlbl.Size = new System.Drawing.Size(56, 13);
+            this.EstadoLocalidadlbl.Size = new System.Drawing.Size(90, 13);
             this.EstadoLocalidadlbl.TabIndex = 4;
-            this.EstadoLocalidadlbl.Text = "Localidad:";
+            this.EstadoLocalidadlbl.Text = "Ubicacion actual:";
             // 
             // lbdescripcion2
             // 
             this.lbdescripcion2.AutoSize = true;
-            this.lbdescripcion2.Location = new System.Drawing.Point(306, 51);
+            this.lbdescripcion2.Location = new System.Drawing.Point(533, 52);
             this.lbdescripcion2.Name = "lbdescripcion2";
             this.lbdescripcion2.Size = new System.Drawing.Size(113, 13);
             this.lbdescripcion2.TabIndex = 3;
@@ -139,16 +139,17 @@
             // EstadoFechalbl
             // 
             this.EstadoFechalbl.AutoSize = true;
-            this.EstadoFechalbl.Location = new System.Drawing.Point(223, 51);
+            this.EstadoFechalbl.Location = new System.Drawing.Point(347, 51);
             this.EstadoFechalbl.Name = "EstadoFechalbl";
-            this.EstadoFechalbl.Size = new System.Drawing.Size(77, 13);
+            this.EstadoFechalbl.Size = new System.Drawing.Size(180, 13);
             this.EstadoFechalbl.TabIndex = 2;
-            this.EstadoFechalbl.Text = "Fecha / Hora: ";
+            this.EstadoFechalbl.Text = "Fecha / Hora del ultimo movimiento: ";
+            this.EstadoFechalbl.Click += new System.EventHandler(this.EstadoFechalbl_Click);
             // 
             // lbdescripcion
             // 
             this.lbdescripcion.AutoSize = true;
-            this.lbdescripcion.Location = new System.Drawing.Point(101, 52);
+            this.lbdescripcion.Location = new System.Drawing.Point(116, 52);
             this.lbdescripcion.Name = "lbdescripcion";
             this.lbdescripcion.Size = new System.Drawing.Size(63, 13);
             this.lbdescripcion.TabIndex = 1;
@@ -157,7 +158,7 @@
             // Estadolbl
             // 
             this.Estadolbl.AutoSize = true;
-            this.Estadolbl.Location = new System.Drawing.Point(17, 51);
+            this.Estadolbl.Location = new System.Drawing.Point(32, 51);
             this.Estadolbl.Name = "Estadolbl";
             this.Estadolbl.Size = new System.Drawing.Size(78, 13);
             this.Estadolbl.TabIndex = 0;
@@ -168,7 +169,7 @@
             this.grbHistorial.Controls.Add(this.HistoriaEncomiendaList);
             this.grbHistorial.Location = new System.Drawing.Point(17, 263);
             this.grbHistorial.Name = "grbHistorial";
-            this.grbHistorial.Size = new System.Drawing.Size(1002, 303);
+            this.grbHistorial.Size = new System.Drawing.Size(977, 303);
             this.grbHistorial.TabIndex = 2;
             this.grbHistorial.TabStop = false;
             this.grbHistorial.Text = "Historial";
@@ -176,7 +177,6 @@
             // HistoriaEncomiendaList
             // 
             this.HistoriaEncomiendaList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
@@ -187,17 +187,13 @@
             this.columnHeader9,
             this.columnHeader10});
             this.HistoriaEncomiendaList.HideSelection = false;
-            this.HistoriaEncomiendaList.Location = new System.Drawing.Point(4, 19);
+            this.HistoriaEncomiendaList.Location = new System.Drawing.Point(7, 19);
             this.HistoriaEncomiendaList.Name = "HistoriaEncomiendaList";
-            this.HistoriaEncomiendaList.Size = new System.Drawing.Size(986, 278);
+            this.HistoriaEncomiendaList.Size = new System.Drawing.Size(963, 278);
             this.HistoriaEncomiendaList.TabIndex = 0;
             this.HistoriaEncomiendaList.UseCompatibleStateImageBehavior = false;
             this.HistoriaEncomiendaList.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID Tracker";
-            this.columnHeader1.Width = 91;
+            this.HistoriaEncomiendaList.SelectedIndexChanged += new System.EventHandler(this.HistoriaEncomiendaList_SelectedIndexChanged);
             // 
             // columnHeader2
             // 
@@ -206,8 +202,8 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Fecha / Hora";
-            this.columnHeader3.Width = 94;
+            this.columnHeader3.Text = "Fecha / Hora del ultimo movimiento";
+            this.columnHeader3.Width = 183;
             // 
             // columnHeader4
             // 
@@ -277,7 +273,6 @@
         private System.Windows.Forms.Label Estadolbl;
         private System.Windows.Forms.GroupBox grbHistorial;
         private System.Windows.Forms.ListView HistoriaEncomiendaList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;

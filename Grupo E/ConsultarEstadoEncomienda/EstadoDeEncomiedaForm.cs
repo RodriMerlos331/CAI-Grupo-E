@@ -21,5 +21,20 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         {
 
         }
+
+        private void HistoriaEncomiendaList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EstadoFechalbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEstadoBusqueda_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
