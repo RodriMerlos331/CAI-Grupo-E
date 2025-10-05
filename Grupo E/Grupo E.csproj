@@ -88,12 +88,6 @@
     <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.Designer.cs">
       <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.Designer.cs">
-      <DependentUpon>ImposicionCCForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ImposicionEnCD\ImposicionCD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,9 +158,6 @@
     <EmbeddedResource Include="ImposicionEnAgencia\ImposicionEnAgencia.resx">
       <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImposicionEnCallCenter\ImposicionCCForm.resx">
-      <DependentUpon>ImposicionCCForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ImposicionEnCD\ImposicionCD.resx">
       <DependentUpon>ImposicionCD.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +177,8 @@
       <DependentUpon>RetirarEnCD.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ImposicionEnCallCenter\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
