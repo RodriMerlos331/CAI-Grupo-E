@@ -41,5 +41,10 @@ namespace Grupo_E.ImposicionEnAgencia
         {
 
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

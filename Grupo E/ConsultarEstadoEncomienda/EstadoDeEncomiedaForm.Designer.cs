@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BuscarEstadobtn = new System.Windows.Forms.Button();
+            this.grbBusquedaEncomienda = new System.Windows.Forms.GroupBox();
+            this.lbTracking = new System.Windows.Forms.Label();
+            this.btnEstadoBusqueda = new System.Windows.Forms.Button();
             this.IdTrackertxt = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.grbEstado = new System.Windows.Forms.GroupBox();
+            this.lbdescripcion3 = new System.Windows.Forms.Label();
             this.EstadoLocalidadlbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbdescripcion2 = new System.Windows.Forms.Label();
             this.EstadoFechalbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbdescripcion = new System.Windows.Forms.Label();
             this.Estadolbl = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grbHistorial = new System.Windows.Forms.GroupBox();
             this.HistoriaEncomiendaList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,32 +51,40 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grbBusquedaEncomienda.SuspendLayout();
+            this.grbEstado.SuspendLayout();
+            this.grbHistorial.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grbBusquedaEncomienda
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.BuscarEstadobtn);
-            this.groupBox1.Controls.Add(this.IdTrackertxt);
-            this.groupBox1.Location = new System.Drawing.Point(15, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1004, 94);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Búsqueda de encomienda";
+            this.grbBusquedaEncomienda.Controls.Add(this.lbTracking);
+            this.grbBusquedaEncomienda.Controls.Add(this.btnEstadoBusqueda);
+            this.grbBusquedaEncomienda.Controls.Add(this.IdTrackertxt);
+            this.grbBusquedaEncomienda.Location = new System.Drawing.Point(15, 21);
+            this.grbBusquedaEncomienda.Name = "grbBusquedaEncomienda";
+            this.grbBusquedaEncomienda.Size = new System.Drawing.Size(1004, 94);
+            this.grbBusquedaEncomienda.TabIndex = 0;
+            this.grbBusquedaEncomienda.TabStop = false;
+            this.grbBusquedaEncomienda.Text = "Búsqueda de encomienda";
             // 
-            // BuscarEstadobtn
+            // lbTracking
             // 
-            this.BuscarEstadobtn.Location = new System.Drawing.Point(876, 38);
-            this.BuscarEstadobtn.Name = "BuscarEstadobtn";
-            this.BuscarEstadobtn.Size = new System.Drawing.Size(116, 23);
-            this.BuscarEstadobtn.TabIndex = 1;
-            this.BuscarEstadobtn.Text = "Buscar";
-            this.BuscarEstadobtn.UseVisualStyleBackColor = true;
+            this.lbTracking.AutoSize = true;
+            this.lbTracking.Location = new System.Drawing.Point(6, 22);
+            this.lbTracking.Name = "lbTracking";
+            this.lbTracking.Size = new System.Drawing.Size(63, 13);
+            this.lbTracking.TabIndex = 2;
+            this.lbTracking.Text = "ID Tracking";
+            // 
+            // btnEstadoBusqueda
+            // 
+            this.btnEstadoBusqueda.Location = new System.Drawing.Point(876, 38);
+            this.btnEstadoBusqueda.Name = "btnEstadoBusqueda";
+            this.btnEstadoBusqueda.Size = new System.Drawing.Size(116, 23);
+            this.btnEstadoBusqueda.TabIndex = 1;
+            this.btnEstadoBusqueda.Text = "Buscar";
+            this.btnEstadoBusqueda.UseVisualStyleBackColor = true;
             // 
             // IdTrackertxt
             // 
@@ -84,85 +93,85 @@
             this.IdTrackertxt.Size = new System.Drawing.Size(864, 20);
             this.IdTrackertxt.TabIndex = 0;
             // 
-            // groupBox2
+            // grbEstado
             // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.EstadoLocalidadlbl);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.EstadoFechalbl);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.Estadolbl);
-            this.groupBox2.Location = new System.Drawing.Point(17, 133);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1002, 107);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Estado";
+            this.grbEstado.Controls.Add(this.lbdescripcion3);
+            this.grbEstado.Controls.Add(this.EstadoLocalidadlbl);
+            this.grbEstado.Controls.Add(this.lbdescripcion2);
+            this.grbEstado.Controls.Add(this.EstadoFechalbl);
+            this.grbEstado.Controls.Add(this.lbdescripcion);
+            this.grbEstado.Controls.Add(this.Estadolbl);
+            this.grbEstado.Location = new System.Drawing.Point(17, 133);
+            this.grbEstado.Name = "grbEstado";
+            this.grbEstado.Size = new System.Drawing.Size(1002, 107);
+            this.grbEstado.TabIndex = 1;
+            this.grbEstado.TabStop = false;
+            this.grbEstado.Text = "Estado";
             // 
-            // label6
+            // lbdescripcion3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(535, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "XXXXXXXXX";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lbdescripcion3.AutoSize = true;
+            this.lbdescripcion3.Location = new System.Drawing.Point(535, 51);
+            this.lbdescripcion3.Name = "lbdescripcion3";
+            this.lbdescripcion3.Size = new System.Drawing.Size(70, 13);
+            this.lbdescripcion3.TabIndex = 5;
+            this.lbdescripcion3.Text = "XXXXXXXXX";
+            this.lbdescripcion3.Click += new System.EventHandler(this.label6_Click);
             // 
             // EstadoLocalidadlbl
             // 
             this.EstadoLocalidadlbl.AutoSize = true;
             this.EstadoLocalidadlbl.Location = new System.Drawing.Point(473, 51);
             this.EstadoLocalidadlbl.Name = "EstadoLocalidadlbl";
-            this.EstadoLocalidadlbl.Size = new System.Drawing.Size(64, 15);
+            this.EstadoLocalidadlbl.Size = new System.Drawing.Size(56, 13);
             this.EstadoLocalidadlbl.TabIndex = 4;
             this.EstadoLocalidadlbl.Text = "Localidad:";
             // 
-            // label4
+            // lbdescripcion2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "XX/XX/XXXX   XX:XX";
+            this.lbdescripcion2.AutoSize = true;
+            this.lbdescripcion2.Location = new System.Drawing.Point(306, 51);
+            this.lbdescripcion2.Name = "lbdescripcion2";
+            this.lbdescripcion2.Size = new System.Drawing.Size(113, 13);
+            this.lbdescripcion2.TabIndex = 3;
+            this.lbdescripcion2.Text = "XX/XX/XXXX   XX:XX";
             // 
             // EstadoFechalbl
             // 
             this.EstadoFechalbl.AutoSize = true;
             this.EstadoFechalbl.Location = new System.Drawing.Point(223, 51);
             this.EstadoFechalbl.Name = "EstadoFechalbl";
-            this.EstadoFechalbl.Size = new System.Drawing.Size(83, 15);
+            this.EstadoFechalbl.Size = new System.Drawing.Size(77, 13);
             this.EstadoFechalbl.TabIndex = 2;
             this.EstadoFechalbl.Text = "Fecha / Hora: ";
             // 
-            // label2
+            // lbdescripcion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(101, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "XXXXXXXX";
+            this.lbdescripcion.AutoSize = true;
+            this.lbdescripcion.Location = new System.Drawing.Point(101, 52);
+            this.lbdescripcion.Name = "lbdescripcion";
+            this.lbdescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lbdescripcion.TabIndex = 1;
+            this.lbdescripcion.Text = "XXXXXXXX";
             // 
             // Estadolbl
             // 
             this.Estadolbl.AutoSize = true;
             this.Estadolbl.Location = new System.Drawing.Point(17, 51);
             this.Estadolbl.Name = "Estadolbl";
-            this.Estadolbl.Size = new System.Drawing.Size(87, 15);
+            this.Estadolbl.Size = new System.Drawing.Size(78, 13);
             this.Estadolbl.TabIndex = 0;
             this.Estadolbl.Text = "Estado actual: ";
             // 
-            // groupBox3
+            // grbHistorial
             // 
-            this.groupBox3.Controls.Add(this.HistoriaEncomiendaList);
-            this.groupBox3.Location = new System.Drawing.Point(17, 263);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1002, 303);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Historial";
+            this.grbHistorial.Controls.Add(this.HistoriaEncomiendaList);
+            this.grbHistorial.Location = new System.Drawing.Point(17, 263);
+            this.grbHistorial.Name = "grbHistorial";
+            this.grbHistorial.Size = new System.Drawing.Size(1002, 303);
+            this.grbHistorial.TabIndex = 2;
+            this.grbHistorial.TabStop = false;
+            this.grbHistorial.Text = "Historial";
             // 
             // HistoriaEncomiendaList
             // 
@@ -235,47 +244,38 @@
             this.columnHeader10.Text = "Observaciones";
             this.columnHeader10.Width = 128;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ID Tracking";
-            // 
             // EstadoDeEncomiedaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 581);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grbHistorial);
+            this.Controls.Add(this.grbEstado);
+            this.Controls.Add(this.grbBusquedaEncomienda);
             this.Name = "EstadoDeEncomiedaForm";
             this.Text = "Estado de Encomienda";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.grbBusquedaEncomienda.ResumeLayout(false);
+            this.grbBusquedaEncomienda.PerformLayout();
+            this.grbEstado.ResumeLayout(false);
+            this.grbEstado.PerformLayout();
+            this.grbHistorial.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button BuscarEstadobtn;
+        private System.Windows.Forms.GroupBox grbBusquedaEncomienda;
+        private System.Windows.Forms.GroupBox grbEstado;
+        private System.Windows.Forms.Button btnEstadoBusqueda;
         private System.Windows.Forms.TextBox IdTrackertxt;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbdescripcion3;
         private System.Windows.Forms.Label EstadoLocalidadlbl;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbdescripcion2;
         private System.Windows.Forms.Label EstadoFechalbl;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbdescripcion;
         private System.Windows.Forms.Label Estadolbl;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grbHistorial;
         private System.Windows.Forms.ListView HistoriaEncomiendaList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -287,6 +287,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTracking;
     }
 }

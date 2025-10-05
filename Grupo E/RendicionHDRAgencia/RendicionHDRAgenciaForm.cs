@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.RendicionHDRAgencia
 {
-    public partial class Form1 : Form
+    public partial class RendicionHDRAgenciaForm : Form
     {
-        public Form1()
+        public RendicionHDRAgenciaForm()
         {
             InitializeComponent();
         }
