@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.DespacharEncomienda
 {
-    public partial class Form1 : Form
+    public partial class DespacharEncomienda : Form
     {
-        public Form1()
+        public DespacharEncomienda()
         {
             InitializeComponent();
         }
