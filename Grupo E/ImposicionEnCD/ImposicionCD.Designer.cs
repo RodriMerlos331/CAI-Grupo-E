@@ -170,7 +170,7 @@
             this.groupBox4.Controls.Add(this.radioButton3);
             this.groupBox4.Controls.Add(this.radioButton1);
             this.groupBox4.Controls.Add(this.radioButton2);
-            this.groupBox4.Location = new System.Drawing.Point(12, 278);
+            this.groupBox4.Location = new System.Drawing.Point(485, 278);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(431, 85);
             this.groupBox4.TabIndex = 1;
@@ -214,7 +214,7 @@
             // 
             this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Location = new System.Drawing.Point(458, 278);
+            this.groupBox5.Location = new System.Drawing.Point(12, 278);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(460, 85);
             this.groupBox5.TabIndex = 1;
@@ -438,9 +438,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

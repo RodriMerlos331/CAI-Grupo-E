@@ -271,7 +271,7 @@
             // 
             this.grbCC.Controls.Add(this.txtCCLocalidad);
             this.grbCC.Controls.Add(this.lbLocalidad);
-            this.grbCC.Location = new System.Drawing.Point(458, 285);
+            this.grbCC.Location = new System.Drawing.Point(12, 278);
             this.grbCC.Name = "grbCC";
             this.grbCC.Size = new System.Drawing.Size(460, 85);
             this.grbCC.TabIndex = 17;
@@ -299,7 +299,7 @@
             this.grbDatosDestino.Controls.Add(this.rbParticular);
             this.grbDatosDestino.Controls.Add(this.rbCC);
             this.grbDatosDestino.Controls.Add(this.rbAgecnia);
-            this.grbDatosDestino.Location = new System.Drawing.Point(12, 285);
+            this.grbDatosDestino.Location = new System.Drawing.Point(485, 278);
             this.grbDatosDestino.Name = "grbDatosDestino";
             this.grbDatosDestino.Size = new System.Drawing.Size(431, 85);
             this.grbDatosDestino.TabIndex = 18;
