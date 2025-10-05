@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.GenerarHDR
 {
-    public partial class GenerarHDRForm : Form
+    public partial class GeneracionRendicionHDR : Form
     {
-        public GenerarHDRForm()
+        public GeneracionRendicionHDR()
         {
             InitializeComponent();
         }
