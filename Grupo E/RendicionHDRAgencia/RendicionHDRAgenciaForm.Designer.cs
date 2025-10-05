@@ -28,62 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnCancelarRendiAgencia = new System.Windows.Forms.Button();
+            this.btnAceptarRendiAgencia = new System.Windows.Forms.Button();
+            this.grbResumen = new System.Windows.Forms.GroupBox();
+            this.lbResumen = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.grbRendicionHDR = new System.Windows.Forms.GroupBox();
+            this.rbNoCumplida = new System.Windows.Forms.RadioButton();
+            this.rbCumplida = new System.Windows.Forms.RadioButton();
+            this.lbIDHDR = new System.Windows.Forms.Label();
+            this.txtIDHDR = new System.Windows.Forms.TextBox();
+            this.btnActualizarHDR = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbResumen.SuspendLayout();
+            this.grbRendicionHDR.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button6
+            // btnCancelarRendiAgencia
             // 
-            this.button6.Location = new System.Drawing.Point(309, 376);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(72, 20);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "Cancelar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnCancelarRendiAgencia.Location = new System.Drawing.Point(309, 376);
+            this.btnCancelarRendiAgencia.Name = "btnCancelarRendiAgencia";
+            this.btnCancelarRendiAgencia.Size = new System.Drawing.Size(72, 20);
+            this.btnCancelarRendiAgencia.TabIndex = 15;
+            this.btnCancelarRendiAgencia.Text = "Cancelar";
+            this.btnCancelarRendiAgencia.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnAceptarRendiAgencia
             // 
-            this.button5.Location = new System.Drawing.Point(220, 376);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(72, 20);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Aceptar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAceptarRendiAgencia.Location = new System.Drawing.Point(220, 376);
+            this.btnAceptarRendiAgencia.Name = "btnAceptarRendiAgencia";
+            this.btnAceptarRendiAgencia.Size = new System.Drawing.Size(72, 20);
+            this.btnAceptarRendiAgencia.TabIndex = 14;
+            this.btnAceptarRendiAgencia.Text = "Aceptar";
+            this.btnAceptarRendiAgencia.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // grbResumen
             // 
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.listView1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 216);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(369, 143);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Resumen";
+            this.grbResumen.Controls.Add(this.lbResumen);
+            this.grbResumen.Controls.Add(this.listView1);
+            this.grbResumen.Location = new System.Drawing.Point(12, 216);
+            this.grbResumen.Name = "grbResumen";
+            this.grbResumen.Size = new System.Drawing.Size(369, 143);
+            this.grbResumen.TabIndex = 13;
+            this.grbResumen.TabStop = false;
+            this.grbResumen.Text = "Resumen";
             // 
-            // label2
+            // lbResumen
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Resumen de hojas de ruta cumplidas:";
+            this.lbResumen.AutoSize = true;
+            this.lbResumen.Location = new System.Drawing.Point(10, 16);
+            this.lbResumen.Name = "lbResumen";
+            this.lbResumen.Size = new System.Drawing.Size(184, 13);
+            this.lbResumen.TabIndex = 4;
+            this.lbResumen.Text = "Resumen de hojas de ruta cumplidas:";
             // 
             // listView1
             // 
@@ -101,66 +101,66 @@
             // 
             this.columnHeader1.Text = "ID HDR";
             // 
-            // groupBox2
+            // grbRendicionHDR
             // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(12, 56);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(369, 154);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Rendicion de hoja de ruta";
+            this.grbRendicionHDR.Controls.Add(this.rbNoCumplida);
+            this.grbRendicionHDR.Controls.Add(this.rbCumplida);
+            this.grbRendicionHDR.Controls.Add(this.lbIDHDR);
+            this.grbRendicionHDR.Controls.Add(this.txtIDHDR);
+            this.grbRendicionHDR.Controls.Add(this.btnActualizarHDR);
+            this.grbRendicionHDR.Location = new System.Drawing.Point(12, 56);
+            this.grbRendicionHDR.Name = "grbRendicionHDR";
+            this.grbRendicionHDR.Size = new System.Drawing.Size(369, 154);
+            this.grbRendicionHDR.TabIndex = 12;
+            this.grbRendicionHDR.TabStop = false;
+            this.grbRendicionHDR.Text = "Rendicion de hoja de ruta";
             // 
-            // radioButton2
+            // rbNoCumplida
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(245, 79);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(84, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No cumplida";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbNoCumplida.AutoSize = true;
+            this.rbNoCumplida.Location = new System.Drawing.Point(245, 79);
+            this.rbNoCumplida.Name = "rbNoCumplida";
+            this.rbNoCumplida.Size = new System.Drawing.Size(84, 17);
+            this.rbNoCumplida.TabIndex = 13;
+            this.rbNoCumplida.TabStop = true;
+            this.rbNoCumplida.Text = "No cumplida";
+            this.rbNoCumplida.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbCumplida
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(28, 79);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(68, 17);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Cumplida";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbCumplida.AutoSize = true;
+            this.rbCumplida.Location = new System.Drawing.Point(28, 79);
+            this.rbCumplida.Name = "rbCumplida";
+            this.rbCumplida.Size = new System.Drawing.Size(68, 17);
+            this.rbCumplida.TabIndex = 12;
+            this.rbCumplida.TabStop = true;
+            this.rbCumplida.Text = "Cumplida";
+            this.rbCumplida.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lbIDHDR
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "ID Hoja de ruta";
+            this.lbIDHDR.AutoSize = true;
+            this.lbIDHDR.Location = new System.Drawing.Point(12, 27);
+            this.lbIDHDR.Name = "lbIDHDR";
+            this.lbIDHDR.Size = new System.Drawing.Size(79, 13);
+            this.lbIDHDR.TabIndex = 11;
+            this.lbIDHDR.Text = "ID Hoja de ruta";
             // 
-            // textBox1
+            // txtIDHDR
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtIDHDR.Location = new System.Drawing.Point(12, 43);
+            this.txtIDHDR.Name = "txtIDHDR";
+            this.txtIDHDR.Size = new System.Drawing.Size(142, 20);
+            this.txtIDHDR.TabIndex = 10;
             // 
-            // button3
+            // btnActualizarHDR
             // 
-            this.button3.Location = new System.Drawing.Point(15, 117);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(333, 20);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Actualizar hoja de ruta";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnActualizarHDR.Location = new System.Drawing.Point(15, 117);
+            this.btnActualizarHDR.Name = "btnActualizarHDR";
+            this.btnActualizarHDR.Size = new System.Drawing.Size(333, 20);
+            this.btnActualizarHDR.TabIndex = 8;
+            this.btnActualizarHDR.Text = "Actualizar hoja de ruta";
+            this.btnActualizarHDR.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -186,16 +186,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 407);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnCancelarRendiAgencia);
+            this.Controls.Add(this.btnAceptarRendiAgencia);
+            this.Controls.Add(this.grbResumen);
+            this.Controls.Add(this.grbRendicionHDR);
             this.Name = "RendicionHDRAgenciaForm";
             this.Text = "RendicionHDRAgenciaForm";
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grbResumen.ResumeLayout(false);
+            this.grbResumen.PerformLayout();
+            this.grbRendicionHDR.ResumeLayout(false);
+            this.grbRendicionHDR.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -204,18 +204,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCancelarRendiAgencia;
+        private System.Windows.Forms.Button btnAceptarRendiAgencia;
+        private System.Windows.Forms.GroupBox grbResumen;
+        private System.Windows.Forms.Label lbResumen;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox grbRendicionHDR;
+        private System.Windows.Forms.RadioButton rbNoCumplida;
+        private System.Windows.Forms.RadioButton rbCumplida;
+        private System.Windows.Forms.Label lbIDHDR;
+        private System.Windows.Forms.TextBox txtIDHDR;
+        private System.Windows.Forms.Button btnActualizarHDR;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
     }
