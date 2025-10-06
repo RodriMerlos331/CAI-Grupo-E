@@ -36,5 +36,10 @@ namespace FormResultadoCostoVsVentas
         {
 
         }
+
+        private void FormResultadoCostoVsVentas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
