@@ -17,6 +17,24 @@ namespace Grupo_E.ImposicionEnCallCenter
             InitializeComponent();
         }
 
-        
+        private void lblCalleDireccionPCC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCalleDireccionPCC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreDestinatarioCC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbNombreDestinatarioCC_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

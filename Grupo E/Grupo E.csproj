@@ -96,17 +96,17 @@
     <Compile Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.Designer.cs">
       <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RendicionGeneracionHDRFletero\RendicionGeneracionHDRFletero.cs">
+    <Compile Include="GestionarFletero\GestionarFletero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RendicionGeneracionHDRFletero\RendicionGeneracionHDRFletero.Designer.cs">
-      <DependentUpon>RendicionGeneracionHDRFletero.cs</DependentUpon>
+    <Compile Include="GestionarFletero\GestionarFletero.Designer.cs">
+      <DependentUpon>GestionarFletero.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarTransporteMediaDistancia\GestionarHDRMediaDistancia.cs">
+    <Compile Include="GestionarOmnibus\GestionarOmnibus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionarTransporteMediaDistancia\GestionarHDRMediaDistancia.Designer.cs">
-      <DependentUpon>GestionarHDRMediaDistancia.cs</DependentUpon>
+    <Compile Include="GestionarOmnibus\GestionarOmnibus.Designer.cs">
+      <DependentUpon>GestionarOmnibus.cs</DependentUpon>
     </Compile>
     <Compile Include="RetirarEnAgencia\RetirarenAgencia.cs">
       <SubType>Form</SubType>
@@ -149,11 +149,11 @@
     <EmbeddedResource Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.resx">
       <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RendicionGeneracionHDRFletero\RendicionGeneracionHDRFletero.resx">
-      <DependentUpon>RendicionGeneracionHDRFletero.cs</DependentUpon>
+    <EmbeddedResource Include="GestionarFletero\GestionarFletero.resx">
+      <DependentUpon>GestionarFletero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionarTransporteMediaDistancia\GestionarHDRMediaDistancia.resx">
-      <DependentUpon>GestionarHDRMediaDistancia.cs</DependentUpon>
+    <EmbeddedResource Include="GestionarOmnibus\GestionarOmnibus.resx">
+      <DependentUpon>GestionarOmnibus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RetirarEnAgencia\RetirarenAgencia.resx">
       <DependentUpon>RetirarenAgencia.cs</DependentUpon>

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Grupo_E.RendicionHDRFletero
 {
-    partial class RendicionGeneracionHDRFletero
+    partial class GestionarFletero
     {
         /// <summary>
         /// Required designer variable.

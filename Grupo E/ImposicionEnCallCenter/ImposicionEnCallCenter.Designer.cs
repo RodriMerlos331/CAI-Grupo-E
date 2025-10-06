@@ -32,6 +32,7 @@
             this.lblCUITClienteCC = new System.Windows.Forms.TextBox();
             this.lbCUITCC = new System.Windows.Forms.Label();
             this.grbDatosRetiroCC = new System.Windows.Forms.GroupBox();
+            this.lblFechaRetiroCC = new System.Windows.Forms.Label();
             this.dtpFechaRetiroCC = new System.Windows.Forms.DateTimePicker();
             this.txtApellidoRetiroCC = new System.Windows.Forms.TextBox();
             this.lblApellidoRetiroCC = new System.Windows.Forms.Label();
@@ -54,19 +55,8 @@
             this.lbApellidoDestinatarioCC = new System.Windows.Forms.Label();
             this.txtNombreDestinatarioCC = new System.Windows.Forms.TextBox();
             this.lbNombreDestinatarioCC = new System.Windows.Forms.Label();
-            this.lblFechaRetiroCC = new System.Windows.Forms.Label();
             this.grbCentroDistribucionCC = new System.Windows.Forms.GroupBox();
-            this.txtCentroDistribucionLocalidadCC = new System.Windows.Forms.TextBox();
             this.lbCentroDistribucionLocalidadCC = new System.Windows.Forms.Label();
-            this.grbDatosDestinoCC = new System.Windows.Forms.GroupBox();
-            this.rbParticular = new System.Windows.Forms.RadioButton();
-            this.rbCC = new System.Windows.Forms.RadioButton();
-            this.rbAgecnia = new System.Windows.Forms.RadioButton();
-            this.grbAgenciaCC = new System.Windows.Forms.GroupBox();
-            this.cbAgenciasCC = new System.Windows.Forms.ComboBox();
-            this.lbAgenciaCC = new System.Windows.Forms.Label();
-            this.txtLocalidadAgencia = new System.Windows.Forms.TextBox();
-            this.lbLocalidadAgencia = new System.Windows.Forms.Label();
             this.grbParticularCC = new System.Windows.Forms.GroupBox();
             this.txtPisoDireccionPCC = new System.Windows.Forms.TextBox();
             this.lblPisoDireccionPCC = new System.Windows.Forms.Label();
@@ -82,12 +72,21 @@
             this.cbTamañoVulto = new System.Windows.Forms.ComboBox();
             this.lbTamañoBulto = new System.Windows.Forms.Label();
             this.btnAceptarImpoCC = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rbParticular = new System.Windows.Forms.RadioButton();
+            this.rbAgecnia = new System.Windows.Forms.RadioButton();
+            this.rbCC = new System.Windows.Forms.RadioButton();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.grbClienteCC.SuspendLayout();
             this.grbDatosRetiroCC.SuspendLayout();
             this.grbDatosDestinatarioCC.SuspendLayout();
             this.grbCentroDistribucionCC.SuspendLayout();
-            this.grbDatosDestinoCC.SuspendLayout();
-            this.grbAgenciaCC.SuspendLayout();
             this.grbParticularCC.SuspendLayout();
             this.grbBultoCC.SuspendLayout();
             this.SuspendLayout();
@@ -96,30 +95,26 @@
             // 
             this.grbClienteCC.Controls.Add(this.lblCUITClienteCC);
             this.grbClienteCC.Controls.Add(this.lbCUITCC);
-            this.grbClienteCC.Location = new System.Drawing.Point(13, 23);
-            this.grbClienteCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbClienteCC.Location = new System.Drawing.Point(9, 15);
             this.grbClienteCC.Name = "grbClienteCC";
-            this.grbClienteCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbClienteCC.Size = new System.Drawing.Size(1359, 115);
+            this.grbClienteCC.Size = new System.Drawing.Size(906, 75);
             this.grbClienteCC.TabIndex = 21;
             this.grbClienteCC.TabStop = false;
             this.grbClienteCC.Text = "Cliente";
             // 
             // lblCUITClienteCC
             // 
-            this.lblCUITClienteCC.Location = new System.Drawing.Point(68, 38);
-            this.lblCUITClienteCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lblCUITClienteCC.Location = new System.Drawing.Point(45, 25);
             this.lblCUITClienteCC.Name = "lblCUITClienteCC";
-            this.lblCUITClienteCC.Size = new System.Drawing.Size(1272, 26);
+            this.lblCUITClienteCC.Size = new System.Drawing.Size(849, 20);
             this.lblCUITClienteCC.TabIndex = 1;
             // 
             // lbCUITCC
             // 
             this.lbCUITCC.AutoSize = true;
-            this.lbCUITCC.Location = new System.Drawing.Point(10, 49);
-            this.lbCUITCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCUITCC.Location = new System.Drawing.Point(7, 32);
             this.lbCUITCC.Name = "lbCUITCC";
-            this.lbCUITCC.Size = new System.Drawing.Size(46, 20);
+            this.lbCUITCC.Size = new System.Drawing.Size(32, 13);
             this.lbCUITCC.TabIndex = 0;
             this.lbCUITCC.Text = "CUIT";
             // 
@@ -141,145 +136,140 @@
             this.grbDatosRetiroCC.Controls.Add(this.lbCalleRetiroCC);
             this.grbDatosRetiroCC.Controls.Add(this.txtCiudadRetiroCC);
             this.grbDatosRetiroCC.Controls.Add(this.lbCiudadRetiroCC);
-            this.grbDatosRetiroCC.Location = new System.Drawing.Point(13, 148);
-            this.grbDatosRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbDatosRetiroCC.Location = new System.Drawing.Point(9, 96);
             this.grbDatosRetiroCC.Name = "grbDatosRetiroCC";
-            this.grbDatosRetiroCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbDatosRetiroCC.Size = new System.Drawing.Size(1359, 283);
+            this.grbDatosRetiroCC.Size = new System.Drawing.Size(906, 184);
             this.grbDatosRetiroCC.TabIndex = 23;
             this.grbDatosRetiroCC.TabStop = false;
             this.grbDatosRetiroCC.Text = "Datos de Retiro";
             // 
+            // lblFechaRetiroCC
+            // 
+            this.lblFechaRetiroCC.AutoSize = true;
+            this.lblFechaRetiroCC.Location = new System.Drawing.Point(471, 125);
+            this.lblFechaRetiroCC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFechaRetiroCC.Name = "lblFechaRetiroCC";
+            this.lblFechaRetiroCC.Size = new System.Drawing.Size(78, 13);
+            this.lblFechaRetiroCC.TabIndex = 23;
+            this.lblFechaRetiroCC.Text = "Fecha de retiro";
+            // 
             // dtpFechaRetiroCC
             // 
-            this.dtpFechaRetiroCC.Location = new System.Drawing.Point(711, 217);
+            this.dtpFechaRetiroCC.Location = new System.Drawing.Point(474, 141);
+            this.dtpFechaRetiroCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFechaRetiroCC.Name = "dtpFechaRetiroCC";
-            this.dtpFechaRetiroCC.Size = new System.Drawing.Size(606, 26);
+            this.dtpFechaRetiroCC.Size = new System.Drawing.Size(405, 20);
             this.dtpFechaRetiroCC.TabIndex = 22;
             // 
             // txtApellidoRetiroCC
             // 
-            this.txtApellidoRetiroCC.Location = new System.Drawing.Point(708, 71);
-            this.txtApellidoRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellidoRetiroCC.Location = new System.Drawing.Point(472, 46);
             this.txtApellidoRetiroCC.Name = "txtApellidoRetiroCC";
-            this.txtApellidoRetiroCC.Size = new System.Drawing.Size(632, 26);
+            this.txtApellidoRetiroCC.Size = new System.Drawing.Size(423, 20);
             this.txtApellidoRetiroCC.TabIndex = 21;
             // 
             // lblApellidoRetiroCC
             // 
             this.lblApellidoRetiroCC.AutoSize = true;
-            this.lblApellidoRetiroCC.Location = new System.Drawing.Point(704, 46);
-            this.lblApellidoRetiroCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoRetiroCC.Location = new System.Drawing.Point(469, 30);
             this.lblApellidoRetiroCC.Name = "lblApellidoRetiroCC";
-            this.lblApellidoRetiroCC.Size = new System.Drawing.Size(65, 20);
+            this.lblApellidoRetiroCC.Size = new System.Drawing.Size(44, 13);
             this.lblApellidoRetiroCC.TabIndex = 20;
             this.lblApellidoRetiroCC.Text = "Apellido";
             // 
             // lblNombreRetiroCC
             // 
             this.lblNombreRetiroCC.AutoSize = true;
-            this.lblNombreRetiroCC.Location = new System.Drawing.Point(18, 46);
-            this.lblNombreRetiroCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreRetiroCC.Location = new System.Drawing.Point(12, 30);
             this.lblNombreRetiroCC.Name = "lblNombreRetiroCC";
-            this.lblNombreRetiroCC.Size = new System.Drawing.Size(65, 20);
+            this.lblNombreRetiroCC.Size = new System.Drawing.Size(44, 13);
             this.lblNombreRetiroCC.TabIndex = 19;
             this.lblNombreRetiroCC.Text = "Nombre";
             // 
             // txtNombreRetiroCC
             // 
-            this.txtNombreRetiroCC.Location = new System.Drawing.Point(22, 71);
-            this.txtNombreRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombreRetiroCC.Location = new System.Drawing.Point(15, 46);
             this.txtNombreRetiroCC.Name = "txtNombreRetiroCC";
-            this.txtNombreRetiroCC.Size = new System.Drawing.Size(660, 26);
+            this.txtNombreRetiroCC.Size = new System.Drawing.Size(441, 20);
             this.txtNombreRetiroCC.TabIndex = 18;
             // 
             // txtDeptoRetiroCC
             // 
-            this.txtDeptoRetiroCC.Location = new System.Drawing.Point(16, 217);
-            this.txtDeptoRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDeptoRetiroCC.Location = new System.Drawing.Point(11, 141);
             this.txtDeptoRetiroCC.Name = "txtDeptoRetiroCC";
-            this.txtDeptoRetiroCC.Size = new System.Drawing.Size(352, 26);
+            this.txtDeptoRetiroCC.Size = new System.Drawing.Size(236, 20);
             this.txtDeptoRetiroCC.TabIndex = 17;
             // 
             // lbDeptoRetiroCC
             // 
             this.lbDeptoRetiroCC.AutoSize = true;
-            this.lbDeptoRetiroCC.Location = new System.Drawing.Point(18, 192);
-            this.lbDeptoRetiroCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDeptoRetiroCC.Location = new System.Drawing.Point(12, 125);
             this.lbDeptoRetiroCC.Name = "lbDeptoRetiroCC";
-            this.lbDeptoRetiroCC.Size = new System.Drawing.Size(154, 20);
+            this.lbDeptoRetiroCC.Size = new System.Drawing.Size(105, 13);
             this.lbDeptoRetiroCC.TabIndex = 16;
             this.lbDeptoRetiroCC.Text = "Piso / Departamento";
             // 
             // txtAlturaRetiroCC
             // 
-            this.txtAlturaRetiroCC.Location = new System.Drawing.Point(432, 217);
-            this.txtAlturaRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAlturaRetiroCC.Location = new System.Drawing.Point(288, 141);
             this.txtAlturaRetiroCC.Name = "txtAlturaRetiroCC";
-            this.txtAlturaRetiroCC.Size = new System.Drawing.Size(214, 26);
+            this.txtAlturaRetiroCC.Size = new System.Drawing.Size(144, 20);
             this.txtAlturaRetiroCC.TabIndex = 15;
             // 
             // lbAlturaRetiroCC
             // 
             this.lbAlturaRetiroCC.AutoSize = true;
-            this.lbAlturaRetiroCC.Location = new System.Drawing.Point(435, 192);
-            this.lbAlturaRetiroCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbAlturaRetiroCC.Location = new System.Drawing.Point(290, 125);
             this.lbAlturaRetiroCC.Name = "lbAlturaRetiroCC";
-            this.lbAlturaRetiroCC.Size = new System.Drawing.Size(51, 20);
+            this.lbAlturaRetiroCC.Size = new System.Drawing.Size(34, 13);
             this.lbAlturaRetiroCC.TabIndex = 14;
             this.lbAlturaRetiroCC.Text = "Altura";
             // 
             // txtCalleRetiroCC
             // 
-            this.txtCalleRetiroCC.Location = new System.Drawing.Point(708, 138);
-            this.txtCalleRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCalleRetiroCC.Location = new System.Drawing.Point(472, 90);
             this.txtCalleRetiroCC.Name = "txtCalleRetiroCC";
-            this.txtCalleRetiroCC.Size = new System.Drawing.Size(621, 26);
+            this.txtCalleRetiroCC.Size = new System.Drawing.Size(415, 20);
             this.txtCalleRetiroCC.TabIndex = 13;
             // 
             // lbCodigoPostalRetiroCC
             // 
             this.lbCodigoPostalRetiroCC.AutoSize = true;
-            this.lbCodigoPostalRetiroCC.Location = new System.Drawing.Point(435, 113);
-            this.lbCodigoPostalRetiroCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCodigoPostalRetiroCC.Location = new System.Drawing.Point(290, 73);
             this.lbCodigoPostalRetiroCC.Name = "lbCodigoPostalRetiroCC";
-            this.lbCodigoPostalRetiroCC.Size = new System.Drawing.Size(107, 20);
+            this.lbCodigoPostalRetiroCC.Size = new System.Drawing.Size(72, 13);
             this.lbCodigoPostalRetiroCC.TabIndex = 12;
             this.lbCodigoPostalRetiroCC.Text = "Codigo Postal";
             // 
             // txtCodigoPostalRetiroCC
             // 
-            this.txtCodigoPostalRetiroCC.Location = new System.Drawing.Point(429, 138);
-            this.txtCodigoPostalRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCodigoPostalRetiroCC.Location = new System.Drawing.Point(286, 90);
             this.txtCodigoPostalRetiroCC.Name = "txtCodigoPostalRetiroCC";
-            this.txtCodigoPostalRetiroCC.Size = new System.Drawing.Size(217, 26);
+            this.txtCodigoPostalRetiroCC.Size = new System.Drawing.Size(146, 20);
             this.txtCodigoPostalRetiroCC.TabIndex = 11;
             // 
             // lbCalleRetiroCC
             // 
             this.lbCalleRetiroCC.AutoSize = true;
-            this.lbCalleRetiroCC.Location = new System.Drawing.Point(704, 113);
-            this.lbCalleRetiroCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCalleRetiroCC.Location = new System.Drawing.Point(469, 73);
             this.lbCalleRetiroCC.Name = "lbCalleRetiroCC";
-            this.lbCalleRetiroCC.Size = new System.Drawing.Size(44, 20);
+            this.lbCalleRetiroCC.Size = new System.Drawing.Size(30, 13);
             this.lbCalleRetiroCC.TabIndex = 10;
             this.lbCalleRetiroCC.Text = "Calle";
             // 
             // txtCiudadRetiroCC
             // 
-            this.txtCiudadRetiroCC.Location = new System.Drawing.Point(22, 138);
-            this.txtCiudadRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCiudadRetiroCC.Location = new System.Drawing.Point(15, 90);
             this.txtCiudadRetiroCC.Name = "txtCiudadRetiroCC";
-            this.txtCiudadRetiroCC.Size = new System.Drawing.Size(354, 26);
+            this.txtCiudadRetiroCC.Size = new System.Drawing.Size(237, 20);
             this.txtCiudadRetiroCC.TabIndex = 9;
             // 
             // lbCiudadRetiroCC
             // 
             this.lbCiudadRetiroCC.AutoSize = true;
-            this.lbCiudadRetiroCC.Location = new System.Drawing.Point(18, 113);
-            this.lbCiudadRetiroCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCiudadRetiroCC.Location = new System.Drawing.Point(12, 73);
             this.lbCiudadRetiroCC.Name = "lbCiudadRetiroCC";
-            this.lbCiudadRetiroCC.Size = new System.Drawing.Size(59, 20);
+            this.lbCiudadRetiroCC.Size = new System.Drawing.Size(40, 13);
             this.lbCiudadRetiroCC.TabIndex = 8;
             this.lbCiudadRetiroCC.Text = "Ciudad";
             // 
@@ -291,210 +281,87 @@
             this.grbDatosDestinatarioCC.Controls.Add(this.lbApellidoDestinatarioCC);
             this.grbDatosDestinatarioCC.Controls.Add(this.txtNombreDestinatarioCC);
             this.grbDatosDestinatarioCC.Controls.Add(this.lbNombreDestinatarioCC);
-            this.grbDatosDestinatarioCC.Location = new System.Drawing.Point(13, 451);
-            this.grbDatosDestinatarioCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbDatosDestinatarioCC.Location = new System.Drawing.Point(9, 620);
             this.grbDatosDestinatarioCC.Name = "grbDatosDestinatarioCC";
-            this.grbDatosDestinatarioCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbDatosDestinatarioCC.Size = new System.Drawing.Size(1359, 255);
+            this.grbDatosDestinatarioCC.Size = new System.Drawing.Size(432, 143);
             this.grbDatosDestinatarioCC.TabIndex = 24;
             this.grbDatosDestinatarioCC.TabStop = false;
             this.grbDatosDestinatarioCC.Text = "Datos de destinatario";
             // 
             // txtCuitDestinatarioCC
             // 
-            this.txtCuitDestinatarioCC.Location = new System.Drawing.Point(9, 185);
-            this.txtCuitDestinatarioCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCuitDestinatarioCC.Location = new System.Drawing.Point(6, 120);
             this.txtCuitDestinatarioCC.Name = "txtCuitDestinatarioCC";
-            this.txtCuitDestinatarioCC.Size = new System.Drawing.Size(660, 26);
+            this.txtCuitDestinatarioCC.Size = new System.Drawing.Size(391, 20);
             this.txtCuitDestinatarioCC.TabIndex = 5;
             // 
             // lbCuitDestinatarioCC
             // 
             this.lbCuitDestinatarioCC.AutoSize = true;
-            this.lbCuitDestinatarioCC.Location = new System.Drawing.Point(10, 160);
-            this.lbCuitDestinatarioCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCuitDestinatarioCC.Location = new System.Drawing.Point(7, 104);
             this.lbCuitDestinatarioCC.Name = "lbCuitDestinatarioCC";
-            this.lbCuitDestinatarioCC.Size = new System.Drawing.Size(46, 20);
+            this.lbCuitDestinatarioCC.Size = new System.Drawing.Size(32, 13);
             this.lbCuitDestinatarioCC.TabIndex = 4;
             this.lbCuitDestinatarioCC.Text = "CUIT";
             // 
             // txtApellidoDestinatarioCC
             // 
-            this.txtApellidoDestinatarioCC.Location = new System.Drawing.Point(680, 78);
-            this.txtApellidoDestinatarioCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellidoDestinatarioCC.Location = new System.Drawing.Point(10, 84);
             this.txtApellidoDestinatarioCC.Name = "txtApellidoDestinatarioCC";
-            this.txtApellidoDestinatarioCC.Size = new System.Drawing.Size(660, 26);
+            this.txtApellidoDestinatarioCC.Size = new System.Drawing.Size(387, 20);
             this.txtApellidoDestinatarioCC.TabIndex = 3;
             // 
             // lbApellidoDestinatarioCC
             // 
             this.lbApellidoDestinatarioCC.AutoSize = true;
-            this.lbApellidoDestinatarioCC.Location = new System.Drawing.Point(681, 54);
-            this.lbApellidoDestinatarioCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbApellidoDestinatarioCC.Location = new System.Drawing.Point(11, 68);
             this.lbApellidoDestinatarioCC.Name = "lbApellidoDestinatarioCC";
-            this.lbApellidoDestinatarioCC.Size = new System.Drawing.Size(65, 20);
+            this.lbApellidoDestinatarioCC.Size = new System.Drawing.Size(44, 13);
             this.lbApellidoDestinatarioCC.TabIndex = 2;
             this.lbApellidoDestinatarioCC.Text = "Apellido";
             // 
             // txtNombreDestinatarioCC
             // 
-            this.txtNombreDestinatarioCC.Location = new System.Drawing.Point(9, 78);
-            this.txtNombreDestinatarioCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombreDestinatarioCC.Location = new System.Drawing.Point(10, 32);
             this.txtNombreDestinatarioCC.Name = "txtNombreDestinatarioCC";
-            this.txtNombreDestinatarioCC.Size = new System.Drawing.Size(660, 26);
+            this.txtNombreDestinatarioCC.Size = new System.Drawing.Size(391, 20);
             this.txtNombreDestinatarioCC.TabIndex = 1;
+            this.txtNombreDestinatarioCC.TextChanged += new System.EventHandler(this.txtNombreDestinatarioCC_TextChanged);
             // 
             // lbNombreDestinatarioCC
             // 
             this.lbNombreDestinatarioCC.AutoSize = true;
-            this.lbNombreDestinatarioCC.Location = new System.Drawing.Point(10, 54);
-            this.lbNombreDestinatarioCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNombreDestinatarioCC.Location = new System.Drawing.Point(11, 16);
             this.lbNombreDestinatarioCC.Name = "lbNombreDestinatarioCC";
-            this.lbNombreDestinatarioCC.Size = new System.Drawing.Size(65, 20);
+            this.lbNombreDestinatarioCC.Size = new System.Drawing.Size(44, 13);
             this.lbNombreDestinatarioCC.TabIndex = 0;
             this.lbNombreDestinatarioCC.Text = "Nombre";
-            // 
-            // lblFechaRetiroCC
-            // 
-            this.lblFechaRetiroCC.AutoSize = true;
-            this.lblFechaRetiroCC.Location = new System.Drawing.Point(707, 192);
-            this.lblFechaRetiroCC.Name = "lblFechaRetiroCC";
-            this.lblFechaRetiroCC.Size = new System.Drawing.Size(174, 30);
-            this.lblFechaRetiroCC.TabIndex = 23;
-            this.lblFechaRetiroCC.Text = "Fecha de retiro";
+            this.lbNombreDestinatarioCC.Click += new System.EventHandler(this.lbNombreDestinatarioCC_Click);
             // 
             // grbCentroDistribucionCC
             // 
-            this.grbCentroDistribucionCC.Controls.Add(this.txtCentroDistribucionLocalidadCC);
+            this.grbCentroDistribucionCC.Controls.Add(this.comboBox2);
+            this.grbCentroDistribucionCC.Controls.Add(this.label1);
+            this.grbCentroDistribucionCC.Controls.Add(this.rbParticular);
+            this.grbCentroDistribucionCC.Controls.Add(this.comboBox1);
+            this.grbCentroDistribucionCC.Controls.Add(this.rbCC);
+            this.grbCentroDistribucionCC.Controls.Add(this.rbAgecnia);
             this.grbCentroDistribucionCC.Controls.Add(this.lbCentroDistribucionLocalidadCC);
-            this.grbCentroDistribucionCC.Location = new System.Drawing.Point(13, 716);
-            this.grbCentroDistribucionCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbCentroDistribucionCC.Location = new System.Drawing.Point(9, 303);
             this.grbCentroDistribucionCC.Name = "grbCentroDistribucionCC";
-            this.grbCentroDistribucionCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbCentroDistribucionCC.Size = new System.Drawing.Size(690, 131);
+            this.grbCentroDistribucionCC.Size = new System.Drawing.Size(904, 164);
             this.grbCentroDistribucionCC.TabIndex = 25;
             this.grbCentroDistribucionCC.TabStop = false;
-            this.grbCentroDistribucionCC.Text = "Datos de centro de distribucion";
-            // 
-            // txtCentroDistribucionLocalidadCC
-            // 
-            this.txtCentroDistribucionLocalidadCC.Location = new System.Drawing.Point(15, 71);
-            this.txtCentroDistribucionLocalidadCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCentroDistribucionLocalidadCC.Name = "txtCentroDistribucionLocalidadCC";
-            this.txtCentroDistribucionLocalidadCC.Size = new System.Drawing.Size(660, 26);
-            this.txtCentroDistribucionLocalidadCC.TabIndex = 9;
+            this.grbCentroDistribucionCC.Text = "Datos de destino";
             // 
             // lbCentroDistribucionLocalidadCC
             // 
             this.lbCentroDistribucionLocalidadCC.AutoSize = true;
-            this.lbCentroDistribucionLocalidadCC.Location = new System.Drawing.Point(16, 46);
-            this.lbCentroDistribucionLocalidadCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCentroDistribucionLocalidadCC.Location = new System.Drawing.Point(11, 30);
             this.lbCentroDistribucionLocalidadCC.Name = "lbCentroDistribucionLocalidadCC";
-            this.lbCentroDistribucionLocalidadCC.Size = new System.Drawing.Size(77, 20);
+            this.lbCentroDistribucionLocalidadCC.Size = new System.Drawing.Size(51, 13);
             this.lbCentroDistribucionLocalidadCC.TabIndex = 8;
-            this.lbCentroDistribucionLocalidadCC.Text = "Localidad";
-            // 
-            // grbDatosDestinoCC
-            // 
-            this.grbDatosDestinoCC.Controls.Add(this.rbParticular);
-            this.grbDatosDestinoCC.Controls.Add(this.rbCC);
-            this.grbDatosDestinoCC.Controls.Add(this.rbAgecnia);
-            this.grbDatosDestinoCC.Location = new System.Drawing.Point(724, 716);
-            this.grbDatosDestinoCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbDatosDestinoCC.Name = "grbDatosDestinoCC";
-            this.grbDatosDestinoCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbDatosDestinoCC.Size = new System.Drawing.Size(646, 131);
-            this.grbDatosDestinoCC.TabIndex = 26;
-            this.grbDatosDestinoCC.TabStop = false;
-            this.grbDatosDestinoCC.Text = "Datos de destino";
-            // 
-            // rbParticular
-            // 
-            this.rbParticular.AutoSize = true;
-            this.rbParticular.Location = new System.Drawing.Point(404, 38);
-            this.rbParticular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbParticular.Name = "rbParticular";
-            this.rbParticular.Size = new System.Drawing.Size(169, 24);
-            this.rbParticular.TabIndex = 2;
-            this.rbParticular.TabStop = true;
-            this.rbParticular.Text = "Direccion particular";
-            this.rbParticular.UseVisualStyleBackColor = true;
-            // 
-            // rbCC
-            // 
-            this.rbCC.AutoSize = true;
-            this.rbCC.Location = new System.Drawing.Point(9, 38);
-            this.rbCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbCC.Name = "rbCC";
-            this.rbCC.Size = new System.Drawing.Size(188, 24);
-            this.rbCC.TabIndex = 0;
-            this.rbCC.TabStop = true;
-            this.rbCC.Text = "Centro de distribucion";
-            this.rbCC.UseVisualStyleBackColor = true;
-            // 
-            // rbAgecnia
-            // 
-            this.rbAgecnia.AutoSize = true;
-            this.rbAgecnia.Location = new System.Drawing.Point(9, 85);
-            this.rbAgecnia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rbAgecnia.Name = "rbAgecnia";
-            this.rbAgecnia.Size = new System.Drawing.Size(92, 24);
-            this.rbAgecnia.TabIndex = 1;
-            this.rbAgecnia.TabStop = true;
-            this.rbAgecnia.Text = "Agencia";
-            this.rbAgecnia.UseVisualStyleBackColor = true;
-            // 
-            // grbAgenciaCC
-            // 
-            this.grbAgenciaCC.Controls.Add(this.cbAgenciasCC);
-            this.grbAgenciaCC.Controls.Add(this.lbAgenciaCC);
-            this.grbAgenciaCC.Controls.Add(this.txtLocalidadAgencia);
-            this.grbAgenciaCC.Controls.Add(this.lbLocalidadAgencia);
-            this.grbAgenciaCC.Location = new System.Drawing.Point(13, 857);
-            this.grbAgenciaCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbAgenciaCC.Name = "grbAgenciaCC";
-            this.grbAgenciaCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbAgenciaCC.Size = new System.Drawing.Size(1359, 131);
-            this.grbAgenciaCC.TabIndex = 27;
-            this.grbAgenciaCC.TabStop = false;
-            this.grbAgenciaCC.Text = "Datos de Agencia";
-            // 
-            // cbAgenciasCC
-            // 
-            this.cbAgenciasCC.FormattingEnabled = true;
-            this.cbAgenciasCC.Location = new System.Drawing.Point(712, 69);
-            this.cbAgenciasCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbAgenciasCC.Name = "cbAgenciasCC";
-            this.cbAgenciasCC.Size = new System.Drawing.Size(619, 28);
-            this.cbAgenciasCC.TabIndex = 11;
-            // 
-            // lbAgenciaCC
-            // 
-            this.lbAgenciaCC.AutoSize = true;
-            this.lbAgenciaCC.Location = new System.Drawing.Point(708, 46);
-            this.lbAgenciaCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbAgenciaCC.Name = "lbAgenciaCC";
-            this.lbAgenciaCC.Size = new System.Drawing.Size(67, 20);
-            this.lbAgenciaCC.TabIndex = 10;
-            this.lbAgenciaCC.Text = "Agencia";
-            // 
-            // txtLocalidadAgencia
-            // 
-            this.txtLocalidadAgencia.Location = new System.Drawing.Point(15, 71);
-            this.txtLocalidadAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtLocalidadAgencia.Name = "txtLocalidadAgencia";
-            this.txtLocalidadAgencia.Size = new System.Drawing.Size(660, 26);
-            this.txtLocalidadAgencia.TabIndex = 9;
-            // 
-            // lbLocalidadAgencia
-            // 
-            this.lbLocalidadAgencia.AutoSize = true;
-            this.lbLocalidadAgencia.Location = new System.Drawing.Point(16, 46);
-            this.lbLocalidadAgencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbLocalidadAgencia.Name = "lbLocalidadAgencia";
-            this.lbLocalidadAgencia.Size = new System.Drawing.Size(77, 20);
-            this.lbLocalidadAgencia.TabIndex = 8;
-            this.lbLocalidadAgencia.Text = "Localidad";
+            this.lbCentroDistribucionLocalidadCC.Text = "Provincia";
             // 
             // grbParticularCC
             // 
@@ -508,114 +375,107 @@
             this.grbParticularCC.Controls.Add(this.lblCalleDireccionPCC);
             this.grbParticularCC.Controls.Add(this.txtCiudadDireccionPCC);
             this.grbParticularCC.Controls.Add(this.lblCiudadDireccionPCC);
-            this.grbParticularCC.Location = new System.Drawing.Point(22, 998);
-            this.grbParticularCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbParticularCC.Location = new System.Drawing.Point(9, 484);
             this.grbParticularCC.Name = "grbParticularCC";
-            this.grbParticularCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbParticularCC.Size = new System.Drawing.Size(690, 283);
+            this.grbParticularCC.Size = new System.Drawing.Size(898, 130);
             this.grbParticularCC.TabIndex = 28;
             this.grbParticularCC.TabStop = false;
             this.grbParticularCC.Text = "Direccion particular";
             // 
             // txtPisoDireccionPCC
             // 
-            this.txtPisoDireccionPCC.Location = new System.Drawing.Point(16, 217);
-            this.txtPisoDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPisoDireccionPCC.Location = new System.Drawing.Point(11, 98);
             this.txtPisoDireccionPCC.Name = "txtPisoDireccionPCC";
-            this.txtPisoDireccionPCC.Size = new System.Drawing.Size(352, 26);
+            this.txtPisoDireccionPCC.Size = new System.Drawing.Size(236, 20);
             this.txtPisoDireccionPCC.TabIndex = 17;
             // 
             // lblPisoDireccionPCC
             // 
             this.lblPisoDireccionPCC.AutoSize = true;
-            this.lblPisoDireccionPCC.Location = new System.Drawing.Point(18, 192);
-            this.lblPisoDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPisoDireccionPCC.Location = new System.Drawing.Point(12, 82);
             this.lblPisoDireccionPCC.Name = "lblPisoDireccionPCC";
-            this.lblPisoDireccionPCC.Size = new System.Drawing.Size(154, 20);
+            this.lblPisoDireccionPCC.Size = new System.Drawing.Size(105, 13);
             this.lblPisoDireccionPCC.TabIndex = 16;
             this.lblPisoDireccionPCC.Text = "Piso / Departamento";
             // 
             // txtAlturaDireccionPCC
             // 
-            this.txtAlturaDireccionPCC.Location = new System.Drawing.Point(400, 138);
-            this.txtAlturaDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAlturaDireccionPCC.Location = new System.Drawing.Point(688, 46);
             this.txtAlturaDireccionPCC.Name = "txtAlturaDireccionPCC";
-            this.txtAlturaDireccionPCC.Size = new System.Drawing.Size(214, 26);
+            this.txtAlturaDireccionPCC.Size = new System.Drawing.Size(144, 20);
             this.txtAlturaDireccionPCC.TabIndex = 15;
             // 
             // AlturaDireccionPCC
             // 
             this.AlturaDireccionPCC.AutoSize = true;
-            this.AlturaDireccionPCC.Location = new System.Drawing.Point(402, 114);
-            this.AlturaDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AlturaDireccionPCC.Location = new System.Drawing.Point(689, 30);
             this.AlturaDireccionPCC.Name = "AlturaDireccionPCC";
-            this.AlturaDireccionPCC.Size = new System.Drawing.Size(51, 20);
+            this.AlturaDireccionPCC.Size = new System.Drawing.Size(34, 13);
             this.AlturaDireccionPCC.TabIndex = 14;
             this.AlturaDireccionPCC.Text = "Altura";
             // 
             // txtCalleDireccionPCC
             // 
-            this.txtCalleDireccionPCC.Location = new System.Drawing.Point(16, 138);
-            this.txtCalleDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCalleDireccionPCC.Location = new System.Drawing.Point(266, 46);
             this.txtCalleDireccionPCC.Name = "txtCalleDireccionPCC";
-            this.txtCalleDireccionPCC.Size = new System.Drawing.Size(352, 26);
+            this.txtCalleDireccionPCC.Size = new System.Drawing.Size(236, 20);
             this.txtCalleDireccionPCC.TabIndex = 13;
+            this.txtCalleDireccionPCC.TextChanged += new System.EventHandler(this.txtCalleDireccionPCC_TextChanged);
             // 
             // lblCodigoPostalDireccionPCC
             // 
             this.lblCodigoPostalDireccionPCC.AutoSize = true;
-            this.lblCodigoPostalDireccionPCC.Location = new System.Drawing.Point(402, 46);
-            this.lblCodigoPostalDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigoPostalDireccionPCC.Location = new System.Drawing.Point(521, 30);
             this.lblCodigoPostalDireccionPCC.Name = "lblCodigoPostalDireccionPCC";
-            this.lblCodigoPostalDireccionPCC.Size = new System.Drawing.Size(107, 20);
+            this.lblCodigoPostalDireccionPCC.Size = new System.Drawing.Size(72, 13);
             this.lblCodigoPostalDireccionPCC.TabIndex = 12;
             this.lblCodigoPostalDireccionPCC.Text = "Codigo Postal";
             // 
             // txtCodigoPostalDireccionPCC
             // 
-            this.txtCodigoPostalDireccionPCC.Location = new System.Drawing.Point(398, 71);
-            this.txtCodigoPostalDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCodigoPostalDireccionPCC.Location = new System.Drawing.Point(518, 46);
             this.txtCodigoPostalDireccionPCC.Name = "txtCodigoPostalDireccionPCC";
-            this.txtCodigoPostalDireccionPCC.Size = new System.Drawing.Size(217, 26);
+            this.txtCodigoPostalDireccionPCC.Size = new System.Drawing.Size(146, 20);
             this.txtCodigoPostalDireccionPCC.TabIndex = 11;
             // 
             // lblCalleDireccionPCC
             // 
             this.lblCalleDireccionPCC.AutoSize = true;
-            this.lblCalleDireccionPCC.Location = new System.Drawing.Point(20, 114);
-            this.lblCalleDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCalleDireccionPCC.Location = new System.Drawing.Point(268, 30);
             this.lblCalleDireccionPCC.Name = "lblCalleDireccionPCC";
-            this.lblCalleDireccionPCC.Size = new System.Drawing.Size(44, 20);
+            this.lblCalleDireccionPCC.Size = new System.Drawing.Size(30, 13);
             this.lblCalleDireccionPCC.TabIndex = 10;
             this.lblCalleDireccionPCC.Text = "Calle";
+            this.lblCalleDireccionPCC.Click += new System.EventHandler(this.lblCalleDireccionPCC_Click);
             // 
             // txtCiudadDireccionPCC
             // 
-            this.txtCiudadDireccionPCC.Location = new System.Drawing.Point(15, 71);
-            this.txtCiudadDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCiudadDireccionPCC.Location = new System.Drawing.Point(10, 46);
             this.txtCiudadDireccionPCC.Name = "txtCiudadDireccionPCC";
-            this.txtCiudadDireccionPCC.Size = new System.Drawing.Size(354, 26);
+            this.txtCiudadDireccionPCC.Size = new System.Drawing.Size(237, 20);
             this.txtCiudadDireccionPCC.TabIndex = 9;
             // 
             // lblCiudadDireccionPCC
             // 
             this.lblCiudadDireccionPCC.AutoSize = true;
-            this.lblCiudadDireccionPCC.Location = new System.Drawing.Point(16, 46);
-            this.lblCiudadDireccionPCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCiudadDireccionPCC.Location = new System.Drawing.Point(11, 30);
             this.lblCiudadDireccionPCC.Name = "lblCiudadDireccionPCC";
-            this.lblCiudadDireccionPCC.Size = new System.Drawing.Size(59, 20);
+            this.lblCiudadDireccionPCC.Size = new System.Drawing.Size(40, 13);
             this.lblCiudadDireccionPCC.TabIndex = 8;
             this.lblCiudadDireccionPCC.Text = "Ciudad";
             // 
             // grbBultoCC
             // 
+            this.grbBultoCC.Controls.Add(this.button1);
+            this.grbBultoCC.Controls.Add(this.textBox2);
+            this.grbBultoCC.Controls.Add(this.textBox1);
+            this.grbBultoCC.Controls.Add(this.label3);
+            this.grbBultoCC.Controls.Add(this.label2);
             this.grbBultoCC.Controls.Add(this.cbTamañoVulto);
             this.grbBultoCC.Controls.Add(this.lbTamañoBulto);
-            this.grbBultoCC.Location = new System.Drawing.Point(726, 1012);
-            this.grbBultoCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbBultoCC.Location = new System.Drawing.Point(478, 620);
             this.grbBultoCC.Name = "grbBultoCC";
-            this.grbBultoCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbBultoCC.Size = new System.Drawing.Size(644, 131);
+            this.grbBultoCC.Size = new System.Drawing.Size(429, 117);
             this.grbBultoCC.TabIndex = 29;
             this.grbBultoCC.TabStop = false;
             this.grbBultoCC.Text = "Datos del bulto";
@@ -623,46 +483,147 @@
             // cbTamañoVulto
             // 
             this.cbTamañoVulto.FormattingEnabled = true;
-            this.cbTamañoVulto.Location = new System.Drawing.Point(16, 71);
-            this.cbTamañoVulto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbTamañoVulto.Location = new System.Drawing.Point(317, 46);
             this.cbTamañoVulto.Name = "cbTamañoVulto";
-            this.cbTamañoVulto.Size = new System.Drawing.Size(602, 28);
+            this.cbTamañoVulto.Size = new System.Drawing.Size(97, 21);
             this.cbTamañoVulto.TabIndex = 10;
             // 
             // lbTamañoBulto
             // 
             this.lbTamañoBulto.AutoSize = true;
-            this.lbTamañoBulto.Location = new System.Drawing.Point(16, 46);
-            this.lbTamañoBulto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTamañoBulto.Location = new System.Drawing.Point(321, 30);
             this.lbTamañoBulto.Name = "lbTamañoBulto";
-            this.lbTamañoBulto.Size = new System.Drawing.Size(131, 20);
+            this.lbTamañoBulto.Size = new System.Drawing.Size(89, 13);
             this.lbTamañoBulto.TabIndex = 8;
             this.lbTamañoBulto.Text = "Tamaño del bulto";
             // 
             // btnAceptarImpoCC
             // 
-            this.btnAceptarImpoCC.Location = new System.Drawing.Point(1208, 1246);
-            this.btnAceptarImpoCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAceptarImpoCC.Location = new System.Drawing.Point(805, 810);
             this.btnAceptarImpoCC.Name = "btnAceptarImpoCC";
-            this.btnAceptarImpoCC.Size = new System.Drawing.Size(164, 35);
+            this.btnAceptarImpoCC.Size = new System.Drawing.Size(109, 23);
             this.btnAceptarImpoCC.TabIndex = 30;
             this.btnAceptarImpoCC.Text = "Aceptar";
             this.btnAceptarImpoCC.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Córdoba",
+            "Tucuman"});
+            this.comboBox1.Location = new System.Drawing.Point(14, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(873, 21);
+            this.comboBox1.TabIndex = 31;
+            // 
+            // rbParticular
+            // 
+            this.rbParticular.AutoSize = true;
+            this.rbParticular.Location = new System.Drawing.Point(763, 85);
+            this.rbParticular.Name = "rbParticular";
+            this.rbParticular.Size = new System.Drawing.Size(116, 17);
+            this.rbParticular.TabIndex = 2;
+            this.rbParticular.TabStop = true;
+            this.rbParticular.Text = "Direccion particular";
+            this.rbParticular.UseVisualStyleBackColor = true;
+            // 
+            // rbAgecnia
+            // 
+            this.rbAgecnia.AutoSize = true;
+            this.rbAgecnia.Location = new System.Drawing.Point(17, 85);
+            this.rbAgecnia.Name = "rbAgecnia";
+            this.rbAgecnia.Size = new System.Drawing.Size(64, 17);
+            this.rbAgecnia.TabIndex = 1;
+            this.rbAgecnia.TabStop = true;
+            this.rbAgecnia.Text = "Agencia";
+            this.rbAgecnia.UseVisualStyleBackColor = true;
+            // 
+            // rbCC
+            // 
+            this.rbCC.AutoSize = true;
+            this.rbCC.Location = new System.Drawing.Point(412, 85);
+            this.rbCC.Name = "rbCC";
+            this.rbCC.Size = new System.Drawing.Size(127, 17);
+            this.rbCC.TabIndex = 0;
+            this.rbCC.TabStop = true;
+            this.rbCC.Text = "Centro de distribucion";
+            this.rbCC.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Córdoba",
+            "Tucuman"});
+            this.comboBox2.Location = new System.Drawing.Point(14, 137);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(873, 21);
+            this.comboBox2.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Agencia";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(112, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Cantidad de bultos:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(219, 46);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(85, 20);
+            this.textBox2.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(216, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Bulto Nro:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(219, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Siguiente bulto";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ImposicionEnCallCenter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 1321);
+            this.ClientSize = new System.Drawing.Size(916, 749);
             this.Controls.Add(this.btnAceptarImpoCC);
             this.Controls.Add(this.grbBultoCC);
             this.Controls.Add(this.grbParticularCC);
-            this.Controls.Add(this.grbAgenciaCC);
-            this.Controls.Add(this.grbDatosDestinoCC);
             this.Controls.Add(this.grbCentroDistribucionCC);
             this.Controls.Add(this.grbDatosDestinatarioCC);
             this.Controls.Add(this.grbDatosRetiroCC);
             this.Controls.Add(this.grbClienteCC);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ImposicionEnCallCenter";
             this.Text = "Imposicion En Call Center";
             this.grbClienteCC.ResumeLayout(false);
@@ -673,10 +634,6 @@
             this.grbDatosDestinatarioCC.PerformLayout();
             this.grbCentroDistribucionCC.ResumeLayout(false);
             this.grbCentroDistribucionCC.PerformLayout();
-            this.grbDatosDestinoCC.ResumeLayout(false);
-            this.grbDatosDestinoCC.PerformLayout();
-            this.grbAgenciaCC.ResumeLayout(false);
-            this.grbAgenciaCC.PerformLayout();
             this.grbParticularCC.ResumeLayout(false);
             this.grbParticularCC.PerformLayout();
             this.grbBultoCC.ResumeLayout(false);
@@ -715,17 +672,7 @@
         private System.Windows.Forms.Label lbNombreDestinatarioCC;
         private System.Windows.Forms.Label lblFechaRetiroCC;
         private System.Windows.Forms.GroupBox grbCentroDistribucionCC;
-        private System.Windows.Forms.TextBox txtCentroDistribucionLocalidadCC;
         private System.Windows.Forms.Label lbCentroDistribucionLocalidadCC;
-        private System.Windows.Forms.GroupBox grbDatosDestinoCC;
-        private System.Windows.Forms.RadioButton rbParticular;
-        private System.Windows.Forms.RadioButton rbCC;
-        private System.Windows.Forms.RadioButton rbAgecnia;
-        private System.Windows.Forms.GroupBox grbAgenciaCC;
-        private System.Windows.Forms.ComboBox cbAgenciasCC;
-        private System.Windows.Forms.Label lbAgenciaCC;
-        private System.Windows.Forms.TextBox txtLocalidadAgencia;
-        private System.Windows.Forms.Label lbLocalidadAgencia;
         private System.Windows.Forms.GroupBox grbParticularCC;
         private System.Windows.Forms.TextBox txtPisoDireccionPCC;
         private System.Windows.Forms.Label lblPisoDireccionPCC;
@@ -741,5 +688,16 @@
         private System.Windows.Forms.ComboBox cbTamañoVulto;
         private System.Windows.Forms.Label lbTamañoBulto;
         private System.Windows.Forms.Button btnAceptarImpoCC;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rbParticular;
+        private System.Windows.Forms.RadioButton rbCC;
+        private System.Windows.Forms.RadioButton rbAgecnia;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
     }
 }

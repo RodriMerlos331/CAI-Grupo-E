@@ -219,7 +219,7 @@
             this.groupBox5.Size = new System.Drawing.Size(460, 85);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Datos de centro de distribucion";
+            this.groupBox5.Text = "s";
             // 
             // textBox6
             // 

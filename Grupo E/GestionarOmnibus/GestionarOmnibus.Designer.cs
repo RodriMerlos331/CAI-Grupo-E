@@ -42,7 +42,6 @@ partial class Form1
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.listView5 = new System.Windows.Forms.ListView();
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -86,11 +85,9 @@ partial class Form1
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(20, 22);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(15, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1172, 111);
+            this.groupBox1.Size = new System.Drawing.Size(879, 90);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búscar Omnibus";
@@ -98,20 +95,18 @@ partial class Form1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(920, 45);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(690, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 28);
+            this.button2.Size = new System.Drawing.Size(178, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Limpiar filtro";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(654, 45);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(490, 37);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(258, 28);
+            this.button1.Size = new System.Drawing.Size(194, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
@@ -119,35 +114,30 @@ partial class Form1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 48);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(10, 39);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(633, 22);
+            this.textBox1.Size = new System.Drawing.Size(476, 20);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(7, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 16);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Patente";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.listView5);
             this.groupBox2.Controls.Add(this.listView1);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(20, 150);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(15, 122);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1172, 251);
+            this.groupBox2.Size = new System.Drawing.Size(879, 204);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rendición - Recepcion de Encomiendas";
@@ -155,29 +145,17 @@ partial class Form1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(636, 31);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(477, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(233, 16);
+            this.label7.Size = new System.Drawing.Size(185, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Encomiendas Recepcionadas en CD:";
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(-3, 207);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(298, 24);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Cancelar";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(294, 207);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(6, 168);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(282, 24);
+            this.button3.Size = new System.Drawing.Size(212, 20);
             this.button3.TabIndex = 8;
             this.button3.Text = "Cumplir";
             this.button3.UseVisualStyleBackColor = true;
@@ -189,10 +167,9 @@ partial class Form1
             this.columnHeader22,
             this.columnHeader25});
             this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(639, 63);
-            this.listView5.Margin = new System.Windows.Forms.Padding(4);
+            this.listView5.Location = new System.Drawing.Point(479, 51);
             this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(519, 123);
+            this.listView5.Size = new System.Drawing.Size(390, 101);
             this.listView5.TabIndex = 14;
             this.listView5.UseCompatibleStateImageBehavior = false;
             this.listView5.View = System.Windows.Forms.View.Details;
@@ -230,10 +207,9 @@ partial class Form1
             listViewItem1,
             listViewItem2,
             listViewItem3});
-            this.listView1.Location = new System.Drawing.Point(8, 63);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
+            this.listView1.Location = new System.Drawing.Point(6, 51);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(568, 123);
+            this.listView1.Size = new System.Drawing.Size(430, 101);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -271,10 +247,9 @@ partial class Form1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 31);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(7, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(390, 16);
+            this.label2.Size = new System.Drawing.Size(308, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Hojas de ruta asignadas, seleccione la HDR que desea cumplir:";
             // 
@@ -287,21 +262,18 @@ partial class Form1
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.listView3);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(20, 423);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Location = new System.Drawing.Point(15, 344);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(1170, 258);
+            this.groupBox3.Size = new System.Drawing.Size(878, 210);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Generación HDR - Despacho de Encomiendas";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(5, 212);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(4, 172);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(290, 23);
+            this.button5.Size = new System.Drawing.Size(218, 19);
             this.button5.TabIndex = 12;
             this.button5.Text = "Generar hoja de ruta";
             this.button5.UseVisualStyleBackColor = true;
@@ -309,19 +281,17 @@ partial class Form1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(623, 40);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(467, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(229, 16);
+            this.label6.Size = new System.Drawing.Size(184, 13);
             this.label6.TabIndex = 3;
             this.label6.Text = "Resumen de Guias Incluidas en HDR";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(303, 212);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(227, 172);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(260, 23);
+            this.button4.Size = new System.Drawing.Size(195, 19);
             this.button4.TabIndex = 11;
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = true;
@@ -341,10 +311,9 @@ partial class Form1
             listViewItem5,
             listViewItem6,
             listViewItem7});
-            this.listView4.Location = new System.Drawing.Point(626, 63);
-            this.listView4.Margin = new System.Windows.Forms.Padding(4);
+            this.listView4.Location = new System.Drawing.Point(470, 51);
             this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(519, 128);
+            this.listView4.Size = new System.Drawing.Size(390, 105);
             this.listView4.TabIndex = 2;
             this.listView4.UseCompatibleStateImageBehavior = false;
             this.listView4.View = System.Windows.Forms.View.Details;
@@ -373,10 +342,9 @@ partial class Form1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 31);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(6, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 16);
+            this.label4.Size = new System.Drawing.Size(123, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Hoja de Ruta Generada:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -390,10 +358,9 @@ partial class Form1
             this.columnHeader11,
             this.columnHeader12});
             this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(8, 63);
-            this.listView3.Margin = new System.Windows.Forms.Padding(4);
+            this.listView3.Location = new System.Drawing.Point(6, 51);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(555, 128);
+            this.listView3.Size = new System.Drawing.Size(417, 105);
             this.listView3.TabIndex = 0;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.Details;
@@ -426,10 +393,9 @@ partial class Form1
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1032, 689);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(774, 560);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(157, 26);
+            this.button7.Size = new System.Drawing.Size(118, 21);
             this.button7.TabIndex = 14;
             this.button7.Text = "Cancelar";
             this.button7.UseVisualStyleBackColor = true;
@@ -437,10 +403,9 @@ partial class Form1
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(882, 689);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Location = new System.Drawing.Point(662, 560);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(142, 26);
+            this.button8.Size = new System.Drawing.Size(106, 21);
             this.button8.TabIndex = 13;
             this.button8.Text = "Aceptar";
             this.button8.UseVisualStyleBackColor = true;
@@ -449,23 +414,23 @@ partial class Form1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 869);
+            this.label3.Location = new System.Drawing.Point(181, 706);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 15;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 741);
+            this.ClientSize = new System.Drawing.Size(902, 602);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Gestionar Transporte Media Distancia";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -504,7 +469,6 @@ partial class Form1
     private System.Windows.Forms.ColumnHeader columnHeader8;
     private System.Windows.Forms.ColumnHeader columnHeader9;
     private System.Windows.Forms.ColumnHeader columnHeader10;
-    private System.Windows.Forms.Button button6;
     private System.Windows.Forms.ColumnHeader columnHeader12;
     private System.Windows.Forms.ColumnHeader columnHeader14;
     private System.Windows.Forms.ColumnHeader columnHeader17;
