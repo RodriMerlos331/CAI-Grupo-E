@@ -120,10 +120,10 @@
             this.rbNoCumplida.AutoSize = true;
             this.rbNoCumplida.Location = new System.Drawing.Point(245, 79);
             this.rbNoCumplida.Name = "rbNoCumplida";
-            this.rbNoCumplida.Size = new System.Drawing.Size(84, 17);
+            this.rbNoCumplida.Size = new System.Drawing.Size(77, 17);
             this.rbNoCumplida.TabIndex = 13;
             this.rbNoCumplida.TabStop = true;
-            this.rbNoCumplida.Text = "No cumplida";
+            this.rbNoCumplida.Text = "No retirada";
             this.rbNoCumplida.UseVisualStyleBackColor = true;
             // 
             // rbCumplida
@@ -131,10 +131,10 @@
             this.rbCumplida.AutoSize = true;
             this.rbCumplida.Location = new System.Drawing.Point(28, 79);
             this.rbCumplida.Name = "rbCumplida";
-            this.rbCumplida.Size = new System.Drawing.Size(68, 17);
+            this.rbCumplida.Size = new System.Drawing.Size(65, 17);
             this.rbCumplida.TabIndex = 12;
             this.rbCumplida.TabStop = true;
-            this.rbCumplida.Text = "Cumplida";
+            this.rbCumplida.Text = "Retirada";
             this.rbCumplida.UseVisualStyleBackColor = true;
             // 
             // lbIDHDR
