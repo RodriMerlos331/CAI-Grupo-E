@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Grupo_E.GenerarHDR
+namespace Grupo_E.ImposicionEnCallCenter
 {
-    public partial class GenerarHDRForm : Form
+    public partial class ImposicionEnCallCenter : Form
     {
-        public GenerarHDRForm()
+        public ImposicionEnCallCenter()
         {
             InitializeComponent();
         }
+
+        
     }
 }

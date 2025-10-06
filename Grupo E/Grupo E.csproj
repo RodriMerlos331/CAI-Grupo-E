@@ -76,11 +76,11 @@
     <Compile Include="GeneracionDeFacturas\GeneracionDeFacturas.Designer.cs">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generar HDR - Fletero\GenerarHDRForm.cs">
+    <Compile Include="GeneracionRendicionHDRFletero\GeneracionRendicionHDR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Generar HDR - Fletero\GenerarHDRForm.Designer.cs">
-      <DependentUpon>GenerarHDRForm.cs</DependentUpon>
+    <Compile Include="GeneracionRendicionHDRFletero\GeneracionRendicionHDR.Designer.cs">
+      <DependentUpon>GeneracionRendicionHDR.cs</DependentUpon>
     </Compile>
     <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.cs">
       <SubType>Form</SubType>
@@ -88,11 +88,11 @@
     <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.Designer.cs">
       <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.cs">
+    <Compile Include="ImposicionEnCallCenter\ImposicionEnCallCenter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImposicionEnCallCenter\ImposicionCCForm.Designer.cs">
-      <DependentUpon>ImposicionCCForm.cs</DependentUpon>
+    <Compile Include="ImposicionEnCallCenter\ImposicionEnCallCenter.Designer.cs">
+      <DependentUpon>ImposicionEnCallCenter.cs</DependentUpon>
     </Compile>
     <Compile Include="ImposicionEnCD\ImposicionCD.cs">
       <SubType>Form</SubType>
@@ -158,14 +158,14 @@
     <EmbeddedResource Include="GeneracionDeFacturas\GeneracionDeFacturas.resx">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Generar HDR - Fletero\GenerarHDRForm.resx">
-      <DependentUpon>GenerarHDRForm.cs</DependentUpon>
+    <EmbeddedResource Include="GeneracionRendicionHDRFletero\GeneracionRendicionHDR.resx">
+      <DependentUpon>GeneracionRendicionHDR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImposicionEnAgencia\ImposicionEnAgencia.resx">
       <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImposicionEnCallCenter\ImposicionCCForm.resx">
-      <DependentUpon>ImposicionCCForm.cs</DependentUpon>
+    <EmbeddedResource Include="ImposicionEnCallCenter\ImposicionEnCallCenter.resx">
+      <DependentUpon>ImposicionEnCallCenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImposicionEnCD\ImposicionCD.resx">
       <DependentUpon>ImposicionCD.cs</DependentUpon>

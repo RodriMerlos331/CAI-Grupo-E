@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblFechaInicio = new System.Windows.Forms.Label();
@@ -48,20 +47,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(4, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(893, 30);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Costos vs Ventas";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCUIT
             // 
@@ -244,6 +233,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado";
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(4, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(893, 30);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Costos vs Ventas";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormResultadoCostoVsVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -270,8 +270,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblCUIT;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblFechaInicio;
@@ -291,6 +289,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
 
