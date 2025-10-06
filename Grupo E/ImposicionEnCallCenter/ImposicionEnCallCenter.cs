@@ -16,5 +16,7 @@ namespace Grupo_E.ImposicionEnCallCenter
         {
             InitializeComponent();
         }
+
+        
     }
 }
