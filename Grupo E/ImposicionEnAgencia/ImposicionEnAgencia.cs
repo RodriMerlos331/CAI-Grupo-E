@@ -46,5 +46,15 @@ namespace Grupo_E.ImposicionEnAgencia
         {
 
         }
+
+        private void grbCC_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAceptarImpoAgencia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
