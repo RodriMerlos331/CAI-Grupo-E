@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.RendicionHDRFletero
 {
-    public partial class RendicionHDRForm : Form
+    public partial class RendicionGeneracionHDRFletero : Form
     {
-        public RendicionHDRForm()
+        public RendicionGeneracionHDRFletero()
         {
             InitializeComponent();
         }
