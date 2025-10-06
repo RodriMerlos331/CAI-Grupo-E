@@ -28,57 +28,53 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("12345678");
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("33454356");
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("12765489");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("87654328");
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("8857512");
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("235644");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("4645433");
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("4466644");
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("35674443");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("12345678");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("33454356");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("12765489");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("897640");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("640935");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("009008");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("565491");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.listView5 = new System.Windows.Forms.ListView();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.listView4 = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.listView3 = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -94,7 +90,7 @@ partial class Form1
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1114, 111);
+            this.groupBox1.Size = new System.Drawing.Size(1172, 111);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búscar Omnibus";
@@ -102,20 +98,20 @@ partial class Form1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(892, 45);
+            this.button2.Location = new System.Drawing.Point(920, 45);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 28);
+            this.button2.Size = new System.Drawing.Size(238, 28);
             this.button2.TabIndex = 3;
             this.button2.Text = "Limpiar filtro";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(639, 45);
+            this.button1.Location = new System.Drawing.Point(654, 45);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(245, 28);
+            this.button1.Size = new System.Drawing.Size(258, 28);
             this.button1.TabIndex = 2;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
@@ -126,7 +122,7 @@ partial class Form1
             this.textBox1.Location = new System.Drawing.Point(13, 48);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(618, 22);
+            this.textBox1.Size = new System.Drawing.Size(633, 22);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -141,126 +137,103 @@ partial class Form1
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.listView2);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.listView5);
             this.groupBox2.Controls.Add(this.listView1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(20, 150);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(562, 708);
+            this.groupBox2.Size = new System.Drawing.Size(1172, 251);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Rendición";
+            this.groupBox2.Text = "Rendición - Recepcion de Encomiendas";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(636, 31);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(233, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Encomiendas Recepcionadas en CD:";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(13, 340);
+            this.button6.Location = new System.Drawing.Point(-3, 207);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(256, 37);
+            this.button6.Size = new System.Drawing.Size(298, 24);
             this.button6.TabIndex = 13;
             this.button6.Text = "Cancelar";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader15,
-            this.columnHeader20,
-            this.columnHeader21});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(16, 456);
-            this.listView2.Margin = new System.Windows.Forms.Padding(4);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(535, 233);
-            this.listView2.TabIndex = 10;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "ID HDR";
-            this.columnHeader2.Width = 91;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Fecha de Emision";
-            this.columnHeader3.Width = 122;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Entrega/Retiro";
-            this.columnHeader15.Width = 111;
-            // 
-            // columnHeader20
-            // 
-            this.columnHeader20.Text = "Direccion";
-            this.columnHeader20.Width = 83;
-            // 
-            // columnHeader21
-            // 
-            this.columnHeader21.Text = "Cantidad Encomiendas";
-            this.columnHeader21.Width = 155;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 424);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "HDR No Cumplidas:";
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(277, 340);
+            this.button3.Location = new System.Drawing.Point(294, 207);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(274, 37);
+            this.button3.Size = new System.Drawing.Size(282, 24);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Cumplida";
+            this.button3.Text = "Cumplir";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // listView5
+            // 
+            this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader22,
+            this.columnHeader25});
+            this.listView5.HideSelection = false;
+            this.listView5.Location = new System.Drawing.Point(639, 63);
+            this.listView5.Margin = new System.Windows.Forms.Padding(4);
+            this.listView5.Name = "listView5";
+            this.listView5.Size = new System.Drawing.Size(519, 123);
+            this.listView5.TabIndex = 14;
+            this.listView5.UseCompatibleStateImageBehavior = false;
+            this.listView5.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "ID HDR";
+            this.columnHeader13.Width = 93;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Numero de Tracking";
+            this.columnHeader22.Width = 211;
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Text = "Tipo de Bulto";
+            this.columnHeader25.Width = 155;
             // 
             // listView1
             // 
             this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
+            this.columnHeader3,
             this.columnHeader19,
-            this.columnHeader16,
             this.columnHeader17,
+            this.columnHeader2,
             this.columnHeader18});
             this.listView1.HideSelection = false;
-            listViewItem19.StateImageIndex = 0;
-            listViewItem20.StateImageIndex = 0;
-            listViewItem21.StateImageIndex = 0;
-            listViewItem22.StateImageIndex = 0;
-            listViewItem23.StateImageIndex = 0;
-            listViewItem24.StateImageIndex = 0;
-            listViewItem25.StateImageIndex = 0;
-            listViewItem26.StateImageIndex = 0;
-            listViewItem27.StateImageIndex = 0;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25,
-            listViewItem26,
-            listViewItem27});
-            this.listView1.Location = new System.Drawing.Point(15, 63);
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
+            this.listView1.Location = new System.Drawing.Point(8, 63);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(536, 269);
+            this.listView1.Size = new System.Drawing.Size(568, 123);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -268,22 +241,27 @@ partial class Form1
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID HDR";
-            this.columnHeader1.Width = 91;
+            this.columnHeader1.Width = 94;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "DNI Chofer";
+            this.columnHeader3.Width = 84;
             // 
             // columnHeader19
             // 
             this.columnHeader19.Text = "Fecha Emision";
-            this.columnHeader19.Width = 106;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Entrega/Retiro";
-            this.columnHeader16.Width = 102;
+            this.columnHeader19.Width = 101;
             // 
             // columnHeader17
             // 
-            this.columnHeader17.Text = "Direccion";
-            this.columnHeader17.Width = 70;
+            this.columnHeader17.Text = "Origen";
+            this.columnHeader17.Width = 52;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Destino";
+            this.columnHeader2.Width = 63;
             // 
             // columnHeader18
             // 
@@ -296,34 +274,34 @@ partial class Form1
             this.label2.Location = new System.Drawing.Point(9, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 16);
+            this.label2.Size = new System.Drawing.Size(390, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Hojas de ruta asignadas:";
+            this.label2.Text = "Hojas de ruta asignadas, seleccione la HDR que desea cumplir:";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.listView4);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.listView3);
-            this.groupBox3.Location = new System.Drawing.Point(607, 150);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(20, 423);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(527, 708);
+            this.groupBox3.Size = new System.Drawing.Size(1170, 258);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Generación HDR";
+            this.groupBox3.Text = "Generación HDR - Despacho de Encomiendas";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(11, 340);
+            this.button5.Location = new System.Drawing.Point(5, 212);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(259, 37);
+            this.button5.Size = new System.Drawing.Size(290, 23);
             this.button5.TabIndex = 12;
             this.button5.Text = "Generar hoja de ruta";
             this.button5.UseVisualStyleBackColor = true;
@@ -331,29 +309,19 @@ partial class Form1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 424);
+            this.label6.Location = new System.Drawing.Point(623, 40);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 16);
+            this.label6.Size = new System.Drawing.Size(229, 16);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Guias Incluidas en HDR";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 424);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 16);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Guias Incluidas en HDR";
+            this.label6.Text = "Resumen de Guias Incluidas en HDR";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(278, 340);
+            this.button4.Location = new System.Drawing.Point(303, 212);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(235, 37);
+            this.button4.Size = new System.Drawing.Size(260, 23);
             this.button4.TabIndex = 11;
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = true;
@@ -364,13 +332,19 @@ partial class Form1
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11});
+            this.columnHeader10});
             this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(11, 456);
+            listViewItem4.Checked = true;
+            listViewItem4.StateImageIndex = 1;
+            this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7});
+            this.listView4.Location = new System.Drawing.Point(626, 63);
             this.listView4.Margin = new System.Windows.Forms.Padding(4);
             this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(473, 233);
+            this.listView4.Size = new System.Drawing.Size(519, 128);
             this.listView4.TabIndex = 2;
             this.listView4.UseCompatibleStateImageBehavior = false;
             this.listView4.View = System.Windows.Forms.View.Details;
@@ -379,27 +353,22 @@ partial class Form1
             // columnHeader7
             // 
             this.columnHeader7.Text = "ID Tracking";
-            this.columnHeader7.Width = 87;
+            this.columnHeader7.Width = 109;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Tipo de bulto";
-            this.columnHeader8.Width = 114;
+            this.columnHeader8.Width = 152;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Origen";
-            this.columnHeader9.Width = 96;
+            this.columnHeader9.Width = 134;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Destino";
-            this.columnHeader10.Width = 81;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Destinatario";
-            this.columnHeader11.Width = 87;
+            this.columnHeader10.Width = 104;
             // 
             // label4
             // 
@@ -418,13 +387,13 @@ partial class Form1
             this.columnHeader4,
             this.columnHeader14,
             this.columnHeader5,
-            this.columnHeader6,
+            this.columnHeader11,
             this.columnHeader12});
             this.listView3.HideSelection = false;
             this.listView3.Location = new System.Drawing.Point(8, 63);
             this.listView3.Margin = new System.Windows.Forms.Padding(4);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(505, 269);
+            this.listView3.Size = new System.Drawing.Size(555, 128);
             this.listView3.TabIndex = 0;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.Details;
@@ -433,53 +402,64 @@ partial class Form1
             // columnHeader4
             // 
             this.columnHeader4.Text = "ID HDR";
-            this.columnHeader4.Width = 58;
+            this.columnHeader4.Width = 71;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Fecha de Emision";
-            this.columnHeader14.Width = 120;
+            this.columnHeader14.Width = 139;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Entrega/Retiro";
-            this.columnHeader5.Width = 100;
+            this.columnHeader5.Text = "Origen";
+            this.columnHeader5.Width = 79;
             // 
-            // columnHeader6
+            // columnHeader11
             // 
-            this.columnHeader6.Text = "Dirección";
-            this.columnHeader6.Width = 72;
+            this.columnHeader11.Text = "Destino";
+            this.columnHeader11.Width = 94;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Cantidad Encomiendas";
-            this.columnHeader12.Width = 178;
+            this.columnHeader12.Width = 157;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(824, 869);
+            this.button7.Location = new System.Drawing.Point(1032, 689);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(157, 37);
+            this.button7.Size = new System.Drawing.Size(157, 26);
             this.button7.TabIndex = 14;
             this.button7.Text = "Cancelar";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(1001, 869);
+            this.button8.Location = new System.Drawing.Point(882, 689);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(133, 37);
+            this.button8.Size = new System.Drawing.Size(142, 26);
             this.button8.TabIndex = 13;
             this.button8.Text = "Aceptar";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(241, 869);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.TabIndex = 15;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 919);
+            this.ClientSize = new System.Drawing.Size(1202, 741);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button8);
@@ -487,7 +467,8 @@ partial class Form1
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Gestionar Hoja de Ruta Media Distancia";
+            this.Text = "Gestionar Transporte Media Distancia";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -495,6 +476,7 @@ partial class Form1
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
     }
 
@@ -511,35 +493,33 @@ partial class Form1
     private System.Windows.Forms.Button button3;
     private System.Windows.Forms.ListView listView1;
     private System.Windows.Forms.ColumnHeader columnHeader1;
-    private System.Windows.Forms.ListView listView2;
-    private System.Windows.Forms.ColumnHeader columnHeader2;
-    private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.ColumnHeader columnHeader3;
     private System.Windows.Forms.ListView listView3;
     private System.Windows.Forms.ColumnHeader columnHeader4;
     private System.Windows.Forms.ColumnHeader columnHeader5;
     private System.Windows.Forms.ListView listView4;
     private System.Windows.Forms.ColumnHeader columnHeader7;
     private System.Windows.Forms.Label label4;
-    private System.Windows.Forms.ColumnHeader columnHeader6;
-    private System.Windows.Forms.Label label5;
     private System.Windows.Forms.Button button4;
     private System.Windows.Forms.Button button5;
     private System.Windows.Forms.ColumnHeader columnHeader8;
     private System.Windows.Forms.ColumnHeader columnHeader9;
     private System.Windows.Forms.ColumnHeader columnHeader10;
-    private System.Windows.Forms.ColumnHeader columnHeader11;
     private System.Windows.Forms.Button button6;
     private System.Windows.Forms.ColumnHeader columnHeader12;
     private System.Windows.Forms.ColumnHeader columnHeader14;
-    private System.Windows.Forms.ColumnHeader columnHeader15;
-    private System.Windows.Forms.ColumnHeader columnHeader16;
     private System.Windows.Forms.ColumnHeader columnHeader17;
     private System.Windows.Forms.ColumnHeader columnHeader18;
     private System.Windows.Forms.ColumnHeader columnHeader19;
     private System.Windows.Forms.Label label6;
-    private System.Windows.Forms.ColumnHeader columnHeader20;
-    private System.Windows.Forms.ColumnHeader columnHeader21;
     private System.Windows.Forms.Button button7;
     private System.Windows.Forms.Button button8;
-} }
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListView listView5;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader25;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+    } }
