@@ -479,7 +479,7 @@
             this.Controls.Add(this.grbDatosDestino);
             this.Controls.Add(this.grbDatosDestinatario);
             this.Name = "ImposicionEnAgencia";
-            this.Text = " ";
+            this.Text = " Imposicion en Agencia";
             this.Load += new System.EventHandler(this.ImposicionEnAgencia_Load);
             this.grbParticular.ResumeLayout(false);
             this.grbParticular.PerformLayout();
