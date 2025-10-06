@@ -231,7 +231,7 @@
             this.grbAgencia.Size = new System.Drawing.Size(460, 85);
             this.grbAgencia.TabIndex = 30;
             this.grbAgencia.TabStop = false;
-            this.grbAgencia.Text = "Datos de Agencia";
+            this.grbAgencia.Text = "Agencia";
             // 
             // cbAgencias
             // 
@@ -244,11 +244,11 @@
             // lbAgencia
             // 
             this.lbAgencia.AutoSize = true;
-            this.lbAgencia.Location = new System.Drawing.Point(11, 30);
+            this.lbAgencia.Location = new System.Drawing.Point(8, 25);
             this.lbAgencia.Name = "lbAgencia";
-            this.lbAgencia.Size = new System.Drawing.Size(46, 13);
+            this.lbAgencia.Size = new System.Drawing.Size(166, 13);
             this.lbAgencia.TabIndex = 10;
-            this.lbAgencia.Text = "Agencia";
+            this.lbAgencia.Text = "Agencias disponibles en localidad";
             // 
             // grbCC
             // 
@@ -275,16 +275,16 @@
             this.lbLocalidad.AutoSize = true;
             this.lbLocalidad.Location = new System.Drawing.Point(11, 30);
             this.lbLocalidad.Name = "lbLocalidad";
-            this.lbLocalidad.Size = new System.Drawing.Size(53, 13);
+            this.lbLocalidad.Size = new System.Drawing.Size(117, 13);
             this.lbLocalidad.TabIndex = 8;
-            this.lbLocalidad.Text = "Localidad";
+            this.lbLocalidad.Text = "Centros de distribución:";
             // 
             // grbDatosDestino
             // 
             this.grbDatosDestino.Controls.Add(this.rbParticular);
             this.grbDatosDestino.Controls.Add(this.rbCC);
             this.grbDatosDestino.Controls.Add(this.rbAgecnia);
-            this.grbDatosDestino.Location = new System.Drawing.Point(487, 101);
+            this.grbDatosDestino.Location = new System.Drawing.Point(493, 101);
             this.grbDatosDestino.Name = "grbDatosDestino";
             this.grbDatosDestino.Size = new System.Drawing.Size(431, 85);
             this.grbDatosDestino.TabIndex = 27;
@@ -294,7 +294,7 @@
             // rbParticular
             // 
             this.rbParticular.AutoSize = true;
-            this.rbParticular.Location = new System.Drawing.Point(15, 62);
+            this.rbParticular.Location = new System.Drawing.Point(15, 50);
             this.rbParticular.Name = "rbParticular";
             this.rbParticular.Size = new System.Drawing.Size(116, 17);
             this.rbParticular.TabIndex = 2;
@@ -351,9 +351,9 @@
             this.lbCuitDestinatario.AutoSize = true;
             this.lbCuitDestinatario.Location = new System.Drawing.Point(7, 104);
             this.lbCuitDestinatario.Name = "lbCuitDestinatario";
-            this.lbCuitDestinatario.Size = new System.Drawing.Size(32, 13);
+            this.lbCuitDestinatario.Size = new System.Drawing.Size(26, 13);
             this.lbCuitDestinatario.TabIndex = 4;
-            this.lbCuitDestinatario.Text = "CUIT";
+            this.lbCuitDestinatario.Text = "DNI";
             // 
             // txtApellidoDestinatario
             // 
@@ -465,15 +465,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 761);
+            this.ClientSize = new System.Drawing.Size(928, 749);
             this.Controls.Add(this.grbBultoCC);
+            this.Controls.Add(this.grbDatosDestino);
             this.Controls.Add(this.btnCancelarImpoAgencia);
             this.Controls.Add(this.btnAceptarImpoAgencia);
             this.Controls.Add(this.grbParticular);
             this.Controls.Add(this.grbCliente);
             this.Controls.Add(this.grbAgencia);
             this.Controls.Add(this.grbCC);
-            this.Controls.Add(this.grbDatosDestino);
             this.Controls.Add(this.grbDatosDestinatario);
             this.Name = "ImposicionCD";
             this.Text = "Atención al cliente";
