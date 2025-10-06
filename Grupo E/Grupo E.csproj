@@ -70,12 +70,6 @@
     <Compile Include="GeneracionDeFacturas\GeneracionDeFacturas.Designer.cs">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeneracionRendicionHDRFletero\GeneracionRendicionHDR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GeneracionRendicionHDRFletero\GeneracionRendicionHDR.Designer.cs">
-      <DependentUpon>GeneracionRendicionHDR.cs</DependentUpon>
-    </Compile>
     <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +96,11 @@
     <Compile Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.Designer.cs">
       <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RendicionHDRFletero\RendicionHDRForm.cs">
+    <Compile Include="RendicionGeneracionHDRFletero\RendicionGeneracionHDRFletero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RendicionHDRFletero\RendicionHDRForm.Designer.cs">
-      <DependentUpon>RendicionHDRForm.cs</DependentUpon>
+    <Compile Include="RendicionGeneracionHDRFletero\RendicionGeneracionHDRFletero.Designer.cs">
+      <DependentUpon>RendicionGeneracionHDRFletero.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionarTransporteMediaDistancia\GestionarHDRMediaDistancia.cs">
       <SubType>Form</SubType>
@@ -143,9 +137,6 @@
     <EmbeddedResource Include="GeneracionDeFacturas\GeneracionDeFacturas.resx">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeneracionRendicionHDRFletero\GeneracionRendicionHDR.resx">
-      <DependentUpon>GeneracionRendicionHDR.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ImposicionEnAgencia\ImposicionEnAgencia.resx">
       <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,8 +149,8 @@
     <EmbeddedResource Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.resx">
       <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RendicionHDRFletero\RendicionHDRForm.resx">
-      <DependentUpon>RendicionHDRForm.cs</DependentUpon>
+    <EmbeddedResource Include="RendicionGeneracionHDRFletero\RendicionGeneracionHDRFletero.resx">
+      <DependentUpon>RendicionGeneracionHDRFletero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarTransporteMediaDistancia\GestionarHDRMediaDistancia.resx">
       <DependentUpon>GestionarHDRMediaDistancia.cs</DependentUpon>
