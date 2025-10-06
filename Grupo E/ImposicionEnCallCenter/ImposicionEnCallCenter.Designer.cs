@@ -56,6 +56,12 @@
             this.txtNombreDestinatarioCC = new System.Windows.Forms.TextBox();
             this.lbNombreDestinatarioCC = new System.Windows.Forms.Label();
             this.grbCentroDistribucionCC = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rbParticular = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rbCC = new System.Windows.Forms.RadioButton();
+            this.rbAgecnia = new System.Windows.Forms.RadioButton();
             this.lbCentroDistribucionLocalidadCC = new System.Windows.Forms.Label();
             this.grbParticularCC = new System.Windows.Forms.GroupBox();
             this.txtPisoDireccionPCC = new System.Windows.Forms.TextBox();
@@ -69,20 +75,14 @@
             this.txtCiudadDireccionPCC = new System.Windows.Forms.TextBox();
             this.lblCiudadDireccionPCC = new System.Windows.Forms.Label();
             this.grbBultoCC = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbTamañoVulto = new System.Windows.Forms.ComboBox();
             this.lbTamañoBulto = new System.Windows.Forms.Label();
             this.btnAceptarImpoCC = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.rbParticular = new System.Windows.Forms.RadioButton();
-            this.rbAgecnia = new System.Windows.Forms.RadioButton();
-            this.rbCC = new System.Windows.Forms.RadioButton();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.grbClienteCC.SuspendLayout();
             this.grbDatosRetiroCC.SuspendLayout();
             this.grbDatosDestinatarioCC.SuspendLayout();
@@ -156,7 +156,7 @@
             // dtpFechaRetiroCC
             // 
             this.dtpFechaRetiroCC.Location = new System.Drawing.Point(474, 141);
-            this.dtpFechaRetiroCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaRetiroCC.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaRetiroCC.Name = "dtpFechaRetiroCC";
             this.dtpFechaRetiroCC.Size = new System.Drawing.Size(405, 20);
             this.dtpFechaRetiroCC.TabIndex = 22;
@@ -354,6 +354,70 @@
             this.grbCentroDistribucionCC.TabStop = false;
             this.grbCentroDistribucionCC.Text = "Datos de destino";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Córdoba",
+            "Tucuman"});
+            this.comboBox2.Location = new System.Drawing.Point(14, 137);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(873, 21);
+            this.comboBox2.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Agencia";
+            // 
+            // rbParticular
+            // 
+            this.rbParticular.AutoSize = true;
+            this.rbParticular.Location = new System.Drawing.Point(763, 85);
+            this.rbParticular.Name = "rbParticular";
+            this.rbParticular.Size = new System.Drawing.Size(116, 17);
+            this.rbParticular.TabIndex = 2;
+            this.rbParticular.TabStop = true;
+            this.rbParticular.Text = "Direccion particular";
+            this.rbParticular.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Córdoba",
+            "Tucuman"});
+            this.comboBox1.Location = new System.Drawing.Point(14, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(873, 21);
+            this.comboBox1.TabIndex = 31;
+            // 
+            // rbCC
+            // 
+            this.rbCC.AutoSize = true;
+            this.rbCC.Location = new System.Drawing.Point(412, 85);
+            this.rbCC.Name = "rbCC";
+            this.rbCC.Size = new System.Drawing.Size(127, 17);
+            this.rbCC.TabIndex = 0;
+            this.rbCC.TabStop = true;
+            this.rbCC.Text = "Centro de distribucion";
+            this.rbCC.UseVisualStyleBackColor = true;
+            // 
+            // rbAgecnia
+            // 
+            this.rbAgecnia.AutoSize = true;
+            this.rbAgecnia.Location = new System.Drawing.Point(17, 85);
+            this.rbAgecnia.Name = "rbAgecnia";
+            this.rbAgecnia.Size = new System.Drawing.Size(64, 17);
+            this.rbAgecnia.TabIndex = 1;
+            this.rbAgecnia.TabStop = true;
+            this.rbAgecnia.Text = "Agencia";
+            this.rbAgecnia.UseVisualStyleBackColor = true;
+            // 
             // lbCentroDistribucionLocalidadCC
             // 
             this.lbCentroDistribucionLocalidadCC.AutoSize = true;
@@ -480,6 +544,47 @@
             this.grbBultoCC.TabStop = false;
             this.grbBultoCC.Text = "Datos del bulto";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(219, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Siguiente bulto";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(219, 46);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(85, 20);
+            this.textBox2.TabIndex = 19;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(112, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(216, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Bulto Nro:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Cantidad de bultos:";
+            // 
             // cbTamañoVulto
             // 
             this.cbTamañoVulto.FormattingEnabled = true;
@@ -506,116 +611,11 @@
             this.btnAceptarImpoCC.Text = "Aceptar";
             this.btnAceptarImpoCC.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Córdoba",
-            "Tucuman"});
-            this.comboBox1.Location = new System.Drawing.Point(14, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(873, 21);
-            this.comboBox1.TabIndex = 31;
-            // 
-            // rbParticular
-            // 
-            this.rbParticular.AutoSize = true;
-            this.rbParticular.Location = new System.Drawing.Point(763, 85);
-            this.rbParticular.Name = "rbParticular";
-            this.rbParticular.Size = new System.Drawing.Size(116, 17);
-            this.rbParticular.TabIndex = 2;
-            this.rbParticular.TabStop = true;
-            this.rbParticular.Text = "Direccion particular";
-            this.rbParticular.UseVisualStyleBackColor = true;
-            // 
-            // rbAgecnia
-            // 
-            this.rbAgecnia.AutoSize = true;
-            this.rbAgecnia.Location = new System.Drawing.Point(17, 85);
-            this.rbAgecnia.Name = "rbAgecnia";
-            this.rbAgecnia.Size = new System.Drawing.Size(64, 17);
-            this.rbAgecnia.TabIndex = 1;
-            this.rbAgecnia.TabStop = true;
-            this.rbAgecnia.Text = "Agencia";
-            this.rbAgecnia.UseVisualStyleBackColor = true;
-            // 
-            // rbCC
-            // 
-            this.rbCC.AutoSize = true;
-            this.rbCC.Location = new System.Drawing.Point(412, 85);
-            this.rbCC.Name = "rbCC";
-            this.rbCC.Size = new System.Drawing.Size(127, 17);
-            this.rbCC.TabIndex = 0;
-            this.rbCC.TabStop = true;
-            this.rbCC.Text = "Centro de distribucion";
-            this.rbCC.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Córdoba",
-            "Tucuman"});
-            this.comboBox2.Location = new System.Drawing.Point(14, 137);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(873, 21);
-            this.comboBox2.TabIndex = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Agencia";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Cantidad de bultos:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(219, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(85, 20);
-            this.textBox2.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Bulto Nro:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(219, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Siguiente bulto";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // ImposicionEnCallCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 749);
+            this.ClientSize = new System.Drawing.Size(916, 846);
             this.Controls.Add(this.btnAceptarImpoCC);
             this.Controls.Add(this.grbBultoCC);
             this.Controls.Add(this.grbParticularCC);
@@ -623,7 +623,7 @@
             this.Controls.Add(this.grbDatosDestinatarioCC);
             this.Controls.Add(this.grbDatosRetiroCC);
             this.Controls.Add(this.grbClienteCC);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ImposicionEnCallCenter";
             this.Text = "Imposicion En Call Center";
             this.grbClienteCC.ResumeLayout(false);
