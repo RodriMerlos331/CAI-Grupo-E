@@ -9,5 +9,6 @@ namespace Grupo_E.GestionarFletero
     internal class Fletero
     {
         public int Dni { get; set; }
+
     }
 }

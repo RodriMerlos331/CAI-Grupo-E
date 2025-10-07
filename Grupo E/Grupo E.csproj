@@ -70,7 +70,7 @@
     <Compile Include="GeneracionDeFacturas\GeneracionDeFacturas.Designer.cs">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarFletero\AsignacionHDR.cs" />
+    <Compile Include="GestionarFletero\HDR.cs" />
     <Compile Include="GestionarFletero\Fletero.cs" />
     <Compile Include="GestionarFletero\GestionarFleteroModel.cs" />
     <Compile Include="GestionarFletero\Guia.cs" />
