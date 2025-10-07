@@ -163,6 +163,7 @@ partial class Form1
             this.label2.Size = new System.Drawing.Size(112, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Encomiendas: XX";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox3
             // 
