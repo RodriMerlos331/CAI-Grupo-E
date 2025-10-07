@@ -1,9 +1,9 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Grupo_E.RendicionHDRFletero
+namespace Grupo_E.GestionarFletero
 {
-    partial class GestionarFletero
+    partial class GestionarFleteroForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,10 @@ namespace Grupo_E.RendicionHDRFletero
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ColumnHeader HDRaRetirarCol;
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "1234",
             "Entrega"}, -1);
-            System.Windows.Forms.ColumnHeader HDRaRetirarCol;
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.LimpiarBtn = new System.Windows.Forms.Button();
             this.BuscarBtn = new System.Windows.Forms.Button();
@@ -74,6 +74,11 @@ namespace Grupo_E.RendicionHDRFletero
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // HDRaRetirarCol
+            // 
+            HDRaRetirarCol.Text = "Hoja de ruta";
+            HDRaRetirarCol.Width = 100;
             // 
             // groupBox2
             // 
@@ -149,7 +154,6 @@ namespace Grupo_E.RendicionHDRFletero
             this.GuiasRetiradasListView.TabIndex = 8;
             this.GuiasRetiradasListView.UseCompatibleStateImageBehavior = false;
             this.GuiasRetiradasListView.View = System.Windows.Forms.View.Details;
-            this.GuiasRetiradasListView.SelectedIndexChanged += new System.EventHandler(this.listView3_SelectedIndexChanged);
             // 
             // NroHDRRetiradasCol1
             // 
@@ -190,7 +194,6 @@ namespace Grupo_E.RendicionHDRFletero
             this.label4.Size = new System.Drawing.Size(124, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Guías retiradas a admitir:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -209,7 +212,6 @@ namespace Grupo_E.RendicionHDRFletero
             this.label2.Size = new System.Drawing.Size(203, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "HDR asignadas: Marque las completadas";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // HDRAsignadasListView
             // 
@@ -231,7 +233,6 @@ namespace Grupo_E.RendicionHDRFletero
             this.HDRAsignadasListView.TabIndex = 0;
             this.HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             this.HDRAsignadasListView.View = System.Windows.Forms.View.Details;
-            this.HDRAsignadasListView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // NroHDRCol1
             // 
@@ -333,11 +334,6 @@ namespace Grupo_E.RendicionHDRFletero
             this.GuiasRetirarListView.UseCompatibleStateImageBehavior = false;
             this.GuiasRetirarListView.View = System.Windows.Forms.View.Details;
             // 
-            // HDRaRetirarCol
-            // 
-            HDRaRetirarCol.Text = "Hoja de ruta";
-            HDRaRetirarCol.Width = 100;
-            // 
             // TrackingRetirarCol
             // 
             this.TrackingRetirarCol.Text = "Tracking";
@@ -391,7 +387,7 @@ namespace Grupo_E.RendicionHDRFletero
             this.label7.TabIndex = 4;
             this.label7.Text = "Nuevas HDR a entregar:";
             // 
-            // GestionarFletero
+            // GestionarFleteroModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -401,8 +397,9 @@ namespace Grupo_E.RendicionHDRFletero
             this.Controls.Add(this.AceptarBtn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Name = "GestionarFletero";
+            this.Name = "GestionarFleteroModel";
             this.Text = "RendicionHojasDeRuta";
+            this.Load += new System.EventHandler(this.GestionarFleteroForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
