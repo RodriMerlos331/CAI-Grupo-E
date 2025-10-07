@@ -44,11 +44,6 @@
             this.txtCiudadRetiroCC = new System.Windows.Forms.TextBox();
             this.lbCiudadRetiroCC = new System.Windows.Forms.Label();
             this.grbBultoCC = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.cbTamañoVulto = new System.Windows.Forms.ComboBox();
             this.lbTamañoBulto = new System.Windows.Forms.Label();
             this.btnCancelarImpoAgencia = new System.Windows.Forms.Button();
@@ -110,7 +105,7 @@
             this.grbDatosRetiroCC.Controls.Add(this.lbCalleRetiroCC);
             this.grbDatosRetiroCC.Controls.Add(this.txtCiudadRetiroCC);
             this.grbDatosRetiroCC.Controls.Add(this.lbCiudadRetiroCC);
-            this.grbDatosRetiroCC.Location = new System.Drawing.Point(6, 1078);
+            this.grbDatosRetiroCC.Location = new System.Drawing.Point(6, 1019);
             this.grbDatosRetiroCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbDatosRetiroCC.Name = "grbDatosRetiroCC";
             this.grbDatosRetiroCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -247,72 +242,21 @@
             // 
             // grbBultoCC
             // 
-            this.grbBultoCC.Controls.Add(this.button1);
-            this.grbBultoCC.Controls.Add(this.textBox2);
-            this.grbBultoCC.Controls.Add(this.textBox1);
-            this.grbBultoCC.Controls.Add(this.label3);
-            this.grbBultoCC.Controls.Add(this.label2);
             this.grbBultoCC.Controls.Add(this.cbTamañoVulto);
             this.grbBultoCC.Controls.Add(this.lbTamañoBulto);
             this.grbBultoCC.Location = new System.Drawing.Point(6, 889);
             this.grbBultoCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbBultoCC.Name = "grbBultoCC";
             this.grbBultoCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grbBultoCC.Size = new System.Drawing.Size(1359, 180);
+            this.grbBultoCC.Size = new System.Drawing.Size(1359, 120);
             this.grbBultoCC.TabIndex = 29;
             this.grbBultoCC.TabStop = false;
             this.grbBultoCC.Text = "Datos del bulto";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1054, 68);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(276, 35);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Siguiente bulto";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(358, 74);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 26);
-            this.textBox2.TabIndex = 19;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(18, 74);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 26);
-            this.textBox1.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(354, 49);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Bulto Nro:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 20);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Cantidad de bultos:";
-            // 
             // cbTamañoVulto
             // 
             this.cbTamañoVulto.FormattingEnabled = true;
-            this.cbTamañoVulto.Location = new System.Drawing.Point(682, 72);
+            this.cbTamañoVulto.Location = new System.Drawing.Point(8, 75);
             this.cbTamañoVulto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbTamañoVulto.Name = "cbTamañoVulto";
             this.cbTamañoVulto.Size = new System.Drawing.Size(272, 28);
@@ -321,7 +265,7 @@
             // lbTamañoBulto
             // 
             this.lbTamañoBulto.AutoSize = true;
-            this.lbTamañoBulto.Location = new System.Drawing.Point(681, 49);
+            this.lbTamañoBulto.Location = new System.Drawing.Point(16, 50);
             this.lbTamañoBulto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTamañoBulto.Name = "lbTamañoBulto";
             this.lbTamañoBulto.Size = new System.Drawing.Size(131, 20);
@@ -330,7 +274,7 @@
             // 
             // btnCancelarImpoAgencia
             // 
-            this.btnCancelarImpoAgencia.Location = new System.Drawing.Point(1202, 1371);
+            this.btnCancelarImpoAgencia.Location = new System.Drawing.Point(1201, 1312);
             this.btnCancelarImpoAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelarImpoAgencia.Name = "btnCancelarImpoAgencia";
             this.btnCancelarImpoAgencia.Size = new System.Drawing.Size(164, 35);
@@ -340,7 +284,7 @@
             // 
             // btnAceptarImpoAgencia
             // 
-            this.btnAceptarImpoAgencia.Location = new System.Drawing.Point(1011, 1371);
+            this.btnAceptarImpoAgencia.Location = new System.Drawing.Point(1007, 1312);
             this.btnAceptarImpoAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptarImpoAgencia.Name = "btnAceptarImpoAgencia";
             this.btnAceptarImpoAgencia.Size = new System.Drawing.Size(164, 35);
@@ -680,7 +624,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1396, 1423);
+            this.ClientSize = new System.Drawing.Size(1396, 1358);
             this.Controls.Add(this.btnCancelarImpoAgencia);
             this.Controls.Add(this.btnAceptarImpoAgencia);
             this.Controls.Add(this.grbParticular);
@@ -732,11 +676,6 @@
         private System.Windows.Forms.GroupBox grbBultoCC;
         private System.Windows.Forms.ComboBox cbTamañoVulto;
         private System.Windows.Forms.Label lbTamañoBulto;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelarImpoAgencia;
         private System.Windows.Forms.Button btnAceptarImpoAgencia;
         private System.Windows.Forms.GroupBox grbParticular;
