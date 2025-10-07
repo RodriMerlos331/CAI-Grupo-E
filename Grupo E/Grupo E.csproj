@@ -71,6 +71,10 @@
     <Compile Include="GeneracionDeFacturas\GeneracionDeFacturas.Designer.cs">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionarFletero\HDR.cs" />
+    <Compile Include="GestionarFletero\Fletero.cs" />
+    <Compile Include="GestionarFletero\GestionarFleteroModel.cs" />
+    <Compile Include="GestionarFletero\Guia.cs" />
     <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +107,11 @@
     <Compile Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.Designer.cs">
       <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarFletero\GestionarFletero.cs">
+    <Compile Include="GestionarFletero\GestionarFleteroForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionarFletero\GestionarFletero.Designer.cs">
-      <DependentUpon>GestionarFletero.cs</DependentUpon>
+    <Compile Include="GestionarFletero\GestionarFleteroForm.Designer.cs">
+      <DependentUpon>GestionarFleteroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionarOmnibus\GestionarOmnibus.cs">
       <SubType>Form</SubType>
@@ -159,8 +163,8 @@
     <EmbeddedResource Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.resx">
       <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionarFletero\GestionarFletero.resx">
-      <DependentUpon>GestionarFletero.cs</DependentUpon>
+    <EmbeddedResource Include="GestionarFletero\GestionarFleteroForm.resx">
+      <DependentUpon>GestionarFleteroForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarOmnibus\GestionarOmnibus.resx">
       <DependentUpon>GestionarOmnibus.cs</DependentUpon>

@@ -40,11 +40,12 @@
             this.colMesAnio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colVentas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCostos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colCostosVentas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblTotal = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.colCostosVentas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -160,12 +161,18 @@
             this.colCostos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colCostos.Width = 191;
             // 
+            // colCostosVentas
+            // 
+            this.colCostosVentas.Text = "Ventas - Costos";
+            this.colCostosVentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colCostosVentas.Width = 200;
+            // 
             // lblTotal
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 7.8F);
-            this.lblTotal.Location = new System.Drawing.Point(494, 482);
+            this.lblTotal.Location = new System.Drawing.Point(489, 480);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(134, 17);
             this.lblTotal.TabIndex = 9;
@@ -211,17 +218,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado";
             // 
-            // colCostosVentas
+            // button1
             // 
-            this.colCostosVentas.Text = "Ventas - Costos";
-            this.colCostosVentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colCostosVentas.Width = 200;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.button1.Location = new System.Drawing.Point(782, 520);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 25);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormResultadoCostoVsVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 518);
+            this.ClientSize = new System.Drawing.Size(885, 557);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox2);
@@ -260,6 +272,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ColumnHeader colCostosVentas;
+        private System.Windows.Forms.Button button1;
     }
 }
 
