@@ -52,6 +52,7 @@
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiendaModel.cs" />
+    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiendaRepoFake.cs" />
     <Compile Include="CostoVsVentas\CostosVsVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,12 @@
     </Compile>
     <Compile Include="ImposicionEnCD\ImposicionCD.Designer.cs">
       <DependentUpon>ImposicionCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipalForm.Designer.cs">
+      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImposicionEnCD\ImposicionCD.resx">
       <DependentUpon>ImposicionCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipalForm.resx">
+      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RendicionHDRAgencia\RendicionHDRAgenciaForm.resx">
       <DependentUpon>RendicionHDRAgenciaForm.cs</DependentUpon>

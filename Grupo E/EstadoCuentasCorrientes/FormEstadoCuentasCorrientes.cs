@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TUTASA.CuentasCorrientes
+namespace Grupo_E.EstadoCuentasCorrientes
 {
     public partial class FormEstadoCuentasCorrientes: Form
     {

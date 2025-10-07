@@ -1,6 +1,6 @@
 ﻿namespace Grupo_E.RetirarEnAgencia
 {
-    partial class RetirarenAgencia
+    partial class RetirarEnAgencia
     {
         /// <summary>
         /// Required designer variable.

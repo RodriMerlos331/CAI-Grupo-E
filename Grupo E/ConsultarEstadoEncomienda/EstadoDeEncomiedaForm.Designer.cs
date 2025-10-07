@@ -1,6 +1,8 @@
-﻿namespace Grupo_E.ConsultarEstadoEncomienda
+﻿using System;
+
+namespace Grupo_E.ConsultarEstadoEncomienda
 {
-    partial class EstadoDeEncomiedaForm
+    partial class EstadoDeEncomiendaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +33,13 @@
             this.grbBusquedaEncomienda = new System.Windows.Forms.GroupBox();
             this.lbTracking = new System.Windows.Forms.Label();
             this.btnEstadoBusqueda = new System.Windows.Forms.Button();
-            this.IdTrackertxt = new System.Windows.Forms.TextBox();
+            this.txtIdTracking = new System.Windows.Forms.TextBox();
             this.grbEstado = new System.Windows.Forms.GroupBox();
-            this.lbdescripcion3 = new System.Windows.Forms.Label();
+            this.lblUbicacionActual = new System.Windows.Forms.Label();
             this.EstadoLocalidadlbl = new System.Windows.Forms.Label();
-            this.lbdescripcion2 = new System.Windows.Forms.Label();
+            this.lblFechaUltimo = new System.Windows.Forms.Label();
             this.EstadoFechalbl = new System.Windows.Forms.Label();
-            this.lbdescripcion = new System.Windows.Forms.Label();
+            this.lblEstadoActual = new System.Windows.Forms.Label();
             this.Estadolbl = new System.Windows.Forms.Label();
             this.grbHistorial = new System.Windows.Forms.GroupBox();
             this.HistoriaEncomiendaList = new System.Windows.Forms.ListView();
@@ -50,8 +52,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.grbBusquedaEncomienda.SuspendLayout();
             this.grbEstado.SuspendLayout();
             this.grbHistorial.SuspendLayout();
@@ -61,10 +62,10 @@
             // 
             this.grbBusquedaEncomienda.Controls.Add(this.lbTracking);
             this.grbBusquedaEncomienda.Controls.Add(this.btnEstadoBusqueda);
-            this.grbBusquedaEncomienda.Controls.Add(this.IdTrackertxt);
-            this.grbBusquedaEncomienda.Location = new System.Drawing.Point(15, 21);
+            this.grbBusquedaEncomienda.Controls.Add(this.txtIdTracking);
+            this.grbBusquedaEncomienda.Location = new System.Drawing.Point(15, 24);
             this.grbBusquedaEncomienda.Name = "grbBusquedaEncomienda";
-            this.grbBusquedaEncomienda.Size = new System.Drawing.Size(991, 94);
+            this.grbBusquedaEncomienda.Size = new System.Drawing.Size(991, 91);
             this.grbBusquedaEncomienda.TabIndex = 0;
             this.grbBusquedaEncomienda.TabStop = false;
             this.grbBusquedaEncomienda.Text = "Búsqueda de encomienda";
@@ -74,9 +75,9 @@
             this.lbTracking.AutoSize = true;
             this.lbTracking.Location = new System.Drawing.Point(6, 22);
             this.lbTracking.Name = "lbTracking";
-            this.lbTracking.Size = new System.Drawing.Size(63, 13);
+            this.lbTracking.Size = new System.Drawing.Size(82, 13);
             this.lbTracking.TabIndex = 2;
-            this.lbTracking.Text = "ID Tracking";
+            this.lbTracking.Text = "Numero de guia";
             // 
             // btnEstadoBusqueda
             // 
@@ -88,20 +89,20 @@
             this.btnEstadoBusqueda.UseVisualStyleBackColor = true;
             this.btnEstadoBusqueda.Click += new System.EventHandler(this.btnEstadoBusqueda_Click);
             // 
-            // IdTrackertxt
+            // txtIdTracking
             // 
-            this.IdTrackertxt.Location = new System.Drawing.Point(6, 40);
-            this.IdTrackertxt.Name = "IdTrackertxt";
-            this.IdTrackertxt.Size = new System.Drawing.Size(857, 20);
-            this.IdTrackertxt.TabIndex = 0;
+            this.txtIdTracking.Location = new System.Drawing.Point(6, 40);
+            this.txtIdTracking.Name = "txtIdTracking";
+            this.txtIdTracking.Size = new System.Drawing.Size(857, 20);
+            this.txtIdTracking.TabIndex = 0;
             // 
             // grbEstado
             // 
-            this.grbEstado.Controls.Add(this.lbdescripcion3);
+            this.grbEstado.Controls.Add(this.lblUbicacionActual);
             this.grbEstado.Controls.Add(this.EstadoLocalidadlbl);
-            this.grbEstado.Controls.Add(this.lbdescripcion2);
+            this.grbEstado.Controls.Add(this.lblFechaUltimo);
             this.grbEstado.Controls.Add(this.EstadoFechalbl);
-            this.grbEstado.Controls.Add(this.lbdescripcion);
+            this.grbEstado.Controls.Add(this.lblEstadoActual);
             this.grbEstado.Controls.Add(this.Estadolbl);
             this.grbEstado.Location = new System.Drawing.Point(15, 121);
             this.grbEstado.Name = "grbEstado";
@@ -110,15 +111,15 @@
             this.grbEstado.TabStop = false;
             this.grbEstado.Text = "Estado";
             // 
-            // lbdescripcion3
+            // lblUbicacionActual
             // 
-            this.lbdescripcion3.AutoSize = true;
-            this.lbdescripcion3.Location = new System.Drawing.Point(862, 51);
-            this.lbdescripcion3.Name = "lbdescripcion3";
-            this.lbdescripcion3.Size = new System.Drawing.Size(70, 13);
-            this.lbdescripcion3.TabIndex = 5;
-            this.lbdescripcion3.Text = "XXXXXXXXX";
-            this.lbdescripcion3.Click += new System.EventHandler(this.label6_Click);
+            this.lblUbicacionActual.AutoSize = true;
+            this.lblUbicacionActual.Location = new System.Drawing.Point(862, 51);
+            this.lblUbicacionActual.Name = "lblUbicacionActual";
+            this.lblUbicacionActual.Size = new System.Drawing.Size(70, 13);
+            this.lblUbicacionActual.TabIndex = 5;
+            this.lblUbicacionActual.Text = "XXXXXXXXX";
+            this.lblUbicacionActual.Click += new System.EventHandler(this.label6_Click);
             // 
             // EstadoLocalidadlbl
             // 
@@ -129,14 +130,14 @@
             this.EstadoLocalidadlbl.TabIndex = 4;
             this.EstadoLocalidadlbl.Text = "Ubicacion actual:";
             // 
-            // lbdescripcion2
+            // lblFechaUltimo
             // 
-            this.lbdescripcion2.AutoSize = true;
-            this.lbdescripcion2.Location = new System.Drawing.Point(533, 52);
-            this.lbdescripcion2.Name = "lbdescripcion2";
-            this.lbdescripcion2.Size = new System.Drawing.Size(113, 13);
-            this.lbdescripcion2.TabIndex = 3;
-            this.lbdescripcion2.Text = "XX/XX/XXXX   XX:XX";
+            this.lblFechaUltimo.AutoSize = true;
+            this.lblFechaUltimo.Location = new System.Drawing.Point(533, 52);
+            this.lblFechaUltimo.Name = "lblFechaUltimo";
+            this.lblFechaUltimo.Size = new System.Drawing.Size(113, 13);
+            this.lblFechaUltimo.TabIndex = 3;
+            this.lblFechaUltimo.Text = "XX/XX/XXXX   XX:XX";
             // 
             // EstadoFechalbl
             // 
@@ -148,14 +149,14 @@
             this.EstadoFechalbl.Text = "Fecha / Hora del ultimo movimiento: ";
             this.EstadoFechalbl.Click += new System.EventHandler(this.EstadoFechalbl_Click);
             // 
-            // lbdescripcion
+            // lblEstadoActual
             // 
-            this.lbdescripcion.AutoSize = true;
-            this.lbdescripcion.Location = new System.Drawing.Point(116, 52);
-            this.lbdescripcion.Name = "lbdescripcion";
-            this.lbdescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lbdescripcion.TabIndex = 1;
-            this.lbdescripcion.Text = "XXXXXXXX";
+            this.lblEstadoActual.AutoSize = true;
+            this.lblEstadoActual.Location = new System.Drawing.Point(116, 52);
+            this.lblEstadoActual.Name = "lblEstadoActual";
+            this.lblEstadoActual.Size = new System.Drawing.Size(63, 13);
+            this.lblEstadoActual.TabIndex = 1;
+            this.lblEstadoActual.Text = "XXXXXXXX";
             // 
             // Estadolbl
             // 
@@ -189,9 +190,9 @@
             this.columnHeader9,
             this.columnHeader10});
             this.HistoriaEncomiendaList.HideSelection = false;
-            this.HistoriaEncomiendaList.Location = new System.Drawing.Point(9, 19);
+            this.HistoriaEncomiendaList.Location = new System.Drawing.Point(6, 19);
             this.HistoriaEncomiendaList.Name = "HistoriaEncomiendaList";
-            this.HistoriaEncomiendaList.Size = new System.Drawing.Size(970, 206);
+            this.HistoriaEncomiendaList.Size = new System.Drawing.Size(979, 206);
             this.HistoriaEncomiendaList.TabIndex = 0;
             this.HistoriaEncomiendaList.UseCompatibleStateImageBehavior = false;
             this.HistoriaEncomiendaList.View = System.Windows.Forms.View.Details;
@@ -242,35 +243,26 @@
             this.columnHeader10.Text = "Observaciones";
             this.columnHeader10.Width = 240;
             // 
-            // button1
+            // btnSalir
             // 
-            this.button1.Location = new System.Drawing.Point(880, 457);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalir.Location = new System.Drawing.Point(890, 457);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(116, 23);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(758, 457);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // EstadoDeEncomiedaForm
+            // EstadoDeEncomiendaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 491);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1028, 491);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grbHistorial);
             this.Controls.Add(this.grbEstado);
             this.Controls.Add(this.grbBusquedaEncomienda);
-            this.Name = "EstadoDeEncomiedaForm";
+            this.Name = "EstadoDeEncomiendaForm";
             this.Text = "Estado de Encomienda";
             this.grbBusquedaEncomienda.ResumeLayout(false);
             this.grbBusquedaEncomienda.PerformLayout();
@@ -281,17 +273,32 @@
 
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void HistoriaEncomiendaList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void EstadoFechalbl_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.GroupBox grbBusquedaEncomienda;
         private System.Windows.Forms.GroupBox grbEstado;
         private System.Windows.Forms.Button btnEstadoBusqueda;
-        private System.Windows.Forms.TextBox IdTrackertxt;
-        private System.Windows.Forms.Label lbdescripcion3;
+        private System.Windows.Forms.TextBox txtIdTracking;
+        private System.Windows.Forms.Label lblUbicacionActual;
         private System.Windows.Forms.Label EstadoLocalidadlbl;
-        private System.Windows.Forms.Label lbdescripcion2;
+        private System.Windows.Forms.Label lblFechaUltimo;
         private System.Windows.Forms.Label EstadoFechalbl;
-        private System.Windows.Forms.Label lbdescripcion;
+        private System.Windows.Forms.Label lblEstadoActual;
         private System.Windows.Forms.Label Estadolbl;
         private System.Windows.Forms.GroupBox grbHistorial;
         private System.Windows.Forms.ListView HistoriaEncomiendaList;
@@ -305,7 +312,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.Label lbTracking;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

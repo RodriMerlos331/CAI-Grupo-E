@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.RendicionHDRLargaDistancia
 {
-    public partial class Form1 : Form
+    public partial class GestionarOmnibus : Form
     {
-        public Form1()
+        public GestionarOmnibus()
         {
             InitializeComponent();
         }
