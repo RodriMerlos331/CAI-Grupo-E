@@ -36,10 +36,16 @@ namespace Grupo_E.RendicionHDRLargaDistancia
             datos = new List<ItemHDR>
         {
             new ItemHDR { IdHDR = 101, Patente = "AB123CD", NumeroGuia = "000145", TipoBulto = "M", Ubicacion = "Recepcion" },
-            new ItemHDR { IdHDR = 101, Patente = "AB123CD", NumeroGuia = "000146", TipoBulto = "XL", Ubicacion = "Recepcion" },
-            new ItemHDR { IdHDR = 202, Patente = "AB123CD", NumeroGuia = "000147", TipoBulto = "S", Ubicacion = "Despacho" },
-            new ItemHDR { IdHDR = 303, Patente = "XY789ZT", NumeroGuia = "000148", TipoBulto = "L", Ubicacion = "Despacho" },
-            new ItemHDR { IdHDR = 303, Patente = "XY789ZT", NumeroGuia = "000149", TipoBulto = "M", Ubicacion = "Recepcion" }
+            new ItemHDR { IdHDR = 102, Patente = "AB123CD", NumeroGuia = "000146", TipoBulto = "S", Ubicacion = "Recepcion" },
+            new ItemHDR { IdHDR = 103, Patente = "AB123CD", NumeroGuia = "000147", TipoBulto = "L", Ubicacion = "Recepcion" },
+            new ItemHDR { IdHDR = 104, Patente = "AB123CD", NumeroGuia = "000148", TipoBulto = "XL", Ubicacion = "Recepcion" },
+            new ItemHDR { IdHDR = 101, Patente = "AB123CD", NumeroGuia = "000150", TipoBulto = "XL", Ubicacion = "Despacho" },
+            new ItemHDR { IdHDR = 202, Patente = "AB123CD", NumeroGuia = "000151", TipoBulto = "S", Ubicacion = "Despacho" },
+            new ItemHDR { IdHDR = 303, Patente = "XY789ZT", NumeroGuia = "000160", TipoBulto = "L", Ubicacion = "Despacho" },
+            new ItemHDR { IdHDR = 303, Patente = "XY789ZT", NumeroGuia = "000180", TipoBulto = "M", Ubicacion = "Recepcion" }
+            new ItemHDR { IdHDR = 105, Patente = "AB456CD", NumeroGuia = "000208", TipoBulto = "XL", Ubicacion = "Recepcion" },
+            new ItemHDR { IdHDR = 105, Patente = "AB456CD", NumeroGuia = "000304", TipoBulto = "S", Ubicacion = "Recepcion" },
+            new ItemHDR { IdHDR = 106, Patente = "AB456CD", NumeroGuia = "000506", TipoBulto = "M", Ubicacion = "Despacho" },
 
         };
         }
@@ -65,7 +71,7 @@ namespace Grupo_E.RendicionHDRLargaDistancia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string patente = textBox1.Text?.Trim();
+            string patente = txtPatente.Text?.Trim();
             if (string.IsNullOrEmpty(patente))
             {
                 MessageBox.Show("Ingresá la patente.", "Patente requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -156,19 +162,77 @@ namespace Grupo_E.RendicionHDRLargaDistancia
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //Limpiar el textbox de patente
         {
+            // 1) Limpiar el textbox de patente
+            if (txtPatente != null)
+            {
+                txtPatente.Clear();
+                txtPatente.Focus();
+            }
 
+            // 2) Limpiar DataGridView si existen
+            try
+            {
+                if (listView5 != null)
+                    listView5.Clear();
+
+                if (listView1 != null)
+                    listView1.Clear();
+            }
+            catch { /* ignoro si no existen */ }
+
+            // 3) Limpiar ListView si los tenés (no tocar columnas)
+            try
+            {
+                if (listView5 != null)
+                    listView5.Items.Clear();
+
+                if (listView1 != null)
+                    listView1.Items.Clear();
+            }
+            catch { /* ignoro si no existen */ }
+
+            // 4) Resetear labels informativos (ajustá nombres si los tenés distintos)
+          
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) // btn de cancelar
         {
+            var msg = "¿Está seguro de que desea salir? Los cambios no se guardarán.";
+            var title = "Confirmar salida";
+            var result = MessageBox.Show(msg, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // cierra el form
+            }
+            // si el usuario responde No, no hace nada y vuelve a la pantalla
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //btn de aceptar
         {
+            // 1) Mensaje de confirmación
+            MessageBox.Show("Rendición registrada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // 2) Limpiar textbox de patente y poner foco
+            if (txtPatente != null)
+            {
+                txtPatente.Clear();
+                txtPatente.Focus();
+            }
+
+            //  Limpiar ListView (si los usás)
+            
+            try
+            {
+                if (listView5 != null) listView5.Items.Clear();
+                if (listView1 != null) listView1.Items.Clear();
+            }
+            catch { /* ignorar si no existen */ }
+
+            //  Resetear labels informativos (ajustá nombres si los tenés distintos)
+           
         }
     }
 }

@@ -31,7 +31,7 @@ partial class Form1
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPatente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listView5 = new System.Windows.Forms.ListView();
@@ -48,7 +48,7 @@ partial class Form1
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,7 +59,7 @@ partial class Form1
             // 
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtPatente);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(20, 22);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -93,13 +93,13 @@ partial class Form1
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtPatente
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 48);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtPatente.Location = new System.Drawing.Point(13, 48);
+            this.txtPatente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPatente.Name = "txtPatente";
+            this.txtPatente.Size = new System.Drawing.Size(233, 22);
+            this.txtPatente.TabIndex = 1;
             // 
             // label1
             // 
@@ -249,16 +249,16 @@ partial class Form1
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 15;
             // 
-            // button3
+            // btnAceptar
             // 
-            this.button3.Location = new System.Drawing.Point(20, 597);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(279, 36);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Aceptar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnAceptar.Location = new System.Drawing.Point(20, 597);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(279, 36);
+            this.btnAceptar.TabIndex = 19;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.button3_Click);
             // 
             // button6
             // 
@@ -276,7 +276,7 @@ partial class Form1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 642);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
@@ -303,7 +303,7 @@ partial class Form1
 
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.Button btnBuscar;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox txtPatente;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Button button2;
     private System.Windows.Forms.GroupBox groupBox2;
@@ -321,6 +321,6 @@ partial class Form1
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button button6;
     } }
