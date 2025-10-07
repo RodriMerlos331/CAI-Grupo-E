@@ -1,4 +1,4 @@
-﻿namespace TUTASA.CuentasCorrientes
+﻿namespace Grupo_E.CuentasCorrientes
 {
     partial class FormEstadoCuentasCorrientes
     {
