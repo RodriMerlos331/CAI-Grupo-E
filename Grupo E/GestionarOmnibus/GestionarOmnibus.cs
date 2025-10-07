@@ -42,7 +42,7 @@ namespace Grupo_E.RendicionHDRLargaDistancia
             new ItemHDR { IdHDR = 101, Patente = "AB123CD", NumeroGuia = "000150", TipoBulto = "XL", Ubicacion = "Despacho" },
             new ItemHDR { IdHDR = 202, Patente = "AB123CD", NumeroGuia = "000151", TipoBulto = "S", Ubicacion = "Despacho" },
             new ItemHDR { IdHDR = 303, Patente = "XY789ZT", NumeroGuia = "000160", TipoBulto = "L", Ubicacion = "Despacho" },
-            new ItemHDR { IdHDR = 303, Patente = "XY789ZT", NumeroGuia = "000180", TipoBulto = "M", Ubicacion = "Recepcion" }
+            new ItemHDR { IdHDR = 303, Patente = "XY789ZT", NumeroGuia = "000180", TipoBulto = "M", Ubicacion = "Recepcion" },
             new ItemHDR { IdHDR = 105, Patente = "AB456CD", NumeroGuia = "000208", TipoBulto = "XL", Ubicacion = "Recepcion" },
             new ItemHDR { IdHDR = 105, Patente = "AB456CD", NumeroGuia = "000304", TipoBulto = "S", Ubicacion = "Recepcion" },
             new ItemHDR { IdHDR = 106, Patente = "AB456CD", NumeroGuia = "000506", TipoBulto = "M", Ubicacion = "Despacho" },
@@ -88,6 +88,7 @@ namespace Grupo_E.RendicionHDRLargaDistancia
             // Cargar en grids (solo las 3 columnas requeridas)
             CargarGridSimple(listView5, recepcion);
             CargarGridSimple(listView1, despacho);
+            ActualizarContadores(); // 
 
 
 
@@ -125,6 +126,22 @@ namespace Grupo_E.RendicionHDRLargaDistancia
                 row.SubItems.Add(i.TipoBulto);
                 listView.Items.Add(row);
             }
+        }
+
+        private void ActualizarContadores()
+        {
+            int recepcionCount = 0;
+            int despachoCount = 0;
+
+            
+
+            // Si usás ListView (sobrescribe si ambos existen)
+            if (listView5 != null) recepcionCount = listView5.Items.Count;
+            if (listView1 != null) despachoCount = listView1.Items.Count;
+
+            // Actualizo labels (ajustá los nombres si son distintos)
+            label2.Text = $"Encomiendas: {recepcionCount}";
+            label4.Text = $"Encomiendas: {despachoCount}";
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -233,6 +250,11 @@ namespace Grupo_E.RendicionHDRLargaDistancia
 
             //  Resetear labels informativos (ajustá nombres si los tenés distintos)
            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
