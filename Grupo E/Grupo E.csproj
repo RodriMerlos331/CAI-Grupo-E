@@ -51,8 +51,10 @@
     <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.Designer.cs">
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomienda.cs" />
     <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiendaModel.cs" />
-    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiendaRepoFake.cs" />
+    <Compile Include="ConsultarEstadoEncomienda\EstadoEnvio.cs" />
+    <Compile Include="ConsultarEstadoEncomienda\Movimiento.cs" />
     <Compile Include="CostoVsVentas\CostosVsVentas.cs">
       <SubType>Form</SubType>
     </Compile>
