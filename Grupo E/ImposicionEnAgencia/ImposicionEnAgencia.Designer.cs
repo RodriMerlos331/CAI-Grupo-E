@@ -306,7 +306,6 @@
             this.Controls.Add(this.grbCC);
             this.Controls.Add(this.grbDatosDestinatario);
             this.Name = "ImposicionEnAgencia";
-            this.Text = " Imposicion en Agencia";
             this.Load += new System.EventHandler(this.ImposicionEnAgencia_Load);
             this.grbBultoCC.ResumeLayout(false);
             this.grbBultoCC.PerformLayout();
