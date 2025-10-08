@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Grupo_E.RendicionHDRAgencia
+namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
 {
-    public partial class RendicionHDRAgenciaForm : Form
+    public partial class EntregarYRecepcionarEncomiendaAgenciaForm : Form
     {
-        public RendicionHDRAgenciaForm()
+        public EntregarYRecepcionarEncomiendaAgenciaForm()
         {
             InitializeComponent();
         }
+
     }
 }
