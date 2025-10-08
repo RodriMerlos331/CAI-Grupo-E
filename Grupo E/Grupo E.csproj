@@ -123,12 +123,14 @@
     <Compile Include="GestionarOmnibus\GestionarOmnibus.Designer.cs">
       <DependentUpon>GestionarOmnibus.cs</DependentUpon>
     </Compile>
+    <Compile Include="RetirarEnAgencia\EncomiendaRA.cs" />
     <Compile Include="RetirarEnAgencia\RetirarenAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RetirarEnAgencia\RetirarenAgencia.Designer.cs">
       <DependentUpon>RetirarenAgencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="RetirarEnAgencia\RetirarEnAgenciaModelo.cs" />
     <Compile Include="RetirarEnCD\RetirarEnCD.cs">
       <SubType>Form</SubType>
     </Compile>
