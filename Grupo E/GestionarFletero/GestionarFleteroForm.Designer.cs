@@ -38,6 +38,7 @@ namespace Grupo_E.GestionarFletero
             this.label1 = new System.Windows.Forms.Label();
             this.DNIText = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.GuiasRetiradasListView = new System.Windows.Forms.ListView();
             this.NroHDRRetiradasCol1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrackingRetiroCol2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,6 +54,7 @@ namespace Grupo_E.GestionarFletero
             this.AceptarBtn = new System.Windows.Forms.Button();
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.HDRRetirarListViews = new System.Windows.Forms.ListView();
             this.HDRRetirarCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
@@ -128,6 +130,7 @@ namespace Grupo_E.GestionarFletero
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.GuiasRetiradasListView);
             this.groupBox3.Controls.Add(this.GuiasNoEntregadasListView);
             this.groupBox3.Controls.Add(this.label4);
@@ -136,10 +139,20 @@ namespace Grupo_E.GestionarFletero
             this.groupBox3.Controls.Add(this.HDRAsignadasListView);
             this.groupBox3.Location = new System.Drawing.Point(10, 106);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(740, 254);
+            this.groupBox3.Size = new System.Drawing.Size(740, 272);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rendición";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(19, 241);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(228, 21);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Actualizar HDR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GuiasRetiradasListView
             // 
@@ -171,7 +184,7 @@ namespace Grupo_E.GestionarFletero
             this.GuiasNoEntregadasListView.HideSelection = false;
             this.GuiasNoEntregadasListView.Location = new System.Drawing.Point(319, 54);
             this.GuiasNoEntregadasListView.Name = "GuiasNoEntregadasListView";
-            this.GuiasNoEntregadasListView.Size = new System.Drawing.Size(169, 181);
+            this.GuiasNoEntregadasListView.Size = new System.Drawing.Size(180, 181);
             this.GuiasNoEntregadasListView.TabIndex = 7;
             this.GuiasNoEntregadasListView.UseCompatibleStateImageBehavior = false;
             this.GuiasNoEntregadasListView.View = System.Windows.Forms.View.Details;
@@ -226,7 +239,6 @@ namespace Grupo_E.GestionarFletero
             this.HDRAsignadasListView.TabIndex = 0;
             this.HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             this.HDRAsignadasListView.View = System.Windows.Forms.View.Details;
-            this.HDRAsignadasListView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.HDRAsignadasListView_ItemChecked);
             // 
             // NroHDRCol1
             // 
@@ -239,24 +251,27 @@ namespace Grupo_E.GestionarFletero
             // 
             // AceptarBtn
             // 
-            this.AceptarBtn.Location = new System.Drawing.Point(502, 696);
+            this.AceptarBtn.Location = new System.Drawing.Point(587, 717);
             this.AceptarBtn.Name = "AceptarBtn";
             this.AceptarBtn.Size = new System.Drawing.Size(72, 20);
             this.AceptarBtn.TabIndex = 10;
             this.AceptarBtn.Text = "Aceptar";
             this.AceptarBtn.UseVisualStyleBackColor = true;
+            this.AceptarBtn.Click += new System.EventHandler(this.AceptarBtn_Click);
             // 
             // CancelarBtn
             // 
-            this.CancelarBtn.Location = new System.Drawing.Point(588, 696);
+            this.CancelarBtn.Location = new System.Drawing.Point(673, 717);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(72, 20);
             this.CancelarBtn.TabIndex = 11;
             this.CancelarBtn.Text = "Cancelar";
             this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.HDRRetirarListViews);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.HDREntregarListView);
@@ -267,17 +282,27 @@ namespace Grupo_E.GestionarFletero
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(12, 403);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(738, 287);
+            this.groupBox1.Size = new System.Drawing.Size(738, 296);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generación";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(15, 16);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(228, 21);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Generar nuevas HDR";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.GenerarNuevasBtn);
             // 
             // HDRRetirarListViews
             // 
             this.HDRRetirarListViews.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.HDRRetirarCol});
             this.HDRRetirarListViews.HideSelection = false;
-            this.HDRRetirarListViews.Location = new System.Drawing.Point(17, 185);
+            this.HDRRetirarListViews.Location = new System.Drawing.Point(15, 195);
             this.HDRRetirarListViews.Name = "HDRRetirarListViews";
             this.HDRRetirarListViews.Size = new System.Drawing.Size(183, 85);
             this.HDRRetirarListViews.TabIndex = 11;
@@ -292,7 +317,7 @@ namespace Grupo_E.GestionarFletero
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 156);
+            this.label8.Location = new System.Drawing.Point(12, 166);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 13);
             this.label8.TabIndex = 10;
@@ -303,7 +328,7 @@ namespace Grupo_E.GestionarFletero
             this.HDREntregarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.HDREntregarCol});
             this.HDREntregarListView.HideSelection = false;
-            this.HDREntregarListView.Location = new System.Drawing.Point(17, 55);
+            this.HDREntregarListView.Location = new System.Drawing.Point(15, 65);
             this.HDREntregarListView.Name = "HDREntregarListView";
             this.HDREntregarListView.Size = new System.Drawing.Size(183, 86);
             this.HDREntregarListView.TabIndex = 9;
@@ -375,7 +400,7 @@ namespace Grupo_E.GestionarFletero
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 30);
+            this.label7.Location = new System.Drawing.Point(12, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 13);
             this.label7.TabIndex = 4;
@@ -439,5 +464,7 @@ namespace Grupo_E.GestionarFletero
         private Label label5;
         private Label label6;
         private Label label7;
+        private Button button1;
+        private Button button2;
     }
 }

@@ -13,7 +13,7 @@ namespace Grupo_E.GestionarFletero
         public bool Cumplida { get; set; } = false;
 
         public int DniFleteroAsignado { get; set; }
-        public List<Guia> Guias { get; set; } = new List<Guia>();
+        public List<Guia> GuiasHDR { get; set; } = new List<Guia>();
 
 
     }

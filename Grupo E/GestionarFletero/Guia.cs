@@ -8,8 +8,8 @@ namespace Grupo_E.GestionarFletero
 {
     internal class Guia
     {
-        public int NroHDR {  get; set; }
+        public int NroHDRAsignada {  get; set; }
         public int Tracking {  get; set; }
-        //public string Estado { get; set; }
+        public string Estado { get; set; }
     }
 }

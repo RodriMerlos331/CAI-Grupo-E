@@ -22,85 +22,140 @@ namespace Grupo_E.GestionarFletero
 
         private void GestionarFleteroForm_Load(object sender, EventArgs e)
         {
+            modelo.CargarFleteros();
+            modelo.CargarHDR();
+
+
+
 
         }
 
+        int dniFleteroBuscar;
+
         private void BuscarBtn_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(DNIText.Text, out int dniFletero))
+            HDRAsignadasListView.Items.Clear();
+            if (string.IsNullOrWhiteSpace(DNIText.Text))
             {
-                MessageBox.Show("El DNI debe ser númerico");
+                MessageBox.Show("El campo DNI no puede estar vacío");
                 return;
-
+            }
+            if (!int.TryParse(DNIText.Text, out int dniFleteroBuscar))
+            {
+                MessageBox.Show("El campo DNI debe ser un número válido");
+                return;
             }
 
-            dniFleteroActual = dniFletero;
-            HDRAsignadasListView.Items.Clear();
-
-            var hdrAsignadas = modelo.ObtenerHDRAsignadas(dniFletero);
+            var hdrAsignadas = modelo.ObtenerHDRAsignadas(dniFleteroBuscar);
 
             foreach (var hdr in hdrAsignadas)
             {
                 var item = new ListViewItem(hdr.IdHDR.ToString());
                 item.SubItems.Add(hdr.Tipo);
-                item.Checked = hdr.Cumplida; 
+                item.Tag = hdr;
                 HDRAsignadasListView.Items.Add(item);
             }
+
+
+        }
+
+
+
+        //BOTON ACTUALIZAR HDR
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in HDRAsignadasListView.Items)
+            {
+                var hdr = item.Tag as HDR;
+                if (hdr == null)
+                    continue;
+
+                hdr.Cumplida = item.Checked;
+            }
+
+            modelo.ProcesarHDRsActualizadas();
+
+            MessageBox.Show("HDR actualizadas correctamente.");
+
+            foreach (var guia in modelo.guiasAAdmitir)
+            {
+                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
+                item.SubItems.Add(guia.Tracking.ToString());
+                GuiasRetiradasListView.Items.Add(item);
+            }
+
+            foreach (var guia in modelo.guiasADevolver)
+            {
+                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
+                item.SubItems.Add(guia.Tracking.ToString());
+                GuiasNoEntregadasListView.Items.Add(item);
+            }
+
+            
+
         }
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
         {
             HDRAsignadasListView.Items.Clear();
-
-        }
-
-        private void HDRAsignadasListView_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
-            if (e.Item != null)
-            {
-                int idHDR = int.Parse(e.Item.Text);
-                bool cumplida = e.Item.Checked;
-
-                // Actualizo estado en el modelo
-                modelo.ActualizarCumplimientoHDR(idHDR, cumplida);
-
-                // Refresco las listas de guías
-                ActualizarListasDeGuias();
-            }
-        }
-
-
-        private void ActualizarListasDeGuias()
-        {
+            GuiasEntregarListView.Items.Clear();
+            GuiasRetirarListView.Items.Clear();
             GuiasNoEntregadasListView.Items.Clear();
             GuiasRetiradasListView.Items.Clear();
-            var hdrsDelFletero = modelo.ObtenerHDRPorFletero(dniFleteroActual);
+            HDREntregarListView.Items.Clear();
+            HDRRetirarListViews.Items.Clear();
 
-            foreach (var hdr in hdrsDelFletero)
+        }
+        private void GenerarNuevasBtn(object sender, EventArgs e)
+        {
             {
-                // 🔹 Si es de entrega y no se cumplió → va a "No Entregadas"
-                if (hdr.Tipo == "Entrega" && !hdr.Cumplida)
+                modelo.GenerarNuevasHDRyGuias();
+
+                foreach (var hdr in modelo.NuevasHDRRetiro)
                 {
-                    foreach (var guia in hdr.Guias)
-                    {
-                        var item = new ListViewItem(hdr.IdHDR.ToString());
-                        item.SubItems.Add(guia.Tracking.ToString());
-                        GuiasNoEntregadasListView.Items.Add(item);
-                    }
+                    var item = new ListViewItem(hdr.IdHDR.ToString());
+                    item.SubItems.Add(hdr.Tipo);
+                    HDRRetirarListViews.Items.Add(item);
                 }
 
-                // 🔹 Si es de retiro y se cumplió → va a "Retiradas a admitir"
-                else if (hdr.Tipo == "Retiro" && hdr.Cumplida)
+                foreach (var hdr in modelo.NuevasHDREntrega)
                 {
-                    foreach (var guia in hdr.Guias)
-                    {
-                        var item = new ListViewItem(hdr.IdHDR.ToString());
-                        item.SubItems.Add(guia.Tracking.ToString());
-                        GuiasRetiradasListView.Items.Add(item);
-                    }
+                    var item = new ListViewItem(hdr.IdHDR.ToString());
+                    item.SubItems.Add(hdr.Tipo);
+                    HDREntregarListView.Items.Add(item);
+                }
+
+                foreach (var guia in modelo.NuevasGuiasRetiro)
+                {
+                    var item = new ListViewItem(guia.NroHDRAsignada.ToString());
+                    item.SubItems.Add(guia.Tracking.ToString());
+                    GuiasRetirarListView.Items.Add(item);
+                }
+
+                // Guías Entrega
+                foreach (var guia in modelo.NuevasGuiasEntrega)
+                {
+                    var item = new ListViewItem(guia.NroHDRAsignada.ToString());
+                    item.SubItems.Add(guia.Tracking.ToString());
+                    GuiasEntregarListView.Items.Add(item);
                 }
             }
+
         }
 
+        private void AceptarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
+
+
 }
+
