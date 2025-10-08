@@ -89,6 +89,7 @@
     <Compile Include="ImposicionEnCallCenter\ImposicionEnCallCenter.Designer.cs">
       <DependentUpon>ImposicionEnCallCenter.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImposicionEnCallCenter\ImposicionEnCallCenterModel.cs" />
     <Compile Include="ImposicionEnCD\ImposicionCD.cs">
       <SubType>Form</SubType>
     </Compile>
