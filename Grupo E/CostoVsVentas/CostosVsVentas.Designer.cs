@@ -159,7 +159,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.groupBox2.Location = new System.Drawing.Point(31, 88);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(540, 107);
+            this.groupBox2.Size = new System.Drawing.Size(540, 121);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado";
