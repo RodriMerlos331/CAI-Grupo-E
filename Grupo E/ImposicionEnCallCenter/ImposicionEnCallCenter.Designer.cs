@@ -60,7 +60,7 @@
             this.txtCiudadDestino = new System.Windows.Forms.TextBox();
             this.lbCiudadDestino = new System.Windows.Forms.Label();
             this.grbCliente = new System.Windows.Forms.GroupBox();
-            this.lbCUITCliente = new System.Windows.Forms.TextBox();
+            this.txtCUITClienteCC = new System.Windows.Forms.TextBox();
             this.lbCUITImpo = new System.Windows.Forms.Label();
             this.grbAgencia = new System.Windows.Forms.GroupBox();
             this.cbAgencias = new System.Windows.Forms.ComboBox();
@@ -405,7 +405,7 @@
             // 
             // grbCliente
             // 
-            this.grbCliente.Controls.Add(this.lbCUITCliente);
+            this.grbCliente.Controls.Add(this.txtCUITClienteCC);
             this.grbCliente.Controls.Add(this.lbCUITImpo);
             this.grbCliente.Location = new System.Drawing.Point(12, 18);
             this.grbCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -416,13 +416,14 @@
             this.grbCliente.TabStop = false;
             this.grbCliente.Text = "Cliente";
             // 
-            // lbCUITCliente
+            // txtCUITClienteCC
             // 
-            this.lbCUITCliente.Location = new System.Drawing.Point(68, 38);
-            this.lbCUITCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lbCUITCliente.Name = "lbCUITCliente";
-            this.lbCUITCliente.Size = new System.Drawing.Size(1272, 26);
-            this.lbCUITCliente.TabIndex = 1;
+            this.txtCUITClienteCC.Location = new System.Drawing.Point(68, 38);
+            this.txtCUITClienteCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCUITClienteCC.Name = "txtCUITClienteCC";
+            this.txtCUITClienteCC.Size = new System.Drawing.Size(1272, 26);
+            this.txtCUITClienteCC.TabIndex = 1;
+            this.txtCUITClienteCC.TextChanged += new System.EventHandler(this.lbCUITCliente_TextChanged);
             // 
             // lbCUITImpo
             // 
@@ -483,6 +484,15 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Buenos Aires (GBA)",
+            "CABA",
+            "Córdoba ",
+            "Tucumán ",
+            "Corrientes",
+            "Neuquén",
+            "Viedma",
+            ""});
             this.comboBox2.Location = new System.Drawing.Point(20, 71);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox2.Name = "comboBox2";
@@ -690,7 +700,7 @@
         private System.Windows.Forms.TextBox txtCiudadDestino;
         private System.Windows.Forms.Label lbCiudadDestino;
         private System.Windows.Forms.GroupBox grbCliente;
-        private System.Windows.Forms.TextBox lbCUITCliente;
+        private System.Windows.Forms.TextBox txtCUITClienteCC;
         private System.Windows.Forms.Label lbCUITImpo;
         private System.Windows.Forms.GroupBox grbAgencia;
         private System.Windows.Forms.ComboBox cbAgencias;
