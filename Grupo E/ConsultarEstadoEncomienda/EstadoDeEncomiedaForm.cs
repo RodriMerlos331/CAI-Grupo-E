@@ -12,7 +12,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 {
     public partial class EstadoDeEncomiendaForm : Form
     {
-        private readonly EstadoDeEncomiendaRepoFake _repo = new EstadoDeEncomiendaRepoFake();
+        private readonly EstadoDeEncomiendaModel modelo = new EstadoDeEncomiendaModel();
 
         public EstadoDeEncomiendaForm()
         {
@@ -60,23 +60,10 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 return;
             }
 
-            // 3. Validación: existencia
-            EstadoDeEncomiendaModel model;
-            if (!_repo.TryGet(trackingId, out model))
-            {
-                MessageBox.Show("El ID ingresado no fue encontrado", "Sin resultados",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarPantalla();
-                return;
-            }
-
-            // 7. Mostrar estado actual + fecha/hora + localidad
-            lblEstadoActual.Text = MapEstado(model.EstadoActual);
-            lblFechaUltimo.Text = model.FechaHoraUltimoCambio.ToString("dd/MM/yyyy HH:mm");
-            lblUbicacionActual.Text = model.LocalidadActual;
-
-            // 8. Mostrar historial
-            CargarHistorial(model);
+            //pedirle los datos al modelo
+            
+            //agarrar todo lo que viene del historial y pasarlo a la grilla
+           
         }
 
         private void LimpiarPantalla()
@@ -87,7 +74,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             HistoriaEncomiendaList.Items.Clear();
         }
 
-        private void CargarHistorial(EstadoDeEncomiendaModel model)
+        private void CargarHistorial(EstadoDeEncomienda model)
         {
             HistoriaEncomiendaList.Items.Clear();
 

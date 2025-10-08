@@ -8,11 +8,11 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 {
     internal class EstadoDeEncomiendaModel
     {
-            private readonly Dictionary<int, EstadoDeEncomiendaModel> _data =
-                new Dictionary<int, EstadoDeEncomiendaModel>
+            private readonly Dictionary<int, EstadoDeEncomienda> _data =
+                new Dictionary<int, EstadoDeEncomienda>
                 {
                 {
-                    1001, new EstadoDeEncomiendaModel
+                    1001, new EstadoDeEncomienda
                     {
                         TrackingId = 1001,
                         EstadoActual = EstadoEnvio.EnCaminoADestino,
@@ -57,7 +57,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                     }
                 },
                 {
-                    2002, new EstadoDeEncomiendaModel
+                    2002, new EstadoDeEncomienda
                     {
                         TrackingId = 2002,
                         EstadoActual = EstadoEnvio.Entregado,
@@ -92,7 +92,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 }
                 };
 
-            public bool TryGet(int trackingId, out EstadoDeEncomiendaModel model)
+            public bool TryGet(int trackingId, out EstadoDeEncomienda model)
             {
                 return _data.TryGetValue(trackingId, out model);
             }
