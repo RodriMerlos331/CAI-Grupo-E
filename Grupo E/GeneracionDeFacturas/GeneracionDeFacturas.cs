@@ -16,5 +16,10 @@ namespace Grupo_E.GeneracionDeFacturas
         {
             InitializeComponent();
         }
+
+        private void GeneracionDeFacturas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
