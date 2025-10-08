@@ -33,14 +33,14 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lvwCostoVsVentas = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colVentas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCostos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colEmpresa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colCostos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colVentas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +89,7 @@
             this.lvwCostoVsVentas.Location = new System.Drawing.Point(13, 29);
             this.lvwCostoVsVentas.MultiSelect = false;
             this.lvwCostoVsVentas.Name = "lvwCostoVsVentas";
-            this.lvwCostoVsVentas.Size = new System.Drawing.Size(515, 315);
+            this.lvwCostoVsVentas.Size = new System.Drawing.Size(515, 71);
             this.lvwCostoVsVentas.TabIndex = 8;
             this.lvwCostoVsVentas.UseCompatibleStateImageBehavior = false;
             this.lvwCostoVsVentas.View = System.Windows.Forms.View.Details;
@@ -99,11 +99,11 @@
             // 
             this.columnHeader1.Width = 1;
             // 
-            // colVentas
+            // colEmpresa
             // 
-            this.colVentas.Text = "Ventas";
-            this.colVentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colVentas.Width = 170;
+            this.colEmpresa.Text = "Empresa";
+            this.colEmpresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colEmpresa.Width = 170;
             // 
             // colCostos
             // 
@@ -111,11 +111,11 @@
             this.colCostos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colCostos.Width = 170;
             // 
-            // colEmpresa
+            // colVentas
             // 
-            this.colEmpresa.Text = "Empresa";
-            this.colEmpresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colEmpresa.Width = 170;
+            this.colVentas.Text = "Ventas";
+            this.colVentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colVentas.Width = 170;
             // 
             // groupBox1
             // 
@@ -133,26 +133,13 @@
             this.groupBox1.Text = "Filtros de Búsqueda";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox2
+            // comboBox1
             // 
-            this.groupBox2.Controls.Add(this.lvwCostoVsVentas);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 7.8F);
-            this.groupBox2.Location = new System.Drawing.Point(31, 88);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(540, 350);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Resultado";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F);
-            this.button1.Location = new System.Drawing.Point(489, 460);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 25);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(271, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(128, 25);
+            this.comboBox1.TabIndex = 5;
             // 
             // label1
             // 
@@ -166,19 +153,32 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // comboBox1
+            // groupBox2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(271, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 25);
-            this.comboBox1.TabIndex = 5;
+            this.groupBox2.Controls.Add(this.lvwCostoVsVentas);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.groupBox2.Location = new System.Drawing.Point(31, 88);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(540, 121);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Resultado";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.button1.Location = new System.Drawing.Point(489, 215);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 25);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormResultadoCostoVsVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 498);
+            this.ClientSize = new System.Drawing.Size(586, 253);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
