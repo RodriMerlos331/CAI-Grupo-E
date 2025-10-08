@@ -31,14 +31,6 @@
             this.btnCancelarImpoAgencia = new System.Windows.Forms.Button();
             this.btnAceptarImpoAgencia = new System.Windows.Forms.Button();
             this.grbParticular = new System.Windows.Forms.GroupBox();
-            this.txtDeptoDestino = new System.Windows.Forms.TextBox();
-            this.lbDepto = new System.Windows.Forms.Label();
-            this.txtAlturaDestino = new System.Windows.Forms.TextBox();
-            this.lbAltura = new System.Windows.Forms.Label();
-            this.txtCalleDestino = new System.Windows.Forms.TextBox();
-            this.lbCP = new System.Windows.Forms.Label();
-            this.txtCP = new System.Windows.Forms.TextBox();
-            this.lbCalle = new System.Windows.Forms.Label();
             this.txtCiudadDestino = new System.Windows.Forms.TextBox();
             this.lbCiudadDestino = new System.Windows.Forms.Label();
             this.grbCliente = new System.Windows.Forms.GroupBox();
@@ -55,18 +47,9 @@
             this.rbCC = new System.Windows.Forms.RadioButton();
             this.rbAgecnia = new System.Windows.Forms.RadioButton();
             this.grbDatosDestinatario = new System.Windows.Forms.GroupBox();
-            this.txtCuitDestinatario = new System.Windows.Forms.TextBox();
-            this.lbCuitDestinatario = new System.Windows.Forms.Label();
             this.txtApellidoDestinatario = new System.Windows.Forms.TextBox();
-            this.lbApellidoDestinatario = new System.Windows.Forms.Label();
-            this.txtNombreDestinatario = new System.Windows.Forms.TextBox();
             this.lbNombreDestinatario = new System.Windows.Forms.Label();
             this.grbBultoCC = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.cbTamañoVulto = new System.Windows.Forms.ComboBox();
             this.lbTamañoBulto = new System.Windows.Forms.Label();
             this.grbParticular.SuspendLayout();
@@ -80,7 +63,7 @@
             // 
             // btnCancelarImpoAgencia
             // 
-            this.btnCancelarImpoAgencia.Location = new System.Drawing.Point(809, 726);
+            this.btnCancelarImpoAgencia.Location = new System.Drawing.Point(797, 501);
             this.btnCancelarImpoAgencia.Name = "btnCancelarImpoAgencia";
             this.btnCancelarImpoAgencia.Size = new System.Drawing.Size(109, 23);
             this.btnCancelarImpoAgencia.TabIndex = 34;
@@ -89,7 +72,7 @@
             // 
             // btnAceptarImpoAgencia
             // 
-            this.btnAceptarImpoAgencia.Location = new System.Drawing.Point(694, 726);
+            this.btnAceptarImpoAgencia.Location = new System.Drawing.Point(682, 501);
             this.btnAceptarImpoAgencia.Name = "btnAceptarImpoAgencia";
             this.btnAceptarImpoAgencia.Size = new System.Drawing.Size(109, 23);
             this.btnAceptarImpoAgencia.TabIndex = 33;
@@ -98,92 +81,20 @@
             // 
             // grbParticular
             // 
-            this.grbParticular.Controls.Add(this.txtDeptoDestino);
-            this.grbParticular.Controls.Add(this.lbDepto);
-            this.grbParticular.Controls.Add(this.txtAlturaDestino);
-            this.grbParticular.Controls.Add(this.lbAltura);
-            this.grbParticular.Controls.Add(this.txtCalleDestino);
-            this.grbParticular.Controls.Add(this.lbCP);
-            this.grbParticular.Controls.Add(this.txtCP);
-            this.grbParticular.Controls.Add(this.lbCalle);
             this.grbParticular.Controls.Add(this.txtCiudadDestino);
             this.grbParticular.Controls.Add(this.lbCiudadDestino);
-            this.grbParticular.Location = new System.Drawing.Point(12, 455);
+            this.grbParticular.Location = new System.Drawing.Point(470, 283);
             this.grbParticular.Name = "grbParticular";
-            this.grbParticular.Size = new System.Drawing.Size(906, 125);
+            this.grbParticular.Size = new System.Drawing.Size(442, 108);
             this.grbParticular.TabIndex = 31;
             this.grbParticular.TabStop = false;
             this.grbParticular.Text = "Direccion particular";
             // 
-            // txtDeptoDestino
-            // 
-            this.txtDeptoDestino.Location = new System.Drawing.Point(7, 94);
-            this.txtDeptoDestino.Name = "txtDeptoDestino";
-            this.txtDeptoDestino.Size = new System.Drawing.Size(205, 20);
-            this.txtDeptoDestino.TabIndex = 17;
-            // 
-            // lbDepto
-            // 
-            this.lbDepto.AutoSize = true;
-            this.lbDepto.Location = new System.Drawing.Point(10, 78);
-            this.lbDepto.Name = "lbDepto";
-            this.lbDepto.Size = new System.Drawing.Size(105, 13);
-            this.lbDepto.TabIndex = 16;
-            this.lbDepto.Text = "Piso / Departamento";
-            // 
-            // txtAlturaDestino
-            // 
-            this.txtAlturaDestino.Location = new System.Drawing.Point(640, 46);
-            this.txtAlturaDestino.Name = "txtAlturaDestino";
-            this.txtAlturaDestino.Size = new System.Drawing.Size(186, 20);
-            this.txtAlturaDestino.TabIndex = 15;
-            // 
-            // lbAltura
-            // 
-            this.lbAltura.AutoSize = true;
-            this.lbAltura.Location = new System.Drawing.Point(646, 30);
-            this.lbAltura.Name = "lbAltura";
-            this.lbAltura.Size = new System.Drawing.Size(34, 13);
-            this.lbAltura.TabIndex = 14;
-            this.lbAltura.Text = "Altura";
-            // 
-            // txtCalleDestino
-            // 
-            this.txtCalleDestino.Location = new System.Drawing.Point(429, 46);
-            this.txtCalleDestino.Name = "txtCalleDestino";
-            this.txtCalleDestino.Size = new System.Drawing.Size(205, 20);
-            this.txtCalleDestino.TabIndex = 13;
-            // 
-            // lbCP
-            // 
-            this.lbCP.AutoSize = true;
-            this.lbCP.Location = new System.Drawing.Point(222, 32);
-            this.lbCP.Name = "lbCP";
-            this.lbCP.Size = new System.Drawing.Size(72, 13);
-            this.lbCP.TabIndex = 12;
-            this.lbCP.Text = "Codigo Postal";
-            // 
-            // txtCP
-            // 
-            this.txtCP.Location = new System.Drawing.Point(225, 46);
-            this.txtCP.Name = "txtCP";
-            this.txtCP.Size = new System.Drawing.Size(189, 20);
-            this.txtCP.TabIndex = 11;
-            // 
-            // lbCalle
-            // 
-            this.lbCalle.AutoSize = true;
-            this.lbCalle.Location = new System.Drawing.Point(430, 32);
-            this.lbCalle.Name = "lbCalle";
-            this.lbCalle.Size = new System.Drawing.Size(30, 13);
-            this.lbCalle.TabIndex = 10;
-            this.lbCalle.Text = "Calle";
-            // 
             // txtCiudadDestino
             // 
-            this.txtCiudadDestino.Location = new System.Drawing.Point(10, 46);
+            this.txtCiudadDestino.Location = new System.Drawing.Point(5, 51);
             this.txtCiudadDestino.Name = "txtCiudadDestino";
-            this.txtCiudadDestino.Size = new System.Drawing.Size(206, 20);
+            this.txtCiudadDestino.Size = new System.Drawing.Size(436, 20);
             this.txtCiudadDestino.TabIndex = 9;
             // 
             // lbCiudadDestino
@@ -191,9 +102,9 @@
             this.lbCiudadDestino.AutoSize = true;
             this.lbCiudadDestino.Location = new System.Drawing.Point(11, 30);
             this.lbCiudadDestino.Name = "lbCiudadDestino";
-            this.lbCiudadDestino.Size = new System.Drawing.Size(40, 13);
+            this.lbCiudadDestino.Size = new System.Drawing.Size(297, 13);
             this.lbCiudadDestino.TabIndex = 8;
-            this.lbCiudadDestino.Text = "Ciudad";
+            this.lbCiudadDestino.Text = "Ciudad / Codigo Postal / Calle / Altura / Piso / Departamento";
             // 
             // grbCliente
             // 
@@ -228,7 +139,7 @@
             this.grbAgencia.Controls.Add(this.lbAgencia);
             this.grbAgencia.Location = new System.Drawing.Point(12, 192);
             this.grbAgencia.Name = "grbAgencia";
-            this.grbAgencia.Size = new System.Drawing.Size(460, 85);
+            this.grbAgencia.Size = new System.Drawing.Size(447, 85);
             this.grbAgencia.TabIndex = 30;
             this.grbAgencia.TabStop = false;
             this.grbAgencia.Text = "Agencia";
@@ -257,7 +168,7 @@
             this.grbCC.Controls.Add(this.lbLocalidad);
             this.grbCC.Location = new System.Drawing.Point(12, 101);
             this.grbCC.Name = "grbCC";
-            this.grbCC.Size = new System.Drawing.Size(460, 85);
+            this.grbCC.Size = new System.Drawing.Size(447, 85);
             this.grbCC.TabIndex = 26;
             this.grbCC.TabStop = false;
             this.grbCC.Text = "Destino";
@@ -284,9 +195,9 @@
             this.grbDatosDestino.Controls.Add(this.rbParticular);
             this.grbDatosDestino.Controls.Add(this.rbCC);
             this.grbDatosDestino.Controls.Add(this.rbAgecnia);
-            this.grbDatosDestino.Location = new System.Drawing.Point(493, 101);
+            this.grbDatosDestino.Location = new System.Drawing.Point(470, 101);
             this.grbDatosDestino.Name = "grbDatosDestino";
-            this.grbDatosDestino.Size = new System.Drawing.Size(431, 85);
+            this.grbDatosDestino.Size = new System.Drawing.Size(442, 176);
             this.grbDatosDestino.TabIndex = 27;
             this.grbDatosDestino.TabStop = false;
             this.grbDatosDestino.Text = "Datos de destino";
@@ -294,7 +205,7 @@
             // rbParticular
             // 
             this.rbParticular.AutoSize = true;
-            this.rbParticular.Location = new System.Drawing.Point(15, 50);
+            this.rbParticular.Location = new System.Drawing.Point(15, 68);
             this.rbParticular.Name = "rbParticular";
             this.rbParticular.Size = new System.Drawing.Size(116, 17);
             this.rbParticular.TabIndex = 2;
@@ -316,7 +227,7 @@
             // rbAgecnia
             // 
             this.rbAgecnia.AutoSize = true;
-            this.rbAgecnia.Location = new System.Drawing.Point(265, 25);
+            this.rbAgecnia.Location = new System.Drawing.Point(15, 112);
             this.rbAgecnia.Name = "rbAgecnia";
             this.rbAgecnia.Size = new System.Drawing.Size(64, 17);
             this.rbAgecnia.TabIndex = 1;
@@ -326,128 +237,46 @@
             // 
             // grbDatosDestinatario
             // 
-            this.grbDatosDestinatario.Controls.Add(this.txtCuitDestinatario);
-            this.grbDatosDestinatario.Controls.Add(this.lbCuitDestinatario);
             this.grbDatosDestinatario.Controls.Add(this.txtApellidoDestinatario);
-            this.grbDatosDestinatario.Controls.Add(this.lbApellidoDestinatario);
-            this.grbDatosDestinatario.Controls.Add(this.txtNombreDestinatario);
             this.grbDatosDestinatario.Controls.Add(this.lbNombreDestinatario);
             this.grbDatosDestinatario.Location = new System.Drawing.Point(12, 283);
             this.grbDatosDestinatario.Name = "grbDatosDestinatario";
-            this.grbDatosDestinatario.Size = new System.Drawing.Size(906, 166);
+            this.grbDatosDestinatario.Size = new System.Drawing.Size(447, 108);
             this.grbDatosDestinatario.TabIndex = 28;
             this.grbDatosDestinatario.TabStop = false;
             this.grbDatosDestinatario.Text = "Datos de destinatario";
             // 
-            // txtCuitDestinatario
-            // 
-            this.txtCuitDestinatario.Location = new System.Drawing.Point(6, 120);
-            this.txtCuitDestinatario.Name = "txtCuitDestinatario";
-            this.txtCuitDestinatario.Size = new System.Drawing.Size(441, 20);
-            this.txtCuitDestinatario.TabIndex = 5;
-            // 
-            // lbCuitDestinatario
-            // 
-            this.lbCuitDestinatario.AutoSize = true;
-            this.lbCuitDestinatario.Location = new System.Drawing.Point(7, 104);
-            this.lbCuitDestinatario.Name = "lbCuitDestinatario";
-            this.lbCuitDestinatario.Size = new System.Drawing.Size(26, 13);
-            this.lbCuitDestinatario.TabIndex = 4;
-            this.lbCuitDestinatario.Text = "DNI";
-            // 
             // txtApellidoDestinatario
             // 
-            this.txtApellidoDestinatario.Location = new System.Drawing.Point(453, 51);
+            this.txtApellidoDestinatario.Location = new System.Drawing.Point(4, 51);
             this.txtApellidoDestinatario.Name = "txtApellidoDestinatario";
             this.txtApellidoDestinatario.Size = new System.Drawing.Size(441, 20);
             this.txtApellidoDestinatario.TabIndex = 3;
-            // 
-            // lbApellidoDestinatario
-            // 
-            this.lbApellidoDestinatario.AutoSize = true;
-            this.lbApellidoDestinatario.Location = new System.Drawing.Point(454, 35);
-            this.lbApellidoDestinatario.Name = "lbApellidoDestinatario";
-            this.lbApellidoDestinatario.Size = new System.Drawing.Size(44, 13);
-            this.lbApellidoDestinatario.TabIndex = 2;
-            this.lbApellidoDestinatario.Text = "Apellido";
-            // 
-            // txtNombreDestinatario
-            // 
-            this.txtNombreDestinatario.Location = new System.Drawing.Point(6, 51);
-            this.txtNombreDestinatario.Name = "txtNombreDestinatario";
-            this.txtNombreDestinatario.Size = new System.Drawing.Size(441, 20);
-            this.txtNombreDestinatario.TabIndex = 1;
             // 
             // lbNombreDestinatario
             // 
             this.lbNombreDestinatario.AutoSize = true;
             this.lbNombreDestinatario.Location = new System.Drawing.Point(7, 35);
             this.lbNombreDestinatario.Name = "lbNombreDestinatario";
-            this.lbNombreDestinatario.Size = new System.Drawing.Size(44, 13);
+            this.lbNombreDestinatario.Size = new System.Drawing.Size(122, 13);
             this.lbNombreDestinatario.TabIndex = 0;
-            this.lbNombreDestinatario.Text = "Nombre";
+            this.lbNombreDestinatario.Text = "Nombre / Apellido / DNI";
             // 
             // grbBultoCC
             // 
-            this.grbBultoCC.Controls.Add(this.button1);
-            this.grbBultoCC.Controls.Add(this.textBox2);
-            this.grbBultoCC.Controls.Add(this.textBox1);
-            this.grbBultoCC.Controls.Add(this.label3);
-            this.grbBultoCC.Controls.Add(this.label2);
             this.grbBultoCC.Controls.Add(this.cbTamañoVulto);
             this.grbBultoCC.Controls.Add(this.lbTamañoBulto);
-            this.grbBultoCC.Location = new System.Drawing.Point(10, 586);
+            this.grbBultoCC.Location = new System.Drawing.Point(12, 397);
             this.grbBultoCC.Name = "grbBultoCC";
-            this.grbBultoCC.Size = new System.Drawing.Size(906, 117);
+            this.grbBultoCC.Size = new System.Drawing.Size(449, 117);
             this.grbBultoCC.TabIndex = 35;
             this.grbBultoCC.TabStop = false;
             this.grbBultoCC.Text = "Datos del bulto";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(703, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Siguiente bulto";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(239, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 20);
-            this.textBox2.TabIndex = 19;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
-            this.textBox1.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(236, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Bulto Nro:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Cantidad de bultos:";
-            // 
             // cbTamañoVulto
             // 
             this.cbTamañoVulto.FormattingEnabled = true;
-            this.cbTamañoVulto.Location = new System.Drawing.Point(455, 47);
+            this.cbTamañoVulto.Location = new System.Drawing.Point(6, 58);
             this.cbTamañoVulto.Name = "cbTamañoVulto";
             this.cbTamañoVulto.Size = new System.Drawing.Size(183, 21);
             this.cbTamañoVulto.TabIndex = 10;
@@ -455,7 +284,7 @@
             // lbTamañoBulto
             // 
             this.lbTamañoBulto.AutoSize = true;
-            this.lbTamañoBulto.Location = new System.Drawing.Point(454, 32);
+            this.lbTamañoBulto.Location = new System.Drawing.Point(6, 42);
             this.lbTamañoBulto.Name = "lbTamañoBulto";
             this.lbTamañoBulto.Size = new System.Drawing.Size(89, 13);
             this.lbTamañoBulto.TabIndex = 8;
@@ -465,7 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 749);
+            this.ClientSize = new System.Drawing.Size(928, 534);
             this.Controls.Add(this.grbBultoCC);
             this.Controls.Add(this.grbDatosDestino);
             this.Controls.Add(this.btnCancelarImpoAgencia);
@@ -500,14 +329,6 @@
         private System.Windows.Forms.Button btnCancelarImpoAgencia;
         private System.Windows.Forms.Button btnAceptarImpoAgencia;
         private System.Windows.Forms.GroupBox grbParticular;
-        private System.Windows.Forms.TextBox txtDeptoDestino;
-        private System.Windows.Forms.Label lbDepto;
-        private System.Windows.Forms.TextBox txtAlturaDestino;
-        private System.Windows.Forms.Label lbAltura;
-        private System.Windows.Forms.TextBox txtCalleDestino;
-        private System.Windows.Forms.Label lbCP;
-        private System.Windows.Forms.TextBox txtCP;
-        private System.Windows.Forms.Label lbCalle;
         private System.Windows.Forms.TextBox txtCiudadDestino;
         private System.Windows.Forms.Label lbCiudadDestino;
         private System.Windows.Forms.GroupBox grbCliente;
@@ -524,18 +345,9 @@
         private System.Windows.Forms.RadioButton rbCC;
         private System.Windows.Forms.RadioButton rbAgecnia;
         private System.Windows.Forms.GroupBox grbDatosDestinatario;
-        private System.Windows.Forms.TextBox txtCuitDestinatario;
-        private System.Windows.Forms.Label lbCuitDestinatario;
         private System.Windows.Forms.TextBox txtApellidoDestinatario;
-        private System.Windows.Forms.Label lbApellidoDestinatario;
-        private System.Windows.Forms.TextBox txtNombreDestinatario;
         private System.Windows.Forms.Label lbNombreDestinatario;
         private System.Windows.Forms.GroupBox grbBultoCC;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbTamañoVulto;
         private System.Windows.Forms.Label lbTamañoBulto;
     }

@@ -56,5 +56,10 @@ namespace Grupo_E.ImposicionEnAgencia
         {
 
         }
+
+        private void grbParticular_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

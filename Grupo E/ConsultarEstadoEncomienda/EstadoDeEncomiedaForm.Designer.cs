@@ -48,11 +48,13 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSalir = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.grbBusquedaEncomienda.SuspendLayout();
             this.grbEstado.SuspendLayout();
             this.grbHistorial.SuspendLayout();
@@ -65,7 +67,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.grbBusquedaEncomienda.Controls.Add(this.txtIdTracking);
             this.grbBusquedaEncomienda.Location = new System.Drawing.Point(15, 24);
             this.grbBusquedaEncomienda.Name = "grbBusquedaEncomienda";
-            this.grbBusquedaEncomienda.Size = new System.Drawing.Size(991, 91);
+            this.grbBusquedaEncomienda.Size = new System.Drawing.Size(681, 91);
             this.grbBusquedaEncomienda.TabIndex = 0;
             this.grbBusquedaEncomienda.TabStop = false;
             this.grbBusquedaEncomienda.Text = "Búsqueda de encomienda";
@@ -81,7 +83,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // 
             // btnEstadoBusqueda
             // 
-            this.btnEstadoBusqueda.Location = new System.Drawing.Point(869, 38);
+            this.btnEstadoBusqueda.Location = new System.Drawing.Point(554, 37);
             this.btnEstadoBusqueda.Name = "btnEstadoBusqueda";
             this.btnEstadoBusqueda.Size = new System.Drawing.Size(116, 23);
             this.btnEstadoBusqueda.TabIndex = 1;
@@ -93,11 +95,17 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // 
             this.txtIdTracking.Location = new System.Drawing.Point(6, 40);
             this.txtIdTracking.Name = "txtIdTracking";
-            this.txtIdTracking.Size = new System.Drawing.Size(857, 20);
+            this.txtIdTracking.Size = new System.Drawing.Size(532, 20);
             this.txtIdTracking.TabIndex = 0;
             // 
             // grbEstado
             // 
+            this.grbEstado.Controls.Add(this.label5);
+            this.grbEstado.Controls.Add(this.label6);
+            this.grbEstado.Controls.Add(this.label3);
+            this.grbEstado.Controls.Add(this.label4);
+            this.grbEstado.Controls.Add(this.label1);
+            this.grbEstado.Controls.Add(this.label2);
             this.grbEstado.Controls.Add(this.lblUbicacionActual);
             this.grbEstado.Controls.Add(this.EstadoLocalidadlbl);
             this.grbEstado.Controls.Add(this.lblFechaUltimo);
@@ -106,15 +114,16 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.grbEstado.Controls.Add(this.Estadolbl);
             this.grbEstado.Location = new System.Drawing.Point(15, 121);
             this.grbEstado.Name = "grbEstado";
-            this.grbEstado.Size = new System.Drawing.Size(991, 93);
+            this.grbEstado.Size = new System.Drawing.Size(681, 203);
             this.grbEstado.TabIndex = 1;
             this.grbEstado.TabStop = false;
-            this.grbEstado.Text = "Estado";
+            this.grbEstado.Text = "Informacion del pedido";
+            this.grbEstado.Enter += new System.EventHandler(this.grbEstado_Enter);
             // 
             // lblUbicacionActual
             // 
             this.lblUbicacionActual.AutoSize = true;
-            this.lblUbicacionActual.Location = new System.Drawing.Point(862, 51);
+            this.lblUbicacionActual.Location = new System.Drawing.Point(122, 88);
             this.lblUbicacionActual.Name = "lblUbicacionActual";
             this.lblUbicacionActual.Size = new System.Drawing.Size(70, 13);
             this.lblUbicacionActual.TabIndex = 5;
@@ -124,7 +133,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // EstadoLocalidadlbl
             // 
             this.EstadoLocalidadlbl.AutoSize = true;
-            this.EstadoLocalidadlbl.Location = new System.Drawing.Point(766, 51);
+            this.EstadoLocalidadlbl.Location = new System.Drawing.Point(26, 88);
             this.EstadoLocalidadlbl.Name = "EstadoLocalidadlbl";
             this.EstadoLocalidadlbl.Size = new System.Drawing.Size(90, 13);
             this.EstadoLocalidadlbl.TabIndex = 4;
@@ -133,7 +142,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // lblFechaUltimo
             // 
             this.lblFechaUltimo.AutoSize = true;
-            this.lblFechaUltimo.Location = new System.Drawing.Point(533, 52);
+            this.lblFechaUltimo.Location = new System.Drawing.Point(212, 58);
             this.lblFechaUltimo.Name = "lblFechaUltimo";
             this.lblFechaUltimo.Size = new System.Drawing.Size(113, 13);
             this.lblFechaUltimo.TabIndex = 3;
@@ -142,7 +151,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // EstadoFechalbl
             // 
             this.EstadoFechalbl.AutoSize = true;
-            this.EstadoFechalbl.Location = new System.Drawing.Point(347, 51);
+            this.EstadoFechalbl.Location = new System.Drawing.Point(26, 58);
             this.EstadoFechalbl.Name = "EstadoFechalbl";
             this.EstadoFechalbl.Size = new System.Drawing.Size(180, 13);
             this.EstadoFechalbl.TabIndex = 2;
@@ -152,7 +161,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // lblEstadoActual
             // 
             this.lblEstadoActual.AutoSize = true;
-            this.lblEstadoActual.Location = new System.Drawing.Point(116, 52);
+            this.lblEstadoActual.Location = new System.Drawing.Point(110, 27);
             this.lblEstadoActual.Name = "lblEstadoActual";
             this.lblEstadoActual.Size = new System.Drawing.Size(63, 13);
             this.lblEstadoActual.TabIndex = 1;
@@ -161,7 +170,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // Estadolbl
             // 
             this.Estadolbl.AutoSize = true;
-            this.Estadolbl.Location = new System.Drawing.Point(32, 51);
+            this.Estadolbl.Location = new System.Drawing.Point(26, 27);
             this.Estadolbl.Name = "Estadolbl";
             this.Estadolbl.Size = new System.Drawing.Size(78, 13);
             this.Estadolbl.TabIndex = 0;
@@ -170,9 +179,9 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // grbHistorial
             // 
             this.grbHistorial.Controls.Add(this.HistoriaEncomiendaList);
-            this.grbHistorial.Location = new System.Drawing.Point(15, 220);
+            this.grbHistorial.Location = new System.Drawing.Point(15, 340);
             this.grbHistorial.Name = "grbHistorial";
-            this.grbHistorial.Size = new System.Drawing.Size(991, 231);
+            this.grbHistorial.Size = new System.Drawing.Size(681, 231);
             this.grbHistorial.TabIndex = 2;
             this.grbHistorial.TabStop = false;
             this.grbHistorial.Text = "Historial";
@@ -184,15 +193,11 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10});
+            this.columnHeader6});
             this.HistoriaEncomiendaList.HideSelection = false;
             this.HistoriaEncomiendaList.Location = new System.Drawing.Point(6, 19);
             this.HistoriaEncomiendaList.Name = "HistoriaEncomiendaList";
-            this.HistoriaEncomiendaList.Size = new System.Drawing.Size(979, 206);
+            this.HistoriaEncomiendaList.Size = new System.Drawing.Size(664, 206);
             this.HistoriaEncomiendaList.TabIndex = 0;
             this.HistoriaEncomiendaList.UseCompatibleStateImageBehavior = false;
             this.HistoriaEncomiendaList.View = System.Windows.Forms.View.Details;
@@ -223,29 +228,9 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.columnHeader6.Text = "Hoja de ruta";
             this.columnHeader6.Width = 114;
             // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Origen";
-            this.columnHeader7.Width = 119;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Destino";
-            this.columnHeader8.Width = 118;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Tipo de bulto";
-            this.columnHeader9.Width = 247;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Observaciones";
-            this.columnHeader10.Width = 240;
-            // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(890, 457);
+            this.btnSalir.Location = new System.Drawing.Point(580, 592);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(116, 23);
             this.btnSalir.TabIndex = 4;
@@ -253,11 +238,65 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(73, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "XXXXXXXX";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Origen:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(78, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "XXXXXXXX";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Destino:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(110, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "XXXXXXXX";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 170);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Tipo de bulto:";
+            // 
             // EstadoDeEncomiendaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 491);
+            this.ClientSize = new System.Drawing.Size(714, 627);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grbHistorial);
             this.Controls.Add(this.grbEstado);
@@ -307,11 +346,13 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.Label lbTracking;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
