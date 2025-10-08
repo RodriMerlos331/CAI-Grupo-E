@@ -77,6 +77,8 @@
     <Compile Include="GestionarFletero\Fletero.cs" />
     <Compile Include="GestionarFletero\GestionarFleteroModel.cs" />
     <Compile Include="GestionarFletero\Guia.cs" />
+    <Compile Include="GestionarOmnibus\GestionarOmnibusModel.cs" />
+    <Compile Include="GestionarOmnibus\ItemHDR.cs" />
     <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +119,11 @@
     <Compile Include="GestionarFletero\GestionarFleteroForm.Designer.cs">
       <DependentUpon>GestionarFleteroForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarOmnibus\GestionarOmnibus.cs">
+    <Compile Include="GestionarOmnibus\GestionarOmnibusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionarOmnibus\GestionarOmnibus.Designer.cs">
-      <DependentUpon>GestionarOmnibus.cs</DependentUpon>
+    <Compile Include="GestionarOmnibus\GestionarOmnibusForm.Designer.cs">
+      <DependentUpon>GestionarOmnibusForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RetirarEnAgencia\EncomiendaRA.cs" />
     <Compile Include="RetirarEnAgencia\RetirarenAgencia.cs">
@@ -172,8 +174,8 @@
     <EmbeddedResource Include="GestionarFletero\GestionarFleteroForm.resx">
       <DependentUpon>GestionarFleteroForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionarOmnibus\GestionarOmnibus.resx">
-      <DependentUpon>GestionarOmnibus.cs</DependentUpon>
+    <EmbeddedResource Include="GestionarOmnibus\GestionarOmnibusForm.resx">
+      <DependentUpon>GestionarOmnibusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RetirarEnAgencia\RetirarenAgencia.resx">
       <DependentUpon>RetirarenAgencia.cs</DependentUpon>

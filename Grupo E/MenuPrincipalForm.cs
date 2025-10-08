@@ -124,7 +124,7 @@ namespace Grupo_E
 
         private void btnGestionarOmnibus_Click(object sender, EventArgs e)
         {
-            using (var f = new RendicionHDRLargaDistancia.GestionarOmnibus())
+            using (var f = new GestionarOmnibus.GestionarOmnibusForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);
