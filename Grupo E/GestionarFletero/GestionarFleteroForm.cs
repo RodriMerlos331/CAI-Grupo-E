@@ -13,7 +13,6 @@ namespace Grupo_E.GestionarFletero
     public partial class GestionarFleteroForm : Form
     {
         private readonly GestionarFleteroModel modelo = new GestionarFleteroModel();
-        private int dniFleteroActual = 0;
 
         public GestionarFleteroForm()
         {
@@ -24,13 +23,8 @@ namespace Grupo_E.GestionarFletero
         {
             modelo.CargarFleteros();
             modelo.CargarHDR();
-
-
-
-
+            modelo.GenerarNuevasHDRyGuias();
         }
-
-        int dniFleteroBuscar;
 
         private void BuscarBtn_Click(object sender, EventArgs e)
         {
@@ -56,13 +50,68 @@ namespace Grupo_E.GestionarFletero
                 HDRAsignadasListView.Items.Add(item);
             }
 
+            foreach (var hdr in modelo.NuevasHDRRetiro)
+            {
+                var item = new ListViewItem(hdr.IdHDR.ToString());
+                item.SubItems.Add(hdr.Tipo);
+                HDRRetirarListViews.Items.Add(item);
+            }
 
+            foreach (var hdr in modelo.NuevasHDREntrega)
+            {
+                var item = new ListViewItem(hdr.IdHDR.ToString());
+                item.SubItems.Add(hdr.Tipo);
+                HDREntregarListView.Items.Add(item);
+            }
+
+            foreach (var guia in modelo.NuevasGuiasRetiro)
+            {
+                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
+                item.SubItems.Add(guia.Tracking.ToString());
+                GuiasRetirarListView.Items.Add(item);
+            }
+
+            // Guías Entrega
+            foreach (var guia in modelo.NuevasGuiasEntrega)
+            {
+                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
+                item.SubItems.Add(guia.Tracking.ToString());
+                GuiasEntregarListView.Items.Add(item);
+            }
+            foreach (var hdr in modelo.NuevasHDRRetiro)
+            {
+                var item = new ListViewItem(hdr.IdHDR.ToString());
+                item.SubItems.Add(hdr.Tipo);
+                HDRRetirarListViews.Items.Add(item);
+            }
+
+            foreach (var hdr in modelo.NuevasHDREntrega)
+            {
+                var item = new ListViewItem(hdr.IdHDR.ToString());
+                item.SubItems.Add(hdr.Tipo);
+                HDREntregarListView.Items.Add(item);
+            }
+
+            foreach (var guia in modelo.NuevasGuiasRetiro)
+            {
+                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
+                item.SubItems.Add(guia.Tracking.ToString());
+                GuiasRetirarListView.Items.Add(item);
+            }
+
+            // Guías Entrega
+            foreach (var guia in modelo.NuevasGuiasEntrega)
+            {
+                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
+                item.SubItems.Add(guia.Tracking.ToString());
+                GuiasEntregarListView.Items.Add(item);
+            }
         }
 
 
 
         //BOTON ACTUALIZAR HDR
-        private void button1_Click(object sender, EventArgs e)
+        private void ActualizarHDRBtn_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in HDRAsignadasListView.Items)
             {
@@ -89,10 +138,7 @@ namespace Grupo_E.GestionarFletero
                 var item = new ListViewItem(guia.NroHDRAsignada.ToString());
                 item.SubItems.Add(guia.Tracking.ToString());
                 GuiasNoEntregadasListView.Items.Add(item);
-            }
-
-            
-
+            }          
         }
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
@@ -106,54 +152,18 @@ namespace Grupo_E.GestionarFletero
             HDRRetirarListViews.Items.Clear();
 
         }
-        private void GenerarNuevasBtn(object sender, EventArgs e)
-        {
-            {
-                modelo.GenerarNuevasHDRyGuias();
-
-                foreach (var hdr in modelo.NuevasHDRRetiro)
-                {
-                    var item = new ListViewItem(hdr.IdHDR.ToString());
-                    item.SubItems.Add(hdr.Tipo);
-                    HDRRetirarListViews.Items.Add(item);
-                }
-
-                foreach (var hdr in modelo.NuevasHDREntrega)
-                {
-                    var item = new ListViewItem(hdr.IdHDR.ToString());
-                    item.SubItems.Add(hdr.Tipo);
-                    HDREntregarListView.Items.Add(item);
-                }
-
-                foreach (var guia in modelo.NuevasGuiasRetiro)
-                {
-                    var item = new ListViewItem(guia.NroHDRAsignada.ToString());
-                    item.SubItems.Add(guia.Tracking.ToString());
-                    GuiasRetirarListView.Items.Add(item);
-                }
-
-                // Guías Entrega
-                foreach (var guia in modelo.NuevasGuiasEntrega)
-                {
-                    var item = new ListViewItem(guia.NroHDRAsignada.ToString());
-                    item.SubItems.Add(guia.Tracking.ToString());
-                    GuiasEntregarListView.Items.Add(item);
-                }
-            }
-
-        }
 
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
-
+            modelo.GuardarCambios();
+            //TODO: limpiá la pantalla.
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        
+            //Está ud? seguro?
+            this.Close();
+        }        
     }
 
 

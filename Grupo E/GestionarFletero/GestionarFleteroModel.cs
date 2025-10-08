@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grupo_E.GestionarFletero
 {
     internal class GestionarFleteroModel
     {
-
         public List<Fletero> fleteros = new List<Fletero>();
         public List<HDR> hdrs = new List<HDR>();
         public List<Guia> guias = new List<Guia>();
@@ -20,7 +16,6 @@ namespace Grupo_E.GestionarFletero
         public List<HDR> NuevasHDREntrega = new List<HDR>();
         public List<Guia> NuevasGuiasRetiro = new List<Guia>();
         public List<Guia> NuevasGuiasEntrega = new List<Guia>();
-
 
         public void CargarFleteros()
         {
@@ -163,11 +158,6 @@ namespace Grupo_E.GestionarFletero
                 guias.AddRange(hdr.GuiasHDR);
         }
 
-
-        internal void RendicionHDR(Fletero fletero)
-        {
-
-        }
         public List<HDR> ObtenerHDRAsignadas(int dniFletero)
         {
 
@@ -304,7 +294,10 @@ namespace Grupo_E.GestionarFletero
             MessageBox.Show($"Generadas {NuevasHDRRetiro.Count} HDR de Retiro y {NuevasHDREntrega.Count} de Entrega.");
         }
 
+        internal void GuardarCambios()
+        {
 
+        }
     }
 
 }
