@@ -338,6 +338,7 @@
             this.Controls.Add(this.grbDatosDestinatario);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "F02_ImposicionEnAgencia";
+            this.Text = "Imposición en Agencia";
             this.Load += new System.EventHandler(this.ImposicionEnAgencia_Load);
             this.grbBultoCC.ResumeLayout(false);
             this.grbBultoCC.PerformLayout();
