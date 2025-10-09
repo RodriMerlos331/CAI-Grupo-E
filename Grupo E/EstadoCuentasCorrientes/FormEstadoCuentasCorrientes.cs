@@ -71,5 +71,10 @@ namespace Grupo_E.EstadoCuentasCorrientes
         {
 
         }
+
+        private void FormEstadoCuentasCorrientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

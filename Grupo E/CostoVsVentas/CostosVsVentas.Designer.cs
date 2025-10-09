@@ -72,7 +72,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.btnBuscar.Location = new System.Drawing.Point(12, 77);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(397, 25);
+            this.btnBuscar.Size = new System.Drawing.Size(397, 30);
             this.btnBuscar.TabIndex = 7;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
             // 
             this.groupBox2.Controls.Add(this.lvwCostoVsVentas);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 7.8F);
-            this.groupBox2.Location = new System.Drawing.Point(137, 118);
+            this.groupBox2.Location = new System.Drawing.Point(137, 123);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(540, 110);
             this.groupBox2.TabIndex = 12;
@@ -201,9 +201,9 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.button2.Location = new System.Drawing.Point(415, 77);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(391, 25);
+            this.button2.Size = new System.Drawing.Size(391, 30);
             this.button2.TabIndex = 14;
-            this.button2.Text = "Limpiar";
+            this.button2.Text = "Limpiar Filtros";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // FormResultadoCostoVsVentas

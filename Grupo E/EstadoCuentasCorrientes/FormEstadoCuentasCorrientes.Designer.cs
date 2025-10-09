@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.cmbEstadoFactura = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.txtCuitCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtSaldoAcreedor = new System.Windows.Forms.TextBox();
+            this.txtSaldoDeudor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvMovimientos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtpFecha
+            // dtpFechaDesde
             // 
-            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(12, 38);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(178, 23);
-            this.dtpFecha.TabIndex = 5;
-            this.dtpFecha.Value = new System.DateTime(2025, 10, 5, 15, 13, 56, 0);
+            this.dtpFechaDesde.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDesde.Location = new System.Drawing.Point(12, 38);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(178, 23);
+            this.dtpFechaDesde.TabIndex = 5;
+            this.dtpFechaDesde.Value = new System.DateTime(2025, 10, 5, 15, 13, 56, 0);
             // 
             // lblFecha
             // 
@@ -76,14 +76,14 @@
             this.lblFecha.TabIndex = 4;
             this.lblFecha.Text = "Fecha desde";
             // 
-            // cmbEstado
+            // cmbEstadoFactura
             // 
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(609, 36);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(217, 23);
-            this.cmbEstado.TabIndex = 3;
-            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            this.cmbEstadoFactura.FormattingEnabled = true;
+            this.cmbEstadoFactura.Location = new System.Drawing.Point(609, 36);
+            this.cmbEstadoFactura.Name = "cmbEstadoFactura";
+            this.cmbEstadoFactura.Size = new System.Drawing.Size(217, 23);
+            this.cmbEstadoFactura.TabIndex = 3;
+            this.cmbEstadoFactura.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // lblEstado
             // 
@@ -115,28 +115,28 @@
             this.btnLimpiarFiltros.Text = "Limpiar Filtros";
             this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
             // 
-            // btnAceptar
+            // btnSalir
             // 
-            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.btnAceptar.Location = new System.Drawing.Point(665, 598);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(161, 34);
-            this.btnAceptar.TabIndex = 8;
-            this.btnAceptar.Text = "Salir";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.btnSalir.Location = new System.Drawing.Point(665, 598);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(161, 34);
+            this.btnSalir.TabIndex = 8;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.dtpFecha);
+            this.groupBox1.Controls.Add(this.dtpFechaHasta);
+            this.groupBox1.Controls.Add(this.dtpFechaDesde);
             this.groupBox1.Controls.Add(this.lblFecha);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCuitCliente);
             this.groupBox1.Controls.Add(this.btnLimpiarFiltros);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.cmbEstado);
+            this.groupBox1.Controls.Add(this.cmbEstadoFactura);
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.groupBox1.Location = new System.Drawing.Point(12, 16);
@@ -156,24 +156,24 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Fecha hasta";
             // 
-            // dateTimePicker1
+            // dtpFechaHasta
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(196, 38);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(178, 23);
-            this.dateTimePicker1.TabIndex = 7;
-            this.dateTimePicker1.Value = new System.DateTime(2025, 10, 5, 15, 13, 56, 0);
+            this.dtpFechaHasta.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaHasta.Location = new System.Drawing.Point(196, 38);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(178, 23);
+            this.dtpFechaHasta.TabIndex = 7;
+            this.dtpFechaHasta.Value = new System.DateTime(2025, 10, 5, 15, 13, 56, 0);
             // 
-            // textBox1
+            // txtCuitCliente
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(380, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 23);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtCuitCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCuitCliente.Location = new System.Drawing.Point(380, 36);
+            this.txtCuitCliente.Name = "txtCuitCliente";
+            this.txtCuitCliente.Size = new System.Drawing.Size(223, 23);
+            this.txtCuitCliente.TabIndex = 6;
+            this.txtCuitCliente.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -188,55 +188,72 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtSaldoAcreedor);
+            this.groupBox2.Controls.Add(this.txtSaldoDeudor);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.lvMovimientos);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.groupBox2.Location = new System.Drawing.Point(73, 156);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(714, 436);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cuenta corriente";
+            this.groupBox2.Text = "Resultado";
+            // 
+            // txtSaldoAcreedor
+            // 
+            this.txtSaldoAcreedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSaldoAcreedor.Location = new System.Drawing.Point(110, 405);
+            this.txtSaldoAcreedor.Name = "txtSaldoAcreedor";
+            this.txtSaldoAcreedor.Size = new System.Drawing.Size(140, 23);
+            this.txtSaldoAcreedor.TabIndex = 10;
+            // 
+            // txtSaldoDeudor
+            // 
+            this.txtSaldoDeudor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSaldoDeudor.Location = new System.Drawing.Point(110, 376);
+            this.txtSaldoDeudor.Name = "txtSaldoDeudor";
+            this.txtSaldoDeudor.Size = new System.Drawing.Size(140, 23);
+            this.txtSaldoDeudor.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label4.Location = new System.Drawing.Point(11, 413);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.label4.Location = new System.Drawing.Point(11, 408);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 20);
+            this.label4.Size = new System.Drawing.Size(105, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Saldo acreedor: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label3.Location = new System.Drawing.Point(11, 376);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.label3.Location = new System.Drawing.Point(11, 378);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 20);
+            this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Saldo deudor: ";
             // 
-            // listView1
+            // lvMovimientos
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvMovimientos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader8});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(15, 26);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(689, 336);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvMovimientos.GridLines = true;
+            this.lvMovimientos.HideSelection = false;
+            this.lvMovimientos.Location = new System.Drawing.Point(15, 26);
+            this.lvMovimientos.Name = "lvMovimientos";
+            this.lvMovimientos.Size = new System.Drawing.Size(689, 336);
+            this.lvMovimientos.TabIndex = 0;
+            this.lvMovimientos.UseCompatibleStateImageBehavior = false;
+            this.lvMovimientos.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -273,22 +290,6 @@
             this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader8.Width = 115;
             // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(124, 376);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 23);
-            this.textBox2.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(124, 413);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 23);
-            this.textBox3.TabIndex = 10;
-            // 
             // FormEstadoCuentasCorrientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -296,7 +297,7 @@
             this.ClientSize = new System.Drawing.Size(854, 645);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnSalir);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -306,6 +307,7 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estado de Cuentas Corrientes";
+            this.Load += new System.EventHandler(this.FormEstadoCuentasCorrientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -315,18 +317,18 @@
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.ComboBox cmbEstadoFactura;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiarFiltros;
-        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCuitCliente;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvMovimientos;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader4;
@@ -336,9 +338,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
+        private System.Windows.Forms.TextBox txtSaldoAcreedor;
+        private System.Windows.Forms.TextBox txtSaldoDeudor;
     }
 }
 
