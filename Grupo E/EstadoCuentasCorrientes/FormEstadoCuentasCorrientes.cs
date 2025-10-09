@@ -10,95 +10,50 @@ using System.Windows.Forms;
 
 namespace Grupo_E.EstadoCuentasCorrientes
 {
-    public partial class FormEstadoCuentasCorrientes: Form
+    public partial class FormEstadoCuentasCorrientes : Form
     {
         public FormEstadoCuentasCorrientes()
         {
             InitializeComponent();
         }
 
-        private void lblEstado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNroFactura_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNroFactura_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormEstadoCuentasCorrientes_Load(object sender, EventArgs e)
         {
-
+            // Código a modificar aquí
         }
 
-        private void lblCuitCliente_Click(object sender, EventArgs e)
+        private bool ValidarFechas()
         {
-
-        }
-
-        private void lblFechaHasta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFechaDesde_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lvMovimientos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpboxBusqueda_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpboxResultado_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpFechaDesde_ValueChanged(object sender, EventArgs e)
-        {
-
+            // Asumimos que los controles son dtpFechaDesde y dtpFechaHasta
+            if (dtpFechaDesde.Value.Date > dtpFechaHasta.Value.Date)
+            {
+                MessageBox.Show("La 'Fecha desde' no puede ser posterior a la 'Fecha hasta'.", "Error de Fecha", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpFechaDesde.Focus(); // Opcional: enfoca el control para que el usuario sepa dónde corregir
+                return false;
+            }
+            return true;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            // PRUEBA DE VALIDACIÓN 1: Rango de Fechas Lógico
+            if (!ValidarFechas())
+            {
+                return; // Si la fecha es inválida, salimos y no hacemos la búsqueda.
+            }
 
+            // Si la validación es exitosa, el código de búsqueda iría aquí (aún no implementado).
+            MessageBox.Show("¡Validación de fechas exitosa! La búsqueda podría continuar ahora.", "Validación OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnLimpiarFiltros_Click(object sender, EventArgs e)
         {
-
+            // Código a modificar aquí
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            // Código a modificar aquí
         }
     }
 }

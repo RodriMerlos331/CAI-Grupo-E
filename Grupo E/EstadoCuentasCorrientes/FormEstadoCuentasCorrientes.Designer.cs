@@ -30,7 +30,7 @@
         {
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDesde = new System.Windows.Forms.Label();
-            this.cmbEstadoFactura = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
@@ -65,7 +65,6 @@
             this.dtpFechaDesde.Size = new System.Drawing.Size(178, 23);
             this.dtpFechaDesde.TabIndex = 5;
             this.dtpFechaDesde.Value = new System.DateTime(2025, 10, 5, 15, 13, 56, 0);
-            this.dtpFechaDesde.ValueChanged += new System.EventHandler(this.dtpFechaDesde_ValueChanged);
             // 
             // lblFechaDesde
             // 
@@ -76,16 +75,14 @@
             this.lblFechaDesde.Size = new System.Drawing.Size(72, 15);
             this.lblFechaDesde.TabIndex = 4;
             this.lblFechaDesde.Text = "Fecha desde";
-            this.lblFechaDesde.Click += new System.EventHandler(this.lblFechaDesde_Click);
             // 
-            // cmbEstadoFactura
+            // cmbEstado
             // 
-            this.cmbEstadoFactura.FormattingEnabled = true;
-            this.cmbEstadoFactura.Location = new System.Drawing.Point(609, 36);
-            this.cmbEstadoFactura.Name = "cmbEstadoFactura";
-            this.cmbEstadoFactura.Size = new System.Drawing.Size(217, 23);
-            this.cmbEstadoFactura.TabIndex = 3;
-            this.cmbEstadoFactura.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(609, 36);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(217, 23);
+            this.cmbEstado.TabIndex = 3;
             // 
             // lblEstado
             // 
@@ -96,7 +93,6 @@
             this.lblEstado.Size = new System.Drawing.Size(98, 15);
             this.lblEstado.TabIndex = 2;
             this.lblEstado.Text = "Estado de factura";
-            this.lblEstado.Click += new System.EventHandler(this.lblEstado_Click);
             // 
             // btnBuscar
             // 
@@ -140,7 +136,7 @@
             this.grpboxBusqueda.Controls.Add(this.btnLimpiarFiltros);
             this.grpboxBusqueda.Controls.Add(this.lblCuitCliente);
             this.grpboxBusqueda.Controls.Add(this.btnBuscar);
-            this.grpboxBusqueda.Controls.Add(this.cmbEstadoFactura);
+            this.grpboxBusqueda.Controls.Add(this.cmbEstado);
             this.grpboxBusqueda.Controls.Add(this.lblEstado);
             this.grpboxBusqueda.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.grpboxBusqueda.Location = new System.Drawing.Point(12, 16);
@@ -149,7 +145,6 @@
             this.grpboxBusqueda.TabIndex = 10;
             this.grpboxBusqueda.TabStop = false;
             this.grpboxBusqueda.Text = "Búsqueda cliente";
-            this.grpboxBusqueda.Enter += new System.EventHandler(this.grpboxBusqueda_Enter);
             // 
             // lblFechaHasta
             // 
@@ -160,7 +155,6 @@
             this.lblFechaHasta.Size = new System.Drawing.Size(69, 15);
             this.lblFechaHasta.TabIndex = 8;
             this.lblFechaHasta.Text = "Fecha hasta";
-            this.lblFechaHasta.Click += new System.EventHandler(this.lblFechaHasta_Click);
             // 
             // dtpFechaHasta
             // 
@@ -179,7 +173,6 @@
             this.txtCuitCliente.Name = "txtCuitCliente";
             this.txtCuitCliente.Size = new System.Drawing.Size(223, 23);
             this.txtCuitCliente.TabIndex = 6;
-            this.txtCuitCliente.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblCuitCliente
             // 
@@ -190,7 +183,6 @@
             this.lblCuitCliente.Size = new System.Drawing.Size(90, 15);
             this.lblCuitCliente.TabIndex = 0;
             this.lblCuitCliente.Text = "CUIT del cliente";
-            this.lblCuitCliente.Click += new System.EventHandler(this.lblCuitCliente_Click);
             // 
             // grpboxResultado
             // 
@@ -206,7 +198,6 @@
             this.grpboxResultado.TabIndex = 11;
             this.grpboxResultado.TabStop = false;
             this.grpboxResultado.Text = "Resultado";
-            this.grpboxResultado.Enter += new System.EventHandler(this.grpboxResultado_Enter);
             // 
             // txtSaldoAcreedor
             // 
@@ -261,7 +252,6 @@
             this.lvMovimientos.TabIndex = 0;
             this.lvMovimientos.UseCompatibleStateImageBehavior = false;
             this.lvMovimientos.View = System.Windows.Forms.View.Details;
-            this.lvMovimientos.SelectedIndexChanged += new System.EventHandler(this.lvMovimientos_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -327,7 +317,7 @@
         #endregion
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private System.Windows.Forms.Label lblFechaDesde;
-        private System.Windows.Forms.ComboBox cmbEstadoFactura;
+        private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiarFiltros;
