@@ -105,7 +105,7 @@ namespace Grupo_E
 
         private void btnGeneracionDeFacturas_Click(object sender, EventArgs e)
         {
-            using (var f = new GeneracionDeFacturas.GeneracionDeFacturas())
+            using (var f = new GeneracionDeFacturas.F10_GeneracionDeFacturasForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);

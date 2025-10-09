@@ -184,6 +184,7 @@
             this.txtNumeroDeTracking.Name = "txtNumeroDeTracking";
             this.txtNumeroDeTracking.Size = new System.Drawing.Size(208, 26);
             this.txtNumeroDeTracking.TabIndex = 1;
+            this.txtNumeroDeTracking.TextChanged += new System.EventHandler(this.txtNumeroDeTracking_TextChanged);
             // 
             // label1
             // 
