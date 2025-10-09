@@ -49,7 +49,33 @@ namespace Grupo_E.GeneracionDeFacturas
                 return;
             }
 
-            modelo.ListarEncomiendas(cuit);
+            var resultados = modelo.ListarEncomiendas(cuit);
+
+            listViewFactura.Items.Clear();
+
+            if (resultados.Any())
+            {
+                foreach (var encomienda in resultados)
+                {
+                    var item = new ListViewItem(encomienda.NroTracking);
+                    item.SubItems.Add(encomienda.FechaAdmision);
+                    item.SubItems.Add(encomienda.Importe);
+                    item.SubItems.Add(encomienda.ExtraRetiro);
+                    item.SubItems.Add(encomienda.ExtraEntrega);
+                    item.SubItems.Add(encomienda.ExtraAgencia);
+                    listViewFactura.Items.Add(item);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encontró ninguna encomienda con ese CUIT.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+
+        private void grpboxImporteTotal_Enter(object sender, EventArgs e)
+        {
 
         }
     }

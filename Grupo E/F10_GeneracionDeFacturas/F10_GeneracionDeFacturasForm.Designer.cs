@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "10004050",
             "12-10-2024",
             "$100.000",
             "$5.000",
             "$4.000",
             "$0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.listViewFactura = new System.Windows.Forms.ListView();
             this.colNroTracking = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colFecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,11 +46,11 @@
             this.btnFacturar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCUIT = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtCUIT = new System.Windows.Forms.TextBox();
+            this.grpboxImporteTotal = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,11 +68,11 @@
             this.listViewFactura.FullRowSelect = true;
             this.listViewFactura.GridLines = true;
             this.listViewFactura.HideSelection = false;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
             this.listViewFactura.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem1,
+            listViewItem2});
             this.listViewFactura.Location = new System.Drawing.Point(30, 166);
             this.listViewFactura.Name = "listViewFactura";
             this.listViewFactura.Size = new System.Drawing.Size(1210, 329);
@@ -143,6 +143,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar cliente";
             // 
+            // txtCUIT
+            // 
+            this.txtCUIT.Location = new System.Drawing.Point(80, 59);
+            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(703, 26);
+            this.txtCUIT.TabIndex = 4;
+            this.txtCUIT.TextChanged += new System.EventHandler(this.txtCUIT_TextChanged);
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(1012, 55);
@@ -174,32 +183,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CUIT";
             // 
-            // groupBox2
+            // grpboxImporteTotal
             // 
-            this.groupBox2.Location = new System.Drawing.Point(21, 640);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(660, 43);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "IMPORTE TOTAL";
-            // 
-            // txtCUIT
-            // 
-            this.txtCUIT.Location = new System.Drawing.Point(80, 59);
-            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(703, 26);
-            this.txtCUIT.TabIndex = 4;
-            this.txtCUIT.TextChanged += new System.EventHandler(this.txtCUIT_TextChanged);
+            this.grpboxImporteTotal.Location = new System.Drawing.Point(30, 642);
+            this.grpboxImporteTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpboxImporteTotal.Name = "grpboxImporteTotal";
+            this.grpboxImporteTotal.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpboxImporteTotal.Size = new System.Drawing.Size(660, 43);
+            this.grpboxImporteTotal.TabIndex = 12;
+            this.grpboxImporteTotal.TabStop = false;
+            this.grpboxImporteTotal.Text = "IMPORTE TOTAL";
+            this.grpboxImporteTotal.Enter += new System.EventHandler(this.grpboxImporteTotal_Enter);
             // 
             // F10_GeneracionDeFacturasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 702);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpboxImporteTotal);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnFacturar);
@@ -227,7 +228,7 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtCUIT;
+        private System.Windows.Forms.GroupBox grpboxImporteTotal;
     }
 }
