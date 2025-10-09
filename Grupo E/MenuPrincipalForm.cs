@@ -71,7 +71,7 @@ namespace Grupo_E
 
         private void btnRendicionHDRAgencia_Click(object sender, EventArgs e)
         {
-            using (var f = new RendicionHDRAgencia.EntregarYRecepcionarEncomiendaAgenciaForm())
+            using (var f = new EntregarYRecepcionarEncomiendaAgencia.EntregarYRecepcionarEncomiendaAgenciaForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);
