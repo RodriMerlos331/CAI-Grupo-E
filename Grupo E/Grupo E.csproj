@@ -61,12 +61,14 @@
     <Compile Include="CostoVsVentas\CostosVsVentas.Designer.cs">
       <DependentUpon>CostosVsVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstadoCuentasCorrientes\EstadoCuentasCorrientesModel.cs" />
     <Compile Include="EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.Designer.cs">
       <DependentUpon>FormEstadoCuentasCorrientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstadoCuentasCorrientes\MovimientoCC.cs" />
     <Compile Include="GeneracionDeFacturas\GeneracionDeFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
