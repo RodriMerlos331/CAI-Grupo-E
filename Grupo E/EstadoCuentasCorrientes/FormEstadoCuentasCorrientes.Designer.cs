@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblFechaDesde = new System.Windows.Forms.Label();
             this.cmbEstadoFactura = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblFechaHasta = new System.Windows.Forms.Label();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.txtCuitCliente = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCuitCliente = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSaldoAcreedor = new System.Windows.Forms.TextBox();
             this.txtSaldoDeudor = new System.Windows.Forms.TextBox();
@@ -66,15 +66,16 @@
             this.dtpFechaDesde.TabIndex = 5;
             this.dtpFechaDesde.Value = new System.DateTime(2025, 10, 5, 15, 13, 56, 0);
             // 
-            // lblFecha
+            // lblFechaDesde
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.lblFecha.Location = new System.Drawing.Point(9, 21);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(72, 15);
-            this.lblFecha.TabIndex = 4;
-            this.lblFecha.Text = "Fecha desde";
+            this.lblFechaDesde.AutoSize = true;
+            this.lblFechaDesde.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lblFechaDesde.Location = new System.Drawing.Point(9, 21);
+            this.lblFechaDesde.Name = "lblFechaDesde";
+            this.lblFechaDesde.Size = new System.Drawing.Size(72, 15);
+            this.lblFechaDesde.TabIndex = 4;
+            this.lblFechaDesde.Text = "Fecha desde";
+            this.lblFechaDesde.Click += new System.EventHandler(this.lblFechaDesde_Click);
             // 
             // cmbEstadoFactura
             // 
@@ -128,13 +129,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblFechaHasta);
             this.groupBox1.Controls.Add(this.dtpFechaHasta);
             this.groupBox1.Controls.Add(this.dtpFechaDesde);
-            this.groupBox1.Controls.Add(this.lblFecha);
+            this.groupBox1.Controls.Add(this.lblFechaDesde);
             this.groupBox1.Controls.Add(this.txtCuitCliente);
             this.groupBox1.Controls.Add(this.btnLimpiarFiltros);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblCuitCliente);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.cmbEstadoFactura);
             this.groupBox1.Controls.Add(this.lblEstado);
@@ -146,15 +147,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda cliente";
             // 
-            // label2
+            // lblFechaHasta
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.label2.Location = new System.Drawing.Point(193, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Fecha hasta";
+            this.lblFechaHasta.AutoSize = true;
+            this.lblFechaHasta.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lblFechaHasta.Location = new System.Drawing.Point(193, 19);
+            this.lblFechaHasta.Name = "lblFechaHasta";
+            this.lblFechaHasta.Size = new System.Drawing.Size(69, 15);
+            this.lblFechaHasta.TabIndex = 8;
+            this.lblFechaHasta.Text = "Fecha hasta";
+            this.lblFechaHasta.Click += new System.EventHandler(this.lblFechaHasta_Click);
             // 
             // dtpFechaHasta
             // 
@@ -175,16 +177,16 @@
             this.txtCuitCliente.TabIndex = 6;
             this.txtCuitCliente.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label1
+            // lblCuitCliente
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.label1.Location = new System.Drawing.Point(377, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CUIT del cliente";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.lblCuitCliente.AutoSize = true;
+            this.lblCuitCliente.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lblCuitCliente.Location = new System.Drawing.Point(377, 21);
+            this.lblCuitCliente.Name = "lblCuitCliente";
+            this.lblCuitCliente.Size = new System.Drawing.Size(90, 15);
+            this.lblCuitCliente.TabIndex = 0;
+            this.lblCuitCliente.Text = "CUIT del cliente";
+            this.lblCuitCliente.Click += new System.EventHandler(this.lblCuitCliente_Click);
             // 
             // groupBox2
             // 
@@ -318,14 +320,14 @@
 
         #endregion
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
-        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.ComboBox cmbEstadoFactura;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiarFiltros;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCuitCliente;
         private System.Windows.Forms.TextBox txtCuitCliente;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView lvMovimientos;
@@ -337,7 +339,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFechaHasta;
         private System.Windows.Forms.DateTimePicker dtpFechaHasta;
         private System.Windows.Forms.TextBox txtSaldoAcreedor;
         private System.Windows.Forms.TextBox txtSaldoDeudor;

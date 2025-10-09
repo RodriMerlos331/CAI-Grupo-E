@@ -17,11 +17,6 @@ namespace Grupo_E.EstadoCuentasCorrientes
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -33,11 +28,6 @@ namespace Grupo_E.EstadoCuentasCorrientes
         }
 
         private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
@@ -73,6 +63,21 @@ namespace Grupo_E.EstadoCuentasCorrientes
         }
 
         private void FormEstadoCuentasCorrientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCuitCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFechaHasta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFechaDesde_Click(object sender, EventArgs e)
         {
 
         }
