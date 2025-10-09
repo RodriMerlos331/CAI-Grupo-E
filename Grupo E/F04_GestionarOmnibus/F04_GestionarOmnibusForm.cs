@@ -41,15 +41,23 @@ namespace Grupo_E.GestionarOmnibus
                 MessageBox.Show("Ingresá la patente.", "Patente requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // Verificar si la patente existe en los datos
+            bool existe = modelo.Datos.Any(d => string.Equals(d.Patente, patente, StringComparison.OrdinalIgnoreCase));
 
-            // Filtrar por patente y por ubicación
+            if (!existe)
+            {
+                MessageBox.Show("Esa patente no existe dentro del sistema.", "Patente no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // aca creo la logica de lo que tiene que mostrarme en el list view
             var recepcion = modelo.Datos.Where(d => string.Equals(d.Patente, patente, StringComparison.OrdinalIgnoreCase)
                                            && d.Ubicacion == "Recepcion").ToList();
 
             var despacho = modelo.Datos.Where(d => string.Equals(d.Patente, patente, StringComparison.OrdinalIgnoreCase)
                                           && d.Ubicacion == "Despacho").ToList();
 
-            // Cargar en grids (solo las 3 columnas requeridas)
+            // y aca llamamos a esos metodos para que funcionen cuando la patente que se ingresa existe:
             CargarGridSimple(lstRecepcion, recepcion);
             CargarGridSimple(lstDespacho, despacho);
             ActualizarContadores(); // 
@@ -83,14 +91,11 @@ namespace Grupo_E.GestionarOmnibus
             }
         }
 
-        private void ActualizarContadores()
+        private void ActualizarContadores() //contadores de la cantidad de encomiendas
         {
             int recepcionCount = 0;
             int despachoCount = 0;
 
-
-
-            // Si usás ListView (sobrescribe si ambos existen)
             if (lstRecepcion != null) recepcionCount = lstRecepcion.Items.Count;
             if (lstDespacho != null) despachoCount = lstDespacho.Items.Count;
 
@@ -108,7 +113,7 @@ namespace Grupo_E.GestionarOmnibus
                 txtPatente.Focus();
             }
 
-            // 2) Limpiar DataGridView si existen
+            // 2) Limpiar los list view
             try
             {
                 if (lstRecepcion != null)
@@ -119,7 +124,7 @@ namespace Grupo_E.GestionarOmnibus
             }
             catch { /* ignoro si no existen */ }
 
-            // 3) Limpiar ListView si los tenés (no tocar columnas)
+            
             try
             {
                 if (lstRecepcion != null)
@@ -134,7 +139,7 @@ namespace Grupo_E.GestionarOmnibus
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e) // btn de cancelar
+        private void btnCancelar_Click(object sender, EventArgs e) 
         {
             var msg = "¿Está seguro de que desea salir? Los cambios no se guardarán.";
             var title = "Confirmar salida";
@@ -159,16 +164,16 @@ namespace Grupo_E.GestionarOmnibus
                 txtPatente.Focus();
             }
 
-            //  Limpiar ListView (si los usás)
+            //  Limpiar ListView 
 
             try
             {
                 if (lstRecepcion != null) lstRecepcion.Items.Clear();
                 if (lstDespacho != null) lstDespacho.Items.Clear();
             }
-            catch { /* ignorar si no existen */ }
+            catch {}
 
-            //  Resetear labels informativos (ajustá nombres si los tenés distintos)
+            //  Resetear labels
 
         }
     }
