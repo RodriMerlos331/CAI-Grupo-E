@@ -153,7 +153,7 @@ namespace Grupo_E
             this.btnRendicionHDRAgencia.Name = "btnRendicionHDRAgencia";
             this.btnRendicionHDRAgencia.Size = new System.Drawing.Size(189, 36);
             this.btnRendicionHDRAgencia.TabIndex = 10;
-            this.btnRendicionHDRAgencia.Text = "Rendion HDR en Agencia";
+            this.btnRendicionHDRAgencia.Text = "Entrega y recepcion en Agencia";
             this.btnRendicionHDRAgencia.UseVisualStyleBackColor = true;
             // 
             // btnRetirarEnAgencia

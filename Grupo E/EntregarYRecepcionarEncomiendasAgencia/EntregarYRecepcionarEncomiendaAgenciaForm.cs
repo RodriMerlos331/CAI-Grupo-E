@@ -17,5 +17,9 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
             InitializeComponent();
         }
 
+        private void EntregarYRecepcionarEncomiendaAgenciaForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

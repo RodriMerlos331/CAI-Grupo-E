@@ -174,7 +174,7 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // RendicionHDRAgenciaForm
+            // EntregarYRecepcionarEncomiendaAgenciaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,8 +183,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Name = "RendicionHDRAgenciaForm";
-            this.Text = "RendicionHDRAgenciaForm";
+            this.Name = "EntregarYRecepcionarEncomiendaAgenciaForm";
+            this.Text = "Entrega y Recepcion de Encomiendas en Agencia";
+            this.Load += new System.EventHandler(this.EntregarYRecepcionarEncomiendaAgenciaForm_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
