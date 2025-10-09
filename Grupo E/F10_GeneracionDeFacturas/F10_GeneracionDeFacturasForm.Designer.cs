@@ -1,6 +1,6 @@
 ﻿namespace Grupo_E.GeneracionDeFacturas
 {
-    partial class GeneracionDeFacturas
+    partial class F10_GeneracionDeFacturasForm
     {
         /// <summary>
         /// Required designer variable.
@@ -46,11 +46,11 @@
             this.btnFacturar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCUIT = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpboxImporteTotal = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,9 +130,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCUIT);
+            this.groupBox1.Controls.Add(this.btnLimpiar);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(30, 25);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -143,33 +143,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar cliente";
             // 
-            // button2
+            // txtCUIT
             // 
-            this.button2.Location = new System.Drawing.Point(1012, 55);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Limpiar filtro";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtCUIT.Location = new System.Drawing.Point(80, 59);
+            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(703, 26);
+            this.txtCUIT.TabIndex = 4;
+            this.txtCUIT.TextChanged += new System.EventHandler(this.txtCUIT_TextChanged);
             // 
-            // button1
+            // btnLimpiar
             // 
-            this.button1.Location = new System.Drawing.Point(810, 55);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(1012, 55);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(190, 35);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.Text = "Limpiar filtro";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(14, 60);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(703, 26);
-            this.textBox1.TabIndex = 1;
+            this.btnBuscar.Location = new System.Drawing.Point(810, 55);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(194, 35);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label1
             // 
@@ -181,28 +183,29 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CUIT";
             // 
-            // groupBox2
+            // grpboxImporteTotal
             // 
-            this.groupBox2.Location = new System.Drawing.Point(21, 640);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(660, 43);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "IMPORTE TOTAL";
+            this.grpboxImporteTotal.Location = new System.Drawing.Point(30, 642);
+            this.grpboxImporteTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpboxImporteTotal.Name = "grpboxImporteTotal";
+            this.grpboxImporteTotal.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpboxImporteTotal.Size = new System.Drawing.Size(660, 43);
+            this.grpboxImporteTotal.TabIndex = 12;
+            this.grpboxImporteTotal.TabStop = false;
+            this.grpboxImporteTotal.Text = "IMPORTE TOTAL";
+            this.grpboxImporteTotal.Enter += new System.EventHandler(this.grpboxImporteTotal_Enter);
             // 
-            // GeneracionDeFacturas
+            // F10_GeneracionDeFacturasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 702);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpboxImporteTotal);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnFacturar);
             this.Controls.Add(this.listViewFactura);
-            this.Name = "GeneracionDeFacturas";
+            this.Name = "F10_GeneracionDeFacturasForm";
             this.Text = "Generación de facturas";
             this.Load += new System.EventHandler(this.GeneracionDeFacturas_Load);
             this.groupBox1.ResumeLayout(false);
@@ -222,10 +225,10 @@
         private System.Windows.Forms.Button btnFacturar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtCUIT;
+        private System.Windows.Forms.GroupBox grpboxImporteTotal;
     }
 }

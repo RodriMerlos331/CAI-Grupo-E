@@ -18,14 +18,14 @@ namespace Grupo_E.RetirarEnAgencia
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void btnLimpiarFiltro_Click(object sender, EventArgs e)
         {
             txtNumeroDeTracking.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtDNI.Clear();
 
         }
 
@@ -36,6 +36,7 @@ namespace Grupo_E.RetirarEnAgencia
                 MessageBox.Show("El campo numero de tracking no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             if (!int.TryParse(txtNumeroDeTracking.Text, out int numeroDeTracking))
             {
                 MessageBox.Show("El campo numero de tracking debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,10 +100,7 @@ namespace Grupo_E.RetirarEnAgencia
 
             modelo.chequearEncomienda(EncomiendaX);
 
-            txtNumeroDeTracking.Clear();
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtDNI.Clear();
+    
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -119,6 +117,11 @@ namespace Grupo_E.RetirarEnAgencia
             {
                 this.Close(); 
             }
+        }
+
+        private void txtNumeroDeTracking_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
