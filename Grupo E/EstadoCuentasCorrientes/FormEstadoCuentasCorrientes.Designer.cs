@@ -35,16 +35,16 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.grpboxBusqueda = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblFechaHasta = new System.Windows.Forms.Label();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.txtCuitCliente = new System.Windows.Forms.TextBox();
             this.lblCuitCliente = new System.Windows.Forms.Label();
-            this.grpboxResultado = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSaldoAcreedor = new System.Windows.Forms.TextBox();
             this.txtSaldoDeudor = new System.Windows.Forms.TextBox();
-            this.lblAcreedor = new System.Windows.Forms.Label();
-            this.lblDeudor = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lvMovimientos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,8 +52,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.grpboxBusqueda.SuspendLayout();
-            this.grpboxResultado.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpFechaDesde
@@ -65,7 +65,6 @@
             this.dtpFechaDesde.Size = new System.Drawing.Size(178, 23);
             this.dtpFechaDesde.TabIndex = 5;
             this.dtpFechaDesde.Value = new System.DateTime(2025, 10, 5, 15, 13, 56, 0);
-            this.dtpFechaDesde.ValueChanged += new System.EventHandler(this.dtpFechaDesde_ValueChanged);
             // 
             // lblFechaDesde
             // 
@@ -107,7 +106,6 @@
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiarFiltros
             // 
@@ -117,7 +115,6 @@
             this.btnLimpiarFiltros.TabIndex = 4;
             this.btnLimpiarFiltros.Text = "Limpiar Filtros";
             this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
-            this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
             // 
             // btnSalir
             // 
@@ -128,28 +125,27 @@
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // grpboxBusqueda
+            // groupBox1
             // 
-            this.grpboxBusqueda.Controls.Add(this.lblFechaHasta);
-            this.grpboxBusqueda.Controls.Add(this.dtpFechaHasta);
-            this.grpboxBusqueda.Controls.Add(this.dtpFechaDesde);
-            this.grpboxBusqueda.Controls.Add(this.lblFechaDesde);
-            this.grpboxBusqueda.Controls.Add(this.txtCuitCliente);
-            this.grpboxBusqueda.Controls.Add(this.btnLimpiarFiltros);
-            this.grpboxBusqueda.Controls.Add(this.lblCuitCliente);
-            this.grpboxBusqueda.Controls.Add(this.btnBuscar);
-            this.grpboxBusqueda.Controls.Add(this.cmbEstadoFactura);
-            this.grpboxBusqueda.Controls.Add(this.lblEstado);
-            this.grpboxBusqueda.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.grpboxBusqueda.Location = new System.Drawing.Point(12, 16);
-            this.grpboxBusqueda.Name = "grpboxBusqueda";
-            this.grpboxBusqueda.Size = new System.Drawing.Size(833, 114);
-            this.grpboxBusqueda.TabIndex = 10;
-            this.grpboxBusqueda.TabStop = false;
-            this.grpboxBusqueda.Text = "Búsqueda cliente";
-            this.grpboxBusqueda.Enter += new System.EventHandler(this.grpboxBusqueda_Enter);
+            this.groupBox1.Controls.Add(this.lblFechaHasta);
+            this.groupBox1.Controls.Add(this.dtpFechaHasta);
+            this.groupBox1.Controls.Add(this.dtpFechaDesde);
+            this.groupBox1.Controls.Add(this.lblFechaDesde);
+            this.groupBox1.Controls.Add(this.txtCuitCliente);
+            this.groupBox1.Controls.Add(this.btnLimpiarFiltros);
+            this.groupBox1.Controls.Add(this.lblCuitCliente);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.cmbEstadoFactura);
+            this.groupBox1.Controls.Add(this.lblEstado);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.groupBox1.Location = new System.Drawing.Point(12, 16);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(833, 114);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Búsqueda cliente";
             // 
             // lblFechaHasta
             // 
@@ -192,21 +188,20 @@
             this.lblCuitCliente.Text = "CUIT del cliente";
             this.lblCuitCliente.Click += new System.EventHandler(this.lblCuitCliente_Click);
             // 
-            // grpboxResultado
+            // groupBox2
             // 
-            this.grpboxResultado.Controls.Add(this.txtSaldoAcreedor);
-            this.grpboxResultado.Controls.Add(this.txtSaldoDeudor);
-            this.grpboxResultado.Controls.Add(this.lblAcreedor);
-            this.grpboxResultado.Controls.Add(this.lblDeudor);
-            this.grpboxResultado.Controls.Add(this.lvMovimientos);
-            this.grpboxResultado.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.grpboxResultado.Location = new System.Drawing.Point(73, 156);
-            this.grpboxResultado.Name = "grpboxResultado";
-            this.grpboxResultado.Size = new System.Drawing.Size(714, 436);
-            this.grpboxResultado.TabIndex = 11;
-            this.grpboxResultado.TabStop = false;
-            this.grpboxResultado.Text = "Resultado";
-            this.grpboxResultado.Enter += new System.EventHandler(this.grpboxResultado_Enter);
+            this.groupBox2.Controls.Add(this.txtSaldoAcreedor);
+            this.groupBox2.Controls.Add(this.txtSaldoDeudor);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.lvMovimientos);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.groupBox2.Location = new System.Drawing.Point(73, 156);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(714, 436);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Resultado";
             // 
             // txtSaldoAcreedor
             // 
@@ -224,25 +219,25 @@
             this.txtSaldoDeudor.Size = new System.Drawing.Size(140, 23);
             this.txtSaldoDeudor.TabIndex = 9;
             // 
-            // lblAcreedor
+            // label4
             // 
-            this.lblAcreedor.AutoSize = true;
-            this.lblAcreedor.Font = new System.Drawing.Font("Segoe UI", 7.8F);
-            this.lblAcreedor.Location = new System.Drawing.Point(11, 408);
-            this.lblAcreedor.Name = "lblAcreedor";
-            this.lblAcreedor.Size = new System.Drawing.Size(105, 17);
-            this.lblAcreedor.TabIndex = 2;
-            this.lblAcreedor.Text = "Saldo acreedor: ";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.label4.Location = new System.Drawing.Point(11, 408);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Saldo acreedor: ";
             // 
-            // lblDeudor
+            // label3
             // 
-            this.lblDeudor.AutoSize = true;
-            this.lblDeudor.Font = new System.Drawing.Font("Segoe UI", 7.8F);
-            this.lblDeudor.Location = new System.Drawing.Point(11, 378);
-            this.lblDeudor.Name = "lblDeudor";
-            this.lblDeudor.Size = new System.Drawing.Size(95, 17);
-            this.lblDeudor.TabIndex = 1;
-            this.lblDeudor.Text = "Saldo deudor: ";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.label3.Location = new System.Drawing.Point(11, 378);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Saldo deudor: ";
             // 
             // lvMovimientos
             // 
@@ -261,7 +256,6 @@
             this.lvMovimientos.TabIndex = 0;
             this.lvMovimientos.UseCompatibleStateImageBehavior = false;
             this.lvMovimientos.View = System.Windows.Forms.View.Details;
-            this.lvMovimientos.SelectedIndexChanged += new System.EventHandler(this.lvMovimientos_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -303,8 +297,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 645);
-            this.Controls.Add(this.grpboxResultado);
-            this.Controls.Add(this.grpboxBusqueda);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSalir);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -316,10 +310,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estado de Cuentas Corrientes";
             this.Load += new System.EventHandler(this.FormEstadoCuentasCorrientes_Load);
-            this.grpboxBusqueda.ResumeLayout(false);
-            this.grpboxBusqueda.PerformLayout();
-            this.grpboxResultado.ResumeLayout(false);
-            this.grpboxResultado.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -332,10 +326,10 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiarFiltros;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.GroupBox grpboxBusqueda;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblCuitCliente;
         private System.Windows.Forms.TextBox txtCuitCliente;
-        private System.Windows.Forms.GroupBox grpboxResultado;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView lvMovimientos;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -343,8 +337,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Label lblDeudor;
-        private System.Windows.Forms.Label lblAcreedor;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblFechaHasta;
         private System.Windows.Forms.DateTimePicker dtpFechaHasta;
         private System.Windows.Forms.TextBox txtSaldoAcreedor;

@@ -47,6 +47,11 @@ namespace Grupo_E.EstadoCuentasCorrientes
 
         }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -73,41 +78,6 @@ namespace Grupo_E.EstadoCuentasCorrientes
         }
 
         private void lblFechaDesde_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lvMovimientos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpboxBusqueda_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpboxResultado_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpFechaDesde_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLimpiarFiltros_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
         {
 
         }
