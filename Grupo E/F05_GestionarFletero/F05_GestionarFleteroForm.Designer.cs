@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Grupo_E.GestionarFletero
 {
-    partial class GestionarFleteroForm
+    partial class F05_GestionarFleteroForm
     {
         /// <summary>
         /// Required designer variable.

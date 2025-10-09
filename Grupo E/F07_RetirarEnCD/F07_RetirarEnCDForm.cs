@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.RetirarEnCD
 {
-    public partial class RetirarEnCD : Form
+    public partial class F07_RetirarEnCDForm : Form
     {
-        public RetirarEnCD()
+        public F07_RetirarEnCDForm()
         {
             InitializeComponent();
         }

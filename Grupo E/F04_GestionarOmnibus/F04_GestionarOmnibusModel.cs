@@ -2,9 +2,9 @@
 
 namespace Grupo_E.GestionarOmnibus
 {
-    internal class GestionarOmnibusModel
+    internal class F04_GestionarOmnibusModel
     {
-        public GestionarOmnibusModel()
+        public F04_GestionarOmnibusModel()
         {
             CargarDatosFalsos();
         }

@@ -45,61 +45,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.cs">
+    <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.Designer.cs">
+    <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.Designer.cs">
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomienda.cs" />
-    <Compile Include="ConsultarEstadoEncomienda\EstadoDeEncomiendaModel.cs" />
-    <Compile Include="ConsultarEstadoEncomienda\EstadoEnvio.cs" />
-    <Compile Include="ConsultarEstadoEncomienda\Movimiento.cs" />
-    <Compile Include="CostoVsVentas\CostosVsVentas.cs">
+    <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomienda.cs" />
+    <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiendaModel.cs" />
+    <Compile Include="F08_ConsultarEstadoEncomienda\EstadoEnvio.cs" />
+    <Compile Include="F08_ConsultarEstadoEncomienda\Movimiento.cs" />
+    <Compile Include="F12_CostoVsVentas\CostosVsVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CostoVsVentas\CostosVsVentas.Designer.cs">
+    <Compile Include="F12_CostoVsVentas\CostosVsVentas.Designer.cs">
       <DependentUpon>CostosVsVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="EstadoCuentasCorrientes\EstadoCuentasCorrientesModel.cs" />
-    <Compile Include="EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.cs">
+    <Compile Include="F11_EstadoCuentasCorrientes\EstadoCuentasCorrientesModel.cs" />
+    <Compile Include="F11_EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.Designer.cs">
+    <Compile Include="F11_EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.Designer.cs">
       <DependentUpon>FormEstadoCuentasCorrientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="EstadoCuentasCorrientes\MovimientoCC.cs" />
-    <Compile Include="GeneracionDeFacturas\GeneracionDeFacturas.cs">
+    <Compile Include="F11_EstadoCuentasCorrientes\MovimientoCC.cs" />
+    <Compile Include="F02_ImposicionEnAgencia\F02_ImposicionEnAgenciaModel.cs" />
+    <Compile Include="F10_GeneracionDeFacturas\GeneracionDeFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeneracionDeFacturas\GeneracionDeFacturas.Designer.cs">
+    <Compile Include="F10_GeneracionDeFacturas\GeneracionDeFacturas.Designer.cs">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarFletero\HDR.cs" />
-    <Compile Include="GestionarFletero\Fletero.cs" />
-    <Compile Include="GestionarFletero\GestionarFleteroModel.cs" />
-    <Compile Include="GestionarFletero\Guia.cs" />
-    <Compile Include="GestionarOmnibus\GestionarOmnibusModel.cs" />
-    <Compile Include="GestionarOmnibus\ItemHDR.cs" />
-    <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.cs">
+    <Compile Include="F05_GestionarFletero\HDR.cs" />
+    <Compile Include="F05_GestionarFletero\Fletero.cs" />
+    <Compile Include="F05_GestionarFletero\F05_GestionarFleteroModel.cs" />
+    <Compile Include="F05_GestionarFletero\Guia.cs" />
+    <Compile Include="F04_GestionarOmnibus\F04_GestionarOmnibusModel.cs" />
+    <Compile Include="F04_GestionarOmnibus\ItemHDR.cs" />
+    <Compile Include="F02_ImposicionEnAgencia\F02_ImposicionEnAgencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImposicionEnAgencia\ImposicionEnAgencia.Designer.cs">
-      <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
+    <Compile Include="F02_ImposicionEnAgencia\F02_ImposicionEnAgencia.Designer.cs">
+      <DependentUpon>F02_ImposicionEnAgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImposicionEnCallCenter\Cliente.cs" />
-    <Compile Include="ImposicionEnCallCenter\ImposicionEnCallCenter.cs">
+    <Compile Include="F01_ImposicionEnCallCenter\Cliente.cs" />
+    <Compile Include="F01_ImposicionEnCallCenter\F01_ImposicionEnCallCenterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImposicionEnCallCenter\ImposicionEnCallCenter.Designer.cs">
-      <DependentUpon>ImposicionEnCallCenter.cs</DependentUpon>
+    <Compile Include="F01_ImposicionEnCallCenter\F01_ImposicionEnCallCenterForm.Designer.cs">
+      <DependentUpon>F01_ImposicionEnCallCenterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImposicionEnCallCenter\ImposicionEnCallCenterModel.cs" />
-    <Compile Include="ImposicionEnCD\ImposicionCD.cs">
+    <Compile Include="F01_ImposicionEnCallCenter\F01_ImposicionEnCallCenterModel.cs" />
+    <Compile Include="F03_ImposicionEnCD\F03_ImposicionCDForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImposicionEnCD\ImposicionCD.Designer.cs">
-      <DependentUpon>ImposicionCD.cs</DependentUpon>
+    <Compile Include="F03_ImposicionEnCD\F03_ImposicionCDForm.Designer.cs">
+      <DependentUpon>F03_ImposicionCDForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipalForm.cs">
       <SubType>Form</SubType>
@@ -109,81 +110,81 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EntregarYRecepcionarEncomiendasAgencia\EntregarYRecepcionarEncomiendaAgenciaForm.cs">
+    <Compile Include="F09_EntregarYRecepcionarEncomiendasAgencia\EntregarYRecepcionarEncomiendaAgenciaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EntregarYRecepcionarEncomiendasAgencia\EntregarYRecepcionarEncomiendaAgenciaForm.Designer.cs">
+    <Compile Include="F09_EntregarYRecepcionarEncomiendasAgencia\EntregarYRecepcionarEncomiendaAgenciaForm.Designer.cs">
       <DependentUpon>EntregarYRecepcionarEncomiendaAgenciaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarFletero\GestionarFleteroForm.cs">
+    <Compile Include="F05_GestionarFletero\F05_GestionarFleteroForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionarFletero\GestionarFleteroForm.Designer.cs">
-      <DependentUpon>GestionarFleteroForm.cs</DependentUpon>
+    <Compile Include="F05_GestionarFletero\F05_GestionarFleteroForm.Designer.cs">
+      <DependentUpon>F05_GestionarFleteroForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarOmnibus\GestionarOmnibusForm.cs">
+    <Compile Include="F04_GestionarOmnibus\F04_GestionarOmnibusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionarOmnibus\GestionarOmnibusForm.Designer.cs">
-      <DependentUpon>GestionarOmnibusForm.cs</DependentUpon>
+    <Compile Include="F04_GestionarOmnibus\F04_GestionarOmnibusForm.Designer.cs">
+      <DependentUpon>F04_GestionarOmnibusForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RetirarEnAgencia\EncomiendaRA.cs" />
-    <Compile Include="RetirarEnAgencia\RetirarenAgencia.cs">
+    <Compile Include="F06_RetirarEnAgencia\EncomiendaRA.cs" />
+    <Compile Include="F06_RetirarEnAgencia\F06_RetirarenAgenciaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RetirarEnAgencia\RetirarenAgencia.Designer.cs">
-      <DependentUpon>RetirarenAgencia.cs</DependentUpon>
+    <Compile Include="F06_RetirarEnAgencia\F06_RetirarenAgenciaForm.Designer.cs">
+      <DependentUpon>F06_RetirarenAgenciaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RetirarEnAgencia\RetirarEnAgenciaModelo.cs" />
-    <Compile Include="RetirarEnCD\RetirarEnCD.cs">
+    <Compile Include="F06_RetirarEnAgencia\RetirarEnAgenciaModelo.cs" />
+    <Compile Include="F07_RetirarEnCD\F07_RetirarEnCDForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RetirarEnCD\RetirarEnCD.Designer.cs">
-      <DependentUpon>RetirarEnCD.cs</DependentUpon>
+    <Compile Include="F07_RetirarEnCD\F07_RetirarEnCDForm.Designer.cs">
+      <DependentUpon>F07_RetirarEnCDForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.resx">
+    <EmbeddedResource Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.resx">
       <DependentUpon>EstadoDeEncomiedaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CostoVsVentas\CostosVsVentas.resx">
+    <EmbeddedResource Include="F12_CostoVsVentas\CostosVsVentas.resx">
       <DependentUpon>CostosVsVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.resx">
+    <EmbeddedResource Include="F11_EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.resx">
       <DependentUpon>FormEstadoCuentasCorrientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeneracionDeFacturas\GeneracionDeFacturas.resx">
+    <EmbeddedResource Include="F10_GeneracionDeFacturas\GeneracionDeFacturas.resx">
       <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImposicionEnAgencia\ImposicionEnAgencia.resx">
-      <DependentUpon>ImposicionEnAgencia.cs</DependentUpon>
+    <EmbeddedResource Include="F02_ImposicionEnAgencia\F02_ImposicionEnAgencia.resx">
+      <DependentUpon>F02_ImposicionEnAgencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImposicionEnCallCenter\ImposicionEnCallCenter.resx">
-      <DependentUpon>ImposicionEnCallCenter.cs</DependentUpon>
+    <EmbeddedResource Include="F01_ImposicionEnCallCenter\F01_ImposicionEnCallCenterForm.resx">
+      <DependentUpon>F01_ImposicionEnCallCenterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImposicionEnCD\ImposicionCD.resx">
-      <DependentUpon>ImposicionCD.cs</DependentUpon>
+    <EmbeddedResource Include="F03_ImposicionEnCD\F03_ImposicionCDForm.resx">
+      <DependentUpon>F03_ImposicionCDForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipalForm.resx">
       <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EntregarYRecepcionarEncomiendasAgencia\EntregarYRecepcionarEncomiendaAgenciaForm.resx">
+    <EmbeddedResource Include="F09_EntregarYRecepcionarEncomiendasAgencia\EntregarYRecepcionarEncomiendaAgenciaForm.resx">
       <DependentUpon>EntregarYRecepcionarEncomiendaAgenciaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionarFletero\GestionarFleteroForm.resx">
-      <DependentUpon>GestionarFleteroForm.cs</DependentUpon>
+    <EmbeddedResource Include="F05_GestionarFletero\F05_GestionarFleteroForm.resx">
+      <DependentUpon>F05_GestionarFleteroForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionarOmnibus\GestionarOmnibusForm.resx">
-      <DependentUpon>GestionarOmnibusForm.cs</DependentUpon>
+    <EmbeddedResource Include="F04_GestionarOmnibus\F04_GestionarOmnibusForm.resx">
+      <DependentUpon>F04_GestionarOmnibusForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RetirarEnAgencia\RetirarenAgencia.resx">
-      <DependentUpon>RetirarenAgencia.cs</DependentUpon>
+    <EmbeddedResource Include="F06_RetirarEnAgencia\F06_RetirarenAgenciaForm.resx">
+      <DependentUpon>F06_RetirarenAgenciaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RetirarEnCD\RetirarEnCD.resx">
-      <DependentUpon>RetirarEnCD.cs</DependentUpon>
+    <EmbeddedResource Include="F07_RetirarEnCD\F07_RetirarEnCDForm.resx">
+      <DependentUpon>F07_RetirarEnCDForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

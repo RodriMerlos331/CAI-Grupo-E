@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Grupo_E.GestionarFletero
 {
-    internal class GestionarFleteroModel
+    internal class F05_GestionarFleteroModel
     {
         public List<Fletero> fleteros = new List<Fletero>();
         public List<HDR> hdrs = new List<HDR>();

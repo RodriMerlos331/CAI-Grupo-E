@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.ImposicionEnAgencia
 {
-    public partial class ImposicionEnAgencia : Form
+    public partial class F02_ImposicionEnAgencia : Form
     {
-        public ImposicionEnAgencia()
+        public F02_ImposicionEnAgencia()
         {
             InitializeComponent();
         }

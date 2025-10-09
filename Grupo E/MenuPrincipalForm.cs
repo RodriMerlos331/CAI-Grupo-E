@@ -52,7 +52,7 @@ namespace Grupo_E
 
         private void btnImposicionEnAgencia_Click(object sender, EventArgs e)
         {
-            using (var f = new ImposicionEnAgencia.ImposicionEnAgencia())
+            using (var f = new ImposicionEnAgencia.F02_ImposicionEnAgencia())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);
@@ -61,7 +61,7 @@ namespace Grupo_E
 
         private void btnImposicionEnCD_Click(object sender, EventArgs e)
         {
-            using (var f = new ImposicionEnCD.ImposicionCD())
+            using (var f = new ImposicionEnCD.F03_ImposicionCDForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);
@@ -88,7 +88,7 @@ namespace Grupo_E
 
         private void btnRetirarEnCD_Click(object sender, EventArgs e)
         {
-            using (var f = new RetirarEnCD.RetirarEnCD())
+            using (var f = new RetirarEnCD.F07_RetirarEnCDForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);
@@ -114,7 +114,7 @@ namespace Grupo_E
 
         private void btnGestionarFletero_Click(object sender, EventArgs e)
         {
-            using (var f = new GestionarFletero.GestionarFleteroForm())
+            using (var f = new GestionarFletero.F05_GestionarFleteroForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);
@@ -123,7 +123,7 @@ namespace Grupo_E
 
         private void btnGestionarOmnibus_Click(object sender, EventArgs e)
         {
-            using (var f = new GestionarOmnibus.GestionarOmnibusForm())
+            using (var f = new GestionarOmnibus.F04_GestionarOmnibusForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);
@@ -132,7 +132,7 @@ namespace Grupo_E
 
         private void btnImposicionEnCallCenter_Click(object sender, EventArgs e)
         {
-            using (var f = new ImposicionEnCallCenter.ImposicionEnCallCenter())
+            using (var f = new ImposicionEnCallCenter.F01_ImposicionEnCallCenterForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);

@@ -1,7 +1,7 @@
 ﻿namespace Grupo_E.GestionarOmnibus
 {
 
-    partial class GestionarOmnibusForm
+    partial class F04_GestionarOmnibusForm
     {
         /// <summary>
         /// Required designer variable.

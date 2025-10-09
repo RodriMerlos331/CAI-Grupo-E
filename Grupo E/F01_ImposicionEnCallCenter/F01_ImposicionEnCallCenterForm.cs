@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace Grupo_E.ImposicionEnCallCenter
 {
-    public partial class ImposicionEnCallCenter : Form
+    public partial class F01_ImposicionEnCallCenterForm : Form
     {
 
-        private readonly ImposicionEnCallCenterModel modelo = new ImposicionEnCallCenterModel();
+        private readonly F01_ImposicionEnCallCenterModel modelo = new F01_ImposicionEnCallCenterModel();
         private int CUITClienteActual = 0;
-        public ImposicionEnCallCenter()
+        public F01_ImposicionEnCallCenterForm()
         {
             InitializeComponent();
         }

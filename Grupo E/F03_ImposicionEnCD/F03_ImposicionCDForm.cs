@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E.ImposicionEnCD
 {
-    public partial class ImposicionCD : Form
+    public partial class F03_ImposicionCDForm : Form
     {
-        public ImposicionCD()
+        public F03_ImposicionCDForm()
         {
             InitializeComponent();
         }

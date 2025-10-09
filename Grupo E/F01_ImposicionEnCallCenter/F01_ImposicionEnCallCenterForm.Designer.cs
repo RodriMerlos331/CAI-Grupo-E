@@ -1,6 +1,6 @@
 ﻿namespace Grupo_E.ImposicionEnCallCenter
 {
-    partial class ImposicionEnCallCenter
+    partial class F01_ImposicionEnCallCenterForm
     {
         /// <summary>
         /// Required designer variable.

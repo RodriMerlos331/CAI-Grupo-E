@@ -6,11 +6,11 @@ using System.Windows.Forms;
 
 namespace Grupo_E.GestionarOmnibus
 {
-    public partial class GestionarOmnibusForm : Form
+    public partial class F04_GestionarOmnibusForm : Form
     {
-        private readonly GestionarOmnibusModel modelo = new GestionarOmnibusModel();
+        private readonly F04_GestionarOmnibusModel modelo = new F04_GestionarOmnibusModel();
 
-        public GestionarOmnibusForm()
+        public F04_GestionarOmnibusForm()
         {
             InitializeComponent();
             ConfigurarGrids();            

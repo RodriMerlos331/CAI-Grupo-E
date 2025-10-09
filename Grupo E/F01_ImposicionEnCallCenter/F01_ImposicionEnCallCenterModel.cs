@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace Grupo_E.ImposicionEnCallCenter
 {
-    internal class ImposicionEnCallCenterModel
+    internal class F01_ImposicionEnCallCenterModel
     {
         private List<Cliente> clientes = new List<Cliente>();
 
-        public ImposicionEnCallCenterModel()
+        public F01_ImposicionEnCallCenterModel()
         {
         //  Datos de prueba
 

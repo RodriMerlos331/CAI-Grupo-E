@@ -1,6 +1,6 @@
 ﻿namespace Grupo_E.ImposicionEnAgencia
 {
-    partial class ImposicionEnAgencia
+    partial class F02_ImposicionEnAgencia
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace Grupo_E.RetirarEnCD
 {
-    partial class RetirarEnCD
+    partial class F07_RetirarEnCDForm
     {
         /// <summary>
         /// Required designer variable.

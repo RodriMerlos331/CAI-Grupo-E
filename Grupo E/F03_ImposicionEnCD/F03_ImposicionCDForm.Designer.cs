@@ -1,6 +1,6 @@
 ﻿namespace Grupo_E.ImposicionEnCD
 {
-    partial class ImposicionCD
+    partial class F03_ImposicionCDForm
     {
         /// <summary>
         /// Required designer variable.

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Grupo_E.GestionarFletero
 {
-    public partial class GestionarFleteroForm : Form
+    public partial class F05_GestionarFleteroForm : Form
     {
-        private readonly GestionarFleteroModel modelo = new GestionarFleteroModel();
+        private readonly F05_GestionarFleteroModel modelo = new F05_GestionarFleteroModel();
 
-        public GestionarFleteroForm()
+        public F05_GestionarFleteroForm()
         {
             InitializeComponent();
         }
