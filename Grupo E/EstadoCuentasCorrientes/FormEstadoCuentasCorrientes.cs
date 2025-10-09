@@ -17,11 +17,6 @@ namespace Grupo_E.EstadoCuentasCorrientes
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblEstado_Click(object sender, EventArgs e)
         {
 
@@ -31,7 +26,6 @@ namespace Grupo_E.EstadoCuentasCorrientes
         {
 
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -43,11 +37,6 @@ namespace Grupo_E.EstadoCuentasCorrientes
         }
 
         private void txtNroFactura_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
         {
 
         }
