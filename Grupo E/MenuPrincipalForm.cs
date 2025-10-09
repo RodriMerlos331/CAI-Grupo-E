@@ -1,5 +1,4 @@
 ﻿
-using Grupo_E.GestionarFletero;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,7 +114,7 @@ namespace Grupo_E
 
         private void btnGestionarFletero_Click(object sender, EventArgs e)
         {
-            using (var f = new GestionarFleteroForm())
+            using (var f = new GestionarFletero.GestionarFleteroForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);
