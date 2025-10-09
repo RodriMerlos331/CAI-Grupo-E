@@ -23,12 +23,13 @@ namespace Grupo_E.GestionarFletero
         {
             modelo.CargarFleteros();
             modelo.CargarHDR();
-            modelo.GenerarNuevasHDRyGuias();
+            
         }
 
         private void BuscarBtn_Click(object sender, EventArgs e)
         {
-            HDRAsignadasListView.Items.Clear();
+            
+
             if (string.IsNullOrWhiteSpace(DNIText.Text))
             {
                 MessageBox.Show("El campo DNI no puede estar vacío");
@@ -40,6 +41,21 @@ namespace Grupo_E.GestionarFletero
                 return;
             }
 
+            if (!modelo.FleteroExiste(dniFleteroBuscar))
+            {
+                MessageBox.Show($"No existe ningún fletero con el DNI {dniFleteroBuscar}.",
+                        "Fletero no encontrado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                return;
+            }   
+
+            LimpiarPantalla();
+
+            //Muestro HDR asignadas:
+
+            modelo.GenerarNuevasHDRyGuias();
+
             var hdrAsignadas = modelo.ObtenerHDRAsignadas(dniFleteroBuscar);
 
             foreach (var hdr in hdrAsignadas)
@@ -50,6 +66,8 @@ namespace Grupo_E.GestionarFletero
                 HDRAsignadasListView.Items.Add(item);
             }
 
+
+            //Generación nuevas HDR (asumiendo es independiente a la rendición)
             foreach (var hdr in modelo.NuevasHDRRetiro)
             {
                 var item = new ListViewItem(hdr.IdHDR.ToString());
@@ -71,35 +89,6 @@ namespace Grupo_E.GestionarFletero
                 GuiasRetirarListView.Items.Add(item);
             }
 
-            // Guías Entrega
-            foreach (var guia in modelo.NuevasGuiasEntrega)
-            {
-                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
-                item.SubItems.Add(guia.Tracking.ToString());
-                GuiasEntregarListView.Items.Add(item);
-            }
-            foreach (var hdr in modelo.NuevasHDRRetiro)
-            {
-                var item = new ListViewItem(hdr.IdHDR.ToString());
-                item.SubItems.Add(hdr.Tipo);
-                HDRRetirarListViews.Items.Add(item);
-            }
-
-            foreach (var hdr in modelo.NuevasHDREntrega)
-            {
-                var item = new ListViewItem(hdr.IdHDR.ToString());
-                item.SubItems.Add(hdr.Tipo);
-                HDREntregarListView.Items.Add(item);
-            }
-
-            foreach (var guia in modelo.NuevasGuiasRetiro)
-            {
-                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
-                item.SubItems.Add(guia.Tracking.ToString());
-                GuiasRetirarListView.Items.Add(item);
-            }
-
-            // Guías Entrega
             foreach (var guia in modelo.NuevasGuiasEntrega)
             {
                 var item = new ListViewItem(guia.NroHDRAsignada.ToString());
@@ -113,6 +102,26 @@ namespace Grupo_E.GestionarFletero
         //BOTON ACTUALIZAR HDR
         private void ActualizarHDRBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(DNIText.Text))
+            {
+                MessageBox.Show("El campo DNI no puede estar vacío");
+                return;
+            }
+            if (!int.TryParse(DNIText.Text, out int dniFleteroBuscar))
+            {
+                MessageBox.Show("El campo DNI debe ser un número válido");
+                return;
+            }
+
+            if (!modelo.FleteroExiste(dniFleteroBuscar))
+            {
+                MessageBox.Show($"No existe ningún fletero con el DNI {dniFleteroBuscar}.",
+                        "Fletero no encontrado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                return;
+            }
+
             foreach (ListViewItem item in HDRAsignadasListView.Items)
             {
                 var hdr = item.Tag as HDR;
@@ -138,11 +147,20 @@ namespace Grupo_E.GestionarFletero
                 var item = new ListViewItem(guia.NroHDRAsignada.ToString());
                 item.SubItems.Add(guia.Tracking.ToString());
                 GuiasNoEntregadasListView.Items.Add(item);
-            }          
+            }
+
+            
         }
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
         {
+           LimpiarPantalla();
+
+        }
+
+        private void LimpiarPantalla()
+        {
+            DNIText.Clear();
             HDRAsignadasListView.Items.Clear();
             GuiasEntregarListView.Items.Clear();
             GuiasRetirarListView.Items.Clear();
@@ -150,13 +168,13 @@ namespace Grupo_E.GestionarFletero
             GuiasRetiradasListView.Items.Clear();
             HDREntregarListView.Items.Clear();
             HDRRetirarListViews.Items.Clear();
-
         }
 
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
             modelo.GuardarCambios();
-            //TODO: limpiá la pantalla.
+            MessageBox.Show("Cambios guardados con éxito");
+            LimpiarPantalla();
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)

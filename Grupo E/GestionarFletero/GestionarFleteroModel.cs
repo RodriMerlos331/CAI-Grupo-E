@@ -20,7 +20,6 @@ namespace Grupo_E.GestionarFletero
         public void CargarFleteros()
         {
             fleteros.Add(new Fletero { Dni = 12345678 });
-            fleteros.Add(new Fletero { Dni = 12345678 });
             fleteros.Add(new Fletero { Dni = 23456789 });
             fleteros.Add(new Fletero { Dni = 34567890 });
             fleteros.Add(new Fletero { Dni = 45678901 });
@@ -176,8 +175,8 @@ namespace Grupo_E.GestionarFletero
             }
 
             MessageBox.Show(
-                "Se encontraron " + hdrsFiltradas.Count + " HDR asignadas al fletero con DNI " + dniFletero + ".",
-                "Búsqueda exitosa",
+                "Se encontraron " + hdrsFiltradas.Count + " HDR asignadas al fletero con DNI " + dniFletero + " que deben ser rendidas. Además, se generaron las nuevas ruta a asignar.",
+                "Rendición",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
@@ -197,21 +196,18 @@ namespace Grupo_E.GestionarFletero
 
         public void ProcesarHDRsActualizadas()
         {
-            // Limpiamos las listas de salida
+            
             guiasAAdmitir.Clear();
             guiasADevolver.Clear();
 
-
-            // Recorremos las HDR del fletero activo
             foreach (var hdr in hdrsFletero)
             {
-                // RETIRO + CUMPLIDA → va a AAdmitir
                 if (hdr.Tipo == "Retiro" && hdr.Cumplida)
                 {
                     guiasAAdmitir.AddRange(hdr.GuiasHDR);
                 }
 
-                // ENTREGA + NO CUMPLIDA → va a ADevolver
+
                 if (hdr.Tipo == "Entrega" && !hdr.Cumplida)
                 {
                     guiasADevolver.AddRange(hdr.GuiasHDR);
@@ -230,6 +226,12 @@ namespace Grupo_E.GestionarFletero
 
         }
 
+        public bool FleteroExiste(int dniFletero)
+        {
+            return fleteros.Any(f => f.Dni == dniFletero);
+        }
+
+
         public void GenerarNuevasHDRyGuias()
         {
             NuevasHDRRetiro.Clear();
@@ -238,22 +240,20 @@ namespace Grupo_E.GestionarFletero
             NuevasGuiasEntrega.Clear();
 
             int siguienteIdHDR = hdrs.Count + 1;
-            int siguienteTracking = guias.Count + 2001; // arranque distinto para nuevas
+            int siguienteTracking = guias.Count + 2001; 
 
-            // 🔹 Generamos 3 HDR de Retiro y 3 HDR de Entrega
             for (int i = 0; i < 3; i++)
             {
-                // --- RETIRO ---
+
                 var hdrRetiro = new HDR
                 {
                     IdHDR = siguienteIdHDR++,
                     Tipo = "Retiro",
-                    DniFleteroAsignado = 12345678, // o el actual
+                    DniFleteroAsignado = 12345678, 
                     Cumplida = false,
                     GuiasHDR = new List<Guia>()
                 };
 
-                // 2 guías por HDR
                 for (int j = 0; j < 2; j++)
                 {
                     var guia = new Guia
@@ -267,7 +267,6 @@ namespace Grupo_E.GestionarFletero
 
                 NuevasHDRRetiro.Add(hdrRetiro);
 
-                // --- ENTREGA ---
                 var hdrEntrega = new HDR
                 {
                     IdHDR = siguienteIdHDR++,
@@ -291,7 +290,7 @@ namespace Grupo_E.GestionarFletero
                 NuevasHDREntrega.Add(hdrEntrega);
             }
 
-            MessageBox.Show($"Generadas {NuevasHDRRetiro.Count} HDR de Retiro y {NuevasHDREntrega.Count} de Entrega.");
+            //MessageBox.Show($"Generadas {NuevasHDRRetiro.Count} HDR de Retiro y {NuevasHDREntrega.Count} de Entrega.");
         }
 
         internal void GuardarCambios()
