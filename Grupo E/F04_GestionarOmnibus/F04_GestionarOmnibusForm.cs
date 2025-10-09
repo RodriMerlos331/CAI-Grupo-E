@@ -41,6 +41,14 @@ namespace Grupo_E.GestionarOmnibus
                 MessageBox.Show("Ingresá la patente.", "Patente requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // Verificar si la patente existe en los datos
+            bool existe = modelo.Datos.Any(d => string.Equals(d.Patente, patente, StringComparison.OrdinalIgnoreCase));
+
+            if (!existe)
+            {
+                MessageBox.Show("Esa patente no existe dentro del sistema.", "Patente no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Filtrar por patente y por ubicación
             var recepcion = modelo.Datos.Where(d => string.Equals(d.Patente, patente, StringComparison.OrdinalIgnoreCase)
