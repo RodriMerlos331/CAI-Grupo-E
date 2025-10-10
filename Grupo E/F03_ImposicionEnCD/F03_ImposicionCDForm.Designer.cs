@@ -63,18 +63,20 @@
             // 
             // btnCancelarImpoAgencia
             // 
-            this.btnCancelarImpoAgencia.Location = new System.Drawing.Point(797, 501);
+            this.btnCancelarImpoAgencia.Location = new System.Drawing.Point(1194, 626);
+            this.btnCancelarImpoAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelarImpoAgencia.Name = "btnCancelarImpoAgencia";
-            this.btnCancelarImpoAgencia.Size = new System.Drawing.Size(109, 23);
+            this.btnCancelarImpoAgencia.Size = new System.Drawing.Size(164, 35);
             this.btnCancelarImpoAgencia.TabIndex = 34;
             this.btnCancelarImpoAgencia.Text = "Cancelar";
             this.btnCancelarImpoAgencia.UseVisualStyleBackColor = true;
             // 
             // btnAceptarImpoAgencia
             // 
-            this.btnAceptarImpoAgencia.Location = new System.Drawing.Point(682, 501);
+            this.btnAceptarImpoAgencia.Location = new System.Drawing.Point(1003, 626);
+            this.btnAceptarImpoAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptarImpoAgencia.Name = "btnAceptarImpoAgencia";
-            this.btnAceptarImpoAgencia.Size = new System.Drawing.Size(109, 23);
+            this.btnAceptarImpoAgencia.Size = new System.Drawing.Size(164, 35);
             this.btnAceptarImpoAgencia.TabIndex = 33;
             this.btnAceptarImpoAgencia.Text = "Aceptar";
             this.btnAceptarImpoAgencia.UseVisualStyleBackColor = true;
@@ -83,26 +85,30 @@
             // 
             this.grbParticular.Controls.Add(this.txtCiudadDestino);
             this.grbParticular.Controls.Add(this.lbCiudadDestino);
-            this.grbParticular.Location = new System.Drawing.Point(470, 283);
+            this.grbParticular.Location = new System.Drawing.Point(904, 372);
+            this.grbParticular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbParticular.Name = "grbParticular";
-            this.grbParticular.Size = new System.Drawing.Size(442, 108);
+            this.grbParticular.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbParticular.Size = new System.Drawing.Size(473, 131);
             this.grbParticular.TabIndex = 31;
             this.grbParticular.TabStop = false;
             this.grbParticular.Text = "Direccion particular";
             // 
             // txtCiudadDestino
             // 
-            this.txtCiudadDestino.Location = new System.Drawing.Point(5, 51);
+            this.txtCiudadDestino.Location = new System.Drawing.Point(8, 78);
+            this.txtCiudadDestino.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCiudadDestino.Name = "txtCiudadDestino";
-            this.txtCiudadDestino.Size = new System.Drawing.Size(436, 20);
+            this.txtCiudadDestino.Size = new System.Drawing.Size(448, 26);
             this.txtCiudadDestino.TabIndex = 9;
             // 
             // lbCiudadDestino
             // 
             this.lbCiudadDestino.AutoSize = true;
-            this.lbCiudadDestino.Location = new System.Drawing.Point(11, 30);
+            this.lbCiudadDestino.Location = new System.Drawing.Point(16, 46);
+            this.lbCiudadDestino.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCiudadDestino.Name = "lbCiudadDestino";
-            this.lbCiudadDestino.Size = new System.Drawing.Size(297, 13);
+            this.lbCiudadDestino.Size = new System.Drawing.Size(427, 20);
             this.lbCiudadDestino.TabIndex = 8;
             this.lbCiudadDestino.Text = "Ciudad / Codigo Postal / Calle / Altura / Piso / Departamento";
             // 
@@ -110,26 +116,30 @@
             // 
             this.grbCliente.Controls.Add(this.lbCUITCliente);
             this.grbCliente.Controls.Add(this.lbCUITImpo);
-            this.grbCliente.Location = new System.Drawing.Point(12, 20);
+            this.grbCliente.Location = new System.Drawing.Point(18, 31);
+            this.grbCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbCliente.Name = "grbCliente";
-            this.grbCliente.Size = new System.Drawing.Size(906, 75);
+            this.grbCliente.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbCliente.Size = new System.Drawing.Size(1359, 115);
             this.grbCliente.TabIndex = 29;
             this.grbCliente.TabStop = false;
             this.grbCliente.Text = "Cliente";
             // 
             // lbCUITCliente
             // 
-            this.lbCUITCliente.Location = new System.Drawing.Point(45, 25);
+            this.lbCUITCliente.Location = new System.Drawing.Point(68, 38);
+            this.lbCUITCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbCUITCliente.Name = "lbCUITCliente";
-            this.lbCUITCliente.Size = new System.Drawing.Size(849, 20);
+            this.lbCUITCliente.Size = new System.Drawing.Size(1272, 26);
             this.lbCUITCliente.TabIndex = 1;
             // 
             // lbCUITImpo
             // 
             this.lbCUITImpo.AutoSize = true;
-            this.lbCUITImpo.Location = new System.Drawing.Point(7, 32);
+            this.lbCUITImpo.Location = new System.Drawing.Point(10, 49);
+            this.lbCUITImpo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCUITImpo.Name = "lbCUITImpo";
-            this.lbCUITImpo.Size = new System.Drawing.Size(32, 13);
+            this.lbCUITImpo.Size = new System.Drawing.Size(46, 20);
             this.lbCUITImpo.TabIndex = 0;
             this.lbCUITImpo.Text = "CUIT";
             // 
@@ -137,9 +147,11 @@
             // 
             this.grbAgencia.Controls.Add(this.cbAgencias);
             this.grbAgencia.Controls.Add(this.lbAgencia);
-            this.grbAgencia.Location = new System.Drawing.Point(12, 192);
+            this.grbAgencia.Location = new System.Drawing.Point(13, 372);
+            this.grbAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbAgencia.Name = "grbAgencia";
-            this.grbAgencia.Size = new System.Drawing.Size(447, 85);
+            this.grbAgencia.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbAgencia.Size = new System.Drawing.Size(414, 131);
             this.grbAgencia.TabIndex = 30;
             this.grbAgencia.TabStop = false;
             this.grbAgencia.Text = "Agencia";
@@ -147,17 +159,19 @@
             // cbAgencias
             // 
             this.cbAgencias.FormattingEnabled = true;
-            this.cbAgencias.Location = new System.Drawing.Point(11, 46);
+            this.cbAgencias.Location = new System.Drawing.Point(16, 71);
+            this.cbAgencias.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbAgencias.Name = "cbAgencias";
-            this.cbAgencias.Size = new System.Drawing.Size(414, 21);
+            this.cbAgencias.Size = new System.Drawing.Size(350, 28);
             this.cbAgencias.TabIndex = 11;
             // 
             // lbAgencia
             // 
             this.lbAgencia.AutoSize = true;
-            this.lbAgencia.Location = new System.Drawing.Point(8, 25);
+            this.lbAgencia.Location = new System.Drawing.Point(12, 38);
+            this.lbAgencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAgencia.Name = "lbAgencia";
-            this.lbAgencia.Size = new System.Drawing.Size(166, 13);
+            this.lbAgencia.Size = new System.Drawing.Size(246, 20);
             this.lbAgencia.TabIndex = 10;
             this.lbAgencia.Text = "Agencias disponibles en localidad";
             // 
@@ -166,9 +180,11 @@
             this.grbCC.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
             this.grbCC.Controls.Add(this.comboBox1);
             this.grbCC.Controls.Add(this.lbLocalidad);
-            this.grbCC.Location = new System.Drawing.Point(12, 101);
+            this.grbCC.Location = new System.Drawing.Point(16, 156);
+            this.grbCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbCC.Name = "grbCC";
-            this.grbCC.Size = new System.Drawing.Size(447, 85);
+            this.grbCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbCC.Size = new System.Drawing.Size(1361, 97);
             this.grbCC.TabIndex = 26;
             this.grbCC.TabStop = false;
             this.grbCC.Text = "Destino";
@@ -176,28 +192,33 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 46);
+            this.comboBox1.Location = new System.Drawing.Point(109, 46);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(414, 21);
+            this.comboBox1.Size = new System.Drawing.Size(1202, 28);
             this.comboBox1.TabIndex = 12;
             // 
             // lbLocalidad
             // 
             this.lbLocalidad.AutoSize = true;
-            this.lbLocalidad.Location = new System.Drawing.Point(11, 30);
+            this.lbLocalidad.Location = new System.Drawing.Point(16, 46);
+            this.lbLocalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLocalidad.Name = "lbLocalidad";
-            this.lbLocalidad.Size = new System.Drawing.Size(117, 13);
+            this.lbLocalidad.Size = new System.Drawing.Size(116, 30);
             this.lbLocalidad.TabIndex = 8;
-            this.lbLocalidad.Text = "Centros de distribución:";
+            this.lbLocalidad.Text = "Localidad";
+            this.lbLocalidad.Click += new System.EventHandler(this.lbLocalidad_Click);
             // 
             // grbDatosDestino
             // 
             this.grbDatosDestino.Controls.Add(this.rbParticular);
             this.grbDatosDestino.Controls.Add(this.rbCC);
             this.grbDatosDestino.Controls.Add(this.rbAgecnia);
-            this.grbDatosDestino.Location = new System.Drawing.Point(470, 101);
+            this.grbDatosDestino.Location = new System.Drawing.Point(13, 263);
+            this.grbDatosDestino.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbDatosDestino.Name = "grbDatosDestino";
-            this.grbDatosDestino.Size = new System.Drawing.Size(442, 176);
+            this.grbDatosDestino.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbDatosDestino.Size = new System.Drawing.Size(1364, 99);
             this.grbDatosDestino.TabIndex = 27;
             this.grbDatosDestino.TabStop = false;
             this.grbDatosDestino.Text = "Datos de destino";
@@ -205,9 +226,10 @@
             // rbParticular
             // 
             this.rbParticular.AutoSize = true;
-            this.rbParticular.Location = new System.Drawing.Point(15, 68);
+            this.rbParticular.Location = new System.Drawing.Point(591, 38);
+            this.rbParticular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbParticular.Name = "rbParticular";
-            this.rbParticular.Size = new System.Drawing.Size(116, 17);
+            this.rbParticular.Size = new System.Drawing.Size(169, 24);
             this.rbParticular.TabIndex = 2;
             this.rbParticular.TabStop = true;
             this.rbParticular.Text = "Direccion particular";
@@ -216,9 +238,10 @@
             // rbCC
             // 
             this.rbCC.AutoSize = true;
-            this.rbCC.Location = new System.Drawing.Point(15, 25);
+            this.rbCC.Location = new System.Drawing.Point(47, 38);
+            this.rbCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbCC.Name = "rbCC";
-            this.rbCC.Size = new System.Drawing.Size(127, 17);
+            this.rbCC.Size = new System.Drawing.Size(188, 24);
             this.rbCC.TabIndex = 0;
             this.rbCC.TabStop = true;
             this.rbCC.Text = "Centro de distribucion";
@@ -227,9 +250,10 @@
             // rbAgecnia
             // 
             this.rbAgecnia.AutoSize = true;
-            this.rbAgecnia.Location = new System.Drawing.Point(15, 112);
+            this.rbAgecnia.Location = new System.Drawing.Point(1183, 38);
+            this.rbAgecnia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbAgecnia.Name = "rbAgecnia";
-            this.rbAgecnia.Size = new System.Drawing.Size(64, 17);
+            this.rbAgecnia.Size = new System.Drawing.Size(92, 24);
             this.rbAgecnia.TabIndex = 1;
             this.rbAgecnia.TabStop = true;
             this.rbAgecnia.Text = "Agencia";
@@ -239,26 +263,30 @@
             // 
             this.grbDatosDestinatario.Controls.Add(this.txtApellidoDestinatario);
             this.grbDatosDestinatario.Controls.Add(this.lbNombreDestinatario);
-            this.grbDatosDestinatario.Location = new System.Drawing.Point(12, 283);
+            this.grbDatosDestinatario.Location = new System.Drawing.Point(447, 372);
+            this.grbDatosDestinatario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbDatosDestinatario.Name = "grbDatosDestinatario";
-            this.grbDatosDestinatario.Size = new System.Drawing.Size(447, 108);
+            this.grbDatosDestinatario.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbDatosDestinatario.Size = new System.Drawing.Size(438, 131);
             this.grbDatosDestinatario.TabIndex = 28;
             this.grbDatosDestinatario.TabStop = false;
             this.grbDatosDestinatario.Text = "Datos de destinatario";
             // 
             // txtApellidoDestinatario
             // 
-            this.txtApellidoDestinatario.Location = new System.Drawing.Point(4, 51);
+            this.txtApellidoDestinatario.Location = new System.Drawing.Point(6, 78);
+            this.txtApellidoDestinatario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtApellidoDestinatario.Name = "txtApellidoDestinatario";
-            this.txtApellidoDestinatario.Size = new System.Drawing.Size(441, 20);
+            this.txtApellidoDestinatario.Size = new System.Drawing.Size(417, 26);
             this.txtApellidoDestinatario.TabIndex = 3;
             // 
             // lbNombreDestinatario
             // 
             this.lbNombreDestinatario.AutoSize = true;
-            this.lbNombreDestinatario.Location = new System.Drawing.Point(7, 35);
+            this.lbNombreDestinatario.Location = new System.Drawing.Point(10, 54);
+            this.lbNombreDestinatario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNombreDestinatario.Name = "lbNombreDestinatario";
-            this.lbNombreDestinatario.Size = new System.Drawing.Size(122, 13);
+            this.lbNombreDestinatario.Size = new System.Drawing.Size(173, 20);
             this.lbNombreDestinatario.TabIndex = 0;
             this.lbNombreDestinatario.Text = "Nombre / Apellido / DNI";
             // 
@@ -266,9 +294,11 @@
             // 
             this.grbBultoCC.Controls.Add(this.cbTamañoVulto);
             this.grbBultoCC.Controls.Add(this.lbTamañoBulto);
-            this.grbBultoCC.Location = new System.Drawing.Point(12, 397);
+            this.grbBultoCC.Location = new System.Drawing.Point(13, 522);
+            this.grbBultoCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbBultoCC.Name = "grbBultoCC";
-            this.grbBultoCC.Size = new System.Drawing.Size(449, 117);
+            this.grbBultoCC.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbBultoCC.Size = new System.Drawing.Size(674, 129);
             this.grbBultoCC.TabIndex = 35;
             this.grbBultoCC.TabStop = false;
             this.grbBultoCC.Text = "Datos del bulto";
@@ -276,25 +306,27 @@
             // cbTamañoVulto
             // 
             this.cbTamañoVulto.FormattingEnabled = true;
-            this.cbTamañoVulto.Location = new System.Drawing.Point(6, 58);
+            this.cbTamañoVulto.Location = new System.Drawing.Point(9, 89);
+            this.cbTamañoVulto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbTamañoVulto.Name = "cbTamañoVulto";
-            this.cbTamañoVulto.Size = new System.Drawing.Size(183, 21);
+            this.cbTamañoVulto.Size = new System.Drawing.Size(272, 28);
             this.cbTamañoVulto.TabIndex = 10;
             // 
             // lbTamañoBulto
             // 
             this.lbTamañoBulto.AutoSize = true;
-            this.lbTamañoBulto.Location = new System.Drawing.Point(6, 42);
+            this.lbTamañoBulto.Location = new System.Drawing.Point(9, 65);
+            this.lbTamañoBulto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTamañoBulto.Name = "lbTamañoBulto";
-            this.lbTamañoBulto.Size = new System.Drawing.Size(89, 13);
+            this.lbTamañoBulto.Size = new System.Drawing.Size(131, 20);
             this.lbTamañoBulto.TabIndex = 8;
             this.lbTamañoBulto.Text = "Tamaño del bulto";
             // 
-            // ImposicionCD
+            // F03_ImposicionCDForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 534);
+            this.ClientSize = new System.Drawing.Size(1398, 692);
             this.Controls.Add(this.grbBultoCC);
             this.Controls.Add(this.grbDatosDestino);
             this.Controls.Add(this.btnCancelarImpoAgencia);
@@ -304,7 +336,8 @@
             this.Controls.Add(this.grbAgencia);
             this.Controls.Add(this.grbCC);
             this.Controls.Add(this.grbDatosDestinatario);
-            this.Name = "ImposicionCD";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "F03_ImposicionCDForm";
             this.Text = "Atención al cliente";
             this.grbParticular.ResumeLayout(false);
             this.grbParticular.PerformLayout();

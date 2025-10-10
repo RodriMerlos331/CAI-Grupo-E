@@ -55,6 +55,7 @@
     <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiendaModel.cs" />
     <Compile Include="F08_ConsultarEstadoEncomienda\EstadoEnvio.cs" />
     <Compile Include="F08_ConsultarEstadoEncomienda\Movimiento.cs" />
+    <Compile Include="F10_GeneracionDeFacturas\F10_GeneracionDeFacturasModelo.cs" />
     <Compile Include="F12_CostoVsVentas\CostosVsVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +71,11 @@
     </Compile>
     <Compile Include="F11_EstadoCuentasCorrientes\MovimientoCC.cs" />
     <Compile Include="F02_ImposicionEnAgencia\F02_ImposicionEnAgenciaModel.cs" />
-    <Compile Include="F10_GeneracionDeFacturas\GeneracionDeFacturas.cs">
+    <Compile Include="F10_GeneracionDeFacturas\F10_GeneracionDeFacturasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F10_GeneracionDeFacturas\GeneracionDeFacturas.Designer.cs">
-      <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
+    <Compile Include="F10_GeneracionDeFacturas\F10_GeneracionDeFacturasForm.Designer.cs">
+      <DependentUpon>F10_GeneracionDeFacturasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="F05_GestionarFletero\HDR.cs" />
     <Compile Include="F05_GestionarFletero\Fletero.cs" />
@@ -158,8 +159,8 @@
     <EmbeddedResource Include="F11_EstadoCuentasCorrientes\FormEstadoCuentasCorrientes.resx">
       <DependentUpon>FormEstadoCuentasCorrientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F10_GeneracionDeFacturas\GeneracionDeFacturas.resx">
-      <DependentUpon>GeneracionDeFacturas.cs</DependentUpon>
+    <EmbeddedResource Include="F10_GeneracionDeFacturas\F10_GeneracionDeFacturasForm.resx">
+      <DependentUpon>F10_GeneracionDeFacturasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F02_ImposicionEnAgencia\F02_ImposicionEnAgencia.resx">
       <DependentUpon>F02_ImposicionEnAgencia.cs</DependentUpon>

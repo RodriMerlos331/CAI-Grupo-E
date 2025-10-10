@@ -26,5 +26,10 @@ namespace Grupo_E.ImposicionEnCD
         {
 
         }
+
+        private void lbLocalidad_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
