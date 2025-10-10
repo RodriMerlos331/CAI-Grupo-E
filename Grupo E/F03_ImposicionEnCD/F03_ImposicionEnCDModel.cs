@@ -1,0 +1,81 @@
+﻿using Grupo_E.ImposicionEnCallCenter;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Grupo_E.F03_ImposicionEnCD
+{
+    public class F03_ImposicionEnCDModel
+    {
+        //Tiene sentido las localidades disponibles cargarlas acá? O se podrían hacer directamente desde la clase ? 
+        public string[] Localidad = new string[] { "CABA","GBA", "Córdoba" };
+        //Localidades a sumar: , "Tucumán","Corrientes","Neuquén","Viedma"
+
+        public string[] TamanoBulto = new string[] { "S", "M" , "L", "XL"};
+
+        public readonly Dictionary<string, string> clientes = new Dictionary<string, string>
+        {
+            { "30-12345678-01", "Sanitarios S.A" },
+            { "30-87654321-09", "Gomeria Altamirano" },
+            { "30-11223344-05", "Huggies" }
+        };
+
+
+
+        //COPILOT SUGIRIÓ ESTA FORMA DE HACERLO, PREGUNTAR SI ESTÁ BIEN:
+        public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades = 
+    new Dictionary<string, (List<string>, List<string>)>
+{
+    { "CABA", (new List<string> { "Alto Palermo", "DOT", "Abasto" }, new List<string> { "Retiro", "Dellepiane", "Liniers" }) },
+    { "GBA", (new List<string> { "Kiosco", "Shopping", "Local" }, new List<string> { "La Plata", "Pacheco", "Morón" }) },
+    { "Córdoba", (new List<string> { "Cerrito", "Montaña", "Arroyo" }, new List<string> { "Villa Carlos Paz", "La Falda", "Río Cuarto" }) }
+};
+
+
+
+
+        /*
+         * public class ImposicionConDestinoACD
+    {
+        string CUITCliente { get; set; }
+        string CentroDistribucionDestino { get; set; }
+
+        string TamañoBulto { get; set; }
+
+        string DatosDestinatario { get; set; } 
+    }
+         */
+
+        public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
+        {
+            ImposicionConDestinoACD nuevaImposicion = new ImposicionConDestinoACD
+            {
+                Tracking = ObtenerSiguienteTracking().ToString("D8"), // Ejemplo: 00000001
+                CUITCliente = cuitCliente,
+                CentroDistribucionDestino = centroDistribucionDestino,
+                TamañoBulto = tamañoBulto,
+                DatosDestinatario = datosDestinatario
+            };
+
+            string mensaje =
+       "Guía impuesta exitosamente.\n\n" +
+       $"Tracking: {nuevaImposicion.Tracking}\n" +
+       $"CUIT del cliente: {nuevaImposicion.CUITCliente}\n" +
+       $"Centro de distribución destino: {nuevaImposicion.CentroDistribucionDestino}\n" +
+       $"Tamaño del bulto: {nuevaImposicion.TamañoBulto}\n" +
+       $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+
+            MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private int trackingActual = 1; // o el valor inicial que prefieras
+
+        private int ObtenerSiguienteTracking()
+        {
+            return trackingActual++;
+        }
+    }
+}
