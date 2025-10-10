@@ -102,6 +102,8 @@
     <Compile Include="F03_ImposicionEnCD\F03_ImposicionCDForm.Designer.cs">
       <DependentUpon>F03_ImposicionCDForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="F12_CostoVsVentas\CostosVsVentasModel.cs" />
+    <Compile Include="F12_CostoVsVentas\Datos.cs" />
     <Compile Include="MenuPrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -252,6 +252,7 @@
             this.lvMovimientos.TabIndex = 0;
             this.lvMovimientos.UseCompatibleStateImageBehavior = false;
             this.lvMovimientos.View = System.Windows.Forms.View.Details;
+            this.lvMovimientos.SelectedIndexChanged += new System.EventHandler(this.lvMovimientos_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

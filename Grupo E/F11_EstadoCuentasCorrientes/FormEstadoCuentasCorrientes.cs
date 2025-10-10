@@ -53,12 +53,12 @@ namespace Grupo_E.EstadoCuentasCorrientes
             lvMovimientos.GridLines = true;
             lvMovimientos.FullRowSelect = true;
 
-            lvMovimientos.Columns[0].Width = 100; 
-            lvMovimientos.Columns[1].Width = 120; 
-            lvMovimientos.Columns[2].Width = 80;  
-            lvMovimientos.Columns[3].Width = 90; 
-            lvMovimientos.Columns[4].Width = 90;  
-            lvMovimientos.Columns[5].Width = 100; 
+            lvMovimientos.Columns[0].Width = 115; 
+            lvMovimientos.Columns[1].Width = 115; 
+            lvMovimientos.Columns[2].Width = 115;  
+            lvMovimientos.Columns[3].Width = 115; 
+            lvMovimientos.Columns[4].Width = 115;  
+            lvMovimientos.Columns[5].Width = 115; 
 
             cmbEstado.Items.Clear();
             cmbEstado.Items.Add("Todas");
@@ -176,6 +176,11 @@ namespace Grupo_E.EstadoCuentasCorrientes
         {
             string cuitLimpio = cuit.Replace("-", "").Replace(" ", "");
             return (cuitLimpio.Length == 11 && long.TryParse(cuitLimpio, out _));
+        }
+
+        private void lvMovimientos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
