@@ -28,14 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "10004050",
-            "12-10-2024",
-            "$100.000",
-            "$5.000",
-            "$4.000",
-            "$0"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.listViewFactura = new System.Windows.Forms.ListView();
             this.colNroTracking = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colFecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -68,11 +60,6 @@
             this.listViewFactura.FullRowSelect = true;
             this.listViewFactura.GridLines = true;
             this.listViewFactura.HideSelection = false;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            this.listViewFactura.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
             this.listViewFactura.Location = new System.Drawing.Point(30, 166);
             this.listViewFactura.Name = "listViewFactura";
             this.listViewFactura.Size = new System.Drawing.Size(1210, 329);
