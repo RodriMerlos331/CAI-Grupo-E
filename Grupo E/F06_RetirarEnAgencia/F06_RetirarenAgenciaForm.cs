@@ -98,7 +98,13 @@ namespace Grupo_E.RetirarEnAgencia
                 DNI = dni
             };
 
-            modelo.chequearEncomienda(EncomiendaX);
+            if (modelo.chequearEncomienda(EncomiendaX))
+            {
+                txtNumeroDeTracking.Clear();
+                txtNombre.Clear();
+                txtApellido.Clear();
+                txtDNI.Clear();
+            }
 
     
         }
