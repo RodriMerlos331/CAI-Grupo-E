@@ -49,20 +49,25 @@ namespace Grupo_E.GeneracionDeFacturas
                 return;
             }
 
+            if (!modelo.ValidarCUIT(cuit))
+            {
+                return;
+            }
+
             var resultados = modelo.ListarEncomiendas(cuit);
 
             listViewFactura.Items.Clear();
 
             if (resultados.Any())
             {
-                foreach (var encomienda in resultados)
+                foreach (var encomienda in resultados)//Esta  variable encomienda se refiere a las encomiendas que se encuentran en la lista pendientes de facturar
                 {
                     var item = new ListViewItem(encomienda.NroTracking);
-                    item.SubItems.Add(encomienda.FechaAdmision);
-                    item.SubItems.Add(encomienda.Importe);
-                    item.SubItems.Add(encomienda.ExtraRetiro);
-                    item.SubItems.Add(encomienda.ExtraEntrega);
-                    item.SubItems.Add(encomienda.ExtraAgencia);
+                    item.SubItems.Add(encomienda.FechaAdmision.ToString("dd-MM-yyyy")); // Fecha como string
+                    item.SubItems.Add(encomienda.Importe.ToString("C0"));               
+                    item.SubItems.Add(encomienda.ExtraRetiro.ToString("C0"));           // importes  como string
+                    item.SubItems.Add(encomienda.ExtraEntrega.ToString("C0"));
+                    item.SubItems.Add(encomienda.ExtraAgencia.ToString("C0"));          
                     listViewFactura.Items.Add(item);
                 }
             }
