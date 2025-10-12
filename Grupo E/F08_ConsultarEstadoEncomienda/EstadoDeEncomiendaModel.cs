@@ -8,49 +8,44 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 {
     internal class EstadoDeEncomiendaModel
     {
-            private readonly Dictionary<int, EstadoDeEncomienda> _data =
+            public readonly Dictionary<int, EstadoDeEncomienda> data =
                 new Dictionary<int, EstadoDeEncomienda>
                 {
                 {
                     1001, new EstadoDeEncomienda
                     {
                         TrackingId = 1001,
-                        EstadoActual = EstadoEnvio.EnCaminoADestino,
+                        EstadoActual = EstadoEnvio.Transito,
                         FechaHoraUltimoCambio = DateTime.Today.AddHours(-3),
                         LocalidadActual = "Rosario (Sta. Fe)",
+                        Origen = "Retiro",
+                        Destino = "Cordoba Capital",
+                        TipoDeBulto = "M",
                         Historial = new List<Movimiento>
                         {
                             new Movimiento{
-                                Estado = EstadoEnvio.Admitido,
+                                Estado = EstadoEnvio.AdmitidaCD,
                                 FechaHora = DateTime.Today.AddDays(-2).AddHours(9),
                                 UbicacionAnterior = "Sucursal Caballito (CABA)",
                                 TransportistaAsignado = "Transp. Norte SRL",
                                 IdHojaRuta = "HR-202",
-                                Origen = "CABA",
-                                Destino = "Rosario",
-                                TipoDeBulto = "M",
 
                             },
                             new Movimiento{
-                                Estado = EstadoEnvio.EnCentroDistribucion,
+                                Estado = EstadoEnvio.CentroDistribucionDestino,
                                 FechaHora = DateTime.Today.AddDays(-1).AddHours(15),
                                 UbicacionAnterior = "CD Zona Norte (CABA)",
                                 TransportistaAsignado = "Transp. Norte SRL",
                                 IdHojaRuta = "HR-245",
-                                Origen = "CABA",
-                                Destino = "Rosario",
-                                TipoDeBulto = "M",
 
                             },
                             new Movimiento{
-                                Estado = EstadoEnvio.EnCaminoADestino,
+                                Estado = EstadoEnvio.RuteadaEntregaAgencia,
                                 FechaHora = DateTime.Today.AddHours(-3),
                                 UbicacionAnterior = "Peaje Gral. Lagos",
                                 TransportistaAsignado = "Transp. Norte SRL",
                                 IdHojaRuta = "HR-310",
-                                Origen = "CABA",
-                                Destino = "Rosario",
-                                TipoDeBulto = "M",
+                               
 
                             }
                         }
@@ -60,31 +55,30 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                     2002, new EstadoDeEncomienda
                     {
                         TrackingId = 2002,
-                        EstadoActual = EstadoEnvio.Entregado,
+                        EstadoActual = EstadoEnvio.EntregadaDomicilio,
                         FechaHoraUltimoCambio = DateTime.Today.AddHours(-1),
                         LocalidadActual = "Córdoba Capital",
+                        Origen = "Retiro",
+                        Destino = "Cordoba Capital",
+                        TipoDeBulto = "XL",
                         Historial = new List<Movimiento>
                         {
                             new Movimiento{
-                                Estado = EstadoEnvio.EnCaminoADestino,
+                                Estado = EstadoEnvio.RuteadaEntregaDomicilio,
                                 FechaHora = DateTime.Today.AddHours(-4),
                                 UbicacionAnterior = "Villa Carlos Paz",
                                 TransportistaAsignado = "Ruta Centro",
                                 IdHojaRuta = "HR-811",
-                                Origen = "Córdoba",
-                                Destino = "Córdoba",
-                                TipoDeBulto = "XS",
+                               
 
                             },
                             new Movimiento{
-                                Estado = EstadoEnvio.Entregado,
+                                Estado = EstadoEnvio.EntregadaDomicilio,
                                 FechaHora = DateTime.Today.AddHours(-1),
                                 UbicacionAnterior = "Córdoba Capital",
                                 TransportistaAsignado = "Ruta Centro",
                                 IdHojaRuta = "HR-811",
-                                Origen = "Córdoba",
-                                Destino = "Córdoba",
-                                TipoDeBulto = "XS",
+
 
                             }
                         }
@@ -94,7 +88,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 
             public bool TryGet(int trackingId, out EstadoDeEncomienda model)
             {
-                return _data.TryGetValue(trackingId, out model);
+                return data.TryGetValue(trackingId, out model);
             }
         }
     }

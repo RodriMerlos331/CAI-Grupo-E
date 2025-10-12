@@ -35,26 +35,26 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.btnEstadoBusqueda = new System.Windows.Forms.Button();
             this.txtIdTracking = new System.Windows.Forms.TextBox();
             this.grbEstado = new System.Windows.Forms.GroupBox();
+            this.lblBulto = new System.Windows.Forms.Label();
+            this.Bultolbl = new System.Windows.Forms.Label();
+            this.lblDestino = new System.Windows.Forms.Label();
+            this.Destinolbl = new System.Windows.Forms.Label();
+            this.lblOrigen = new System.Windows.Forms.Label();
+            this.Origenlbl = new System.Windows.Forms.Label();
             this.lblUbicacionActual = new System.Windows.Forms.Label();
-            this.EstadoLocalidadlbl = new System.Windows.Forms.Label();
+            this.Localidadlbl = new System.Windows.Forms.Label();
             this.lblFechaUltimo = new System.Windows.Forms.Label();
             this.EstadoFechalbl = new System.Windows.Forms.Label();
             this.lblEstadoActual = new System.Windows.Forms.Label();
             this.Estadolbl = new System.Windows.Forms.Label();
             this.grbHistorial = new System.Windows.Forms.GroupBox();
-            this.HistoriaEncomiendaList = new System.Windows.Forms.ListView();
+            this.Historial = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.grbBusquedaEncomienda.SuspendLayout();
             this.grbEstado.SuspendLayout();
             this.grbHistorial.SuspendLayout();
@@ -100,14 +100,14 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // 
             // grbEstado
             // 
-            this.grbEstado.Controls.Add(this.label5);
-            this.grbEstado.Controls.Add(this.label6);
-            this.grbEstado.Controls.Add(this.label3);
-            this.grbEstado.Controls.Add(this.label4);
-            this.grbEstado.Controls.Add(this.label1);
-            this.grbEstado.Controls.Add(this.label2);
+            this.grbEstado.Controls.Add(this.lblBulto);
+            this.grbEstado.Controls.Add(this.Bultolbl);
+            this.grbEstado.Controls.Add(this.lblDestino);
+            this.grbEstado.Controls.Add(this.Destinolbl);
+            this.grbEstado.Controls.Add(this.lblOrigen);
+            this.grbEstado.Controls.Add(this.Origenlbl);
             this.grbEstado.Controls.Add(this.lblUbicacionActual);
-            this.grbEstado.Controls.Add(this.EstadoLocalidadlbl);
+            this.grbEstado.Controls.Add(this.Localidadlbl);
             this.grbEstado.Controls.Add(this.lblFechaUltimo);
             this.grbEstado.Controls.Add(this.EstadoFechalbl);
             this.grbEstado.Controls.Add(this.lblEstadoActual);
@@ -120,6 +120,60 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.grbEstado.Text = "Informacion del pedido";
             this.grbEstado.Enter += new System.EventHandler(this.grbEstado_Enter);
             // 
+            // lblBulto
+            // 
+            this.lblBulto.AutoSize = true;
+            this.lblBulto.Location = new System.Drawing.Point(110, 170);
+            this.lblBulto.Name = "lblBulto";
+            this.lblBulto.Size = new System.Drawing.Size(63, 13);
+            this.lblBulto.TabIndex = 11;
+            this.lblBulto.Text = "XXXXXXXX";
+            // 
+            // Bultolbl
+            // 
+            this.Bultolbl.AutoSize = true;
+            this.Bultolbl.Location = new System.Drawing.Point(26, 170);
+            this.Bultolbl.Name = "Bultolbl";
+            this.Bultolbl.Size = new System.Drawing.Size(72, 13);
+            this.Bultolbl.TabIndex = 10;
+            this.Bultolbl.Text = "Tipo de bulto:";
+            // 
+            // lblDestino
+            // 
+            this.lblDestino.AutoSize = true;
+            this.lblDestino.Location = new System.Drawing.Point(78, 146);
+            this.lblDestino.Name = "lblDestino";
+            this.lblDestino.Size = new System.Drawing.Size(63, 13);
+            this.lblDestino.TabIndex = 9;
+            this.lblDestino.Text = "XXXXXXXX";
+            // 
+            // Destinolbl
+            // 
+            this.Destinolbl.AutoSize = true;
+            this.Destinolbl.Location = new System.Drawing.Point(26, 146);
+            this.Destinolbl.Name = "Destinolbl";
+            this.Destinolbl.Size = new System.Drawing.Size(46, 13);
+            this.Destinolbl.TabIndex = 8;
+            this.Destinolbl.Text = "Destino:";
+            // 
+            // lblOrigen
+            // 
+            this.lblOrigen.AutoSize = true;
+            this.lblOrigen.Location = new System.Drawing.Point(73, 117);
+            this.lblOrigen.Name = "lblOrigen";
+            this.lblOrigen.Size = new System.Drawing.Size(63, 13);
+            this.lblOrigen.TabIndex = 7;
+            this.lblOrigen.Text = "XXXXXXXX";
+            // 
+            // Origenlbl
+            // 
+            this.Origenlbl.AutoSize = true;
+            this.Origenlbl.Location = new System.Drawing.Point(26, 117);
+            this.Origenlbl.Name = "Origenlbl";
+            this.Origenlbl.Size = new System.Drawing.Size(41, 13);
+            this.Origenlbl.TabIndex = 6;
+            this.Origenlbl.Text = "Origen:";
+            // 
             // lblUbicacionActual
             // 
             this.lblUbicacionActual.AutoSize = true;
@@ -130,14 +184,14 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.lblUbicacionActual.Text = "XXXXXXXXX";
             this.lblUbicacionActual.Click += new System.EventHandler(this.label6_Click);
             // 
-            // EstadoLocalidadlbl
+            // Localidadlbl
             // 
-            this.EstadoLocalidadlbl.AutoSize = true;
-            this.EstadoLocalidadlbl.Location = new System.Drawing.Point(26, 88);
-            this.EstadoLocalidadlbl.Name = "EstadoLocalidadlbl";
-            this.EstadoLocalidadlbl.Size = new System.Drawing.Size(90, 13);
-            this.EstadoLocalidadlbl.TabIndex = 4;
-            this.EstadoLocalidadlbl.Text = "Ubicacion actual:";
+            this.Localidadlbl.AutoSize = true;
+            this.Localidadlbl.Location = new System.Drawing.Point(26, 88);
+            this.Localidadlbl.Name = "Localidadlbl";
+            this.Localidadlbl.Size = new System.Drawing.Size(90, 13);
+            this.Localidadlbl.TabIndex = 4;
+            this.Localidadlbl.Text = "Ubicacion actual:";
             // 
             // lblFechaUltimo
             // 
@@ -178,7 +232,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // 
             // grbHistorial
             // 
-            this.grbHistorial.Controls.Add(this.HistoriaEncomiendaList);
+            this.grbHistorial.Controls.Add(this.Historial);
             this.grbHistorial.Location = new System.Drawing.Point(15, 340);
             this.grbHistorial.Name = "grbHistorial";
             this.grbHistorial.Size = new System.Drawing.Size(681, 231);
@@ -186,22 +240,22 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.grbHistorial.TabStop = false;
             this.grbHistorial.Text = "Historial";
             // 
-            // HistoriaEncomiendaList
+            // Historial
             // 
-            this.HistoriaEncomiendaList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Historial.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            this.HistoriaEncomiendaList.HideSelection = false;
-            this.HistoriaEncomiendaList.Location = new System.Drawing.Point(6, 19);
-            this.HistoriaEncomiendaList.Name = "HistoriaEncomiendaList";
-            this.HistoriaEncomiendaList.Size = new System.Drawing.Size(664, 206);
-            this.HistoriaEncomiendaList.TabIndex = 0;
-            this.HistoriaEncomiendaList.UseCompatibleStateImageBehavior = false;
-            this.HistoriaEncomiendaList.View = System.Windows.Forms.View.Details;
-            this.HistoriaEncomiendaList.SelectedIndexChanged += new System.EventHandler(this.HistoriaEncomiendaList_SelectedIndexChanged);
+            this.Historial.HideSelection = false;
+            this.Historial.Location = new System.Drawing.Point(6, 19);
+            this.Historial.Name = "Historial";
+            this.Historial.Size = new System.Drawing.Size(664, 206);
+            this.Historial.TabIndex = 0;
+            this.Historial.UseCompatibleStateImageBehavior = false;
+            this.Historial.View = System.Windows.Forms.View.Details;
+            this.Historial.SelectedIndexChanged += new System.EventHandler(this.HistoriaEncomiendaList_SelectedIndexChanged);
             // 
             // columnHeader2
             // 
@@ -237,60 +291,6 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "XXXXXXXX";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Origen:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "XXXXXXXX";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Destino:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(110, 170);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "XXXXXXXX";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 170);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Tipo de bulto:";
             // 
             // EstadoDeEncomiendaForm
             // 
@@ -334,13 +334,13 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         private System.Windows.Forms.Button btnEstadoBusqueda;
         private System.Windows.Forms.TextBox txtIdTracking;
         private System.Windows.Forms.Label lblUbicacionActual;
-        private System.Windows.Forms.Label EstadoLocalidadlbl;
+        private System.Windows.Forms.Label Localidadlbl;
         private System.Windows.Forms.Label lblFechaUltimo;
         private System.Windows.Forms.Label EstadoFechalbl;
         private System.Windows.Forms.Label lblEstadoActual;
         private System.Windows.Forms.Label Estadolbl;
         private System.Windows.Forms.GroupBox grbHistorial;
-        private System.Windows.Forms.ListView HistoriaEncomiendaList;
+        private System.Windows.Forms.ListView Historial;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
@@ -348,11 +348,11 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label lbTracking;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblBulto;
+        private System.Windows.Forms.Label Bultolbl;
+        private System.Windows.Forms.Label lblDestino;
+        private System.Windows.Forms.Label Destinolbl;
+        private System.Windows.Forms.Label lblOrigen;
+        private System.Windows.Forms.Label Origenlbl;
     }
 }

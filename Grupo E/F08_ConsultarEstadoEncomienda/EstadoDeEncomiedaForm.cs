@@ -17,31 +17,13 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         public EstadoDeEncomiendaForm()
         {
             InitializeComponent();
-            ConfigurarListaHistorial();
-        }
-
-        private void ConfigurarListaHistorial()
-        {
-            // Ajustá si tu control no es ListView
-            HistoriaEncomiendaList.View = View.Details;
-            HistoriaEncomiendaList.FullRowSelect = true;
-            HistoriaEncomiendaList.GridLines = true;
-            HistoriaEncomiendaList.Columns.Clear();
-
-            HistoriaEncomiendaList.Columns.Add("Estado", 160);
-            HistoriaEncomiendaList.Columns.Add("Fecha / Hora mov. previo", 180);
-            HistoriaEncomiendaList.Columns.Add("Ubicación anterior", 180);
-            HistoriaEncomiendaList.Columns.Add("Transportista asignado", 180);
-            HistoriaEncomiendaList.Columns.Add("ID Hoja de ruta", 120);
-            HistoriaEncomiendaList.Columns.Add("Origen", 100);
-            HistoriaEncomiendaList.Columns.Add("Destino", 100);
-            HistoriaEncomiendaList.Columns.Add("Tipo de bulto", 120);
         }
 
         private void btnEstadoBusqueda_Click(object sender, EventArgs e)
         {
-            // 6. Validación: campo no vacío
             string texto = txtIdTracking.Text.Trim();
+
+            // Validación: campo no vacío
             if (string.IsNullOrEmpty(texto))
             {
                 MessageBox.Show("Debes ingresar un ID valido", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -49,7 +31,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 return;
             }
 
-            // 2. Validación: numérico
+            // Validación: numérico
             int trackingId;
             if (!int.TryParse(texto, out trackingId))
             {
@@ -60,52 +42,61 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 return;
             }
 
-            //pedirle los datos al modelo
-            
-            //agarrar todo lo que viene del historial y pasarlo a la grilla
-           
-        }
-
-        private void LimpiarPantalla()
-        {
-            lblEstadoActual.Text = "—";
-            lblFechaUltimo.Text = "—";
-            lblUbicacionActual.Text = "—";
-            HistoriaEncomiendaList.Items.Clear();
-        }
-
-        private void CargarHistorial(EstadoDeEncomienda model)
-        {
-            HistoriaEncomiendaList.Items.Clear();
-
-            // Mostramos del más antiguo al más reciente (o invertí si preferís)
-            foreach (var m in model.Historial)
+            if(modelo.data.ContainsKey(trackingId))
             {
-                var item = new ListViewItem(MapEstado(m.Estado));
-                item.SubItems.Add(m.FechaHora.ToString("dd/MM/yyyy HH:mm"));
-                item.SubItems.Add(m.UbicacionAnterior ?? "");
-                item.SubItems.Add(m.TransportistaAsignado ?? "");
-                item.SubItems.Add(m.IdHojaRuta ?? "");
-                item.SubItems.Add(m.Origen ?? "");
-                item.SubItems.Add(m.Destino ?? "");
-                item.SubItems.Add(m.TipoDeBulto ?? "");
-                HistoriaEncomiendaList.Items.Add(item);
+                EstadoDeEncomienda encomienda = modelo.data[trackingId];
+
+                lblEstadoActual.Text = EstadoATexto(encomienda.EstadoActual);
+                lblFechaUltimo.Text = encomienda.FechaHoraUltimoCambio.ToString();
+                lblUbicacionActual.Text = encomienda.LocalidadActual;
+                lblOrigen.Text = encomienda.Origen;
+                lblDestino.Text = encomienda.Destino;
+                lblBulto.Text = encomienda.TipoDeBulto;
+
+                foreach(Movimiento mov in encomienda.Historial)
+                {
+                    ListViewItem fila = new ListViewItem(EstadoATexto(mov.Estado));
+
+                    fila.SubItems.Add(mov.FechaHora.ToString("dd/MM/yyyy HH:mm"));
+                    fila.SubItems.Add(mov.UbicacionAnterior);
+                    fila.SubItems.Add(mov.TransportistaAsignado);
+                    fila.SubItems.Add(mov.IdHojaRuta);
+
+                    Historial.Items.Add(fila);
+
+                }
+    
             }
+            else
+            {
+                MessageBox.Show("No se encontró una encomienda con ese número de guía.", "Aviso");
+            }
+
         }
 
-        private string MapEstado(EstadoEnvio estado)
+
+        private string EstadoATexto(EstadoEnvio estado)
         {
-            // Mapea exactamente a los textos del enunciado
             switch (estado)
             {
-                case EstadoEnvio.EsperandoRetiro: return "Esperando a ser retirado";
-                case EstadoEnvio.Admitido: return "Admitido";
-                case EstadoEnvio.EnCaminoACD: return "En camino a centro de distribución";
-                case EstadoEnvio.EnCentroDistribucion: return "En centro de distribución";
-                case EstadoEnvio.EnCaminoAAgenciaDestino: return "En camino a agencia destino";
-                case EstadoEnvio.EnCaminoADestino: return "En camino a destino";
-                case EstadoEnvio.Entregado: return "Entregado";
-                case EstadoEnvio.Cancelado: return "Cancelado";
+                case EstadoEnvio.ImpuestaPendienteRetiroDomicilio: return "Impuesta y pendiente de retiro en domicilio";
+                case EstadoEnvio.ImpuestaPendienteRetiroAgencia: return "Impuesta y pendiente de retiro en agencia";
+                case EstadoEnvio.RuteadaRetiroDomicilio: return "Ruteada para retiro a domicilio";
+                case EstadoEnvio.RuteadaRetiroAgencia: return "Ruteada para retiro a agencia";
+                case EstadoEnvio.ImpuestaRetiradaAgencia: return "Impuesta y retirada de la agencia";
+                case EstadoEnvio.AdmitidaCD: return "Admitida en el centro de distribucion";
+                case EstadoEnvio.Transito: return "En Transito";
+                case EstadoEnvio.CentroDistribucionDestino: return "En CD de Destino";
+                case EstadoEnvio.PendienteEntregarDomicilio: return "Pendiente a entregar a domicilio";
+                case EstadoEnvio.RuteadaEntregaDomicilio: return "Ruteada para entrega a domicilio";
+                case EstadoEnvio.RuteadaEntregaAgencia: return "Ruteada para entrega a agencia";
+                case EstadoEnvio.PendienteRetiroAgencia: return "Pendiente de retiro en agencia por el destinatario";
+                case EstadoEnvio.PendienteEntregaCD: return "Pendiente entrega  a destinatario en CD";
+                case EstadoEnvio.EntregadaAgencia: return "Entregada en Agencia";
+                case EstadoEnvio.EntregadaCD: return "Entregada en CD";
+                case EstadoEnvio.EntregaFallida: return "Entrega fallida";
+                case EstadoEnvio.EntregadaDomicilio: return "Entregada en Domicilio";
+                case EstadoEnvio.Cancelada: return "Cancelado";
                 default: return estado.ToString();
             }
         }
@@ -115,6 +106,8 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.Close();
         }
 
+        private void grbEstado_Enter(object sender, EventArgs e)
+        {
 
         }
     }

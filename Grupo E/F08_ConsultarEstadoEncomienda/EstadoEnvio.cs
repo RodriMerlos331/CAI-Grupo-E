@@ -2,14 +2,26 @@
 {
     internal enum EstadoEnvio
     {
-        EsperandoRetiro,
-        Admitido,
-        EnCaminoACD,           // centro de distribución
-        EnCentroDistribucion,
-        EnCaminoAAgenciaDestino,
-        EnCaminoADestino,
-        Entregado,
-        Cancelado
+        ImpuestaPendienteRetiroDomicilio,
+        ImpuestaPendienteRetiroAgencia,
+        RuteadaRetiroDomicilio,
+        RuteadaRetiroAgencia,
+        ImpuestaRetiradaAgencia,
+        AdmitidaCD,
+        Transito,
+        CentroDistribucionDestino,
+        PendienteEntregarDomicilio,
+        RuteadaEntregaDomicilio,
+        RuteadaEntregaAgencia,
+        PendienteRetiroAgencia,
+        PendienteEntregaCD, 
+        EntregadaAgencia,
+        EntregadaCD,
+        EntregaFallida,  
+        EntregadaDomicilio,
+        Cancelada
+
+
     }
 }
 

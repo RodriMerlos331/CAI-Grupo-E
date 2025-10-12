@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +12,9 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         public EstadoEnvio EstadoActual { get; set; }
         public DateTime FechaHoraUltimoCambio { get; set; }
         public string LocalidadActual { get; set; }
+        public string Origen {  get; set; }
+        public string Destino { get; set; }
+        public string TipoDeBulto { get; set; }
         public List<Movimiento> Historial { get; set; } = new List<Movimiento>();
     }
 }
