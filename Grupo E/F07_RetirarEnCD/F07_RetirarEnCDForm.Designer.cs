@@ -34,13 +34,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DNIText = new System.Windows.Forms.TextBox();
+            this.ApellidoText = new System.Windows.Forms.TextBox();
+            this.NombreText = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NumeroTrackingText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -54,6 +54,7 @@
             this.btnEntregar.TabIndex = 7;
             this.btnEntregar.Text = "Entregar encomienda";
             this.btnEntregar.UseVisualStyleBackColor = true;
+            this.btnEntregar.Click += new System.EventHandler(this.btnEntregar_Click);
             // 
             // btnCancelar
             // 
@@ -63,15 +64,16 @@
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.DNIText);
+            this.groupBox2.Controls.Add(this.ApellidoText);
+            this.groupBox2.Controls.Add(this.NombreText);
             this.groupBox2.Location = new System.Drawing.Point(12, 131);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(396, 187);
@@ -106,32 +108,32 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre";
             // 
-            // textBox4
+            // DNIText
             // 
-            this.textBox4.Location = new System.Drawing.Point(9, 145);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(365, 20);
-            this.textBox4.TabIndex = 2;
+            this.DNIText.Location = new System.Drawing.Point(9, 145);
+            this.DNIText.Name = "DNIText";
+            this.DNIText.Size = new System.Drawing.Size(365, 20);
+            this.DNIText.TabIndex = 2;
             // 
-            // textBox3
+            // ApellidoText
             // 
-            this.textBox3.Location = new System.Drawing.Point(9, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(365, 20);
-            this.textBox3.TabIndex = 1;
+            this.ApellidoText.Location = new System.Drawing.Point(9, 97);
+            this.ApellidoText.Name = "ApellidoText";
+            this.ApellidoText.Size = new System.Drawing.Size(365, 20);
+            this.ApellidoText.TabIndex = 1;
             // 
-            // textBox2
+            // NombreText
             // 
-            this.textBox2.Location = new System.Drawing.Point(9, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(365, 20);
-            this.textBox2.TabIndex = 0;
+            this.NombreText.Location = new System.Drawing.Point(9, 52);
+            this.NombreText.Name = "NombreText";
+            this.NombreText.Size = new System.Drawing.Size(365, 20);
+            this.NombreText.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.btnLimpiar);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.NumeroTrackingText);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -149,6 +151,7 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiar
             // 
@@ -158,13 +161,14 @@
             this.btnLimpiar.TabIndex = 1;
             this.btnLimpiar.Text = "Limpiar filtro";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // textBox1
+            // NumeroTrackingText
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 1;
+            this.NumeroTrackingText.Location = new System.Drawing.Point(6, 47);
+            this.NumeroTrackingText.Name = "NumeroTrackingText";
+            this.NumeroTrackingText.Size = new System.Drawing.Size(140, 20);
+            this.NumeroTrackingText.TabIndex = 1;
             // 
             // label1
             // 
@@ -175,7 +179,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de tracking";
             // 
-            // RetirarEnCD
+            // F07_RetirarEnCDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,7 +188,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "RetirarEnCD";
+            this.Name = "F07_RetirarEnCDForm";
             this.Text = "Retiro en CD";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -202,13 +206,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox DNIText;
+        private System.Windows.Forms.TextBox ApellidoText;
+        private System.Windows.Forms.TextBox NombreText;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NumeroTrackingText;
         private System.Windows.Forms.Label label1;
     }
 }
