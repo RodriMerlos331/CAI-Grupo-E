@@ -53,12 +53,12 @@ namespace Grupo_E.EstadoCuentasCorrientes
             lvMovimientos.GridLines = true;
             lvMovimientos.FullRowSelect = true;
 
-            lvMovimientos.Columns[0].Width = 115; 
-            lvMovimientos.Columns[1].Width = 115; 
-            lvMovimientos.Columns[2].Width = 115;  
-            lvMovimientos.Columns[3].Width = 115; 
-            lvMovimientos.Columns[4].Width = 115;  
-            lvMovimientos.Columns[5].Width = 115; 
+            lvMovimientos.Columns[0].Width = 115;
+            lvMovimientos.Columns[1].Width = 115;
+            lvMovimientos.Columns[2].Width = 115;
+            lvMovimientos.Columns[3].Width = 115;
+            lvMovimientos.Columns[4].Width = 115;
+            lvMovimientos.Columns[5].Width = 115;
 
             cmbEstado.Items.Clear();
             cmbEstado.Items.Add("Todas");
@@ -88,7 +88,7 @@ namespace Grupo_E.EstadoCuentasCorrientes
 
             if (!ValidarFormatoCuit(txtCuitCliente.Text))
             {
-                MessageBox.Show("El formato del CUIT es incorrecto (debe ser numérico de 11 dígitos).", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El formato del CUIT es incorrecto.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCuitCliente.Focus();
                 return;
             }
@@ -99,15 +99,23 @@ namespace Grupo_E.EstadoCuentasCorrientes
             string estadoFiltro = cmbEstado.SelectedItem?.ToString() ?? "Todas";
 
             decimal saldoAcumuladoFinal;
-            var movimientos = _modelo.ObtenerMovimientos(cuit, fechaDesde, fechaHasta, estadoFiltro, out saldoAcumuladoFinal);
 
-            if (movimientos.Count == 0 && !string.IsNullOrEmpty(cuit))
+            try
             {
-                MessageBox.Show($"No se encontraron movimientos para el cliente con CUIT: {cuit} en el rango de fechas y estado especificados.", "Información de Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+                var movimientos = _modelo.ObtenerMovimientos(cuit, fechaDesde, fechaHasta, estadoFiltro, out saldoAcumuladoFinal);
 
-            PresentarResultados(movimientos, saldoAcumuladoFinal);
+                if (movimientos.Count == 0)
+                {
+                    MessageBox.Show($"No se encontraron movimientos para el cliente con CUIT: {cuit}.", "Información de Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                PresentarResultados(movimientos, saldoAcumuladoFinal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void PresentarResultados(List<MovimientoCC> movimientos, decimal saldoFinalModelo)
@@ -165,7 +173,7 @@ namespace Grupo_E.EstadoCuentasCorrientes
         {
             if (dtpFechaDesde.Value.Date > dtpFechaHasta.Value.Date)
             {
-                MessageBox.Show("La 'Fecha desde' no puede ser posterior a la 'Fecha hasta'.", "Error de Fecha", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La 'Fecha desde' no puede ser posterior a la 'Fecha hasta'.", "Error de Rango", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpFechaDesde.Focus();
                 return false;
             }
@@ -174,8 +182,11 @@ namespace Grupo_E.EstadoCuentasCorrientes
 
         private bool ValidarFormatoCuit(string cuit)
         {
-            string cuitLimpio = cuit.Replace("-", "").Replace(" ", "");
-            return (cuitLimpio.Length == 11 && long.TryParse(cuitLimpio, out _));
+            if (cuit.Length != 13 || !cuit.Contains("-"))
+            {
+                return false;
+            }
+            return true;
         }
 
         private void lvMovimientos_SelectedIndexChanged(object sender, EventArgs e)

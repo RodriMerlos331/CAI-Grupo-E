@@ -13,32 +13,34 @@ namespace FormResultadoCostoVsVentas
 {
     public partial class FormResultadoCostoVsVentas : Form
     {
+        private readonly CostosVsVentasModel modelo = new CostosVsVentasModel();
+
         public FormResultadoCostoVsVentas()
         {
             InitializeComponent();
         }
 
-        private readonly CostosVsVentasModel modelo = new CostosVsVentasModel();
-
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             ActualizarCamposResultado(new ResultadoCostosVentas());
 
+            // Errores de Formato/Rango (Nivel 1 y 2) -> ADVERTENCIA
+
             if (string.IsNullOrWhiteSpace(txtCuit.Text))
             {
-                MessageBox.Show("Debe ingresar un CUIT válido.");
+                MessageBox.Show("Debe ingresar un CUIT válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!ValidarFormatoCuit(txtCuit.Text))
             {
-                MessageBox.Show("Debe ingresar un CUIT válido.");
+                MessageBox.Show("Debe ingresar un CUIT válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (dtpFechaInicial.Value.Date > dtpFechaFinal.Value.Date)
             {
-                MessageBox.Show("Debe ingresar un rango de fechas válidas. La fecha inicial no puede ser posterior a la final.");
+                MessageBox.Show("Debe ingresar un rango de fechas válidas. La fecha inicial no puede ser posterior a la final.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -56,7 +58,8 @@ namespace FormResultadoCostoVsVentas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                // Errores de Datos/Negocio (Nivel 4) -> ERROR CRÍTICO
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -91,75 +94,17 @@ namespace FormResultadoCostoVsVentas
 
         private void FormResultadoCostoVsVentas_Load(object sender, EventArgs e)
         {
+            dtpFechaInicial.MaxDate = DateTime.Today;
+            dtpFechaFinal.MaxDate = DateTime.Today;
+
+            if (dtpFechaFinal.Value.Date > DateTime.Today)
+            {
+                dtpFechaFinal.Value = DateTime.Today;
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-        }
-    }
-
-    internal class Datos
-    {
-        public string Cuit { get; set; }
-        public DateTime FechaInicial { get; set; }
-        public DateTime FechaFinal { get; set; }
-    }
-
-    internal class ResultadoCostosVentas
-    {
-        public string NombreEmpresa { get; set; }
-        public decimal TotalCostos { get; set; }
-        public decimal TotalVentas { get; set; }
-
-        public ResultadoCostosVentas()
-        {
-            NombreEmpresa = string.Empty;
-            TotalCostos = 0m;
-            TotalVentas = 0m;
-        }
-    }
-
-    internal class CostosVsVentasModel
-    {
-        internal ResultadoCostosVentas Consultar(Datos query)
-        {
-            (bool existe, string nombre) = BuscarEmpresa(query.Cuit);
-            if (!existe)
-            {
-                throw new Exception("No se encontró ninguna empresa con el CUIT ingresado.");
-            }
-
-            (decimal costos, decimal ventas) = ObtenerTotales(query.Cuit, query.FechaInicial, query.FechaFinal);
-
-            if (costos == 0m && ventas == 0m)
-            {
-                throw new Exception("No se registran registros para la empresa en el año seleccionado.");
-            }
-
-            return new ResultadoCostosVentas
-            {
-                NombreEmpresa = nombre,
-                TotalCostos = costos,
-                TotalVentas = ventas
-            };
-        }
-
-        private (bool Existe, string Nombre) BuscarEmpresa(string cuit)
-        {
-            if (cuit == "20-12345678-0")
-            {
-                return (true, "Empresa Ejemplo S.A.");
-            }
-            return (false, string.Empty);
-        }
-
-        private (decimal Costos, decimal Ventas) ObtenerTotales(string cuit, DateTime fIni, DateTime fFin)
-        {
-            if (cuit == "20-12345678-0" && fIni.Year == 2024)
-            {
-                return (50000.00m, 95000.00m);
-            }
-            return (0m, 0m);
         }
     }
 }
