@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Grupo_E.F04_GestionarOmnibus;
+using Grupo_E.GestionarFletero;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,86 +12,50 @@ namespace Grupo_E.GestionarOmnibus
     {
         private readonly F04_GestionarOmnibusModel modelo = new F04_GestionarOmnibusModel();
 
-        public F04_GestionarOmnibusForm()
-        {
-            InitializeComponent();
-            ConfigurarGrids();            
-        }
-
-        private void ConfigurarGrids()
-        {
-            // Recepción
-
-            lstRecepcion.Columns.Clear();
-            lstRecepcion.Columns.Add("IdHDR", "ID HDR");
-            lstRecepcion.Columns.Add("NumeroGuia", "Número de Tracking");
-            lstRecepcion.Columns.Add("TipoBulto", "Tipo de Bulto");
-
-            // Despacho
-
-            lstDespacho.Columns.Clear();
-            lstDespacho.Columns.Add("IdHDR", "ID HDR");
-            lstDespacho.Columns.Add("NumeroGuia", "Número de Tracking");
-            lstDespacho.Columns.Add("TipoBulto", "Tipo de Bulto");
-        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string patente = txtPatente.Text?.Trim();
-            if (string.IsNullOrEmpty(patente))
-            {
-                MessageBox.Show("Ingresá la patente.", "Patente requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            // Verificar si la patente existe en los datos
-            bool existe = modelo.Datos.Any(d => string.Equals(d.Patente, patente, StringComparison.OrdinalIgnoreCase));
+            string patente = txtPatente.Text;
 
-            if (!existe)
+            // Validar que el campo no esté vacío
+            if (string.IsNullOrWhiteSpace(patente))
             {
-                MessageBox.Show("Esa patente no existe dentro del sistema.", "Patente no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor ingrese un número de patente");
                 return;
             }
 
-            // aca creo la logica de lo que tiene que mostrarme en el list view
-            var recepcion = modelo.Datos.Where(d => string.Equals(d.Patente, patente, StringComparison.OrdinalIgnoreCase)
-                                           && d.Ubicacion == "Recepcion").ToList();
-
-            var despacho = modelo.Datos.Where(d => string.Equals(d.Patente, patente, StringComparison.OrdinalIgnoreCase)
-                                          && d.Ubicacion == "Despacho").ToList();
-
-            // y aca llamamos a esos metodos para que funcionen cuando la patente que se ingresa existe:
-            CargarGridSimple(lstRecepcion, recepcion);
-            CargarGridSimple(lstDespacho, despacho);
-            ActualizarContadores(); // 
-
-
-
-        }
-
-        private void CargarGridSimple(ListView listView, List<ItemHDR> lista)
-        {
-            // Asegurarnos de que el ListView está en modo detalles y tiene columnas
-            listView.View = View.Details;
-            listView.FullRowSelect = true;
-            listView.GridLines = true;
-
-            if (listView.Columns.Count == 0)
+            // Buscar encomiendas a recepcionar
+            var encomiendasARecepcionar = modelo.EncomiendasARecepcionar(patente);
+            if (encomiendasARecepcionar != null)
             {
-                listView.Columns.Add("ID HDR", 80);
-                listView.Columns.Add("Número de Tracking", 140);
-                listView.Columns.Add("Tipo de Bulto", 100);
+                lstRecepcion.Items.Clear();
+                foreach (var guia in encomiendasARecepcionar)
+                {
+                    ListViewItem listItem = new ListViewItem(guia.IdHdr);
+                    listItem.SubItems.Add(guia.Tracking);
+                    listItem.SubItems.Add(guia.TipoDeBulto);
+                    lstRecepcion.Items.Add(listItem);
+                }
             }
 
-            listView.Items.Clear();
-
-            foreach (var i in lista)
+            // Buscar encomiendas a entregar
+            var encomiendasAEntregar = modelo.ObtenerGuiasEntrega(patente);
+            if (encomiendasAEntregar != null)
             {
-                var row = new ListViewItem(i.IdHDR.ToString());
-                row.SubItems.Add(i.NumeroGuia);
-                row.SubItems.Add(i.TipoBulto);
-                listView.Items.Add(row);
+                lstDespacho.Items.Clear();
+                foreach (var guiaEntrega in encomiendasAEntregar)
+                {
+                    ListViewItem listItem = new ListViewItem(guiaEntrega.IdHdr);
+                    listItem.SubItems.Add(guiaEntrega.Tracking);
+                    listItem.SubItems.Add(guiaEntrega.TipoDeBulto);
+                    lstDespacho.Items.Add(listItem);
+                }
             }
+
+            ActualizarContadores();
         }
+
+    
 
         private void ActualizarContadores() //contadores de la cantidad de encomiendas
         {
@@ -152,20 +118,59 @@ namespace Grupo_E.GestionarOmnibus
             // si el usuario responde No, no hace nada y vuelve a la pantalla
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e) //btn de aceptar
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            // 1) Mensaje de confirmación
+            string patente = txtPatente.Text;
+
+            // 1) Mover encomiendas de recepcion a la lista de recepcionadas
+            var encomiendasRecepcion = modelo.EncomiendasARecepcionar(patente);
+            if (encomiendasRecepcion != null && lstRecepcion != null)
+            {
+                var aMover = new List<EncomiendasARecepcionar>();
+                foreach (ListViewItem item in lstRecepcion.Items)
+                {
+                    var encomienda = encomiendasRecepcion
+                        .FirstOrDefault(x => x.IdHdr == item.Text && x.Tracking == item.SubItems[1].Text);
+                    if (encomienda != null)
+                    {
+                        modelo.EncomiendasRecepcionadasEnCDOrigen.Add(encomienda);
+                        aMover.Add(encomienda);
+                    }
+                }
+                // Elimina las encomiendas movidas para que no vuelvan a aparecer
+                foreach (var enc in aMover)
+                    encomiendasRecepcion.Remove(enc);
+            }
+
+            // 2) Mover encomiendas de despacho a la lista de en tránsito
+            var encomiendasDespacho = modelo.ObtenerGuiasEntrega(patente);
+            if (encomiendasDespacho != null && lstDespacho != null)
+            {
+                var aMover = new List<EncomiendasAEntregar>();
+                foreach (ListViewItem item in lstDespacho.Items)
+                {
+                    var encomienda = encomiendasDespacho
+                        .FirstOrDefault(x => x.IdHdr == item.Text && x.Tracking == item.SubItems[1].Text);
+                    if (encomienda != null)
+                    {
+                        modelo.EncomiendasEnTransito.Add(encomienda);
+                        aMover.Add(encomienda);
+                    }
+                }
+                // Elimina las encomiendas movidas para que no vuelvan a aparecer
+                foreach (var enc in aMover)
+                    encomiendasDespacho.Remove(enc);
+            }
+
+            // 3) Mensaje de confirmación
             MessageBox.Show("Rendición registrada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // 2) Limpiar textbox de patente y poner foco
+            // 4) Limpiar textbox y ListViews
             if (txtPatente != null)
             {
                 txtPatente.Clear();
                 txtPatente.Focus();
             }
-
-            //  Limpiar ListView 
-
             try
             {
                 if (lstRecepcion != null) lstRecepcion.Items.Clear();
@@ -173,8 +178,16 @@ namespace Grupo_E.GestionarOmnibus
             }
             catch {}
 
-            //  Resetear labels
+            // 5) Resetear labels si corresponde
+        }
+
+
+        public F04_GestionarOmnibusForm()
+        {
+            InitializeComponent();
 
         }
+
+
     }
 }
