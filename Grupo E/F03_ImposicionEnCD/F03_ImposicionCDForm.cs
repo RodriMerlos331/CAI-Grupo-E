@@ -23,9 +23,10 @@ namespace Grupo_E.ImposicionEnCD
         /*
          * Estamos asumiendo que en esta pantalla se va a hacer una imposición por bulto ....
          * Deberíamos sumar un campo para cantidad de bultos? Pero no siempre van a ser todos del mismo tamaño...
+         * Además se generararía más de una guía por imposición.
          */
 
-         private void F03_ImposicionCDForm_Load(object sender, EventArgs e)
+        private void F03_ImposicionCDForm_Load(object sender, EventArgs e)
         {
            //Los groupBox se van a ir habilitando según correspodna:
             CentroDistribucionGrb.Enabled = false;
@@ -55,8 +56,10 @@ namespace Grupo_E.ImposicionEnCD
 
         private void LocalidadCbo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AgenciaCbo.Items.Clear();
-            TerminalesCbo.Items.Clear();
+            AgenciaCbo.SelectedIndex = -1;
+            TerminalesCbo.SelectedIndex = -1;
+            DatosEntregaDomiclioText.Text = "";
+
 
             string localidadSeleccionada = LocalidadCbo.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(localidadSeleccionada))
@@ -72,11 +75,12 @@ namespace Grupo_E.ImposicionEnCD
                 TerminalesCbo.Items.Add(terminal);
         }
 
-
-
         
         private void DomicilioRb_CheckedChanged(object sender, EventArgs e)
         {
+            TerminalesCbo.SelectedIndex = -1;
+            TerminalesCbo.Text = "";
+            AgenciaCbo.SelectedIndex = -1;
             if (DomicilioRb.Checked)
             {
                 DireccionParticularGrb.Enabled = true;
@@ -87,6 +91,9 @@ namespace Grupo_E.ImposicionEnCD
 
         private void AgenciaRb_CheckedChanged(object sender, EventArgs e)
         {
+            TerminalesCbo.SelectedIndex = -1;
+            TerminalesCbo.Text = "";
+            DatosEntregaDomiclioText.Text = "";
             if (AgenciaRb.Checked)
             {
                 DireccionParticularGrb.Enabled = false;
@@ -97,6 +104,8 @@ namespace Grupo_E.ImposicionEnCD
 
         private void CentroDistribucionRb_CheckedChanged(object sender, EventArgs e)
         {
+            AgenciaCbo.SelectedIndex = -1;
+            AgenciaCbo.Text = "";
             if (CentroDistribucionRb.Checked)
             {
                 DireccionParticularGrb.Enabled = false;
@@ -140,16 +149,12 @@ namespace Grupo_E.ImposicionEnCD
                 return;
             }
 
-            //Falta chequear agencia y Cd dependiendo el tipo de entrega seleccionado
 
-            /*
-            if (string.IsNullOrEmpty(DatosEntregaDomiclioText.Text))
+            if(TamanoBultoCbo.SelectedItem == null)
             {
-                //Debería chequear campo por campo??
-                MessageBox.Show("Debe ingresar una dirección de entrega.");
+                MessageBox.Show("Debe seleccionar un tamaño de bulto.");
                 return;
             }
-            */
 
             if (string.IsNullOrEmpty(DatosDestinatarioText.Text))
             {
@@ -158,10 +163,15 @@ namespace Grupo_E.ImposicionEnCD
             }
 
 
-            //Si está todo ok:
 
             if(CentroDistribucionRb.Checked)
             {
+                if(TerminalesCbo.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una terminal de destino.");
+                    return;
+                }
+
                 modelo.ImposicionConDestinoACD(
                     CuitText.Text,
                     TerminalesCbo.SelectedItem?.ToString(),
@@ -169,30 +179,49 @@ namespace Grupo_E.ImposicionEnCD
                     DatosDestinatarioText.Text
                 );
 
-                LimpiarCampos();
             }
 
-            /*
+         
             else if (DomicilioRb.Checked)
             {
+                if (string.IsNullOrEmpty(DatosEntregaDomiclioText.Text))
+                {
+                    //Debería chequear campo por campo??
+                    MessageBox.Show("Debe ingresar una dirección de entrega.");
+                    return;
+                }
+
                 modelo.ImposicionDomicilioParticular(
                     CuitText.Text,
                     DatosEntregaDomiclioText.Text,
                     TamanoBultoCbo.SelectedItem?.ToString(),
                     DatosDestinatarioText.Text
                 );
+
+
             }
+
+            
             else if (AgenciaRb.Checked)
             {
+                if(AgenciaCbo.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una agencia de destino.");
+                    return;
+                }
+
                 modelo.ImposicionEnAgencia(
                     CuitText.Text,
                     AgenciaCbo.SelectedItem?.ToString(),
                     TamanoBultoCbo.SelectedItem?.ToString(),
                     DatosDestinatarioText.Text
                 );
-            }
-            */
 
+            }
+
+            LimpiarCampos();
+
+            //Ahora tendría que guardarlo. 
         }
 
         private void LimpiarCampos()
@@ -205,10 +234,10 @@ namespace Grupo_E.ImposicionEnCD
             DomicilioRb.Checked = false;
             AgenciaRb.Checked = false;
 
-            TerminalesCbo.Items.Clear();
+            TerminalesCbo.SelectedIndex = -1;
             CentroDistribucionGrb.Enabled = false;
 
-            AgenciaCbo.Items.Clear();
+            AgenciaCbo.SelectedIndex = -1;
             AgenciaGrb.Enabled = false;
 
             DatosEntregaDomiclioText.Clear();
@@ -220,8 +249,21 @@ namespace Grupo_E.ImposicionEnCD
             DatosDestinatarioText.Clear();
         }
 
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+            DialogResult resultado = MessageBox.Show(
+        "¿Seguro que querés cancelar la operación?",
+        "Confirmar cancelación",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question
+    );
 
-
-
+            if (resultado == DialogResult.Yes)
+            {
+                MessageBox.Show("Se canceló la operación de imposición");
+                this.Close();
+            }
+        }
     }
 }

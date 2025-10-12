@@ -73,6 +73,7 @@
             this.CancelarBtn.TabIndex = 34;
             this.CancelarBtn.Text = "Cancelar";
             this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // DireccionParticularGrb
             // 

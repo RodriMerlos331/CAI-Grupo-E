@@ -11,10 +11,10 @@ namespace Grupo_E.F03_ImposicionEnCD
     public class F03_ImposicionEnCDModel
     {
         //Tiene sentido las localidades disponibles cargarlas acá? O se podrían hacer directamente desde la clase ? 
-        public string[] Localidad = new string[] { "CABA","GBA", "Córdoba" };
+        public string[] Localidad = new string[] { "CABA", "GBA", "Córdoba" };
         //Localidades a sumar: , "Tucumán","Corrientes","Neuquén","Viedma"
 
-        public string[] TamanoBulto = new string[] { "S", "M" , "L", "XL"};
+        public string[] TamanoBulto = new string[] { "S", "M", "L", "XL" };
 
         public readonly Dictionary<string, string> clientes = new Dictionary<string, string>
         {
@@ -26,7 +26,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
 
         //COPILOT SUGIRIÓ ESTA FORMA DE HACERLO, PREGUNTAR SI ESTÁ BIEN:
-        public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades = 
+        public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =
     new Dictionary<string, (List<string>, List<string>)>
 {
     { "CABA", (new List<string> { "Alto Palermo", "DOT", "Abasto" }, new List<string> { "Retiro", "Dellepiane", "Liniers" }) },
@@ -48,7 +48,12 @@ namespace Grupo_E.F03_ImposicionEnCD
         string DatosDestinatario { get; set; } 
     }
          */
+        private int trackingActual = 1;
 
+        private int ObtenerSiguienteTracking()
+        {
+            return trackingActual++;
+        }
         public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
         {
             ImposicionConDestinoACD nuevaImposicion = new ImposicionConDestinoACD
@@ -71,11 +76,48 @@ namespace Grupo_E.F03_ImposicionEnCD
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private int trackingActual = 1; // o el valor inicial que prefieras
-
-        private int ObtenerSiguienteTracking()
+        public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario)
         {
-            return trackingActual++;
+            ImposicionDomicilioParticular nuevaImposicion = new ImposicionDomicilioParticular
+            {
+                Tracking = ObtenerSiguienteTracking().ToString("D8"),
+                CUIT = cuitCliente,
+                DireccionParticular = direccionParticular,
+                TamanoBulto = tamanoBulto,
+                DatosDestinatario = datosDestinatario
+            };
+            string mensaje =
+                "Guía impuesta exitosamente.\n\n" +
+       $"Tracking: {nuevaImposicion.Tracking}\n" +
+       $"CUIT del cliente: {nuevaImposicion.CUIT}\n" +
+       $"Dirección particular de destino: {nuevaImposicion.DireccionParticular}\n" +
+       $"Tamaño del bulto: {nuevaImposicion.TamanoBulto}\n" +
+       $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+
+            MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
+        {
+            ImposicionAgencia nuevaImposicion = new ImposicionAgencia
+            {
+                Tracking = ObtenerSiguienteTracking().ToString("D8"),
+                CUIT = cuitCliente,
+                Agencia = agenciaDestino,
+                TamanoBulto = tamanoBulto,
+                DatosDestinatario = datosDestinatario
+            };
+
+            string mensaje =
+                "Guía impuesta exitosamente.\n\n" +
+       $"Tracking: {nuevaImposicion.Tracking}\n" +
+       $"CUIT del cliente: {nuevaImposicion.CUIT}\n" +
+       $"Agencia de destino: {nuevaImposicion.Agencia}\n" +
+       $"Tamaño del bulto: {nuevaImposicion.TamanoBulto}\n" +
+       $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+
+            MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

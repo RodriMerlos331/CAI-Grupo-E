@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="F03_ImposicionEnCD\F03_ImposicionEnCDModel.cs" />
+    <Compile Include="F03_ImposicionEnCD\ImposicionAgencia.cs" />
     <Compile Include="F03_ImposicionEnCD\ImposicionConDestinoACD.cs" />
     <Compile Include="F03_ImposicionEnCD\ImposicionDomicilioParticular.cs" />
     <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.cs">
