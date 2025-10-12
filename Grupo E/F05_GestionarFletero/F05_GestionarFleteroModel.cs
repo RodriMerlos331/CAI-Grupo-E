@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Grupo_E.GestionarFletero
@@ -21,10 +22,12 @@ namespace Grupo_E.GestionarFletero
         {
             fleteros.Add(new Fletero { Dni = 12345678 });
             fleteros.Add(new Fletero { Dni = 23456789 });
+            /*
             fleteros.Add(new Fletero { Dni = 34567890 });
             fleteros.Add(new Fletero { Dni = 45678901 });
             fleteros.Add(new Fletero { Dni = 56789012 });
             fleteros.Add(new Fletero { Dni = 67890123 });
+            */
         }
         public void CargarHDR()
         {
@@ -40,6 +43,7 @@ namespace Grupo_E.GestionarFletero
                     {
                         new Guia { NroHDRAsignada = 1, Tracking = 1001, Estado = "No retirada" },
                         new Guia { NroHDRAsignada = 1, Tracking = 1002, Estado = "No retirada" },
+
                     }
                 },
                 new HDR
@@ -58,7 +62,7 @@ namespace Grupo_E.GestionarFletero
                 {
                     IdHDR = 3,
                     Tipo = "Retiro",
-                    DniFleteroAsignado = 34567890,
+                    DniFleteroAsignado = 23456789,
                     Cumplida = false,
                     GuiasHDR = new List<Guia>
                     {
@@ -70,7 +74,7 @@ namespace Grupo_E.GestionarFletero
                 {
                     IdHDR = 4,
                     Tipo = "Entrega",
-                    DniFleteroAsignado = 45678901,
+                    DniFleteroAsignado = 12345678,
                     Cumplida = false,
                     GuiasHDR = new List<Guia>
                     {
@@ -78,6 +82,7 @@ namespace Grupo_E.GestionarFletero
                         new Guia { NroHDRAsignada = 4, Tracking = 1008, Estado = "A entregar" },
                     }
                 },
+                /*
                 new HDR
                 {
                     IdHDR = 5,
@@ -150,6 +155,7 @@ namespace Grupo_E.GestionarFletero
                         new Guia { NroHDRAsignada = 10, Tracking = 1020, Estado = "A entregar" },
                     }
                 }
+                */
             };
 
             guias = new List<Guia>();
@@ -157,8 +163,34 @@ namespace Grupo_E.GestionarFletero
                 guias.AddRange(hdr.GuiasHDR);
         }
 
+        private int dniFleteroActual = 0;  
+        public bool FleteroExiste(int dniFletero)
+        {
+            return fleteros.Any(f => f.Dni == dniFletero);
+        }
+
+
+        public List<HDR> BuscarHDRFletero(int dniFletero)
+        {
+            if (!FleteroExiste(dniFletero))
+            {
+                MessageBox.Show($"No existe ningún fletero con el DNI {dniFletero}.",
+                        "Fletero no encontrado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                return null;
+            }
+
+            hdrsFletero = hdrs
+                .Where(h => h.DniFleteroAsignado == dniFletero)
+                .ToList();
+
+            return hdrsFletero;
+        }
+
         public List<HDR> ObtenerHDRAsignadas(int dniFletero)
         {
+            
 
             var hdrsFiltradas = BuscarHDRFletero(dniFletero);
 
@@ -173,6 +205,8 @@ namespace Grupo_E.GestionarFletero
                 );
                 return null;
             }
+
+            dniFleteroActual = dniFletero;
 
             MessageBox.Show(
                 "Se encontraron " + hdrsFiltradas.Count + " HDR asignadas al fletero con DNI " + dniFletero + " que deben ser rendidas. Además, se generaron las nuevas ruta a asignar.",
@@ -215,25 +249,14 @@ namespace Grupo_E.GestionarFletero
             }
         }
 
-        public List<HDR> BuscarHDRFletero(int dniFletero)
-        {
-            hdrsFletero = hdrs
-                .Where(h => h.DniFleteroAsignado == dniFletero)
-                .ToList();
 
-            return hdrsFletero;
+        
 
-
-        }
-
-        public bool FleteroExiste(int dniFletero)
-        {
-            return fleteros.Any(f => f.Dni == dniFletero);
-        }
-
-
+        //Siempre se generan las mismas, son datos de prueba.
         public void GenerarNuevasHDRyGuias()
         {
+
+
             NuevasHDRRetiro.Clear();
             NuevasHDREntrega.Clear();
             NuevasGuiasRetiro.Clear();

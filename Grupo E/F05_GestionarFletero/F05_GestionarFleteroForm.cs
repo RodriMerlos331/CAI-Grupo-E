@@ -28,7 +28,6 @@ namespace Grupo_E.GestionarFletero
 
         private void BuscarBtn_Click(object sender, EventArgs e)
         {
-            
 
             if (string.IsNullOrWhiteSpace(DNIText.Text))
             {
@@ -41,6 +40,7 @@ namespace Grupo_E.GestionarFletero
                 return;
             }
 
+            /*
             if (!modelo.FleteroExiste(dniFleteroBuscar))
             {
                 MessageBox.Show($"No existe ningún fletero con el DNI {dniFleteroBuscar}.",
@@ -48,13 +48,15 @@ namespace Grupo_E.GestionarFletero
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                 return;
-            }   
+            }
 
+            */
             LimpiarPantalla();
+
+            //
 
             //Muestro HDR asignadas:
 
-            modelo.GenerarNuevasHDRyGuias();
 
             var hdrAsignadas = modelo.ObtenerHDRAsignadas(dniFleteroBuscar);
 
@@ -68,6 +70,9 @@ namespace Grupo_E.GestionarFletero
 
 
             //Generación nuevas HDR (asumiendo es independiente a la rendición)
+
+            modelo.GenerarNuevasHDRyGuias();
+
             foreach (var hdr in modelo.NuevasHDRRetiro)
             {
                 var item = new ListViewItem(hdr.IdHDR.ToString());
@@ -102,6 +107,8 @@ namespace Grupo_E.GestionarFletero
         //BOTON ACTUALIZAR HDR
         private void ActualizarHDRBtn_Click(object sender, EventArgs e)
         {
+            /*
+
             if (string.IsNullOrWhiteSpace(DNIText.Text))
             {
                 MessageBox.Show("El campo DNI no puede estar vacío");
@@ -121,7 +128,7 @@ namespace Grupo_E.GestionarFletero
                         MessageBoxIcon.Warning);
                 return;
             }
-
+            */
             foreach (ListViewItem item in HDRAsignadasListView.Items)
             {
                 var hdr = item.Tag as HDR;
@@ -149,7 +156,8 @@ namespace Grupo_E.GestionarFletero
                 GuiasNoEntregadasListView.Items.Add(item);
             }
 
-            
+
+
         }
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
