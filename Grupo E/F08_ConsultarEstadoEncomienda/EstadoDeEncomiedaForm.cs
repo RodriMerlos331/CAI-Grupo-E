@@ -115,8 +115,6 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.Close();
         }
 
-        private void grbEstado_Enter(object sender, EventArgs e)
-        {
 
         }
     }
