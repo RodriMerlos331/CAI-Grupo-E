@@ -14,9 +14,8 @@ namespace Grupo_E.F07_RetirarEnCD
             new DatosCliente { NumeroTracking = 100002, Nombre = "Maria", Apellido = "Gomez", DNI = 87654321 },
             new DatosCliente { NumeroTracking = 111222, Nombre = "Carlos", Apellido = "Lopez", DNI = 20000000 },
             new DatosCliente { NumeroTracking = 333444, Nombre = "Ana", Apellido = "Diaz", DNI = 30000000 },
-            new DatosCliente { NumeroTracking = 987654, Nombre = "Lucia", Apellido = "Mendez", DNI = 40000000 },
-            new DatosCliente { NumeroTracking = 555666, Nombre = "Pedro", Apellido = "Ramos", DNI = 50000000 },
-            new DatosCliente { NumeroTracking = 654321, Nombre = "Sofia", Apellido = "Vazquez", DNI = 60000000 }
+            new DatosCliente { NumeroTracking = 987654, Nombre = "Lucia", Apellido = "Mendez", DNI = 40000000 }, //este caso es para probar buscar una encomienda ya entregada
+      
         };
 
         public DatosCliente BuscarEncomiendaPorTracking(int tracking)
