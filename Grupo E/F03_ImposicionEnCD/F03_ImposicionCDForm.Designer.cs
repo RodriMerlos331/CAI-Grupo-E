@@ -67,7 +67,7 @@
             // 
             // CancelarBtn
             // 
-            this.CancelarBtn.Location = new System.Drawing.Point(805, 534);
+            this.CancelarBtn.Location = new System.Drawing.Point(809, 514);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(109, 23);
             this.CancelarBtn.TabIndex = 34;
@@ -133,9 +133,9 @@
             // 
             this.AgenciaGrb.Controls.Add(this.AgenciaCbo);
             this.AgenciaGrb.Controls.Add(this.lbAgencia);
-            this.AgenciaGrb.Location = new System.Drawing.Point(539, 241);
+            this.AgenciaGrb.Location = new System.Drawing.Point(504, 242);
             this.AgenciaGrb.Name = "AgenciaGrb";
-            this.AgenciaGrb.Size = new System.Drawing.Size(379, 85);
+            this.AgenciaGrb.Size = new System.Drawing.Size(414, 85);
             this.AgenciaGrb.TabIndex = 30;
             this.AgenciaGrb.TabStop = false;
             this.AgenciaGrb.Text = "Agencia";
@@ -239,14 +239,14 @@
             this.grbDatosDestinatario.Controls.Add(this.lbNombreDestinatario);
             this.grbDatosDestinatario.Location = new System.Drawing.Point(504, 424);
             this.grbDatosDestinatario.Name = "grbDatosDestinatario";
-            this.grbDatosDestinatario.Size = new System.Drawing.Size(414, 85);
+            this.grbDatosDestinatario.Size = new System.Drawing.Size(414, 84);
             this.grbDatosDestinatario.TabIndex = 28;
             this.grbDatosDestinatario.TabStop = false;
             this.grbDatosDestinatario.Text = "Datos de destinatario";
             // 
             // DatosDestinatarioText
             // 
-            this.DatosDestinatarioText.Location = new System.Drawing.Point(4, 51);
+            this.DatosDestinatarioText.Location = new System.Drawing.Point(11, 50);
             this.DatosDestinatarioText.Name = "DatosDestinatarioText";
             this.DatosDestinatarioText.Size = new System.Drawing.Size(279, 20);
             this.DatosDestinatarioText.TabIndex = 3;
@@ -254,7 +254,7 @@
             // lbNombreDestinatario
             // 
             this.lbNombreDestinatario.AutoSize = true;
-            this.lbNombreDestinatario.Location = new System.Drawing.Point(7, 35);
+            this.lbNombreDestinatario.Location = new System.Drawing.Point(8, 26);
             this.lbNombreDestinatario.Name = "lbNombreDestinatario";
             this.lbNombreDestinatario.Size = new System.Drawing.Size(122, 13);
             this.lbNombreDestinatario.TabIndex = 0;
@@ -274,7 +274,7 @@
             // TamanoBultoCbo
             // 
             this.TamanoBultoCbo.FormattingEnabled = true;
-            this.TamanoBultoCbo.Location = new System.Drawing.Point(6, 58);
+            this.TamanoBultoCbo.Location = new System.Drawing.Point(13, 50);
             this.TamanoBultoCbo.Name = "TamanoBultoCbo";
             this.TamanoBultoCbo.Size = new System.Drawing.Size(183, 21);
             this.TamanoBultoCbo.TabIndex = 10;
@@ -282,7 +282,7 @@
             // lbTamañoBulto
             // 
             this.lbTamañoBulto.AutoSize = true;
-            this.lbTamañoBulto.Location = new System.Drawing.Point(6, 42);
+            this.lbTamañoBulto.Location = new System.Drawing.Point(10, 26);
             this.lbTamañoBulto.Name = "lbTamañoBulto";
             this.lbTamañoBulto.Size = new System.Drawing.Size(89, 13);
             this.lbTamañoBulto.TabIndex = 8;
@@ -290,7 +290,7 @@
             // 
             // AceptarBtn
             // 
-            this.AceptarBtn.Location = new System.Drawing.Point(678, 534);
+            this.AceptarBtn.Location = new System.Drawing.Point(675, 514);
             this.AceptarBtn.Name = "AceptarBtn";
             this.AceptarBtn.Size = new System.Drawing.Size(109, 23);
             this.AceptarBtn.TabIndex = 33;
@@ -302,9 +302,9 @@
             // 
             this.CentroDistribucionGrb.Controls.Add(this.TerminalesCbo);
             this.CentroDistribucionGrb.Controls.Add(this.label1);
-            this.CentroDistribucionGrb.Location = new System.Drawing.Point(9, 236);
+            this.CentroDistribucionGrb.Location = new System.Drawing.Point(9, 242);
             this.CentroDistribucionGrb.Name = "CentroDistribucionGrb";
-            this.CentroDistribucionGrb.Size = new System.Drawing.Size(362, 76);
+            this.CentroDistribucionGrb.Size = new System.Drawing.Size(484, 85);
             this.CentroDistribucionGrb.TabIndex = 31;
             this.CentroDistribucionGrb.TabStop = false;
             this.CentroDistribucionGrb.Text = "Centro de distribución";
@@ -330,7 +330,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 585);
+            this.ClientSize = new System.Drawing.Size(945, 551);
             this.Controls.Add(this.CentroDistribucionGrb);
             this.Controls.Add(this.grbBultoCC);
             this.Controls.Add(this.TipoEntregaGrb);
