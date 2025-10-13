@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grupo_E.F05_GestionarFletero;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,179 +20,162 @@ namespace Grupo_E.GestionarFletero
             InitializeComponent();
         }
 
-        private void GestionarFleteroForm_Load(object sender, EventArgs e)
+        private void F05_GestionarFleteroForm_Load(object sender, EventArgs e)
         {
-            modelo.CargarFleteros();
-            modelo.CargarHDR();
-            
+            modelo.CargarHDRDePrueba();
+
         }
 
         private void BuscarBtn_Click(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrWhiteSpace(DNIText.Text))
+            if (!int.TryParse(DNIText.Text, out int dni))
             {
-                MessageBox.Show("El campo DNI no puede estar vacío");
-                return;
-            }
-            if (!int.TryParse(DNIText.Text, out int dniFleteroBuscar))
-            {
-                MessageBox.Show("El campo DNI debe ser un número válido");
+                MessageBox.Show("El DNI debe ser numerico");
                 return;
             }
 
-            /*
-            if (!modelo.FleteroExiste(dniFleteroBuscar))
+            HDRAsignadasListView.Items.Clear();
+
+            var hdrs = modelo.ObtenerHDRPorTransportista(dni);
+
+            if (hdrs.Count == 0)
             {
-                MessageBox.Show($"No existe ningún fletero con el DNI {dniFleteroBuscar}.",
-                        "Fletero no encontrado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                MessageBox.Show("No se encontraron HDR para el DNI ingresado");
                 return;
             }
 
-            */
-            LimpiarPantalla();
-
-            //
-
-            //Muestro HDR asignadas:
-
-
-            var hdrAsignadas = modelo.ObtenerHDRAsignadas(dniFleteroBuscar);
-
-            foreach (var hdr in hdrAsignadas)
+            foreach (var hdr in hdrs)
             {
-                var item = new ListViewItem(hdr.IdHDR.ToString());
-                item.SubItems.Add(hdr.Tipo);
-                item.Tag = hdr;
+                var item = new ListViewItem(hdr.NumeroHDR.ToString());
+                item.SubItems.Add(hdr.Tipo.ToString());
                 HDRAsignadasListView.Items.Add(item);
+
             }
 
+            var guiasNoEntregadas = modelo.ObtenerGuiasDeHDRNoCumplidas(dni, HDR.TipoHDR.Entrega);
+            var guiasNoRetiradas = modelo.ObtenerGuiasDeHDRNoCumplidas(dni, HDR.TipoHDR.Retiro);
 
-            //Generación nuevas HDR (asumiendo es independiente a la rendición)
+            GuiasNoEntregadasListView.Items.Clear();
 
-            modelo.GenerarNuevasHDRyGuias();
-
-            foreach (var hdr in modelo.NuevasHDRRetiro)
+            foreach (var guia in guiasNoEntregadas)
             {
-                var item = new ListViewItem(hdr.IdHDR.ToString());
-                item.SubItems.Add(hdr.Tipo);
-                HDRRetirarListViews.Items.Add(item);
-            }
-
-            foreach (var hdr in modelo.NuevasHDREntrega)
-            {
-                var item = new ListViewItem(hdr.IdHDR.ToString());
-                item.SubItems.Add(hdr.Tipo);
-                HDREntregarListView.Items.Add(item);
-            }
-
-            foreach (var guia in modelo.NuevasGuiasRetiro)
-            {
-                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
-                item.SubItems.Add(guia.Tracking.ToString());
-                GuiasRetirarListView.Items.Add(item);
-            }
-
-            foreach (var guia in modelo.NuevasGuiasEntrega)
-            {
-                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
-                item.SubItems.Add(guia.Tracking.ToString());
-                GuiasEntregarListView.Items.Add(item);
-            }
-        }
-
-
-
-        //BOTON ACTUALIZAR HDR
-        private void ActualizarHDRBtn_Click(object sender, EventArgs e)
-        {
-            /*
-
-            if (string.IsNullOrWhiteSpace(DNIText.Text))
-            {
-                MessageBox.Show("El campo DNI no puede estar vacío");
-                return;
-            }
-            if (!int.TryParse(DNIText.Text, out int dniFleteroBuscar))
-            {
-                MessageBox.Show("El campo DNI debe ser un número válido");
-                return;
-            }
-
-            if (!modelo.FleteroExiste(dniFleteroBuscar))
-            {
-                MessageBox.Show($"No existe ningún fletero con el DNI {dniFleteroBuscar}.",
-                        "Fletero no encontrado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                return;
-            }
-            */
-            foreach (ListViewItem item in HDRAsignadasListView.Items)
-            {
-                var hdr = item.Tag as HDR;
-                if (hdr == null)
-                    continue;
-
-                hdr.Cumplida = item.Checked;
-            }
-
-            modelo.ProcesarHDRsActualizadas();
-
-            MessageBox.Show("HDR actualizadas correctamente.");
-
-            foreach (var guia in modelo.guiasAAdmitir)
-            {
-                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
-                item.SubItems.Add(guia.Tracking.ToString());
-                GuiasRetiradasListView.Items.Add(item);
-            }
-
-            foreach (var guia in modelo.guiasADevolver)
-            {
-                var item = new ListViewItem(guia.NroHDRAsignada.ToString());
-                item.SubItems.Add(guia.Tracking.ToString());
+                var item = new ListViewItem(guia.NumeroHDR.ToString());
+                item.SubItems.Add(guia.CodigoGuia.ToString());
                 GuiasNoEntregadasListView.Items.Add(item);
             }
+            
+            NuevasHDREntregarListView.Items.Clear();
+            NuevasHDRRetirarListViews.Items.Clear();
+            NuevasGuiasEntregarListView.Items.Clear();
+            NuevasGuiasRetirarListView.Items.Clear();
+            
+            var hdrGeneracion = modelo.ObtenerHDRGeneracionPorTransportista(dni);
 
+            var hdrsEntrega = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Entrega).ToList();
+            var hdrsRetiro = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro).ToList();
 
+            
+            foreach (var hdr in hdrsEntrega)
+            {
+                var item = new ListViewItem(hdr.NumeroHDR.ToString());
+                NuevasHDREntregarListView.Items.Add(item);
+
+                foreach (var guia in hdr.Guias)
+                {
+                    var guiaItem = new ListViewItem(hdr.NumeroHDR.ToString());
+                    guiaItem.SubItems.Add(guia.CodigoGuia);
+                    NuevasGuiasEntregarListView.Items.Add(guiaItem);
+                }
+            }
+            
+            foreach (var hdr in hdrsRetiro)
+            {
+                var item = new ListViewItem(hdr.NumeroHDR.ToString());
+                NuevasHDRRetirarListViews.Items.Add(item);
+
+                foreach (var guia in hdr.Guias)
+                {
+                    var guiaItem = new ListViewItem(hdr.NumeroHDR.ToString());
+                    guiaItem.SubItems.Add(guia.CodigoGuia);
+                    NuevasGuiasRetirarListView.Items.Add(guiaItem);
+                }
+            }
 
         }
 
-        private void LimpiarBtn_Click(object sender, EventArgs e)
+        private void HDRAsignadasListView_ItemChecked_1(object sender, ItemCheckedEventArgs e)
         {
-           LimpiarPantalla();
+            int nroHDR = int.Parse(e.Item.SubItems[0].Text);
 
+            var hdr = modelo.ObtenerHDRPorNumero(nroHDR)
+                   .FirstOrDefault(h => h.NumeroHDR == nroHDR);
+
+            hdr.Cumplida = e.Item.Checked;
+            hdr.ActualizarEstado(hdr.Cumplida);
+
+            ActualizarListasPorHDR(hdr);
         }
 
-        private void LimpiarPantalla()
+        private void ActualizarListasPorHDR(HDR hdr)
         {
-            DNIText.Clear();
-            HDRAsignadasListView.Items.Clear();
-            GuiasEntregarListView.Items.Clear();
-            GuiasRetirarListView.Items.Clear();
-            GuiasNoEntregadasListView.Items.Clear();
-            GuiasRetiradasListView.Items.Clear();
-            HDREntregarListView.Items.Clear();
-            HDRRetirarListViews.Items.Clear();
+            if (hdr.Tipo == HDR.TipoHDR.Entrega)
+            {
+                if (hdr.Cumplida) // Si se marcó como cumplida → quitar guías
+                {
+                    foreach (var guia in hdr.Guias)
+                    {
+                        foreach (ListViewItem item in GuiasNoEntregadasListView.Items)
+                        {
+                            if (item.SubItems[0].Text == hdr.NumeroHDR.ToString() &&
+                                item.SubItems[1].Text == guia.CodigoGuia)
+                            {
+                                GuiasNoEntregadasListView.Items.Remove(item);
+                                break;
+                            }
+                        }
+                    }
+                }
+                else // Si se desmarcó → volver a agregar guías
+                {
+                    foreach (var guia in hdr.Guias)
+                    {
+                        var item = new ListViewItem(hdr.NumeroHDR.ToString());
+                        item.SubItems.Add(guia.CodigoGuia);
+                        GuiasNoEntregadasListView.Items.Add(item);
+                    }
+                }
+            }
+
+            if (hdr.Tipo == HDR.TipoHDR.Retiro)
+            {
+                if (hdr.Cumplida) // Si se marcó como cumplida → agregar guías
+                {
+                    foreach (var guia in hdr.Guias)
+                    {
+                        var item = new ListViewItem(hdr.NumeroHDR.ToString());
+                        item.SubItems.Add(guia.CodigoGuia);
+                        GuiasRetiradasListView.Items.Add(item);
+                    }
+                }
+                else // Si se desmarcó → quitar guías
+                {
+                    foreach (var guia in hdr.Guias)
+                    {
+                        foreach (ListViewItem item in GuiasRetiradasListView.Items)
+                        {
+                            if (item.SubItems[0].Text == hdr.NumeroHDR.ToString() &&
+                                item.SubItems[1].Text == guia.CodigoGuia)
+                            {
+                                GuiasRetiradasListView.Items.Remove(item);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        private void AceptarBtn_Click(object sender, EventArgs e)
-        {
-            modelo.GuardarCambios();
-            MessageBox.Show("Cambios guardados con éxito");
-            LimpiarPantalla();
-        }
-
-        private void CancelarBtn_Click(object sender, EventArgs e)
-        {
-            //Está ud? seguro?
-            this.Close();
-        }        
+       
     }
-
-
 }
 

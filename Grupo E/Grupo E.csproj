@@ -51,6 +51,9 @@
     <Compile Include="F03_ImposicionEnCD\ImposicionDomicilioParticular.cs" />
     <Compile Include="F04_GestionarOmnibus\EncomiendasARecepcionar.cs" />
     <Compile Include="F04_GestionarOmnibus\EncomiendasAEntregar.cs" />
+    <Compile Include="F05_GestionarFletero\Guia.cs" />
+    <Compile Include="F05_GestionarFletero\HDR.cs" />
+    <Compile Include="F05_GestionarFletero\Transportista.cs" />
     <Compile Include="F07_RetirarEnCD\DatosCliente.cs" />
     <Compile Include="F07_RetirarEnCD\RetirarEnCDModel.cs" />
     <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.cs">
@@ -89,10 +92,7 @@
     <Compile Include="F10_GeneracionDeFacturas\F10_GeneracionDeFacturasForm.Designer.cs">
       <DependentUpon>F10_GeneracionDeFacturasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="F05_GestionarFletero\HDR.cs" />
-    <Compile Include="F05_GestionarFletero\Fletero.cs" />
     <Compile Include="F05_GestionarFletero\F05_GestionarFleteroModel.cs" />
-    <Compile Include="F05_GestionarFletero\Guia.cs" />
     <Compile Include="F04_GestionarOmnibus\F04_GestionarOmnibusModel.cs" />
     <Compile Include="F04_GestionarOmnibus\ItemHDR.cs" />
     <Compile Include="F02_ImposicionEnAgencia\F02_ImposicionEnAgencia.cs">

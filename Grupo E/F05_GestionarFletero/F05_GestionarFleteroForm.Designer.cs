@@ -38,7 +38,6 @@ namespace Grupo_E.GestionarFletero
             this.label1 = new System.Windows.Forms.Label();
             this.DNIText = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ActualizarHDRBtn = new System.Windows.Forms.Button();
             this.GuiasRetiradasListView = new System.Windows.Forms.ListView();
             this.NroHDRRetiradasCol1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrackingRetiroCol2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,14 +53,14 @@ namespace Grupo_E.GestionarFletero
             this.AceptarBtn = new System.Windows.Forms.Button();
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.HDRRetirarListViews = new System.Windows.Forms.ListView();
+            this.NuevasHDRRetirarListViews = new System.Windows.Forms.ListView();
             this.HDRRetirarCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
-            this.HDREntregarListView = new System.Windows.Forms.ListView();
+            this.NuevasHDREntregarListView = new System.Windows.Forms.ListView();
             this.HDREntregarCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GuiasRetirarListView = new System.Windows.Forms.ListView();
+            this.NuevasGuiasRetirarListView = new System.Windows.Forms.ListView();
             this.TrackingRetirarCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GuiasEntregarListView = new System.Windows.Forms.ListView();
+            this.NuevasGuiasEntregarListView = new System.Windows.Forms.ListView();
             this.HDREntregarCol1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrackingEntregarCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
@@ -99,7 +98,6 @@ namespace Grupo_E.GestionarFletero
             this.LimpiarBtn.TabIndex = 13;
             this.LimpiarBtn.Text = "Limpiar";
             this.LimpiarBtn.UseVisualStyleBackColor = true;
-            this.LimpiarBtn.Click += new System.EventHandler(this.LimpiarBtn_Click);
             // 
             // BuscarBtn
             // 
@@ -129,7 +127,6 @@ namespace Grupo_E.GestionarFletero
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.ActualizarHDRBtn);
             this.groupBox3.Controls.Add(this.GuiasRetiradasListView);
             this.groupBox3.Controls.Add(this.GuiasNoEntregadasListView);
             this.groupBox3.Controls.Add(this.label4);
@@ -142,16 +139,6 @@ namespace Grupo_E.GestionarFletero
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rendición";
-            // 
-            // ActualizarHDRBtn
-            // 
-            this.ActualizarHDRBtn.Location = new System.Drawing.Point(289, 51);
-            this.ActualizarHDRBtn.Name = "ActualizarHDRBtn";
-            this.ActualizarHDRBtn.Size = new System.Drawing.Size(430, 21);
-            this.ActualizarHDRBtn.TabIndex = 13;
-            this.ActualizarHDRBtn.Text = "Actualizar HDR";
-            this.ActualizarHDRBtn.UseVisualStyleBackColor = true;
-            this.ActualizarHDRBtn.Click += new System.EventHandler(this.ActualizarHDRBtn_Click);
             // 
             // GuiasRetiradasListView
             // 
@@ -238,6 +225,7 @@ namespace Grupo_E.GestionarFletero
             this.HDRAsignadasListView.TabIndex = 0;
             this.HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             this.HDRAsignadasListView.View = System.Windows.Forms.View.Details;
+            this.HDRAsignadasListView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.HDRAsignadasListView_ItemChecked_1);
             // 
             // NroHDRCol1
             // 
@@ -256,7 +244,6 @@ namespace Grupo_E.GestionarFletero
             this.AceptarBtn.TabIndex = 10;
             this.AceptarBtn.Text = "Aceptar";
             this.AceptarBtn.UseVisualStyleBackColor = true;
-            this.AceptarBtn.Click += new System.EventHandler(this.AceptarBtn_Click);
             // 
             // CancelarBtn
             // 
@@ -266,15 +253,14 @@ namespace Grupo_E.GestionarFletero
             this.CancelarBtn.TabIndex = 11;
             this.CancelarBtn.Text = "Cancelar";
             this.CancelarBtn.UseVisualStyleBackColor = true;
-            this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.HDRRetirarListViews);
+            this.groupBox1.Controls.Add(this.NuevasHDRRetirarListViews);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.HDREntregarListView);
-            this.groupBox1.Controls.Add(this.GuiasRetirarListView);
-            this.groupBox1.Controls.Add(this.GuiasEntregarListView);
+            this.groupBox1.Controls.Add(this.NuevasHDREntregarListView);
+            this.groupBox1.Controls.Add(this.NuevasGuiasRetirarListView);
+            this.groupBox1.Controls.Add(this.NuevasGuiasEntregarListView);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
@@ -285,17 +271,17 @@ namespace Grupo_E.GestionarFletero
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generación";
             // 
-            // HDRRetirarListViews
+            // NuevasHDRRetirarListViews
             // 
-            this.HDRRetirarListViews.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.NuevasHDRRetirarListViews.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.HDRRetirarCol});
-            this.HDRRetirarListViews.HideSelection = false;
-            this.HDRRetirarListViews.Location = new System.Drawing.Point(15, 195);
-            this.HDRRetirarListViews.Name = "HDRRetirarListViews";
-            this.HDRRetirarListViews.Size = new System.Drawing.Size(183, 85);
-            this.HDRRetirarListViews.TabIndex = 11;
-            this.HDRRetirarListViews.UseCompatibleStateImageBehavior = false;
-            this.HDRRetirarListViews.View = System.Windows.Forms.View.Details;
+            this.NuevasHDRRetirarListViews.HideSelection = false;
+            this.NuevasHDRRetirarListViews.Location = new System.Drawing.Point(15, 195);
+            this.NuevasHDRRetirarListViews.Name = "NuevasHDRRetirarListViews";
+            this.NuevasHDRRetirarListViews.Size = new System.Drawing.Size(183, 85);
+            this.NuevasHDRRetirarListViews.TabIndex = 11;
+            this.NuevasHDRRetirarListViews.UseCompatibleStateImageBehavior = false;
+            this.NuevasHDRRetirarListViews.View = System.Windows.Forms.View.Details;
             // 
             // HDRRetirarCol
             // 
@@ -311,52 +297,52 @@ namespace Grupo_E.GestionarFletero
             this.label8.TabIndex = 10;
             this.label8.Text = "Nuevas HDR a retirar:";
             // 
-            // HDREntregarListView
+            // NuevasHDREntregarListView
             // 
-            this.HDREntregarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.NuevasHDREntregarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.HDREntregarCol});
-            this.HDREntregarListView.HideSelection = false;
-            this.HDREntregarListView.Location = new System.Drawing.Point(15, 65);
-            this.HDREntregarListView.Name = "HDREntregarListView";
-            this.HDREntregarListView.Size = new System.Drawing.Size(183, 86);
-            this.HDREntregarListView.TabIndex = 9;
-            this.HDREntregarListView.UseCompatibleStateImageBehavior = false;
-            this.HDREntregarListView.View = System.Windows.Forms.View.Details;
+            this.NuevasHDREntregarListView.HideSelection = false;
+            this.NuevasHDREntregarListView.Location = new System.Drawing.Point(15, 65);
+            this.NuevasHDREntregarListView.Name = "NuevasHDREntregarListView";
+            this.NuevasHDREntregarListView.Size = new System.Drawing.Size(183, 86);
+            this.NuevasHDREntregarListView.TabIndex = 9;
+            this.NuevasHDREntregarListView.UseCompatibleStateImageBehavior = false;
+            this.NuevasHDREntregarListView.View = System.Windows.Forms.View.Details;
             // 
             // HDREntregarCol
             // 
             this.HDREntregarCol.Text = "Hoja de ruta";
             this.HDREntregarCol.Width = 100;
             // 
-            // GuiasRetirarListView
+            // NuevasGuiasRetirarListView
             // 
-            this.GuiasRetirarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.NuevasGuiasRetirarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             HDRaRetirarCol,
             this.TrackingRetirarCol});
-            this.GuiasRetirarListView.HideSelection = false;
-            this.GuiasRetirarListView.Location = new System.Drawing.Point(551, 56);
-            this.GuiasRetirarListView.Name = "GuiasRetirarListView";
-            this.GuiasRetirarListView.Size = new System.Drawing.Size(166, 214);
-            this.GuiasRetirarListView.TabIndex = 8;
-            this.GuiasRetirarListView.UseCompatibleStateImageBehavior = false;
-            this.GuiasRetirarListView.View = System.Windows.Forms.View.Details;
+            this.NuevasGuiasRetirarListView.HideSelection = false;
+            this.NuevasGuiasRetirarListView.Location = new System.Drawing.Point(551, 56);
+            this.NuevasGuiasRetirarListView.Name = "NuevasGuiasRetirarListView";
+            this.NuevasGuiasRetirarListView.Size = new System.Drawing.Size(166, 214);
+            this.NuevasGuiasRetirarListView.TabIndex = 8;
+            this.NuevasGuiasRetirarListView.UseCompatibleStateImageBehavior = false;
+            this.NuevasGuiasRetirarListView.View = System.Windows.Forms.View.Details;
             // 
             // TrackingRetirarCol
             // 
             this.TrackingRetirarCol.Text = "Tracking";
             // 
-            // GuiasEntregarListView
+            // NuevasGuiasEntregarListView
             // 
-            this.GuiasEntregarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.NuevasGuiasEntregarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.HDREntregarCol1,
             this.TrackingEntregarCol});
-            this.GuiasEntregarListView.HideSelection = false;
-            this.GuiasEntregarListView.Location = new System.Drawing.Point(319, 55);
-            this.GuiasEntregarListView.Name = "GuiasEntregarListView";
-            this.GuiasEntregarListView.Size = new System.Drawing.Size(167, 215);
-            this.GuiasEntregarListView.TabIndex = 7;
-            this.GuiasEntregarListView.UseCompatibleStateImageBehavior = false;
-            this.GuiasEntregarListView.View = System.Windows.Forms.View.Details;
+            this.NuevasGuiasEntregarListView.HideSelection = false;
+            this.NuevasGuiasEntregarListView.Location = new System.Drawing.Point(319, 55);
+            this.NuevasGuiasEntregarListView.Name = "NuevasGuiasEntregarListView";
+            this.NuevasGuiasEntregarListView.Size = new System.Drawing.Size(167, 215);
+            this.NuevasGuiasEntregarListView.TabIndex = 7;
+            this.NuevasGuiasEntregarListView.UseCompatibleStateImageBehavior = false;
+            this.NuevasGuiasEntregarListView.View = System.Windows.Forms.View.Details;
             // 
             // HDREntregarCol1
             // 
@@ -394,7 +380,7 @@ namespace Grupo_E.GestionarFletero
             this.label7.TabIndex = 4;
             this.label7.Text = "Nuevas HDR a entregar:";
             // 
-            // GestionarFleteroForm
+            // F05_GestionarFleteroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -404,9 +390,9 @@ namespace Grupo_E.GestionarFletero
             this.Controls.Add(this.AceptarBtn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Name = "GestionarFleteroForm";
+            this.Name = "F05_GestionarFleteroForm";
             this.Text = "RendicionHojasDeRuta";
-            this.Load += new System.EventHandler(this.GestionarFleteroForm_Load);
+            this.Load += new System.EventHandler(this.F05_GestionarFleteroForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -439,19 +425,18 @@ namespace Grupo_E.GestionarFletero
         private Label label4;
         private Label label3;
         private GroupBox groupBox1;
-        private ListView HDRRetirarListViews;
+        private ListView NuevasHDRRetirarListViews;
         private ColumnHeader HDRRetirarCol;
         private Label label8;
-        private ListView HDREntregarListView;
+        private ListView NuevasHDREntregarListView;
         private ColumnHeader HDREntregarCol;
-        private ListView GuiasRetirarListView;
+        private ListView NuevasGuiasRetirarListView;
         private ColumnHeader TrackingRetirarCol;
-        private ListView GuiasEntregarListView;
+        private ListView NuevasGuiasEntregarListView;
         private ColumnHeader HDREntregarCol1;
         private ColumnHeader TrackingEntregarCol;
         private Label label5;
         private Label label6;
         private Label label7;
-        private Button ActualizarHDRBtn;
     }
 }

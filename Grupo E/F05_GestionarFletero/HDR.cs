@@ -4,17 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grupo_E.GestionarFletero
+namespace Grupo_E.F05_GestionarFletero
 {
-    internal class HDR
+    public class HDR
     {
-        public int IdHDR { get; set; }
-        public string Tipo { get; set; } 
-        public bool Cumplida { get; set; } = false;
+        public enum TipoHDR
+        {
+            Retiro,
+            Entrega
+        }
 
-        public int DniFleteroAsignado { get; set; }
-        public List<Guia> GuiasHDR { get; set; } = new List<Guia>();
+        public int NumeroHDR { get; set; }
+        public TipoHDR Tipo { get; set; }
+        public bool Cumplida { get; set; }
+        public int DniTransportista { get; set; }
 
+        public List<Guia> Guias { get; set; }
 
+        public HDR()
+        {
+            Guias = new List<Guia>();
+        }
+
+        public void ActualizarEstado(bool cumplida)
+        {
+            Cumplida = cumplida;
+
+            foreach (Guia guia in Guias)
+            {
+                if (Tipo == TipoHDR.Entrega)
+                {
+                    guia.Estado = cumplida
+                        ? Guia.EstadoGuia.Entregada
+                        : Guia.EstadoGuia.NoEntregada;
+                }
+                else
+                {
+                    guia.Estado = cumplida
+                        ? Guia.EstadoGuia.Retirada
+                        : Guia.EstadoGuia.NoRetirada;
+                }
+            }
+        }
     }
 }
