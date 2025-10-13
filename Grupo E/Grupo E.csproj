@@ -62,7 +62,11 @@
     <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomienda.cs" />
     <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiendaModel.cs" />
     <Compile Include="F08_ConsultarEstadoEncomienda\EstadoEnvio.cs" />
+    <Compile Include="F09_EntregarYRecepcionarEncomiendasAgencia\EstadoDeEnvio.cs" />
     <Compile Include="F08_ConsultarEstadoEncomienda\Movimiento.cs" />
+    <Compile Include="F09_EntregarYRecepcionarEncomiendasAgencia\EntregaYRecepcionEncomiendaAgenciaModel.cs" />
+    <Compile Include="F09_EntregarYRecepcionarEncomiendasAgencia\Fletero.cs" />
+    <Compile Include="F09_EntregarYRecepcionarEncomiendasAgencia\GuiaDeEncomiendas.cs" />
     <Compile Include="F10_GeneracionDeFacturas\F10_GeneracionDeFacturasModelo.cs" />
     <Compile Include="F12_CostoVsVentas\CostosVsVentas.cs">
       <SubType>Form</SubType>
