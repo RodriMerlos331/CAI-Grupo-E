@@ -95,6 +95,7 @@ namespace Grupo_E.GeneracionDeFacturas
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+
             listViewFactura.Items.Clear();
             txtCUIT.Clear();
         }
