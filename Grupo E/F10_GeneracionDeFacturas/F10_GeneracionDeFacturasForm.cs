@@ -22,7 +22,11 @@ namespace Grupo_E.GeneracionDeFacturas
 
         private void GeneracionDeFacturas_Load(object sender, EventArgs e)
         {
-
+            // Ajusta el ancho de las columnas al contenido y encabezado
+            foreach (ColumnHeader column in listViewFactura.Columns)
+            {
+                column.Width = -2; // -2 ajusta al contenido, -1 ajusta al encabezado
+            }
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
