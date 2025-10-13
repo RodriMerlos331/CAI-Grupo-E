@@ -68,16 +68,17 @@ namespace Grupo_E.GeneracionDeFacturas
 
             if (resultados.Any())
             {
-                foreach (var encomienda in resultados)//Esta  variable encomienda se refiere a las encomiendas que se encuentran en la lista pendientes de facturar
+                foreach (var encomienda in resultados)
                 {
                     var item = new ListViewItem(encomienda.NroTracking);
-                    item.SubItems.Add(encomienda.FechaAdmision.ToString("dd-MM-yyyy")); // Fecha como string
-                    item.SubItems.Add(encomienda.Importe.ToString("C0"));               
-                    item.SubItems.Add(encomienda.ExtraRetiro.ToString("C0"));           // importes  como string
+                    item.SubItems.Add(encomienda.FechaAdmision.ToString("dd-MM-yyyy"));
+                    item.SubItems.Add(encomienda.Importe.ToString("C0"));
+                    item.SubItems.Add(encomienda.ExtraRetiro.ToString("C0"));
                     item.SubItems.Add(encomienda.ExtraEntrega.ToString("C0"));
-                    item.SubItems.Add(encomienda.ExtraAgencia.ToString("C0"));          
+                    item.SubItems.Add(encomienda.ExtraAgencia.ToString("C0"));
                     listViewFactura.Items.Add(item);
                 }
+               
             }
             else
             {
@@ -96,6 +97,38 @@ namespace Grupo_E.GeneracionDeFacturas
         {
             listViewFactura.Items.Clear();
             txtCUIT.Clear();
+        }
+
+        private void listViewFactura_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            var importes = new List<(int Importe, int ExtraRetiro, int ExtraEntrega)>();
+
+            // Recorre todos los ítems del ListView
+            for (int i = 0; i < listViewFactura.Items.Count; i++)
+            {
+                // Si es el ítem que está cambiando, usa el valor futuro (e.NewValue)
+                bool isChecked = (i == e.Index) ? (e.NewValue == CheckState.Checked) : listViewFactura.Items[i].Checked;
+
+                if (isChecked)
+                {
+                    var item = listViewFactura.Items[i];
+                    int importe = ParseImporte(item.SubItems[2].Text);
+                    int extraRetiro = ParseImporte(item.SubItems[3].Text);
+                    int extraEntrega = ParseImporte(item.SubItems[4].Text);
+                    importes.Add((importe, extraRetiro, extraEntrega));
+                }
+            }
+
+            int total = modelo.CalcularTotalImportes(importes);
+            lblSumaImporte.Text = $"Total: ${total:N0}";
+        }
+
+        private int ParseImporte(string texto)
+        {
+            // Elimina cualquier símbolo de moneda y separadores de miles
+            string limpio = texto.Replace("$", "").Replace(".", "").Replace(",", "").Trim();
+            int.TryParse(limpio, out int valor);
+            return valor;
         }
     }
 }

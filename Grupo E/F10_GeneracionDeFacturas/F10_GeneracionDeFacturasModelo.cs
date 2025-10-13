@@ -95,5 +95,15 @@ namespace Grupo_E.F10_GeneracionDeFacturas
             else
                 return new List<EncomiendaFactura>();
         }
+
+        internal int CalcularTotalImportes(IEnumerable<(int Importe, int ExtraRetiro, int ExtraEntrega)> importes)
+        {
+            int total = 0;
+            foreach (var item in importes)
+            {
+                total += item.Importe + item.ExtraRetiro + item.ExtraEntrega;
+            }
+            return total;
+        }
     }
 }
