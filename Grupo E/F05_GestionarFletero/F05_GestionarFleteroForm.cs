@@ -224,6 +224,12 @@ namespace Grupo_E.GestionarFletero
 
             var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
 
+            if( HDRARendir.Count == 0)
+            {
+                MessageBox.Show("No hay HDR para rendir.");
+                return;
+            }
+
             string resumen = "Se marcarán como rendidas las siguientes HDR, con sus estados (Cumplida o no Cumplida):\n";
             
             foreach (var hdr in HDRARendir)
