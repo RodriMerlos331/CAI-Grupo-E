@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.F04_GestionarOmnibus
 {
-    internal class EncomiendasARecepcionar //esto representa lo que yo necesito del modelo para llenar las listas
+    internal class EncomiendasARecepcionar // CLASE de las guias que el chofer me trae y tengo que "registar" valido y paso esta 
+                                           // encomienda a la lista de "EncomiendasRecepcionadasEnCDOrigen"
     {
 
         public string  IdHdr { get; set; }

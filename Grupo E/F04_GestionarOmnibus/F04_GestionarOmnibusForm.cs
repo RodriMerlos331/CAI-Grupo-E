@@ -120,52 +120,13 @@ namespace Grupo_E.GestionarOmnibus
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string patente = txtPatente.Text;
+            //consultar con andres como hacer para que esa patente no vuelva a aparecer.
 
-            // 1) Mover encomiendas de recepcion a la lista de recepcionadas
-            var encomiendasRecepcion = modelo.EncomiendasARecepcionar(patente);
-            if (encomiendasRecepcion != null && lstRecepcion != null)
-            {
-                var aMover = new List<EncomiendasARecepcionar>();
-                foreach (ListViewItem item in lstRecepcion.Items)
-                {
-                    var encomienda = encomiendasRecepcion
-                        .FirstOrDefault(x => x.IdHdr == item.Text && x.Tracking == item.SubItems[1].Text);
-                    if (encomienda != null)
-                    {
-                        modelo.EncomiendasRecepcionadasEnCDOrigen.Add(encomienda);
-                        aMover.Add(encomienda);
-                    }
-                }
-                // Elimina las encomiendas movidas para que no vuelvan a aparecer
-                foreach (var enc in aMover)
-                    encomiendasRecepcion.Remove(enc);
-            }
-
-            // 2) Mover encomiendas de despacho a la lista de en tránsito
-            var encomiendasDespacho = modelo.ObtenerGuiasEntrega(patente);
-            if (encomiendasDespacho != null && lstDespacho != null)
-            {
-                var aMover = new List<EncomiendasAEntregar>();
-                foreach (ListViewItem item in lstDespacho.Items)
-                {
-                    var encomienda = encomiendasDespacho
-                        .FirstOrDefault(x => x.IdHdr == item.Text && x.Tracking == item.SubItems[1].Text);
-                    if (encomienda != null)
-                    {
-                        modelo.EncomiendasEnTransito.Add(encomienda);
-                        aMover.Add(encomienda);
-                    }
-                }
-                // Elimina las encomiendas movidas para que no vuelvan a aparecer
-                foreach (var enc in aMover)
-                    encomiendasDespacho.Remove(enc);
-            }
-
-            // 3) Mensaje de confirmación
+           
+            // Mensaje de confirmación
             MessageBox.Show("Rendición registrada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // 4) Limpiar textbox y ListViews
+            // Limpiar textbox y ListViews
             if (txtPatente != null)
             {
                 txtPatente.Clear();
