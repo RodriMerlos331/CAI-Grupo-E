@@ -148,6 +148,7 @@
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar filtro";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnBuscar
             // 

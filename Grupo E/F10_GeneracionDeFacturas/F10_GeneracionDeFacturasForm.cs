@@ -40,18 +40,26 @@ namespace Grupo_E.GeneracionDeFacturas
             if (string.IsNullOrWhiteSpace(txtCUIT.Text))
             {
                 MessageBox.Show("El campo numero de tracking no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                listViewFactura.Items.Clear();
+                txtCUIT.Clear();
                 return;
             }
 
             if (!int.TryParse(txtCUIT.Text, out int cuit))
             {
                 MessageBox.Show("El campo numero de tracking debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                listViewFactura.Items.Clear();
+                txtCUIT.Clear();
                 return;
+
             }
 
             if (!modelo.ValidarCUIT(cuit))
             {
+                listViewFactura.Items.Clear();
+                txtCUIT.Clear();
                 return;
+           
             }
 
             var resultados = modelo.ListarEncomiendas(cuit);
@@ -82,6 +90,12 @@ namespace Grupo_E.GeneracionDeFacturas
         private void grpboxImporteTotal_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            listViewFactura.Items.Clear();
+            txtCUIT.Clear();
         }
     }
 }
