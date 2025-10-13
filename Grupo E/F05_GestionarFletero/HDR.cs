@@ -17,6 +17,8 @@ namespace Grupo_E.F05_GestionarFletero
         public int NumeroHDR { get; set; }
         public TipoHDR Tipo { get; set; }
         public bool Cumplida { get; set; }
+
+        public bool Rendida { get; set; }
         public int DniTransportista { get; set; }
 
         public List<Guia> Guias { get; set; }

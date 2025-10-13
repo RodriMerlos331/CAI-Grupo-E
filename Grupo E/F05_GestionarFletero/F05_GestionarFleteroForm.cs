@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,11 +37,12 @@ namespace Grupo_E.GestionarFletero
 
             HDRAsignadasListView.Items.Clear();
 
-            var hdrs = modelo.ObtenerHDRPorTransportista(dni);
+            //RENDICION 
+            var hdrs = modelo.ObtenerHDRRendicionPorTransportista(dni);
 
             if (hdrs.Count == 0)
             {
-                MessageBox.Show("No se encontraron HDR para el DNI ingresado");
+                MessageBox.Show("No se encontraron HDR a rendir para el DNI ingresado");
                 return;
             }
 
@@ -48,8 +50,8 @@ namespace Grupo_E.GestionarFletero
             {
                 var item = new ListViewItem(hdr.NumeroHDR.ToString());
                 item.SubItems.Add(hdr.Tipo.ToString());
+//                item.Checked = hdr.Cumplida;
                 HDRAsignadasListView.Items.Add(item);
-
             }
 
             var guiasNoEntregadas = modelo.ObtenerGuiasDeHDRNoCumplidas(dni, HDR.TipoHDR.Entrega);
@@ -69,8 +71,9 @@ namespace Grupo_E.GestionarFletero
             NuevasGuiasEntregarListView.Items.Clear();
             NuevasGuiasRetirarListView.Items.Clear();
             
-            var hdrGeneracion = modelo.ObtenerHDRGeneracionPorTransportista(dni);
 
+            //GENERACION
+            var hdrGeneracion = modelo.ObtenerHDRGeneracionPorTransportista(dni);
             var hdrsEntrega = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Entrega).ToList();
             var hdrsRetiro = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro).ToList();
 
@@ -111,6 +114,8 @@ namespace Grupo_E.GestionarFletero
                    .FirstOrDefault(h => h.NumeroHDR == nroHDR);
 
             hdr.Cumplida = e.Item.Checked;
+
+            //Está ok poner el metodo acá o debería ir en el modelo?
             hdr.ActualizarEstado(hdr.Cumplida);
 
             ActualizarListasPorHDR(hdr);
@@ -120,7 +125,7 @@ namespace Grupo_E.GestionarFletero
         {
             if (hdr.Tipo == HDR.TipoHDR.Entrega)
             {
-                if (hdr.Cumplida) // Si se marcó como cumplida → quitar guías
+                if (hdr.Cumplida) 
                 {
                     foreach (var guia in hdr.Guias)
                     {
@@ -135,7 +140,7 @@ namespace Grupo_E.GestionarFletero
                         }
                     }
                 }
-                else // Si se desmarcó → volver a agregar guías
+                else 
                 {
                     foreach (var guia in hdr.Guias)
                     {
@@ -148,7 +153,7 @@ namespace Grupo_E.GestionarFletero
 
             if (hdr.Tipo == HDR.TipoHDR.Retiro)
             {
-                if (hdr.Cumplida) // Si se marcó como cumplida → agregar guías
+                if (hdr.Cumplida) 
                 {
                     foreach (var guia in hdr.Guias)
                     {
@@ -157,7 +162,7 @@ namespace Grupo_E.GestionarFletero
                         GuiasRetiradasListView.Items.Add(item);
                     }
                 }
-                else // Si se desmarcó → quitar guías
+                else
                 {
                     foreach (var guia in hdr.Guias)
                     {
@@ -207,6 +212,47 @@ namespace Grupo_E.GestionarFletero
             {
                 MessageBox.Show("La operación continúa.");
             }
+        }
+
+
+        //REVISAR SI EL GUARDADO ESTÁ OK ASÍ:
+        private void AceptarBtn_Click(object sender, EventArgs e)
+        {
+
+            //Se podría hacer así?
+            //var HDRARendir = modelo.ObtenerHDRRendicionPorTransportista(int.Parse(DNIText.Text));
+
+            var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
+
+            string resumen = "Se marcarán como rendidas las siguientes HDR, con sus estados (Cumplida o no Cumplida):\n";
+            
+            foreach (var hdr in HDRARendir)
+            {
+                string estado = hdr.Cumplida ? "Cumplida" : "No Cumplida";
+                resumen += $"HDR Nro: {hdr.NumeroHDR}, Estado: {estado}\n";
+            }
+
+            MessageBox.Show(resumen, "Resumen de Rendición", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            foreach (var hdr in HDRARendir)
+            {
+                
+                    hdr.Rendida = true;
+                
+            }
+
+            MessageBox.Show("Cambios guardados correctamente.");
+
+            DNIText.Text = "";
+            HDRAsignadasListView.Items.Clear();
+            GuiasNoEntregadasListView.Items.Clear();
+            GuiasRetiradasListView.Items.Clear();
+            NuevasHDREntregarListView.Items.Clear();
+            NuevasHDRRetirarListViews.Items.Clear();
+            NuevasGuiasEntregarListView.Items.Clear();
+            NuevasGuiasRetirarListView.Items.Clear();
+
         }
     }
 }

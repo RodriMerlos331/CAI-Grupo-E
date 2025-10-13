@@ -1,6 +1,7 @@
 ﻿using Grupo_E.F05_GestionarFletero;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -15,8 +16,6 @@ namespace Grupo_E.GestionarFletero
         {
             HDRRendicion = new List<HDR>();
             HDRGeneracion = new List<HDR>();
-
-
         }
         public void CargarHDRDePrueba()
         {
@@ -27,6 +26,7 @@ namespace Grupo_E.GestionarFletero
                     NumeroHDR = 1,
                     Tipo = HDR.TipoHDR.Entrega,
                     Cumplida = false,
+                    Rendida = false,
                     DniTransportista = 12345678,
                     Guias = new List<Guia>
                     {
@@ -39,6 +39,7 @@ namespace Grupo_E.GestionarFletero
                     NumeroHDR = 2,
                     Tipo = HDR.TipoHDR.Retiro,
                     Cumplida = false,
+                    Rendida = false,
                     DniTransportista = 12345678,
                     Guias = new List<Guia>
                     {
@@ -46,12 +47,12 @@ namespace Grupo_E.GestionarFletero
                         new Guia { CodigoGuia = "R002", NumeroHDR = 2, Estado = Guia.EstadoGuia.NoRetirada }
                     }
                 },
-                // Nuevos datos de prueba para DNI 23456789
                 new HDR
                 {
                     NumeroHDR = 11,
                     Tipo = HDR.TipoHDR.Entrega,
                     Cumplida = false,
+                    Rendida = false,
                     DniTransportista = 23456789,
                     Guias = new List<Guia>
                     {
@@ -64,6 +65,7 @@ namespace Grupo_E.GestionarFletero
                     NumeroHDR = 12,
                     Tipo = HDR.TipoHDR.Retiro,
                     Cumplida = false,
+                    Rendida = false,
                     DniTransportista = 23456789,
                     Guias = new List<Guia>
                     {
@@ -81,6 +83,7 @@ namespace Grupo_E.GestionarFletero
                     NumeroHDR = 3,
                     Tipo = HDR.TipoHDR.Entrega,
                     Cumplida = false,
+                    Rendida = false,
                     DniTransportista = 12345678,
                     Guias = new List<Guia>
                     {
@@ -93,6 +96,7 @@ namespace Grupo_E.GestionarFletero
                     NumeroHDR = 4,
                     Tipo = HDR.TipoHDR.Retiro,
                     Cumplida = false,
+                    Rendida = false,
                     DniTransportista = 12345678,
                     Guias = new List<Guia>
                     {
@@ -100,12 +104,12 @@ namespace Grupo_E.GestionarFletero
                         new Guia { CodigoGuia = "B101", NumeroHDR = 4, Estado = Guia.EstadoGuia.NoRetirada }
                     }
                 },
-                // Nuevos datos de generación para DNI 23456789
                 new HDR
                 {
                     NumeroHDR = 13,
                     Tipo = HDR.TipoHDR.Entrega,
                     Cumplida = false,
+                    Rendida = false,
                     DniTransportista = 23456789,
                     Guias = new List<Guia>
                     {
@@ -118,6 +122,7 @@ namespace Grupo_E.GestionarFletero
                     NumeroHDR = 14,
                     Tipo = HDR.TipoHDR.Retiro,
                     Cumplida = false,
+                    Rendida = false,
                     DniTransportista = 23456789,
                     Guias = new List<Guia>
                     {
@@ -128,12 +133,25 @@ namespace Grupo_E.GestionarFletero
             };
         }
 
-        public List<HDR> ObtenerHDRPorTransportista(int dni)
+        public List<HDR> ObtenerHDRRendicionPorTransportista(int dni)
         {
+            dniActual = dni;
             return HDRRendicion
-                .Where(h => h.DniTransportista == dni)
+                .Where(h => h.DniTransportista == dni && h.Rendida == false)
                 .ToList();
         }
+
+
+        //NO SÉ SI ESTO TIENE SENTIDO
+        public int dniActual = 0;
+
+        public List<HDR> ObtenerHDRRendicionTransportistaActual()
+        {
+            return HDRRendicion
+                .Where(h => h.DniTransportista == dniActual && h.Rendida == false)
+                .ToList();
+        }
+        
 
         public List<HDR> ObtenerHDRPorNumero(int numeroHDR)
         {
@@ -145,7 +163,7 @@ namespace Grupo_E.GestionarFletero
         public List<Guia> ObtenerGuiasDeHDRNoCumplidas(int dni, HDR.TipoHDR tipo)
         {
             return HDRRendicion
-                .Where(h => h.DniTransportista == dni && h.Tipo == tipo && !h.Cumplida)
+                .Where(h => h.DniTransportista == dni && h.Tipo == tipo && !h.Cumplida && h.Rendida == false)
                 .SelectMany(h => h.Guias)
                 .ToList();
 
@@ -158,6 +176,21 @@ namespace Grupo_E.GestionarFletero
                 .ToList();
         }
 
+
+        
+
     }
 
 }
+
+/*
+        public void ActualizarEstadoHDR(int numeroHDR, bool cumplida)
+        {
+            var hdr = HDRRendicion.FirstOrDefault(h => h.NumeroHDR == numeroHDR);
+            if (hdr != null)
+            {
+                hdr.Cumplida = cumplida;
+                hdr.ActualizarEstado(cumplida);
+            }
+        }
+        */

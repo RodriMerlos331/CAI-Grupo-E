@@ -245,6 +245,7 @@ namespace Grupo_E.GestionarFletero
             this.AceptarBtn.TabIndex = 10;
             this.AceptarBtn.Text = "Aceptar";
             this.AceptarBtn.UseVisualStyleBackColor = true;
+            this.AceptarBtn.Click += new System.EventHandler(this.AceptarBtn_Click);
             // 
             // CancelarBtn
             // 
