@@ -98,6 +98,8 @@ namespace Grupo_E.GeneracionDeFacturas
 
             listViewFactura.Items.Clear();
             txtCUIT.Clear();
+            lblSumaImporte.Text = "Total: $0";
+
         }
 
         private void listViewFactura_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -108,9 +110,9 @@ namespace Grupo_E.GeneracionDeFacturas
             for (int i = 0; i < listViewFactura.Items.Count; i++)
             {
                 // Si es el ítem que está cambiando, usa el valor futuro (e.NewValue)
-                bool isChecked = (i == e.Index) ? (e.NewValue == CheckState.Checked) : listViewFactura.Items[i].Checked;
+                bool EstaCheckeado = (i == e.Index) ? (e.NewValue == CheckState.Checked) : listViewFactura.Items[i].Checked;
 
-                if (isChecked)
+                if (EstaCheckeado)
                 {
                     var item = listViewFactura.Items[i];
                     int importe = ParseImporte(item.SubItems[2].Text);
@@ -130,6 +132,38 @@ namespace Grupo_E.GeneracionDeFacturas
             string limpio = texto.Replace("$", "").Replace(".", "").Replace(",", "").Trim();
             int.TryParse(limpio, out int valor);
             return valor;
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            // Verifica si hay al menos un ítem seleccionado (checked)
+            bool haySeleccionado = listViewFactura.Items.Cast<ListViewItem>().Any(item => item.Checked);
+
+            if (!haySeleccionado)
+            {
+                MessageBox.Show("Debe seleccionar al menos una encomienda para generar la factura.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            MessageBox.Show("La factura se generó correctamente.", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            listViewFactura.Items.Clear();
+            txtCUIT.Clear();
+            lblSumaImporte.Text = "Total: $0";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show(
+                "¿Seguro que quieres salir?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -95,6 +95,7 @@
             this.btnFacturar.TabIndex = 6;
             this.btnFacturar.Text = "Generar factura";
             this.btnFacturar.UseVisualStyleBackColor = true;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // btnCancelar
             // 
@@ -104,6 +105,7 @@
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox1
             // 
