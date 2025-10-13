@@ -175,7 +175,39 @@ namespace Grupo_E.GestionarFletero
             }
         }
 
-       
+        private void LimpiarBtn_Click(object sender, EventArgs e)
+        {
+            DNIText.Text = "";
+            HDRAsignadasListView.Items.Clear();
+            GuiasNoEntregadasListView.Items.Clear();    
+            GuiasRetiradasListView.Items.Clear();
+            NuevasHDREntregarListView.Items.Clear();
+            NuevasHDRRetirarListViews.Items.Clear();
+            NuevasGuiasEntregarListView.Items.Clear();
+            NuevasGuiasRetirarListView.Items.Clear();
+
+        }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+         
+            DialogResult resultado = MessageBox.Show(
+        "¿Estás seguro de que querés cancelar la operación? Las modificaciones no se guardaran",
+        "Confirmar cancelación",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question
+    );
+
+            if (resultado == DialogResult.Yes)
+            {
+                MessageBox.Show("Operación cancelada correctamente.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("La operación continúa.");
+            }
+        }
     }
 }
 

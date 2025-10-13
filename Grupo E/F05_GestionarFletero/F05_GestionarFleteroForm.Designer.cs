@@ -85,25 +85,26 @@ namespace Grupo_E.GestionarFletero
             this.groupBox2.Controls.Add(this.DNIText);
             this.groupBox2.Location = new System.Drawing.Point(10, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(740, 88);
+            this.groupBox2.Size = new System.Drawing.Size(779, 88);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busqueda por fletero";
             // 
             // LimpiarBtn
             // 
-            this.LimpiarBtn.Location = new System.Drawing.Point(476, 44);
+            this.LimpiarBtn.Location = new System.Drawing.Point(542, 44);
             this.LimpiarBtn.Name = "LimpiarBtn";
-            this.LimpiarBtn.Size = new System.Drawing.Size(149, 20);
+            this.LimpiarBtn.Size = new System.Drawing.Size(212, 20);
             this.LimpiarBtn.TabIndex = 13;
             this.LimpiarBtn.Text = "Limpiar";
             this.LimpiarBtn.UseVisualStyleBackColor = true;
+            this.LimpiarBtn.Click += new System.EventHandler(this.LimpiarBtn_Click);
             // 
             // BuscarBtn
             // 
-            this.BuscarBtn.Location = new System.Drawing.Point(319, 43);
+            this.BuscarBtn.Location = new System.Drawing.Point(276, 43);
             this.BuscarBtn.Name = "BuscarBtn";
-            this.BuscarBtn.Size = new System.Drawing.Size(151, 21);
+            this.BuscarBtn.Size = new System.Drawing.Size(212, 21);
             this.BuscarBtn.TabIndex = 12;
             this.BuscarBtn.Text = "Buscar";
             this.BuscarBtn.UseVisualStyleBackColor = true;
@@ -112,17 +113,17 @@ namespace Grupo_E.GestionarFletero
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 28);
+            this.label1.Location = new System.Drawing.Point(14, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "DNI:";
+            this.label1.Text = "Ingrese el DNI del fletero:";
             // 
             // DNIText
             // 
-            this.DNIText.Location = new System.Drawing.Point(17, 44);
+            this.DNIText.Location = new System.Drawing.Point(15, 43);
             this.DNIText.Name = "DNIText";
-            this.DNIText.Size = new System.Drawing.Size(230, 20);
+            this.DNIText.Size = new System.Drawing.Size(200, 20);
             this.DNIText.TabIndex = 10;
             // 
             // groupBox3
@@ -135,7 +136,7 @@ namespace Grupo_E.GestionarFletero
             this.groupBox3.Controls.Add(this.HDRAsignadasListView);
             this.groupBox3.Location = new System.Drawing.Point(10, 106);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(740, 272);
+            this.groupBox3.Size = new System.Drawing.Size(779, 250);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rendición";
@@ -146,9 +147,9 @@ namespace Grupo_E.GestionarFletero
             this.NroHDRRetiradasCol1,
             this.TrackingRetiroCol2});
             this.GuiasRetiradasListView.HideSelection = false;
-            this.GuiasRetiradasListView.Location = new System.Drawing.Point(553, 78);
+            this.GuiasRetiradasListView.Location = new System.Drawing.Point(542, 54);
             this.GuiasRetiradasListView.Name = "GuiasRetiradasListView";
-            this.GuiasRetiradasListView.Size = new System.Drawing.Size(166, 157);
+            this.GuiasRetiradasListView.Size = new System.Drawing.Size(212, 181);
             this.GuiasRetiradasListView.TabIndex = 8;
             this.GuiasRetiradasListView.UseCompatibleStateImageBehavior = false;
             this.GuiasRetiradasListView.View = System.Windows.Forms.View.Details;
@@ -168,9 +169,9 @@ namespace Grupo_E.GestionarFletero
             this.NroHDRGuiasNoEntregadasCol1,
             this.TrackingNoEntregadoCol2});
             this.GuiasNoEntregadasListView.HideSelection = false;
-            this.GuiasNoEntregadasListView.Location = new System.Drawing.Point(289, 78);
+            this.GuiasNoEntregadasListView.Location = new System.Drawing.Point(276, 54);
             this.GuiasNoEntregadasListView.Name = "GuiasNoEntregadasListView";
-            this.GuiasNoEntregadasListView.Size = new System.Drawing.Size(228, 157);
+            this.GuiasNoEntregadasListView.Size = new System.Drawing.Size(212, 181);
             this.GuiasNoEntregadasListView.TabIndex = 7;
             this.GuiasNoEntregadasListView.UseCompatibleStateImageBehavior = false;
             this.GuiasNoEntregadasListView.View = System.Windows.Forms.View.Details;
@@ -187,7 +188,7 @@ namespace Grupo_E.GestionarFletero
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(550, 35);
+            this.label4.Location = new System.Drawing.Point(539, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 13);
             this.label4.TabIndex = 6;
@@ -196,7 +197,7 @@ namespace Grupo_E.GestionarFletero
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 35);
+            this.label3.Location = new System.Drawing.Point(273, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(215, 13);
             this.label3.TabIndex = 5;
@@ -221,7 +222,7 @@ namespace Grupo_E.GestionarFletero
             this.HDRAsignadasListView.HideSelection = false;
             this.HDRAsignadasListView.Location = new System.Drawing.Point(17, 54);
             this.HDRAsignadasListView.Name = "HDRAsignadasListView";
-            this.HDRAsignadasListView.Size = new System.Drawing.Size(230, 181);
+            this.HDRAsignadasListView.Size = new System.Drawing.Size(200, 181);
             this.HDRAsignadasListView.TabIndex = 0;
             this.HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             this.HDRAsignadasListView.View = System.Windows.Forms.View.Details;
@@ -238,7 +239,7 @@ namespace Grupo_E.GestionarFletero
             // 
             // AceptarBtn
             // 
-            this.AceptarBtn.Location = new System.Drawing.Point(587, 717);
+            this.AceptarBtn.Location = new System.Drawing.Point(582, 684);
             this.AceptarBtn.Name = "AceptarBtn";
             this.AceptarBtn.Size = new System.Drawing.Size(72, 20);
             this.AceptarBtn.TabIndex = 10;
@@ -247,12 +248,13 @@ namespace Grupo_E.GestionarFletero
             // 
             // CancelarBtn
             // 
-            this.CancelarBtn.Location = new System.Drawing.Point(673, 717);
+            this.CancelarBtn.Location = new System.Drawing.Point(717, 684);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(72, 20);
             this.CancelarBtn.TabIndex = 11;
             this.CancelarBtn.Text = "Cancelar";
             this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // groupBox1
             // 
@@ -264,9 +266,9 @@ namespace Grupo_E.GestionarFletero
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(12, 403);
+            this.groupBox1.Location = new System.Drawing.Point(10, 372);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(738, 296);
+            this.groupBox1.Size = new System.Drawing.Size(779, 296);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generación";
@@ -320,9 +322,9 @@ namespace Grupo_E.GestionarFletero
             HDRaRetirarCol,
             this.TrackingRetirarCol});
             this.NuevasGuiasRetirarListView.HideSelection = false;
-            this.NuevasGuiasRetirarListView.Location = new System.Drawing.Point(551, 56);
+            this.NuevasGuiasRetirarListView.Location = new System.Drawing.Point(542, 65);
             this.NuevasGuiasRetirarListView.Name = "NuevasGuiasRetirarListView";
-            this.NuevasGuiasRetirarListView.Size = new System.Drawing.Size(166, 214);
+            this.NuevasGuiasRetirarListView.Size = new System.Drawing.Size(203, 214);
             this.NuevasGuiasRetirarListView.TabIndex = 8;
             this.NuevasGuiasRetirarListView.UseCompatibleStateImageBehavior = false;
             this.NuevasGuiasRetirarListView.View = System.Windows.Forms.View.Details;
@@ -337,9 +339,9 @@ namespace Grupo_E.GestionarFletero
             this.HDREntregarCol1,
             this.TrackingEntregarCol});
             this.NuevasGuiasEntregarListView.HideSelection = false;
-            this.NuevasGuiasEntregarListView.Location = new System.Drawing.Point(319, 55);
+            this.NuevasGuiasEntregarListView.Location = new System.Drawing.Point(276, 65);
             this.NuevasGuiasEntregarListView.Name = "NuevasGuiasEntregarListView";
-            this.NuevasGuiasEntregarListView.Size = new System.Drawing.Size(167, 215);
+            this.NuevasGuiasEntregarListView.Size = new System.Drawing.Size(210, 215);
             this.NuevasGuiasEntregarListView.TabIndex = 7;
             this.NuevasGuiasEntregarListView.UseCompatibleStateImageBehavior = false;
             this.NuevasGuiasEntregarListView.View = System.Windows.Forms.View.Details;
@@ -356,7 +358,7 @@ namespace Grupo_E.GestionarFletero
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(549, 30);
+            this.label5.Location = new System.Drawing.Point(539, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 6;
@@ -365,11 +367,11 @@ namespace Grupo_E.GestionarFletero
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(316, 30);
+            this.label6.Location = new System.Drawing.Point(273, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 13);
+            this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Guías en HDR a entregar";
+            this.label6.Text = "Guías a entregar:";
             // 
             // label7
             // 
@@ -384,7 +386,7 @@ namespace Grupo_E.GestionarFletero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 749);
+            this.ClientSize = new System.Drawing.Size(801, 713);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CancelarBtn);
             this.Controls.Add(this.AceptarBtn);
