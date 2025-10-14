@@ -16,7 +16,7 @@ namespace Grupo_E.GestionarOmnibus
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string patente = txtPatente.Text;
-
+            txtPatente.Enabled = false;
             // Validar que el campo no esté vacío
             if (string.IsNullOrWhiteSpace(patente))
             {
@@ -72,6 +72,8 @@ namespace Grupo_E.GestionarOmnibus
 
         private void btnLimpiar_Click(object sender, EventArgs e) //Limpiar el textbox de patente
         {
+            txtPatente.Enabled = true;  
+
             // 1) Limpiar el textbox de patente
             if (txtPatente != null)
             {
@@ -83,10 +85,10 @@ namespace Grupo_E.GestionarOmnibus
             try
             {
                 if (lstRecepcion != null)
-                    lstRecepcion.Clear();
+                    lstRecepcion.Items.Clear();
 
                 if (lstDespacho != null)
-                    lstDespacho.Clear();
+                    lstDespacho.Items.Clear();
             }
             catch { /* ignoro si no existen */ }
 
