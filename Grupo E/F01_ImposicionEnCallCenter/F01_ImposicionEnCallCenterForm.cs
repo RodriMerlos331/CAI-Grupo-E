@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-//using System.Reflection;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -70,10 +70,10 @@ namespace Grupo_E.ImposicionEnCallCenter
             // Acceso directo al diccionario del modelo
             var informacionLocalidad = modelo.Localidades[localidadSeleccionada];
 
-            foreach (var agencia in informacionLocalidad.AgenciasCC)
+            foreach (var agencia in informacionLocalidad.Agencias)
                 AgenciasCCcmb.Items.Add(agencia);
 
-            foreach (var terminal in informacionLocalidad.TerminalesCC)
+            foreach (var terminal in informacionLocalidad.Terminales)
                 TerminalesCCcmb.Items.Add(terminal);
         }
 

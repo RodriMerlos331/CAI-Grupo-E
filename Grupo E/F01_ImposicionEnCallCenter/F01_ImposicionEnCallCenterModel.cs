@@ -25,7 +25,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
         };
 
         //COPILOT SUGIRIÓ ESTA FORMA DE HACERLO, PREGUNTAR SI ESTÁ BIEN:
-        public Dictionary<string, (List<string> AgenciasCC, List<string> TerminalesCC)> Localidades =
+        public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =
         new Dictionary<string, (List<string>, List<string>)>
         {
             { "CABA", (new List<string> { "Alto Palermo", "DOT", "Abasto" }, new List<string> { "Retiro", "Dellepiane", "Liniers" }) },
