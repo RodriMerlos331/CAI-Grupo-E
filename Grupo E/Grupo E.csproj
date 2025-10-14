@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="F01_ImposicionEnCallCenter\ImposicionAgenciaCC.cs" />
+    <Compile Include="F01_ImposicionEnCallCenter\ImposicionConDestinoCC.cs" />
+    <Compile Include="F01_ImposicionEnCallCenter\ImposicionDomicilioParticularCC.cs" />
     <Compile Include="F03_ImposicionEnCD\F03_ImposicionEnCDModel.cs" />
     <Compile Include="F03_ImposicionEnCD\ImposicionAgencia.cs" />
     <Compile Include="F03_ImposicionEnCD\ImposicionConDestinoACD.cs" />
@@ -101,7 +104,6 @@
     <Compile Include="F02_ImposicionEnAgencia\F02_ImposicionEnAgencia.Designer.cs">
       <DependentUpon>F02_ImposicionEnAgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="F01_ImposicionEnCallCenter\Cliente.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\F01_ImposicionEnCallCenterForm.cs">
       <SubType>Form</SubType>
     </Compile>

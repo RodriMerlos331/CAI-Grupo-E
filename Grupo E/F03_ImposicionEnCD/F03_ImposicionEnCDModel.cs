@@ -27,7 +27,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
         //COPILOT SUGIRIÓ ESTA FORMA DE HACERLO, PREGUNTAR SI ESTÁ BIEN:
         public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =
-    new Dictionary<string, (List<string>, List<string>)>
+        new Dictionary<string, (List<string>, List<string>)>
 {
     { "CABA", (new List<string> { "Alto Palermo", "DOT", "Abasto" }, new List<string> { "Retiro", "Dellepiane", "Liniers" }) },
     { "GBA", (new List<string> { "Kiosco", "Shopping", "Local" }, new List<string> { "La Plata", "Pacheco", "Morón" }) },
