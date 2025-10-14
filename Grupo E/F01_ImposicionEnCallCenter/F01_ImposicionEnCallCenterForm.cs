@@ -175,7 +175,7 @@ namespace Grupo_E.ImposicionEnCallCenter
                     return;
                 }
 
-                modelo.ImposicionConDestinoCC(
+                modelo.ImposicionConDestinoACC(
                     CUITClienteCCtxt.Text,
                     TerminalesCCcmb.SelectedItem?.ToString(),
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
@@ -194,7 +194,7 @@ namespace Grupo_E.ImposicionEnCallCenter
                     return;
                 }
 
-                modelo.ImposicionDomicilioParticularCC(
+                modelo.ImposicionEnDomicilioParticularCC(
                     CUITClienteCCtxt.Text,
                     DatosDomicilioCCtxt.Text,
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
@@ -211,7 +211,7 @@ namespace Grupo_E.ImposicionEnCallCenter
                     return;
                 }
 
-                modelo.ImposicionAgenciaCC(
+                modelo.ImposicionEnAgenciaCC(
                     CUITClienteCCtxt.Text,
                     AgenciasCCcmb.SelectedItem?.ToString(),
                     TamanoBultoCCcmb.SelectedItem?.ToString(),

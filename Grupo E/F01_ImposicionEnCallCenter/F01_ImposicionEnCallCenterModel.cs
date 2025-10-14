@@ -51,7 +51,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
         {
             return trackingActual++;
         }
-        public void ImposicionConDestinoCC(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
+        public void ImposicionConDestinoACC(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
         {
             ImposicionConDestinoCC nuevaImposicion = new ImposicionConDestinoCC
             {
@@ -73,7 +73,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void ImposicionDomicilioParticularCC(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario)
+        public void ImposicionEnDomicilioParticularCC(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario)
         {
             ImposicionDomicilioParticularCC nuevaImposicion = new ImposicionDomicilioParticularCC
             {
@@ -94,7 +94,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void ImposicionAgenciaCC(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
+        public void ImposicionEnAgenciaCC(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
         {
             ImposicionAgenciaCC nuevaImposicion = new ImposicionAgenciaCC
             {
