@@ -57,6 +57,9 @@ namespace Grupo_E.ImposicionEnCallCenter
 
         private void LocalidadCCcmb_SelectedIndexChanged(object sender, EventArgs e)
         {
+            AgenciasCCcmb.Items.Clear();
+            TerminalesCCcmb.Items.Clear();
+
             AgenciasCCcmb.SelectedIndex = -1;
             TerminalesCCcmb.SelectedIndex = -1;
             DatosDomicilioCCtxt.Text = "";
