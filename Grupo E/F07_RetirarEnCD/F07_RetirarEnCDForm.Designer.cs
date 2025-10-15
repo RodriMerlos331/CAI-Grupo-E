@@ -169,6 +169,7 @@
             this.NumeroTrackingText.Name = "NumeroTrackingText";
             this.NumeroTrackingText.Size = new System.Drawing.Size(140, 20);
             this.NumeroTrackingText.TabIndex = 1;
+            this.NumeroTrackingText.TextChanged += new System.EventHandler(this.NumeroTrackingText_TextChanged);
             // 
             // label1
             // 
