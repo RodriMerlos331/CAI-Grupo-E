@@ -253,11 +253,11 @@ namespace Grupo_E.ImposicionEnCD
         {
             LimpiarCampos();
             DialogResult resultado = MessageBox.Show(
-        "¿Seguro que querés cancelar la operación?",
-        "Confirmar cancelación",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question
-    );
+            "¿Seguro que querés cancelar la operación?",
+            "Confirmar cancelación",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+            );
 
             if (resultado == DialogResult.Yes)
             {

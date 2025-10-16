@@ -28,25 +28,25 @@ namespace Grupo_E.F03_ImposicionEnCD
         //COPILOT SUGIRIÓ ESTA FORMA DE HACERLO, PREGUNTAR SI ESTÁ BIEN:
         public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =
         new Dictionary<string, (List<string>, List<string>)>
-{
-    { "CABA", (new List<string> { "Alto Palermo", "DOT", "Abasto" }, new List<string> { "Retiro", "Dellepiane", "Liniers" }) },
-    { "GBA", (new List<string> { "Kiosco", "Shopping", "Local" }, new List<string> { "La Plata", "Pacheco", "Morón" }) },
-    { "Córdoba", (new List<string> { "Cerrito", "Montaña", "Arroyo" }, new List<string> { "Villa Carlos Paz", "La Falda", "Río Cuarto" }) }
-};
+        {
+          { "CABA", (new List<string> { "Alto Palermo", "DOT", "Abasto" }, new List<string> { "Retiro", "Dellepiane", "Liniers" }) },
+          { "GBA", (new List<string> { "Kiosco", "Shopping", "Local" }, new List<string> { "La Plata", "Pacheco", "Morón" }) },
+          { "Córdoba", (new List<string> { "Cerrito", "Montaña", "Arroyo" }, new List<string> { "Villa Carlos Paz", "La Falda", "Río Cuarto" }) }
+        };
 
 
 
 
         /*
          * public class ImposicionConDestinoACD
-    {
+        {
         string CUITCliente { get; set; }
         string CentroDistribucionDestino { get; set; }
 
         string TamañoBulto { get; set; }
 
         string DatosDestinatario { get; set; } 
-    }
+        }
          */
         private int trackingActual = 1;
 
@@ -66,12 +66,12 @@ namespace Grupo_E.F03_ImposicionEnCD
             };
 
             string mensaje =
-       "Guía impuesta exitosamente.\n\n" +
-       $"Tracking: {nuevaImposicion.Tracking}\n" +
-       $"CUIT del cliente: {nuevaImposicion.CUITCliente}\n" +
-       $"Centro de distribución destino: {nuevaImposicion.CentroDistribucionDestino}\n" +
-       $"Tamaño del bulto: {nuevaImposicion.TamañoBulto}\n" +
-       $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+            "Guía impuesta exitosamente.\n\n" +
+            $"Tracking: {nuevaImposicion.Tracking}\n" +
+            $"CUIT del cliente: {nuevaImposicion.CUITCliente}\n" +
+            $"Centro de distribución destino: {nuevaImposicion.CentroDistribucionDestino}\n" +
+            $"Tamaño del bulto: {nuevaImposicion.TamañoBulto}\n" +
+            $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -87,12 +87,12 @@ namespace Grupo_E.F03_ImposicionEnCD
                 DatosDestinatario = datosDestinatario
             };
             string mensaje =
-                "Guía impuesta exitosamente.\n\n" +
-       $"Tracking: {nuevaImposicion.Tracking}\n" +
-       $"CUIT del cliente: {nuevaImposicion.CUIT}\n" +
-       $"Dirección particular de destino: {nuevaImposicion.DireccionParticular}\n" +
-       $"Tamaño del bulto: {nuevaImposicion.TamanoBulto}\n" +
-       $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+             "Guía impuesta exitosamente.\n\n" +
+             $"Tracking: {nuevaImposicion.Tracking}\n" +
+             $"CUIT del cliente: {nuevaImposicion.CUIT}\n" +
+             $"Dirección particular de destino: {nuevaImposicion.DireccionParticular}\n" +
+             $"Tamaño del bulto: {nuevaImposicion.TamanoBulto}\n" +
+             $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -109,12 +109,12 @@ namespace Grupo_E.F03_ImposicionEnCD
             };
 
             string mensaje =
-                "Guía impuesta exitosamente.\n\n" +
-       $"Tracking: {nuevaImposicion.Tracking}\n" +
-       $"CUIT del cliente: {nuevaImposicion.CUIT}\n" +
-       $"Agencia de destino: {nuevaImposicion.Agencia}\n" +
-       $"Tamaño del bulto: {nuevaImposicion.TamanoBulto}\n" +
-       $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+            "Guía impuesta exitosamente.\n\n" +
+            $"Tracking: {nuevaImposicion.Tracking}\n" +
+            $"CUIT del cliente: {nuevaImposicion.CUIT}\n" +
+            $"Agencia de destino: {nuevaImposicion.Agencia}\n" +
+            $"Tamaño del bulto: {nuevaImposicion.TamanoBulto}\n" +
+            $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

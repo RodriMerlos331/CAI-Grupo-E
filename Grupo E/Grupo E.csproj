@@ -48,6 +48,9 @@
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionAgenciaCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionConDestinoCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionDomicilioParticularCC.cs" />
+    <Compile Include="F02_ImposicionEnAgencia\ImposicionAgencia.cs" />
+    <Compile Include="F02_ImposicionEnAgencia\ImposicionConDestinoCD.cs" />
+    <Compile Include="F02_ImposicionEnAgencia\ImposicionDomicilioParticular.cs" />
     <Compile Include="F03_ImposicionEnCD\F03_ImposicionEnCDModel.cs" />
     <Compile Include="F03_ImposicionEnCD\ImposicionAgencia.cs" />
     <Compile Include="F03_ImposicionEnCD\ImposicionConDestinoACD.cs" />
