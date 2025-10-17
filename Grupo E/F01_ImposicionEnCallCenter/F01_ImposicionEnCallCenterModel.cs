@@ -117,29 +117,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
 
         }
 
-        public void RegistrarDatosDeRetiroCC(string nombre, string apellido, string ciudad, string calle, string altura, string pisoDepto, string codigoPostal)
-        {
-            DatosDeRetiroCC datosRetiro = new DatosDeRetiroCC
-            {
-                Nombre = nombre,
-                Apellido = apellido,
-                Ciudad = ciudad,
-                Calle = calle,
-                Altura = altura,
-                PisoDepartamento = pisoDepto,
-                CodigoPostal = codigoPostal
-            };
-
-            string mensaje =
-               "Datos de retiro registrados correctamente.\n\n" +
-               $"Nombre: {datosRetiro.Nombre} {datosRetiro.Apellido}\n" +
-               $"Ciudad: {datosRetiro.Ciudad}\n" +
-               $"Calle: {datosRetiro.Calle} {datosRetiro.Altura}\n" +
-               $"Piso/Depto: {datosRetiro.PisoDepartamento}\n" +
-               $"Código Postal: {datosRetiro.CodigoPostal}";
-
-            MessageBox.Show(mensaje, "Datos de Retiro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+        
 
     }
 }

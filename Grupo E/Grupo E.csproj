@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="F01_ImposicionEnCallCenter\DatosDeRetiroCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionAgenciaCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionConDestinoCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionDomicilioParticularCC.cs" />
