@@ -29,6 +29,9 @@ namespace Grupo_E.GestionarOmnibus
 
             }
 
+            //ME FALTA CODEAR QUÉ PASA SI LA PATENTE NO EXISTE! Esta en el Caso de uso y en los diagramas de secuencia pero acá no.
+            //AGREGARLO!
+
             UltimaPatenteBuscada = patente;
 
             return EncomiendasARecepcionarPorPatente[patente];
