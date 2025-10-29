@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.F04_GestionarOmnibus
 {
-    internal class EncomiendasAEntregar //CLASE de las guias que el chofer se lleva   validar. esto  pasa a la 
+    internal class EncomiendasASubir //CLASE de las guias que el chofer se lleva   validar. esto  pasa a la 
                                         // encomienda a la lista de "EncomiendasEnTransito" cuando le doy aceptar
     {
         public string  IdHdr { get; set; }

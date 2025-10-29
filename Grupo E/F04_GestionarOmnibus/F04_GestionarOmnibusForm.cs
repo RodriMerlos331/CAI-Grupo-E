@@ -25,30 +25,30 @@ namespace Grupo_E.GestionarOmnibus
             }
 
             // Buscar encomiendas a recepcionar
-            var encomiendasARecepcionar = modelo.EncomiendasARecepcionar(patente);
+            var encomiendasARecepcionar = modelo.EncomiendasABajar(patente);
             if (encomiendasARecepcionar != null)
             {
-                lstRecepcion.Items.Clear();
+                lstBajar.Items.Clear();
                 foreach (var guia in encomiendasARecepcionar)
                 {
                     ListViewItem listItem = new ListViewItem(guia.IdHdr);
                     listItem.SubItems.Add(guia.Tracking);
                     listItem.SubItems.Add(guia.TipoDeBulto);
-                    lstRecepcion.Items.Add(listItem);
+                    lstBajar.Items.Add(listItem);
                 }
             }
 
             // Buscar encomiendas a entregar
-            var encomiendasAEntregar = modelo.ObtenerGuiasEntrega(patente);
+            var encomiendasAEntregar = modelo.EncomiendasASubir(patente);
             if (encomiendasAEntregar != null)
             {
-                lstDespacho.Items.Clear();
+                lstSubir.Items.Clear();
                 foreach (var guiaEntrega in encomiendasAEntregar)
                 {
                     ListViewItem listItem = new ListViewItem(guiaEntrega.IdHdr);
                     listItem.SubItems.Add(guiaEntrega.Tracking);
                     listItem.SubItems.Add(guiaEntrega.TipoDeBulto);
-                    lstDespacho.Items.Add(listItem);
+                    lstSubir.Items.Add(listItem);
                 }
             }
 
@@ -62,8 +62,8 @@ namespace Grupo_E.GestionarOmnibus
             int recepcionCount = 0;
             int despachoCount = 0;
 
-            if (lstRecepcion != null) recepcionCount = lstRecepcion.Items.Count;
-            if (lstDespacho != null) despachoCount = lstDespacho.Items.Count;
+            if (lstBajar != null) recepcionCount = lstBajar.Items.Count;
+            if (lstSubir != null) despachoCount = lstSubir.Items.Count;
 
             // Actualizo labels (ajustá los nombres si son distintos)
             lblCantidadRecepcion.Text = $"Encomiendas: {recepcionCount}";
@@ -84,22 +84,22 @@ namespace Grupo_E.GestionarOmnibus
             // 2) Limpiar los list view
             try
             {
-                if (lstRecepcion != null)
-                    lstRecepcion.Items.Clear();
+                if (lstBajar != null)
+                    lstBajar.Items.Clear();
 
-                if (lstDespacho != null)
-                    lstDespacho.Items.Clear();
+                if (lstSubir != null)
+                    lstSubir.Items.Clear();
             }
             catch { /* ignoro si no existen */ }
 
             
             try
             {
-                if (lstRecepcion != null)
-                    lstRecepcion.Items.Clear();
+                if (lstBajar != null)
+                    lstBajar.Items.Clear();
 
-                if (lstDespacho != null)
-                    lstDespacho.Items.Clear();
+                if (lstSubir != null)
+                    lstSubir.Items.Clear();
             }
             catch { /* ignoro si no existen */ }
 
@@ -136,8 +136,8 @@ namespace Grupo_E.GestionarOmnibus
             }
             try
             {
-                if (lstRecepcion != null) lstRecepcion.Items.Clear();
-                if (lstDespacho != null) lstDespacho.Items.Clear();
+                if (lstBajar != null) lstBajar.Items.Clear();
+                if (lstSubir != null) lstSubir.Items.Clear();
             }
             catch {}
 
@@ -151,6 +151,24 @@ namespace Grupo_E.GestionarOmnibus
 
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
 
+        }
+
+        private void lstBajar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstSubir_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

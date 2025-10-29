@@ -10,17 +10,22 @@ namespace Grupo_E.GestionarOmnibus
     internal class F04_GestionarOmnibusModel
     {
 
-        private string UltimaPatenteBuscada = "-1";
 
         //DNIS de prueba: AB123CD, ST789UV, HI456JK
 
-        private Dictionary<string, List<EncomiendasARecepcionar>> EncomiendasARecepcionarPorPatente = new Dictionary<string, List<EncomiendasARecepcionar>>();
-        private Dictionary<string, List<EncomiendasAEntregar>> EncomiendasAEntregarPorPatente = new Dictionary<string, List<EncomiendasAEntregar>>();
-        internal List<EncomiendasARecepcionar> EncomiendasARecepcionar(string patente)
+        private Dictionary<string, List<EncomiendasABajar>> EncomiendasARecepcionarPorPatente = new Dictionary<string, List<EncomiendasABajar>>();
+        private Dictionary<string, List<EncomiendasASubir>> EncomiendasAEntregarPorPatente = new Dictionary<string, List<EncomiendasASubir>>();
+        internal List<EncomiendasABajar> EncomiendasABajar(string patente)
         {
 
+            //ME FALTA CODEAR QUÉ PASA SI LA PATENTE NO EXISTE! Esta en el Caso de uso y en los diagramas de secuencia pero acá no.
+            //AGREGARLO!
 
-            //ahora validamos si la patente existe en el diccionario (en ambos)
+            //ahora validamos si la patente tiene algo asignado  en el diccionario 
+
+
+            // --> CORREJIR ESTO. deben ser 2 chequeos diferentes. puede ser que tenga solo cosas para subir o solo para bajar. el mensaje de error deberia
+            //contemplar las 2 opciones. y en el caso de que no haya nada, devolver null. PENDIENTE!
 
             if (!EncomiendasAEntregarPorPatente.ContainsKey(patente) && !EncomiendasARecepcionarPorPatente.ContainsKey(patente))
             {
@@ -29,10 +34,9 @@ namespace Grupo_E.GestionarOmnibus
 
             }
 
-            //ME FALTA CODEAR QUÉ PASA SI LA PATENTE NO EXISTE! Esta en el Caso de uso y en los diagramas de secuencia pero acá no.
-            //AGREGARLO!
+            
 
-            UltimaPatenteBuscada = patente;
+            
 
             return EncomiendasARecepcionarPorPatente[patente];
             
@@ -40,7 +44,7 @@ namespace Grupo_E.GestionarOmnibus
 
         // no hace falta validar xq se hizo en el otro metodo
 
-        internal List <EncomiendasAEntregar> ObtenerGuiasEntrega(string patente)
+        internal List <EncomiendasASubir> EncomiendasASubir(string patente)
         {
             return  EncomiendasAEntregarPorPatente[patente];
 
@@ -50,46 +54,46 @@ namespace Grupo_E.GestionarOmnibus
         public F04_GestionarOmnibusModel() //Esto es un constructor para inicializar los datos de prueba
         {
             // Datos de prueba para AB123CD
-            EncomiendasARecepcionarPorPatente["AB123CD"] = new List<EncomiendasARecepcionar>
+            EncomiendasARecepcionarPorPatente["AB123CD"] = new List<EncomiendasABajar>
             {
-                new EncomiendasARecepcionar { IdHdr = "201", Tracking = "AB001", TipoDeBulto = "M" },
-                new EncomiendasARecepcionar { IdHdr = "202", Tracking = "AB002", TipoDeBulto = "S" }
+                new EncomiendasABajar { IdHdr = "201", Tracking = "AB001", TipoDeBulto = "M" },
+                new EncomiendasABajar { IdHdr = "202", Tracking = "AB002", TipoDeBulto = "S" }
             };
-            EncomiendasAEntregarPorPatente["AB123CD"] = new List<EncomiendasAEntregar>
+            EncomiendasAEntregarPorPatente["AB123CD"] = new List<EncomiendasASubir>
             {
-                new EncomiendasAEntregar { IdHdr = "301", Tracking = "AB101", TipoDeBulto = "L" },
-                new EncomiendasAEntregar { IdHdr = "302", Tracking = "AB102", TipoDeBulto = "XL" }
+                new EncomiendasASubir { IdHdr = "301", Tracking = "AB101", TipoDeBulto = "L" },
+                new EncomiendasASubir { IdHdr = "302", Tracking = "AB102", TipoDeBulto = "XL" }
             };
 
             // Datos de prueba para ST789UV
-            EncomiendasARecepcionarPorPatente["ST789UV"] = new List<EncomiendasARecepcionar>
+            EncomiendasARecepcionarPorPatente["ST789UV"] = new List<EncomiendasABajar>
             {
-                new EncomiendasARecepcionar { IdHdr = "203", Tracking = "ST001", TipoDeBulto = "XL" },
-                new EncomiendasARecepcionar { IdHdr = "204", Tracking = "ST002", TipoDeBulto = "M" }
+                new EncomiendasABajar { IdHdr = "203", Tracking = "ST001", TipoDeBulto = "XL" },
+                new EncomiendasABajar { IdHdr = "204", Tracking = "ST002", TipoDeBulto = "M" }
             };
-            EncomiendasAEntregarPorPatente["ST789UV"] = new List<EncomiendasAEntregar>
+            EncomiendasAEntregarPorPatente["ST789UV"] = new List<EncomiendasASubir>
             {
-                new EncomiendasAEntregar { IdHdr = "303", Tracking = "ST101", TipoDeBulto = "S" },
-                new EncomiendasAEntregar { IdHdr = "304", Tracking = "ST102", TipoDeBulto = "L" }
+                new EncomiendasASubir { IdHdr = "303", Tracking = "ST101", TipoDeBulto = "S" },
+                new EncomiendasASubir { IdHdr = "304", Tracking = "ST102", TipoDeBulto = "L" }
             };
 
             // Datos de prueba para HI456JK
-            EncomiendasARecepcionarPorPatente["HI456JK"] = new List<EncomiendasARecepcionar>
+            EncomiendasARecepcionarPorPatente["HI456JK"] = new List<EncomiendasABajar>
             {
-                new EncomiendasARecepcionar { IdHdr = "205", Tracking = "HI001", TipoDeBulto = "S" },
-                new EncomiendasARecepcionar { IdHdr = "206", Tracking = "HI002", TipoDeBulto = "L" }
+                new EncomiendasABajar { IdHdr = "205", Tracking = "HI001", TipoDeBulto = "S" },
+                new EncomiendasABajar { IdHdr = "206", Tracking = "HI002", TipoDeBulto = "L" }
             };
-            EncomiendasAEntregarPorPatente["HI456JK"] = new List<EncomiendasAEntregar>
+            EncomiendasAEntregarPorPatente["HI456JK"] = new List<EncomiendasASubir>
             {
-                new EncomiendasAEntregar { IdHdr = "305", Tracking = "HI101", TipoDeBulto = "M" },
-                new EncomiendasAEntregar { IdHdr = "306", Tracking = "HI102", TipoDeBulto = "XL" }
+                new EncomiendasASubir { IdHdr = "305", Tracking = "HI101", TipoDeBulto = "M" },
+                new EncomiendasASubir { IdHdr = "306", Tracking = "HI102", TipoDeBulto = "XL" }
             };
 
-            EncomiendasRecepcionadasEnCDOrigen = new List<EncomiendasARecepcionar>();
-            EncomiendasEnTransito = new List<EncomiendasAEntregar>();
+            EncomiendasRecepcionadasEnCDOrigen = new List<EncomiendasABajar>();
+            EncomiendasEnTransito = new List<EncomiendasASubir>();
         }
 
-        public List<EncomiendasARecepcionar> EncomiendasRecepcionadasEnCDOrigen { get; } = new List<EncomiendasARecepcionar>();
-        public List<EncomiendasAEntregar> EncomiendasEnTransito { get; } = new List<EncomiendasAEntregar>();
+        public List<EncomiendasABajar> EncomiendasRecepcionadasEnCDOrigen { get; } = new List<EncomiendasABajar>();
+        public List<EncomiendasASubir> EncomiendasEnTransito { get; } = new List<EncomiendasASubir>();
     }
 }

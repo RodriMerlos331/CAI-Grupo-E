@@ -35,13 +35,13 @@
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lstRecepcion = new System.Windows.Forms.ListView();
+            this.lstBajar = new System.Windows.Forms.ListView();
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblCantidadRecepcion = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lstDespacho = new System.Windows.Forms.ListView();
+            this.lstSubir = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,18 +60,21 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtPatente);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(15, 18);
+            this.groupBox1.Location = new System.Drawing.Point(20, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(422, 90);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(563, 111);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búscar Omnibus";
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(304, 37);
+            this.btnLimpiar.Location = new System.Drawing.Point(405, 46);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(112, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(149, 28);
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar filtro";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -79,9 +82,10 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(190, 37);
+            this.btnBuscar.Location = new System.Drawing.Point(253, 46);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(109, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(145, 28);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -89,44 +93,51 @@
             // 
             // txtPatente
             // 
-            this.txtPatente.Location = new System.Drawing.Point(10, 39);
+            this.txtPatente.Location = new System.Drawing.Point(13, 48);
+            this.txtPatente.Margin = new System.Windows.Forms.Padding(4);
             this.txtPatente.Name = "txtPatente";
-            this.txtPatente.Size = new System.Drawing.Size(176, 20);
+            this.txtPatente.Size = new System.Drawing.Size(233, 22);
             this.txtPatente.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Location = new System.Drawing.Point(9, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(53, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Patente";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lstRecepcion);
+            this.groupBox2.Controls.Add(this.lstBajar);
             this.groupBox2.Controls.Add(this.lblCantidadRecepcion);
-            this.groupBox2.Location = new System.Drawing.Point(15, 122);
+            this.groupBox2.Location = new System.Drawing.Point(20, 150);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(422, 172);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(563, 212);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = " Recepcion";
+            this.groupBox2.Text = "Bajar";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // lstRecepcion
+            // lstBajar
             // 
-            this.lstRecepcion.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstBajar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader13,
             this.columnHeader22,
             this.columnHeader25});
-            this.lstRecepcion.HideSelection = false;
-            this.lstRecepcion.Location = new System.Drawing.Point(6, 62);
-            this.lstRecepcion.Name = "lstRecepcion";
-            this.lstRecepcion.Size = new System.Drawing.Size(411, 101);
-            this.lstRecepcion.TabIndex = 14;
-            this.lstRecepcion.UseCompatibleStateImageBehavior = false;
-            this.lstRecepcion.View = System.Windows.Forms.View.Details;
+            this.lstBajar.HideSelection = false;
+            this.lstBajar.Location = new System.Drawing.Point(8, 76);
+            this.lstBajar.Margin = new System.Windows.Forms.Padding(4);
+            this.lstBajar.Name = "lstBajar";
+            this.lstBajar.Size = new System.Drawing.Size(547, 123);
+            this.lstBajar.TabIndex = 14;
+            this.lstBajar.UseCompatibleStateImageBehavior = false;
+            this.lstBajar.View = System.Windows.Forms.View.Details;
+            this.lstBajar.SelectedIndexChanged += new System.EventHandler(this.lstBajar_SelectedIndexChanged);
             // 
             // columnHeader13
             // 
@@ -146,37 +157,43 @@
             // lblCantidadRecepcion
             // 
             this.lblCantidadRecepcion.AutoSize = true;
-            this.lblCantidadRecepcion.Location = new System.Drawing.Point(7, 25);
+            this.lblCantidadRecepcion.Location = new System.Drawing.Point(9, 31);
+            this.lblCantidadRecepcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadRecepcion.Name = "lblCantidadRecepcion";
-            this.lblCantidadRecepcion.Size = new System.Drawing.Size(91, 13);
+            this.lblCantidadRecepcion.Size = new System.Drawing.Size(112, 16);
             this.lblCantidadRecepcion.TabIndex = 0;
             this.lblCantidadRecepcion.Text = "Encomiendas: XX";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.lstDespacho);
+            this.groupBox3.Controls.Add(this.lstSubir);
             this.groupBox3.Controls.Add(this.lblCantidadDespacho);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(15, 314);
+            this.groupBox3.Location = new System.Drawing.Point(20, 386);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(422, 164);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(563, 202);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = " Despacho ";
+            this.groupBox3.Text = "Subir";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // lstDespacho
+            // lstSubir
             // 
-            this.lstDespacho.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstSubir.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.lstDespacho.HideSelection = false;
-            this.lstDespacho.Location = new System.Drawing.Point(10, 55);
-            this.lstDespacho.Name = "lstDespacho";
-            this.lstDespacho.Size = new System.Drawing.Size(408, 101);
-            this.lstDespacho.TabIndex = 17;
-            this.lstDespacho.UseCompatibleStateImageBehavior = false;
-            this.lstDespacho.View = System.Windows.Forms.View.Details;
+            this.lstSubir.HideSelection = false;
+            this.lstSubir.Location = new System.Drawing.Point(13, 68);
+            this.lstSubir.Margin = new System.Windows.Forms.Padding(4);
+            this.lstSubir.Name = "lstSubir";
+            this.lstSubir.Size = new System.Drawing.Size(543, 123);
+            this.lstSubir.TabIndex = 17;
+            this.lstSubir.UseCompatibleStateImageBehavior = false;
+            this.lstSubir.View = System.Windows.Forms.View.Details;
+            this.lstSubir.SelectedIndexChanged += new System.EventHandler(this.lstSubir_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -196,26 +213,27 @@
             // lblCantidadDespacho
             // 
             this.lblCantidadDespacho.AutoSize = true;
-            this.lblCantidadDespacho.Location = new System.Drawing.Point(6, 25);
+            this.lblCantidadDespacho.Location = new System.Drawing.Point(8, 31);
+            this.lblCantidadDespacho.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadDespacho.Name = "lblCantidadDespacho";
-            this.lblCantidadDespacho.Size = new System.Drawing.Size(91, 13);
+            this.lblCantidadDespacho.Size = new System.Drawing.Size(112, 16);
             this.lblCantidadDespacho.TabIndex = 1;
             this.lblCantidadDespacho.Text = "Encomiendas: XX";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(181, 706);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(241, 869);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 15;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(15, 485);
+            this.btnAceptar.Location = new System.Drawing.Point(20, 597);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(209, 29);
+            this.btnAceptar.Size = new System.Drawing.Size(279, 36);
             this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -223,26 +241,28 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(230, 485);
+            this.btnCancelar.Location = new System.Drawing.Point(307, 597);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(207, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(276, 36);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // GestionarOmnibusForm
+            // F04_GestionarOmnibusForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 522);
+            this.ClientSize = new System.Drawing.Size(597, 642);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "GestionarOmnibusForm";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "F04_GestionarOmnibusForm";
             this.Text = "Gestionar Transporte Omnibus";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -266,12 +286,12 @@
     private System.Windows.Forms.GroupBox groupBox3;
     private System.Windows.Forms.Label lblCantidadRecepcion;
     private System.Windows.Forms.Label lblCantidadDespacho;
-        private System.Windows.Forms.ListView lstRecepcion;
+        private System.Windows.Forms.ListView lstBajar;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader25;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView lstDespacho;
+        private System.Windows.Forms.ListView lstSubir;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
