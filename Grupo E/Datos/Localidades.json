@@ -1,0 +1,31 @@
+[
+  {
+    "DniFletero": 30112233,
+    "CuitEmpresaTransportista": "30-12345678-9",
+    "CodCDAsociados": [
+      "CD001",
+      "CD002"
+    ]
+  },
+  {
+    "DniFletero": 27344556,
+    "CuitEmpresaTransportista": "27-87654321-0",
+    "CodCDAsociados": [
+      "CD003"
+    ]
+  },
+  {
+    "DniFletero": 20199877,
+    "CuitEmpresaTransportista": "20-11223344-5",
+    "CodCDAsociados": [
+      "CD001",
+      "CD004",
+      "CD005"
+    ]
+  },
+  {
+    "DniFletero": 34123456,
+    "CuitEmpresaTransportista": "34-55667788-2",
+    "CodCDAsociados": []
+  }
+]

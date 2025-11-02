@@ -192,6 +192,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Datos\Localidades.json" />
+    <None Include="Datos\Fleteros.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.resx">
@@ -234,8 +236,6 @@
       <DependentUpon>F07_RetirarEnCDForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Datos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
         public static List<FleteroEntidad> Fleteros { get; }
         static FleteroAlmacen()
         {
-            if (File.Exists("fleteros.json"))
+            if (File.Exists(@"Datos/fleteros.json"))
             {
-                var fleterosJson = File.ReadAllText("fleteros.json");
+                var fleterosJson = File.ReadAllText(@"Datos/fleteros.json");
                 Fleteros = System.Text.Json.JsonSerializer.Deserialize<List<FleteroEntidad>>(fleterosJson) ?? new List<FleteroEntidad>();
             }
         }
@@ -26,7 +26,7 @@ namespace Grupo_E.Almacenes
             //Transformar lista clientes en texto
 
             var fleterosJson = System.Text.Json.JsonSerializer.Serialize(Fleteros);
-            File.WriteAllText("fleteros.json", fleterosJson);
+            File.WriteAllText(@"Datos/fleteros.json", fleterosJson);
         }
     }
 }
