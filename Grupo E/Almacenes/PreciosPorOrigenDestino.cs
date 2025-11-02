@@ -8,7 +8,7 @@ namespace Grupo_E.Almacenes
 {
     internal class PreciosPorOrigenDestino
     {
-        public TipoBulto Tipo { get; set; }
+        public TipoBultoEnum Tipo { get; set; }
 
         public string CodigoCDOrigen { get; set; }
 

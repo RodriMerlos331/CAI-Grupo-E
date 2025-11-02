@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grupo_E.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,10 @@ namespace Grupo_E
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MenuPrincipalForm()); // <-- Menú como formulario inicial
+
+            //Guardo los datos:
+
+            //FleteroAlmacen.Grabar();
         }
     }
 }

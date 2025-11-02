@@ -9,9 +9,11 @@ namespace Grupo_E.Almacenes
     internal class HDR_Distribucion_UMEntidad
     {
         public int NumeroHDRUM { get; set; }
-        public List<TipoHDR> TipoHDR { get; set; } = new List<TipoHDR>();
+        public TipoHDREnum Tipo { get; set; }
+
+        public int DniFleteroAsignado { get; set; }
         public bool Cumplida { get; set; }
         public bool Rendida { get; set; }
-        public List<int> Encomiendas { get; set; } = new List<int>();
+        public List<string> Encomiendas { get; set; }
     }
 }
