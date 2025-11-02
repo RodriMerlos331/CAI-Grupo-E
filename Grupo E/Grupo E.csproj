@@ -194,7 +194,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Datos\Agencia.json" />
     <None Include="Datos\CentrosDistribucion.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\DatosGenerales.json" />
+    <None Include="Datos\EmpresaServicioLargaDistancia.json" />
+    <None Include="Datos\HDR_Distribucion_UM.json" />
+    <None Include="Datos\Encomiendas.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Datos\Localidades.json">
@@ -203,6 +210,8 @@
     <None Include="Datos\Fleteros.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Datos\ServicioParada.json" />
+    <None Include="Datos\Tarifario.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.resx">

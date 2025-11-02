@@ -1,7 +1,7 @@
 [
   {
     "DniFletero": 12345678,
-    "CuitEmpresaTransportista": "30-12345678-9",
+    "CuitEmpresaTransportista": "20-45651288-8",
     "CodCDAsociados": [
       "Retiro",
       "Liniers"
@@ -9,7 +9,7 @@
   },
   {
     "DniFletero": 23456789,
-    "CuitEmpresaTransportista": "30-12345678-9",
+    "CuitEmpresaTransportista": "20-45651288-8",
     "CodCDAsociados": [
       "MorónTerminal"
     ]
