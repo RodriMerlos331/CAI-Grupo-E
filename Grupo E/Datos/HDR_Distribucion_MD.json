@@ -1,7 +1,7 @@
 [
   {
     "NumeroHDRMD": 5001,
-    "estadoHDR": "En_Transito",
+    "estadoHDR": "EnTransito",
     "Encomiendas": [ 301, 302, 303 ],
     "CodigoParada": 101,
     "Destino": "Rosario"
@@ -11,6 +11,7 @@
     "estadoHDR": "Cumplida",
     "Encomiendas": [ 304, 305 ],
     "CodigoParada": 102,
+    //solo de HDR? o se asocia a un CD destino? deberíamos asociarlo a localida?
     "Destino": "Córdoba"
   },
   {

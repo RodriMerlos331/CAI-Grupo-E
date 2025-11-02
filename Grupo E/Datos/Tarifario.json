@@ -5,8 +5,14 @@
   "PreciosPorOrigenDestinos": [
     {
       "Tipo": "S",
-      "CodigoCDOrigen": "CD01",
-      "CodigoCDDestino": "CD02",
+      "CodigoCDOrigen": "Retiro",
+      "CodigoCDDestino": "Córdoba",
+      "Precio": 12.50
+    },
+    {
+      "Tipo": "S",
+      "CodigoCDOrigen": "Retiro",
+      "CodigoCDDestino": "LaPlata",
       "Precio": 12.50
     },
     {
@@ -29,3 +35,5 @@
     }
   ]
 }
+
+
