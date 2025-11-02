@@ -6,13 +6,14 @@
    "DniFletero": 12345678,
     "CuitEmpresaTransportista": "30-12345678-9",
   */
-
+  //DIFERENTES POSIBILIDADES:
   {
-    "CodigoCD": "Retiro",
+    "CodigoCD": "CD01",
+    "Terminal": "Retiro",
     "CodigoLocalidad": "CABA"
   },
   {
-    "CodigoCD": "Liniers",
+    "CodigoCD": "CD01",
     "CodigoLocalidad": "CABA"
   },
   {
@@ -20,6 +21,7 @@
     "CodigoLocalidad": "Morón"
   },
   {
+    //está ok esto?
     "CodigoCD": "La PlataTerminal",
     "CodigoLocalidad": "LaPlata"
   }

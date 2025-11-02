@@ -1,7 +1,7 @@
 [
 
   {
-    "CodigoLocalidad": "GBA",
+    "CodigoLocalidad": "Banfield",
     "Provincia": "BuenosAires"
   },
   {
@@ -9,11 +9,13 @@
     "Provincia": "BuenosAires"
   },
   {
+    //está ok el codigo sea así ?
     "CodigoLocalidad": "LaPlata",
     "Provincia": "BuenosAires"
   },
   {
     "CodigoLocalidad": "Morón",
-    "Provincia": "BuenosAires"
+    "Provincia": "Buenos aires"
+      //qué es mejor? 
   }
 ]

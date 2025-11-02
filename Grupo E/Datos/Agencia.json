@@ -1,17 +1,20 @@
 [
   {
-    "CodAgencia": "AG001",
-    "CodigoCD": "CD01",
+    //chequear
+    "CodAgencia": "Alto Palermo",
+    "CodigoCD": "Retiro",
+
+    //Comision lo matamos?
     "ComisionPorEncomienda": 0.10
   },
   {
-    "CodAgencia": "AG002",
-    "CodigoCD": "CD02",
+    "CodAgencia": "DOT",
+    "CodigoCD": "Retiro",
     "ComisionPorEncomienda": 0.15
   },
   {
-    "CodAgencia": "AG003",
-    "CodigoCD": "CD03",
+    "CodAgencia": "Mataderos",
+    "CodigoCD": "Liniers",
     "ComisionPorEncomienda": 0.08
   }
 ]

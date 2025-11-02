@@ -9,6 +9,6 @@ namespace Grupo_E.Almacenes
     internal class DatosGeneralesEntidad
     {
         public string Dato { get; set; }
-        public List<TipoDato> TipoDatos { get; set; } = new List<TipoDato>();
+        public List<TipoDatoEnum> TipoDatos { get; set; } = new List<TipoDatoEnum>();
     }
 }

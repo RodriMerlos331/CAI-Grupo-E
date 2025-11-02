@@ -73,9 +73,9 @@
     <Compile Include="Almacenes\ServicioParada.cs" />
     <Compile Include="Almacenes\TarifarioAlmacen.cs" />
     <Compile Include="Almacenes\TarifarioEntidad.cs" />
-    <Compile Include="Almacenes\TipoArrendamiento.cs" />
+    <Compile Include="Almacenes\TipoArrendamientoEnum.cs" />
     <Compile Include="Almacenes\TipoBultoEnum.cs" />
-    <Compile Include="Almacenes\TipoDato.cs" />
+    <Compile Include="Almacenes\TipoDatoEnum.cs" />
     <Compile Include="Almacenes\TipoHDREnum.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionAgenciaCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionConDestinoCC.cs" />
@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Datos\Omnibus.json" />
     <None Include="Datos\Agencia.json" />
     <None Include="Datos\CentrosDistribucion.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

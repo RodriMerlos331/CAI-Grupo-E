@@ -1,13 +1,30 @@
 [
   {
-    "CuitEmpresaOmnibus": "20-45651288-8",
-    "RazonSocial": "Flechabus",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "RazonSocial": "Plusmar S.A.",
     "Arrendamientos": [
       {
         "Tipo": "A",
-        "Costo": "150",
-        "DateTime": "Febrero"
+        "Costo": 150000.50,
+        "Mes": "2025-10-01T00:00:00"
+      },
+      {
+        "Tipo": "B",
+        "Costo": 170000.00,
+        "Mes": "2025-10-01T00:00:00"
+      },
+      {
+        "Tipo": "C",
+        "Costo": 200000.50,
+        "Mes": "2025-10-01T00:00:00"
+      },
+      {
+        "Tipo": "D",
+        "Costo": 250000.00,
+        "Mes": "2025-10-01T00:00:00"
       }
+
     ]
   }
+
 ]

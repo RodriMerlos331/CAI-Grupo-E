@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class TipoArrendamiento
+    internal class TipoArrendamientoEnum
     {
         public enum tipoArrendamiento
         {

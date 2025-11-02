@@ -1,6 +1,7 @@
 [
   {
-    "Dato": "Parámetros de facturación",
+    //quÃ© hacemos con las tildes? QuÃ© onda espacios? 
+    "Dato": "Parï¿½metros de facturaciï¿½n",
     "TipoDatos": [
       {
         "Tipo": "CUITTutasa",
@@ -13,7 +14,7 @@
     ]
   },
   {
-    "Dato": "Parámetros AFIP",
+    "Dato": "Parï¿½metros AFIP",
     "TipoDatos": [
       {
         "Tipo": "CodigoAutorizacionElectronica",
