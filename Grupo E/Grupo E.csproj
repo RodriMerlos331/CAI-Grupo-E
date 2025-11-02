@@ -52,7 +52,7 @@
     <Compile Include="Almacenes\AgenciaEntidad.cs" />
     <Compile Include="Almacenes\Arrendamiento.cs" />
     <Compile Include="Almacenes\CDAlmacen.cs" />
-    <Compile Include="Almacenes\CDEntidad.cs" />
+    <Compile Include="Almacenes\CentroDeDistribucionEnt.cs" />
     <Compile Include="Almacenes\ClienteAlmacen.cs" />
     <Compile Include="Almacenes\ClienteEntidad.cs" />
     <Compile Include="Almacenes\CuentaCorriente.cs" />

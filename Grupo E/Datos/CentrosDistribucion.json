@@ -10,19 +10,23 @@
   {
     "CodigoCD": "CD01",
     "Terminal": "Retiro",
-    "CodigoLocalidad": "CABA"
+    "CodigoLocalidad": "CABA",
+    "NombreTerminal": "Terminal Retiro"
   },
   {
     "CodigoCD": "CD01",
-    "CodigoLocalidad": "CABA"
+    "CodigoLocalidad": "CABA",
+    "NombreTerminal": "Liniers"
   },
   {
     "CodigoCD": "MorónTerminal",
-    "CodigoLocalidad": "Morón"
+    "CodigoLocalidad": "Morón",
+    "NombreTerminal": "Terminal Morón"
   },
   {
     //está ok esto?
     "CodigoCD": "La PlataTerminal",
-    "CodigoLocalidad": "LaPlata"
+    "CodigoLocalidad": "LaPlata",
+    "NombreTerminal": "Terminal La Plata"
   }
 ]
