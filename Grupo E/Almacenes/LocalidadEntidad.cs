@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class CDEntidad
+    internal class LocalidadEntidad
     {
-        public string CodigoCD { get; set; }
         public string CodigoLocalidad { get; set; }
-        //decimal AlquilerMensualTerminal { get; set; }
+        public string Provincia { get; set; }
     }
 }

@@ -1,0 +1,26 @@
+[
+  /*
+  public string CodigoCD { get; set; }
+        public string CodigoLocalidad { get; set; }
+        decimal AlquilerMensualTerminal { get; set; }
+   "DniFletero": 12345678,
+    "CuitEmpresaTransportista": "30-12345678-9",
+  */
+
+  {
+    "CodigoCD": "Retiro",
+    "CodigoLocalidad": "CABA"
+  },
+  {
+    "CodigoCD": "Liniers",
+    "CodigoLocalidad": "CABA"
+  },
+  {
+    "CodigoCD": "MorónTerminal",
+    "CodigoLocalidad": "Morón"
+  },
+  {
+    "CodigoCD": "La PlataTerminal",
+    "CodigoLocalidad": "LaPlata"
+  }
+]

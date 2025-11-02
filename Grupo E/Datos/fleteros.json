@@ -1,31 +1,17 @@
 [
   {
-    "DniFletero": 30112233,
+    "DniFletero": 12345678,
     "CuitEmpresaTransportista": "30-12345678-9",
     "CodCDAsociados": [
-      "CD001",
-      "CD002"
+      "Retiro",
+      "Liniers"
     ]
   },
   {
-    "DniFletero": 27344556,
-    "CuitEmpresaTransportista": "27-87654321-0",
+    "DniFletero": 23456789,
+    "CuitEmpresaTransportista": "30-12345678-9",
     "CodCDAsociados": [
-      "CD003"
+      "MorónTerminal"
     ]
-  },
-  {
-    "DniFletero": 20199877,
-    "CuitEmpresaTransportista": "20-11223344-5",
-    "CodCDAsociados": [
-      "CD001",
-      "CD004",
-      "CD005"
-    ]
-  },
-  {
-    "DniFletero": 34123456,
-    "CuitEmpresaTransportista": "34-55667788-2",
-    "CodCDAsociados": []
   }
 ]

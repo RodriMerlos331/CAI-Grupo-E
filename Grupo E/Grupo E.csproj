@@ -62,6 +62,8 @@
     <Compile Include="Almacenes\FleteroEntidad.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_UMAlmacen.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_UMEntidad.cs" />
+    <Compile Include="Almacenes\LocalidadAlmacen.cs" />
+    <Compile Include="Almacenes\LocalidadEntidad.cs" />
     <Compile Include="Almacenes\OmnibusAlmacen.cs" />
     <Compile Include="Almacenes\OmnibusEntidad.cs" />
     <Compile Include="Almacenes\PreciosPorOrigenDestino.cs" />
@@ -192,8 +194,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Datos\Localidades.json" />
-    <None Include="Datos\Fleteros.json" />
+    <None Include="Datos\CentrosDistribucion.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\Localidades.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\Fleteros.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.resx">
