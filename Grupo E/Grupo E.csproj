@@ -50,6 +50,9 @@
     <Compile Include="Almacenes\Arrendamiento.cs" />
     <Compile Include="Almacenes\CDAlmacen.cs" />
     <Compile Include="Almacenes\CDEntidad.cs" />
+    <Compile Include="Almacenes\ClienteAlmacen.cs" />
+    <Compile Include="Almacenes\ClienteEntidad.cs" />
+    <Compile Include="Almacenes\CuentaCorriente.cs" />
     <Compile Include="Almacenes\DatosGeneralesAlmacen.cs" />
     <Compile Include="Almacenes\DatosGeneralesEntidad.cs" />
     <Compile Include="Almacenes\EmpresaServicioLargaDistanciaAlmacen.cs" />
