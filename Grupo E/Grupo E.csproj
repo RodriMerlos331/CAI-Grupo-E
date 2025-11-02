@@ -61,8 +61,11 @@
     <Compile Include="Almacenes\EmpresaTransportistaEntidad.cs" />
     <Compile Include="Almacenes\EncomiendaAlmacen.cs" />
     <Compile Include="Almacenes\EncomiendaEntidad.cs" />
+    <Compile Include="Almacenes\EstadoHDR.cs" />
     <Compile Include="Almacenes\FleteroAlmacen.cs" />
     <Compile Include="Almacenes\FleteroEntidad.cs" />
+    <Compile Include="Almacenes\HDR_Distribucion_MDAlmacen.cs" />
+    <Compile Include="Almacenes\HDR_Distribucion_MDEntidad.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_UMAlmacen.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_UMEntidad.cs" />
     <Compile Include="Almacenes\LocalidadAlmacen.cs" />

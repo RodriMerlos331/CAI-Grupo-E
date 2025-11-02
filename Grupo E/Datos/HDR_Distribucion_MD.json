@@ -1,0 +1,23 @@
+[
+  {
+    "NumeroHDRMD": 5001,
+    "estadoHDR": "En_Transito",
+    "Encomiendas": [ 301, 302, 303 ],
+    "CodigoParada": 101,
+    "Destino": "Rosario"
+  },
+  {
+    "NumeroHDRMD": 5002,
+    "estadoHDR": "Cumplida",
+    "Encomiendas": [ 304, 305 ],
+    "CodigoParada": 102,
+    "Destino": "Córdoba"
+  },
+  {
+    "NumeroHDRMD": 5003,
+    "estadoHDR": "Asignada",
+    "Encomiendas": [ 306, 307, 308, 309 ],
+    "CodigoParada": 103,
+    "Destino": "Mendoza"
+  }
+]

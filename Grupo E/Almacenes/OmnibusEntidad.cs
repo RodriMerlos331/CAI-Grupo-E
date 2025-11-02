@@ -11,7 +11,7 @@ namespace Grupo_E.Almacenes
         public string ServicioID { get; set; }
         public string CuitEmpresaOmnibus { get; set; }
         public string Patente { get; set; }
-        public List<Arrendamiento> Arrendamientos { get; set; } = new List<Arrendamiento>();
+        public TipoArrendamiento Tipo { get; set; }
         public int CapacidadActual { get; set; }
         public List<ServicioParada> Paradas { get; set; } = new List<ServicioParada>();
     }
