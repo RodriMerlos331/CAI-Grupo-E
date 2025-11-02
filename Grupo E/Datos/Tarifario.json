@@ -1,0 +1,31 @@
+{
+  "ExtraEntregaDomicilio": 2.50,
+  "ExtraRetiro": 1.75,
+  "ExtraAgencia": 1.20,
+  "PreciosPorOrigenDestinos": [
+    {
+      "Tipo": "S",
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD02",
+      "Precio": 12.50
+    },
+    {
+      "Tipo": "M",
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD03",
+      "Precio": 18.90
+    },
+    {
+      "Tipo": "L",
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD04",
+      "Precio": 23.75
+    },
+    {
+      "Tipo": "XL",
+      "CodigoCDOrigen": "CD03",
+      "CodigoCDDestino": "CD05",
+      "Precio": 30.00
+    }
+  ]
+}

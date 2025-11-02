@@ -1,0 +1,17 @@
+[
+  {
+    "CodAgencia": "AG001",
+    "CodigoCD": "CD01",
+    "ComisionPorEncomienda": 0.10
+  },
+  {
+    "CodAgencia": "AG002",
+    "CodigoCD": "CD02",
+    "ComisionPorEncomienda": 0.15
+  },
+  {
+    "CodAgencia": "AG003",
+    "CodigoCD": "CD03",
+    "ComisionPorEncomienda": 0.08
+  }
+]

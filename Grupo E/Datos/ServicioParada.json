@@ -1,0 +1,74 @@
+[
+  {
+    "ServicioID": "SRV-001",
+    "CuitEmpresaOmnibus": "30-99999999-7",
+    "Patente": "AE456RT",
+    "Tipo": "A",
+    "CapacidadActual": 50,
+    "Paradas": [
+      {
+        "CodigoCD": "CD01",
+        "CodigoParada": 1001,
+        "FechaYHoraLlega": "2025-11-01T08:00:00",
+        "FechaYHoraSale": "2025-11-01T08:15:00",
+        "HDRDistribucionMD": [ 501, 502 ],
+        "ABajar": [ 12, 45 ],
+        "ASubir": [ 60, 77 ]
+      },
+      {
+        "CodigoCD": "CD02",
+        "CodigoParada": 1002,
+        "FechaYHoraLlega": "2025-11-01T10:30:00",
+        "FechaYHoraSale": "2025-11-01T10:50:00",
+        "HDRDistribucionMD": [ 503 ],
+        "ABajar": [ 77 ],
+        "ASubir": [ 99, 105 ]
+      }
+    ]
+  },
+  {
+    "ServicioID": "SRV-002",
+    "CuitEmpresaOmnibus": "30-88888888-2",
+    "Patente": "AF123BC",
+    "Tipo": "B",
+    "CapacidadActual": 42,
+    "Paradas": [
+      {
+        "CodigoCD": "CD10",
+        "CodigoParada": 2001,
+        "FechaYHoraLlega": "2025-11-02T09:10:00",
+        "FechaYHoraSale": "2025-11-02T09:25:00",
+        "HDRDistribucionMD": [ 601 ],
+        "ABajar": [ 33, 34 ],
+        "ASubir": [ 40 ]
+      },
+      {
+        "CodigoCD": "CD11",
+        "CodigoParada": 2002,
+        "FechaYHoraLlega": "2025-11-02T12:40:00",
+        "FechaYHoraSale": "2025-11-02T13:00:00",
+        "HDRDistribucionMD": [ 602, 603 ],
+        "ABajar": [ 40 ],
+        "ASubir": [ 51, 52 ]
+      }
+    ]
+  },
+  {
+    "ServicioID": "SRV-003",
+    "CuitEmpresaOmnibus": "30-77777777-3",
+    "Patente": "AG789ZZ",
+    "Tipo": "D",
+    "CapacidadActual": 55,
+    "Paradas": [
+      {
+        "CodigoCD": "CD20",
+        "CodigoParada": 3001,
+        "FechaYHoraLlega": "2025-11-03T07:45:00",
+        "FechaYHoraSale": "2025-11-03T08:05:00",
+        "HDRDistribucionMD": [ 701 ],
+        "ABajar": [ 88, 89 ],
+        "ASubir": [ 90, 91 ]
+      }
+    ]
+  }
+]

@@ -45,6 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Almacenes\AgenciaAlmacen.cs" />
+    <Compile Include="Almacenes\AgenciaEntidad.cs" />
+    <Compile Include="Almacenes\Arrendamiento.cs" />
+    <Compile Include="Almacenes\DatosGeneralesAlmacen.cs" />
+    <Compile Include="Almacenes\DatosGeneralesEntidad.cs" />
+    <Compile Include="Almacenes\EmpresaServicioLargaDistanciaAlmacen.cs" />
+    <Compile Include="Almacenes\EmpresaServicioLargaDistanciaEntidad.cs" />
+    <Compile Include="Almacenes\HDR_Distribucion_UMAlmacen.cs" />
+    <Compile Include="Almacenes\HDR_Distribucion_UMEntidad.cs" />
+    <Compile Include="Almacenes\OmnibusAlmacen.cs" />
+    <Compile Include="Almacenes\OmnibusEntidad.cs" />
+    <Compile Include="Almacenes\PreciosPorOrigenDestino.cs" />
+    <Compile Include="Almacenes\ServicioParada.cs" />
+    <Compile Include="Almacenes\TarifarioAlmacen.cs" />
+    <Compile Include="Almacenes\TarifarioEntidad.cs" />
+    <Compile Include="Almacenes\TipoArrendamiento.cs" />
+    <Compile Include="Almacenes\TipoBulto.cs" />
+    <Compile Include="Almacenes\TipoDato.cs" />
+    <Compile Include="Almacenes\TipoHDR.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionAgenciaCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionConDestinoCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionDomicilioParticularCC.cs" />
@@ -207,6 +226,8 @@
       <DependentUpon>F07_RetirarEnCDForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Datos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

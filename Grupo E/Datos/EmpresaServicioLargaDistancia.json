@@ -1,0 +1,13 @@
+[
+  {
+    "CuitEmpresaOmnibus": "20-45651288-8",
+    "RazonSocial": "Flechabus",
+    "Arrendamientos": [
+      {
+        "Tipo": "A",
+        "Costo": "150",
+        "DateTime": "Febrero"
+      }
+    ]
+  }
+]
