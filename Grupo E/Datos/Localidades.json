@@ -1,21 +1,22 @@
 [
-
   {
     "CodigoLocalidad": "Banfield",
-    "Provincia": "BuenosAires"
-  },
+    "Provincia": "BuenosAires",
+    "Nombre": "Banfield"
+   },
   {
     "CodigoLocalidad": "CABA",
-    "Provincia": "BuenosAires"
+    "Provincia": "BuenosAires",
+    "Nombre": "Ciudad Autónoma de Buenos Aires"
   },
   {
-    //está ok el codigo sea así ?
     "CodigoLocalidad": "LaPlata",
-    "Provincia": "BuenosAires"
+    "Provincia": "BuenosAires",
+    "Nombre": "La Plata"
   },
   {
     "CodigoLocalidad": "Morón",
-    "Provincia": "Buenos aires"
-      //qué es mejor? 
+    "Provincia": "Buenos aires",
+    "Nombre": "Morón"
   }
 ]

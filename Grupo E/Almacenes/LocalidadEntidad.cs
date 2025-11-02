@@ -9,6 +9,7 @@ namespace Grupo_E.Almacenes
     internal class LocalidadEntidad
     {
         public string CodigoLocalidad { get; set; }
+        public string Nombre { get; set; }
         public string Provincia { get; set; }
     }
 }
