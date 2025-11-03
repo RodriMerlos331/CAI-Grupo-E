@@ -8,7 +8,7 @@ namespace Grupo_E.Almacenes
 {
     internal class ClienteEnt
     {
-        public string CUITCliente { get; set; }
+        public string CUIT { get; set; }
         public string Domicilio { get; set; }
     }
 }

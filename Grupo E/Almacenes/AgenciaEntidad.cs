@@ -8,8 +8,8 @@ namespace Grupo_E.Almacenes
 {
     internal class AgenciaEntidad
     {
-        public string CodAgencia { get; set; }
+        public string CodigoAgencia { get; set; }
         public string CodigoCD { get; set; }
-        public decimal ComisionPorEncomienda { get; set; }
+        //public decimal ComisionPorEncomienda { get; set; }
     }
 }

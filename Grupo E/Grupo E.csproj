@@ -207,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Datos\Clientes.json" />
     <None Include="Datos\Facturas.json" />
     <None Include="Datos\HDR_Distribucion_MD.json" />
     <None Include="Datos\Omnibus.json" />

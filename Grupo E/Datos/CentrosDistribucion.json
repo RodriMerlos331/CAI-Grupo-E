@@ -1,32 +1,20 @@
 [
-  /*
-  public string CodigoCD { get; set; }
-        public string CodigoLocalidad { get; set; }
-        decimal AlquilerMensualTerminal { get; set; }
-   "DniFletero": 12345678,
-    "CuitEmpresaTransportista": "30-12345678-9",
-  */
-  //DIFERENTES POSIBILIDADES:
+  
   {
     "CodigoCD": "CD01",
-    "Terminal": "Retiro",
     "CodigoLocalidad": "CABA",
-    "NombreTerminal": "Terminal Retiro"
+    "NombreTerminal": "Retiro"
   },
   {
-    "CodigoCD": "CD01",
+    "CodigoCD": "CD02",
     "CodigoLocalidad": "CABA",
     "NombreTerminal": "Liniers"
   },
   {
-    "CodigoCD": "MorónTerminal",
-    "CodigoLocalidad": "Morón",
-    "NombreTerminal": "Terminal Morón"
-  },
-  {
-    //está ok esto?
-    "CodigoCD": "La PlataTerminal",
-    "CodigoLocalidad": "LaPlata",
-    "NombreTerminal": "Terminal La Plata"
+    "CodigoCD": "CD03",
+    "CodigoLocalidad": "CABA",
+    "NombreTerminal": "Constitución"
   }
 ]
+
+

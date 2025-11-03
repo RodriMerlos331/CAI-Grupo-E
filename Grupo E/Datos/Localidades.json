@@ -1,22 +1,32 @@
 [
   {
-    "CodigoLocalidad": "Banfield",
+    /*
+    public string CodigoLocalidad { get; set; }
+        public string Nombre { get; set; }
+        public string Provincia { get; set; }
+    */
+    "CodigoLocalidad": "BN",
     "Provincia": "BuenosAires",
     "Nombre": "Banfield"
-   },
+  },
   {
     "CodigoLocalidad": "CABA",
     "Provincia": "BuenosAires",
     "Nombre": "Ciudad Autónoma de Buenos Aires"
   },
   {
-    "CodigoLocalidad": "LaPlata",
+    "CodigoLocalidad": "LP",
     "Provincia": "BuenosAires",
     "Nombre": "La Plata"
   },
   {
-    "CodigoLocalidad": "Morón",
+    "CodigoLocalidad": "MOR",
     "Provincia": "Buenos aires",
     "Nombre": "Morón"
+  },
+  {
+    "CodigoLocalidad": "LG",
+    "Provincia": "Las grutas",
+    "Nombre": "Viedma"
   }
 ]
