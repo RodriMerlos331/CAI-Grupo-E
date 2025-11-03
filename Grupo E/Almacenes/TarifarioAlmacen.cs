@@ -8,6 +8,7 @@ namespace Grupo_E.Almacenes
 {
     static class TarifarioAlmacen
     {
+        /*
         public static List<TarifarioEntidad> Tarifario { get; }
 
         static TarifarioAlmacen()
@@ -24,5 +25,6 @@ namespace Grupo_E.Almacenes
             var TarifarioJson = System.Text.Json.JsonSerializer.Serialize(Tarifario);
             File.WriteAllText("Tarifarios.json", TarifarioJson);
         }
+        */
     }
 }

@@ -20,7 +20,7 @@ namespace Grupo_E
 
             //Guardo los datos:
 
-            //FleteroAlmacen.Grabar();
+            //LocalidadAlmacen.Grabar();
         }
     }
 }

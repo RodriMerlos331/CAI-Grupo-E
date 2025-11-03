@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
 
         static LocalidadAlmacen()
         {
-            if (File.Exists("Localidades.json"))
+            if (File.Exists(@"Datos/Localidades.json"))
             {
-                var LocalidadJSON = File.ReadAllText("Localidades.json");
+                var LocalidadJSON = File.ReadAllText(@"Datos/Localidades.json");
                 Localidad = JsonConvert.DeserializeObject<List<LocalidadEntidad>>(LocalidadJSON);
             }
         }
@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var LocalidadJSON = JsonConvert.SerializeObject(Localidad);
-            File.WriteAllText("Localidades.json", LocalidadJSON);
+            File.WriteAllText(@"Datos/Localidades.json", LocalidadJSON);
         }
     }
 }

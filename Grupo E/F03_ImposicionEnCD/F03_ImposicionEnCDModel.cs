@@ -1,4 +1,5 @@
-﻿using Grupo_E.ImposicionEnCallCenter;
+﻿using Grupo_E.Almacenes;
+using Grupo_E.ImposicionEnCallCenter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,29 @@ namespace Grupo_E.F03_ImposicionEnCD
 {
     public class F03_ImposicionEnCDModel
     {
-        //Tiene sentido las localidades disponibles cargarlas acá? O se podrían hacer directamente desde la clase ? 
-        public string[] Localidad = new string[] { "CABA", "GBA", "Córdoba" };
+        public string[] Localidad => LocalidadAlmacen.Localidad
+    .Select(l => l.Nombre).ToArray();
+
         //Localidades a sumar: , "Tucumán","Corrientes","Neuquén","Viedma"
 
-        public string[] TamanoBulto = new string[] { "S", "M", "L", "XL" };
+        public string[] TamanoBulto => Enum.GetValues(typeof(TipoBultoEnum))
+                                               .Cast<TipoBultoEnum>()
+                                               .Select(t => t.ToString())
+                                               .ToArray();
 
+        //new string[] { "S", "M", "L", "XL" };
+
+     
         public readonly Dictionary<string, string> clientes = new Dictionary<string, string>
         {
             { "30-12345678-01", "Sanitarios S.A" },
             { "30-87654321-09", "Gomeria Altamirano" },
             { "30-11223344-05", "Huggies" }
         };
+
+        
+        //public Dictionary<string, string> clientes => ClienteAlmacen.Cliente
+           //.ToDictionary(c => c.CUIT, c => c.Domicilio);
 
 
 

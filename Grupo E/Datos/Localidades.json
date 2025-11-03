@@ -1,10 +1,6 @@
 [
   {
-    /*
-    public string CodigoLocalidad { get; set; }
-        public string Nombre { get; set; }
-        public string Provincia { get; set; }
-    */
+    
     "CodigoLocalidad": "BN",
     "Provincia": "BuenosAires",
     "Nombre": "Banfield"
