@@ -8,12 +8,12 @@ namespace Grupo_E.Almacenes
 {
     internal class FacturaEnt
     {
-      public int NroFactura { get; set; }
+      public string NroFactura { get; set; }
        public string CuitTutasa { get; set; }
         public string CuitCliente { get; set; }
         public DateTime FechaEmision { get; set; }
 
-        public List<int> EncomiendasIncluidas { get; set; }`
+        public List<string> EncomiendasIncluidas { get; set; }`
         public decimal Subtotal { get; set; }
 
         public decimal Iva { get; set; }
