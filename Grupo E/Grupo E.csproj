@@ -209,18 +209,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+<<<<<<< HEAD
     <None Include="Datos\Clientes.json" />
     <None Include="Datos\Facturas.json" />
     <None Include="Datos\HdrMD.json" />
     <None Include="Datos\Encomienda.json" />
     <None Include="Datos\Omnibus.json" />
     <None Include="Datos\Agencia.json" />
+=======
+    <None Include="Datos\Clientes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\Facturas.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\HdrMD.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\Omnibus.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\Agencias.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+>>>>>>> 48faeb43941c5ec724ae9a8921e3e00ae9426bb1
     <None Include="Datos\CentrosDistribucion.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Datos\DatosGenerales.json" />
-    <None Include="Datos\EmpresaServicioLargaDistancia.json" />
-    <None Include="Datos\HdrUM.json" />
+    <None Include="Datos\DatosGenerales.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\EmpresaServicioLargaDistancia.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Datos\HdrUM.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Datos\Encomiendas.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -230,7 +254,9 @@
     <None Include="Datos\Fleteros.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Datos\Tarifario.json" />
+    <None Include="Datos\Tarifario.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
