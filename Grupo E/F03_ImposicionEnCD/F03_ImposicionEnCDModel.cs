@@ -63,12 +63,13 @@ namespace Grupo_E.F03_ImposicionEnCD
             var agencias = AgenciaAlmacen.Agencia
                         .Where(a => cds.Any(cd => cd.CodigoCD == a.CodigoCD))
                         .Select(a =>
-                            !string.IsNullOrEmpty(a.CodigoAgencia) ? a.CodigoAgencia :
-                            a.CodigoAgencia) 
+                            a.NombreAgencia )
+                        .Distinct()
                         .ToList();
 
             var terminales = cds
-                        .Select(cd => string.IsNullOrEmpty(cd.CodigoCD) ? cd.NombreTerminal : cd.CodigoCD)
+                        .Select(cd => cd.NombreTerminal)
+                        .Distinct()
                         .ToList();
 
             return (agencias, terminales);

@@ -68,6 +68,9 @@ namespace Grupo_E.ImposicionEnCD
         
             var informacionLocalidades = modelo.Localidades[localidadSeleccionada];
 
+            TerminalesCbo.Items.Clear();
+            AgenciaCbo.Items.Clear();
+
             foreach (var agencia in informacionLocalidades.Agencias)
                 AgenciaCbo.Items.Add(agencia);
 

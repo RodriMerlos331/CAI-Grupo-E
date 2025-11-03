@@ -1,43 +1,33 @@
 [
   {
     "CodigoCD": "CD01",
-    "CodigoLocalidad": "BN",
-    "NombreTerminal": "Banfield Central"
+    "CodigoLocalidad": "CABA",
+    "NombreTerminal": "Constitucion"
   },
   {
     "CodigoCD": "CD02",
-    "CodigoLocalidad": "BN",
-    "NombreTerminal": "Banfield Oeste"
+    "CodigoLocalidad": "CABA",
+    "NombreTerminal": "Retiro"
   },
   {
     "CodigoCD": "CD03",
     "CodigoLocalidad": "CABA",
-    "NombreTerminal": "Retiro Centro"
-  },
-  {
-    "CodigoCD": "CD04",
-    "CodigoLocalidad": "CABA",
     "NombreTerminal": "Dock Sur"
   },
   {
-    "CodigoCD": "CD05",
+    "CodigoCD": "CD04",
     "CodigoLocalidad": "LP",
-    "NombreTerminal": "La Plata Centro"
+    "NombreTerminal": "La Plata"
+  },
+  {
+    "CodigoCD": "CD05",
+    "CodigoLocalidad": "MOR",
+    "NombreTerminal": "Morón"
   },
   {
     "CodigoCD": "CD06",
-    "CodigoLocalidad": "LP",
-    "NombreTerminal": "La Plata Norte"
-  },
-  {
-    "CodigoCD": "CD07",
-    "CodigoLocalidad": "MOR",
-    "NombreTerminal": "Morón Centro"
-  },
-  {
-    "CodigoCD": "CD08",
     "CodigoLocalidad": "LG",
-    "NombreTerminal": "Viedma Central"
+    "NombreTerminal": "LasGrutas"
   }
 ]
 
