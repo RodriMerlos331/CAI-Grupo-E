@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class AgenciaEntidad
+    internal class CentroDeDistribucionEntidad
     {
-        public string CodigoAgencia { get; set; }
         public string CodigoCD { get; set; }
+        public string CodigoLocalidad { get; set; }
+        public string NombreTerminal { get; set; }
 
-        public string NombreAgencia { get; set; }
-        //public decimal ComisionPorEncomienda { get; set; }
+        //decimal AlquilerMensualTerminal { get; set; }
     }
 }

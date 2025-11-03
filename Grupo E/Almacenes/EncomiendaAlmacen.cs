@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
 
         static EncomiendaAlmacen()
         {
-            if (File.Exists(@"Datos/Encomiendas.json"))
+            if (File.Exists("Encomiendas.json"))
             {
-                var EncomiendaJson = File.ReadAllText(@"Datos/Encomiendas.json");
+                var EncomiendaJson = File.ReadAllText("Encomiendas.json");
                 Encomienda = JsonConvert.DeserializeObject<List<EncomiendaEntidad>>(EncomiendaJson);
             }
         }
@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var EncomiendaJson = JsonConvert.SerializeObject(Encomienda);
-            File.WriteAllText(@"Datos/Encomiendas.json", EncomiendaJson);
+            File.WriteAllText("Encomiendas.json", EncomiendaJson);
         }
     }
 }

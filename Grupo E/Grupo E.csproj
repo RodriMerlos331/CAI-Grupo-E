@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,7 +52,7 @@
     <Compile Include="Almacenes\AgenciaEntidad.cs" />
     <Compile Include="Almacenes\Arrendamiento.cs" />
     <Compile Include="Almacenes\CentroDeDistribucionAlmacen.cs" />
-    <Compile Include="Almacenes\CentroDeDistribucionEnt.cs" />
+    <Compile Include="Almacenes\CentroDeDistribucionEntidad.cs" />
     <Compile Include="Almacenes\ClienteAlmacen.cs" />
     <Compile Include="Almacenes\ClienteEntidad.cs" />
     <Compile Include="Almacenes\CuentaCorriente.cs" />
@@ -75,7 +75,6 @@
     <Compile Include="Almacenes\HDR_Distribucion_MDEntidad.cs" />
     <Compile Include="Almacenes\HDRDistribucionUMAlmacen.cs" />
     <Compile Include="Almacenes\HDRDistribucionUMEntidad.cs" />
-    <Compile Include="Almacenes\Historial.cs" />
     <Compile Include="Almacenes\LocalidadAlmacen.cs" />
     <Compile Include="Almacenes\LocalidadEntidad.cs" />
     <Compile Include="Almacenes\OmnibusAlmacen.cs" />
@@ -87,7 +86,6 @@
     <Compile Include="Almacenes\TipoArrendamientoEnum.cs" />
     <Compile Include="Almacenes\TipoBultoEnum.cs" />
     <Compile Include="Almacenes\TipoDatoEnum.cs" />
-    <Compile Include="Almacenes\TipoEntregaEnum.cs" />
     <Compile Include="Almacenes\TipoHDREnum.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionAgenciaCC.cs" />
     <Compile Include="F01_ImposicionEnCallCenter\ImposicionConDestinoCC.cs" />
@@ -209,14 +207,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-<<<<<<< HEAD
-    <None Include="Datos\Clientes.json" />
-    <None Include="Datos\Facturas.json" />
-    <None Include="Datos\HdrMD.json" />
-    <None Include="Datos\Encomienda.json" />
-    <None Include="Datos\Omnibus.json" />
-    <None Include="Datos\Agencia.json" />
-=======
     <None Include="Datos\Clientes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -232,7 +222,6 @@
     <None Include="Datos\Agencias.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
->>>>>>> 48faeb43941c5ec724ae9a8921e3e00ae9426bb1
     <None Include="Datos\CentrosDistribucion.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -51,14 +51,47 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                         }
                     }
                 },
+                {
+                    2002, new EstadoDeEncomienda
+                    {
+                        TrackingId = 2002,
+                        EstadoActual = EstadoEnvio.EntregadaDomicilio,
+                        FechaHoraUltimoCambio = DateTime.Today.AddHours(-1),
+                        LocalidadActual = "Córdoba Capital",
+                        Origen = "Retiro",
+                        Destino = "Cordoba Capital",
+                        TipoDeBulto = "XL",
+                        Historial = new List<Movimiento>
+                        {
+                            new Movimiento{
+                                Estado = EstadoEnvio.RuteadaEntregaDomicilio,
+                                FechaHora = DateTime.Today.AddHours(-4),
+                                UbicacionAnterior = "Villa Carlos Paz",
+                                TransportistaAsignado = "Ruta Centro",
+                                IdHojaRuta = "HR-811",
+                               
+
+                            },
+                            new Movimiento{
+                                Estado = EstadoEnvio.EntregadaDomicilio,
+                                FechaHora = DateTime.Today.AddHours(-1),
+                                UbicacionAnterior = "Córdoba Capital",
+                                TransportistaAsignado = "Ruta Centro",
+                                IdHojaRuta = "HR-811",
+
+
+                            }
+                        }
+                    }
+                }
                 };
 
             public bool TryGet(int trackingId, out EstadoDeEncomienda model)
             {
                 return data.TryGetValue(trackingId, out model);
             }
+        }
     }
-}
 
 
 

@@ -21,8 +21,6 @@ namespace Grupo_E
             //Guardo los datos:
 
             //LocalidadAlmacen.Grabar();
-            EncomiendaAlmacen.Grabar();
-            CentroDeDistribucionAlmacen.Grabar();   
         }
     }
 }

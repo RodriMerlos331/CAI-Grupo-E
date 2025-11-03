@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
 
         static AgenciaAlmacen()
         {
-            if (File.Exists("Agencias.json"))
+            if (File.Exists(@"Datos/Agencias.json"))
             {
-                var AgenciaJson = File.ReadAllText("Agencias.json");
+                var AgenciaJson = File.ReadAllText(@"Datos/Agencias.json");
                 Agencia = JsonConvert.DeserializeObject<List<AgenciaEntidad>>(AgenciaJson);
             }
         }
@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var AgenciaJson = JsonConvert.SerializeObject(Agencia);
-            File.WriteAllText("Agencias.json", AgenciaJson);
+            File.WriteAllText(@"Datos/Agencias.json", AgenciaJson);
         }
     }
 }

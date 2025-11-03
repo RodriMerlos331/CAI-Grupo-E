@@ -65,8 +65,11 @@ namespace Grupo_E.ImposicionEnCD
             if (string.IsNullOrEmpty(localidadSeleccionada))
                 return;
 
-            // Acceso directo al diccionario del modelo
+        
             var informacionLocalidades = modelo.Localidades[localidadSeleccionada];
+
+            TerminalesCbo.Items.Clear();
+            AgenciaCbo.Items.Clear();
 
             foreach (var agencia in informacionLocalidades.Agencias)
                 AgenciaCbo.Items.Add(agencia);
