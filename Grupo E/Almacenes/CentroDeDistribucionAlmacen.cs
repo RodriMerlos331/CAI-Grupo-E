@@ -10,21 +10,21 @@ namespace Grupo_E.Almacenes
 {
     internal class CentroDeDistribucionAlmacen
     {
-        public static List<CentroDeDistribucionEntidad> CentroDeDistribucion { get; }
+        public static List<CentroDeDistribucionEnt> CentroDeDistribucion { get; }
 
         static CentroDeDistribucionAlmacen()
         {
-            if (File.Exists("CentrosDistribucion.json"))
+            if (File.Exists(@"Datos/CentrosDistribucion.json"))
             {
-                var CDJson = File.ReadAllText("CentrosDistribucion.json");
-                CentroDeDistribucion = JsonConvert.DeserializeObject<List<CentroDeDistribucionEntidad>>(CDJson);
+                var CDJson = File.ReadAllText((@"Datos/CentrosDistribucion.json"));
+                CentroDeDistribucion = JsonConvert.DeserializeObject<List<CentroDeDistribucionEnt>>(CDJson);
             }
         }
 
         public static void Grabar()
         {
             var CDJson = JsonConvert.SerializeObject(CentroDeDistribucion);
-            File.WriteAllText("CentrosDistribucion.json", CDJson);
+            File.WriteAllText(@"Datos/CentrosDistribucion.json", CDJson);
         }
     }
 }

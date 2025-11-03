@@ -15,6 +15,11 @@
     "CodigoLocalidad": "CABA",
     "NombreTerminal": "Constitución"
   }
+  {
+    "CodigoCD": "CD04",
+    "CodigoLocalidad": "Rosario",
+    "NombreTerminal": "Rosario"
+  }
 ]
 
 

@@ -110,6 +110,11 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         {
 
         }
+
+        private void EstadoDeEncomiendaForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
