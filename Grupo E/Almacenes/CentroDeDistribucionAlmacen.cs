@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class CDAlmacen
+    internal class CentroDeDistribucionAlmacen
     {
     }
 }

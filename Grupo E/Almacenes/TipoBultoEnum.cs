@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class TipoBultoEnum
-    {
-        public enum tipoBulto
+   
+        public enum TipoBultoEnum
         {
             S,
             M,
             L,
             XL
         }
-    }
+    
 }

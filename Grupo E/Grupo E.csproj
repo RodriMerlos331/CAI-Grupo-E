@@ -51,7 +51,7 @@
     <Compile Include="Almacenes\AgenciaAlmacen.cs" />
     <Compile Include="Almacenes\AgenciaEntidad.cs" />
     <Compile Include="Almacenes\Arrendamiento.cs" />
-    <Compile Include="Almacenes\CDAlmacen.cs" />
+    <Compile Include="Almacenes\CentroDeDistribucionAlmacen.cs" />
     <Compile Include="Almacenes\CentroDeDistribucionEnt.cs" />
     <Compile Include="Almacenes\ClienteAlmacen.cs" />
     <Compile Include="Almacenes\ClienteEnt.cs" />
@@ -64,6 +64,8 @@
     <Compile Include="Almacenes\EmpresaTransportistaEntidad.cs" />
     <Compile Include="Almacenes\EncomiendaAlmacen.cs" />
     <Compile Include="Almacenes\EncomiendaEnt.cs" />
+    <Compile Include="Almacenes\EncomiendaFactura.cs" />
+    <Compile Include="Almacenes\EstadoEncomiendaEnum.cs" />
     <Compile Include="Almacenes\EstadoHDREnum.cs" />
     <Compile Include="Almacenes\FacturaAlmacen.cs" />
     <Compile Include="Almacenes\FacturaEnt.cs" />
@@ -71,8 +73,8 @@
     <Compile Include="Almacenes\FleteroEntidad.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_MDAlmacen.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_MDEntidad.cs" />
-    <Compile Include="Almacenes\HDR_Distribucion_UMAlmacen.cs" />
-    <Compile Include="Almacenes\HDR_Distribucion_UMEntidad.cs" />
+    <Compile Include="Almacenes\HDRDistribucionUMAlmacen.cs" />
+    <Compile Include="Almacenes\HDRDistribucionUMEntidad.cs" />
     <Compile Include="Almacenes\LocalidadAlmacen.cs" />
     <Compile Include="Almacenes\LocalidadEntidad.cs" />
     <Compile Include="Almacenes\OmnibusAlmacen.cs" />
