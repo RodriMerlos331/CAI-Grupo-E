@@ -16,9 +16,9 @@ namespace Grupo_E.Almacenes
 
             static ClienteAlmacen()
             {
-                if (File.Exists("Clientes.json"))
+                if (File.Exists(@"Datos/Clientes.json"))
                 {
-                    var ClienteJson = File.ReadAllText("Clientes.json");
+                    var ClienteJson = File.ReadAllText(@"Datos/Clientes.json");
                     Cliente = JsonConvert.DeserializeObject<List<ClienteEntidad>>(ClienteJson) ?? new List<ClienteEntidad>();
                 }
             }
@@ -26,7 +26,7 @@ namespace Grupo_E.Almacenes
             public static void Grabar()
             {
                 var ClienteJson = JsonConvert.SerializeObject(Cliente);
-                File.WriteAllText("Clientes.json", ClienteJson);
+                File.WriteAllText(@"Datos/Clientes.json", ClienteJson);
             }
         
     }

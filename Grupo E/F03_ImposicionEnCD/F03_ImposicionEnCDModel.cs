@@ -24,16 +24,16 @@ namespace Grupo_E.F03_ImposicionEnCD
         //new string[] { "S", "M", "L", "XL" };
 
      
+        /*
         public readonly Dictionary<string, string> clientes = new Dictionary<string, string>
         {
             { "30-12345678-01", "Sanitarios S.A" },
             { "30-87654321-09", "Gomeria Altamirano" },
             { "30-11223344-05", "Huggies" }
         };
-
+        */
         
-        //public Dictionary<string, string> clientes => ClienteAlmacen.Cliente
-           //.ToDictionary(c => c.CUIT, c => c.Domicilio);
+       public Dictionary<string, string> clientes => ClienteAlmacen.Cliente.ToDictionary(c => c.CUIT, c => c.Domicilio);
 
 
 
