@@ -13,7 +13,7 @@ namespace Grupo_E.Almacenes
         public string CuitCliente { get; set; }
         public DateTime FechaEmision { get; set; }
 
-        public List<string> EncomiendasIncluidas { get; set; }`
+        public List<string> EncomiendasIncluidas { get; set; }
         public decimal Subtotal { get; set; }
 
         public decimal Iva { get; set; }

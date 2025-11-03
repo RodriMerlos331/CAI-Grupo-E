@@ -1,12 +1,30 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Grupo_E.Almacenes
 {
     internal class CentroDeDistribucionAlmacen
     {
+        public static List<CentroDeDistribucionEntidad> CentroDeDistribucion { get; }
+
+        static CentroDeDistribucionAlmacen()
+        {
+            if (File.Exists("CentrosDistribucion.json"))
+            {
+                var CDJson = File.ReadAllText("CentrosDistribucion.json");
+                CentroDeDistribucion = JsonConvert.DeserializeObject<List<CentroDeDistribucionEntidad>>(CDJson);
+            }
+        }
+
+        public static void Grabar()
+        {
+            var CDJson = JsonConvert.SerializeObject(CentroDeDistribucion);
+            File.WriteAllText("CentrosDistribucion.json", CDJson);
+        }
     }
 }

@@ -1,7 +1,6 @@
 [
   {
-    //qué hacemos con las tildes? Qué onda espacios? 
-    "Dato": "Par�metros de facturaci�n",
+    "Dato": "Parametros de facturacion",
     "TipoDatos": [
       {
         "Tipo": "CUITTutasa",
@@ -14,7 +13,7 @@
     ]
   },
   {
-    "Dato": "Par�metros AFIP",
+    "Dato": "Parametros AFIP",
     "TipoDatos": [
       {
         "Tipo": "CodigoAutorizacionElectronica",

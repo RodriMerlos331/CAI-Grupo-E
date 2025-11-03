@@ -52,9 +52,9 @@
     <Compile Include="Almacenes\AgenciaEntidad.cs" />
     <Compile Include="Almacenes\Arrendamiento.cs" />
     <Compile Include="Almacenes\CentroDeDistribucionAlmacen.cs" />
-    <Compile Include="Almacenes\CentroDeDistribucionEnt.cs" />
+    <Compile Include="Almacenes\CentroDeDistribucionEntidad.cs" />
     <Compile Include="Almacenes\ClienteAlmacen.cs" />
-    <Compile Include="Almacenes\ClienteEnt.cs" />
+    <Compile Include="Almacenes\ClienteEntidad.cs" />
     <Compile Include="Almacenes\CuentaCorriente.cs" />
     <Compile Include="Almacenes\DatosGeneralesAlmacen.cs" />
     <Compile Include="Almacenes\DatosGeneralesEntidad.cs" />
@@ -63,7 +63,7 @@
     <Compile Include="Almacenes\EmpresaTransportistaAlmacen.cs" />
     <Compile Include="Almacenes\EmpresaTransportistaEntidad.cs" />
     <Compile Include="Almacenes\EncomiendaAlmacen.cs" />
-    <Compile Include="Almacenes\EncomiendaEnt.cs" />
+    <Compile Include="Almacenes\EncomiendaEntidad.cs" />
     <Compile Include="Almacenes\EncomiendaFactura.cs" />
     <Compile Include="Almacenes\EstadoEncomiendaEnum.cs" />
     <Compile Include="Almacenes\EstadoHDREnum.cs" />
@@ -209,7 +209,7 @@
     <None Include="App.config" />
     <None Include="Datos\Clientes.json" />
     <None Include="Datos\Facturas.json" />
-    <None Include="Datos\HDR_Distribucion_MD.json" />
+    <None Include="Datos\HdrMD.json" />
     <None Include="Datos\Omnibus.json" />
     <None Include="Datos\Agencia.json" />
     <None Include="Datos\CentrosDistribucion.json">
@@ -217,7 +217,7 @@
     </None>
     <None Include="Datos\DatosGenerales.json" />
     <None Include="Datos\EmpresaServicioLargaDistancia.json" />
-    <None Include="Datos\HDR_Distribucion_UM.json" />
+    <None Include="Datos\HdrUM.json" />
     <None Include="Datos\Encomiendas.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

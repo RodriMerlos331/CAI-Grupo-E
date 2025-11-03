@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Grupo_E.Almacenes
 {
-    internal class EncomiendaEnt
+    internal class EncomiendaEntidad
     {
         public string Tracking { get; set; }
         public string CodLocalidadOrigen { get; set; }

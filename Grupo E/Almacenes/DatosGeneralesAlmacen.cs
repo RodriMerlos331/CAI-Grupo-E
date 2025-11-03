@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
+
 
 namespace Grupo_E.Almacenes
 {
@@ -14,14 +17,14 @@ namespace Grupo_E.Almacenes
         {
             if (File.Exists("DatosGeneraless.json"))
             {
-                var DatosGeneralesJson = File.ReadAllText("DatosGeneraless.json");
-                DatosGenerales = System.Text.Json.JsonSerializer.Deserialize<List<DatosGeneralesEntidad>>(DatosGeneralesJson) ?? new List<DatosGeneralesEntidad>();
+                var DatosGeneralesJson = File.ReadAllText("DatosGenerales.json");
+                DatosGenerales = JsonConvert.DeserializeObject<List<DatosGeneralesEntidad>>(DatosGeneralesJson) ?? new List<DatosGeneralesEntidad>();
             }
         }
 
         public static void Grabar()
         {
-            var DatosGeneralesJson = System.Text.Json.JsonSerializer.Serialize(DatosGenerales);
+            var DatosGeneralesJson = JsonConvert.SerializeObject(DatosGenerales);
             File.WriteAllText("DatosGeneraless.json", DatosGeneralesJson);
         }
     }

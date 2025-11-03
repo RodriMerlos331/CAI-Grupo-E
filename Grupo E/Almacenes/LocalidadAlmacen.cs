@@ -1,12 +1,30 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Grupo_E.Almacenes
 {
     internal class LocalidadAlmacen
     {
+        public static List<LocalidadEntidad> Localidad { get; }
+
+        static LocalidadAlmacen()
+        {
+            if (File.Exists("Localidades.json"))
+            {
+                var LocalidadJSON = File.ReadAllText("Localidades.json");
+                Localidad = JsonConvert.DeserializeObject<List<LocalidadEntidad>>(LocalidadJSON);
+            }
+        }
+
+        public static void Grabar()
+        {
+            var LocalidadJSON = JsonConvert.SerializeObject(Localidad);
+            File.WriteAllText("Localidades.json", LocalidadJSON);
+        }
     }
 }

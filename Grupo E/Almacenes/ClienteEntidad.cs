@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class ClienteEnt
+    internal class ClienteEntidad
     {
         public string CUIT { get; set; }
         public string Domicilio { get; set; }

@@ -1,28 +1,30 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Grupo_E.Almacenes
 {
     static class HDRDistribucionUMAlmacen
     {
-        public static List<HDRDistribucionUMEntidad> HDR_Distribucion_UM { get; }
+        public static List<HDRDistribucionUMEntidad> HDRDistribucionUM{ get; }
 
         static HDRDistribucionUMAlmacen()
         {
-            if (File.Exists("HDR_Distribucion_UMs.json"))
+            if (File.Exists("HdrUM.json"))
             {
-                var HDR_Distribucion_UMJson = File.ReadAllText("HDR_Distribucion_UMs.json");
-                HDR_Distribucion_UM = System.Text.Json.JsonSerializer.Deserialize<List<HDRDistribucionUMEntidad>>(HDR_Distribucion_UMJson) ?? new List<HDRDistribucionUMEntidad>();
+                var HDRUmJSON = File.ReadAllText("HdrUM.json");
+                HDRDistribucionUM = JsonConvert.DeserializeObject<List<HDRDistribucionUMEntidad>>(HDRUmJSON);
             }
         }
 
         public static void Grabar()
         {
-            var HDR_Distribucion_UMJson = System.Text.Json.JsonSerializer.Serialize(HDR_Distribucion_UM);
-            File.WriteAllText("HDR_Distribucion_UMs.json", HDR_Distribucion_UMJson);
+            var HDRUmJSON = JsonConvert.SerializeObject(HDRDistribucionUM);
+            File.WriteAllText("HdrUM.json", HDRUmJSON);
         }
     }
 }

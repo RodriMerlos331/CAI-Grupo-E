@@ -8,6 +8,7 @@ namespace TP5.Almacenes
 {
     static class HDR_Distribucion_MDAlmacen
     {
+        /*
         public static List<HDR_Distribucion_MDEntidad> HDR_Distribucion_MD { get; }
 
         static HDR_Distribucion_MDAlmacen()
@@ -24,5 +25,6 @@ namespace TP5.Almacenes
             var HDR_Distribucion_MDJson = System.Text.Json.JsonSerializer.Serialize(HDR_Distribucion_MD);
             File.WriteAllText("HDR_Distribucion_MDs.json", HDR_Distribucion_MDJson);
         }
+        */
     }
 }
