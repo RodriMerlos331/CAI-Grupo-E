@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
 
         static CentroDeDistribucionAlmacen()
         {
-            if (File.Exists("CentrosDistribucion.json"))
+            if (File.Exists(@"Datos/CentrosDistribucion.json"))
             {
-                var CDJson = File.ReadAllText("CentrosDistribucion.json");
+                var CDJson = File.ReadAllText(@"Datos/CentrosDistribucion.json");
                 CentroDeDistribucion = JsonConvert.DeserializeObject<List<CentroDeDistribucionEntidad>>(CDJson);
             }
         }
@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var CDJson = JsonConvert.SerializeObject(CentroDeDistribucion);
-            File.WriteAllText("CentrosDistribucion.json", CDJson);
+            File.WriteAllText(@"Datos/CentrosDistribucion.json", CDJson);
         }
     }
 }

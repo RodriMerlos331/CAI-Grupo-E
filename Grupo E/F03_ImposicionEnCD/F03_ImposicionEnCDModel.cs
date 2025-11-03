@@ -38,6 +38,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
 
         //COPILOT SUGIRIÓ ESTA FORMA DE HACERLO, PREGUNTAR SI ESTÁ BIEN:
+        /*
         public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =
         new Dictionary<string, (List<string>, List<string>)>
         {
@@ -45,21 +46,35 @@ namespace Grupo_E.F03_ImposicionEnCD
           { "GBA", (new List<string> { "Kiosco", "Shopping", "Local" }, new List<string> { "La Plata", "Pacheco", "Morón" }) },
           { "Córdoba", (new List<string> { "Cerrito", "Montaña", "Arroyo" }, new List<string> { "Villa Carlos Paz", "La Falda", "Río Cuarto" }) }
         };
+        */
 
 
-
-
-        /*
-         * public class ImposicionConDestinoACD
+        //REVISAR
+        public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =>
+    LocalidadAlmacen.Localidad.ToDictionary(
+        loc => loc.Nombre,
+        loc =>
         {
-        string CUITCliente { get; set; }
-        string CentroDistribucionDestino { get; set; }
+           
+            var cds = CentroDeDistribucionAlmacen.CentroDeDistribucion
+                        .Where(cd => cd.CodigoLocalidad == loc.CodigoLocalidad)
+                        .ToList();
 
-        string TamañoBulto { get; set; }
+            var agencias = AgenciaAlmacen.Agencia
+                        .Where(a => cds.Any(cd => cd.CodigoCD == a.CodigoCD))
+                        .Select(a =>
+                            !string.IsNullOrEmpty(a.CodigoAgencia) ? a.CodigoAgencia :
+                            a.CodigoAgencia) 
+                        .ToList();
 
-        string DatosDestinatario { get; set; } 
-        }
-         */
+            var terminales = cds
+                        .Select(cd => string.IsNullOrEmpty(cd.CodigoCD) ? cd.NombreTerminal : cd.CodigoCD)
+                        .ToList();
+
+            return (agencias, terminales);
+        });
+
+
         private int trackingActual = 1;
 
         private int ObtenerSiguienteTracking()

@@ -1,0 +1,35 @@
+[
+  {
+    "CodigoAgencia": "Banfield Central",
+    "CodigoCD": "CD01"
+  },
+  {
+    "CodigoAgencia": "Banfield Oeste",
+    "CodigoCD": "CD02"
+  },
+  {
+    "CodigoAgencia": "Retiro Centro",
+    "CodigoCD": "CD03"
+  },
+  {
+    "CodigoAgencia": "Dock Sur",
+    "CodigoCD": "CD04"
+  },
+  {
+    "CodigoAgencia": "La Plata Centro",
+    "CodigoCD": "CD05"
+  },
+  {
+    "CodigoAgencia": "La Plata Norte",
+    "CodigoCD": "CD06"
+  },
+  {
+    "CodigoAgencia": "Moron Centro",
+    "CodigoCD": "CD07"
+  },
+  {
+    "CodigoAgencia": "Viedma Central",
+    "CodigoCD": "CD08"
+  }
+]
+
