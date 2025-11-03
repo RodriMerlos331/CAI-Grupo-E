@@ -1,33 +1,19 @@
 [
+  
   {
     "CodigoCD": "CD01",
-    "CodigoLocalidad": "CABA",
-    "NombreTerminal": "Constitucion"
-  },
-  {
-    "CodigoCD": "CD02",
     "CodigoLocalidad": "CABA",
     "NombreTerminal": "Retiro"
   },
   {
+    "CodigoCD": "CD02",
+    "CodigoLocalidad": "CABA",
+    "NombreTerminal": "Liniers"
+  },
+  {
     "CodigoCD": "CD03",
     "CodigoLocalidad": "CABA",
-    "NombreTerminal": "Dock Sur"
-  },
-  {
-    "CodigoCD": "CD04",
-    "CodigoLocalidad": "LP",
-    "NombreTerminal": "La Plata"
-  },
-  {
-    "CodigoCD": "CD05",
-    "CodigoLocalidad": "MOR",
-    "NombreTerminal": "Morón"
-  },
-  {
-    "CodigoCD": "CD06",
-    "CodigoLocalidad": "LG",
-    "NombreTerminal": "LasGrutas"
+    "NombreTerminal": "Constitución"
   }
   {
     "CodigoCD": "CD04",

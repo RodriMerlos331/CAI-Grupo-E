@@ -38,7 +38,6 @@ namespace Grupo_E.F03_ImposicionEnCD
 
 
         //COPILOT SUGIRIÓ ESTA FORMA DE HACERLO, PREGUNTAR SI ESTÁ BIEN:
-        /*
         public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =
         new Dictionary<string, (List<string>, List<string>)>
         {
@@ -46,36 +45,21 @@ namespace Grupo_E.F03_ImposicionEnCD
           { "GBA", (new List<string> { "Kiosco", "Shopping", "Local" }, new List<string> { "La Plata", "Pacheco", "Morón" }) },
           { "Córdoba", (new List<string> { "Cerrito", "Montaña", "Arroyo" }, new List<string> { "Villa Carlos Paz", "La Falda", "Río Cuarto" }) }
         };
-        */
 
 
-        //REVISAR
-        public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =>
-    LocalidadAlmacen.Localidad.ToDictionary(
-        loc => loc.Nombre,
-        loc =>
+
+
+        /*
+         * public class ImposicionConDestinoACD
         {
-           
-            var cds = CentroDeDistribucionAlmacen.CentroDeDistribucion
-                        .Where(cd => cd.CodigoLocalidad == loc.CodigoLocalidad)
-                        .ToList();
+        string CUITCliente { get; set; }
+        string CentroDistribucionDestino { get; set; }
 
-            var agencias = AgenciaAlmacen.Agencia
-                        .Where(a => cds.Any(cd => cd.CodigoCD == a.CodigoCD))
-                        .Select(a =>
-                            a.NombreAgencia )
-                        .Distinct()
-                        .ToList();
+        string TamañoBulto { get; set; }
 
-            var terminales = cds
-                        .Select(cd => cd.NombreTerminal)
-                        .Distinct()
-                        .ToList();
-
-            return (agencias, terminales);
-        });
-
-
+        string DatosDestinatario { get; set; } 
+        }
+         */
         private int trackingActual = 1;
 
         private int ObtenerSiguienteTracking()

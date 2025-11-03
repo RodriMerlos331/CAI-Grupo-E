@@ -19,7 +19,7 @@ namespace Grupo_E.Almacenes
                 if (File.Exists(@"Datos/Clientes.json"))
                 {
                     var ClienteJson = File.ReadAllText(@"Datos/Clientes.json");
-                    Cliente = JsonConvert.DeserializeObject<List<ClienteEntidad>>(ClienteJson);
+                    Cliente = JsonConvert.DeserializeObject<List<ClienteEntidad>>(ClienteJson) ?? new List<ClienteEntidad>();
                 }
             }
 
