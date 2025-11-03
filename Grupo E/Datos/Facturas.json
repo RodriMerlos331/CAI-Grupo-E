@@ -1,0 +1,35 @@
+[
+  {
+    "NroFactura": 1,
+    "CuitTutasa": "30-55555555-5",
+    "CuitCliente": "20-87654321-0",
+    "FechaEmision": "2025-11-03T10:30:00",
+    "EncomiendasIncluidas": [ 1001, 1002, 1003 ],
+    "Subtotal": 1500.50,
+    "Iva": 315.11,
+    "Total": 1815.61,
+    "CodigoDeAutorizacionElectronica": "CAE789012"
+  },
+  {
+    "NroFactura": 2,
+    "CuitTutasa": "30-55555555-5",
+    "CuitCliente": "27-11223344-5",
+    "FechaEmision": "2025-10-28T15:45:00",
+    "EncomiendasIncluidas": [ 1004, 1005 ],
+    "Subtotal": 2000.00,
+    "Iva": 420.00,
+    "Total": 2420.00,
+    "CodigoDeAutorizacionElectronica": "CAE789012"
+  },
+  {
+    "NroFactura": 3,
+    "CuitTutasa": "30-55555555-5",
+    "CuitCliente": "23-99887766-4",
+    "FechaEmision": "2025-09-15T09:00:00",
+    "EncomiendasIncluidas": [1006],
+    "Subtotal": 750.00,
+    "Iva": 157.50,
+    "Total": 907.50,
+    "CodigoDeAutorizacionElectronica": "CAE789012"
+  }
+]

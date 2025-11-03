@@ -65,6 +65,8 @@
     <Compile Include="Almacenes\EncomiendaAlmacen.cs" />
     <Compile Include="Almacenes\EncomiendaEntidad.cs" />
     <Compile Include="Almacenes\EstadoHDREnum.cs" />
+    <Compile Include="Almacenes\FacturaAlmacen.cs" />
+    <Compile Include="Almacenes\FacturaEnt.cs" />
     <Compile Include="Almacenes\FleteroAlmacen.cs" />
     <Compile Include="Almacenes\FleteroEntidad.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_MDAlmacen.cs" />
@@ -203,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Datos\Facturas.json" />
     <None Include="Datos\HDR_Distribucion_MD.json" />
     <None Include="Datos\Omnibus.json" />
     <None Include="Datos\Agencia.json" />
