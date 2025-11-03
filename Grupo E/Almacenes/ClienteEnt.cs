@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class EncomiendaEntidad
+    internal class ClienteEnt
     {
-        public string Tracking { get; set; }
+        public string CUITCliente { get; set; }
+        public string Domicilio { get; set; }
     }
 }
