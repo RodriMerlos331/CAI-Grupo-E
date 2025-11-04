@@ -44,13 +44,17 @@ namespace Grupo_E
             this.btnRendicionHDRAgencia = new System.Windows.Forms.Button();
             this.btnRetirarEnAgencia = new System.Windows.Forms.Button();
             this.btnRetirarEnCD = new System.Windows.Forms.Button();
+            this.CentroDeDistribucionActualCombo = new System.Windows.Forms.ComboBox();
+            this.AgenciaActualCombo = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 101);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(405, 49);
             this.groupBox1.TabIndex = 0;
@@ -60,7 +64,7 @@ namespace Grupo_E
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 16);
+            this.label1.Location = new System.Drawing.Point(161, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 0;
@@ -68,7 +72,7 @@ namespace Grupo_E
             // 
             // btnConsultarEstado
             // 
-            this.btnConsultarEstado.Location = new System.Drawing.Point(115, 68);
+            this.btnConsultarEstado.Location = new System.Drawing.Point(115, 156);
             this.btnConsultarEstado.Name = "btnConsultarEstado";
             this.btnConsultarEstado.Size = new System.Drawing.Size(189, 36);
             this.btnConsultarEstado.TabIndex = 1;
@@ -77,7 +81,7 @@ namespace Grupo_E
             // 
             // btnCostosVsVentas
             // 
-            this.btnCostosVsVentas.Location = new System.Drawing.Point(115, 110);
+            this.btnCostosVsVentas.Location = new System.Drawing.Point(115, 198);
             this.btnCostosVsVentas.Name = "btnCostosVsVentas";
             this.btnCostosVsVentas.Size = new System.Drawing.Size(189, 36);
             this.btnCostosVsVentas.TabIndex = 2;
@@ -86,7 +90,7 @@ namespace Grupo_E
             // 
             // btnEstadoCuentasCorrientes
             // 
-            this.btnEstadoCuentasCorrientes.Location = new System.Drawing.Point(115, 152);
+            this.btnEstadoCuentasCorrientes.Location = new System.Drawing.Point(115, 240);
             this.btnEstadoCuentasCorrientes.Name = "btnEstadoCuentasCorrientes";
             this.btnEstadoCuentasCorrientes.Size = new System.Drawing.Size(189, 36);
             this.btnEstadoCuentasCorrientes.TabIndex = 3;
@@ -95,7 +99,7 @@ namespace Grupo_E
             // 
             // btnGeneracionDeFacturas
             // 
-            this.btnGeneracionDeFacturas.Location = new System.Drawing.Point(115, 194);
+            this.btnGeneracionDeFacturas.Location = new System.Drawing.Point(115, 282);
             this.btnGeneracionDeFacturas.Name = "btnGeneracionDeFacturas";
             this.btnGeneracionDeFacturas.Size = new System.Drawing.Size(189, 36);
             this.btnGeneracionDeFacturas.TabIndex = 4;
@@ -104,7 +108,7 @@ namespace Grupo_E
             // 
             // btnGestionarFletero
             // 
-            this.btnGestionarFletero.Location = new System.Drawing.Point(115, 236);
+            this.btnGestionarFletero.Location = new System.Drawing.Point(115, 324);
             this.btnGestionarFletero.Name = "btnGestionarFletero";
             this.btnGestionarFletero.Size = new System.Drawing.Size(189, 36);
             this.btnGestionarFletero.TabIndex = 5;
@@ -113,7 +117,7 @@ namespace Grupo_E
             // 
             // btnGestionarOmnibus
             // 
-            this.btnGestionarOmnibus.Location = new System.Drawing.Point(115, 274);
+            this.btnGestionarOmnibus.Location = new System.Drawing.Point(115, 362);
             this.btnGestionarOmnibus.Name = "btnGestionarOmnibus";
             this.btnGestionarOmnibus.Size = new System.Drawing.Size(189, 36);
             this.btnGestionarOmnibus.TabIndex = 6;
@@ -122,7 +126,7 @@ namespace Grupo_E
             // 
             // btnImposicionEnAgencia
             // 
-            this.btnImposicionEnAgencia.Location = new System.Drawing.Point(115, 316);
+            this.btnImposicionEnAgencia.Location = new System.Drawing.Point(115, 404);
             this.btnImposicionEnAgencia.Name = "btnImposicionEnAgencia";
             this.btnImposicionEnAgencia.Size = new System.Drawing.Size(189, 36);
             this.btnImposicionEnAgencia.TabIndex = 7;
@@ -131,7 +135,7 @@ namespace Grupo_E
             // 
             // btnImposicionEnCallCenter
             // 
-            this.btnImposicionEnCallCenter.Location = new System.Drawing.Point(115, 358);
+            this.btnImposicionEnCallCenter.Location = new System.Drawing.Point(115, 446);
             this.btnImposicionEnCallCenter.Name = "btnImposicionEnCallCenter";
             this.btnImposicionEnCallCenter.Size = new System.Drawing.Size(189, 36);
             this.btnImposicionEnCallCenter.TabIndex = 8;
@@ -140,7 +144,7 @@ namespace Grupo_E
             // 
             // btnImposicionEnCD
             // 
-            this.btnImposicionEnCD.Location = new System.Drawing.Point(115, 400);
+            this.btnImposicionEnCD.Location = new System.Drawing.Point(115, 488);
             this.btnImposicionEnCD.Name = "btnImposicionEnCD";
             this.btnImposicionEnCD.Size = new System.Drawing.Size(189, 36);
             this.btnImposicionEnCD.TabIndex = 9;
@@ -149,7 +153,7 @@ namespace Grupo_E
             // 
             // btnRendicionHDRAgencia
             // 
-            this.btnRendicionHDRAgencia.Location = new System.Drawing.Point(115, 442);
+            this.btnRendicionHDRAgencia.Location = new System.Drawing.Point(115, 530);
             this.btnRendicionHDRAgencia.Name = "btnRendicionHDRAgencia";
             this.btnRendicionHDRAgencia.Size = new System.Drawing.Size(189, 36);
             this.btnRendicionHDRAgencia.TabIndex = 10;
@@ -158,7 +162,7 @@ namespace Grupo_E
             // 
             // btnRetirarEnAgencia
             // 
-            this.btnRetirarEnAgencia.Location = new System.Drawing.Point(115, 484);
+            this.btnRetirarEnAgencia.Location = new System.Drawing.Point(115, 572);
             this.btnRetirarEnAgencia.Name = "btnRetirarEnAgencia";
             this.btnRetirarEnAgencia.Size = new System.Drawing.Size(189, 36);
             this.btnRetirarEnAgencia.TabIndex = 11;
@@ -167,18 +171,57 @@ namespace Grupo_E
             // 
             // btnRetirarEnCD
             // 
-            this.btnRetirarEnCD.Location = new System.Drawing.Point(115, 526);
+            this.btnRetirarEnCD.Location = new System.Drawing.Point(115, 614);
             this.btnRetirarEnCD.Name = "btnRetirarEnCD";
             this.btnRetirarEnCD.Size = new System.Drawing.Size(189, 36);
             this.btnRetirarEnCD.TabIndex = 12;
             this.btnRetirarEnCD.Text = "Retiro en Centro de Distribucion";
             this.btnRetirarEnCD.UseVisualStyleBackColor = true;
             // 
+            // CentroDeDistribucionActualCombo
+            // 
+            this.CentroDeDistribucionActualCombo.FormattingEnabled = true;
+            this.CentroDeDistribucionActualCombo.Location = new System.Drawing.Point(156, 12);
+            this.CentroDeDistribucionActualCombo.Name = "CentroDeDistribucionActualCombo";
+            this.CentroDeDistribucionActualCombo.Size = new System.Drawing.Size(247, 21);
+            this.CentroDeDistribucionActualCombo.TabIndex = 13;
+            this.CentroDeDistribucionActualCombo.SelectedIndexChanged += new System.EventHandler(this.CentroDeDistribucionActualCombo_SelectedIndexChanged);
+            // 
+            // AgenciaActualCombo
+            // 
+            this.AgenciaActualCombo.FormattingEnabled = true;
+            this.AgenciaActualCombo.Location = new System.Drawing.Point(156, 50);
+            this.AgenciaActualCombo.Name = "AgenciaActualCombo";
+            this.AgenciaActualCombo.Size = new System.Drawing.Size(247, 21);
+            this.AgenciaActualCombo.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Centro de distribucion actual";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Agencia actual";
+            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 584);
+            this.ClientSize = new System.Drawing.Size(429, 684);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.AgenciaActualCombo);
+            this.Controls.Add(this.CentroDeDistribucionActualCombo);
             this.Controls.Add(this.btnRetirarEnCD);
             this.Controls.Add(this.btnRetirarEnAgencia);
             this.Controls.Add(this.btnRendicionHDRAgencia);
@@ -194,9 +237,11 @@ namespace Grupo_E
             this.Controls.Add(this.groupBox1);
             this.Name = "MenuPrincipalForm";
             this.Text = "MenuPrincipalForm";
+            this.Load += new System.EventHandler(this.MenuPrincipalForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -221,5 +266,9 @@ namespace Grupo_E
         private System.Windows.Forms.Button btnRendicionHDRAgencia;
         private System.Windows.Forms.Button btnRetirarEnAgencia;
         private System.Windows.Forms.Button btnRetirarEnCD;
+        private System.Windows.Forms.ComboBox CentroDeDistribucionActualCombo;
+        private System.Windows.Forms.ComboBox AgenciaActualCombo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

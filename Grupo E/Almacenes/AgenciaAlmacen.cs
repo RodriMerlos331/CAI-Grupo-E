@@ -10,6 +10,7 @@ namespace Grupo_E.Almacenes
 {
     static class AgenciaAlmacen
     {
+        public static AgenciaEntidad AgenciaActual { get; set; }
         public static List<AgenciaEntidad> Agencia { get; }
 
         static AgenciaAlmacen()

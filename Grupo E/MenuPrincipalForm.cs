@@ -1,4 +1,5 @@
 ﻿
+using Grupo_E.Almacenes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -141,7 +142,20 @@ namespace Grupo_E
             }
         }
 
+        private void MenuPrincipalForm_Load(object sender, EventArgs e)
+        {
+            CentroDeDistribucionActualCombo.DisplayMember = "NombreTerminal";
+            CentroDeDistribucionActualCombo.Items.AddRange(CentroDeDistribucionAlmacen.CentroDeDistribucion.ToArray());
 
+            AgenciaActualCombo.DisplayMember = "NombreAgencia";
+            AgenciaActualCombo.Items.AddRange(AgenciaAlmacen.Agencia.ToArray());
+        }
+
+        private void CentroDeDistribucionActualCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CentroDeDistribucionAlmacen.CentroDistribucionActual = (CentroDeDistribucionEntidad)CentroDeDistribucionActualCombo.SelectedItem;
+            AgenciaAlmacen.AgenciaActual = (AgenciaEntidad)AgenciaActualCombo.SelectedItem;
+        }
     }
 
 }

@@ -10,6 +10,8 @@ namespace Grupo_E.Almacenes
 {
     internal class CentroDeDistribucionAlmacen
     {
+        public static CentroDeDistribucionEntidad CentroDistribucionActual { get; set; }        
+
         public static List<CentroDeDistribucionEntidad> CentroDeDistribucion { get; }
 
         static CentroDeDistribucionAlmacen()
