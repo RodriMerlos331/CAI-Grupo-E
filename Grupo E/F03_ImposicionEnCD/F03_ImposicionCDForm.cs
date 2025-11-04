@@ -213,7 +213,7 @@ namespace Grupo_E.ImposicionEnCD
                     return;
                 }
 
-                modelo.ImposicionEnAgencia(
+                modelo.ImposicionConDestinoACD(
                     CuitText.Text,
                     AgenciaCbo.SelectedItem?.ToString(),
                     TamanoBultoCbo.SelectedItem?.ToString(),
