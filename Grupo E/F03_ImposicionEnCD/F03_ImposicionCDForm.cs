@@ -254,6 +254,7 @@ namespace Grupo_E.ImposicionEnCD
 
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
+            //debería cancelar la última encomienda impuesta??
             LimpiarCampos();
             DialogResult resultado = MessageBox.Show(
             "¿Seguro que querés cancelar la operación?",

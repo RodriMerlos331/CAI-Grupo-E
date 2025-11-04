@@ -159,7 +159,9 @@ namespace Grupo_E.F03_ImposicionEnCD
                 DatosFacturacion = null //no se factura aún
 
             };
-             
+
+            EncomiendaAlmacen.Encomienda.Add(NuevaEncomienda);
+
 
             string mensaje =
             "Guía impuesta exitosamente.\n\n" +
