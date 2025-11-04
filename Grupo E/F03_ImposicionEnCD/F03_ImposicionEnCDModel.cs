@@ -1,5 +1,6 @@
 ﻿using Grupo_E.Almacenes;
 using Grupo_E.ImposicionEnCallCenter;
+using Grupo_E.RetirarEnAgencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,30 +78,96 @@ namespace Grupo_E.F03_ImposicionEnCD
 
 
         //acá debería buscar tracking "más alto" en datos encomienda?
-        private int trackingActual = 1;
+        
+        //private int trackingActual = 1;
 
-        private int ObtenerSiguienteTracking()
+      
+
+
+        int ultimoNumero = EncomiendaAlmacen.Encomienda
+          .Select(e => e.Tracking.Split('_').Last()) 
+          .Select(n => int.Parse(n))                 
+          .DefaultIfEmpty(0)
+          .Max();
+
+        public void ObtenerSiguienteTracking()
         {
-            return trackingActual++;
+            ultimoNumero++;
         }
-        public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
+
+        /*
+         * public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
         {
             ImposicionConDestinoACD nuevaImposicion = new ImposicionConDestinoACD
             {
+                /*
                 Tracking = ObtenerSiguienteTracking().ToString("D8"), // Ejemplo: 00000001
                 CUITCliente = cuitCliente,
                 CentroDistribucionDestino = centroDistribucionDestino,
                 TamañoBulto = tamañoBulto,
                 DatosDestinatario = datosDestinatario
+               
+
             };
+
+    string mensaje =
+    "Guía impuesta exitosamente.\n\n" +
+    $"Tracking: {nuevaImposicion.Tracking}\n" +
+    $"CUIT del cliente: {nuevaImposicion.CUITCliente}\n" +
+    $"Centro de distribución destino: {nuevaImposicion.CentroDistribucionDestino}\n" +
+    $"Tamaño del bulto: {nuevaImposicion.TamañoBulto}\n" +
+    $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+
+    MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+*/
+
+
+        public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
+        {
+            var cdDestino = CentroDeDistribucionAlmacen.CentroDeDistribucion
+                    .First(cd => cd.NombreTerminal == centroDistribucionDestino)
+                    .CodigoCD;
+
+            EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
+            {
+                Tracking = "CD01AG01_" + (ultimoNumero + 1).ToString(),
+                CUITCliente = cuitCliente,
+                CodCentroDistribucionDestino = cdDestino,
+                TipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamañoBulto),
+                DireccionDestinatario = null, //queda en null pq solo se usa cuando es a domicilio
+                Estado = EstadoEncomiendaEnum.Admitida, //imposicion en CD = Se admite directamente ahí
+                FechaImposicion = DateTime.Now,
+                FechaAdmision = DateTime.Now,
+                FechaEntrega = null, //no está entregada aún
+                //cómo lleno esto? no sabemos en qué CD estoy parado "ahora" , tendría sentido un menú? o sumar un campo de en este caso "CD ACTUAL"?
+                CodCDActual = "CD01",
+                CodLocalidadOrigen = "CABA",
+                CodCentroDistribucionOrigen = "CD06", //Viedma
+                //hoy DatosDestinatarioText tiene nombre, apellido y dni todo junto :((( así q lo pongo acá repetido:
+                NombreDestinatario = datosDestinatario,
+                ApellidoDestinatario = datosDestinatario,
+                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+
+                AgenciaOrigen = null, //impuesot en CD
+                AgenciaDestino = null, //impuesot en CD
+
+                DatosRetiroADomicilio = null, //Admitido en CD. 
+
+                ParadasRuta = new List<int>(), //vacio pq todavía no se ruteo ??
+
+                DatosFacturacion = null //no se factura aún
+
+            };
+             
 
             string mensaje =
             "Guía impuesta exitosamente.\n\n" +
-            $"Tracking: {nuevaImposicion.Tracking}\n" +
-            $"CUIT del cliente: {nuevaImposicion.CUITCliente}\n" +
-            $"Centro de distribución destino: {nuevaImposicion.CentroDistribucionDestino}\n" +
-            $"Tamaño del bulto: {nuevaImposicion.TamañoBulto}\n" +
-            $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+            $"Tracking: {NuevaEncomienda.Tracking}\n" +
+            $"CUIT del cliente: {NuevaEncomienda.CUITCliente}\n" +
+            $"Centro de distribución destino: {NuevaEncomienda.CodCentroDistribucionDestino}\n" +
+            $"Tamaño del bulto: {NuevaEncomienda.TipoBulto}\n" +
+            $"Datos del destinatario: {datosDestinatario}";
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -109,7 +176,7 @@ namespace Grupo_E.F03_ImposicionEnCD
         {
             ImposicionDomicilioParticular nuevaImposicion = new ImposicionDomicilioParticular
             {
-                Tracking = ObtenerSiguienteTracking().ToString("D8"),
+                Tracking = "CD01AG01_" + (ultimoNumero + 1).ToString(),
                 CUIT = cuitCliente,
                 DireccionParticular = direccionParticular,
                 TamanoBulto = tamanoBulto,
@@ -130,7 +197,7 @@ namespace Grupo_E.F03_ImposicionEnCD
         {
             ImposicionAgencia nuevaImposicion = new ImposicionAgencia
             {
-                Tracking = ObtenerSiguienteTracking().ToString("D8"),
+                Tracking = "CD01AG01_" + (ultimoNumero + 1).ToString(),
                 CUIT = cuitCliente,
                 Agencia = agenciaDestino,
                 TamanoBulto = tamanoBulto,

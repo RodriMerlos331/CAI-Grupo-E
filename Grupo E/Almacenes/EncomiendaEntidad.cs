@@ -17,9 +17,10 @@ namespace Grupo_E.Almacenes
         //public TipoEntregaEnum TipoEntrega { get; set; }
         //si sumo esto podría cambiar los estados!
         public int DNIDestinatario { get; set; }
-        public string DireccionDestinatario { get; set; }
+
         public string NombreDestinatario { get; set; }
         public string ApellidoDestinatario { get; set; }
+        public string DireccionDestinatario { get; set; }         //direccion solo importa cuando es a domicilio
         public string AgenciaOrigen { get; set; }
         public string AgenciaDestino { get; set; }
         public string DatosRetiroADomicilio { get; set; }
@@ -28,8 +29,8 @@ namespace Grupo_E.Almacenes
 
         //esto no podría ir directamente en historial??
         public DateTime FechaImposicion { get; set; }
-        public DateTime FechaAdmision { get; set; }
-        public DateTime FechaEntrega { get; set; }
+        public DateTime? FechaAdmision { get; set; }
+        public DateTime? FechaEntrega { get; set; }
 
        
 
