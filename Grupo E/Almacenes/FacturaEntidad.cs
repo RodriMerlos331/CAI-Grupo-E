@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class FacturaEnt
+    internal class FacturaEntidad
     {
       public string NroFactura { get; set; }
        public string CuitTutasa { get; set; }

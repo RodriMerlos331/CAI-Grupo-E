@@ -68,7 +68,7 @@
     <Compile Include="Almacenes\EstadoEncomiendaEnum.cs" />
     <Compile Include="Almacenes\EstadoHDREnum.cs" />
     <Compile Include="Almacenes\FacturaAlmacen.cs" />
-    <Compile Include="Almacenes\FacturaEnt.cs" />
+    <Compile Include="Almacenes\FacturaEntidad.cs" />
     <Compile Include="Almacenes\FleteroAlmacen.cs" />
     <Compile Include="Almacenes\FleteroEntidad.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_MDAlmacen.cs" />
