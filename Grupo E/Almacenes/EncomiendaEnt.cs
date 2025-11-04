@@ -37,6 +37,9 @@ namespace Grupo_E.Almacenes
        //está ok así esto?
         public EncomiendaFactura DatosFacturacion { get; set; }
 
+        //chequear 
+
+        public List<Historial> Historial { get; set; } = new List<Historial>();
         
     }
 }
