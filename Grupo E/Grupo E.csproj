@@ -75,6 +75,7 @@
     <Compile Include="Almacenes\HDR_Distribucion_MDEntidad.cs" />
     <Compile Include="Almacenes\HDRDistribucionUMAlmacen.cs" />
     <Compile Include="Almacenes\HDRDistribucionUMEntidad.cs" />
+    <Compile Include="Almacenes\Historial.cs" />
     <Compile Include="Almacenes\LocalidadAlmacen.cs" />
     <Compile Include="Almacenes\LocalidadEntidad.cs" />
     <Compile Include="Almacenes\OmnibusAlmacen.cs" />
