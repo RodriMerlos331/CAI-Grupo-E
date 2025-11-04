@@ -8,5 +8,8 @@ namespace Grupo_E.Almacenes
 {
     internal class EmpresaTransportistaEntidad
     {
+        public string CuitEmpresaTransportista { get; set; }
+        public string RazonSocial { get; set; }
+        public decimal ComisionPorBulto { get; set; }
     }
 }
