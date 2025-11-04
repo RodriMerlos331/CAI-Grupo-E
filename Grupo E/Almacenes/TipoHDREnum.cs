@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class TipoHDREnum
-    {
-        public enum tipoHDR
+        public enum TipoHDREnum
         {
            Retiro,
            Entrega
 
         }
-    }
 }

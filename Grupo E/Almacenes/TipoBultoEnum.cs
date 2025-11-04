@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-   
-        public enum TipoBultoEnum
+  public enum TipoBultoEnum
         {
             S,
             M,

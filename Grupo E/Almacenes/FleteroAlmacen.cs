@@ -16,9 +16,9 @@ namespace Grupo_E.Almacenes
 
         static FleteroAlmacen()
         {
-            if (File.Exists("Fleteros.json"))
+            if (File.Exists(@"Datos/Fleteros.json"))
             {
-                var FleteroJson = File.ReadAllText("Fleteros.json");
+                var FleteroJson = File.ReadAllText(@"Datos/Fleteros.json");
                 Fletero = JsonConvert.DeserializeObject<List<FleteroEntidad>>(FleteroJson);
             }
         }
@@ -26,7 +26,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var FleteroJson = JsonConvert.SerializeObject(Fletero);
-            File.WriteAllText("Fleteros.json", FleteroJson);
+            File.WriteAllText(@"Datos/Fleteros.json", FleteroJson);
         }
     }
 }

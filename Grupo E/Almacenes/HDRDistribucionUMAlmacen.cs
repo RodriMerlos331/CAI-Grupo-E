@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
 
         static HDRDistribucionUMAlmacen()
         {
-            if (File.Exists("HdrUM.json"))
+            if (File.Exists(@"Datos/HdrUM.json"))
             {
-                var HDRUmJSON = File.ReadAllText("HdrUM.json");
+                var HDRUmJSON = File.ReadAllText(@"Datos/HdrUM.json");
                 HDRDistribucionUM = JsonConvert.DeserializeObject<List<HDRDistribucionUMEntidad>>(HDRUmJSON);
             }
         }
@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var HDRUmJSON = JsonConvert.SerializeObject(HDRDistribucionUM);
-            File.WriteAllText("HdrUM.json", HDRUmJSON);
+            File.WriteAllText(@"Datos/HdrUM.json", HDRUmJSON);
         }
     }
 }

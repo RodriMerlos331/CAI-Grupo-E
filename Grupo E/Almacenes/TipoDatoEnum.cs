@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class TipoDato
-    {
+
         public enum TipoDatoEnum
         {
             CUITTutasa,
@@ -15,7 +14,5 @@ namespace Grupo_E.Almacenes
             CodigoAutorizacionElectronica
         }
 
-        public TipoDatoEnum Tipo { get; set; }  
-        public object Valor { get; set; }      
-    }
+    
 }

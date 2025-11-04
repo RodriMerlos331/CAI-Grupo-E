@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class EstadoHDREnum
-    {
-        public enum estadoHDR
+        public enum EstadoHDREnum
         {
             EnTransito,
             Cumplida,
             Asignada
         }
 
-    }
 }

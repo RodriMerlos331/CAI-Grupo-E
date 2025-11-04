@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
 
         static FacturaAlmacen()
         {
-            if (File.Exists("Facturas.json"))
+            if (File.Exists(@"Datos/Facturas.json"))
             {
-                var FacturasJson = File.ReadAllText("Facturas.json");
+                var FacturasJson = File.ReadAllText(@"Datos/Facturas.json");
                 Facturas = JsonConvert.DeserializeObject<List<FacturaEntidad>>(FacturasJson);
             }
         }
@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var FacturasJson = JsonConvert.SerializeObject(Facturas);
-            File.WriteAllText("Facturas.json", FacturasJson);
+            File.WriteAllText(@"Datos/Facturas.json", FacturasJson);
         }
     }
 }
