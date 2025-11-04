@@ -10,6 +10,7 @@ namespace Grupo_E.Almacenes
 {
     static class AgenciaAlmacen
     {
+        public static AgenciaEntidad AgenciaActual { get; set; }
         public static List<AgenciaEntidad> Agencia { get; }
 
         static AgenciaAlmacen()
@@ -23,7 +24,7 @@ namespace Grupo_E.Almacenes
 
         public static void Grabar()
         {
-            var AgenciaJson = JsonConvert.SerializeObject(Agencia);
+            var AgenciaJson = JsonConvert.SerializeObject(Agencia, Formatting.Indented);
             File.WriteAllText(@"Datos/Agencias.json", AgenciaJson);
         }
     }

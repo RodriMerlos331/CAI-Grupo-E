@@ -11,7 +11,6 @@ namespace Grupo_E.Almacenes
         public string CodigoCD { get; set; }
         public string CodigoLocalidad { get; set; }
         public string NombreTerminal { get; set; }
-
-        //decimal AlquilerMensualTerminal { get; set; }
+        decimal AlquilerMensualTerminal { get; set; }
     }
 }

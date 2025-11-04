@@ -12,6 +12,7 @@ namespace Grupo_E.Almacenes
         public string CodigoCD { get; set; }
 
         public string NombreAgencia { get; set; }
-        //public decimal ComisionPorEncomienda { get; set; }
+
+        public decimal ComisionPorEncomienda { get; set; }
     }
 }

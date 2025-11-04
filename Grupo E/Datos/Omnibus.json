@@ -3,25 +3,18 @@
     "ServicioID": "SRV-PL-001",
     "CuitEmpresaOmnibus": "30-65478912-3",
     "Patente": "AB123CD",
-    "Arrendamiento": "A",
+    "Arrendamiento": 0,
     "Paradas": [
       {
         "CodigoCD": "Retiro",
-        "CodigoParada": 01,
+        "CodigoParada": 1,
         "HoraLlegada": "2025-11-15T08:00:00",
         "HoraSalida": "2025-11-15T08:30:00",
-        //esto me da duda:
-        "HDR": {
-          [
-            111,
-            222,
-            333
-          ]
-        }
-        //falta encomiendas subir / bajar
+        "HDRDistribucionMD": [ 111, 222, 333 ],
+        "ABajar": [ 1, 2, 3, 4, 5 ],
+        "ASubir": [ 10, 11, 12, 13 ]        
       }
 
     ]
   }
 ]
-  
