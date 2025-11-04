@@ -21,7 +21,7 @@ namespace Grupo_E.Almacenes
             {
                 var OmnibusJson = File.ReadAllText(@"Datos/Omnibuss.json");
                 Omnibus = JsonConvert.DeserializeObject<List<OmnibusEntidad>>(OmnibusJson);
-             }
+            }
         }
 
         public static void Grabar()
