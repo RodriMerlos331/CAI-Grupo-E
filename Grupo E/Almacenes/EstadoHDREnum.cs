@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP5.Almacenes
+namespace Grupo_E.Almacenes
 {
     internal class EstadoHDREnum
     {
