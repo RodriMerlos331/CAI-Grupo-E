@@ -183,22 +183,30 @@ namespace Grupo_E.F03_ImposicionEnCD
                 TipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto),
                 NombreDestinatario = datosDestinatario,
                 ApellidoDestinatario = datosDestinatario,
-                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
-                //cómo lleno esto? no sabemos en qué CD estoy parado "ahora" , tendría sentido un menú? o sumar un campo de en este caso "CD ACTUAL"?
-                CodCDActual = "CD01",
-                CodLocalidadOrigen = "CABA",
-                CodCentroDistribucionOrigen = "CD01", //Capital
-
-                //cómo macheo CD destino con la dirección particular ingresada?? con localidad actual ?
                 DireccionDestinatario = direccionParticular,
 
+                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                //cómo lleno esto? no sabemos en qué CD estoy parado "ahora" , tendría sentido un menú? o sumar un campo de en este caso "CD ACTUAL"?
+                CodCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD,
+                CodLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad,
+                CodCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD,
+
+                //cómo macheo CD destino con la dirección particular ingresada?? con localidad actual ?
+                //Asigna CD de destino según localidad seleccionada en el formulario, de forma random, idealmente CD más cerca de direccion
+                CodCentroDistribucionDestino = ObtenerCodigoCDPrimerEncontrado(LocalidadAlmacen.LocalidadDestino.CodigoLocalidad),
+                //Estado = (EstadoEncomiendaEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto),
+
+                Estado = EstadoEncomiendaEnum.Admitida,
 
                 //no:
                 AgenciaDestino = null,
                 AgenciaOrigen = null,
                 DatosRetiroADomicilio = null,
-                ParadasRuta = null,
+                //Por ahora las asigno yo:
+                //        public int CodigoParada { get; set; } //unico x sistema hace referencia a las paradas por las que va a pasar:
 
+                ParadasRuta = 
+                ,
                 DatosFacturacion = null,
 
                 //HistorialCambios = new List<Historial>(), cómo sumo historial ?
@@ -216,7 +224,6 @@ namespace Grupo_E.F03_ImposicionEnCD
         }
 
 
-        /*
         //Ejemplo de cómo estaba antes: 
         public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
         {
@@ -239,6 +246,14 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        }*/
     }
-}
+
+
+        //Debería tener alguna logica que matchee direccion particular con CD más cercano?
+        private string ObtenerCodigoCDPrimerEncontrado(string codigoLocalidad)
+        {
+            return CentroDeDistribucionAlmacen.CentroDeDistribucion
+                       .First(cd => cd.CodigoLocalidad == codigoLocalidad)
+                       .CodigoCD;
+        }
+    }

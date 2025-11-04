@@ -1,4 +1,5 @@
-﻿using Grupo_E.F03_ImposicionEnCD;
+﻿using Grupo_E.Almacenes;
+using Grupo_E.F03_ImposicionEnCD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,7 +66,11 @@ namespace Grupo_E.ImposicionEnCD
             if (string.IsNullOrEmpty(localidadSeleccionada))
                 return;
 
-        
+            //Me guarda localidad seleccionada como localidad de destino
+            LocalidadAlmacen.LocalidadDestino = (LocalidadEntidad)LocalidadCbo.SelectedItem;
+
+
+
             var informacionLocalidades = modelo.Localidades[localidadSeleccionada];
 
             TerminalesCbo.Items.Clear();
@@ -78,7 +83,7 @@ namespace Grupo_E.ImposicionEnCD
                 TerminalesCbo.Items.Add(terminal);
         }
 
-        
+
         private void DomicilioRb_CheckedChanged(object sender, EventArgs e)
         {
             TerminalesCbo.SelectedIndex = -1;

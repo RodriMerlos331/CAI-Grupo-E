@@ -14,8 +14,6 @@ namespace Grupo_E.Almacenes
         public TipoBultoEnum TipoBulto { get; set; }
         public string CUITCliente { get; set; }
 
-        //public TipoEntregaEnum TipoEntrega { get; set; }
-        //si sumo esto podría cambiar los estados!
         public int DNIDestinatario { get; set; }
 
         public string NombreDestinatario { get; set; }
