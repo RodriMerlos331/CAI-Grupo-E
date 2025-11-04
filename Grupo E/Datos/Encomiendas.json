@@ -1,3 +1,58 @@
 [
-
+  {
+    "Tracking": "CD01AG01_01",
+    "CodLocalidadOrigen": "CD01",
+    "CodCentroDistribucionOrigen": "CD001",
+    "CodCentroDistribucionDestino": "CD06",
+    "Estado": "ImpuestaPendienteRetiroAgencia",
+    "TipoBultoEnum": "S",
+    "CUITCliente": "30-12345678-01",
+    "DNIDestinatario": 12345678,
+    "DireccionDestinatario": "Calle Falsa 123",
+    "NombreDestinatario": "Juan",
+    "ApellidoDestinatario": "Pérez",
+    "AgenciaOrigen": "AG01",
+    "AgenciaDestino": "AG03",
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null, //pero no está ahora en un CD??
+    "ParadasRuta": null, //no se ruteo aún
+    "FechaImposicion": "2024-01-15T10:30:00",
+    "FechaAdmision": null,
+    "FechaEntrega": null,
+    "DatosFacturacion": null //no está facturada aún
+  }
 ]
+
+/*
+          public string Tracking { get; set; }
+        public string CodLocalidadOrigen { get; set; }
+        public string CodCentroDistribucionOrigen { get; set; }
+        public string CodCentroDistribucionDestino { get; set; }
+        
+        public EstadoEncomiendaEnum Estado { get; set; }
+        public TipoBultoEnum TipoBulto { get; set; }
+        public string CUITCliente { get; set; }
+
+        //public TipoEntregaEnum TipoEntrega { get; set; }
+        //si sumo esto podría cambiar los estados!
+        public int DNIDestinatario { get; set; }
+        public string DireccionDestinatario { get; set; }
+        public string NombreDestinatario { get; set; }
+        public string ApellidoDestinatario { get; set; }
+        public string AgenciaOrigen { get; set; }
+        public string AgenciaDestino { get; set; }
+        public string DatosRetiroADomicilio { get; set; }
+        public string CodCDActual { get; set; }
+        public List<int> ParadasRuta { get; set; }
+
+        //esto no podría ir directamente en historial??
+        public DateTime FechaImposicion { get; set; }
+        public DateTime FechaAdmision { get; set; }
+        public DateTime FechaEntrega { get; set; }
+
+       
+
+       //está ok así esto?
+        public EncomiendaFactura DatosFacturacion { get; set; }
+
+*/

@@ -76,6 +76,7 @@ namespace Grupo_E.F03_ImposicionEnCD
         });
 
 
+        //acá debería buscar tracking "más alto" en datos encomienda?
         private int trackingActual = 1;
 
         private int ObtenerSiguienteTracking()

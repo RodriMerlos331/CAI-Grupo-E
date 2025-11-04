@@ -8,5 +8,10 @@
     "CodigoAgencia": "AG02",
     "CodigoCD": "CD02",
     "NombreAgencia": "DOT"
+  },
+  {
+    "CodigoAgencia": "AG03",
+    "CodigoCD": "CD06",
+    "NombreAgencia": "GaviotasShopping"
   }
 ]
