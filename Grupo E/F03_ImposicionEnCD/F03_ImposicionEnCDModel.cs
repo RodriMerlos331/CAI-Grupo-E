@@ -206,6 +206,8 @@ namespace Grupo_E.F03_ImposicionEnCD
 
                 DatosFacturacion = null,
 
+                //HistorialCambios = new List<Historial>(), cómo sumo historial ?
+
             };
             string mensaje =
              "Guía impuesta exitosamente.\n\n" +

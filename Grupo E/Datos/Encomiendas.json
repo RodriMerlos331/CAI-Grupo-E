@@ -64,5 +64,48 @@
     "FechaAdmision": "2025-11-04T13:05:04.3003406-03:00",
     "FechaEntrega": null,
     "DatosFacturacion": null
+  },
+
+  {
+    "Tracking": "CD02_5",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD06",
+    "CodCentroDistribucionDestino": "CD02",
+    "Estado": 7,
+    "TipoBulto": 0,
+    "CUITCliente": "30-12345678-01",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Maga Leder 12345678",
+    "ApellidoDestinatario": "Maga Leder 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": "CD01",
+    "ParadasRuta": [],
+    "FechaImposicion": "2025-11-04T13:05:04.2983386-03:00",
+    "FechaAdmision": "2025-11-04T13:05:04.3003406-03:00",
+    "FechaEntrega": null,
+    "DatosFacturacion": null,
+    "Historial": [
+      {
+        //Se admitío en CD:
+        "UbicacionPrevia": "CD06",
+        "FleteroAsignado": null,
+        "NumeroHDRUM": null,
+        "NumeroHDRMD": 1100,
+        "EstadoPrevio": 5
+      },
+      //En transito
+      {
+        //Se admitío en CD:
+        "UbicacionPrevia": "CD06",
+        "FleteroAsignado": null,
+        "NumeroHDRUM": null,
+        "NumeroHDRMD": 1100,
+        "EstadoPrevio": 6
+      }
+
+    ]
   }
 ]
