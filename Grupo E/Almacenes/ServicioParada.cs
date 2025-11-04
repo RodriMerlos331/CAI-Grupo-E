@@ -10,13 +10,12 @@ namespace Grupo_E.Almacenes
     {
         public string CodigoCD { get; set; }
         //ejemplo"Retiro"
-        public int CodigoParada { get; set; }
+        public int CodigoParada { get; set; } //unico x sistema
         //"01"
         public DateTime FechaYHoraLlega { get; set; }
         //jueves 18hs
         public DateTime FechaYHoraSale { get; set; }
         //viernes 21hs
-
 
         //duda acá: no debería ser indendpendiente? mientras no esté asignada van a estar en null? 
         public List<int> HDRDistribucionMD { get; set; } = new List<int>();
