@@ -1,18 +1,17 @@
 [
   {
     "DniFletero": 12345678,
-    //lo fletamos?
     "CuitEmpresaTransportista": "20-45651288-8",
     "CodCDAsociados": [
-      "Retiro",
-      "Liniers"
+      "CD01",
+      "CD02"
     ]
   },
   {
     "DniFletero": 23456789,
     "CuitEmpresaTransportista": "20-45651288-8",
     "CodCDAsociados": [
-      "MorónTerminal"
+      "CD05"
     ]
   }
 ]

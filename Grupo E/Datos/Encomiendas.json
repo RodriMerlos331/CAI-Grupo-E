@@ -1,46 +1,68 @@
 [
   {
-    "Tracking": "CD01AG01_01",
+    "Tracking": "AG03_01",
     "CodLocalidadOrigen": "CD01",
     "CodCentroDistribucionOrigen": "CD001",
     "CodCentroDistribucionDestino": "CD06",
-    "Estado": "ImpuestaPendienteRetiroAgencia",
-    "TipoBulto": "S",
+    "Estado": 1,
+    "TipoBulto": 0,
     "CUITCliente": "30-12345678-01",
     "DNIDestinatario": 12345678,
-    "DireccionDestinatario": "Calle Falsa 123",
     "NombreDestinatario": "Juan",
     "ApellidoDestinatario": "Pérez",
+    "DireccionDestinatario": "Calle Falsa 123",
     "AgenciaOrigen": "AG01",
     "AgenciaDestino": "AG03",
     "DatosRetiroADomicilio": null,
-    "CodCDActual": null, //pero no está ahora en un CD??
-    "ParadasRuta": null, //no se ruteo aún
+    "CodCDActual": null,
+    "ParadasRuta": null,
     "FechaImposicion": "2024-01-15T10:30:00",
     "FechaAdmision": null,
     "FechaEntrega": null,
-    "DatosFacturacion": null //no está facturada aún
+    "DatosFacturacion": null
   },
   {
-    "Tracking": "CD01AG01_02",
+    "Tracking": "AG03_02",
     "CodLocalidadOrigen": "CD01",
     "CodCentroDistribucionOrigen": "CD001",
     "CodCentroDistribucionDestino": "CD06",
-    "Estado": "ImpuestaPendienteRetiroAgencia",
-    "TipoBulto": "S",
+    "Estado": 1,
+    "TipoBulto": 0,
     "CUITCliente": "30-12345678-01",
     "DNIDestinatario": 12345678,
-    "DireccionDestinatario": "Calle Falsa 123",
     "NombreDestinatario": "Juan",
     "ApellidoDestinatario": "Pérez",
+    "DireccionDestinatario": "Calle Falsa 123",
     "AgenciaOrigen": "AG01",
     "AgenciaDestino": "AG03",
     "DatosRetiroADomicilio": null,
-    "CodCDActual": null, //pero no está ahora en un CD??
-    "ParadasRuta": null, //no se ruteo aún
+    "CodCDActual": null,
+    "ParadasRuta": null,
     "FechaImposicion": "2024-01-15T10:30:00",
     "FechaAdmision": null,
     "FechaEntrega": null,
-    "DatosFacturacion": null //no está facturada aún
+    "DatosFacturacion": null
+  },
+  {
+    "Tracking": "CD02_3",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD06",
+    "CodCentroDistribucionDestino": "CD02",
+    "Estado": 5,
+    "TipoBulto": 0,
+    "CUITCliente": "30-12345678-01",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Maga Leder 12345678",
+    "ApellidoDestinatario": "Maga Leder 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": "CD01",
+    "ParadasRuta": [],
+    "FechaImposicion": "2025-11-04T13:05:04.2983386-03:00",
+    "FechaAdmision": "2025-11-04T13:05:04.3003406-03:00",
+    "FechaEntrega": null,
+    "DatosFacturacion": null
   }
 ]

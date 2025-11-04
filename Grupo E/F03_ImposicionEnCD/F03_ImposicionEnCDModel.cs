@@ -51,6 +51,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
 
         //REVISAR
+
         public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =>
     LocalidadAlmacen.Localidad.ToDictionary(
         loc => loc.Nombre,
@@ -82,7 +83,7 @@ namespace Grupo_E.F03_ImposicionEnCD
         //private int trackingActual = 1;
 
       
-
+        //acá me está tomando el ultimo q está en la carpeta "Datos" y no en "bin" 
 
         int ultimoNumero = EncomiendaAlmacen.Encomienda
           .Select(e => e.Tracking.Split('_').Last()) 
@@ -131,7 +132,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
-                Tracking = "CD01AG01_" + (ultimoNumero + 1).ToString(),
+                Tracking = cdDestino + "_" + (ultimoNumero + 1).ToString(),
                 CUITCliente = cuitCliente,
                 CodCentroDistribucionDestino = cdDestino,
                 TipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamañoBulto),
@@ -143,14 +144,14 @@ namespace Grupo_E.F03_ImposicionEnCD
                 //cómo lleno esto? no sabemos en qué CD estoy parado "ahora" , tendría sentido un menú? o sumar un campo de en este caso "CD ACTUAL"?
                 CodCDActual = "CD01",
                 CodLocalidadOrigen = "CABA",
-                CodCentroDistribucionOrigen = "CD06", //Viedma
+                CodCentroDistribucionOrigen = "CD01", //CABA
                 //hoy DatosDestinatarioText tiene nombre, apellido y dni todo junto :((( así q lo pongo acá repetido:
                 NombreDestinatario = datosDestinatario,
                 ApellidoDestinatario = datosDestinatario,
                 DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
 
-                AgenciaOrigen = null, //impuesot en CD
-                AgenciaDestino = null, //impuesot en CD
+                AgenciaOrigen = null, //impuesto en CD
+                AgenciaDestino = null, //impuesto en CD
 
                 DatosRetiroADomicilio = null, //Admitido en CD. 
 
@@ -176,25 +177,49 @@ namespace Grupo_E.F03_ImposicionEnCD
 
         public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario)
         {
-            ImposicionDomicilioParticular nuevaImposicion = new ImposicionDomicilioParticular
+            EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
-                Tracking = "CD01AG01_" + (ultimoNumero + 1).ToString(),
-                CUIT = cuitCliente,
-                DireccionParticular = direccionParticular,
-                TamanoBulto = tamanoBulto,
-                DatosDestinatario = datosDestinatario
+                Tracking = "DOM_" + (ultimoNumero + 1).ToString(),
+                CUITCliente = cuitCliente,
+                FechaImposicion = DateTime.Now,
+                FechaAdmision = DateTime.Now,
+                FechaEntrega = null, //no está entregada aún
+
+                TipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto),
+                NombreDestinatario = datosDestinatario,
+                ApellidoDestinatario = datosDestinatario,
+                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                //cómo lleno esto? no sabemos en qué CD estoy parado "ahora" , tendría sentido un menú? o sumar un campo de en este caso "CD ACTUAL"?
+                CodCDActual = "CD01",
+                CodLocalidadOrigen = "CABA",
+                CodCentroDistribucionOrigen = "CD01", //Capital
+
+                //cómo macheo CD destino con la dirección particular ingresada?? con localidad actual ?
+                DireccionDestinatario = direccionParticular,
+
+
+                //no:
+                AgenciaDestino = null,
+                AgenciaOrigen = null,
+                DatosRetiroADomicilio = null,
+                ParadasRuta = null,
+
+                DatosFacturacion = null,
+
             };
             string mensaje =
              "Guía impuesta exitosamente.\n\n" +
-             $"Tracking: {nuevaImposicion.Tracking}\n" +
-             $"CUIT del cliente: {nuevaImposicion.CUIT}\n" +
-             $"Dirección particular de destino: {nuevaImposicion.DireccionParticular}\n" +
-             $"Tamaño del bulto: {nuevaImposicion.TamanoBulto}\n" +
-             $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
+             $"Tracking: {NuevaEncomienda.Tracking}\n" +
+             $"CUIT del cliente: {NuevaEncomienda.CUITCliente}\n" +
+             $"Dirección particular de destino: {NuevaEncomienda.DireccionDestinatario}\n" +
+             $"Tamaño del bulto: {NuevaEncomienda.TipoBulto}\n" +
+             $"Datos del destinatario: {datosDestinatario}";
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
+        //Ejemplo de cómo estaba antes: 
         public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
         {
             ImposicionAgencia nuevaImposicion = new ImposicionAgencia
