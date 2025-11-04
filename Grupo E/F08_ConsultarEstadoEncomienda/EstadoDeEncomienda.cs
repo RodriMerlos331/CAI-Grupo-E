@@ -8,9 +8,9 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 {
     internal class EstadoDeEncomienda
     {
-        public int TrackingId { get; set; }
+        public string TrackingId { get; set; }
         public EstadoEnvio EstadoActual { get; set; }
-        public DateTime FechaHoraUltimoCambio { get; set; }
+        public DateTime? FechaHoraUltimoCambio { get; set; }
         public string LocalidadActual { get; set; }
         public string Origen {  get; set; }
         public string Destino { get; set; }

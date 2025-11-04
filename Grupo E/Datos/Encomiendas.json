@@ -87,21 +87,23 @@
     "FechaAdmision": "2025-11-04T13:05:04.3003406-03:00",
     "FechaEntrega": null,
     "DatosFacturacion": null,
-    "Historial": [
+    "HistorialCambios": [
       {
-        //Se admitío en CD:
+        "Tracking": "CD02_5",
+        "FechaPrevia": "2025-11-04T13:05:04.3003406-03:00",
         "UbicacionPrevia": "CD06",
-        "FleteroAsignado": null,
-        "NumeroHDRUM": null,
+        "FleteroAsignado":0,
+        "NumeroHDRUM": 0,
         "NumeroHDRMD": 1100,
         "EstadoPrevio": 5
       },
       //En transito
       {
-        //Se admitío en CD:
+        "Tracking": "CD02_5",
+        "FechaPrevia": "2025-11-04T15:10:00-03:00",
         "UbicacionPrevia": "CD06",
-        "FleteroAsignado": null,
-        "NumeroHDRUM": null,
+        "FleteroAsignado": 40943084,
+        "NumeroHDRUM": 0,
         "NumeroHDRMD": 1100,
         "EstadoPrevio": 6
       }

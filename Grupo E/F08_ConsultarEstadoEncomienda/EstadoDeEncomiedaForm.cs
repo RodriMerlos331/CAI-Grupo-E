@@ -31,18 +31,12 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 return;
             }
 
-            // Validación: numérico
-            int trackingId;
-            if (!int.TryParse(texto, out trackingId))
-            {
-                MessageBox.Show("El valor ingresado no es válido, sólo se permiten valores numéricos",
-                    "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtIdTracking.Focus();
-                txtIdTracking.SelectAll();
-                return;
-            }
 
-            if(modelo.data.ContainsKey(trackingId))
+            var trackingId = txtIdTracking.Text;
+
+          
+
+            if (modelo.data.ContainsKey(trackingId))
             {
                 EstadoDeEncomienda encomienda = modelo.data[trackingId];
 
@@ -59,7 +53,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 
                     fila.SubItems.Add(mov.FechaHora.ToString("dd/MM/yyyy HH:mm"));
                     fila.SubItems.Add(mov.UbicacionAnterior);
-                    fila.SubItems.Add(mov.TransportistaAsignado);
+                    fila.SubItems.Add(mov.TransportistaAsignado.ToString());
                     fila.SubItems.Add(mov.IdHojaRuta);
 
                     Historial.Items.Add(fila);
@@ -83,19 +77,15 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 case EstadoEnvio.ImpuestaPendienteRetiroAgencia: return "Impuesta y pendiente de retiro en agencia";
                 case EstadoEnvio.RuteadaRetiroDomicilio: return "Ruteada para retiro a domicilio";
                 case EstadoEnvio.RuteadaRetiroAgencia: return "Ruteada para retiro a agencia";
-                case EstadoEnvio.ImpuestaRetiradaAgencia: return "Impuesta y retirada de la agencia";
-                case EstadoEnvio.AdmitidaCD: return "Admitida en el centro de distribucion";
-                case EstadoEnvio.Transito: return "En Transito";
-                case EstadoEnvio.CentroDistribucionDestino: return "En CD de Destino";
-                case EstadoEnvio.PendienteEntregarDomicilio: return "Pendiente a entregar a domicilio";
-                case EstadoEnvio.RuteadaEntregaDomicilio: return "Ruteada para entrega a domicilio";
-                case EstadoEnvio.RuteadaEntregaAgencia: return "Ruteada para entrega a agencia";
+                case EstadoEnvio.EnTransitoUMOrigen: return "En transito a a CD de origen";
+                case EstadoEnvio.Admitida: return "Admitida en el centro de distribucion";
+                case EstadoEnvio.EnTransitoMD: return "En Transito";
+                case EstadoEnvio.PendienteRetiroCD: return "Pendiente de retiro en CD de destino";
+                case EstadoEnvio.PendienteEntregaDomicilio: return "Pendiente a entregar a domicilio";
+                case EstadoEnvio.PendienteEntregaAgencia: return "Ruteada para entrega a agencia";
                 case EstadoEnvio.PendienteRetiroAgencia: return "Pendiente de retiro en agencia por el destinatario";
-                case EstadoEnvio.PendienteEntregaCD: return "Pendiente entrega  a destinatario en CD";
-                case EstadoEnvio.EntregadaAgencia: return "Entregada en Agencia";
-                case EstadoEnvio.EntregadaCD: return "Entregada en CD";
-                case EstadoEnvio.EntregaFallida: return "Entrega fallida";
-                case EstadoEnvio.EntregadaDomicilio: return "Entregada en Domicilio";
+                case EstadoEnvio.EnTransitoUMDestino: return "En camino a domicilio de destino";
+                case EstadoEnvio.Entregada: return "Entregada";
                 case EstadoEnvio.Cancelada: return "Cancelado";
                 default: return estado.ToString();
             }

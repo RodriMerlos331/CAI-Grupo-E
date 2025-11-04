@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grupo_E.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,90 +9,91 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 {
     internal class EstadoDeEncomiendaModel
     {
-            public readonly Dictionary<int, EstadoDeEncomienda> data =
-                new Dictionary<int, EstadoDeEncomienda>
-                {
-                {
-                    1001, new EstadoDeEncomienda
-                    {
-                        TrackingId = 1001,
-                        EstadoActual = EstadoEnvio.Transito,
-                        FechaHoraUltimoCambio = DateTime.Today.AddHours(-3),
-                        LocalidadActual = "Rosario (Sta. Fe)",
-                        Origen = "Retiro",
-                        Destino = "Cordoba Capital",
-                        TipoDeBulto = "M",
-                        Historial = new List<Movimiento>
-                        {
-                            new Movimiento{
-                                Estado = EstadoEnvio.AdmitidaCD,
-                                FechaHora = DateTime.Today.AddDays(-2).AddHours(9),
-                                UbicacionAnterior = "Sucursal Caballito (CABA)",
-                                TransportistaAsignado = "Transp. Norte SRL",
-                                IdHojaRuta = "HR-202",
+        // Clave = tracking string
+        public readonly Dictionary<string, EstadoDeEncomienda> data;
+        private static string Key(string s) => (s ?? "").Trim().ToUpperInvariant();
 
-                            },
-                            new Movimiento{
-                                Estado = EstadoEnvio.CentroDistribucionDestino,
-                                FechaHora = DateTime.Today.AddDays(-1).AddHours(15),
-                                UbicacionAnterior = "CD Zona Norte (CABA)",
-                                TransportistaAsignado = "Transp. Norte SRL",
-                                IdHojaRuta = "HR-245",
+        public EstadoDeEncomiendaModel()
+        {
+            data = new Dictionary<string, EstadoDeEncomienda>();
 
-                            },
-                            new Movimiento{
-                                Estado = EstadoEnvio.RuteadaEntregaAgencia,
-                                FechaHora = DateTime.Today.AddHours(-3),
-                                UbicacionAnterior = "Peaje Gral. Lagos",
-                                TransportistaAsignado = "Transp. Norte SRL",
-                                IdHojaRuta = "HR-310",
-                               
-
-                            }
-                        }
-                    }
-                },
-                {
-                    2002, new EstadoDeEncomienda
-                    {
-                        TrackingId = 2002,
-                        EstadoActual = EstadoEnvio.EntregadaDomicilio,
-                        FechaHoraUltimoCambio = DateTime.Today.AddHours(-1),
-                        LocalidadActual = "Córdoba Capital",
-                        Origen = "Retiro",
-                        Destino = "Cordoba Capital",
-                        TipoDeBulto = "XL",
-                        Historial = new List<Movimiento>
-                        {
-                            new Movimiento{
-                                Estado = EstadoEnvio.RuteadaEntregaDomicilio,
-                                FechaHora = DateTime.Today.AddHours(-4),
-                                UbicacionAnterior = "Villa Carlos Paz",
-                                TransportistaAsignado = "Ruta Centro",
-                                IdHojaRuta = "HR-811",
-                               
-
-                            },
-                            new Movimiento{
-                                Estado = EstadoEnvio.EntregadaDomicilio,
-                                FechaHora = DateTime.Today.AddHours(-1),
-                                UbicacionAnterior = "Córdoba Capital",
-                                TransportistaAsignado = "Ruta Centro",
-                                IdHojaRuta = "HR-811",
+            var encomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
 
 
-                            }
-                        }
-                    }
-                }
-                };
-
-            public bool TryGet(int trackingId, out EstadoDeEncomienda model)
+            foreach (var enc in encomiendas)
             {
-                return data.TryGetValue(trackingId, out model);
+
+                if (string.IsNullOrWhiteSpace(enc.Tracking))
+                    continue;
+
+                var key = Key(enc.Tracking);
+
+
+                // Fecha del último cambio
+                var fechaUlt =
+                    enc.HistorialCambios?
+                       .Where(h => h.Tracking == enc.Tracking)
+                       .OrderByDescending(h => h.FechaPrevia)
+                       .Select(h => (DateTime?)h.FechaPrevia)
+                       .FirstOrDefault()
+                    ?? (enc.FechaEntrega > DateTime.MinValue ? enc.FechaEntrega
+                       : (enc.FechaAdmision > DateTime.MinValue ? enc.FechaAdmision : enc.FechaImposicion));
+
+
+                // Origen y destino 
+                var origen = enc.CodLocalidadOrigen;
+
+
+                var destino =
+                    (CentroDeDistribucionAlmacen.CentroDeDistribucion ?? new List<CentroDeDistribucionEntidad>())
+                    .Where(cd => cd.CodigoCD == enc.CodCentroDistribucionDestino)
+                    .Select(cd => cd.CodigoLocalidad)
+                    .FirstOrDefault() ?? enc.CodCentroDistribucionDestino;
+
+
+                // Historial → Movimiento 
+                var movimientos =
+                    (enc.HistorialCambios ?? new List<Historial>())
+                    .Where(h => h.Tracking == enc.Tracking)
+                    .OrderByDescending(h => h.FechaPrevia)
+                    .Select(h => new Movimiento
+                    {
+                        Estado = (EstadoEnvio)Enum.Parse(typeof(EstadoEnvio), h.EstadoPrevio.ToString(), true),
+                        FechaHora = h.FechaPrevia,
+                        UbicacionAnterior = h.UbicacionPrevia,
+                        TransportistaAsignado = h.FleteroAsignado,
+                        IdHojaRuta = (h.NumeroHDRMD > 0
+                                      ? h.NumeroHDRMD.ToString()
+                                      : (h.NumeroHDRUM > 0 ? h.NumeroHDRUM.ToString() : "-"))
+                    })
+                    .ToList();
+
+
+
+                var dto = new EstadoDeEncomienda
+                {
+                    TrackingId = enc.Tracking,
+                    EstadoActual = (EstadoEnvio)Enum.Parse(typeof(EstadoEnvio), enc.Estado.ToString(), true),
+                    FechaHoraUltimoCambio = fechaUlt,
+                    LocalidadActual = enc.CodCDActual,
+                    Origen = origen,
+                    Destino = destino,
+                    TipoDeBulto = enc.TipoBulto.ToString(),
+                    Historial = movimientos
+                };
+                Console.WriteLine(dto);
+
+                if (!data.ContainsKey(key)) data.Add(key, dto);
             }
         }
+
+        public bool TryGet(string trackingId, out EstadoDeEncomienda model) 
+        { 
+            return data.TryGetValue(trackingId, out model); 
+        }
     }
+}
+
 
 
 

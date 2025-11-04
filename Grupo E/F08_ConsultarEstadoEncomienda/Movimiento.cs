@@ -7,7 +7,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         public EstadoEnvio Estado { get; set; }
         public DateTime FechaHora { get; set; }
         public string UbicacionAnterior { get; set; }
-        public string TransportistaAsignado { get; set; }
+        public int TransportistaAsignado { get; set; }
         public string IdHojaRuta { get; set; }
        
     }

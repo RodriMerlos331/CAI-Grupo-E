@@ -10,7 +10,7 @@ namespace Grupo_E.Almacenes
     {
      
         
-        //public string Tracking {get; set; } lo sacamos? 
+        public string Tracking {get; set; } 
         public DateTime FechaPrevia { get; set; }
 
         public string UbicacionPrevia { get; set; }
