@@ -74,12 +74,7 @@
     <Compile Include="Almacenes\HDR_Distribucion_MDAlmacen.cs" />
     <Compile Include="Almacenes\HDR_Distribucion_MDEnt.cs" />
     <Compile Include="Almacenes\HDRDistribucionUMAlmacen.cs" />
-<<<<<<< Updated upstream
     <Compile Include="Almacenes\HDRDistribucionUMEnt.cs" />
-=======
-    <Compile Include="Almacenes\HDRDistribucionUMEntidad.cs" />
-    <Compile Include="Almacenes\Historial.cs" />
->>>>>>> Stashed changes
     <Compile Include="Almacenes\LocalidadAlmacen.cs" />
     <Compile Include="Almacenes\LocalidadEnt.cs" />
     <Compile Include="Almacenes\OmnibusAlmacen.cs" />
