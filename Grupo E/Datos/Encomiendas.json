@@ -17,8 +17,8 @@
     "CodCDActual": null,
     "ParadasRuta": null,
     "FechaImposicion": "2024-01-15T10:30:00",
-    "FechaAdmision": null,
-    "FechaEntrega": null,
+    "FechaAdmision": "1-1-1T00:00:00",
+    "FechaEntrega": "1-1-1T00:00:00",
     "DatosFacturacion": null
   },
   {
