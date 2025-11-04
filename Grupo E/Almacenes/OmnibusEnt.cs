@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class OmnibusEntidad
+    internal class OmnibusEnt
     {
         public string ServicioID { get; set; }
         //ejemplo "Retiro -Mar del Plata"

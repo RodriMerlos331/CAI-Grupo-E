@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class TarifarioEntidad
+    internal class TarifarioEnt
     {
         public decimal ExtraEntregaDomicilio { get; set; }
         public decimal ExtraRetiro { get; set; }

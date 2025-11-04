@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class AgenciaEntidad
+    internal class AgenciaEnt
     {
         public string CodigoAgencia { get; set; }
         public string CodigoCD { get; set; }

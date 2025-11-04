@@ -10,14 +10,14 @@ namespace Grupo_E.Almacenes
 {
     static class DatosGeneralesAlmacen
     {
-        public static List<DatosGeneralesEntidad> DatosGenerales { get; }
+        public static List<DatosGeneralesEnt> DatosGenerales { get; }
 
         static DatosGeneralesAlmacen()
         {
             if (File.Exists(@"Datos/DatosGeneraless.json"))
             {
                 var DatosGeneralesJson = File.ReadAllText(@"Datos/DatosGeneraless.json");
-                DatosGenerales = JsonConvert.DeserializeObject<List<DatosGeneralesEntidad>>(DatosGeneralesJson);
+                DatosGenerales = JsonConvert.DeserializeObject<List<DatosGeneralesEnt>>(DatosGeneralesJson);
             }
         }
 

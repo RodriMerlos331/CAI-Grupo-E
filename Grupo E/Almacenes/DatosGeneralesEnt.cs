@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class DatosGeneralesEntidad
+    internal class DatosGeneralesEnt
     {
         public string Dato { get; set; }
         //public List<TipoDatoEnum> TipoDatos { get; set; } = new List<TipoDatoEnum>();

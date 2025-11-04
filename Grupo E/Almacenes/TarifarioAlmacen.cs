@@ -11,14 +11,14 @@ namespace Grupo_E.Almacenes
     static class TarifarioAlmacen
     {
         
-        public static List<TarifarioEntidad> Tarifario { get; }
+        public static List<TarifarioEnt> Tarifario { get; }
 
         static TarifarioAlmacen()
         {
             if (File.Exists(@"Datos/Tarifarios.json"))
             {
                 var TarifarioJson = File.ReadAllText(@"Datos/Tarifarios.json");
-                Tarifario = JsonConvert.DeserializeObject<List<TarifarioEntidad>>(TarifarioJson);
+                Tarifario = JsonConvert.DeserializeObject<List<TarifarioEnt>>(TarifarioJson);
             }
         }
 

@@ -10,14 +10,14 @@ namespace Grupo_E.Almacenes
 {
     static class HDRDistribucionUMAlmacen
     {
-        public static List<HDRDistribucionUMEntidad> HDRDistribucionUM{ get; }
+        public static List<HDRDistribucionUMEnt> HDRDistribucionUM{ get; }
 
         static HDRDistribucionUMAlmacen()
         {
             if (File.Exists(@"Datos/HdrUM.json"))
             {
                 var HDRUmJSON = File.ReadAllText(@"Datos/HdrUM.json");
-                HDRDistribucionUM = JsonConvert.DeserializeObject<List<HDRDistribucionUMEntidad>>(HDRUmJSON);
+                HDRDistribucionUM = JsonConvert.DeserializeObject<List<HDRDistribucionUMEnt>>(HDRUmJSON);
             }
         }
 

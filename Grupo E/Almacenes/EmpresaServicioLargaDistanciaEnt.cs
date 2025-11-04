@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class EmpresaServicioLargaDistanciaEntidad
+    internal class EmpresaServicioLargaDistanciaEnt
     {
         public string CuitEmpresaOmnibus { get; set; }
         public string RazonSocial { get; set; }
