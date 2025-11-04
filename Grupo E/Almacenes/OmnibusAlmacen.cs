@@ -1,5 +1,7 @@
 ﻿using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,24 +12,23 @@ namespace Grupo_E.Almacenes
     static class OmnibusAlmacen
         
     {
-        /*
+        
         public static List<OmnibusEntidad> Omnibus { get; }
 
         static OmnibusAlmacen()
         {
-            if (File.Exists("Omnibuss.json"))
+            if (File.Exists(@"Datos/Omnibuss.json"))
             {
-                var OmnibusJson = File.ReadAllText("Omnibuss.json");
-                Omnibus = System.Text.Json.JsonSerializer.Deserialize<List<OmnibusEntidad>>(OmnibusJson) ?? new List<OmnibusEntidad>();
-            }
+                var OmnibusJson = File.ReadAllText(@"Datos/Omnibuss.json");
+                Omnibus = JsonConvert.DeserializeObject<List<OmnibusEntidad>>(OmnibusJson);
         }
 
         public static void Grabar()
         {
-            var OmnibusJson = System.Text.Json.JsonSerializer.Serialize(Omnibus);
-            File.WriteAllText("Omnibuss.json", OmnibusJson);
+            var OmnibusJson = JsonConvert.SerializeObject(Omnibus);
+            File.WriteAllText(@"Datos/Omnibuss.json", OmnibusJson);
         }
-        */
+        
     }
        
 }

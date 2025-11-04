@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,23 +10,23 @@ namespace Grupo_E.Almacenes
 {
     static class TarifarioAlmacen
     {
-        /*
+        
         public static List<TarifarioEntidad> Tarifario { get; }
 
         static TarifarioAlmacen()
         {
-            if (File.Exists("Tarifarios.json"))
+            if (File.Exists(@"Datos/Tarifarios.json"))
             {
-                var TarifarioJson = File.ReadAllText("Tarifarios.json");
-                Tarifario = System.Text.Json.JsonSerializer.Deserialize<List<TarifarioEntidad>>(TarifarioJson) ?? new List<TarifarioEntidad>();
+                var TarifarioJson = File.ReadAllText(@"Datos/Tarifarios.json");
+                Tarifario = JsonConvert.DeserializeObject<List<TarifarioEntidad>>(TarifarioJson);
             }
         }
 
         public static void Grabar()
         {
-            var TarifarioJson = System.Text.Json.JsonSerializer.Serialize(Tarifario);
-            File.WriteAllText("Tarifarios.json", TarifarioJson);
+            var TarifarioJson = JsonConvert.SerializeObject(Tarifario);
+            File.WriteAllText(@"Datos/Tarifarios.json", TarifarioJson);
         }
-        */
+        
     }
 }
