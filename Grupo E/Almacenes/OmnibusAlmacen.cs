@@ -13,14 +13,14 @@ namespace Grupo_E.Almacenes
         
     {
         
-        public static List<OmnibusEnt> Omnibus { get; }
+        public static List<OmnibusEntidad> Omnibus { get; }
 
         static OmnibusAlmacen()
         {
             if (File.Exists(@"Datos/Omnibuss.json"))
             {
                 var OmnibusJson = File.ReadAllText(@"Datos/Omnibuss.json");
-                Omnibus = JsonConvert.DeserializeObject<List<OmnibusEnt>>(OmnibusJson);
+                Omnibus = JsonConvert.DeserializeObject<List<OmnibusEntidad>>(OmnibusJson);
             }
         }
 

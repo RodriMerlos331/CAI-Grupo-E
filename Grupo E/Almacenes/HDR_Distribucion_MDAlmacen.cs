@@ -10,14 +10,14 @@ namespace Grupo_E.Almacenes
 {
     static class HDR_Distribucion_MDAlmacen
     {
-        public static List<HDR_Distribucion_MDEnt> HDR_Distribucion_MD { get; }
+        public static List<HDR_Distribucion_MDEntidad> HDR_Distribucion_MD { get; }
 
         static HDR_Distribucion_MDAlmacen()
         {
             if (File.Exists(@"Datos/HDR_Distribucion_MDs.json"))
             {
                 var HDR_Distribucion_MDJson = File.ReadAllText(@"Datos/HDR_Distribucion_MDs.json");
-                HDR_Distribucion_MD = JsonConvert.DeserializeObject<List<HDR_Distribucion_MDEnt>>(HDR_Distribucion_MDJson);
+                HDR_Distribucion_MD = JsonConvert.DeserializeObject<List<HDR_Distribucion_MDEntidad>>(HDR_Distribucion_MDJson);
             }
         }
 

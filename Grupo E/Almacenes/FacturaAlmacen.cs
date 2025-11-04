@@ -10,14 +10,14 @@ namespace Grupo_E.Almacenes
 {
     static class FacturaAlmacen
     {
-        public static List<FacturaEnt> Facturas { get; }
+        public static List<FacturaEntidad> Facturas { get; }
 
         static FacturaAlmacen()
         {
             if (File.Exists(@"Datos/Facturas.json"))
             {
                 var FacturasJson = File.ReadAllText(@"Datos/Facturas.json");
-                Facturas = JsonConvert.DeserializeObject<List<FacturaEnt>>(FacturasJson);
+                Facturas = JsonConvert.DeserializeObject<List<FacturaEntidad>>(FacturasJson);
             }
         }
 

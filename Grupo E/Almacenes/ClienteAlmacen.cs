@@ -12,14 +12,14 @@ namespace Grupo_E.Almacenes
     static class ClienteAlmacen
     {
         
-            public static List<ClienteEnt> Cliente { get;}
+            public static List<ClienteEntidad> Cliente { get;}
 
             static ClienteAlmacen()
             {
                 if (File.Exists(@"Datos/Clientes.json"))
                 {
                     var ClienteJson = File.ReadAllText(@"Datos/Clientes.json");
-                    Cliente = JsonConvert.DeserializeObject<List<ClienteEnt>>(ClienteJson);
+                    Cliente = JsonConvert.DeserializeObject<List<ClienteEntidad>>(ClienteJson);
                 }
             }
 

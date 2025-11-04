@@ -12,14 +12,14 @@ namespace Grupo_E.Almacenes
 {
     static class FleteroAlmacen
     {
-        public static List<FleteroEnt> Fletero { get; }
+        public static List<FleteroEntidad> Fletero { get; }
 
         static FleteroAlmacen()
         {
             if (File.Exists(@"Datos/Fleteros.json"))
             {
                 var FleteroJson = File.ReadAllText(@"Datos/Fleteros.json");
-                Fletero = JsonConvert.DeserializeObject<List<FleteroEnt>>(FleteroJson);
+                Fletero = JsonConvert.DeserializeObject<List<FleteroEntidad>>(FleteroJson);
             }
         }
 

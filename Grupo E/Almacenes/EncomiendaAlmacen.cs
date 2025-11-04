@@ -10,14 +10,14 @@ namespace Grupo_E.Almacenes
 {
     internal class EncomiendaAlmacen
     {
-        public static List<EncomiendaEnt> Encomienda { get; }
+        public static List<EncomiendaEntidad> Encomienda { get; }
 
         static EncomiendaAlmacen()
         {
             if (File.Exists(@"Datos/Encomiendas.json"))
             {
                 var EncomiendaJson = File.ReadAllText(@"Datos/Encomiendas.json");
-                Encomienda = JsonConvert.DeserializeObject<List<EncomiendaEnt>>(EncomiendaJson);
+                Encomienda = JsonConvert.DeserializeObject<List<EncomiendaEntidad>>(EncomiendaJson);
             }
         }
 

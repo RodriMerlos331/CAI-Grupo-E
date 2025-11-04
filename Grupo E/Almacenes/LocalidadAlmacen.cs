@@ -10,14 +10,14 @@ namespace Grupo_E.Almacenes
 {
     internal class LocalidadAlmacen
     {
-        public static List<LocalidadEnt> Localidad { get; }
+        public static List<LocalidadEntidad> Localidad { get; }
 
         static LocalidadAlmacen()
         {
             if (File.Exists(@"Datos/Localidades.json"))
             {
                 var LocalidadJSON = File.ReadAllText(@"Datos/Localidades.json");
-                Localidad = JsonConvert.DeserializeObject<List<LocalidadEnt>>(LocalidadJSON);
+                Localidad = JsonConvert.DeserializeObject<List<LocalidadEntidad>>(LocalidadJSON);
             }
         }
 

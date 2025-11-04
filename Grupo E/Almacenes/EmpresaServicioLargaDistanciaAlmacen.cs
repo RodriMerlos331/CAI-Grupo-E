@@ -10,14 +10,14 @@ namespace Grupo_E.Almacenes
 {
     static class EmpresaServicioLargaDistanciaAlmacen
     {
-        public static List<EmpresaServicioLargaDistanciaEnt> EmpresaServicioLargaDistancia { get; }
+        public static List<EmpresaServicioLargaDistanciaEntidad> EmpresaServicioLargaDistancia { get; }
 
         static EmpresaServicioLargaDistanciaAlmacen()
         {
             if (File.Exists(@"Datos/EmpresaServicioLargaDistancias.json"))
             {
                 var EmpresaServicioLargaDistanciaJson = File.ReadAllText(@"Datos/EmpresaServicioLargaDistancias.json");
-                EmpresaServicioLargaDistancia = JsonConvert.DeserializeObject<List<EmpresaServicioLargaDistanciaEnt>>(EmpresaServicioLargaDistanciaJson);
+                EmpresaServicioLargaDistancia = JsonConvert.DeserializeObject<List<EmpresaServicioLargaDistanciaEntidad>>(EmpresaServicioLargaDistanciaJson);
             }
         }
 

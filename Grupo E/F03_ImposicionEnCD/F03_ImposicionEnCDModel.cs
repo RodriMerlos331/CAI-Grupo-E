@@ -130,7 +130,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                     .First(cd => cd.NombreTerminal == centroDistribucionDestino)
                     .CodigoCD;
 
-            EncomiendaEnt NuevaEncomienda = new EncomiendaEnt
+            EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
                 Tracking = cdDestino + "_" + (ultimoNumero + 1).ToString(),
                 CUITCliente = cuitCliente,
@@ -177,7 +177,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
         public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario)
         {
-            EncomiendaEnt NuevaEncomienda = new EncomiendaEnt
+            EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
                 Tracking = "DOM_" + (ultimoNumero + 1).ToString(),
                 CUITCliente = cuitCliente,

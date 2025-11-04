@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    public class FleteroEnt
+    public class FleteroEntidad
     {
         public int DniFletero { get; set; }
         public string CuitEmpresaTransportista { get; set; }
