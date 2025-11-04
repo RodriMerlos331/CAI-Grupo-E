@@ -88,13 +88,8 @@ namespace Grupo_E.F03_ImposicionEnCD
         int ultimoNumero = EncomiendaAlmacen.Encomienda
           .Select(e => e.Tracking.Split('_').Last()) 
           .Select(n => int.Parse(n))                 
-          .DefaultIfEmpty(0)
+          .DefaultIfEmpty(1)
           .Max();
-
-        public void ObtenerSiguienteTracking()
-        {
-            ultimoNumero++;
-        }
 
         /*
          * public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
@@ -132,7 +127,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
-                Tracking = cdDestino + "_" + (ultimoNumero + 1).ToString(),
+                Tracking = cdDestino + "_" + (ultimoNumero++).ToString(),
                 CUITCliente = cuitCliente,
                 CodCentroDistribucionDestino = cdDestino,
                 TipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamañoBulto),
@@ -159,7 +154,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
                 DatosFacturacion = null //no se factura aún
 
-            };
+            };            
 
             EncomiendaAlmacen.Encomienda.Add(NuevaEncomienda);
 
@@ -179,7 +174,7 @@ namespace Grupo_E.F03_ImposicionEnCD
         {
             EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
-                Tracking = "DOM_" + (ultimoNumero + 1).ToString(),
+                Tracking = "DOM_" + (ultimoNumero++).ToString(),
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
                 FechaAdmision = DateTime.Now,
@@ -221,12 +216,13 @@ namespace Grupo_E.F03_ImposicionEnCD
         }
 
 
+        /*
         //Ejemplo de cómo estaba antes: 
         public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
         {
             ImposicionAgencia nuevaImposicion = new ImposicionAgencia
             {
-                Tracking = "CD01AG01_" + (ultimoNumero + 1).ToString(),
+                Tracking = "CD01AG01_" + (ultimoNumero++).ToString(),
                 CUIT = cuitCliente,
                 Agencia = agenciaDestino,
                 TamanoBulto = tamanoBulto,
@@ -243,6 +239,6 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        }
+        }*/
     }
 }

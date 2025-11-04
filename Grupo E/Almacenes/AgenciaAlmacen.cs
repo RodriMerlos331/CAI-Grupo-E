@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
 
         public static void Grabar()
         {
-            var AgenciaJson = JsonConvert.SerializeObject(Agencia);
+            var AgenciaJson = JsonConvert.SerializeObject(Agencia, Formatting.Indented);
             File.WriteAllText(@"Datos/Agencias.json", AgenciaJson);
         }
     }
