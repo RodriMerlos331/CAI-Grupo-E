@@ -1,24 +1,14 @@
 [
   {
-    "Dato": "Parametros de facturacion",
-    "TipoDatos": [
-      {
-        "Tipo": "CUITTutasa",
-        "Valor": "30-12345678-9"
-      },
-      {
-        "Tipo": "IVAPorcentaje",
-        "Valor": 21
-      }
-    ]
+    "Tipo": 0,
+    "Dato": "20-12345678-10"
   },
   {
-    "Dato": "Parametros AFIP",
-    "TipoDatos": [
-      {
-        "Tipo": "CodigoAutorizacionElectronica",
-        "Valor": "AFIP-2025-XYZ"
-      }
-    ]
+    "Tipo": 1,
+    "Dato": "21"
+  },
+  {
+    "Tipo": 2,
+    "Dato": "36454789874444"
   }
 ]
