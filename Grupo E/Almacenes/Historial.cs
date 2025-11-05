@@ -9,8 +9,7 @@ namespace Grupo_E.Almacenes
     public class Historial
     {
      
-        
-        public string Tracking {get; set; } 
+        public string Tracking { get; set; }
         public DateTime FechaPrevia { get; set; }
 
         public string UbicacionPrevia { get; set; }

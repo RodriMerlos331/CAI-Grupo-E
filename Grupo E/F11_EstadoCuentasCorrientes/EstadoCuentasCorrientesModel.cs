@@ -43,7 +43,7 @@ namespace Grupo_E.EstadoCuentasCorrientes
 
                 // OJO: usá acá el nombre real de la propiedad en la entidad:
                 // FechaDePago o FechaPago, según la tengas declarada.
-                if (f.FechaDePago == null)
+                if (f.FechadePago == null)
                 {
                     // Factura impaga -> Pendiente
                     estado = "Pendiente";

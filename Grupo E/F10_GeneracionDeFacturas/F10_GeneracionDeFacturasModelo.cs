@@ -61,7 +61,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
             var resultado = todasLasEncomiendas
                 .Where(e =>
-                    !e.facturada &&
+                    !e.Facturada &&
                     !string.IsNullOrEmpty(e.CUITCliente) &&
                     new string(e.CUITCliente.Where(char.IsDigit).ToArray()) == cuitNormalizado
                 )
@@ -82,7 +82,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
             foreach (var encomienda in encomiendas)
             {
-                if (encomienda.DatosFacturacion != null)
+                if (encomienda.EncomiendaFactura != null)
                 {
                     resultado.Add(new EncomiendaFacturaDTO
                     {
@@ -90,11 +90,11 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                         FechaAdmision = encomienda.FechaAdmision.HasValue && encomienda.FechaAdmision.Value.Year > 1
                             ? encomienda.FechaAdmision.Value.ToString("dd/MM/yyyy")
                             : "",
-                        Importe = encomienda.DatosFacturacion.PrecioCombinacionTamanoOrigenDestino.ToString("C"),
-                        ExtraRetiro = encomienda.DatosFacturacion.ExtraRetiro.ToString("C"),
-                        ExtraEntrega = encomienda.DatosFacturacion.ExtraEntrega.ToString("C"),
-                        ExtraAgencia = encomienda.DatosFacturacion.ExtraAgencia.ToString("C"),
-                        PrecioTotal = encomienda.DatosFacturacion.PrecioTotalEncomienda.ToString("C")
+                        Importe = encomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino.ToString("C"),
+                        ExtraRetiro = encomienda.EncomiendaFactura.ExtraRetiro.ToString("C"),
+                        ExtraEntrega = encomienda.EncomiendaFactura.ExtraEntrega.ToString("C"),
+                        ExtraAgencia = encomienda.EncomiendaFactura.ExtraAgencia.ToString("C"),
+                        PrecioTotal = encomienda.EncomiendaFactura.PrecioTotalEncomienda.ToString("C")
                     });
                 }
             }

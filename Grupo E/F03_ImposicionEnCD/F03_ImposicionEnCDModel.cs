@@ -152,7 +152,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
                 ParadasRuta = new List<int>(), //vacio pq todavía no se ruteo ??
 
-                DatosFacturacion = null //no se factura aún
+                EncomiendaFactura = null //no se factura aún
 
             };
 
@@ -170,46 +170,46 @@ namespace Grupo_E.F03_ImposicionEnCD
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario, string localidad)
+        public void ImposicionDomicilioParticular(
+        string cuitCliente,
+        string direccionParticular,
+        string tamanoBulto,
+        string datosDestinatario,
+        string localidad)
         {
-
             var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
             var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad;
-            //CodActual y CodLocalidadOrigen no terminan siendo lo mismo? Para qué me sirven?
             var codCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
-            var codLocalidadActual = LocalidadAlmacen.Localidad
-                .First(l => l.Nombre == localidad)
-                .CodigoLocalidad;
+
             //lo sumé acá: pero querría hacerlo como se toma CD desde el menú
-            var codCentroDistribucionDestino = ObtenerCodigoCDPrimerEncontrado(codLocalidadActual);
+            var codLocalidadDestino = LocalidadAlmacen.Localidad
+                .Where(l => l.Nombre == localidad)
+                .Select(l => l.CodigoLocalidad)
+                .FirstOrDefault();
+
+            var codCentroDistribucionDestino = ObtenerCodigoCDPrimerEncontrado(codLocalidadDestino);
+
+            // Parse del tamaño de bulto (compatible con C# 7.3)
             var tipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto);
 
-
-            //var precioBase = PreciosPorOrigenDestino.ObtenerPrecio(codCentroDistribucionOrigen, codCentroDistribucionDestino, tipoBulto);
-            //Chequear
-            var extraEntrega = TarifarioAlmacen.Tarifario.First().ExtraEntregaDomicilio;
-
-
-
-            EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
+            // Instancio la encomienda
+            var nuevaEncomienda = new EncomiendaEntidad
             {
                 Tracking = "DOM_" + (ultimoNumero++).ToString(),
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
                 FechaAdmision = DateTime.Now,
-                FechaEntrega = null,
+                FechaEntrega = null, // aún no entregada
 
                 TipoBulto = tipoBulto,
                 NombreDestinatario = datosDestinatario,
                 ApellidoDestinatario = datosDestinatario,
                 DireccionDestinatario = direccionParticular,
-                DNIDestinatario = 123456789,
-                //DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
 
                 CodCDActual = codCDActual,
                 CodLocalidadOrigen = codLocalidadOrigen,
                 CodCentroDistribucionOrigen = codCentroDistribucionOrigen,
-
                 CodCentroDistribucionDestino = codCentroDistribucionDestino,
 
                 Estado = EstadoEncomiendaEnum.Admitida,
@@ -218,40 +218,68 @@ namespace Grupo_E.F03_ImposicionEnCD
                 AgenciaOrigen = null,
                 DatosRetiroADomicilio = null,
 
-                ParadasRuta = ObtenerParadasRutaBasica(codCentroDistribucionOrigen, codCentroDistribucionDestino),
+                //ejemplo cualquiera, en este caso la parada es retiro y 5 Grutas ??, pero debería generarse la ruta real, quizas desde ObtenerRuta
+                ParadasRuta = new List<int> { 1, 5 },
 
-                //Al admitir se generan los datos de facturación
-                /*
-                DatosFacturacion = new encomiendaFactura
-                {
-                    PrecioCombinacionTamanoOrigenDestino = precioBase,
-                    ExtraRetiro = 0,
-                    ExtraAgencia = 0,
-                    ExtraEntrega = extraEntrega,
-                    PrecioTotalEncomienda = precioBase + extraEntrega
-                },
-                */
+                Facturada = false,
 
-                DatosFacturacion = null,
+                HistorialCambios = new List<Historial>(),
 
+                };
 
-            };
+            // Generación de factura Dos opciones: 
+            // var precioBase = PreciosPorOrigenDestino.ObtenerPrecio(codCentroDistribucionOrigen, codCentroDistribucionDestino, tipoBulto);
+            //Chequear
 
-            EncomiendaAlmacen.Encomienda.Add(NuevaEncomienda);
-            MessageBox.Show(NuevaEncomienda.DatosFacturacion?.GetType().FullName ?? "null", "Tipo DatosFacturacion");
+            //var extraEntrega = TarifarioAlmacen.Tarifario.First().ExtraEntregaDomicilio;
 
+            nuevaEncomienda.HistorialCambios.Add(new Historial
+            {
+                Tracking = nuevaEncomienda.Tracking,
+                FechaPrevia = DateTime.Now,
+                UbicacionPrevia = codCDActual,
+                FleteroAsignado = 0,
+                NumeroHDRUM = 0,
+                NumeroHDRMD = 0,
+                EstadoPrevio = EstadoEncomiendaEnum.Admitida
+            });
+
+            var tarifario = TarifarioAlmacen.Tarifario.FirstOrDefault();
+            
+            /*if (tarifario == null)
+            {
+                MessageBox.Show("No se encontró el tarifario cargado.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }*/
+
+            nuevaEncomienda.GenerarFactura(
+                tarifario,
+                incluirRetiro: false,
+                incluirEntrega: true,
+                incluirAgencia: false);
+
+            // Agrego la encomienda al almacén
+            EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
+
+            // Mensaje informativo
             string mensaje =
-             "Guía impuesta exitosamente.\n\n" +
-             $"Tracking: {NuevaEncomienda.Tracking}\n" +
-             $"CUIT del cliente: {NuevaEncomienda.CUITCliente}\n" +
-             $"Dirección particular de destino: {NuevaEncomienda.DireccionDestinatario}\n" +
-             $"Tamaño del bulto: {NuevaEncomienda.TipoBulto}\n" +
-             $"Datos del destinatario: {datosDestinatario}\n"
-                 ;
+                "Guía impuesta exitosamente.\n\n" +
+                "Tracking: " + nuevaEncomienda.Tracking + "\n" +
+                "CUIT del cliente: " + nuevaEncomienda.CUITCliente + "\n" +
+                "Dirección particular de destino: " + nuevaEncomienda.DireccionDestinatario + "\n" +
+                "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
+                "Datos del destinatario: " + datosDestinatario + "\n\n" +
+
+        "---- DATOS DE FACTURACIÓN ----\n" +
+        "Precio base (combinación tamaño/origen/destino): $" + nuevaEncomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino + "\n" +
+        "Extra por retiro a domicilio: $" + nuevaEncomienda.EncomiendaFactura.ExtraRetiro + "\n" +
+        "Extra por entrega en agencia: $" + nuevaEncomienda.EncomiendaFactura.ExtraAgencia + "\n" +
+        "Extra por entrega a domicilio: $" + nuevaEncomienda.EncomiendaFactura.ExtraEntrega + "\n" +
+        "----------------------------------\n" +
+        "TOTAL FACTURADO: $" + nuevaEncomienda.EncomiendaFactura.PrecioTotalEncomienda + "\n";
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // temporal: mostrar rutas al imponer para depurar
-            
         }
 
 
@@ -303,6 +331,37 @@ namespace Grupo_E.F03_ImposicionEnCD
                 return new List<int> { paradaOrigen };
 
             return new List<int> { paradaOrigen, paradaDestino };
+        }
+
+        private EncomiendaFactura CalcularFactura(
+    TarifarioEntidad tarifario,
+    TipoBultoEnum tipoBulto,
+    string cdOrigen,
+    string cdDestino,
+    bool incluirRetiro,
+    bool incluirEntrega,
+    bool incluirAgencia)
+        {
+            var precioBase = tarifario.PreciosPorOrigenDestinos
+                .FirstOrDefault(p =>
+                    p.Tipo == tipoBulto &&
+                    p.CodigoCDOrigen == cdOrigen &&
+                    p.CodigoCDDestino == cdDestino)?.Precio ?? 0;
+
+            var extraRetiro = incluirRetiro ? tarifario.ExtraRetiro : 0;
+            var extraEntrega = incluirEntrega ? tarifario.ExtraEntregaDomicilio : 0;
+            var extraAgencia = incluirAgencia ? tarifario.ExtraAgencia : 0;
+
+            var total = precioBase + extraRetiro + extraEntrega + extraAgencia;
+
+            return new EncomiendaFactura
+            {
+                PrecioCombinacionTamanoOrigenDestino = precioBase,
+                ExtraRetiro = extraRetiro,
+                ExtraEntrega = extraEntrega,
+                ExtraAgencia = extraAgencia,
+                PrecioTotalEncomienda = total
+            };
         }
     }
 }

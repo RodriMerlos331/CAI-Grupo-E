@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Grupo_E.Almacenes
 {
-    internal class EncomiendaEntidad
+    public class EncomiendaEntidad
     {
         public string Tracking { get; set; }
         public string CodLocalidadOrigen { get; set; }
@@ -33,10 +34,37 @@ namespace Grupo_E.Almacenes
        
 
        //está ok así esto?
-        public EncomiendaFactura DatosFacturacion { get; set; }
+        public EncomiendaFactura EncomiendaFactura { get; set; }
 
         public List <Historial> HistorialCambios { get; set; } = new List<Historial>();
 
-        public bool facturada { get; set; }
+        public bool Facturada { get; set; }
+
+        public void GenerarFactura(
+       TarifarioEntidad tarifario,
+       bool incluirRetiro,
+       bool incluirEntrega,
+       bool incluirAgencia)
+        {
+            var precioBase = tarifario.PreciosPorOrigenDestinos
+                .FirstOrDefault(p =>
+                    p.Tipo == TipoBulto &&
+                    p.CodigoCDOrigen == CodCentroDistribucionOrigen &&
+                    p.CodigoCDDestino == CodCentroDistribucionDestino)?.Precio ?? 0;
+
+            var extraRetiro = incluirRetiro ? tarifario.ExtraRetiro : 0;
+            var extraEntrega = incluirEntrega ? tarifario.ExtraEntregaDomicilio : 0;
+            var extraAgencia = incluirAgencia ? tarifario.ExtraAgencia : 0;
+
+            EncomiendaFactura = new EncomiendaFactura
+            {
+                PrecioCombinacionTamanoOrigenDestino = precioBase,
+                ExtraRetiro = extraRetiro,
+                ExtraEntrega = extraEntrega,
+                ExtraAgencia = extraAgencia,
+                PrecioTotalEncomienda = precioBase + extraRetiro + extraEntrega + extraAgencia
+            };
+        }
     }
 }
+
