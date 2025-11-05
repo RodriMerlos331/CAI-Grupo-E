@@ -56,20 +56,36 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                 return new List<EncomiendaEntidad>();
             }
 
-            // Normaliza el CUIT para comparar solo los números
             string cuitNormalizado = new string(cuit.Where(char.IsDigit).ToArray());
+            DateTime hoy = DateTime.Today;
+            DateTime primerDiaMesActual = new DateTime(hoy.Year, hoy.Month, 1);
 
-            var resultado = todasLasEncomiendas
+            // Encomiendas no facturadas para el CUIT
+            var encomiendasNoFacturadas = todasLasEncomiendas
                 .Where(e =>
-                    !e.facturada &&
-                    !string.IsNullOrEmpty(e.CUITCliente) &&
+                    !e.Facturada &&
                     new string(e.CUITCliente.Where(char.IsDigit).ToArray()) == cuitNormalizado
-                )
-                .ToList();
+                ).ToList();
+
+            // De esas, las que cumplen con la fecha
+            var resultado = encomiendasNoFacturadas
+                .Where(e =>
+                    e.FechaEntrega.HasValue &&
+                    e.FechaEntrega.Value.Year > 1900 && // <-- Validación extra
+                    e.FechaEntrega.Value.Date < primerDiaMesActual
+                ).ToList();
+
 
             if (!resultado.Any())
             {
-                MessageBox.Show("No hay encomiendas no facturadas para este CUIT.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (encomiendasNoFacturadas.Any())
+                {
+                    MessageBox.Show("Todas las encomiendas no facturadas para este CUIT tienen fecha de entrega posterior al último día del mes anterior.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No hay encomiendas no facturadas para este CUIT.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
             return resultado;
@@ -82,7 +98,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
             foreach (var encomienda in encomiendas)
             {
-                if (encomienda.DatosFacturacion != null)
+                if (encomienda.EncomiendaFactura != null)
                 {
                     resultado.Add(new EncomiendaFacturaDTO
                     {
@@ -90,16 +106,72 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                         FechaAdmision = encomienda.FechaAdmision.HasValue && encomienda.FechaAdmision.Value.Year > 1
                             ? encomienda.FechaAdmision.Value.ToString("dd/MM/yyyy")
                             : "",
-                        Importe = encomienda.DatosFacturacion.PrecioCombinacionTamanoOrigenDestino.ToString("C"),
-                        ExtraRetiro = encomienda.DatosFacturacion.ExtraRetiro.ToString("C"),
-                        ExtraEntrega = encomienda.DatosFacturacion.ExtraEntrega.ToString("C"),
-                        ExtraAgencia = encomienda.DatosFacturacion.ExtraAgencia.ToString("C"),
-                        PrecioTotal = encomienda.DatosFacturacion.PrecioTotalEncomienda.ToString("C")
+                        Importe = encomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino.ToString("C"),
+                        ExtraRetiro = encomienda.EncomiendaFactura.ExtraRetiro.ToString("C"),
+                        ExtraEntrega = encomienda.EncomiendaFactura.ExtraEntrega.ToString("C"),
+                        ExtraAgencia = encomienda.EncomiendaFactura.ExtraAgencia.ToString("C"),
+                        PrecioTotal = encomienda.EncomiendaFactura.PrecioTotalEncomienda.ToString("C")
                     });
                 }
             }
 
             return resultado;
+        }
+
+        internal void GenerarFactura(
+            string cuitCliente,
+            List<string> encomiendasIncluidas,
+            decimal subtotal,
+            DateTime? fechaPago
+        )
+        {
+            if (DatosGeneralesAlmacen.DatosGenerales == null || !DatosGeneralesAlmacen.DatosGenerales.Any())
+            {
+                MessageBox.Show("No se encontraron datos generales. Verifique el archivo de configuración.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Buscar los datos generales por su tipo
+            var cuitTutasa = DatosGeneralesAlmacen.DatosGenerales
+                .FirstOrDefault(d => d.Tipo == TipoDatoEnum.CUITTutasa)?.Dato;
+
+            var ivaStr = DatosGeneralesAlmacen.DatosGenerales
+                .FirstOrDefault(d => d.Tipo == TipoDatoEnum.IVAPorcentaje)?.Dato;
+
+            var codigoCAE = DatosGeneralesAlmacen.DatosGenerales
+                .FirstOrDefault(d => d.Tipo == TipoDatoEnum.CodigoAutorizacionElectronica)?.Dato;
+
+            // Cálculo correcto del IVA
+            decimal ivaPorcentaje = 0;
+            decimal.TryParse(ivaStr, out ivaPorcentaje);
+            ivaPorcentaje = ivaPorcentaje / 100m; // <-- CORRECCIÓN
+
+            decimal iva = subtotal * ivaPorcentaje;
+            decimal total = subtotal + iva;
+
+            // Número de factura secuencial (opcional)
+            int ultimoNro = 0;
+            if (FacturaAlmacen.Facturas.Any())
+            {
+                int.TryParse(FacturaAlmacen.Facturas.Max(f => f.NroFactura), out ultimoNro);
+            }
+            string nroFactura = (ultimoNro + 1).ToString("D8");
+
+            var nuevaFactura = new FacturaEntidad
+            {
+                NroFactura = nroFactura,
+                CuitTutasa = cuitTutasa,
+                CuitCliente = cuitCliente,
+                FechaEmision = DateTime.Now,
+                EncomiendasIncluidas = encomiendasIncluidas,
+                Subtotal = subtotal,
+                Iva = iva,
+                Total = total,
+                CodigoDeAutorizacionElectronica = codigoCAE,
+                FechadePago = fechaPago
+            };
+
+            FacturaAlmacen.Facturas.Add(nuevaFactura);
+            FacturaAlmacen.Grabar();
         }
     }
 

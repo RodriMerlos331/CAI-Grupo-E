@@ -1,7 +1,8 @@
 [
   {
-    "NumeroHDRUM": 1001,
-    "TipoHDR": "Retiro" ,
+    "NumeroHDRMD": 1001,
+    "Tipo": 0,
+    "DniFleteroAsignado": 12345678,
     "Cumplida": false,
     "Rendida": false,
     "Encomiendas": [ 201, 202, 203 ]

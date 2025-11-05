@@ -224,7 +224,7 @@ namespace Grupo_E.ImposicionEnCD
                     return;
                 }
 
-                modelo.ImposicionConDestinoACD(
+                modelo.ImposicionEnAgencia(
                     CuitText.Text,
                     AgenciaCbo.SelectedItem?.ToString(),
                     TamanoBultoCbo.SelectedItem?.ToString(),

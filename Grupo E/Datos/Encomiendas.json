@@ -128,7 +128,7 @@
     "ParadasRuta": [],
     "FechaImposicion": "2025-11-04T13:05:04.2983386-03:00",
     "FechaAdmision": "2025-11-04T13:05:04.3003406-03:00",
-    "FechaEntrega": null,
+    "FechaEntrega": "2025-10-1T15:00:00-03:00",
     "DatosFacturacion": {
       "PrecioCombinacionTamanoOrigenDestino": 1100.0,
       "ExtraRetiro": 0.0,
@@ -136,6 +136,41 @@
       "ExtraEntrega": 2.5,
       "PrecioTotalEncomienda": 1102.5
     }
+  },
+  {
+    "Tracking": "AG03_10",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD01",
+    "CodCentroDistribucionDestino": "CD06",
+    "Estado": 0,
+    "TipoBulto": 0,
+    "CUITCliente": "30-12345678-0",
+    "DNIDestinatario": 111111,
+    "NombreDestinatario": "fsafa sada  111111",
+    "ApellidoDestinatario": "fsafa sada  111111",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": "AG03",
+    "DatosRetiroADomicilio": "Avenida Prueba 12345",
+    "CodCDActual": "CD01",
+    "ParadasRuta": []
+    ,
+    "FechaImposicion": "2025-11-05T12:55:58.0332455-03:00",
+    "FechaAdmision":null,
+    "FechaEntrega": null,
+    "EncomiendaFactura": null,
+    "HistorialCambios": [
+      {
+        "Tracking": "AG03_5",
+        "FechaPrevia": "2025-11-05T12:55:58.0352115-03:00",
+        "UbicacionPrevia": "CD01",
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 1001,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 0
+      }
+    ],
+    "Facturada": false
   }
     
   

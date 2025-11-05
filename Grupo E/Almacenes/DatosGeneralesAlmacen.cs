@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
 
         static DatosGeneralesAlmacen()
         {
-            if (File.Exists(@"Datos/DatosGeneraless.json"))
+            if (File.Exists(@"Datos/DatosGenerales.json"))
             {
-                var DatosGeneralesJson = File.ReadAllText(@"Datos/DatosGeneraless.json");
+                var DatosGeneralesJson = File.ReadAllText(@"Datos/DatosGenerales.json");
                 DatosGenerales = JsonConvert.DeserializeObject<List<DatosGeneralesEntidad>>(DatosGeneralesJson);
             }
         }
@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var DatosGeneralesJson = JsonConvert.SerializeObject(DatosGenerales);
-            File.WriteAllText(@"Datos/DatosGeneraless.json", DatosGeneralesJson);
+            File.WriteAllText(@"Datos/DatosGenerales.json", DatosGeneralesJson);
         }
     }
 }

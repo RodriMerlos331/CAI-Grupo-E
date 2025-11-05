@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class HDRDistribucionUMEntidad
+    public class HDRDistribucionUMEntidad
     {
         public int NumeroHDRUM { get; set; }
         public TipoHDREnum Tipo { get; set; }
