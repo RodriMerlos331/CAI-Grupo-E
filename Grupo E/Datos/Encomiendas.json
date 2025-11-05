@@ -128,7 +128,7 @@
     "ParadasRuta": [],
     "FechaImposicion": "2025-11-04T13:05:04.2983386-03:00",
     "FechaAdmision": "2025-11-04T13:05:04.3003406-03:00",
-    "FechaEntrega": null,
+    "FechaEntrega": "2025-10-1T15:00:00-03:00",
     "DatosFacturacion": {
       "PrecioCombinacionTamanoOrigenDestino": 1100.0,
       "ExtraRetiro": 0.0,

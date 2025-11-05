@@ -23,7 +23,7 @@ namespace Grupo_E
             
            
             EncomiendaAlmacen.Grabar();
-
+            FacturaAlmacen.Grabar();
 
         }
     }

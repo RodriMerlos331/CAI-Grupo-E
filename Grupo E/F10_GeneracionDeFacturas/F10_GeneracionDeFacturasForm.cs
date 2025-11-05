@@ -102,19 +102,45 @@ namespace Grupo_E.GeneracionDeFacturas
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-            // Verifica si hay al menos un ítem seleccionado (checked)
-            bool haySeleccionado = listViewFactura.Items.Cast<ListViewItem>().Any(item => item.Checked);
+            // Obtiene las encomiendas seleccionadas (checked)
+            var seleccionadas = listViewFactura.Items
+                .Cast<ListViewItem>()
+                .Where(item => item.Checked)
+                .ToList();
 
-            if (!haySeleccionado)
+            if (!seleccionadas.Any())
             {
                 MessageBox.Show("Debe seleccionar al menos una encomienda para generar la factura.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            string cuitCliente = txtCUIT.Text.Trim();
+            List<string> encomiendasIncluidas = seleccionadas.Select(item => item.Text).ToList();
+
+            decimal subtotal = 0;
+            foreach (var item in seleccionadas)
+            {
+                subtotal += ParseImporteDecimal(item.SubItems[2].Text)
+                          + ParseImporteDecimal(item.SubItems[3].Text)
+                          + ParseImporteDecimal(item.SubItems[4].Text)
+                          + ParseImporteDecimal(item.SubItems[5].Text);
+            }
+
+            DateTime? fechaPago = null; // O tu lógica si corresponde
+
+            // Llama al modelo, que se encarga de buscar los datos generales y crear la factura
+            modelo.GenerarFactura(
+                cuitCliente,
+                encomiendasIncluidas,
+                subtotal,
+                fechaPago
+            );
+
             MessageBox.Show("La factura se generó correctamente.", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             listViewFactura.Items.Clear();
             txtCUIT.Clear();
             lblSumaImporte.Text = "Total: $0";
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
