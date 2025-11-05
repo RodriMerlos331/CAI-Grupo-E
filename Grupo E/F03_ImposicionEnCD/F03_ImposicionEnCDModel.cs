@@ -24,7 +24,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
         //new string[] { "S", "M", "L", "XL" };
 
-     
+
         /*
         public readonly Dictionary<string, string> clientes = new Dictionary<string, string>
         {
@@ -33,8 +33,8 @@ namespace Grupo_E.F03_ImposicionEnCD
             { "30-11223344-05", "Huggies" }
         };
         */
-        
-       public Dictionary<string, string> clientes => ClienteAlmacen.Cliente.ToDictionary(c => c.CUIT, c => c.Domicilio);
+
+        public Dictionary<string, string> clientes => ClienteAlmacen.Cliente.ToDictionary(c => c.CUIT, c => c.Domicilio);
 
 
 
@@ -57,7 +57,7 @@ namespace Grupo_E.F03_ImposicionEnCD
         loc => loc.Nombre,
         loc =>
         {
-           
+
             var cds = CentroDeDistribucionAlmacen.CentroDeDistribucion
                         .Where(cd => cd.CodigoLocalidad == loc.CodigoLocalidad)
                         .ToList();
@@ -65,7 +65,7 @@ namespace Grupo_E.F03_ImposicionEnCD
             var agencias = AgenciaAlmacen.Agencia
                         .Where(a => cds.Any(cd => cd.CodigoCD == a.CodigoCD))
                         .Select(a =>
-                            a.NombreAgencia )
+                            a.NombreAgencia)
                         .Distinct()
                         .ToList();
 
@@ -79,15 +79,15 @@ namespace Grupo_E.F03_ImposicionEnCD
 
 
         //acá debería buscar tracking "más alto" en datos encomienda?
-        
+
         //private int trackingActual = 1;
 
-      
+
         //acá me está tomando el ultimo q está en la carpeta "Datos" y no en "bin" 
 
         int ultimoNumero = EncomiendaAlmacen.Encomienda
-          .Select(e => e.Tracking.Split('_').Last()) 
-          .Select(n => int.Parse(n))                 
+          .Select(e => e.Tracking.Split('_').Last())
+          .Select(n => int.Parse(n))
           .DefaultIfEmpty(1)
           .Max();
 
@@ -154,7 +154,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
                 DatosFacturacion = null //no se factura aún
 
-            };            
+            };
 
             EncomiendaAlmacen.Encomienda.Add(NuevaEncomienda);
 
@@ -170,48 +170,73 @@ namespace Grupo_E.F03_ImposicionEnCD
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario)
+        public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario, string localidad)
         {
+            var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
+            var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad;
+            //CodActual y CodLocalidadOrigen no terminan siendo lo mismo? Para qué me sirven?
+            var codCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
+            var codLocalidadActual = LocalidadAlmacen.Localidad
+                .First(l => l.Nombre == localidad)
+                .CodigoLocalidad;
+            //lo sumé acá: pero querría hacerlo como se toma CD desde el menú
+            var codCentroDistribucionDestino = ObtenerCodigoCDPrimerEncontrado(codLocalidadActual);
+            var tipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto);
+
+
+            var precioBase = PreciosPorOrigenDestino.ObtenerPrecio(codCentroDistribucionOrigen, codCentroDistribucionDestino, tipoBulto);
+            //Chequear
+            var extraEntrega = TarifarioAlmacen.Tarifario.First().ExtraEntregaDomicilio;
+
+            var datosFacturacion = new EncomiendaFactura
+            {
+                PrecioCombinacionTamanoOrigenDestino = precioBase,
+                ExtraRetiro = 0,
+                ExtraAgencia = 0,
+                ExtraEntrega = extraEntrega,
+                PrecioTotalEncomienda = precioBase + extraEntrega
+            }
+
+            ;
+
             EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
                 Tracking = "DOM_" + (ultimoNumero++).ToString(),
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
                 FechaAdmision = DateTime.Now,
-                FechaEntrega = null, //no está entregada aún
+                FechaEntrega = null,
 
-                TipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto),
+                TipoBulto = tipoBulto,
                 NombreDestinatario = datosDestinatario,
                 ApellidoDestinatario = datosDestinatario,
                 DireccionDestinatario = direccionParticular,
 
                 DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
-                //cómo lleno esto? no sabemos en qué CD estoy parado "ahora" , tendría sentido un menú? o sumar un campo de en este caso "CD ACTUAL"?
-                CodCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD,
-                CodLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad,
-                CodCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD,
 
-                //cómo macheo CD destino con la dirección particular ingresada?? con localidad actual ?
-                //Asigna CD de destino según localidad seleccionada en el formulario, de forma random, idealmente CD más cerca de direccion
-                CodCentroDistribucionDestino = ObtenerCodigoCDPrimerEncontrado(LocalidadAlmacen.LocalidadDestino.CodigoLocalidad),
-                //Estado = (EstadoEncomiendaEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto),
+                CodCDActual = codCDActual,
+                CodLocalidadOrigen = codLocalidadOrigen,
+                CodCentroDistribucionOrigen = codCentroDistribucionOrigen,
+
+                CodCentroDistribucionDestino = codCentroDistribucionDestino,
 
                 Estado = EstadoEncomiendaEnum.Admitida,
 
-                //no:
                 AgenciaDestino = null,
                 AgenciaOrigen = null,
                 DatosRetiroADomicilio = null,
-                //Por ahora las asigno yo:
-                //        public int CodigoParada { get; set; } //unico x sistema hace referencia a las paradas por las que va a pasar:
 
-                ParadasRuta = 
-                ,
-                DatosFacturacion = null,
+                ParadasRuta = ObtenerParadasRutaBasica(codCentroDistribucionOrigen, codCentroDistribucionDestino),
 
-                //HistorialCambios = new List<Historial>(), cómo sumo historial ?
+                //Al admitir se generan los datos de facturación
+
+                DatosFacturacion = datosFacturacion,
+
 
             };
+
+            EncomiendaAlmacen.Encomienda.Add(NuevaEncomienda);
+
             string mensaje =
              "Guía impuesta exitosamente.\n\n" +
              $"Tracking: {NuevaEncomienda.Tracking}\n" +
@@ -246,7 +271,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-    }
+        }
 
 
         //Debería tener alguna logica que matchee direccion particular con CD más cercano?
@@ -256,4 +281,22 @@ namespace Grupo_E.F03_ImposicionEnCD
                        .First(cd => cd.CodigoLocalidad == codigoLocalidad)
                        .CodigoCD;
         }
+
+        private List<int> ObtenerParadasRutaBasica(string codCDOrigen, string codCDDestino)
+        {
+            // Construyo un mapa simple CodigoCD -> CodigoParada (índice + 1)
+            var mapa = CentroDeDistribucionAlmacen.CentroDeDistribucion
+                        .Select((cd, idx) => new { cd.CodigoCD, CodigoParada = idx + 1 })
+                        .ToDictionary(x => x.CodigoCD, x => x.CodigoParada);
+
+            int paradaOrigen = mapa[codCDOrigen];
+            int paradaDestino = mapa[codCDDestino];
+
+            // Ruta mínima: primera parada (origen) y última (destino)
+            if (paradaOrigen == paradaDestino)
+                return new List<int> { paradaOrigen };
+
+            return new List<int> { paradaOrigen, paradaDestino };
+        }
     }
+}

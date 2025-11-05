@@ -1,37 +1,74 @@
 {
-  "ExtraEntregaDomicilio": 2.50,
-  "ExtraRetiro": 1.75,
-  "ExtraAgencia": 1.20,
+  "ExtraEntregaDomicilio":2000,
+  "ExtraRetiro": 1750,
+  "ExtraAgencia": 1200,
   "PreciosPorOrigenDestinos": [
     {
       "Tipo": "S",
-      "CodigoCDOrigen": "Retiro",
-      "CodigoCDDestino": "Córdoba",
-      "Precio": 12.50
-    },
-    {
-      "Tipo": "S",
-      "CodigoCDOrigen": "Retiro",
-      "CodigoCDDestino": "LaPlata",
-      "Precio": 12.50
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1100
     },
     {
       "Tipo": "M",
       "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1200
+    },
+    {
+      "Tipo": "L",
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1300
+    },
+    {
+      "Tipo": "XL",
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1400
+    },
+    {
+      "Tipo": "S",
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1100
+    },
+    {
+      "Tipo": "M",
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1200
+    },
+    {
+      "Tipo": "L",
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1300
+    },
+    {
+      "Tipo": "XL",
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1400
+    },
+    
+    {
+      "Tipo": "M",
+      "CodigoCDOrigen": "CD01",
       "CodigoCDDestino": "CD03",
-      "Precio": 18.90
+      "Precio": 1800
     },
     {
       "Tipo": "L",
       "CodigoCDOrigen": "CD02",
       "CodigoCDDestino": "CD04",
-      "Precio": 23.75
+      "Precio": 2500
     },
     {
       "Tipo": "XL",
       "CodigoCDOrigen": "CD03",
       "CodigoCDDestino": "CD05",
-      "Precio": 30.00
+      "Precio": 3000
     }
   ]
 }

@@ -10,7 +10,7 @@ namespace Grupo_E.Almacenes
 {
     internal class LocalidadAlmacen
     {
-        public static LocalidadEntidad LocalidadDestino { get; set; }
+        //public static LocalidadEntidad LocalidadDestino { get; set; }
         public static List<LocalidadEntidad> Localidad { get; }
 
         static LocalidadAlmacen()

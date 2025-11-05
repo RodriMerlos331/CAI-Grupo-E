@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-    internal class EncomiendaFactura
+    public class EncomiendaFactura
     {
         public decimal PrecioCombinacionTamanoOrigenDestino { get; set; }
         public decimal ExtraRetiro { get; set; }
@@ -15,3 +15,4 @@ namespace Grupo_E.Almacenes
         public decimal PrecioTotalEncomienda { get; set; }
     }
 }
+

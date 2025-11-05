@@ -34,6 +34,11 @@ namespace Grupo_E.ImposicionEnCD
             DireccionParticularGrb.Enabled = false;
             AgenciaGrb.Enabled = false;
 
+            /*LocalidadCbo.DisplayMember = "Nombre";
+            LocalidadCbo.Items.AddRange(LocalidadAlmacen.Localidad.ToArray());
+            */
+
+            //Tendré que sacar esto?
             foreach (string localidad in modelo.Localidad)
             {
                 LocalidadCbo.Items.Add(localidad);
@@ -67,7 +72,7 @@ namespace Grupo_E.ImposicionEnCD
                 return;
 
             //Me guarda localidad seleccionada como localidad de destino
-            LocalidadAlmacen.LocalidadDestino = (LocalidadEntidad)LocalidadCbo.SelectedItem;
+            //LocalidadAlmacen.LocalidadDestino = (LocalidadEntidad)LocalidadCbo.SelectedItem;
 
 
 
@@ -203,7 +208,8 @@ namespace Grupo_E.ImposicionEnCD
                     CuitText.Text,
                     DatosEntregaDomiclioText.Text,
                     TamanoBultoCbo.SelectedItem?.ToString(),
-                    DatosDestinatarioText.Text
+                    DatosDestinatarioText.Text,
+                    LocalidadCbo.SelectedItem?.ToString()
                 );
 
 

@@ -15,9 +15,9 @@ namespace Grupo_E.Almacenes
 
         static TarifarioAlmacen()
         {
-            if (File.Exists(@"Datos/Tarifarios.json"))
+            if (File.Exists(@"Datos/Tarifario.json"))
             {
-                var TarifarioJson = File.ReadAllText(@"Datos/Tarifarios.json");
+                var TarifarioJson = File.ReadAllText(@"Datos/Tarifario.json");
                 Tarifario = JsonConvert.DeserializeObject<List<TarifarioEntidad>>(TarifarioJson);
             }
         }
@@ -25,7 +25,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var TarifarioJson = JsonConvert.SerializeObject(Tarifario);
-            File.WriteAllText(@"Datos/Tarifarios.json", TarifarioJson);
+            File.WriteAllText(@"Datos/Tarifario.json", TarifarioJson);
         }
         
     }
