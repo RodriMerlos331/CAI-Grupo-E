@@ -172,6 +172,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
         public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario, string localidad)
         {
+
             var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
             var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad;
             //CodActual y CodLocalidadOrigen no terminan siendo lo mismo? Para qué me sirven?
@@ -195,10 +196,9 @@ namespace Grupo_E.F03_ImposicionEnCD
                 ExtraAgencia = 0,
                 ExtraEntrega = extraEntrega,
                 PrecioTotalEncomienda = precioBase + extraEntrega
-            }
+            };
 
-            ;
-
+            
             EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
                 Tracking = "DOM_" + (ultimoNumero++).ToString(),
@@ -246,6 +246,9 @@ namespace Grupo_E.F03_ImposicionEnCD
              $"Datos del destinatario: {datosDestinatario}";
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // temporal: mostrar rutas al imponer para depurar
+            MessageBox.Show("BaseDirectory: " + AppDomain.CurrentDomain.BaseDirectory + Environment.NewLine +
+                            "CurrentDirectory: " + Environment.CurrentDirectory, "Rutas");
         }
 
 
@@ -300,3 +303,5 @@ namespace Grupo_E.F03_ImposicionEnCD
         }
     }
 }
+
+
