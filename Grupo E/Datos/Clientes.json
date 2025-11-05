@@ -1,6 +1,14 @@
 [
   {
-    "CUIT": "30-12345678-01",
+    "CUIT": "30-12345678-0",
     "Domicilio": "Avendia Corrientes 1234"
+  },
+
+  {
+    "CUIT": "20-87654321-0",
+    "RazonSocial": "Deportes Patagonia SRL",
+    "Direccion": "Av. San Martín 456",
+    "Telefono": "011-4789-1234",
+    "Email": "contacto@deportespata.com"
   }
 ]

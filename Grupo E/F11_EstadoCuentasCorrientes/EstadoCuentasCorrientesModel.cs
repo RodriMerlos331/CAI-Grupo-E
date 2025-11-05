@@ -1,55 +1,99 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Grupo_E.Almacenes;
 
 namespace Grupo_E.EstadoCuentasCorrientes
 {
     public class EstadoCuentasCorrientesModel
     {
-        private readonly List<MovimientoCC> _movimientosDePrueba = new List<MovimientoCC>()
+        public List<MovimientoCC> ObtenerMovimientos(
+            string cuit,
+            DateTime fechaDesde,
+            DateTime fechaHasta,
+            string estadoFiltro,
+            out decimal saldoDeudor,
+            out decimal saldoAcreedor)
         {
-            // 30712345674
-            new MovimientoCC { FechaEmision = new DateTime(2025, 9, 1), NroFactura = "0001-00000010", Estado = "Pagada", Debe = 0.00M, Haber = 10000.00M, CUIT = "30-71234567-4" },
-            new MovimientoCC { FechaEmision = new DateTime(2025, 9, 15), NroFactura = "0001-00000025", Estado = "Vencida", Debe = 5500.00M, Haber = 0.00M, CUIT = "30-71234567-4" },
-            new MovimientoCC { FechaEmision = new DateTime(2025, 9, 18), NroFactura = "0001-00000050", Estado = "Pendiente", Debe = 12000.00M, Haber = 0.00M, CUIT = "30-71234567-4" },
+            saldoDeudor = 0m;
+            saldoAcreedor = 0m;
 
-            new MovimientoCC { FechaEmision = new DateTime(2025, 10, 5), NroFactura = "0001-00000075", Estado = "Pendiente", Debe = 5000.00M, Haber = 0.00M, CUIT = "30-71234567-4" },
-            new MovimientoCC { FechaEmision = new DateTime(2025, 10, 2), NroFactura = "0001-00000076", Estado = "Pagada", Debe = 0.00M, Haber = 10000.00M, CUIT = "30-71234567-4" },
-
-            // 27888888889
-            new MovimientoCC { FechaEmision = new DateTime(2025, 7, 1), NroFactura = "0002-00000001", Estado = "Pagada", Debe = 0.00M, Haber = 1000.00M, CUIT = "27-88888888-9" },
-            new MovimientoCC { FechaEmision = new DateTime(2025, 8, 5), NroFactura = "0002-00000002", Estado = "Pagada", Debe = 0.00M, Haber = 5000.00M, CUIT = "27-88888888-9" },
-            new MovimientoCC { FechaEmision = new DateTime(2025, 8, 24), NroFactura = "0002-00000003", Estado = "Pendiente", Debe = 7000.00M, Haber = 0.00M, CUIT = "27-88888888-9" },
-
-            // 01234567891
-            new MovimientoCC { FechaEmision = new DateTime(2025, 9, 1), NroFactura = "0002-00000065", Estado = "Pagada", Debe = 0.00M, Haber = 1000.00M, CUIT = "01-23456789-1" },
-            new MovimientoCC { FechaEmision = new DateTime(2025, 9, 15), NroFactura = "0001-00000070", Estado = "Vencida", Debe = 5500.00M, Haber = 0.00M, CUIT = "01-23456789-1" },
-            new MovimientoCC { FechaEmision = new DateTime(2025, 9, 18), NroFactura = "0001-00000071", Estado = "Vencida", Debe = 4000.00M, Haber = 0.00M, CUIT = "01-23456789-1" },
-            new MovimientoCC { FechaEmision = new DateTime(2025, 10, 7), NroFactura = "0002-00000068", Estado = "Pagada", Debe = 0.00M, Haber = 25000.00M, CUIT = "01-23456789-1" },
-        };
-
-        public List<MovimientoCC> ObtenerMovimientos(string cuit, DateTime fechaDesde, DateTime fechaHasta, string estadoFiltro, out decimal saldoFinal)
-        {
-            saldoFinal = 0M;
-
-            if (cuit != "30-71234567-4" && cuit != "27-88888888-9" && cuit != "01-23456789-1")
+            // 1) Validar que el cliente exista
+            bool clienteExiste = ClienteAlmacen.Cliente.Any(c => c.CUIT == cuit);
+            if (!clienteExiste)
             {
                 return new List<MovimientoCC>();
             }
 
-            var movimientosFiltrados = _movimientosDePrueba
-                .Where(m => m.CUIT == cuit)
-                .Where(m => m.FechaEmision >= fechaDesde && m.FechaEmision <= fechaHasta)
+            // 2) Traer facturas del cliente en el rango de fechas
+            List<FacturaEntidad> facturasCliente = FacturaAlmacen.Facturas
+                .Where(f => f.CuitCliente == cuit)
+                .Where(f => f.FechaEmision.Date >= fechaDesde.Date
+                         && f.FechaEmision.Date <= fechaHasta.Date)
+                .ToList();
+
+            List<MovimientoCC> movimientos = new List<MovimientoCC>();
+
+            // 3) Armar movimientos según si tienen o no FechaDePago
+            foreach (FacturaEntidad f in facturasCliente)
+            {
+                string estado;
+                decimal debe = 0m;
+                decimal haber = 0m;
+
+                // OJO: usá acá el nombre real de la propiedad en la entidad:
+                // FechaDePago o FechaPago, según la tengas declarada.
+                if (f.FechaDePago == null)
+                {
+                    // Factura impaga -> Pendiente
+                    estado = "Pendiente";
+                    debe = f.Total;
+                }
+                else
+                {
+                    // Factura con fecha de pago -> Pagada
+                    estado = "Pagada";
+                    haber = f.Total;
+                }
+
+                MovimientoCC mov = new MovimientoCC
+                {
+                    FechaEmision = f.FechaEmision,
+                    NroFactura = f.NroFactura,
+                    Estado = estado,
+                    Debe = debe,
+                    Haber = haber,
+                    CUIT = f.CuitCliente
+                };
+
+                movimientos.Add(mov);
+            }
+
+            // 4) Filtro por estado (combo: "Todas / Pagada / Pendiente")
+            List<MovimientoCC> filtrados = movimientos
                 .Where(m => estadoFiltro == "Todas" || m.Estado == estadoFiltro)
                 .OrderBy(m => m.FechaEmision)
                 .ToList();
 
-            foreach (var m in movimientosFiltrados)
+            // 5) Calcular totales deudor/acreedor que se van a mostrar abajo
+            decimal totalDebe = filtrados.Sum(m => m.Debe);
+            decimal totalHaber = filtrados.Sum(m => m.Haber);
+
+            if (totalDebe >= totalHaber)
             {
-                saldoFinal = saldoFinal + m.Debe - m.Haber;
+                // Cliente deudor
+                saldoDeudor = totalDebe - totalHaber;
+                saldoAcreedor = 0m;
+            }
+            else
+            {
+                // Cliente acreedor
+                saldoDeudor = 0m;
+                saldoAcreedor = totalHaber - totalDebe;
             }
 
-            return movimientosFiltrados;
+            return filtrados;
         }
     }
 }
+
