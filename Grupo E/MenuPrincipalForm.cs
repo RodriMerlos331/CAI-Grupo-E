@@ -79,6 +79,17 @@ namespace Grupo_E
 
         private void btnRetirarEnAgencia_Click(object sender, EventArgs e)
         {
+            if (AgenciaAlmacen.AgenciaActual == null)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar una agencia antes de ingresar a Retiro en Agencia.",
+                    "Agencia no seleccionada",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
             using (var f = new RetirarEnAgencia.RetirarEnAgencia())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
@@ -156,9 +167,12 @@ namespace Grupo_E
           
         }
 
-        private void AgenciaActualCombo_SelectedIndexChanged(object sender, EventArgs e)
+ 
+
+        private void AgenciaActualCombo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             AgenciaAlmacen.AgenciaActual = (AgenciaEntidad)AgenciaActualCombo.SelectedItem;
+
         }
     }
 

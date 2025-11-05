@@ -54,9 +54,11 @@ namespace Grupo_E
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 101);
+            this.groupBox1.Location = new System.Drawing.Point(18, 155);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(405, 49);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(608, 75);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -64,116 +66,129 @@ namespace Grupo_E
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 16);
+            this.label1.Location = new System.Drawing.Point(242, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(111, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Menu principal";
             // 
             // btnConsultarEstado
             // 
-            this.btnConsultarEstado.Location = new System.Drawing.Point(115, 156);
+            this.btnConsultarEstado.Location = new System.Drawing.Point(172, 240);
+            this.btnConsultarEstado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsultarEstado.Name = "btnConsultarEstado";
-            this.btnConsultarEstado.Size = new System.Drawing.Size(189, 36);
+            this.btnConsultarEstado.Size = new System.Drawing.Size(284, 55);
             this.btnConsultarEstado.TabIndex = 1;
             this.btnConsultarEstado.Text = "Consultar estado de encomienda";
             this.btnConsultarEstado.UseVisualStyleBackColor = true;
             // 
             // btnCostosVsVentas
             // 
-            this.btnCostosVsVentas.Location = new System.Drawing.Point(115, 198);
+            this.btnCostosVsVentas.Location = new System.Drawing.Point(172, 305);
+            this.btnCostosVsVentas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCostosVsVentas.Name = "btnCostosVsVentas";
-            this.btnCostosVsVentas.Size = new System.Drawing.Size(189, 36);
+            this.btnCostosVsVentas.Size = new System.Drawing.Size(284, 55);
             this.btnCostosVsVentas.TabIndex = 2;
             this.btnCostosVsVentas.Text = "Costos y Ventas";
             this.btnCostosVsVentas.UseVisualStyleBackColor = true;
             // 
             // btnEstadoCuentasCorrientes
             // 
-            this.btnEstadoCuentasCorrientes.Location = new System.Drawing.Point(115, 240);
+            this.btnEstadoCuentasCorrientes.Location = new System.Drawing.Point(172, 369);
+            this.btnEstadoCuentasCorrientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEstadoCuentasCorrientes.Name = "btnEstadoCuentasCorrientes";
-            this.btnEstadoCuentasCorrientes.Size = new System.Drawing.Size(189, 36);
+            this.btnEstadoCuentasCorrientes.Size = new System.Drawing.Size(284, 55);
             this.btnEstadoCuentasCorrientes.TabIndex = 3;
             this.btnEstadoCuentasCorrientes.Text = "Estado de Cuentas Corrientes";
             this.btnEstadoCuentasCorrientes.UseVisualStyleBackColor = true;
             // 
             // btnGeneracionDeFacturas
             // 
-            this.btnGeneracionDeFacturas.Location = new System.Drawing.Point(115, 282);
+            this.btnGeneracionDeFacturas.Location = new System.Drawing.Point(172, 434);
+            this.btnGeneracionDeFacturas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGeneracionDeFacturas.Name = "btnGeneracionDeFacturas";
-            this.btnGeneracionDeFacturas.Size = new System.Drawing.Size(189, 36);
+            this.btnGeneracionDeFacturas.Size = new System.Drawing.Size(284, 55);
             this.btnGeneracionDeFacturas.TabIndex = 4;
             this.btnGeneracionDeFacturas.Text = "Generacion de facturas";
             this.btnGeneracionDeFacturas.UseVisualStyleBackColor = true;
             // 
             // btnGestionarFletero
             // 
-            this.btnGestionarFletero.Location = new System.Drawing.Point(115, 324);
+            this.btnGestionarFletero.Location = new System.Drawing.Point(172, 498);
+            this.btnGestionarFletero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGestionarFletero.Name = "btnGestionarFletero";
-            this.btnGestionarFletero.Size = new System.Drawing.Size(189, 36);
+            this.btnGestionarFletero.Size = new System.Drawing.Size(284, 55);
             this.btnGestionarFletero.TabIndex = 5;
             this.btnGestionarFletero.Text = "Gestion de fleteros";
             this.btnGestionarFletero.UseVisualStyleBackColor = true;
             // 
             // btnGestionarOmnibus
             // 
-            this.btnGestionarOmnibus.Location = new System.Drawing.Point(115, 362);
+            this.btnGestionarOmnibus.Location = new System.Drawing.Point(172, 557);
+            this.btnGestionarOmnibus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGestionarOmnibus.Name = "btnGestionarOmnibus";
-            this.btnGestionarOmnibus.Size = new System.Drawing.Size(189, 36);
+            this.btnGestionarOmnibus.Size = new System.Drawing.Size(284, 55);
             this.btnGestionarOmnibus.TabIndex = 6;
             this.btnGestionarOmnibus.Text = "Gestion de Omnibus";
             this.btnGestionarOmnibus.UseVisualStyleBackColor = true;
             // 
             // btnImposicionEnAgencia
             // 
-            this.btnImposicionEnAgencia.Location = new System.Drawing.Point(115, 404);
+            this.btnImposicionEnAgencia.Location = new System.Drawing.Point(172, 622);
+            this.btnImposicionEnAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnImposicionEnAgencia.Name = "btnImposicionEnAgencia";
-            this.btnImposicionEnAgencia.Size = new System.Drawing.Size(189, 36);
+            this.btnImposicionEnAgencia.Size = new System.Drawing.Size(284, 55);
             this.btnImposicionEnAgencia.TabIndex = 7;
             this.btnImposicionEnAgencia.Text = "Imposicion en Agencia";
             this.btnImposicionEnAgencia.UseVisualStyleBackColor = true;
             // 
             // btnImposicionEnCallCenter
             // 
-            this.btnImposicionEnCallCenter.Location = new System.Drawing.Point(115, 446);
+            this.btnImposicionEnCallCenter.Location = new System.Drawing.Point(172, 686);
+            this.btnImposicionEnCallCenter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnImposicionEnCallCenter.Name = "btnImposicionEnCallCenter";
-            this.btnImposicionEnCallCenter.Size = new System.Drawing.Size(189, 36);
+            this.btnImposicionEnCallCenter.Size = new System.Drawing.Size(284, 55);
             this.btnImposicionEnCallCenter.TabIndex = 8;
             this.btnImposicionEnCallCenter.Text = "Imposicion en Call Center";
             this.btnImposicionEnCallCenter.UseVisualStyleBackColor = true;
             // 
             // btnImposicionEnCD
             // 
-            this.btnImposicionEnCD.Location = new System.Drawing.Point(115, 488);
+            this.btnImposicionEnCD.Location = new System.Drawing.Point(172, 751);
+            this.btnImposicionEnCD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnImposicionEnCD.Name = "btnImposicionEnCD";
-            this.btnImposicionEnCD.Size = new System.Drawing.Size(189, 36);
+            this.btnImposicionEnCD.Size = new System.Drawing.Size(284, 55);
             this.btnImposicionEnCD.TabIndex = 9;
             this.btnImposicionEnCD.Text = "Imposicion en Centro de Distribucion";
             this.btnImposicionEnCD.UseVisualStyleBackColor = true;
             // 
             // btnRendicionHDRAgencia
             // 
-            this.btnRendicionHDRAgencia.Location = new System.Drawing.Point(115, 530);
+            this.btnRendicionHDRAgencia.Location = new System.Drawing.Point(172, 815);
+            this.btnRendicionHDRAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRendicionHDRAgencia.Name = "btnRendicionHDRAgencia";
-            this.btnRendicionHDRAgencia.Size = new System.Drawing.Size(189, 36);
+            this.btnRendicionHDRAgencia.Size = new System.Drawing.Size(284, 55);
             this.btnRendicionHDRAgencia.TabIndex = 10;
             this.btnRendicionHDRAgencia.Text = "Entrega y recepcion en Agencia";
             this.btnRendicionHDRAgencia.UseVisualStyleBackColor = true;
             // 
             // btnRetirarEnAgencia
             // 
-            this.btnRetirarEnAgencia.Location = new System.Drawing.Point(115, 572);
+            this.btnRetirarEnAgencia.Location = new System.Drawing.Point(172, 880);
+            this.btnRetirarEnAgencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRetirarEnAgencia.Name = "btnRetirarEnAgencia";
-            this.btnRetirarEnAgencia.Size = new System.Drawing.Size(189, 36);
+            this.btnRetirarEnAgencia.Size = new System.Drawing.Size(284, 55);
             this.btnRetirarEnAgencia.TabIndex = 11;
             this.btnRetirarEnAgencia.Text = "Retiro en Agencia";
             this.btnRetirarEnAgencia.UseVisualStyleBackColor = true;
             // 
             // btnRetirarEnCD
             // 
-            this.btnRetirarEnCD.Location = new System.Drawing.Point(115, 614);
+            this.btnRetirarEnCD.Location = new System.Drawing.Point(172, 945);
+            this.btnRetirarEnCD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRetirarEnCD.Name = "btnRetirarEnCD";
-            this.btnRetirarEnCD.Size = new System.Drawing.Size(189, 36);
+            this.btnRetirarEnCD.Size = new System.Drawing.Size(284, 55);
             this.btnRetirarEnCD.TabIndex = 12;
             this.btnRetirarEnCD.Text = "Retiro en Centro de Distribucion";
             this.btnRetirarEnCD.UseVisualStyleBackColor = true;
@@ -181,43 +196,48 @@ namespace Grupo_E
             // CentroDeDistribucionActualCombo
             // 
             this.CentroDeDistribucionActualCombo.FormattingEnabled = true;
-            this.CentroDeDistribucionActualCombo.Location = new System.Drawing.Point(156, 12);
+            this.CentroDeDistribucionActualCombo.Location = new System.Drawing.Point(234, 18);
+            this.CentroDeDistribucionActualCombo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CentroDeDistribucionActualCombo.Name = "CentroDeDistribucionActualCombo";
-            this.CentroDeDistribucionActualCombo.Size = new System.Drawing.Size(247, 21);
+            this.CentroDeDistribucionActualCombo.Size = new System.Drawing.Size(368, 28);
             this.CentroDeDistribucionActualCombo.TabIndex = 13;
             this.CentroDeDistribucionActualCombo.SelectedIndexChanged += new System.EventHandler(this.CentroDeDistribucionActualCombo_SelectedIndexChanged);
             // 
             // AgenciaActualCombo
             // 
             this.AgenciaActualCombo.FormattingEnabled = true;
-            this.AgenciaActualCombo.Location = new System.Drawing.Point(156, 50);
+            this.AgenciaActualCombo.Location = new System.Drawing.Point(234, 77);
+            this.AgenciaActualCombo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AgenciaActualCombo.Name = "AgenciaActualCombo";
-            this.AgenciaActualCombo.Size = new System.Drawing.Size(247, 21);
+            this.AgenciaActualCombo.Size = new System.Drawing.Size(368, 28);
             this.AgenciaActualCombo.TabIndex = 14;
+            this.AgenciaActualCombo.SelectedIndexChanged += new System.EventHandler(this.AgenciaActualCombo_SelectedIndexChanged_1);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 15);
+            this.label3.Location = new System.Drawing.Point(14, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 13);
+            this.label3.Size = new System.Drawing.Size(210, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Centro de distribucion actual";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 53);
+            this.label4.Location = new System.Drawing.Point(14, 82);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.Size = new System.Drawing.Size(114, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "Agencia actual";
             // 
             // MenuPrincipalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 684);
+            this.ClientSize = new System.Drawing.Size(644, 1050);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.AgenciaActualCombo);
@@ -235,6 +255,7 @@ namespace Grupo_E
             this.Controls.Add(this.btnCostosVsVentas);
             this.Controls.Add(this.btnConsultarEstado);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MenuPrincipalForm";
             this.Text = "MenuPrincipalForm";
             this.Load += new System.EventHandler(this.MenuPrincipalForm_Load);

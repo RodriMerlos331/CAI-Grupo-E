@@ -27,6 +27,12 @@ namespace Grupo_E.RetirarEnAgencia
                 return false;
             }
 
+            if (encontrada.Estado != EstadoEncomiendaEnum.PendienteRetiroAgencia)
+            {
+                MessageBox.Show("La encomienda no está disponible para retiro en agencia.", "Estado incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             if (encontrada.DNIDestinatario != dni ||
                 !string.Equals(encontrada.NombreDestinatario, nombre, StringComparison.OrdinalIgnoreCase) ||
                 !string.Equals(encontrada.ApellidoDestinatario, apellido, StringComparison.OrdinalIgnoreCase))
@@ -34,6 +40,8 @@ namespace Grupo_E.RetirarEnAgencia
                 MessageBox.Show("Los datos del destinatario no coinciden con la encomienda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
+                encontrada.Estado = EstadoEncomiendaEnum.Entregada;
 
             return true;
         }
@@ -51,11 +59,60 @@ namespace Grupo_E.RetirarEnAgencia
 
             return encomiendas.Any(e =>
                 e.Tracking == tracking &&
-                e.AgenciaDestino == AgenciaAlmacen.AgenciaActual.CodigoAgencia
+                e.AgenciaDestino== AgenciaAlmacen.AgenciaActual.CodigoAgencia &&
+                e.Estado == EstadoEncomiendaEnum.PendienteRetiroAgencia
             );
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
