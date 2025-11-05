@@ -290,8 +290,6 @@ namespace Grupo_E.F03_ImposicionEnCD
                     .Select(a => a.CodigoCD)
                     .FirstOrDefault();
 
-            var codCentroDistribucionDestino = ObtenerCDDestino;
-
             var CodAgenciaDestino = AgenciaAlmacen.Agencia
                     .Where(a => a.NombreAgencia == agenciaDestino)
                     .Select(a => a.CodigoAgencia)
@@ -316,7 +314,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 CodCDActual = codCDActual,
                 CodLocalidadOrigen = codLocalidadOrigen,
                 CodCentroDistribucionOrigen = codCentroDistribucionOrigen,
-                CodCentroDistribucionDestino = codCentroDistribucionDestino,
+                CodCentroDistribucionDestino = ObtenerCDDestino,
 
                 Estado = EstadoEncomiendaEnum.Admitida,
 
