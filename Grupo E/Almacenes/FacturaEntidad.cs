@@ -21,6 +21,6 @@ namespace Grupo_E.Almacenes
         public decimal Total { get; set; }
          
         public string CodigoDeAutorizacionElectronica { get; set; }
-        public DateTime? FechaDePago { get; set; }
+        public DateTime? FechadePago { get; set; }
     }
 }

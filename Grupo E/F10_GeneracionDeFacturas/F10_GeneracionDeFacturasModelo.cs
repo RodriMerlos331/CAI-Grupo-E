@@ -4,9 +4,20 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Grupo_E.Almacenes;
-
+using Grupo_E.F10_GeneracionDeFacturas;
 namespace Grupo_E.F10_GeneracionDeFacturas
 {
+    public class EncomiendaFacturaDTO
+    {
+        public string Tracking { get; set; }
+        public string FechaAdmision { get; set; }
+        public string Importe { get; set; }
+        public string ExtraRetiro { get; set; }
+        public string ExtraEntrega { get; set; }
+        public string ExtraAgencia { get; set; }
+        public string PrecioTotal { get; set; }
+    }
+
     internal class F10_GeneracionDeFacturasModelo
     {
         private string UltimoCUITConsultado;
@@ -14,7 +25,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
         internal bool ValidarCUIT(string cuit)
         {
-           if (!Regex.IsMatch(cuit, @"^\d{2}-\d{8}-\d{2}$"))
+            if (!Regex.IsMatch(cuit, @"^\d{2}-\d{8}-\d{2}$"))
             {
                 MessageBox.Show("El CUIT debe tener el formato 00-00000000-00", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -24,17 +35,18 @@ namespace Grupo_E.F10_GeneracionDeFacturas
             return true;
         }
 
-       
 
-        internal int CalcularTotalImportes(IEnumerable<(int Importe, int ExtraRetiro, int ExtraEntrega)> importes)
+
+        internal decimal CalcularTotalImportes(IEnumerable<(decimal Importe, decimal ExtraRetiro, decimal ExtraEntrega, decimal ExtraAgencia)> importes)
         {
-            int total = 0;
+            decimal total = 0;
             foreach (var item in importes)
             {
-                total += item.Importe + item.ExtraRetiro + item.ExtraEntrega;
+                total += item.Importe + item.ExtraRetiro + item.ExtraEntrega + item.ExtraAgencia;
             }
             return total;
         }
+
 
         internal List<EncomiendaEntidad> BuscarEncomiendasNoFacturadasPorCUIT(string cuit, List<EncomiendaEntidad> todasLasEncomiendas)
         {
@@ -63,22 +75,32 @@ namespace Grupo_E.F10_GeneracionDeFacturas
             return resultado;
         }
 
-        internal List<EncomiendaFactura> PrepararFacturasParaForm(string cuit, List<EncomiendaEntidad> todasLasEncomiendas)
+        internal List<EncomiendaFacturaDTO> PrepararFacturasParaForm(string cuit, List<EncomiendaEntidad> todasLasEncomiendas)
         {
-            // Solo se consideran encomiendas NO facturadas
             var encomiendas = BuscarEncomiendasNoFacturadasPorCUIT(cuit, todasLasEncomiendas);
-            var EncomiendasAFacturar = new List<EncomiendaFactura>();
+            var resultado = new List<EncomiendaFacturaDTO>();
 
             foreach (var encomienda in encomiendas)
             {
                 if (encomienda.DatosFacturacion != null)
                 {
-                    EncomiendasAFacturar.Add(encomienda.DatosFacturacion);
+                    resultado.Add(new EncomiendaFacturaDTO
+                    {
+                        Tracking = encomienda.Tracking ?? "",
+                        FechaAdmision = encomienda.FechaAdmision.HasValue && encomienda.FechaAdmision.Value.Year > 1
+                            ? encomienda.FechaAdmision.Value.ToString("dd/MM/yyyy")
+                            : "",
+                        Importe = encomienda.DatosFacturacion.PrecioCombinacionTamanoOrigenDestino.ToString("C"),
+                        ExtraRetiro = encomienda.DatosFacturacion.ExtraRetiro.ToString("C"),
+                        ExtraEntrega = encomienda.DatosFacturacion.ExtraEntrega.ToString("C"),
+                        ExtraAgencia = encomienda.DatosFacturacion.ExtraAgencia.ToString("C"),
+                        PrecioTotal = encomienda.DatosFacturacion.PrecioTotalEncomienda.ToString("C")
+                    });
                 }
-                // Si necesitas manejar el caso donde DatosFacturacion es null, puedes agregar lógica aquí.
             }
 
-            return EncomiendasAFacturar;
+            return resultado;
         }
     }
+
 }
