@@ -1,27 +1,5 @@
 [
-  {
-    "NumeroHDRUM": 1001,
-    "Tipo": 0,
-    "DniFleteroAsignado": 12345678,
-    "Cumplida": false,
-    "Rendida": false,
-<<<<<<< Updated upstream
-    "Encomiendas": [ 201, 202, 203 ]
-  },
-  {
-    "NumeroHDRUM": 1002,
-    "TipoHDR": "Entrega",
-    "Cumplida": false,
-    "Rendida": false,
-    "Encomiendas": [ "AG03_01" ]
-  },
-  {
-    "NumeroHDRUM": 1003,
-    "TipoHDR": "Retiro",
-    "Cumplida": false,
-    "Rendida": true,
-    "Encomiendas": [ "AG03_02" ]
-  },
+  
   {
     "NumeroHDRUM": 1101,
     "Tipo": 0,
@@ -29,8 +7,6 @@
     "Cumplida": false,
     "Rendida": false,
     "Encomiendas": [ "AG03_01", "AG03_02"]
-=======
-    "Encomiendas": [ "AG03_10" ]
   },
   {
     "NumeroHDRUM": 1002,
@@ -39,9 +15,5 @@
     "Cumplida": false,
     "Rendida": false,
     "Encomiendas": [ "AG03_12" ]
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   }
 ]
