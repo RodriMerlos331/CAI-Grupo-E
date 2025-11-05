@@ -129,7 +129,6 @@
             this.txtCUIT.Name = "txtCUIT";
             this.txtCUIT.Size = new System.Drawing.Size(703, 26);
             this.txtCUIT.TabIndex = 4;
-            this.txtCUIT.TextChanged += new System.EventHandler(this.txtCUIT_TextChanged);
             // 
             // btnLimpiar
             // 

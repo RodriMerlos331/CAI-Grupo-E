@@ -16,7 +16,6 @@ namespace Grupo_E.GeneracionDeFacturas
     public partial class F10_GeneracionDeFacturasForm : Form
     {
         private F10_GeneracionDeFacturasModelo modelo = new F10_GeneracionDeFacturasModelo();
-        private List<EncomiendaEntidad> todasLasEncomiendas; // Debe estar cargada previamente
 
         public F10_GeneracionDeFacturasForm()
         {
@@ -32,22 +31,15 @@ namespace Grupo_E.GeneracionDeFacturas
             }
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCUIT_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string cuit = txtCUIT.Text.Trim();
 
             if (!modelo.ValidarCUIT(cuit))
                 return;
+
+            // Siempre toma la lista actualizada del almacén
+            var todasLasEncomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
 
             var facturas = modelo.PrepararFacturasParaForm(cuit, todasLasEncomiendas);
 
@@ -64,20 +56,11 @@ namespace Grupo_E.GeneracionDeFacturas
             }
         }
 
-
-
-        private void grpboxImporteTotal_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
             listViewFactura.Items.Clear();
             txtCUIT.Clear();
             lblSumaImporte.Text = "Total: $0";
-
         }
 
         private void listViewFactura_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -93,9 +76,9 @@ namespace Grupo_E.GeneracionDeFacturas
                 if (EstaCheckeado)
                 {
                     var item = listViewFactura.Items[i];
-                    int importe = ParseImporte(item.SubItems[2].Text);
-                    int extraRetiro = ParseImporte(item.SubItems[3].Text);
-                    int extraEntrega = ParseImporte(item.SubItems[4].Text);
+                    int importe = ParseImporte(item.SubItems[0].Text);
+                    int extraRetiro = ParseImporte(item.SubItems[1].Text);
+                    int extraEntrega = ParseImporte(item.SubItems[3].Text);
                     importes.Add((importe, extraRetiro, extraEntrega));
                 }
             }
@@ -145,3 +128,4 @@ namespace Grupo_E.GeneracionDeFacturas
         }
     }
 }
+

@@ -44,9 +44,23 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                 return new List<EncomiendaEntidad>();
             }
 
-            return todasLasEncomiendas
-                .Where(e => e.CUITCliente == cuit && !e.facturada)
+            // Normaliza el CUIT para comparar solo los números
+            string cuitNormalizado = new string(cuit.Where(char.IsDigit).ToArray());
+
+            var resultado = todasLasEncomiendas
+                .Where(e =>
+                    !e.facturada &&
+                    !string.IsNullOrEmpty(e.CUITCliente) &&
+                    new string(e.CUITCliente.Where(char.IsDigit).ToArray()) == cuitNormalizado
+                )
                 .ToList();
+
+            if (!resultado.Any())
+            {
+                MessageBox.Show("No hay encomiendas no facturadas para este CUIT.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            return resultado;
         }
 
         internal List<EncomiendaFactura> PrepararFacturasParaForm(string cuit, List<EncomiendaEntidad> todasLasEncomiendas)
