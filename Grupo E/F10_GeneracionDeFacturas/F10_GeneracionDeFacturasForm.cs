@@ -45,13 +45,14 @@ namespace Grupo_E.GeneracionDeFacturas
 
             listViewFactura.Items.Clear();
 
-            foreach (var factura in facturas)
+            foreach (var dto in facturas)
             {
-                var item = new ListViewItem(factura.PrecioCombinacionTamanoOrigenDestino.ToString("C"));
-                item.SubItems.Add(factura.ExtraRetiro.ToString("C"));
-                item.SubItems.Add(factura.ExtraAgencia.ToString("C"));
-                item.SubItems.Add(factura.ExtraEntrega.ToString("C"));
-                item.SubItems.Add(factura.PrecioTotalEncomienda.ToString("C"));
+                var item = new ListViewItem(dto.Tracking);
+                item.SubItems.Add(dto.FechaAdmision);
+                item.SubItems.Add(dto.Importe);
+                item.SubItems.Add(dto.ExtraRetiro);
+                item.SubItems.Add(dto.ExtraEntrega);
+                item.SubItems.Add(dto.ExtraAgencia);
                 listViewFactura.Items.Add(item);
             }
         }
@@ -65,33 +66,37 @@ namespace Grupo_E.GeneracionDeFacturas
 
         private void listViewFactura_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            var importes = new List<(int Importe, int ExtraRetiro, int ExtraEntrega)>();
+            var importes = new List<(decimal Importe, decimal ExtraRetiro, decimal ExtraEntrega, decimal ExtraAgencia)>();
 
-            // Recorre todos los ítems del ListView
             for (int i = 0; i < listViewFactura.Items.Count; i++)
             {
-                // Si es el ítem que está cambiando, usa el valor futuro (e.NewValue)
                 bool EstaCheckeado = (i == e.Index) ? (e.NewValue == CheckState.Checked) : listViewFactura.Items[i].Checked;
 
                 if (EstaCheckeado)
                 {
                     var item = listViewFactura.Items[i];
-                    int importe = ParseImporte(item.SubItems[0].Text);
-                    int extraRetiro = ParseImporte(item.SubItems[1].Text);
-                    int extraEntrega = ParseImporte(item.SubItems[3].Text);
-                    importes.Add((importe, extraRetiro, extraEntrega));
+                    decimal importe = ParseImporteDecimal(item.SubItems[2].Text);       // Importe
+                    decimal extraRetiro = ParseImporteDecimal(item.SubItems[3].Text);   // ExtraRetiro
+                    decimal extraEntrega = ParseImporteDecimal(item.SubItems[4].Text);  // ExtraEntrega
+                    decimal extraAgencia = ParseImporteDecimal(item.SubItems[5].Text);  // ExtraAgencia
+                    importes.Add((importe, extraRetiro, extraEntrega, extraAgencia));
                 }
             }
 
-            int total = modelo.CalcularTotalImportes(importes);
-            lblSumaImporte.Text = $"Total: ${total:N0}";
+            decimal total = modelo.CalcularTotalImportes(importes);
+            lblSumaImporte.Text = $"Total: ${total:N2}";
         }
 
-        private int ParseImporte(string texto)
+        private decimal ParseImporteDecimal(string texto)
         {
-            // Elimina cualquier símbolo de moneda y separadores de miles
-            string limpio = texto.Replace("$", "").Replace(".", "").Replace(",", "").Trim();
-            int.TryParse(limpio, out int valor);
+            // Elimina el símbolo de moneda y los espacios
+            string limpio = texto.Replace("$", "").Trim();
+
+            // Elimina los puntos (separador de miles)
+            limpio = limpio.Replace(",", "");
+
+            // Ahora la coma queda como separador decimal
+            decimal.TryParse(limpio, out decimal valor);
             return valor;
         }
 
