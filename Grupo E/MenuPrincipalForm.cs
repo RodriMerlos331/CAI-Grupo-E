@@ -1,5 +1,4 @@
-﻿
-using Grupo_E.Almacenes;
+﻿using Grupo_E.Almacenes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -154,6 +153,11 @@ namespace Grupo_E
         private void CentroDeDistribucionActualCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             CentroDeDistribucionAlmacen.CentroDistribucionActual = (CentroDeDistribucionEntidad)CentroDeDistribucionActualCombo.SelectedItem;
+          
+        }
+
+        private void AgenciaActualCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
             AgenciaAlmacen.AgenciaActual = (AgenciaEntidad)AgenciaActualCombo.SelectedItem;
         }
     }
