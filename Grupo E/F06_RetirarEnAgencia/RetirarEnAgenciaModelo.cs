@@ -42,6 +42,18 @@ namespace Grupo_E.RetirarEnAgencia
         {
             return encomiendas.Any(e => e.Tracking == tracking);
         }
+
+        internal bool ExisteEncomiendaEnAgenciaActual(string tracking)
+        {
+            var agenciaActual = Grupo_E.Almacenes.AgenciaAlmacen.AgenciaActual;
+            if (agenciaActual == null)
+                return false;
+
+            return encomiendas.Any(e =>
+                e.Tracking == tracking &&
+                string.Equals(e.AgenciaDestino, agenciaActual.NombreAgencia, StringComparison.OrdinalIgnoreCase)
+            );
+        }
     }
 }
 

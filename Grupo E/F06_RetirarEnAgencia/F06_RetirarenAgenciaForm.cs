@@ -38,13 +38,13 @@ namespace Grupo_E.RetirarEnAgencia
                 return;
             }
 
-            if (modelo.ExisteEncomiendaPorTracking(txtNumeroDeTracking.Text))
+            if (modelo.ExisteEncomiendaEnAgenciaActual(txtNumeroDeTracking.Text))
             {
-                MessageBox.Show("Encomienda encontrada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Encomienda encontrada en esta agencia.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("No se encontró una encomienda con ese número de tracking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se encontró una encomienda con ese número de tracking en esta agencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
