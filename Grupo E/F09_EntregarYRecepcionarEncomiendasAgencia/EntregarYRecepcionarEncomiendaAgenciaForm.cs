@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
             }
 
             int dni;
+            
 
             if (!int.TryParse(DNITxt.Text.Trim(), out dni))
             {
@@ -49,6 +51,8 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                 DNITxt.Focus();
                 return;
             }
+
+            var fletero = modelo.BuscarFleteroPorDni(dni);
 
             foreach (KeyValuePair<int, GuiaDeEncomiendas> numGuia in modelo.data)
             {
@@ -61,7 +65,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                         GuiasAEntregarListView.Items.Add(
                             new ListViewItem(guia.TrackingId.ToString()));
                     }
-                    else if (guia.EstadoEnvio == EstadoDeEnvio.RuteadaEntregaAgencia)
+                    else if (guia.EstadoEnvio == EstadoDeEnvio.PendienteEntregaAgencia)
                     {
                         GuiasARecibirListView.Items.Add(
                             new ListViewItem(guia.TrackingId.ToString()));
@@ -83,7 +87,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
             foreach (ListViewItem item in GuiasAEntregarListView.Items)
             {
                 int trackingId = int.Parse(item.Text);
-                modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.ImpuestaRetiradaAgencia;
+                modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.ImpuestaPendienteRetiroAgencia;
             }
 
             foreach (ListViewItem item in GuiasARecibirListView.Items)
