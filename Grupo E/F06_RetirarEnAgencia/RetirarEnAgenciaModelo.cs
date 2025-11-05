@@ -4,55 +4,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Grupo_E.Almacenes; // Asegúrate de importar el namespace correcto
 
 namespace Grupo_E.RetirarEnAgencia
 {
     internal class RetirarEnAgenciaModelo
     {
-        internal bool chequearEncomienda(EncomiendaRA encomienda)
+        List<EncomiendaEntidad> encomiendas;
+
+        public RetirarEnAgenciaModelo()
         {
-            if (encomienda.DNI < 1_000_000 || encomienda.DNI > 60_000_000)
-            {
-                MessageBox.Show("El DNI debe ser valido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-
-            List<EncomiendaRA> EncomiendasEnAgencia = new List<EncomiendaRA>
-            {
-                new EncomiendaRA(12345, "Juan", "Perez", 12345678),
-                new EncomiendaRA(67890, "Maria", "Gomez", 87654321),
-                new EncomiendaRA(40040, "Martin", "Calvo", 13000000),
-                new EncomiendaRA(50050, "Felipe", "Castro", 12000000)
-            };
-            var encomiendaEncontrada = EncomiendasEnAgencia.FirstOrDefault(e =>
-                e.NumeroDeTracking == encomienda.NumeroDeTracking &&
-                e.Nombre.Equals(encomienda.Nombre, StringComparison.OrdinalIgnoreCase) &&
-                e.Apellido.Equals(encomienda.Apellido, StringComparison.OrdinalIgnoreCase) &&
-                e.DNI == encomienda.DNI);
-
-            if (encomiendaEncontrada != null)
-            {
-                MessageBox.Show("Encomienda encontrada, entregela.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("No se encontró la encomienda o los datos no coinciden.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            encomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
         }
 
-        internal bool ExisteEncomiendaPorTracking(int numeroDeTracking)
+        internal bool chequearEncomienda(string tracking, string nombre, string apellido, int dni)
         {
-            List<EncomiendaRA> EncomiendasEnAgencia = new List<EncomiendaRA>
+            var encontrada = encomiendas.FirstOrDefault(e => e.Tracking == tracking);
+
+            if (encontrada == null)
             {
-                new EncomiendaRA(12345, "Juan", "Perez", 12345678),
-                new EncomiendaRA(67890, "Maria", "Gomez", 87654321),
-                new EncomiendaRA(40040, "Martin", "Calvo", 13120375),
-                new EncomiendaRA(50050, "Felipe", "Castro", 17837818)
-            };
-            return EncomiendasEnAgencia.Any(e => e.NumeroDeTracking == numeroDeTracking);
+                MessageBox.Show("No se encontró una encomienda con ese número de tracking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (encontrada.DNIDestinatario != dni ||
+                !string.Equals(encontrada.NombreDestinatario, nombre, StringComparison.OrdinalIgnoreCase) ||
+                !string.Equals(encontrada.ApellidoDestinatario, apellido, StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Los datos del destinatario no coinciden con la encomienda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        internal bool ExisteEncomiendaPorTracking(string tracking)
+        {
+            return encomiendas.Any(e => e.Tracking == tracking);
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

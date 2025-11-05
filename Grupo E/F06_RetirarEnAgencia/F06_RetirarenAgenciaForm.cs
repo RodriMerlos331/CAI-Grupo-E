@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Grupo_E.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,13 +14,13 @@ namespace Grupo_E.RetirarEnAgencia
 {
     public partial class RetirarEnAgencia : Form
     {
-        private RetirarEnAgenciaModelo modelo = new RetirarEnAgenciaModelo();
+        private RetirarEnAgenciaModelo modelo;
+
         public RetirarEnAgencia()
         {
             InitializeComponent();
+            modelo = new RetirarEnAgenciaModelo();
         }
-
- 
 
         private void btnLimpiarFiltro_Click(object sender, EventArgs e)
         {
@@ -26,7 +28,6 @@ namespace Grupo_E.RetirarEnAgencia
             txtNombre.Clear();
             txtApellido.Clear();
             txtDNI.Clear();
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -37,19 +38,13 @@ namespace Grupo_E.RetirarEnAgencia
                 return;
             }
 
-            if (!int.TryParse(txtNumeroDeTracking.Text, out int numeroDeTracking))
+            if (modelo.ExisteEncomiendaPorTracking(txtNumeroDeTracking.Text))
             {
-                MessageBox.Show("El campo numero de tracking debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (modelo.ExisteEncomiendaPorTracking(numeroDeTracking))
-            {
-                MessageBox.Show("La encomienda está en la agencia.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Encomienda encontrada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("La encomienda NO está en la agencia.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se encontró una encomienda con ese número de tracking.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -58,12 +53,6 @@ namespace Grupo_E.RetirarEnAgencia
             if (string.IsNullOrWhiteSpace(txtNumeroDeTracking.Text))
             {
                 MessageBox.Show("El campo numero de tracking no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!int.TryParse(txtNumeroDeTracking.Text, out int numeroDeTracking))
-            {
-                MessageBox.Show("El campo numero de tracking debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -89,17 +78,15 @@ namespace Grupo_E.RetirarEnAgencia
             {
                 MessageBox.Show("El campo DNI debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
-            EncomiendaRA EncomiendaX = new EncomiendaRA //RA x Retirar en Agencia
-            {
-                NumeroDeTracking = numeroDeTracking,
-                Nombre = txtNombre.Text,
-                Apellido = txtApellido.Text,
-                DNI = dni
-            };
+            } 
 
-            if (modelo.chequearEncomienda(EncomiendaX))
+            if (modelo.chequearEncomienda(
+                    txtNumeroDeTracking.Text,
+                    txtNombre.Text,
+                    txtApellido.Text,
+                    dni))
             {
+                MessageBox.Show("La encomienda fue validada correctamente y está lista para ser entregada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNumeroDeTracking.Clear();
                 txtNombre.Clear();
                 txtApellido.Clear();
@@ -131,3 +118,4 @@ namespace Grupo_E.RetirarEnAgencia
         }
     }
 }
+
