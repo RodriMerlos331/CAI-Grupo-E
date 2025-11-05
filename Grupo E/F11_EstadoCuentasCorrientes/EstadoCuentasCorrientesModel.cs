@@ -34,15 +34,13 @@ namespace Grupo_E.EstadoCuentasCorrientes
 
             List<MovimientoCC> movimientos = new List<MovimientoCC>();
 
-            // 3) Armar movimientos según si tienen o no FechaDePago
+            // 3) Armar movimientos según si tienen o no FechadePago
             foreach (FacturaEntidad f in facturasCliente)
             {
                 string estado;
                 decimal debe = 0m;
                 decimal haber = 0m;
 
-                // OJO: usá acá el nombre real de la propiedad en la entidad:
-                // FechaDePago o FechaPago, según la tengas declarada.
                 if (f.FechadePago == null)
                 {
                     // Factura impaga -> Pendiente

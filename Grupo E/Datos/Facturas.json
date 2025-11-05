@@ -9,7 +9,7 @@
     "Iva": 315.11,
     "Total": 1815.61,
     "CodigoDeAutorizacionElectronica": "CAE789012",
-    "FechaDePago": null
+    "FechadePago": null
   },
   {
     "NroFactura": "00000002",
@@ -21,7 +21,7 @@
     "Iva": 420.00,
     "Total": 2420.00,
     "CodigoDeAutorizacionElectronica": "CAE789013",
-    "FechaDePago": "2025-10-25T00:00:00"
+    "FechadePago": "2025-10-25T00:00:00"
   },
   {
     "NroFactura": "00000003",
@@ -33,6 +33,6 @@
     "Iva": 157.50,
     "Total": 907.50,
     "CodigoDeAutorizacionElectronica": "CAE789014",
-    "FechaDePago": null
+    "FechadePago": null
   }
 ]
