@@ -170,5 +170,10 @@ namespace Grupo_E.GestionarOmnibus
         {
 
         }
+
+        private void F04_GestionarOmnibusForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
