@@ -41,12 +41,13 @@ namespace Grupo_E.Almacenes
 
         public bool Facturada { get; set; }
 
-        
+
+        public EncomiendaFactura DatosFacturacion { get; set; }
         public void GenerarFactura(
-       TarifarioEntidad tarifario,
-       bool incluirRetiro,
-       bool incluirEntrega,
-       bool incluirAgencia)
+      TarifarioEntidad tarifario,
+      bool incluirRetiro,
+      bool incluirEntrega,
+      bool incluirAgencia)
         {
             var precioBase = tarifario.PreciosPorOrigenDestinos
                 .FirstOrDefault(p =>
@@ -66,7 +67,7 @@ namespace Grupo_E.Almacenes
                 ExtraAgencia = extraAgencia,
                 PrecioTotalEncomienda = precioBase + extraRetiro + extraEntrega + extraAgencia
             };
-        
+
         }
     }
 }
