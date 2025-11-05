@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Grupo_E.Almacenes
 {
@@ -40,6 +41,7 @@ namespace Grupo_E.Almacenes
 
         public bool Facturada { get; set; }
 
+        
         public void GenerarFactura(
        TarifarioEntidad tarifario,
        bool incluirRetiro,
@@ -64,6 +66,7 @@ namespace Grupo_E.Almacenes
                 ExtraAgencia = extraAgencia,
                 PrecioTotalEncomienda = precioBase + extraRetiro + extraEntrega + extraAgencia
             };
+        
         }
     }
 }

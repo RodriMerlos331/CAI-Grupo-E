@@ -227,11 +227,6 @@ namespace Grupo_E.F03_ImposicionEnCD
 
                 };
 
-            // Generación de factura Dos opciones: 
-            // var precioBase = PreciosPorOrigenDestino.ObtenerPrecio(codCentroDistribucionOrigen, codCentroDistribucionDestino, tipoBulto);
-            //Chequear
-
-            //var extraEntrega = TarifarioAlmacen.Tarifario.First().ExtraEntregaDomicilio;
 
             nuevaEncomienda.HistorialCambios.Add(new Historial
             {
@@ -245,24 +240,20 @@ namespace Grupo_E.F03_ImposicionEnCD
             });
 
             var tarifario = TarifarioAlmacen.Tarifario.FirstOrDefault();
-            
-            /*if (tarifario == null)
-            {
-                MessageBox.Show("No se encontró el tarifario cargado.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }*/
+
+          
 
             nuevaEncomienda.GenerarFactura(
+
                 tarifario,
                 incluirRetiro: false,
                 incluirEntrega: true,
                 incluirAgencia: false);
 
-            // Agrego la encomienda al almacén
             EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
 
-            // Mensaje informativo
+            
+
             string mensaje =
                 "Guía impuesta exitosamente.\n\n" +
                 "Tracking: " + nuevaEncomienda.Tracking + "\n" +
@@ -271,13 +262,13 @@ namespace Grupo_E.F03_ImposicionEnCD
                 "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
                 "Datos del destinatario: " + datosDestinatario + "\n\n" +
 
-        "---- DATOS DE FACTURACIÓN ----\n" +
+        "---- PRECIO TOTAL DE LA ENCOMIENDA ----\n" +
         "Precio base (combinación tamaño/origen/destino): $" + nuevaEncomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino + "\n" +
         "Extra por retiro a domicilio: $" + nuevaEncomienda.EncomiendaFactura.ExtraRetiro + "\n" +
         "Extra por entrega en agencia: $" + nuevaEncomienda.EncomiendaFactura.ExtraAgencia + "\n" +
         "Extra por entrega a domicilio: $" + nuevaEncomienda.EncomiendaFactura.ExtraEntrega + "\n" +
         "----------------------------------\n" +
-        "TOTAL FACTURADO: $" + nuevaEncomienda.EncomiendaFactura.PrecioTotalEncomienda + "\n";
+        "PRECIO TOTAL: $" + nuevaEncomienda.EncomiendaFactura.PrecioTotalEncomienda + "\n";
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -333,36 +324,7 @@ namespace Grupo_E.F03_ImposicionEnCD
             return new List<int> { paradaOrigen, paradaDestino };
         }
 
-        private EncomiendaFactura CalcularFactura(
-    TarifarioEntidad tarifario,
-    TipoBultoEnum tipoBulto,
-    string cdOrigen,
-    string cdDestino,
-    bool incluirRetiro,
-    bool incluirEntrega,
-    bool incluirAgencia)
-        {
-            var precioBase = tarifario.PreciosPorOrigenDestinos
-                .FirstOrDefault(p =>
-                    p.Tipo == tipoBulto &&
-                    p.CodigoCDOrigen == cdOrigen &&
-                    p.CodigoCDDestino == cdDestino)?.Precio ?? 0;
-
-            var extraRetiro = incluirRetiro ? tarifario.ExtraRetiro : 0;
-            var extraEntrega = incluirEntrega ? tarifario.ExtraEntregaDomicilio : 0;
-            var extraAgencia = incluirAgencia ? tarifario.ExtraAgencia : 0;
-
-            var total = precioBase + extraRetiro + extraEntrega + extraAgencia;
-
-            return new EncomiendaFactura
-            {
-                PrecioCombinacionTamanoOrigenDestino = precioBase,
-                ExtraRetiro = extraRetiro,
-                ExtraEntrega = extraEntrega,
-                ExtraAgencia = extraAgencia,
-                PrecioTotalEncomienda = total
-            };
-        }
+       
     }
 }
 

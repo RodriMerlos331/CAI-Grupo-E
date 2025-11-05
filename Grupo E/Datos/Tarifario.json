@@ -1,76 +1,75 @@
-{
-  "ExtraEntregaDomicilio":2000,
-  "ExtraRetiro": 1750,
-  "ExtraAgencia": 1200,
-  "PreciosPorOrigenDestinos": [
-    {
-      "Tipo": "S",
-      "CodigoCDOrigen": "CD01",
-      "CodigoCDDestino": "CD06",
-      "Precio": 1100
-    },
-    {
-      "Tipo": "M",
-      "CodigoCDOrigen": "CD01",
-      "CodigoCDDestino": "CD06",
-      "Precio": 1200
-    },
-    {
-      "Tipo": "L",
-      "CodigoCDOrigen": "CD01",
-      "CodigoCDDestino": "CD06",
-      "Precio": 1300
-    },
-    {
-      "Tipo": "XL",
-      "CodigoCDOrigen": "CD01",
-      "CodigoCDDestino": "CD06",
-      "Precio": 1400
-    },
-    {
-      "Tipo": "S",
-      "CodigoCDOrigen": "CD06",
-      "CodigoCDDestino": "CD01",
-      "Precio": 1100
-    },
-    {
-      "Tipo": "M",
-      "CodigoCDOrigen": "CD06",
-      "CodigoCDDestino": "CD01",
-      "Precio": 1200
-    },
-    {
-      "Tipo": "L",
-      "CodigoCDOrigen": "CD06",
-      "CodigoCDDestino": "CD01",
-      "Precio": 1300
-    },
-    {
-      "Tipo": "XL",
-      "CodigoCDOrigen": "CD06",
-      "CodigoCDDestino": "CD01",
-      "Precio": 1400
-    },
-    
-    {
-      "Tipo": "M",
-      "CodigoCDOrigen": "CD01",
-      "CodigoCDDestino": "CD03",
-      "Precio": 1800
-    },
-    {
-      "Tipo": "L",
-      "CodigoCDOrigen": "CD02",
-      "CodigoCDDestino": "CD04",
-      "Precio": 2500
-    },
-    {
-      "Tipo": "XL",
-      "CodigoCDOrigen": "CD03",
-      "CodigoCDDestino": "CD05",
-      "Precio": 3000
-    }
-  ]
-}
-
-
+[
+  {
+    "ExtraEntregaDomicilio": 2000,
+    "ExtraRetiro": 1750,
+    "ExtraAgencia": 1200,
+    "PreciosPorOrigenDestinos": [
+      {
+        "Tipo": 0,
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD06",
+        "Precio": 1100
+      },
+      {
+        "Tipo": 1,
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD06",
+        "Precio": 1200
+      },
+      {
+        "Tipo": 2,
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD06",
+        "Precio": 1300
+      },
+      {
+        "Tipo": 3,
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD06",
+        "Precio": 1400
+      },
+      {
+        "Tipo": 0,
+        "CodigoCDOrigen": "CD06",
+        "CodigoCDDestino": "CD01",
+        "Precio": 1100
+      },
+      {
+        "Tipo": 1,
+        "CodigoCDOrigen": "CD06",
+        "CodigoCDDestino": "CD01",
+        "Precio": 1200
+      },
+      {
+        "Tipo": 2,
+        "CodigoCDOrigen": "CD06",
+        "CodigoCDDestino": "CD01",
+        "Precio": 1300
+      },
+      {
+        "Tipo": 3,
+        "CodigoCDOrigen": "CD06",
+        "CodigoCDDestino": "CD01",
+        "Precio": 1400
+      },
+      {
+        "Tipo": 1,
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD03",
+        "Precio": 1800
+      },
+      {
+        "Tipo": 2,
+        "CodigoCDOrigen": "CD02",
+        "CodigoCDDestino": "CD04",
+        "Precio": 2500
+      },
+      {
+        "Tipo": 3,
+        "CodigoCDOrigen": "CD03",
+        "CodigoCDDestino": "CD05",
+        "Precio": 3000
+      }
+    ]
+  }
+]
