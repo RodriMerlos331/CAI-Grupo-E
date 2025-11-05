@@ -10,14 +10,15 @@ namespace Grupo_E.GestionarFletero
 {
     public class F05_GestionarFleteroModel
     {
-        /*
-        private List<HDR> HDRRendicion;
+
+        
+       // private List<HDR> HDRRendicion;
         private List<HDR> HDRGeneracion;
 
         
         public void CargarHDRDePrueba()
         {
-            HDRRendicion = new List<HDR>
+           /* HDRRendicion = new List<HDR>
             {
                 new HDR
                 {
@@ -72,7 +73,7 @@ namespace Grupo_E.GestionarFletero
                     }
                 }
             };
-
+           */
             // --- HDR de generación (nuevas asignadas al fletero) ---
             HDRGeneracion = new List<HDR>
             {
@@ -130,15 +131,24 @@ namespace Grupo_E.GestionarFletero
                 }
             };
         }
-        */
+        
 
         public int dniActual = 0;
 
+        /* 
+        public List<HDR> ObtenerHDRRendicionTransportistaActual()
+        {
+            return HDRRendicion
+                .Where(h => h.DniTransportista == dniActual && h.Rendida == false)
+                .ToList();
+        }
+        */
         public List<HDRDistribucionUMEntidad> ObtenerHDRRendicionPorTransportista(int dni)
         {
             dniActual = dni;
+            // Devuelve las mismas instancias que están en el almacén (referencias)
             return HDRDistribucionUMAlmacen.HDRDistribucionUM
-                .Where(h => h.DniFleteroAsignado == dni && !h.Rendida)
+                .Where(h => h.DniFleteroAsignado == dni && h.Rendida == false)
                 .ToList();
         }
 
@@ -153,9 +163,10 @@ namespace Grupo_E.GestionarFletero
 
         }
         */
+
+        /*
         public List<string> ObtenerGuiasDeHDRNoCumplidas(TipoHDREnum tipo)
         {
-            // Filtramos HDR del fletero actual, del tipo indicado, no rendidas ni cumplidas
             return HDRDistribucionUMAlmacen.HDRDistribucionUM
                 .Where(h => h.DniFleteroAsignado == dniActual &&
                             h.Tipo == tipo &&
@@ -164,16 +175,32 @@ namespace Grupo_E.GestionarFletero
                 .SelectMany(h => h.Encomiendas)
                 .ToList();
         }
+        */
+        public List<(int NumeroHDR, string Guia)> ObtenerGuiasDeHDRNoCumplidas(TipoHDREnum tipo)
+        {
+            return HDRDistribucionUMAlmacen.HDRDistribucionUM
+                .Where(h => h.DniFleteroAsignado == dniActual &&
+                            h.Tipo == tipo &&
+                            !h.Rendida &&
+                            !h.Cumplida)
+                .SelectMany(h => h.Encomiendas.Select(g => (h.NumeroHDRUM, g)))
+                .ToList();
+        }
 
 
-        public List<HDR> ObtenerHDRPorNumero(int numeroHDR)
+        /*public List<HDR> ObtenerHDRPorNumero(int numeroHDR)
         {
             return HDRRendicion
                 .Where(h => h.NumeroHDR == numeroHDR)
                 .ToList();
-        }
+        }*/
 
-       
+        public HDRDistribucionUMEntidad ObtenerHDRPorNumero(int numeroHDR)
+        {
+            // Devuelve la referencia única al objeto del almacén
+            return HDRDistribucionUMAlmacen.HDRDistribucionUM
+                .FirstOrDefault(h => h.NumeroHDRUM == numeroHDR);
+        }
 
         public List<HDR> ObtenerHDRGeneracionPorTransportista(int dni)
         {
@@ -182,14 +209,15 @@ namespace Grupo_E.GestionarFletero
                 .ToList();
         }
 
-
         
-        public List<HDR> ObtenerHDRRendicionTransportistaActual()
+
+        public List<HDRDistribucionUMEntidad> ObtenerHDRRendicionTransportistaActual()
         {
-            return HDRRendicion
-                .Where(h => h.DniTransportista == dniActual && h.Rendida == false)
+            return HDRDistribucionUMAlmacen.HDRDistribucionUM
+                .Where(h => h.DniFleteroAsignado == dniActual && h.Rendida == false)
                 .ToList();
         }
+
 
     }
 

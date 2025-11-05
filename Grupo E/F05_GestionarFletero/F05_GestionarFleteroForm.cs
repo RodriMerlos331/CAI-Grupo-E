@@ -40,18 +40,17 @@ namespace Grupo_E.GestionarFletero
 
             var hdrs = modelo.ObtenerHDRRendicionPorTransportista(dni);
 
-        
             if (hdrs.Count == 0)
             {
                 MessageBox.Show("No se encontraron HDR a rendir para el DNI ingresado");
                 return;
             }
 
-
             foreach (var hdr in hdrs)
             {
                 var item = new ListViewItem(hdr.NumeroHDRUM.ToString());
-                item.SubItems.Add(hdr.Tipo.ToString());
+                item.SubItems.Add(Enum.GetName(typeof(TipoHDREnum), hdr.Tipo));
+                item.Tag = hdr; // guardo la referencia real del almacen
                 HDRAsignadasListView.Items.Add(item);
             }
 
@@ -60,17 +59,10 @@ namespace Grupo_E.GestionarFletero
 
             GuiasNoEntregadasListView.Items.Clear();
 
-            /*
-            foreach (var guia in guiasNoEntregadas)
+            foreach (var itemData in guiasNoEntregadas)
             {
-                var item = new ListViewItem(guia.NumeroHDR.ToString());
-                item.SubItems.Add(guia.CodigoGuia.ToString());
-                GuiasNoEntregadasListView.Items.Add(item);
-            }
-            */
-            foreach (var guia in guiasNoEntregadas)
-            {
-                var item = new ListViewItem(guia);
+                var item = new ListViewItem(itemData.NumeroHDR.ToString());
+                item.SubItems.Add(itemData.Guia);
                 GuiasNoEntregadasListView.Items.Add(item);
             }
 
@@ -84,6 +76,7 @@ namespace Grupo_E.GestionarFletero
 
         }
 
+        /*
         private void HDRAsignadasListView_ItemChecked_1(object sender, ItemCheckedEventArgs e)
         {
             int nroHDR = int.Parse(e.Item.SubItems[0].Text);
@@ -98,7 +91,94 @@ namespace Grupo_E.GestionarFletero
 
             ActualizarListasPorHDR(hdr);
         }
+        */
 
+            private void HDRAsignadasListView_ItemChecked_1(object sender, ItemCheckedEventArgs e)
+{
+
+            var hdr = e.Item.Tag as HDRDistribucionUMEntidad;
+
+            hdr.Cumplida = e.Item.Checked;
+
+
+            hdr.ActualizarEstado(e.Item.Checked);
+
+            ActualizarListasPorHDR(hdr);
+            /*
+             * int nroHDR = int.Parse(e.Item.SubItems[0].Text);
+
+            var hdr = modelo.ObtenerHDRPorNumero(nroHDR)
+                   .FirstOrDefault(h => h.NumeroHDR == nroHDR);
+
+            hdr.Cumplida = e.Item.Checked;
+
+            //Está ok poner el metodo acá o debería ir en el modelo?
+            hdr.ActualizarEstado(hdr.Cumplida);
+
+            ActualizarListasPorHDR(hdr);
+             */
+        }
+
+        private void ActualizarListasPorHDR(HDRDistribucionUMEntidad hdr)
+        {
+            if (hdr.Tipo == TipoHDREnum.Entrega)
+            {
+                if (hdr.Cumplida)
+                {
+                    foreach (var guia in hdr.Encomiendas)
+                    {
+                        foreach (ListViewItem item in GuiasNoEntregadasListView.Items)
+                        {
+                            if (item.SubItems[0].Text == hdr.NumeroHDRUM.ToString() &&
+                                item.SubItems[1].Text == guia)
+                            {
+                                GuiasNoEntregadasListView.Items.Remove(item);
+                                break;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var guia in hdr.Encomiendas)
+                    {
+                        var item = new ListViewItem(hdr.NumeroHDRUM.ToString());
+                        item.SubItems.Add(guia);
+                        GuiasNoEntregadasListView.Items.Add(item);
+                    }
+                }
+            }
+
+            if (hdr.Tipo == TipoHDREnum.Retiro)
+            {
+                if (hdr.Cumplida)
+                {
+                    foreach (var guia in hdr.Encomiendas)
+                    {
+                        var item = new ListViewItem(hdr.NumeroHDRUM.ToString());
+                        item.SubItems.Add(guia);
+                        GuiasRetiradasListView.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    foreach (var guia in hdr.Encomiendas)
+                    {
+                        foreach (ListViewItem item in GuiasRetiradasListView.Items)
+                        {
+                            if (item.SubItems[0].Text == hdr.NumeroHDRUM.ToString() &&
+                                item.SubItems[1].Text == guia)
+                            {
+                                GuiasRetiradasListView.Items.Remove(item);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /*
         private void ActualizarListasPorHDR(HDR hdr)
         {
             if (hdr.Tipo == HDR.TipoHDR.Entrega)
@@ -157,6 +237,7 @@ namespace Grupo_E.GestionarFletero
                 }
             }
         }
+        */
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
         {
@@ -171,29 +252,49 @@ namespace Grupo_E.GestionarFletero
 
         }
 
-        private void CancelarBtn_Click(object sender, EventArgs e)
+        private void AceptarBtn_Click(object sender, EventArgs e)
         {
-         
-            DialogResult resultado = MessageBox.Show(
-        "¿Estás seguro de que querés cancelar la operación? Las modificaciones no se guardaran",
-        "Confirmar cancelación",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question
-    );
+            var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
 
-            if (resultado == DialogResult.Yes)
+            if (HDRARendir.Count == 0)
             {
-                MessageBox.Show("Operación cancelada correctamente.");
-                this.Close();
+                MessageBox.Show("No hay HDR para rendir.");
+                return;
             }
-            else
+
+            string resumen = "Se marcarán como rendidas las siguientes HDR, con sus estados (Cumplida o no Cumplida):\n";
+
+            foreach (var hdr in HDRARendir)
             {
-                MessageBox.Show("La operación continúa.");
+                string estado = hdr.Cumplida ? "Cumplida" : "No Cumplida";
+                resumen += $"HDR Nro: {hdr.NumeroHDRUM}, Estado: {estado}\n";
             }
+
+            MessageBox.Show(resumen, "Resumen de Rendición", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // 🔹 Marcamos como rendidas, pero no grabamos todavía (el Program lo hace al cerrar)
+            foreach (var hdr in HDRARendir)
+            {
+                hdr.Rendida = true;
+            }
+
+            MessageBox.Show("Cambios guardados correctamente (se reflejarán al cerrar la aplicación).");
+
+            // 🔹 Limpieza visual
+            DNIText.Text = "";
+            HDRAsignadasListView.Items.Clear();
+            GuiasNoEntregadasListView.Items.Clear();
+            GuiasRetiradasListView.Items.Clear();
+            NuevasHDREntregarListView.Items.Clear();
+            NuevasHDRRetirarListViews.Items.Clear();
+            NuevasGuiasEntregarListView.Items.Clear();
+            NuevasGuiasRetirarListView.Items.Clear();
         }
 
 
         //REVISAR SI EL GUARDADO ESTÁ OK ASÍ:
+
+        /*
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
 
@@ -238,7 +339,8 @@ namespace Grupo_E.GestionarFletero
             NuevasGuiasRetirarListView.Items.Clear();
 
         }
-
+        */
+       
         private void GenerarHdrBtn_Click(object sender, EventArgs e)
         {
             //GENERACION - Esto en el prototipo era independiente a lo anterior, así que ahora voy a hacerlo aparte con otro botón! 
@@ -280,6 +382,14 @@ namespace Grupo_E.GestionarFletero
                     NuevasGuiasRetirarListView.Items.Add(guiaItem);
                 }
             }
+
+        }
+
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("No se han guardado los cambios.");
+            this.Close();
         }
     }
 }

@@ -1,10 +1,11 @@
 [
   {
-    "NumeroHDRMD": 1001,
+    "NumeroHDRUM": 1001,
     "Tipo": 0,
     "DniFleteroAsignado": 12345678,
     "Cumplida": false,
     "Rendida": false,
+<<<<<<< Updated upstream
     "Encomiendas": [ 201, 202, 203 ]
   },
   {
@@ -28,5 +29,16 @@
     "Cumplida": false,
     "Rendida": false,
     "Encomiendas": [ "AG03_01", "AG03_02"]
+=======
+    "Encomiendas": [ "AG03_10" ]
+  },
+  {
+    "NumeroHDRUM": 1002,
+    "Tipo": 1,
+    "DniFleteroAsignado": 12345678,
+    "Cumplida": false,
+    "Rendida": false,
+    "Encomiendas": [ "AG03_12" ]
+>>>>>>> Stashed changes
   }
 ]

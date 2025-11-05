@@ -22,10 +22,18 @@ namespace Grupo_E.Almacenes
         //se podrían resumir en PendienteEntregaUM ?
         //RuteadaUM, //no necesario
         //quedan en CD hasta que pasa fletero y armo HDR distribucion UM
+<<<<<<< Updated upstream
         EnTransitoUMDestino, //Fletero pasó por el CD Destino y está yendo a entregar encomiendas pendiente entrega domicilio/agencia 10
         PendienteRetiroAgencia,  ////Fletero entrega en agencia, esperando que el cliente retire 11
         Entregada, //sea en casa, agencia o CD ? 12
         Cancelada //13
+=======
+        EnTransitoUMDestino, //Fletero pasó por el CD Destino y está yendo a entregar encomiendas pendiente entrega domicilio/agencia
+        PendienteRetiroAgencia,  ////Fletero entrega en agencia, esperando que el cliente retire
+        Entregada, //sea en casa, agencia o CD ? 
+        NoEntregada, //sumo este caso momentaneamente para manejar las devoluciones de entrega
+        Cancelada
+>>>>>>> Stashed changes
 
     }
 }
