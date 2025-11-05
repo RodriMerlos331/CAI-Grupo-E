@@ -1,12 +1,12 @@
 [
-  
+
   {
     "NumeroHDRUM": 1101,
     "Tipo": 0,
-    "DniFleteroAsignado": 40943084,
+    "DniFleteroAsignado": 12345678,
     "Cumplida": false,
     "Rendida": false,
-    "Encomiendas": [ "AG03_01", "AG03_02"]
+    "Encomiendas": [ "AG03_01", "AG03_02" ]
   },
   {
     "NumeroHDRUM": 1002,

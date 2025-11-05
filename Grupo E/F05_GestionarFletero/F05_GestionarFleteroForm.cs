@@ -36,7 +36,6 @@ namespace Grupo_E.GestionarFletero
                 return;
             }
 
-            HDRAsignadasListView.Items.Clear();
 
             var hdrs = modelo.ObtenerHDRRendicionPorTransportista(dni);
 
@@ -45,6 +44,8 @@ namespace Grupo_E.GestionarFletero
                 MessageBox.Show("No se encontraron HDR a rendir para el DNI ingresado");
                 return;
             }
+
+            HDRAsignadasListView.Items.Clear();
 
             foreach (var hdr in hdrs)
             {
@@ -118,6 +119,7 @@ namespace Grupo_E.GestionarFletero
             ActualizarListasPorHDR(hdr);
              */
         }
+
 
         private void ActualizarListasPorHDR(HDRDistribucionUMEntidad hdr)
         {
@@ -252,8 +254,69 @@ namespace Grupo_E.GestionarFletero
 
         }
 
+        private void GenerarHdrBtn_Click(object sender, EventArgs e)
+        {
+            //GENERACION - Esto en el prototipo era independiente a lo anterior, así que ahora voy a hacerlo aparte con otro botón! 
+            if (!int.TryParse(DNIText.Text, out int dni))
+            {
+                MessageBox.Show("El DNI debe ser numerico");
+                return;
+            }
+
+            NuevasHDREntregarListView.Items.Clear();
+            NuevasHDRRetirarListViews.Items.Clear();
+            NuevasGuiasEntregarListView.Items.Clear();
+            NuevasGuiasRetirarListView.Items.Clear();
+
+            var hdrGeneracion = modelo.ObtenerHDRGeneracionPorTransportista(dni);
+
+            if (hdrGeneracion == null || hdrGeneracion.Count == 0)
+            {
+                MessageBox.Show("No hay HDR para generar para el DNI ingresado");
+                return;
+            }
+
+            var hdrsEntrega = hdrGeneracion.Where(h => h.Tipo == TipoHDREnum.Entrega).ToList();
+            var hdrsRetiro = hdrGeneracion.Where(h => h.Tipo == TipoHDREnum.Retiro).ToList();
+
+
+            foreach (var hdr in hdrsEntrega)
+            {
+                var item = new ListViewItem(hdr.NumeroHDRUM.ToString());
+                NuevasHDREntregarListView.Items.Add(item);
+
+                if (hdr.Encomiendas != null)
+                {
+                    foreach (var guia in hdr.Encomiendas)
+                    {
+                        var guiaItem = new ListViewItem(hdr.NumeroHDRUM.ToString());
+                        guiaItem.SubItems.Add(guia);
+                        NuevasGuiasEntregarListView.Items.Add(guiaItem);
+                    }
+                }
+            }
+
+            foreach (var hdr in hdrsRetiro)
+            {
+                var item = new ListViewItem(hdr.NumeroHDRUM.ToString());
+                NuevasHDRRetirarListViews.Items.Add(item);
+
+                if (hdr.Encomiendas != null)
+                {
+                    foreach (var guia in hdr.Encomiendas)
+                    {
+                        var guiaItem = new ListViewItem(hdr.NumeroHDRUM.ToString());
+                        guiaItem.SubItems.Add(guia);
+                        NuevasGuiasRetirarListView.Items.Add(guiaItem);
+                    }
+                }
+            }
+
+        }
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
+
+            //Actualizo encomiendas rendidas y HDR generadoas
             var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
 
             if (HDRARendir.Count == 0)
@@ -272,15 +335,15 @@ namespace Grupo_E.GestionarFletero
 
             MessageBox.Show(resumen, "Resumen de Rendición", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // 🔹 Marcamos como rendidas, pero no grabamos todavía (el Program lo hace al cerrar)
             foreach (var hdr in HDRARendir)
             {
                 hdr.Rendida = true;
             }
 
+
+
             MessageBox.Show("Cambios guardados correctamente (se reflejarán al cerrar la aplicación).");
 
-            // 🔹 Limpieza visual
             DNIText.Text = "";
             HDRAsignadasListView.Items.Clear();
             GuiasNoEntregadasListView.Items.Clear();
@@ -341,49 +404,7 @@ namespace Grupo_E.GestionarFletero
         }
         */
        
-        private void GenerarHdrBtn_Click(object sender, EventArgs e)
-        {
-            //GENERACION - Esto en el prototipo era independiente a lo anterior, así que ahora voy a hacerlo aparte con otro botón! 
-            if (!int.TryParse(DNIText.Text, out int dni))
-            {
-                MessageBox.Show("El DNI debe ser numerico");
-                return;
-            }
-
-            //Debería en realidad validar primero que se haya realizado la rendición
-
-            var hdrGeneracion = modelo.ObtenerHDRGeneracionPorTransportista(dni);
-            var hdrsEntrega = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Entrega).ToList();
-            var hdrsRetiro = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro).ToList();
-
-
-            foreach (var hdr in hdrsEntrega)
-            {
-                var item = new ListViewItem(hdr.NumeroHDR.ToString());
-                NuevasHDREntregarListView.Items.Add(item);
-
-                foreach (var guia in hdr.Guias)
-                {
-                    var guiaItem = new ListViewItem(hdr.NumeroHDR.ToString());
-                    guiaItem.SubItems.Add(guia.CodigoGuia);
-                    NuevasGuiasEntregarListView.Items.Add(guiaItem);
-                }
-            }
-
-            foreach (var hdr in hdrsRetiro)
-            {
-                var item = new ListViewItem(hdr.NumeroHDR.ToString());
-                NuevasHDRRetirarListViews.Items.Add(item);
-
-                foreach (var guia in hdr.Guias)
-                {
-                    var guiaItem = new ListViewItem(hdr.NumeroHDR.ToString());
-                    guiaItem.SubItems.Add(guia.CodigoGuia);
-                    NuevasGuiasRetirarListView.Items.Add(guiaItem);
-                }
-            }
-
-        }
+           
 
 
         private void CancelarBtn_Click(object sender, EventArgs e)
