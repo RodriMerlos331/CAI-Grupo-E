@@ -67,14 +67,6 @@ namespace Grupo_E.F03_ImposicionEnCD
             var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad;
             var codCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
-            //lo sumé acá: pero querría hacerlo como se toma CD desde el menú
-            /*
-            var codLocalidadDestino = LocalidadAlmacen.Localidad
-                .Where(l => l.Nombre == localidad)
-                .Select(l => l.CodigoLocalidad)
-                .FirstOrDefault();
-            */
-
             var ObtenerCDDestino = CentroDeDistribucionAlmacen.CentroDeDistribucion
                     .Where(cd => cd.NombreTerminal == centroDistribucionDestino)
                     .Select(cd => cd.CodigoCD)
@@ -85,7 +77,6 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             var nuevaEncomienda = new EncomiendaEntidad
             {
-                // Tracking: CodigoCD + "_" + numero formateado con 2 dígitos (ej. CD01_01)
                 Tracking = CDDestino + "_" + (ultimoNumero++).ToString(),
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
@@ -259,7 +250,7 @@ namespace Grupo_E.F03_ImposicionEnCD
         }
 
 
-        //Ejemplo de cómo estaba antes: 
+        /*
         public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
         {
             ImposicionAgencia nuevaImposicion = new ImposicionAgencia
@@ -281,6 +272,111 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+        */
+
+
+
+
+        public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
+        {
+            var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
+            var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad;
+            var codCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
+
+            //lo sumé acá: pero querría hacerlo como se toma CD desde el menú
+           var ObtenerCDDestino = AgenciaAlmacen.Agencia
+                    .Where(a => a.NombreAgencia == agenciaDestino)
+                    .Select(a => a.CodigoCD)
+                    .FirstOrDefault();
+
+            var codCentroDistribucionDestino = ObtenerCDDestino;
+
+            var CodAgenciaDestino = AgenciaAlmacen.Agencia
+                    .Where(a => a.NombreAgencia == agenciaDestino)
+                    .Select(a => a.CodigoAgencia)
+                    .FirstOrDefault();
+
+            var tipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto);
+
+            var nuevaEncomienda = new EncomiendaEntidad
+            {
+                Tracking = CodAgenciaDestino + "_" + (ultimoNumero++).ToString(),
+                CUITCliente = cuitCliente,
+                FechaImposicion = DateTime.Now,
+                FechaAdmision = DateTime.Now,
+                FechaEntrega = null, //  no entregada
+
+                TipoBulto = tipoBulto,
+                NombreDestinatario = datosDestinatario,
+                ApellidoDestinatario = datosDestinatario,
+                DireccionDestinatario = null,
+                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+
+                CodCDActual = codCDActual,
+                CodLocalidadOrigen = codLocalidadOrigen,
+                CodCentroDistribucionOrigen = codCentroDistribucionOrigen,
+                CodCentroDistribucionDestino = codCentroDistribucionDestino,
+
+                Estado = EstadoEncomiendaEnum.Admitida,
+
+                AgenciaDestino = CodAgenciaDestino,
+                AgenciaOrigen = null,
+                DatosRetiroADomicilio = null,
+
+                //ejemplo cualquiera, en este caso la parada es retiro y 5 Grutas ??, pero debería generarse la ruta real, quizas desde ObtenerRuta?
+                ParadasRuta = new List<int> { 1, 5 },
+
+                Facturada = false,
+
+                HistorialCambios = new List<Historial>(),
+
+            };
+
+
+            nuevaEncomienda.HistorialCambios.Add(new Historial
+            {
+                Tracking = nuevaEncomienda.Tracking,
+                FechaPrevia = DateTime.Now,
+                UbicacionPrevia = codCDActual,
+                FleteroAsignado = 0,
+                NumeroHDRUM = 0,
+                NumeroHDRMD = 0,
+                EstadoPrevio = EstadoEncomiendaEnum.Admitida
+            });
+
+            var tarifario = TarifarioAlmacen.Tarifario.FirstOrDefault();
+
+
+
+            nuevaEncomienda.GenerarFactura(
+
+                tarifario,
+                incluirRetiro: false,
+                incluirEntrega: false,
+                incluirAgencia: true);
+
+            EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
+
+
+
+            string mensaje =
+                "Guía impuesta exitosamente.\n\n" +
+                "Tracking: " + nuevaEncomienda.Tracking + "\n" +
+                "CUIT del cliente: " + nuevaEncomienda.CUITCliente + "\n" +
+                "Agencia de destino: " + agenciaDestino + "\n" +
+                "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
+                "Datos del destinatario: " + datosDestinatario + "\n\n" +
+
+        "---- PRECIO TOTAL DE LA ENCOMIENDA ----\n" +
+        "Precio base (combinación tamaño/origen/destino): $" + nuevaEncomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino + "\n" +
+        "Extra por retiro a domicilio: $" + nuevaEncomienda.EncomiendaFactura.ExtraRetiro + "\n" +
+        "Extra por entrega en agencia: $" + nuevaEncomienda.EncomiendaFactura.ExtraAgencia + "\n" +
+        "Extra por entrega a domicilio: $" + nuevaEncomienda.EncomiendaFactura.ExtraEntrega + "\n" +
+        "----------------------------------\n" +
+        "PRECIO TOTAL: $" + nuevaEncomienda.EncomiendaFactura.PrecioTotalEncomienda + "\n";
+
+            MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
