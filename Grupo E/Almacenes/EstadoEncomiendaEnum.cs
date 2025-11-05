@@ -13,8 +13,8 @@ namespace Grupo_E.Almacenes
         RuteadaRetiroDomicilio, //Desde el CD le indico al fletero que tiene que ir a buscar encomiendas pendiente retiro domicilio 2
         RuteadaRetiroAgencia, //Desde el CD le indico al fletero que tiene que ir a buscar encomiendas pendiente retiro agencia 3
         EnTransitoUMOrigen, //Fletero pasó por el CD, y está yendo a buscar ruteadasdomicilio y ruteadasagencia 4
-        Admitida, //Fletero llegó al domicilio/agencia y la encomienda fue admitida en CD Origne 5 
-        EnTransitoMD, //Encomeindas admitidas en CD Origen y están en tránsito hacia CD Destino  6 
+        Admitida, //Fletero llegó del domicilio/agencia y la encomienda fue admitida en CD Origne 5 
+        EnTransitoMD, //Encomeindas admitidas en CD Origen y están en tránsito hacia CD Destino  6 Esto es cuando pasa a ser ruteada, no? es en la pantalla de rodri
         //EnCDDestino, //Despachas en CD , esperando retiro o distribución UM, no sería necesario este estado
         PendienteRetiroCD, //7
         PendienteEntregaDomicilio,
