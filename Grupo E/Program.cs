@@ -1,6 +1,7 @@
 ﻿using Grupo_E.Almacenes;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,13 @@ namespace Grupo_E
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MenuPrincipalForm()); // <-- Menú como formulario inicial
-
-            //Guardo los datos:
-
-            LocalidadAlmacen.Grabar();
+           
+            
+            
+           
             EncomiendaAlmacen.Grabar();
+
+
         }
     }
 }

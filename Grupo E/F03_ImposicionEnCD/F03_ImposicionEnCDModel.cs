@@ -189,16 +189,8 @@ namespace Grupo_E.F03_ImposicionEnCD
             //Chequear
             var extraEntrega = TarifarioAlmacen.Tarifario.First().ExtraEntregaDomicilio;
 
-            var datosFacturacion = new EncomiendaFactura
-            {
-                PrecioCombinacionTamanoOrigenDestino = precioBase,
-                ExtraRetiro = 0,
-                ExtraAgencia = 0,
-                ExtraEntrega = extraEntrega,
-                PrecioTotalEncomienda = precioBase + extraEntrega
-            };
 
-            
+
             EncomiendaEntidad NuevaEncomienda = new EncomiendaEntidad
             {
                 Tracking = "DOM_" + (ultimoNumero++).ToString(),
@@ -211,8 +203,8 @@ namespace Grupo_E.F03_ImposicionEnCD
                 NombreDestinatario = datosDestinatario,
                 ApellidoDestinatario = datosDestinatario,
                 DireccionDestinatario = direccionParticular,
-
-                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                DNIDestinatario = 123456789,
+                //DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
 
                 CodCDActual = codCDActual,
                 CodLocalidadOrigen = codLocalidadOrigen,
@@ -230,12 +222,20 @@ namespace Grupo_E.F03_ImposicionEnCD
 
                 //Al admitir se generan los datos de facturación
 
-                DatosFacturacion = datosFacturacion,
+                DatosFacturacion = new EncomiendaFactura
+                {
+                    PrecioCombinacionTamanoOrigenDestino = precioBase,
+                    ExtraRetiro = 0,
+                    ExtraAgencia = 0,
+                    ExtraEntrega = extraEntrega,
+                    PrecioTotalEncomienda = precioBase + extraEntrega
+                },
 
 
             };
 
             EncomiendaAlmacen.Encomienda.Add(NuevaEncomienda);
+            MessageBox.Show(NuevaEncomienda.DatosFacturacion?.GetType().FullName ?? "null", "Tipo DatosFacturacion");
 
             string mensaje =
              "Guía impuesta exitosamente.\n\n" +
@@ -243,12 +243,17 @@ namespace Grupo_E.F03_ImposicionEnCD
              $"CUIT del cliente: {NuevaEncomienda.CUITCliente}\n" +
              $"Dirección particular de destino: {NuevaEncomienda.DireccionDestinatario}\n" +
              $"Tamaño del bulto: {NuevaEncomienda.TipoBulto}\n" +
-             $"Datos del destinatario: {datosDestinatario}";
+             $"Datos del destinatario: {datosDestinatario}\n" +
+             $"Precio base: {NuevaEncomienda.DatosFacturacion.PrecioCombinacionTamanoOrigenDestino}\n"+
+              $"Extra Retiro: {NuevaEncomienda.DatosFacturacion.ExtraRetiro}\n"+
+                 $"Extra Agencia: {NuevaEncomienda.DatosFacturacion.ExtraAgencia}\n"+
+                 $"Extra Entrega: {NuevaEncomienda.DatosFacturacion.ExtraEntrega}\n"+
+                  $"Precio total: {NuevaEncomienda.DatosFacturacion.PrecioTotalEncomienda}\n" 
+                 ;
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             // temporal: mostrar rutas al imponer para depurar
-            MessageBox.Show("BaseDirectory: " + AppDomain.CurrentDomain.BaseDirectory + Environment.NewLine +
-                            "CurrentDirectory: " + Environment.CurrentDirectory, "Rutas");
+            
         }
 
 

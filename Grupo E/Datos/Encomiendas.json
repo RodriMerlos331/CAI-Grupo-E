@@ -65,7 +65,6 @@
     "FechaEntrega": null,
     "DatosFacturacion": null
   },
-
   {
     "Tracking": "CD02_5",
     "CodLocalidadOrigen": "CABA",
@@ -92,7 +91,7 @@
         "Tracking": "CD02_5",
         "FechaPrevia": "2025-11-04T13:05:04.3003406-03:00",
         "UbicacionPrevia": "CD06",
-        "FleteroAsignado":0,
+        "FleteroAsignado": 0,
         "NumeroHDRUM": 0,
         "NumeroHDRMD": 1100,
         "EstadoPrevio": 5
@@ -109,5 +108,35 @@
       }
 
     ]
+  },
+  {
+    "Tracking": "CD02_5",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD06",
+    "CodCentroDistribucionDestino": "CD02",
+    "Estado": 5,
+    "TipoBulto": 0,
+    "CUITCliente": "30-12345678-01",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Maga Leder 12345678",
+    "ApellidoDestinatario": "Maga Leder 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": "CD01",
+    "ParadasRuta": [],
+    "FechaImposicion": "2025-11-04T13:05:04.2983386-03:00",
+    "FechaAdmision": "2025-11-04T13:05:04.3003406-03:00",
+    "FechaEntrega": null,
+    "DatosFacturacion": {
+      "PrecioCombinacionTamanoOrigenDestino": 1100.0,
+      "ExtraRetiro": 0.0,
+      "ExtraAgencia": 0.0,
+      "ExtraEntrega": 2.5,
+      "PrecioTotalEncomienda": 1102.5
+    }
   }
+    
+  
 ]
