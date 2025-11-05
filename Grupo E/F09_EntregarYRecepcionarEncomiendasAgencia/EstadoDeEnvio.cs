@@ -5,20 +5,16 @@
         ImpuestaPendienteRetiroDomicilio,
         ImpuestaPendienteRetiroAgencia,
         RuteadaRetiroDomicilio,
-        RuteadaRetiroAgencia, //En camino a ser retira
-        ImpuestaRetiradaAgencia, //Fue retirada en agencia
-        AdmitidaCD,
-        Transito,
-        CentroDistribucionDestino,
-        PendienteEntregarDomicilio,
-        RuteadaEntregaDomicilio,
-        RuteadaEntregaAgencia, //En camino a ser dejada en la agencia
-        PendienteRetiroAgencia, //Fue dejada en la agencia
-        PendienteEntregaCD, 
-        EntregadaAgencia,
-        EntregadaCD,
-        EntregaFallida,  
-        EntregadaDomicilio,
+        RuteadaRetiroAgencia,
+        EnTransitoUMOrigen,
+        Admitida,
+        EnTransitoMD,
+        PendienteRetiroCD,
+        PendienteEntregaDomicilio,
+        PendienteEntregaAgencia,
+        EnTransitoUMDestino,
+        PendienteRetiroAgencia,
+        Entregada,
         Cancelada
 
 
