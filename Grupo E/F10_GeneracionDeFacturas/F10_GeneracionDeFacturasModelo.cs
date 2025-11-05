@@ -75,7 +75,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                     e.FechaEntrega.Value.Date < primerDiaMesActual
                 ).ToList();
 
-            
+
             if (!resultado.Any())
             {
                 if (encomiendasNoFacturadas.Any())
