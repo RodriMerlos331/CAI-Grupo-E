@@ -8,8 +8,8 @@ namespace Grupo_E.Almacenes
 {
         public enum TipoHDREnum
         {
-           Retiro,
-           Entrega
+           Retiro, //0
+           Entrega //1
 
         }
 }

@@ -66,6 +66,7 @@ namespace Grupo_E.GestionarFletero
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.GenerarHdrBtn = new System.Windows.Forms.Button();
             HDRaRetirarCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -259,6 +260,7 @@ namespace Grupo_E.GestionarFletero
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.GenerarHdrBtn);
             this.groupBox1.Controls.Add(this.NuevasHDRRetirarListViews);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.NuevasHDREntregarListView);
@@ -383,6 +385,16 @@ namespace Grupo_E.GestionarFletero
             this.label7.TabIndex = 4;
             this.label7.Text = "Nuevas HDR a entregar:";
             // 
+            // GenerarHdrBtn
+            // 
+            this.GenerarHdrBtn.Location = new System.Drawing.Point(15, 16);
+            this.GenerarHdrBtn.Name = "GenerarHdrBtn";
+            this.GenerarHdrBtn.Size = new System.Drawing.Size(730, 21);
+            this.GenerarHdrBtn.TabIndex = 13;
+            this.GenerarHdrBtn.Text = "Generar nuevas HDR";
+            this.GenerarHdrBtn.UseVisualStyleBackColor = true;
+            this.GenerarHdrBtn.Click += new System.EventHandler(this.GenerarHdrBtn_Click);
+            // 
             // F05_GestionarFleteroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,5 +453,6 @@ namespace Grupo_E.GestionarFletero
         private Label label5;
         private Label label6;
         private Label label7;
+        private Button GenerarHdrBtn;
     }
 }

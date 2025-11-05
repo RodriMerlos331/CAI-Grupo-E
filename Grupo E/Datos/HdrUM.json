@@ -1,25 +1,10 @@
 [
   {
-    "NumeroHDRUM": 1001,
-    "TipoHDR": "Retiro" ,
+    "NumeroHDRMD": 1001,
+    "Tipo": 0,
+    "DniFleteroAsignado": 12345678,
     "Cumplida": false,
     "Rendida": false,
-    //tracking cómo quedaría?? RetiroCaba1, ?? 
-    //CD01AG02_01 ? 
-    "Encomiendas": [ 201, 202, 203 ]
-  },
-  {
-    "NumeroHDRUM": 1002,
-    "TipoHDR": "Entrega",
-    "Cumplida": false,
-    "Rendida": false,
-    "Encomiendas": [ 204, 205 ]
-  },
-  {
-    "NumeroHDRUM": 1003,
-    "TipoHDR": "Retiro",
-    "Cumplida": false,
-    "Rendida": true,
-    "Encomiendas": [ 206, 207, 208, 209 ]
+    "Encomiendas": [ "AG03_10" ]
   }
 ]
