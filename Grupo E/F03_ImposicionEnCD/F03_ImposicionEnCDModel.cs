@@ -185,7 +185,7 @@ namespace Grupo_E.F03_ImposicionEnCD
             var tipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto);
 
 
-            var precioBase = PreciosPorOrigenDestino.ObtenerPrecio(codCentroDistribucionOrigen, codCentroDistribucionDestino, tipoBulto);
+            //var precioBase = PreciosPorOrigenDestino.ObtenerPrecio(codCentroDistribucionOrigen, codCentroDistribucionDestino, tipoBulto);
             //Chequear
             var extraEntrega = TarifarioAlmacen.Tarifario.First().ExtraEntregaDomicilio;
 
@@ -221,8 +221,8 @@ namespace Grupo_E.F03_ImposicionEnCD
                 ParadasRuta = ObtenerParadasRutaBasica(codCentroDistribucionOrigen, codCentroDistribucionDestino),
 
                 //Al admitir se generan los datos de facturación
-
-                DatosFacturacion = new EncomiendaFactura
+                /*
+                DatosFacturacion = new encomiendaFactura
                 {
                     PrecioCombinacionTamanoOrigenDestino = precioBase,
                     ExtraRetiro = 0,
@@ -230,6 +230,9 @@ namespace Grupo_E.F03_ImposicionEnCD
                     ExtraEntrega = extraEntrega,
                     PrecioTotalEncomienda = precioBase + extraEntrega
                 },
+                */
+
+                DatosFacturacion = null,
 
 
             };
@@ -243,12 +246,7 @@ namespace Grupo_E.F03_ImposicionEnCD
              $"CUIT del cliente: {NuevaEncomienda.CUITCliente}\n" +
              $"Dirección particular de destino: {NuevaEncomienda.DireccionDestinatario}\n" +
              $"Tamaño del bulto: {NuevaEncomienda.TipoBulto}\n" +
-             $"Datos del destinatario: {datosDestinatario}\n" +
-             $"Precio base: {NuevaEncomienda.DatosFacturacion.PrecioCombinacionTamanoOrigenDestino}\n"+
-              $"Extra Retiro: {NuevaEncomienda.DatosFacturacion.ExtraRetiro}\n"+
-                 $"Extra Agencia: {NuevaEncomienda.DatosFacturacion.ExtraAgencia}\n"+
-                 $"Extra Entrega: {NuevaEncomienda.DatosFacturacion.ExtraEntrega}\n"+
-                  $"Precio total: {NuevaEncomienda.DatosFacturacion.PrecioTotalEncomienda}\n" 
+             $"Datos del destinatario: {datosDestinatario}\n"
                  ;
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
