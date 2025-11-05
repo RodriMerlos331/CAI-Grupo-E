@@ -14,8 +14,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
         internal bool ValidarCUIT(string cuit)
         {
-            // Validar formato 00-00000000-00
-            if (!Regex.IsMatch(cuit, @"^\d{2}-\d{8}-\d{2}$"))
+           if (!Regex.IsMatch(cuit, @"^\d{2}-\d{8}-\d{2}$"))
             {
                 MessageBox.Show("El CUIT debe tener el formato 00-00000000-00", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -25,13 +24,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
             return true;
         }
 
-        internal List<EncomiendaFactura> ListarEncomiendas(string cuit)
-        {
-            if (encomiendasPorCUIT.ContainsKey(cuit))
-                return encomiendasPorCUIT[cuit];
-            else
-                return new List<EncomiendaFactura>();
-        }
+       
 
         internal int CalcularTotalImportes(IEnumerable<(int Importe, int ExtraRetiro, int ExtraEntrega)> importes)
         {
@@ -45,7 +38,12 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
         internal List<EncomiendaEntidad> BuscarEncomiendasNoFacturadasPorCUIT(string cuit, List<EncomiendaEntidad> todasLasEncomiendas)
         {
-            // Solo devuelve encomiendas NO facturadas
+            if (todasLasEncomiendas == null || !todasLasEncomiendas.Any())
+            {
+                MessageBox.Show("No hay encomiendas disponibles para buscar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return new List<EncomiendaEntidad>();
+            }
+
             return todasLasEncomiendas
                 .Where(e => e.CUITCliente == cuit && !e.facturada)
                 .ToList();
