@@ -227,6 +227,7 @@ namespace Grupo_E.GestionarFletero
             this.HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             this.HDRAsignadasListView.View = System.Windows.Forms.View.Details;
             this.HDRAsignadasListView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.HDRAsignadasListView_ItemChecked_1);
+            this.HDRAsignadasListView.SelectedIndexChanged += new System.EventHandler(this.HDRAsignadasListView_SelectedIndexChanged);
             // 
             // NroHDRCol1
             // 

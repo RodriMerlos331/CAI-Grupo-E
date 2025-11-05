@@ -50,7 +50,7 @@ namespace Grupo_E.GestionarFletero
             {
                 var item = new ListViewItem(hdr.NumeroHDR.ToString());
                 item.SubItems.Add(hdr.Tipo.ToString());
-//                item.Checked = hdr.Cumplida;
+                //                item.Checked = hdr.Cumplida;
                 HDRAsignadasListView.Items.Add(item);
             }
 
@@ -65,19 +65,19 @@ namespace Grupo_E.GestionarFletero
                 item.SubItems.Add(guia.CodigoGuia.ToString());
                 GuiasNoEntregadasListView.Items.Add(item);
             }
-            
+
             NuevasHDREntregarListView.Items.Clear();
             NuevasHDRRetirarListViews.Items.Clear();
             NuevasGuiasEntregarListView.Items.Clear();
             NuevasGuiasRetirarListView.Items.Clear();
-            
+
 
             //GENERACION
             var hdrGeneracion = modelo.ObtenerHDRGeneracionPorTransportista(dni);
             var hdrsEntrega = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Entrega).ToList();
             var hdrsRetiro = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro).ToList();
 
-            
+
             foreach (var hdr in hdrsEntrega)
             {
                 var item = new ListViewItem(hdr.NumeroHDR.ToString());
@@ -90,7 +90,7 @@ namespace Grupo_E.GestionarFletero
                     NuevasGuiasEntregarListView.Items.Add(guiaItem);
                 }
             }
-            
+
             foreach (var hdr in hdrsRetiro)
             {
                 var item = new ListViewItem(hdr.NumeroHDR.ToString());
@@ -125,7 +125,7 @@ namespace Grupo_E.GestionarFletero
         {
             if (hdr.Tipo == HDR.TipoHDR.Entrega)
             {
-                if (hdr.Cumplida) 
+                if (hdr.Cumplida)
                 {
                     foreach (var guia in hdr.Guias)
                     {
@@ -140,7 +140,7 @@ namespace Grupo_E.GestionarFletero
                         }
                     }
                 }
-                else 
+                else
                 {
                     foreach (var guia in hdr.Guias)
                     {
@@ -153,7 +153,7 @@ namespace Grupo_E.GestionarFletero
 
             if (hdr.Tipo == HDR.TipoHDR.Retiro)
             {
-                if (hdr.Cumplida) 
+                if (hdr.Cumplida)
                 {
                     foreach (var guia in hdr.Guias)
                     {
@@ -184,7 +184,7 @@ namespace Grupo_E.GestionarFletero
         {
             DNIText.Text = "";
             HDRAsignadasListView.Items.Clear();
-            GuiasNoEntregadasListView.Items.Clear();    
+            GuiasNoEntregadasListView.Items.Clear();
             GuiasRetiradasListView.Items.Clear();
             NuevasHDREntregarListView.Items.Clear();
             NuevasHDRRetirarListViews.Items.Clear();
@@ -195,7 +195,7 @@ namespace Grupo_E.GestionarFletero
 
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
-         
+
             DialogResult resultado = MessageBox.Show(
         "¿Estás seguro de que querés cancelar la operación? Las modificaciones no se guardaran",
         "Confirmar cancelación",
@@ -224,14 +224,14 @@ namespace Grupo_E.GestionarFletero
 
             var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
 
-            if( HDRARendir.Count == 0)
+            if (HDRARendir.Count == 0)
             {
                 MessageBox.Show("No hay HDR para rendir.");
                 return;
             }
 
             string resumen = "Se marcarán como rendidas las siguientes HDR, con sus estados (Cumplida o no Cumplida):\n";
-            
+
             foreach (var hdr in HDRARendir)
             {
                 string estado = hdr.Cumplida ? "Cumplida" : "No Cumplida";
@@ -243,9 +243,13 @@ namespace Grupo_E.GestionarFletero
 
             foreach (var hdr in HDRARendir)
             {
-                
-                    hdr.Rendida = true;
-                
+                hdr.Rendida = true;
+            }
+
+            bool todoOk = modelo.Aceptar();
+            if (!todoOk)
+            {
+                return; //el modelo ya tiro un msgbox.
             }
 
             MessageBox.Show("Cambios guardados correctamente.");
@@ -258,6 +262,12 @@ namespace Grupo_E.GestionarFletero
             NuevasHDRRetirarListViews.Items.Clear();
             NuevasGuiasEntregarListView.Items.Clear();
             NuevasGuiasRetirarListView.Items.Clear();
+
+
+        }
+
+        private void HDRAsignadasListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
