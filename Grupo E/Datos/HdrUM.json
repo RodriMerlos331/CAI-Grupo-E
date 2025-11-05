@@ -4,8 +4,6 @@
     "TipoHDR": "Retiro" ,
     "Cumplida": false,
     "Rendida": false,
-    //tracking cómo quedaría?? RetiroCaba1, ?? 
-    //CD01AG02_01 ? 
     "Encomiendas": [ 201, 202, 203 ]
   },
   {
@@ -13,13 +11,21 @@
     "TipoHDR": "Entrega",
     "Cumplida": false,
     "Rendida": false,
-    "Encomiendas": [ 204, 205 ]
+    "Encomiendas": [ "AG03_01" ]
   },
   {
     "NumeroHDRUM": 1003,
     "TipoHDR": "Retiro",
     "Cumplida": false,
     "Rendida": true,
-    "Encomiendas": [ 206, 207, 208, 209 ]
+    "Encomiendas": [ "AG03_02" ]
+  },
+  {
+    "NumeroHDRUM": 1101,
+    "Tipo": 0,
+    "DniFleteroAsignado": 40943084,
+    "Cumplida": false,
+    "Rendida": false,
+    "Encomiendas": [ "AG03_01", "AG03_02"]
   }
 ]

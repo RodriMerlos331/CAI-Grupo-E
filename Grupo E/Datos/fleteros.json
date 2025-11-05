@@ -13,5 +13,12 @@
     "CodCDAsociados": [
       "CD05"
     ]
-  }
+  },
+
+   {
+     "DniFletero": 40943084,
+     "CuitEmpresaTransportista": "30-12345678-9",
+     "CodCDAsociados": [ "CD01", "CD02", "CD06" ]
+   }
+  
 ]
