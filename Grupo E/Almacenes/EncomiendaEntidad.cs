@@ -37,6 +37,6 @@ namespace Grupo_E.Almacenes
 
         public List <Historial> HistorialCambios { get; set; } = new List<Historial>();
 
-
+        public bool facturada { get; set; }
     }
 }

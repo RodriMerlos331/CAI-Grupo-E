@@ -1,4 +1,5 @@
-﻿using Grupo_E.F10_GeneracionDeFacturas;
+﻿using Grupo_E.Almacenes;
+using Grupo_E.F10_GeneracionDeFacturas;
 using Grupo_E.RetirarEnAgencia;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace Grupo_E.GeneracionDeFacturas
     public partial class F10_GeneracionDeFacturasForm : Form
     {
         private F10_GeneracionDeFacturasModelo modelo = new F10_GeneracionDeFacturasModelo();
+        private List<EncomiendaEntidad> todasLasEncomiendas; // Debe estar cargada previamente
+
         public F10_GeneracionDeFacturasForm()
         {
             InitializeComponent();
@@ -41,52 +44,23 @@ namespace Grupo_E.GeneracionDeFacturas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCUIT.Text))
-            {
-                MessageBox.Show("El campo numero de tracking no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                listViewFactura.Items.Clear();
-                txtCUIT.Clear();
-                return;
-            }
-
-            if (!int.TryParse(txtCUIT.Text, out int cuit))
-            {
-                MessageBox.Show("El campo numero de tracking debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                listViewFactura.Items.Clear();
-                txtCUIT.Clear();
-                return;
-
-            }
+            string cuit = txtCUIT.Text.Trim();
 
             if (!modelo.ValidarCUIT(cuit))
-            {
-                listViewFactura.Items.Clear();
-                txtCUIT.Clear();
                 return;
-           
-            }
 
-            var resultados = modelo.ListarEncomiendas(cuit);
+            var facturas = modelo.PrepararFacturasParaForm(cuit, todasLasEncomiendas);
 
             listViewFactura.Items.Clear();
 
-            if (resultados.Any())
+            foreach (var factura in facturas)
             {
-                foreach (var encomienda in resultados)
-                {
-                    var item = new ListViewItem(encomienda.NroTracking);
-                    item.SubItems.Add(encomienda.FechaAdmision.ToString("dd-MM-yyyy"));
-                    item.SubItems.Add(encomienda.Importe.ToString("C0"));
-                    item.SubItems.Add(encomienda.ExtraRetiro.ToString("C0"));
-                    item.SubItems.Add(encomienda.ExtraEntrega.ToString("C0"));
-                    item.SubItems.Add(encomienda.ExtraAgencia.ToString("C0"));
-                    listViewFactura.Items.Add(item);
-                }
-               
-            }
-            else
-            {
-                MessageBox.Show("No se encontró ninguna encomienda con ese CUIT.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var item = new ListViewItem(factura.PrecioCombinacionTamanoOrigenDestino.ToString("C"));
+                item.SubItems.Add(factura.ExtraRetiro.ToString("C"));
+                item.SubItems.Add(factura.ExtraAgencia.ToString("C"));
+                item.SubItems.Add(factura.ExtraEntrega.ToString("C"));
+                item.SubItems.Add(factura.PrecioTotalEncomienda.ToString("C"));
+                listViewFactura.Items.Add(item);
             }
         }
 
