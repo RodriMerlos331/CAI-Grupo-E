@@ -26,6 +26,7 @@ namespace Grupo_E
             FacturaAlmacen.Grabar();
             HDRDistribucionUMAlmacen.Grabar();
             HDR_Distribucion_MDAlmacen.Grabar();
+            OmnibusAlmacen.Grabar();
 
         }
     }

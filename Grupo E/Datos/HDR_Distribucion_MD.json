@@ -19,6 +19,20 @@
     "Encomiendas": [ "CD11_001" ],
     "CodigoParada": 401,
     "Destino": "Terminal de ómnibus de Neuquén Capital"
+  },
+  {
+    "NumeroHDRMD": 2007,
+    "estadoHDR": 2,
+    "Encomiendas": [ "CD14_20" ],
+    "CodigoParada": 700,
+    "Destino": "Terminal de ómnibus de San Carlos de Bariloche"
+  },
+  {
+    "NumeroHDRMD": 2088,
+    "estadoHDR": 0,
+    "Encomiendas": [ "CD01_21" ],
+    "CodigoParada": 700,
+    "Destino": "Constitución"
   }
 
 

@@ -3,6 +3,7 @@ using Grupo_E.F04_GestionarOmnibus;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -94,7 +95,7 @@ namespace Grupo_E.GestionarOmnibus
             // Estados de HDR válidos para embarcar
             var codParadasSet = paradas.Select(p => p.CodigoParada).ToList();
             var hdrsServicio = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
-                .Where(h => (h.estadoHDR == EstadoHDREnum.Asignada)
+                .Where(h => (h.estadoHDR == EstadoHDREnum.Asignada) //2
                             && codParadasSet.Contains(h.CodigoParada))
                 .ToList();
 
@@ -141,17 +142,22 @@ namespace Grupo_E.GestionarOmnibus
             return resultado.Count > 0 ? resultado : null;
         }
 
-        
+
 
         internal List<EncomiendasABajar> EncomiendasABajar(string patente)
         {
 
             // Normalizo la patente
-            var pat = (patente ?? "").Trim().ToUpperInvariant();
+            //var pat = (patente ?? "").Trim().ToUpperInvariant();
+        
             var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual?.CodigoCD;
 
             // Busco el omnibus con esa patente
-            var omni = OmnibusAlmacen.Omnibus.FirstOrDefault(o => o.Patente.ToUpperInvariant() == pat);
+            //var omni = OmnibusAlmacen.Omnibus.FirstOrDefault(o => o.Patente.ToUpperInvariant() == pat);
+            //var omni = OmnibusAlmacen.Omnibus.FirstOrDefault(o => o.Patente.ToUpperInvariant());
+
+            var omni = OmnibusAlmacen.Omnibus
+                .FirstOrDefault(o => (o.Patente ?? "").Trim().ToUpperInvariant() == patente.Trim().ToUpperInvariant());
 
             if (omni == null || string.IsNullOrEmpty(cdActual))
             {
@@ -183,7 +189,7 @@ namespace Grupo_E.GestionarOmnibus
         )
         .ToList();
 
-            EncomiendasARecepcionarPorPatente[pat] = resultado;
+            EncomiendasARecepcionarPorPatente[patente] = resultado;
 
             return resultado.Count > 0 ? resultado : null;
 

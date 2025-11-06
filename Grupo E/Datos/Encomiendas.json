@@ -236,6 +236,66 @@
       }
     ],
     "Facturada": false
+  },
+  {
+    "Tracking": "CD14_20",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD01",
+    "CodCentroDistribucionDestino": "CD14",
+    "Estado": 5,
+    "TipoBulto": 2,
+    "CUITCliente": "30-19283746-4",
+    "DNIDestinatario": 40894321,
+    "NombreDestinatario": "Ignacio",
+    "ApellidoDestinatario": "Romero",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": "CD01",
+    "ParadasRuta": [ 700, 701 ],
+    "FechaImposicion": "2025-11-22T10:30:00",
+    "FechaAdmision": "2025-11-22T11:00:00",
+    "FechaEntrega": null,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 1700,
+      "ExtraRetiro": 0,
+      "ExtraAgencia": 0,
+      "ExtraEntrega": 0,
+      "PrecioTotalEncomienda": 1700
+    },
+    "HistorialCambios": [],
+    "Facturada": false
+  },
+  {
+    "Tracking": "CD01_21",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD11",
+    "CodCentroDistribucionDestino": "CD01",
+    "Estado": 6,
+    "TipoBulto": 2,
+    "CUITCliente": "30-19283746-4",
+    "DNIDestinatario": 40894321,
+    "NombreDestinatario": "Ignacio",
+    "ApellidoDestinatario": "Romero",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "ParadasRuta": [ 123 , 701 ],
+    "FechaImposicion": "2025-11-22T10:30:00",
+    "FechaAdmision": "2025-11-22T11:00:00",
+    "FechaEntrega": null,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 1700,
+      "ExtraRetiro": 0,
+      "ExtraAgencia": 0,
+      "ExtraEntrega": 0,
+      "PrecioTotalEncomienda": 1700
+    },
+    "HistorialCambios": [],
+    "Facturada": false
   }
 
 
