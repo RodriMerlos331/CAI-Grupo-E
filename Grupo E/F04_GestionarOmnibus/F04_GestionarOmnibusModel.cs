@@ -1,7 +1,9 @@
-﻿using Grupo_E.F04_GestionarOmnibus;
+﻿using Grupo_E.Almacenes;
+using Grupo_E.F04_GestionarOmnibus;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Text;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -10,90 +12,188 @@ namespace Grupo_E.GestionarOmnibus
     internal class F04_GestionarOmnibusModel
     {
 
-
-        //DNIS de prueba: AB123CD, ST789UV, HI456JK
-
         private Dictionary<string, List<EncomiendasABajar>> EncomiendasARecepcionarPorPatente = new Dictionary<string, List<EncomiendasABajar>>();
         private Dictionary<string, List<EncomiendasASubir>> EncomiendasAEntregarPorPatente = new Dictionary<string, List<EncomiendasASubir>>();
+
+
+        
+        // Conversión de tipo de bulto a equivalentes XL
+        
+        private decimal EquivalenteXL(TipoBultoEnum tipo)
+        {
+            switch (tipo)
+            {
+                case TipoBultoEnum.S: return 0.125m;  // 2.5 kg
+                case TipoBultoEnum.M: return 0.25m;   // 5 kg
+                case TipoBultoEnum.L: return 0.5m;    // 10 kg
+                case TipoBultoEnum.XL: return 1.0m;    // 20 kg
+                default: return 0;
+            }
+        }
+
+        //Capacidad máxima (en equivalentes XL) según arrendamiento
+        private decimal CapacidadMaximaXLPorArrendamiento(TipoArrendamientoEnum tipo)
+        {
+            switch (tipo)
+            {
+                case TipoArrendamientoEnum.A: return 20m;
+                case TipoArrendamientoEnum.B: return 10m;
+                case TipoArrendamientoEnum.C: return 7m;
+                case TipoArrendamientoEnum.D: return 3m;
+                default: return 0m;
+            }
+        }
+
+        
+        //  Selección por capacidad (prioriza por fecha de imposición)
+        
+        private List<EncomiendaEntidad> SeleccionarPorCapacidad(List<EncomiendaEntidad> candidatas, decimal capacidadXL)
+        {
+            var seleccionadas = new List<EncomiendaEntidad>();
+            decimal acumulado = 0;
+
+            foreach (var e in candidatas.OrderBy(x => x.FechaImposicion))
+            {
+                var pesoXL = EquivalenteXL(e.TipoBulto);
+
+                if (acumulado + pesoXL <= capacidadXL)
+                {
+                    seleccionadas.Add(e);
+                    acumulado += pesoXL;
+                }
+                else
+                {
+                    break; // cuando se supera la capacidad, corta
+                }
+            }
+
+            return seleccionadas;
+        }
+
+
+        // Método principal
+
+        internal List<EncomiendasASubir> EncomiendasASubir(string patente)
+        {
+            var pat = (patente ?? "").Trim().ToUpperInvariant();
+            var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual?.CodigoCD;
+
+            var omni = OmnibusAlmacen.Omnibus
+                .FirstOrDefault(o => (o.Patente ?? "").Trim().ToUpperInvariant() == pat);
+
+            if (omni == null || string.IsNullOrEmpty(cdActual))
+            {
+                MessageBox.Show("No se encontró el ómnibus o el CD actual no está configurado.");
+                return null;
+            }
+
+            // Paradas del servicio para el CD actual
+            var paradas = omni.Paradas.Where(p => p.CodigoCD == cdActual).ToList();
+            if (paradas.Count == 0)
+            {
+                MessageBox.Show("No hay paradas para el CD actual.");
+                return null;
+            }
+
+            // Estados de HDR válidos para embarcar
+            var codParadasSet = paradas.Select(p => p.CodigoParada).ToHashSet();
+            var hdrsServicio = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
+                .Where(h => (h.estadoHDR == EstadoHDREnum.Asignada || h.estadoHDR == EstadoHDREnum.EnTransito)
+                            && codParadasSet.Contains(h.CodigoParada))
+                .ToList();
+
+            // Conjunto de trackings ruteados en alguna HDR del servicio (Encomiendas int -> string)
+            var trackingsRuteados = hdrsServicio
+                .SelectMany(h => (h.Encomiendas ?? new List<string>()).Select(n => n.ToString()))
+                .ToHashSet();
+
+            // Capacidad máxima del ómnibus (en equivalentes XL)
+            var capacidadXL = CapacidadMaximaXLPorArrendamiento(omni.Tipo);
+
+            // Pool de candidatas:
+            //  - Estado Admitida
+            //  - Su ruta contiene alguna parada del servicio
+            //  - Y su tracking aparece en alguna HDR del servicio (validación pedida)
+            var candidatas = EncomiendaAlmacen.Encomienda
+                .Where(e => e.Estado == EstadoEncomiendaEnum.Admitida
+                            && e.ParadasRuta != null
+                            && e.ParadasRuta.Any(r => codParadasSet.Contains(r))
+                            && trackingsRuteados.Contains(e.Tracking))
+                .ToList();
+
+            // Selección por capacidad con prioridad por FechaImposicion
+            var seleccionadas = SeleccionarPorCapacidad(candidatas, capacidadXL);
+
+            // Proyección final con IdHdr = la HDR del servicio que contiene ese tracking (primera coincidencia)
+            var resultado = new List<EncomiendasASubir>();
+            foreach (var e in seleccionadas.OrderBy(x => x.FechaImposicion))
+            {
+                var hdr = hdrsServicio.FirstOrDefault(h => (h.Encomiendas ?? new List<string>())
+                                                           .Any(n => n.ToString() == e.Tracking));
+                if (hdr != null)
+                {
+                    resultado.Add(new EncomiendasASubir
+                    {
+                        IdHdr = hdr.NumeroHDRMD.ToString(),
+                        Tracking = e.Tracking,
+                        TipoDeBulto = e.TipoBulto.ToString()
+                    });
+                }
+            }
+
+            EncomiendasAEntregarPorPatente[pat] = resultado;
+            return resultado.Count > 0 ? resultado : null;
+        }
+
+
+
         internal List<EncomiendasABajar> EncomiendasABajar(string patente)
         {
 
-            //ME FALTA CODEAR QUÉ PASA SI LA PATENTE NO EXISTE! Esta en el Caso de uso y en los diagramas de secuencia pero acá no.
-            //AGREGARLO!
+            // Normalizo la patente
+            var pat = (patente ?? "").Trim().ToUpperInvariant();
+            var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual?.CodigoCD;
 
-            //ahora validamos si la patente tiene algo asignado  en el diccionario 
+            // Busco el omnibus con esa patente
+            var omni = OmnibusAlmacen.Omnibus
+                .FirstOrDefault(o => o.Patente.ToUpperInvariant() == pat);
 
-
-            // --> CORREJIR ESTO. deben ser 2 chequeos diferentes. puede ser que tenga solo cosas para subir o solo para bajar. el mensaje de error deberia
-            //contemplar las 2 opciones. y en el caso de que no haya nada, devolver null. PENDIENTE!
-
-            if (!EncomiendasAEntregarPorPatente.ContainsKey(patente) && !EncomiendasARecepcionarPorPatente.ContainsKey(patente))
+            if (omni == null || string.IsNullOrEmpty(cdActual))
             {
-                MessageBox.Show("No se encontraron encomiendas pendientes de rendicion para la patente ingresada.");
+                MessageBox.Show("No se encontró el ómnibus o el CD actual no está configurado.");
                 return null;
-
             }
 
-            
+            // Paradas en el CD actual
+            var paradas = omni.Paradas
+                .Where(p => p.CodigoCD == cdActual)
+                .ToList();
+
+            // Armo la lista de encomiendas a bajar
+            var resultado = paradas
+        .SelectMany(p => HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
+            .Where(h => h.estadoHDR == EstadoHDREnum.EnTransito && h.CodigoParada == p.CodigoParada)
+            .SelectMany(h =>
+                (p.ABajar ?? new List<string>())
+                    .Where(t => (h.Encomiendas ?? new List<string>()).Select(n => n.ToString()).Contains(t))
+                    .Select(t => EncomiendaAlmacen.Encomienda.FirstOrDefault(e => e.Tracking == t))
+                    .Where(e => e != null && e.Estado == EstadoEncomiendaEnum.EnTransitoMD)
+                    .Select(e => new EncomiendasABajar
+                    {
+                        IdHdr = h.NumeroHDRMD.ToString(),
+                        Tracking = e.Tracking,
+                        TipoDeBulto = e.TipoBulto.ToString()
+                    })
+            )
+        )
+        .ToList();
+
+            EncomiendasARecepcionarPorPatente[pat] = resultado;
+
+            return resultado.Count > 0 ? resultado : null;
 
             
-
-            return EncomiendasARecepcionarPorPatente[patente];
-            
         }
-
-        // no hace falta validar xq se hizo en el otro metodo
-
-        internal List <EncomiendasASubir> EncomiendasASubir(string patente)
-        {
-            return  EncomiendasAEntregarPorPatente[patente];
-
-
-        }
-
-        public F04_GestionarOmnibusModel() //Esto es un constructor para inicializar los datos de prueba
-        {
-            // Datos de prueba para AB123CD
-            EncomiendasARecepcionarPorPatente["AB123CD"] = new List<EncomiendasABajar>
-            {
-                new EncomiendasABajar { IdHdr = "201", Tracking = "AB001", TipoDeBulto = "M" },
-                new EncomiendasABajar { IdHdr = "202", Tracking = "AB002", TipoDeBulto = "S" }
-            };
-            EncomiendasAEntregarPorPatente["AB123CD"] = new List<EncomiendasASubir>
-            {
-                new EncomiendasASubir { IdHdr = "301", Tracking = "AB101", TipoDeBulto = "L" },
-                new EncomiendasASubir { IdHdr = "302", Tracking = "AB102", TipoDeBulto = "XL" }
-            };
-
-            // Datos de prueba para ST789UV
-            EncomiendasARecepcionarPorPatente["ST789UV"] = new List<EncomiendasABajar>
-            {
-                new EncomiendasABajar { IdHdr = "203", Tracking = "ST001", TipoDeBulto = "XL" },
-                new EncomiendasABajar { IdHdr = "204", Tracking = "ST002", TipoDeBulto = "M" }
-            };
-            EncomiendasAEntregarPorPatente["ST789UV"] = new List<EncomiendasASubir>
-            {
-                new EncomiendasASubir { IdHdr = "303", Tracking = "ST101", TipoDeBulto = "S" },
-                new EncomiendasASubir { IdHdr = "304", Tracking = "ST102", TipoDeBulto = "L" }
-            };
-
-            // Datos de prueba para HI456JK
-            EncomiendasARecepcionarPorPatente["HI456JK"] = new List<EncomiendasABajar>
-            {
-                new EncomiendasABajar { IdHdr = "205", Tracking = "HI001", TipoDeBulto = "S" },
-                new EncomiendasABajar { IdHdr = "206", Tracking = "HI002", TipoDeBulto = "L" }
-            };
-            EncomiendasAEntregarPorPatente["HI456JK"] = new List<EncomiendasASubir>
-            {
-                new EncomiendasASubir { IdHdr = "305", Tracking = "HI101", TipoDeBulto = "M" },
-                new EncomiendasASubir { IdHdr = "306", Tracking = "HI102", TipoDeBulto = "XL" }
-            };
-
-            EncomiendasRecepcionadasEnCDOrigen = new List<EncomiendasABajar>();
-            EncomiendasEnTransito = new List<EncomiendasASubir>();
-        }
-
-        public List<EncomiendasABajar> EncomiendasRecepcionadasEnCDOrigen { get; } = new List<EncomiendasABajar>();
-        public List<EncomiendasASubir> EncomiendasEnTransito { get; } = new List<EncomiendasASubir>();
+        
     }
 }

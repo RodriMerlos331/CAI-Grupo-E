@@ -1,9 +1,9 @@
 [
   {
-    "NumeroHDRMD": 5001,
+    "NumeroHDRMD": 111,
     "estadoHDR": "EnTransito",
-    "Encomiendas": [ 301, 302, 303 ],
-    "CodigoParada": 101,
+    "Encomiendas": [ "CD01_10001", "CD01_20002" ],
+    "CodigoParada": 100,
     "Destino": "Rosario"
   },
   {

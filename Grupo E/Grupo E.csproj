@@ -214,7 +214,7 @@
     <None Include="Datos\Facturas.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Datos\HdrMD.json">
+    <None Include="Datos\HDR_Distribucion_MD.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Datos\Omnibus.json">

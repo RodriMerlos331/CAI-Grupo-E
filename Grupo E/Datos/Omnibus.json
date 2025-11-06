@@ -2,19 +2,35 @@
   {
     "ServicioID": "SRV-PL-001",
     "CuitEmpresaOmnibus": "30-65478912-3",
-    "Patente": "AB123CD",
-    "Arrendamiento": 0,
+    "Patente": "AB123CX",
+    "Tipo": "A", // A: hasta 20 XL-equivalentes
     "Paradas": [
       {
-        "CodigoCD": "Retiro",
-        "CodigoParada": 1,
+        "CodigoCD": "CD01",
+        "CodigoParada": 100,
         "HoraLlegada": "2025-11-15T08:00:00",
         "HoraSalida": "2025-11-15T08:30:00",
-        "HDRDistribucionMD": [ 111, 222, 333 ],
-        "ABajar": [ 1, 2, 3, 4, 5 ],
-        "ASubir": [ 10, 11, 12, 13 ]        
+        "HDRDistribucionMD": [ 111 ],
+        "ABajar": [ "10001" ], // → esta se BAJA
+        "ASubir": [ "20002" ] // → esta se SUBE
       }
-
+    ]
+  },
+  {
+    "ServicioID": "SRV-PL-002",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "AB123CD",
+    "Tipo": "A",
+    "Paradas": [
+      {
+        "CodigoCD": "CD01",
+        "CodigoParada": 100,
+        "HoraLlegada": "2025-11-15T08:00:00",
+        "HoraSalida": "2025-11-15T08:30:00",
+        "HDRDistribucionMD": [ 111 ],
+        "ABajar": [ "CD01_10001" ], // → se BAJA
+        "ASubir": [ "CD01_20002" ] // → se SUBE
+      }
     ]
   }
 ]

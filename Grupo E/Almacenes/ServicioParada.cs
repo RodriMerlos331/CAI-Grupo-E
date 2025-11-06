@@ -20,7 +20,7 @@ namespace Grupo_E.Almacenes
         //duda acá: no debería ser indendpendiente? mientras no esté asignada van a estar en null? 
         public List<int> HDRDistribucionMD { get; set; } = new List<int>();
 
-        public List<int> ABajar { get; set; } = new List<int>();
-        public List<int> ASubir { get; set; } = new List<int>();
+        public List<string> ABajar { get; set; } = new List<string>();
+        public List<string> ASubir { get; set; } = new List<string>();
     }
 }

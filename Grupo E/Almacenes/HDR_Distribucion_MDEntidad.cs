@@ -10,7 +10,7 @@ namespace Grupo_E.Almacenes
     {
         public int NumeroHDRMD { get; set; }
         public EstadoHDREnum estadoHDR { get; set; }
-        public List<int> Encomiendas { get; set; } = new List<int>();
+        public List<string> Encomiendas { get; set; } = new List<string>();
         public int CodigoParada { get; set; }
         public string Destino { get; set; }
     }

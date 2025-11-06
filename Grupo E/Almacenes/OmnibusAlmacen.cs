@@ -17,9 +17,9 @@ namespace Grupo_E.Almacenes
 
         static OmnibusAlmacen()
         {
-            if (File.Exists(@"Datos/Omnibuss.json"))
+            if (File.Exists(@"Datos/Omnibus.json"))
             {
-                var OmnibusJson = File.ReadAllText(@"Datos/Omnibuss.json");
+                var OmnibusJson = File.ReadAllText(@"Datos/Omnibus.json");
                 Omnibus = JsonConvert.DeserializeObject<List<OmnibusEntidad>>(OmnibusJson);
             }
         }

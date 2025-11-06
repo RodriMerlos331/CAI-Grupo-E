@@ -14,9 +14,9 @@ namespace Grupo_E.Almacenes
 
         static HDR_Distribucion_MDAlmacen()
         {
-            if (File.Exists(@"Datos/HDR_Distribucion_MDs.json"))
+            if (File.Exists(@"Datos/HDR_Distribucion_MD.json"))
             {
-                var HDR_Distribucion_MDJson = File.ReadAllText(@"Datos/HDR_Distribucion_MDs.json");
+                var HDR_Distribucion_MDJson = File.ReadAllText(@"Datos/HDR_Distribucion_MD.json");
                 HDR_Distribucion_MD = JsonConvert.DeserializeObject<List<HDR_Distribucion_MDEntidad>>(HDR_Distribucion_MDJson);
             }
         }
@@ -24,7 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var HDR_Distribucion_MDJson = JsonConvert.SerializeObject(HDR_Distribucion_MD);
-            File.WriteAllText(@"Datos/HDR_Distribucion_MDs.json", HDR_Distribucion_MDJson);
+            File.WriteAllText(@"Datos/HDR_Distribucion_MD.json", HDR_Distribucion_MDJson);
         }
     }
 }
