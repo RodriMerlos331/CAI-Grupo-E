@@ -90,7 +90,6 @@ namespace Grupo_E.GestionarFletero
                 .Select(e => e.Tracking)
                 .ToList();
 
-            // 4. Encomiendas a ENTREGAR
             var encomiendasEntrega = EncomiendaAlmacen.Encomienda
                 .Where(e =>
                     (e.Estado == EstadoEncomiendaEnum.PendienteEntregaDomicilio ||
@@ -99,7 +98,6 @@ namespace Grupo_E.GestionarFletero
                 .Select(e => e.Tracking)
                 .ToList();
 
-            // 5. Validaciones con mensajes
             if (!encomiendasRetiro.Any() && !encomiendasEntrega.Any())
             {
                 MessageBox.Show("No se encontraron encomiendas pendientes para generar HDR (ni de retiro ni de entrega).",
@@ -155,7 +153,6 @@ namespace Grupo_E.GestionarFletero
                 hdrGeneradas.Add(hdrEntrega);
             }
 
-            // 8. Retornar al form
             HDRGeneracion = hdrGeneradas.Select(h => new HDR
             {
                 Cumplida = false,
