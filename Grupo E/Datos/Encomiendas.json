@@ -96,7 +96,6 @@
         "NumeroHDRMD": 1100,
         "EstadoPrevio": 5
       },
-      //En transito
       {
         "Tracking": "CD02_5",
         "FechaPrevia": "2025-11-04T15:10:00-03:00",
@@ -106,11 +105,10 @@
         "NumeroHDRMD": 1100,
         "EstadoPrevio": 6
       }
-
     ]
   },
   {
-    "Tracking": "CD02_6",
+    "Tracking": "CD02_7",
     "CodLocalidadOrigen": "CABA",
     "CodCentroDistribucionOrigen": "CD06",
     "CodCentroDistribucionDestino": "CD02",
@@ -128,13 +126,14 @@
     "ParadasRuta": [],
     "FechaImposicion": "2025-11-04T13:05:04.2983386-03:00",
     "FechaAdmision": "2025-11-04T13:05:04.3003406-03:00",
-    "FechaEntrega": "2025-10-1T15:00:00-03:00",
-    "DatosFacturacion": {
+    "FechaEntrega": "2025-10-01T15:00:00-03:00",
+    "EncomiendaFactura": {
       "PrecioCombinacionTamanoOrigenDestino": 1100.0,
       "ExtraRetiro": 0.0,
       "ExtraAgencia": 0.0,
       "ExtraEntrega": 2.5,
-      "PrecioTotalEncomienda": 1102.5
+      "PrecioTotalEncomienda": 1102.5,
+      "Facturada": false
     }
   },
   {
@@ -238,53 +237,7 @@
       }
     ],
     "Facturada": false
-  },
-  {
-    "Tracking": "CD01_10001",
-    "CodLocalidadOrigen": "LOC-01",
-    "CodCentroDistribucionOrigen": "CD01",
-    "CodCentroDistribucionDestino": "CD02",
-    "Estado": 6, // → se BAJA
-    "TipoBulto": "M",
-    "CUITCliente": "20-12345678-9",
-    "DNIDestinatario": 32100123,
-    "NombreDestinatario": "Juan",
-    "ApellidoDestinatario": "Pérez",
-    "DireccionDestinatario": "Calle Falsa 123",
-    "AgenciaOrigen": "Agencia Retiro",
-    "AgenciaDestino": "Agencia Rosario",
-    "DatosRetiroADomicilio": null,
-    "CodCDActual": "CD01",
-    "ParadasRuta": [ 100, 200 ],
-    "FechaImposicion": "2025-11-10T10:00:00",
-    "FechaAdmision": "2025-11-10T12:00:00",
-    "FechaEntrega": null,
-    "HistorialCambios": [],
-    "Facturada": false
-  },
-  {
-    "Tracking": "CD01_20002",
-    "CodLocalidadOrigen": "LOC-01",
-    "CodCentroDistribucionOrigen": "CD01",
-    "CodCentroDistribucionDestino": "CD03",
-    "Estado":5, // → se SUBE
-    "TipoBulto": "S",
-    "CUITCliente": "20-98765432-1",
-    "DNIDestinatario": 27222333,
-    "NombreDestinatario": "María",
-    "ApellidoDestinatario": "Gómez",
-    "DireccionDestinatario": "Av. Siempreviva 742",
-    "AgenciaOrigen": "Agencia Retiro",
-    "AgenciaDestino": "Agencia Santa Fe",
-    "DatosRetiroADomicilio": null,
-    "CodCDActual": "CD01",
-    "ParadasRuta": [ 100, 300 ], // comparte una parada del servicio
-    "FechaImposicion": "2025-11-09T09:30:00",
-    "FechaAdmision": "2025-11-09T10:00:00",
-    "FechaEntrega": null,
-    "HistorialCambios": [],
-    "Facturada": false
   }
-
-
+    
+  
 ]

@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace Grupo_E.Almacenes
 {
-
     static class OmnibusAlmacen
-        
     {
-        
         public static List<OmnibusEntidad> Omnibus { get; }
 
         static OmnibusAlmacen()
@@ -27,9 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var OmnibusJson = JsonConvert.SerializeObject(Omnibus);
-            File.WriteAllText(@"Datos/Omnibuss.json", OmnibusJson);
+            File.WriteAllText(@"Datos/Omnibus.json", OmnibusJson);
         }
-        
     }
-       
 }

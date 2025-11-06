@@ -14,17 +14,25 @@ namespace Grupo_E.Almacenes
 
         static EmpresaServicioLargaDistanciaAlmacen()
         {
-            if (File.Exists(@"Datos/EmpresaServicioLargaDistancias.json"))
+            EmpresaServicioLargaDistancia = new List<EmpresaServicioLargaDistanciaEntidad>();
+
+            // Nombre corregido al que existe en tu proyecto: EmpresaServicioLargaDistancia.json
+            var path = @"Datos/EmpresaServicioLargaDistancia.json";
+            if (File.Exists(path))
             {
-                var EmpresaServicioLargaDistanciaJson = File.ReadAllText(@"Datos/EmpresaServicioLargaDistancias.json");
-                EmpresaServicioLargaDistancia = JsonConvert.DeserializeObject<List<EmpresaServicioLargaDistanciaEntidad>>(EmpresaServicioLargaDistanciaJson);
+                var EmpresaServicioLargaDistanciaJson = File.ReadAllText(path);
+                var parsed = JsonConvert.DeserializeObject<List<EmpresaServicioLargaDistanciaEntidad>>(EmpresaServicioLargaDistanciaJson);
+                if (parsed != null)
+                {
+                    EmpresaServicioLargaDistancia = parsed;
+                }
             }
         }
 
         public static void Grabar()
         {
             var EmpresaServicioLargaDistanciaJson = JsonConvert.SerializeObject(EmpresaServicioLargaDistancia);
-            File.WriteAllText(@"Datos/EmpresaServicioLargaDistancias.json", EmpresaServicioLargaDistanciaJson);
+            File.WriteAllText(@"Datos/EmpresaServicioLargaDistancia.json", EmpresaServicioLargaDistanciaJson);
         }
     }
 }
