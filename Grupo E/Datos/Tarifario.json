@@ -1,75 +1,3753 @@
 [
-  {
-    "ExtraEntregaDomicilio": 2000,
-    "ExtraRetiro": 1750,
-    "ExtraAgencia": 1200,
-    "PreciosPorOrigenDestinos": [
-      {
-        "Tipo": 0,
-        "CodigoCDOrigen": "CD01",
-        "CodigoCDDestino": "CD06",
-        "Precio": 1100
-      },
-      {
-        "Tipo": 1,
-        "CodigoCDOrigen": "CD01",
-        "CodigoCDDestino": "CD06",
-        "Precio": 1200
-      },
-      {
-        "Tipo": 2,
-        "CodigoCDOrigen": "CD01",
-        "CodigoCDDestino": "CD06",
-        "Precio": 1300
-      },
-      {
-        "Tipo": 3,
-        "CodigoCDOrigen": "CD01",
-        "CodigoCDDestino": "CD06",
-        "Precio": 1400
-      },
-      {
-        "Tipo": 0,
-        "CodigoCDOrigen": "CD06",
-        "CodigoCDDestino": "CD01",
-        "Precio": 1100
-      },
-      {
-        "Tipo": 1,
-        "CodigoCDOrigen": "CD06",
-        "CodigoCDDestino": "CD01",
-        "Precio": 1200
-      },
-      {
-        "Tipo": 2,
-        "CodigoCDOrigen": "CD06",
-        "CodigoCDDestino": "CD01",
-        "Precio": 1300
-      },
-      {
-        "Tipo": 3,
-        "CodigoCDOrigen": "CD06",
-        "CodigoCDDestino": "CD01",
-        "Precio": 1400
-      },
-      {
-        "Tipo": 1,
-        "CodigoCDOrigen": "CD01",
-        "CodigoCDDestino": "CD03",
-        "Precio": 1800
-      },
-      {
-        "Tipo": 2,
-        "CodigoCDOrigen": "CD02",
-        "CodigoCDDestino": "CD04",
-        "Precio": 2500
-      },
-      {
-        "Tipo": 3,
-        "CodigoCDOrigen": "CD03",
-        "CodigoCDDestino": "CD05",
-        "Precio": 3000
-      }
-    ]
-  }
+{
+  "ExtraEntregaDomicilio": 2000,
+  "ExtraRetiro": 1750,
+  "ExtraAgencia": 1200,
+  "PreciosPorOrigenDestinos": [
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD11",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD12",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1600
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2080
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2720
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD13",
+      "Precio": 3360
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1600
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2080
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2720
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD01",
+      "CodigoCDDestino": "CD14",
+      "Precio": 3360
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD11",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD12",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1600
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2080
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2720
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD13",
+      "Precio": 3360
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1600
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2080
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2720
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD02",
+      "CodigoCDDestino": "CD14",
+      "Precio": 3360
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD13",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD04",
+      "CodigoCDDestino": "CD14",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD05",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD13",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD07",
+      "CodigoCDDestino": "CD14",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD13",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD08",
+      "CodigoCDDestino": "CD14",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD13",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD09",
+      "CodigoCDDestino": "CD14",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1100
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1430
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1870
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2310
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD13",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD10",
+      "CodigoCDDestino": "CD14",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD01",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD02",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD11",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD01",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD02",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1400
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1820
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2380
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2940
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD12",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1600
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2080
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2720
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD01",
+      "Precio": 3360
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1600
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2080
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2720
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD02",
+      "Precio": 3360
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD04",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD07",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD08",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD09",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD10",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD14",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD13",
+      "CodigoCDDestino": "CD14",
+      "Precio": 2520
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD01",
+      "Precio": 1600
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2080
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD01",
+      "Precio": 2720
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD01",
+      "Precio": 3360
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD02",
+      "Precio": 1600
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2080
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD02",
+      "Precio": 2720
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD02",
+      "Precio": 3360
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD04",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD04",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD04",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD05",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD05",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD06",
+      "Precio": 1690
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2210
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD06",
+      "Precio": 2730
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD07",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD07",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD08",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD08",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD08",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD09",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD09",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD09",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1500
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD10",
+      "Precio": 1950
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD10",
+      "Precio": 2550
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD10",
+      "Precio": 3150
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD11",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD11",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1000
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1300
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD12",
+      "Precio": 1700
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD12",
+      "Precio": 2100
+    },
+    {
+      "Tipo": 0,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1200
+    },
+    {
+      "Tipo": 1,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD13",
+      "Precio": 1560
+    },
+    {
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2040
+    },
+    {
+      "Tipo": 3,
+      "CodigoCDOrigen": "CD14",
+      "CodigoCDDestino": "CD13",
+      "Precio": 2520
+    }
+  ]
+}
 ]

@@ -10,25 +10,58 @@
     "NombreTerminal": "Retiro"
   },
   {
-    "CodigoCD": "CD03",
-    "CodigoLocalidad": "CABA",
-    "NombreTerminal": "Dock Sur"
-  },
-  {
     "CodigoCD": "CD04",
     "CodigoLocalidad": "LP",
-    "NombreTerminal": "La Plata"
+    "NombreTerminal": "Terminal de ómnibus de La Plata"
   },
   {
     "CodigoCD": "CD05",
-    "CodigoLocalidad": "MOR",
-    "NombreTerminal": "Morón"
+    "CodigoLocalidad": "CorC",
+    "NombreTerminal": "Terminal de ómnibus de Córdoba Capital"
   },
   {
     "CodigoCD": "CD06",
-    "CodigoLocalidad": "LG",
-    "NombreTerminal": "LasGrutas"
+    "CodigoLocalidad": "VM",
+    "NombreTerminal": "Terminal de ómnibus de Villa María"
+  },
+  {
+    "CodigoCD": "CD07",
+    "CodigoLocalidad": "SMT",
+    "NombreTerminal": "Terminal de ómnibus de San Miguel de Tucumán"
+  },
+  {
+    "CodigoCD": "CD08",
+    "CodigoLocalidad": "TV",
+    "NombreTerminal": "Terminal de ómnibus de Tafí Viejo"
+  },
+  {
+    "CodigoCD": "CD09",
+    "CodigoLocalidad": "CC",
+    "NombreTerminal": "Terminal de ómnibus de Corrientes Capital"
+  },
+  {
+    "CodigoCD": "CD10",
+    "CodigoLocalidad": "GY",
+    "NombreTerminal": "Terminal de ómnibus de Goya"
+  },
+  {
+    "CodigoCD": "CD11",
+    "CodigoLocalidad": "NC",
+    "NombreTerminal": "Terminal de ómnibus de Neuquén Capital"
+  },
+  {
+    "CodigoCD": "CD12",
+    "CodigoLocalidad": "SM",
+    "NombreTerminal": "Terminal de ómnibus de San Martín de los Andes"
+  },
+  {
+    "CodigoCD": "CD13",
+    "CodigoLocalidad": "RN",
+    "NombreTerminal": "Terminal de ómnibus de Viedma"
+  },
+  {
+    "CodigoCD": "CD14",
+    "CodigoLocalidad": "BRC",
+    "NombreTerminal": "Terminal de ómnibus de San Carlos de Bariloche"
   }
 ]
-
-

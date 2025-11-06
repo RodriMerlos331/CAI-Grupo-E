@@ -1,28 +1,62 @@
 [
   {
-    
-    "CodigoLocalidad": "BN",
-    "Provincia": "BuenosAires",
-    "Nombre": "Banfield"
-  },
-  {
     "CodigoLocalidad": "CABA",
-    "Provincia": "BuenosAires",
+    "Provincia": "Buenos aires",
     "Nombre": "CABA"
   },
   {
     "CodigoLocalidad": "LP",
-    "Provincia": "BuenosAires",
+    "Provincia": "Buenos aires",
     "Nombre": "La Plata"
   },
   {
-    "CodigoLocalidad": "MOR",
-    "Provincia": "Buenos aires",
-    "Nombre": "Morón"
+    "CodigoLocalidad": "CorC",
+    "Provincia": "Cordoba",
+    "Nombre": "Cordoba Cápital"
   },
   {
-    "CodigoLocalidad": "LG",
-    "Provincia": "Las grutas",
+    "CodigoLocalidad": "VM",
+    "Provincia": "Cordoba",
+    "Nombre": "Villa María"
+  },
+  {
+    "CodigoLocalidad": "SMT",
+    "Provincia": "Tucumán",
+    "Nombre": "San Miguel de Tucumán"
+  },
+  {
+    "CodigoLocalidad": "TV",
+    "Provincia": "Tucumán",
+    "Nombre": "Tafí Viejo"
+  },
+  {
+    "CodigoLocalidad": "CC",
+    "Provincia": "Corrientes",
+    "Nombre": "Corrientes Capital"
+  },
+  {
+    "CodigoLocalidad": "GY",
+    "Provincia": "Corrientes",
+    "Nombre": "Goya"
+  },
+  {
+    "CodigoLocalidad": "NC",
+    "Provincia": "Neuquén",
+    "Nombre": "Neuquén Capital"
+  },
+  {
+    "CodigoLocalidad": "SM",
+    "Provincia": "Neuquén",
+    "Nombre": "San Martín de los Andes"
+  },
+  {
+    "CodigoLocalidad": "RN",
+    "Provincia": "Río Negro",
     "Nombre": "Viedma"
+  },
+  {
+    "CodigoLocalidad": "BRC",
+    "Provincia": "Río Negro",
+    "Nombre": "San Carlos de Bariloche"
   }
 ]

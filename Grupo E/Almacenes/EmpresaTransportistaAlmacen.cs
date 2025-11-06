@@ -8,5 +8,6 @@ namespace Grupo_E.Almacenes
 {
     internal class EmpresaTransportistaAlmacen
     {
+        //COMPLETAR
     }
 }

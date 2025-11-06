@@ -2,16 +2,131 @@
   {
     "CodigoAgencia": "AG01",
     "CodigoCD": "CD01",
-    "NombreAgencia": "Galerias pacifico"
+    "NombreAgencia": "Agencia Galerías Pacífico"
   },
   {
     "CodigoAgencia": "AG02",
-    "CodigoCD": "CD02",
-    "NombreAgencia": "DOT"
+    "CodigoCD": "CD01",
+    "NombreAgencia": "Agencia Abasto"
   },
   {
     "CodigoAgencia": "AG03",
+    "CodigoCD": "CD02",
+    "NombreAgencia": "Agencia Palermo"
+  },
+  {
+    "CodigoAgencia": "AG04",
+    "CodigoCD": "CD02",
+    "NombreAgencia": "Agencia Belgrano"
+  },
+  {
+    "CodigoAgencia": "AG05",
+    "CodigoCD": "CD04",
+    "NombreAgencia": "Agencia Tolosa"
+  },
+  {
+    "CodigoAgencia": "AG06",
+    "CodigoCD": "CD04",
+    "NombreAgencia": "Agencia City Bell"
+  },
+  {
+    "CodigoAgencia": "AG07",
+    "CodigoCD": "CD05",
+    "NombreAgencia": "Agencia Patio Olmos"
+  },
+  {
+    "CodigoAgencia": "AG08",
+    "CodigoCD": "CD05",
+    "NombreAgencia": "Agencia Dinosaurio Mall"
+  },
+  {
+    "CodigoAgencia": "AG09",
     "CodigoCD": "CD06",
-    "NombreAgencia": "GaviotasShopping"
+    "NombreAgencia": "Agencia Villa María Centro"
+  },
+  {
+    "CodigoAgencia": "AG10",
+    "CodigoCD": "CD06",
+    "NombreAgencia": "Agencia San Martín Villa María"
+  },
+  {
+    "CodigoAgencia": "AG11",
+    "CodigoCD": "CD07",
+    "NombreAgencia": "Agencia Yerba Buena Shopping"
+  },
+  {
+    "CodigoAgencia": "AG12",
+    "CodigoCD": "CD07",
+    "NombreAgencia": "Agencia Barrio Sur"
+  },
+  {
+    "CodigoAgencia": "AG13",
+    "CodigoCD": "CD08",
+    "NombreAgencia": "Agencia Tafí Viejo Centro"
+  },
+  {
+    "CodigoAgencia": "AG14",
+    "CodigoCD": "CD08",
+    "NombreAgencia": "Agencia Villa Obrera"
+  },
+  {
+    "CodigoAgencia": "AG15",
+    "CodigoCD": "CD09",
+    "NombreAgencia": "Agencia Centenario Shopping Corrientes"
+  },
+  {
+    "CodigoAgencia": "AG16",
+    "CodigoCD": "CD09",
+    "NombreAgencia": "Agencia Laguna Seca"
+  },
+  {
+    "CodigoAgencia": "AG17",
+    "CodigoCD": "CD10",
+    "NombreAgencia": "Agencia Goya Centro"
+  },
+  {
+    "CodigoAgencia": "AG18",
+    "CodigoCD": "CD10",
+    "NombreAgencia": "Agencia Plaza Mitre Goya"
+  },
+  {
+    "CodigoAgencia": "AG19",
+    "CodigoCD": "CD11",
+    "NombreAgencia": "Agencia Portal Patagonia"
+  },
+  {
+    "CodigoAgencia": "AG20",
+    "CodigoCD": "CD11",
+    "NombreAgencia": "Agencia Shopping Neuquén"
+  },
+  {
+    "CodigoAgencia": "AG21",
+    "CodigoCD": "CD12",
+    "NombreAgencia": "Agencia Centro San Martín de los Andes"
+  },
+  {
+    "CodigoAgencia": "AG22",
+    "CodigoCD": "CD12",
+    "NombreAgencia": "Agencia Chapelco"
+  },
+  {
+    "CodigoAgencia": "AG23",
+    "CodigoCD": "CD13",
+    "NombreAgencia": "Agencia Costanera Viedma"
+  },
+  {
+    "CodigoAgencia": "AG24",
+    "CodigoCD": "CD13",
+    "NombreAgencia": "Agencia Centro Viedma"
+  },
+  {
+    "CodigoAgencia": "AG25",
+    "CodigoCD": "CD14",
+    "NombreAgencia": "Agencia Shopping Bariloche"
+  },
+  {
+    "CodigoAgencia": "AG26",
+    "CodigoCD": "CD14",
+    "NombreAgencia": "Agencia Cerro Catedral"
   }
 ]

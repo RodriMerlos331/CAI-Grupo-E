@@ -2,23 +2,76 @@
   {
     "DniFletero": 12345678,
     "CuitEmpresaTransportista": "20-45651288-8",
-    "CodCDAsociados": [
-      "CD01",
-      "CD02"
-    ]
+    "CodCDAsociados": [ "CD01" ]
   },
   {
     "DniFletero": 23456789,
     "CuitEmpresaTransportista": "20-45651288-8",
-    "CodCDAsociados": [
-      "CD05"
-    ]
+    "CodCDAsociados": [ "CD02" ]
   },
-
-   {
-     "DniFletero": 40943084,
-     "CuitEmpresaTransportista": "30-12345678-9",
-     "CodCDAsociados": [ "CD01", "CD02", "CD06" ]
-   }
-  
+  {
+    "DniFletero": 31234567,
+    "CuitEmpresaTransportista": "27-38951233-5",
+    "CodCDAsociados": [ "CD04" ]
+  },
+  {
+    "DniFletero": 35432109,
+    "CuitEmpresaTransportista": "27-38951233-5",
+    "CodCDAsociados": [ "CD05" ]
+  },
+  {
+    "DniFletero": 37765432,
+    "CuitEmpresaTransportista": "30-19283746-4",
+    "CodCDAsociados": [ "CD06" ]
+  },
+  {
+    "DniFletero": 39876123,
+    "CuitEmpresaTransportista": "30-87651234-0",
+    "CodCDAsociados": [ "CD07" ]
+  },
+  {
+    "DniFletero": 40943084,
+    "CuitEmpresaTransportista": "30-12345678-9",
+    "CodCDAsociados": [ "CD08" ]
+  },
+  {
+    "DniFletero": 41239876,
+    "CuitEmpresaTransportista": "23-65432109-8",
+    "CodCDAsociados": [ "CD09" ]
+  },
+  {
+    "DniFletero": 42345678,
+    "CuitEmpresaTransportista": "23-65432109-8",
+    "CodCDAsociados": [ "CD10" ]
+  },
+  {
+    "DniFletero": 43567890,
+    "CuitEmpresaTransportista": "27-10293847-3",
+    "CodCDAsociados": [ "CD11" ]
+  },
+  {
+    "DniFletero": 44678901,
+    "CuitEmpresaTransportista": "27-10293847-3",
+    "CodCDAsociados": [ "CD12" ]
+  },
+  {
+    "DniFletero": 45789012,
+    "CuitEmpresaTransportista": "20-99887766-5",
+    "CodCDAsociados": [ "CD13" ]
+  },
+  {
+    "DniFletero": 46890123,
+    "CuitEmpresaTransportista": "20-99887766-5",
+    "CodCDAsociados": [ "CD14" ]
+  },
+  {
+    "DniFletero": 47901234,
+    "CuitEmpresaTransportista": "30-55555555-9",
+    "CodCDAsociados": [ "CD01" ]
+  },
+  {
+    "DniFletero": 48912345,
+    "CuitEmpresaTransportista": "30-55555555-9",
+    "CodCDAsociados": [ "CD05" ]
+  }
 ]
