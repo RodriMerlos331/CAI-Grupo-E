@@ -173,6 +173,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
             FacturaAlmacen.Facturas.Add(nuevaFactura);
             FacturaAlmacen.Grabar();
+    
         }
     }
 
