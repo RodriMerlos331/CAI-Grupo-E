@@ -41,6 +41,12 @@ namespace Grupo_E.ImposicionEnCallCenter
                 LocalidadCCcmb.Items.Add(localidad);
             }
 
+            foreach (String localidad in modelo.Localidad)
+            {
+                LocalidadCCcmbOrigen.Items.Add(localidad);
+            }
+
+
             foreach (string tamaño in modelo.TamanoBulto)
             {
                 TamanoBultoCCcmb.Items.Add(tamaño);
@@ -119,11 +125,9 @@ namespace Grupo_E.ImposicionEnCallCenter
             }
         }
 
-        //Acá le tengo que pasar todos los datos al modelo para que me cree la imposición que corresponda:
         private void AceptarImpoAgenciabtn_Click(object sender, EventArgs e)
         {
-            //Validaciones previas a pasarle al modelo:
-            //No tendría sentido que primero busque el cliente y que si no lo encuentra ahí directamente no me deje avanzar? 
+            
 
             if (string.IsNullOrEmpty(CUITClienteCCtxt.Text))
             {
@@ -178,11 +182,13 @@ namespace Grupo_E.ImposicionEnCallCenter
                     return;
                 }
 
-                modelo.ImposicionConDestinoACC(
+                modelo.ImposicionConDestinoACD(
                     CUITClienteCCtxt.Text,
                     TerminalesCCcmb.SelectedItem?.ToString(),
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
-                    DatosDestinatarioCCtxt.Text
+                    DatosDestinatarioCCtxt.Text,
+                    DatosRetiroCCtxt.Text,
+                    LocalidadCCcmbOrigen.SelectedItem.ToString()
                 );
 
             }
@@ -197,11 +203,14 @@ namespace Grupo_E.ImposicionEnCallCenter
                     return;
                 }
 
-                modelo.ImposicionEnDomicilioParticularCC(
+                modelo.ImposicionDomicilioParticular(
                     CUITClienteCCtxt.Text,
                     DatosDomicilioCCtxt.Text,
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
-                    DatosDestinatarioCCtxt.Text
+                    DatosDestinatarioCCtxt.Text,
+                    DatosRetiroCCtxt.Text,
+                    LocalidadCCcmb.SelectedItem?.ToString(),
+                    LocalidadCCcmbOrigen.SelectedItem.ToString()
                 );
             }
 
@@ -214,18 +223,18 @@ namespace Grupo_E.ImposicionEnCallCenter
                     return;
                 }
 
-                modelo.ImposicionEnAgenciaCC(
+                modelo.ImposicionEnAgencia(
                     CUITClienteCCtxt.Text,
                     AgenciasCCcmb.SelectedItem?.ToString(),
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
-                    DatosDestinatarioCCtxt.Text
+                    DatosDestinatarioCCtxt.Text,
+                    DatosRetiroCCtxt.Text,
+                    LocalidadCCcmbOrigen.SelectedItem.ToString()
                 );
 
             }
 
             LimpiarCampos();
-
-            //Ahora tendría que guardarlo. 
         }
 
         private void LimpiarCampos()
@@ -270,31 +279,5 @@ namespace Grupo_E.ImposicionEnCallCenter
             }
         }
 
-
-
-        //private void lblCalleDireccionPCC_Click(object sender, EventArgs e)
-       // {
-
-        //}
-
-       // private void txtCalleDireccionPCC_TextChanged(object sender, EventArgs e)
-       // {
-
-       // }
-
-       // private void txtNombreDestinatarioCC_TextChanged(object sender, EventArgs e)
-       // {
-
-       // }
-
-       // private void lbNombreDestinatarioCC_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void lbCUITCliente_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }

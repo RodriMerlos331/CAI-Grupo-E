@@ -253,7 +253,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
             var nuevaEncomienda = new EncomiendaEntidad
             {
-                Tracking = codAgenciaActual + "_" + (ultimoNumero++).ToString(),
+                Tracking = CodAgenciaDestino + "_" + (ultimoNumero++).ToString(),
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
                 FechaAdmision = null,

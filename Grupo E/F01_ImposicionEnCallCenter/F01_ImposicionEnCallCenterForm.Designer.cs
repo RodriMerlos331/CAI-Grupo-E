@@ -58,6 +58,8 @@
             this.CentroDistribucionCCgrb = new System.Windows.Forms.GroupBox();
             this.TerminalesCCcmb = new System.Windows.Forms.ComboBox();
             this.TerminalesCClbl = new System.Windows.Forms.Label();
+            this.LocalidadCCcmbOrigen = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.DatosRetiroCCgrb.SuspendLayout();
             this.Clientegrb.SuspendLayout();
             this.DatosDestinoCCgrb.SuspendLayout();
@@ -71,6 +73,8 @@
             // 
             // DatosRetiroCCgrb
             // 
+            this.DatosRetiroCCgrb.Controls.Add(this.LocalidadCCcmbOrigen);
+            this.DatosRetiroCCgrb.Controls.Add(this.label1);
             this.DatosRetiroCCgrb.Controls.Add(this.NombreRetiroCClbl);
             this.DatosRetiroCCgrb.Controls.Add(this.DatosRetiroCCtxt);
             this.DatosRetiroCCgrb.Location = new System.Drawing.Point(13, 512);
@@ -83,7 +87,7 @@
             // NombreRetiroCClbl
             // 
             this.NombreRetiroCClbl.AutoSize = true;
-            this.NombreRetiroCClbl.Location = new System.Drawing.Point(12, 30);
+            this.NombreRetiroCClbl.Location = new System.Drawing.Point(417, 28);
             this.NombreRetiroCClbl.Name = "NombreRetiroCClbl";
             this.NombreRetiroCClbl.Size = new System.Drawing.Size(393, 13);
             this.NombreRetiroCClbl.TabIndex = 19;
@@ -92,7 +96,7 @@
             // 
             // DatosRetiroCCtxt
             // 
-            this.DatosRetiroCCtxt.Location = new System.Drawing.Point(15, 46);
+            this.DatosRetiroCCtxt.Location = new System.Drawing.Point(420, 44);
             this.DatosRetiroCCtxt.Name = "DatosRetiroCCtxt";
             this.DatosRetiroCCtxt.Size = new System.Drawing.Size(441, 20);
             this.DatosRetiroCCtxt.TabIndex = 18;
@@ -361,6 +365,23 @@
             this.TerminalesCClbl.TabIndex = 10;
             this.TerminalesCClbl.Text = "Terminales (Centros de distribución) en localidad";
             // 
+            // LocalidadCCcmbOrigen
+            // 
+            this.LocalidadCCcmbOrigen.FormattingEnabled = true;
+            this.LocalidadCCcmbOrigen.Location = new System.Drawing.Point(9, 44);
+            this.LocalidadCCcmbOrigen.Name = "LocalidadCCcmbOrigen";
+            this.LocalidadCCcmbOrigen.Size = new System.Drawing.Size(319, 21);
+            this.LocalidadCCcmbOrigen.TabIndex = 49;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Localidad origen:";
+            // 
             // F01_ImposicionEnCallCenterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,5 +455,7 @@
         private System.Windows.Forms.GroupBox CentroDistribucionCCgrb;
         private System.Windows.Forms.ComboBox TerminalesCCcmb;
         private System.Windows.Forms.Label TerminalesCClbl;
+        private System.Windows.Forms.ComboBox LocalidadCCcmbOrigen;
+        private System.Windows.Forms.Label label1;
     }
 }
