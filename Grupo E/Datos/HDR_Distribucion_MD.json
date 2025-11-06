@@ -11,7 +11,6 @@
     "estadoHDR": "Cumplida",
     "Encomiendas": [ 304, 305 ],
     "CodigoParada": 102,
-    //solo de HDR? o se asocia a un CD destino? deberíamos asociarlo a localida?
     "Destino": "Córdoba"
   },
   {
