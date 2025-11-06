@@ -22,10 +22,10 @@ namespace Grupo_E.Almacenes
         //se podrían resumir en PendienteEntregaUM ?
         //RuteadaUM, //no necesario
         //quedan en CD hasta que pasa fletero y armo HDR distribucion UM
-        EnTransitoUMDestino, //Fletero pasó por el CD Destino y está yendo a entregar encomiendas pendiente entrega domicilio/agencia
-        PendienteRetiroAgencia,  ////Fletero entrega en agencia, esperando que el cliente retire
-        Entregada, //sea en casa, agencia o CD ? 
-        NoEntregada, //sumo este caso momentaneamente para manejar las devoluciones de entrega
+        EnTransitoUMDestino, //10Fletero pasó por el CD Destino y está yendo a entregar encomiendas pendiente entrega domicilio/agencia
+        PendienteRetiroAgencia,  //11Fletero entrega en agencia, esperando que el cliente retire
+        Entregada, //12sea en casa, agencia o CD ? 
+        NoEntregada, //13sumo este caso momentaneamente para manejar las devoluciones de entrega
         Cancelada
     }
 }
@@ -44,3 +44,8 @@ namespace Grupo_E.Almacenes
         Entregada,
         Cancelada
         */
+5 Admitida-- donde se genera DatosFacturacion rendicionFletero (GestionarFletero despues de aceptar)
+Acá se asigna a una HDR de MD con EnCDDestino
+6 EnTransitoMD  omnibus (GEstionarOminbus dsp de aceptar) - aparace en encomiendas a subir
+7 PendienteRetiroEnCD  omnibus (GEstionarOminbus dsp de aceptar) - aparace en encomiendas a bajar
+12 Entragada - RetirarEnCd - dsp de entregarEncomienda
