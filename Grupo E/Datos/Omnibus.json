@@ -1,45 +1,86 @@
 [
   {
-    "ServicioID": "SRV-PL-001",
+    "ServicioID": "CABA_CORRIENTES",
     "CuitEmpresaOmnibus": "30-65478912-3",
     "Patente": "AB123CX",
-    "Tipo": "A", 
+    "CapacidadActual": 20,
+    "Tipo": 0,
     "Paradas": [
       {
         "CodigoCD": "CD01",
         "CodigoParada": 100,
-        "HoraLlegada": "2025-11-15T08:00:00",
-        "HoraSalida": "2025-11-15T08:30:00",
-        "HDRDistribucionMD": [ 111 ],
-        "ABajar": [ "10001" ], 
-        "ASubir": [ "20002" ] 
+        "FechaYHoraLlega": "2025-10-04T08:15:00",
+        "FechaYHoraSale": "2025-10-04T08:15:00",
+        "HDRDistribucionMD": [ 2001 ],
+        "ABajar": [],
+        "ASubir": [ "CD09_001" ]
+      },
+      {
+        "CodigoCD": "CD09",
+        "CodigoParada": 101,
+        "FechaYHoraLlega": "2025-10-06T10:00:00",
+        "FechaYHoraSale": "2025-10-06T10:00:00",
+        "HDRDistribucionMD": [ 2001 ],
+        "ABajar": [ "CD09_001" ],
+        "ASubir": []
       }
     ]
   },
   {
-    "ServicioID": "SRV-PL-002",
+    "ServicioID": "CABA_NEUQUEN",
     "CuitEmpresaOmnibus": "30-65478912-3",
-    "Patente": "AB123CD",
-    "Tipo": "A",
+    "Patente": "AB123CX",
+    "Tipo": 0,
+    "CapacidadActual": 18,
     "Paradas": [
       {
-        "CodigoCD": "CD01",
-        "CodigoParada": 100,
-        "HoraLlegada": "2025-11-15T08:00:00",
-        "HoraSalida": "2025-11-15T08:30:00",
-        "HDRDistribucionMD": [ 111 ],
-        "ABajar": [ "CD01_10001" ],
-        "ASubir": [null ]
+        "CodigoCD": "CD11",
+        "CodigoParada": 201,
+        "FechaYHoraLlega": "2025-11-28T08:00:00",
+        "FechaYHoraSale": "2025-11-28T08:30:00",
+        "HDRDistribucionMD": [],
+        "ABajar": [],
+        "ASubir": []
       },
       {
-        "CodigoCD": "CD01",
-        "CodigoParada": 300,
-        "HoraLlegada": "2025-11-15T08:00:00",
-        "HoraSalida": "2025-11-15T08:30:00",
-        "HDRDistribucionMD": [ 112 ],
-        "ABajar": [ null ],
-        "ASubir": [ "CD01_20002" ]
+        "CodigoCD": "CD05",
+        "CodigoParada": 202,
+        "FechaYHoraLlega": "2025-11-28T17:15:00",
+        "FechaYHoraSale": "2025-11-28T17:45:00",
+        "HDRDistribucionMD": [],
+        "ABajar": [],
+        "ASubir": []
       }
     ]
-  }
+  },
+  [
+    {
+      "ServicioID": "CORDOBA_CORRIENTES_2005",
+      "CuitEmpresaOmnibus": "27-38951233-5",
+      "Patente": "AC321FT",
+      "Tipo": 1,
+      "CapacidadActual": 14,
+      "Paradas": [
+        {
+          "CodigoCD": "CD05",
+          "CodigoParada": 301,
+          "FechaYHoraLlega": "2025-11-27T08:30:00",
+          "FechaYHoraSale": "2025-11-27T09:30:00",
+          "HDRDistribucionMD": [ 2005 ],
+          "ABajar": [],
+          "ASubir": [ "CD09_002" ]
+        },
+        {
+          "CodigoCD": "CD09",
+          "CodigoParada": 302,
+          "FechaYHoraLlega": "2025-11-28T18:00:00",
+          "FechaYHoraSale": "2025-11-28T18:15:00",
+          "HDRDistribucionMD": [ 2005 ],
+          "ABajar": [ "CD09_002" ],
+          "ASubir": []
+        }
+      ]
+    }
+  ]
+  
 ]

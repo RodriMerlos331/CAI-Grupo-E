@@ -34,15 +34,12 @@ namespace Grupo_E.Almacenes
 
        
 
-       //está ok así esto?
+     
         public EncomiendaFactura EncomiendaFactura { get; set; }
 
         public List <Historial> HistorialCambios { get; set; } = new List<Historial>();
 
         public bool Facturada { get; set; }
-
-
-        public EncomiendaFactura DatosFacturacion { get; set; }
         public void GenerarFactura(
       TarifarioEntidad tarifario,
       bool incluirRetiro,
