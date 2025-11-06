@@ -20,7 +20,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
     internal class F10_GeneracionDeFacturasModelo
     {
-        private string UltimoCUITConsultado;
+        public string UltimoCUITConsultado;
         private Dictionary<string, List<EncomiendaFactura>> encomiendasPorCUIT = new Dictionary<string, List<EncomiendaFactura>>();
 
         internal bool ValidarCUIT(string cuit)

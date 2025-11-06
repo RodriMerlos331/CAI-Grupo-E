@@ -133,7 +133,7 @@ namespace Grupo_E.GeneracionDeFacturas
 
             // Llama al modelo, que se encarga de buscar los datos generales y crear la factura
             modelo.GenerarFactura(
-                cuitCliente,
+                modelo.UltimoCUITConsultado,
                 encomiendasIncluidas,
                 subtotal,
                 fechaPago,
