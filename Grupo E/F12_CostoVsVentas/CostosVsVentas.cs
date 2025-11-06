@@ -40,7 +40,6 @@ namespace FormResultadoCostoVsVentas
         {
             string cuit = txtCuit.Text.Trim();
 
-            // --- Validaciones de front ---
             if (string.IsNullOrWhiteSpace(cuit))
             {
                 MessageBox.Show(
@@ -123,7 +122,6 @@ namespace FormResultadoCostoVsVentas
             Close();
         }
 
-        // Validación simple de CUIT (formato XX-XXXXXXXX-X, 13 caracteres y 2 guiones)
         private bool ValidarFormatoCuit(string cuit)
         {
             if (string.IsNullOrWhiteSpace(cuit))
@@ -142,7 +140,6 @@ namespace FormResultadoCostoVsVentas
             return guiones == 2;
         }
 
-        // Pinta los resultados en los TextBox de la sección "Resultado"
         private void ActualizarCamposResultado(ResultadoCostosVentas resultado)
         {
             txtNombreEmpresa.Text = resultado.NombreEmpresa;

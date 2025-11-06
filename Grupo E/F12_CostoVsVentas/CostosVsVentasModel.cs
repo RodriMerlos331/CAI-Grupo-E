@@ -7,10 +7,7 @@ namespace Grupo_E.F12_CostoVsVentas
 {
     internal class CostosVsVentasModel
     {
-        /// <summary>
-        /// Punto de entrada desde el Form.
-        /// Valida el CUIT, busca la empresa y calcula costos/ventas en el rango de fechas.
-        /// </summary>
+        
         internal ResultadoCostosVentas Consultar(Datos query)
         {
             if (query == null)
@@ -42,10 +39,7 @@ namespace Grupo_E.F12_CostoVsVentas
             };
         }
 
-        /// <summary>
-        /// Obtiene la empresa de larga distancia por CUIT leyendo el almacén
-        /// EmpresaServicioLargaDistanciaAlmacen.
-        /// </summary>
+        
         private EmpresaServicioLargaDistanciaEntidad BuscarEmpresaPorCuit(string cuit)
         {
             var empresas = EmpresaServicioLargaDistanciaAlmacen.EmpresaServicioLargaDistancia
@@ -54,12 +48,7 @@ namespace Grupo_E.F12_CostoVsVentas
             return empresas.FirstOrDefault(e => e.CuitEmpresaOmnibus == cuit);
         }
 
-        /// <summary>
-        /// Calcula:
-        /// - Costos: suma de los arrendamientos de la empresa en el rango [fechaDesde, fechaHasta].
-        /// - Ventas: suma del PrecioTotalEncomienda de las encomiendas entregadas en el mismo rango
-        ///           y que hayan viajado en algún HDR MD asociado a ómnibus de la empresa.
-        /// </summary>
+        
         private (decimal costos, decimal ventas) CalcularCostosYVentas(
             EmpresaServicioLargaDistanciaEntidad empresa,
             List<OmnibusEntidad> omnibusEmpresa,
