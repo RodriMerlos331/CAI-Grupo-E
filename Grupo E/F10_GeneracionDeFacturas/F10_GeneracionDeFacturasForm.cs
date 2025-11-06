@@ -126,18 +126,15 @@ namespace Grupo_E.GeneracionDeFacturas
                           + ParseImporteDecimal(item.SubItems[5].Text);
             }
 
-            DateTime? fechaPago = null; // O tu lógica si corresponde
-
-            // Obtiene la lista actualizada de encomiendas
-            var todasLasEncomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
+           
 
             // Llama al modelo, que se encarga de buscar los datos generales y crear la factura
             modelo.GenerarFactura(
                 modelo.UltimoCUITConsultado,
                 encomiendasIncluidas,
-                subtotal,
-                fechaPago,
-                todasLasEncomiendas // <-- parámetro agregado
+                subtotal
+                
+                // El modelo obtiene las encomiendas internamente
             );
 
             MessageBox.Show("La factura se generó correctamente.", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);

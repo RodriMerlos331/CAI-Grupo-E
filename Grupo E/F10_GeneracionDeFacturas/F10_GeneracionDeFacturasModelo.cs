@@ -88,16 +88,11 @@ namespace Grupo_E.F10_GeneracionDeFacturas
         internal void GenerarFactura(
             string cuitCliente,
             List<string> encomiendasIncluidas,
-            decimal subtotal,
-            DateTime? fechaPago,
-            List<EncomiendaEntidad> todasLasEncomiendas // <-- nuevo parámetro
+            decimal subtotal
+            
         )
         {
-            if (DatosGeneralesAlmacen.DatosGenerales == null || !DatosGeneralesAlmacen.DatosGenerales.Any())
-            {
-                MessageBox.Show("No se encontraron datos generales. Verifique el archivo de configuración.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            var todasLasEncomiendas = Grupo_E.Almacenes.EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
             // Buscar los datos generales por su tipo
             var cuitTutasa = DatosGeneralesAlmacen.DatosGenerales
                 .FirstOrDefault(d => d.Tipo == TipoDatoEnum.CUITTutasa)?.Dato;
@@ -135,7 +130,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                 Iva = iva,
                 Total = total,
                 CodigoDeAutorizacionElectronica = codigoCAE,
-                FechadePago = fechaPago
+                FechadePago = null
             };
 
             FacturaAlmacen.Facturas.Add(nuevaFactura);
