@@ -22,16 +22,17 @@ namespace Grupo_E.F12_CostoVsVentas
             if (empresa == null)
                 throw new Exception("No se encontró ninguna empresa de larga distancia con el CUIT ingresado.");
 
-            // 2) Verificar que haya al menos un ómnibus con ese CUIT en OmnibusAlmacen
-            bool tieneOmnibus = (OmnibusAlmacen.Omnibus ?? new List<OmnibusEntidad>())
-                .Any(o => o.CuitEmpresaOmnibus == query.Cuit);
+            // 2) Buscar los ómnibus pertenecientes a esa empresa
+            var omnibusEmpresa = (OmnibusAlmacen.Omnibus ?? new List<OmnibusEntidad>())
+                .Where(o => o.CuitEmpresaOmnibus == query.Cuit)
+                .ToList();
 
-            if (!tieneOmnibus)
+            if (!omnibusEmpresa.Any())
                 throw new Exception("No hay ómnibus asociados a la empresa seleccionada.");
 
             // 3) Calcular Costos y Ventas en el rango de fechas
             (decimal totalCostos, decimal totalVentas) =
-                CalcularCostosYVentas(empresa, query.FechaInicial.Date, query.FechaFinal.Date);
+                CalcularCostosYVentas(empresa, omnibusEmpresa, query.FechaInicial.Date, query.FechaFinal.Date);
 
             return new ResultadoCostosVentas
             {
@@ -56,11 +57,12 @@ namespace Grupo_E.F12_CostoVsVentas
         /// <summary>
         /// Calcula:
         /// - Costos: suma de los arrendamientos de la empresa en el rango [fechaDesde, fechaHasta].
-        /// - Ventas: suma del PrecioTotalEncomienda de las encomiendas entregadas en el mismo rango.
-        ///   Para las ventas se usa EncomiendaAlmacen + EncomiendaEntidad.EncomiendaFactura.
+        /// - Ventas: suma del PrecioTotalEncomienda de las encomiendas entregadas en el mismo rango
+        ///           y que hayan viajado en algún HDR MD asociado a ómnibus de la empresa.
         /// </summary>
         private (decimal costos, decimal ventas) CalcularCostosYVentas(
             EmpresaServicioLargaDistanciaEntidad empresa,
+            List<OmnibusEntidad> omnibusEmpresa,
             DateTime fechaDesde,
             DateTime fechaHasta)
         {
@@ -68,7 +70,6 @@ namespace Grupo_E.F12_CostoVsVentas
             decimal ventas = 0m;
 
             // --- COSTOS ---
-            // Arrendamientos de la empresa de larga distancia cuyo Mes cae en el rango.
             if (empresa.Arrendamientos != null)
             {
                 costos = empresa.Arrendamientos
@@ -76,9 +77,22 @@ namespace Grupo_E.F12_CostoVsVentas
                     .Sum(a => a.Costo);
             }
 
+            // --- HDR MD de la empresa (a partir de los ómnibus) ---
+            var hdrEmpresa = new HashSet<int>(
+                omnibusEmpresa
+                    .Where(o => o.Paradas != null)
+                    .SelectMany(o => o.Paradas)
+                    .Where(p => p.HDRDistribucionMD != null)
+                    .SelectMany(p => p.HDRDistribucionMD)
+            );
+
+            if (!hdrEmpresa.Any())
+            {
+                // No hay HDR MD asociados a la empresa -> no hay ventas atribuibles
+                return (costos, 0m);
+            }
+
             // --- VENTAS ---
-            // Encomiendas entregadas en el rango de fechas (uso FechaEntrega) 
-            // y con EncomiendaFactura calculada (PrecioTotalEncomienda).
             var encomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
 
             ventas = encomiendas
@@ -86,7 +100,9 @@ namespace Grupo_E.F12_CostoVsVentas
                     e.FechaEntrega.HasValue &&
                     e.FechaEntrega.Value.Date >= fechaDesde &&
                     e.FechaEntrega.Value.Date <= fechaHasta &&
-                    e.EncomiendaFactura != null)
+                    e.EncomiendaFactura != null &&
+                    e.HistorialCambios != null &&
+                    e.HistorialCambios.Any(h => hdrEmpresa.Contains(h.NumeroHDRMD)))
                 .Sum(e => e.EncomiendaFactura.PrecioTotalEncomienda);
 
             return (costos, ventas);
