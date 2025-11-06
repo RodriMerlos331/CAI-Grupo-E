@@ -1,19 +1,12 @@
 [
 
   {
+    //Encomeinda CD09 impuesta CC entregada
     "NumeroHDRUM": 1101,
     "Tipo": 0,
     "DniFleteroAsignado": 12345678,
-    "Cumplida": false,
-    "Rendida": false,
-    "Encomiendas": [ "AG03_01", "AG03_02" ]
-  },
-  {
-    "NumeroHDRUM": 1002,
-    "Tipo": 1,
-    "DniFleteroAsignado": 12345678,
-    "Cumplida": false,
-    "Rendida": false,
-    "Encomiendas": [ "AG03_12" ]
+    "Cumplida": true,
+    "Rendida": true,
+    "Encomiendas": [ "CD09_001" ]
   }
 ]

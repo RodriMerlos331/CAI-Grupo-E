@@ -1,30 +1,25 @@
 [
   {
-    "NumeroHDRMD": 111,
-    "estadoHDR": "EnTransito",
-    "Encomiendas": [ "CD01_10001" ],
-    "CodigoParada": 100,
-    "Destino": "Constitucion"
+    "NumeroHDRMD": 2001,
+    "estadoHDR": 1,
+    "Encomiendas": [ "CD09_001" ],
+    "CodigoParada": 101,
+    "Destino": "Terminal de ómnibus de Corrientes Capital"
   },
   {
-    "NumeroHDRMD": 112,
-    "estadoHDR": "Asignada",
-    "Encomiendas": [ "CD01_20002" ],
-    "CodigoParada": 300,
-    "Destino": "Moron"
+    "NumeroHDRMD": 2005,
+    "estadoHDR": 0,
+    "Encomiendas": [ "CD09_002" ],
+    "CodigoParada": 302,
+    "Destino": "Terminal de ómnibus de Corrientes Capital"
   },
   {
-    "NumeroHDRMD": 5002,
-    "estadoHDR": "Cumplida",
-    "Encomiendas": [ 304, 305 ],
-    "CodigoParada": 102,
-    "Destino": "Córdoba"
-  },
-  {
-    "NumeroHDRMD": 5003,
-    "estadoHDR": "Asignada",
-    "Encomiendas": [ 306, 307, 308, 309 ],
-    "CodigoParada": 103,
-    "Destino": "Mendoza"
+    "NumeroHDRMD": 2006,
+    "estadoHDR": 2,
+    "Encomiendas": [ "CD11_001" ],
+    "CodigoParada": 401,
+    "Destino": "Terminal de ómnibus de Neuquén Capital"
   }
+
+
 ]

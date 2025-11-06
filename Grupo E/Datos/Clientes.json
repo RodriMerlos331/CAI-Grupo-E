@@ -1,14 +1,30 @@
 [
   {
-    "CUIT": "30-12345678-0",
-    "Domicilio": "Avendia Corrientes 1234"
+    "CUIT": "30-19283746-4",
+    "Domicilio": "Av. Corrientes 4500, CABA"
   },
-
   {
-    "CUIT": "20-87654321-0",
-    "RazonSocial": "Deportes Patagonia SRL",
-    "Direccion": "Av. San Martín 456",
-    "Telefono": "011-4789-1234",
-    "Email": "contacto@deportespata.com"
+    "CUIT": "30-87651234-0",
+    "Domicilio": "Bv. San Juan 1200, Córdoba Capital"
+  },
+  {
+    "CUIT": "20-99887766-5",
+    "Domicilio": "Av. 25 de Mayo 620, Corrientes Capital"
+  },
+  {
+    "CUIT": "27-38951233-5",
+    "Domicilio": "Av. Olascoaga 750, Neuquén Capital"
+  },
+  {
+    "CUIT": "30-55555555-9",
+    "Domicilio": "Av. San Martín 100, San Carlos de Bariloche"
+  },
+  {
+    "CUIT": "23-65432109-8",
+    "Domicilio": "Calle Belgrano 210, San Miguel de Tucumán"
+  },
+  {
+    "CUIT": "20-45651288-8",
+    "Domicilio": "Av. 7 y 50, La Plata"
   }
 ]

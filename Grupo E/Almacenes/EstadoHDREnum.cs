@@ -8,9 +8,9 @@ namespace Grupo_E.Almacenes
 {
         public enum EstadoHDREnum
         {
-            EnTransito,
-            Cumplida,
-            Asignada
+            EnTransito, //0
+            Cumplida, //1
+            Asignada //2
         }
 
 }

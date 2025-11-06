@@ -113,7 +113,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
                 HistorialCambios = new List<Historial>(),
 
-                DatosFacturacion = null,
+                EncomiendaFactura = null,
 
             };
 
@@ -196,7 +196,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
                 HistorialCambios = new List<Historial>(),
 
-                DatosFacturacion = null,
+                EncomiendaFactura = null,
 
             };
 
@@ -282,7 +282,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
                 HistorialCambios = new List<Historial>(),
 
-                DatosFacturacion = null,
+                EncomiendaFactura = null,
 
             };
 

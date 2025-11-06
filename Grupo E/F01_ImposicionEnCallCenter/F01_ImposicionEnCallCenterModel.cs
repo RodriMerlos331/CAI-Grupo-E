@@ -112,7 +112,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
 
                 HistorialCambios = new List<Historial>(),
 
-                DatosFacturacion = null,
+                EncomiendaFactura = null,
 
             };
 
@@ -195,7 +195,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
 
                 HistorialCambios = new List<Historial>(),
 
-                DatosFacturacion = null,
+                EncomiendaFactura = null,
 
             };
 
@@ -281,7 +281,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
 
                 HistorialCambios = new List<Historial>(),
 
-                DatosFacturacion = null,
+                EncomiendaFactura = null,
 
             };
 
