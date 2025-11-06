@@ -123,7 +123,7 @@ namespace Grupo_E.GestionarOmnibus
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
-            modelo.AceptarGestionOmnibus(EncomiendasASubir, EncomiendasABajar);
+            modelo.AceptarGestionOmnibus();
 
 
             // Mensaje de confirmación

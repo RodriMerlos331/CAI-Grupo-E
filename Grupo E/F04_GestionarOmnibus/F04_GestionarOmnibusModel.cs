@@ -19,17 +19,17 @@ namespace Grupo_E.GestionarOmnibus
 
         // Conversión de tipo de bulto a equivalentes XL
 
-       /* private decimal EquivalenteXL(TipoBultoEnum tipo)
-        {
-            switch (tipo)
-            {
-                case TipoBultoEnum.S: return 0.125m;  // 2.5 kg
-                case TipoBultoEnum.M: return 0.25m;   // 5 kg
-                case TipoBultoEnum.L: return 0.5m;    // 10 kg
-                case TipoBultoEnum.XL: return 1.0m;    // 20 kg
-                default: return 0;
-            }
-        }*/
+        /* private decimal EquivalenteXL(TipoBultoEnum tipo)
+         {
+             switch (tipo)
+             {
+                 case TipoBultoEnum.S: return 0.125m;  // 2.5 kg
+                 case TipoBultoEnum.M: return 0.25m;   // 5 kg
+                 case TipoBultoEnum.L: return 0.5m;    // 10 kg
+                 case TipoBultoEnum.XL: return 1.0m;    // 20 kg
+                 default: return 0;
+             }
+         }*/
 
         //Capacidad máxima (en equivalentes XL) según arrendamiento
         /*private decimal CapacidadMaximaXLPorArrendamiento(TipoArrendamientoEnum tipo)
@@ -70,9 +70,12 @@ namespace Grupo_E.GestionarOmnibus
             return seleccionadas;
         }*/
 
+        string patenteActual = "";
+
         internal List<EncomiendasASubir> EncomiendasASubir(string patente)
         {
             var pat = (patente ?? "").Trim().ToUpperInvariant();
+            patenteActual = pat;
             var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual?.CodigoCD;
 
             var omni = OmnibusAlmacen.Omnibus
@@ -138,7 +141,7 @@ namespace Grupo_E.GestionarOmnibus
             return resultado.Count > 0 ? resultado : null;
         }
 
-
+        
 
         internal List<EncomiendasABajar> EncomiendasABajar(string patente)
         {
@@ -188,11 +191,11 @@ namespace Grupo_E.GestionarOmnibus
         }
 
 
-        internal bool AceptarGestionOmnibus(List<EncomiendasASubir> EncomiendasASubir, List<EncomiendasABajar> EncomiendasABajar)
+        internal bool AceptarGestionOmnibus()
         {
 
-            var bajarSet = EncomiendasABajar;
-            var subirSet = EncomiendasASubir;
+            var bajarSet = EncomiendasABajar(patenteActual);
+            var subirSet = EncomiendasASubir(patenteActual);
             var trackingsBajar = bajarSet.Select(e => e.Tracking).ToList();
             var hdrBajar = bajarSet.Select(e => e.IdHdr).ToList();
             var trackingsSubir = subirSet.Select(e => e.Tracking).ToList();
