@@ -17,17 +17,11 @@ namespace Grupo_E.Almacenes
 
         public void ActualizarEstado(bool cumplida)
         {
-            if (Cumplida == cumplida)
-                return;
-
-            Cumplida = cumplida;
-
+            
             foreach (var tracking in Encomiendas)
             {
                 var encomienda = EncomiendaAlmacen.Encomienda
                     .FirstOrDefault(e => e.Tracking == tracking);
-
-                //var estadoAnterior = encomienda.Estado;
 
                 if (Tipo == TipoHDREnum.Entrega)
                 {
@@ -42,21 +36,7 @@ namespace Grupo_E.Almacenes
                         ? EstadoEncomiendaEnum.Admitida
                         : EstadoEncomiendaEnum.Cancelada; // cancela guía siempre que no se retira??
                 }
-
-                // Si el estado cambió realmente, registramos en historial
-                /*
-                if (estadoAnterior != encomienda.Estado)
-                {
-                    encomienda.HistorialCambios.Add(new Historial
-                    {
-                        FechaPrevia = DateTime.Now,
-                        UbicacionPrevia = encomienda.CodCDActual,
-                        EstadoPrevio = estadoAnterior,
-                        FleteroAsignado = DniFleteroAsignado,
-                        NumeroHDRUM = NumeroHDRUM
-                    });
-                }
-                */
+                
             }
         }
 

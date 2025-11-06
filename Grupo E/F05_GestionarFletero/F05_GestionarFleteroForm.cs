@@ -211,8 +211,7 @@ namespace Grupo_E.GestionarFletero
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
 
-            //Se podría hacer así?
-            //var HDRARendir = modelo.ObtenerHDRRendicionPorTransportista(int.Parse(DNIText.Text));
+          
 
             var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
 

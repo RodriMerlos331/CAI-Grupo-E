@@ -80,10 +80,8 @@ namespace Grupo_E.GestionarFletero
                 return new List<HDR>();
             }
 
-            // 2. CDs asociados
             var cdsFletero = fletero.CodCDAsociados;
 
-            // 3. Encomiendas a RETIRAR
             var encomiendasRetiro = EncomiendaAlmacen.Encomienda
                 .Where(e =>
                     (e.Estado == EstadoEncomiendaEnum.ImpuestaPendienteRetiroDomicilio ||
@@ -121,7 +119,6 @@ namespace Grupo_E.GestionarFletero
                     "Sin entregas", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            // 6. Crear HDR nuevas
             var hdrGeneradas = new List<HDRDistribucionUMEntidad>();
 
             int proximoNumeroHDR = HDRDistribucionUMAlmacen.HDRDistribucionUM.Any()
@@ -183,15 +180,88 @@ namespace Grupo_E.GestionarFletero
 
         public bool Aceptar()
         {
-            //TODO: impactar los cambios en los almacenes correspondientes.            
+            foreach (var hdr in HDRRendicion)
+            {
+                var entidad = HDRDistribucionUMAlmacen.HDRDistribucionUM
+                    .First(h => h.NumeroHDRUM == hdr.NumeroHDR);
+
+                entidad.Rendida = hdr.Rendida;
+                entidad.Cumplida = hdr.Cumplida;
+
+                entidad.ActualizarEstado(hdr.Cumplida);
+            }
+
+            foreach (var hdr in HDRGeneracion)
+            {
+                if (HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(h => h.NumeroHDRUM == hdr.NumeroHDR))
+                    continue;
+
+                var nuevaEntidad = new HDRDistribucionUMEntidad
+                {
+                    NumeroHDRUM = hdr.NumeroHDR,
+                    Tipo = MapTipoHDR(hdr.Tipo),
+                    DniFleteroAsignado = hdr.DniTransportista,
+                    Cumplida = false,
+                    Rendida = false,
+                    Encomiendas = hdr.Guias.Select(g => g.CodigoGuia).ToList()
+                };
+
+                HDRDistribucionUMAlmacen.HDRDistribucionUM.Add(nuevaEntidad);
+            }
+
             return true;
         }
 
 
+        private HDR.TipoHDR TipoEquivalenteA(TipoHDREnum tipo)
+        {
+            // Mapear TipoHDREnum -> HDR.TipoHDR
+            return tipo == TipoHDREnum.Entrega ? HDR.TipoHDR.Entrega : HDR.TipoHDR.Retiro;
+        }
+        private Guia.EstadoGuia EstadoEquivalenteA(EstadoEncomiendaEnum estado)
+        {
+            // Mapear EstadoEncomiendaEnum -> Guia.EstadoGuia
+            switch (estado)
+            {
+                case EstadoEncomiendaEnum.Entregada:
+                    return Guia.EstadoGuia.Entregada;
+
+                case EstadoEncomiendaEnum.PendienteEntregaDomicilio:
+                case EstadoEncomiendaEnum.PendienteEntregaAgencia:
+                case EstadoEncomiendaEnum.NoEntregada:
+                    return Guia.EstadoGuia.NoEntregada;
+
+                // Estados que implican que la encomienda ya fue retirada por el fletero / en tránsito
+                case EstadoEncomiendaEnum.Admitida:
+                case EstadoEncomiendaEnum.EnTransitoUMOrigen:
+                case EstadoEncomiendaEnum.EnTransitoMD:
+                case EstadoEncomiendaEnum.EnTransitoUMDestino:
+                    return Guia.EstadoGuia.Retirada;
+
+                // Estados iniciales de retiro o cancelación -> no retirada aún
+                case EstadoEncomiendaEnum.ImpuestaPendienteRetiroDomicilio:
+                case EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia:
+                case EstadoEncomiendaEnum.RuteadaRetiroDomicilio:
+                case EstadoEncomiendaEnum.RuteadaRetiroAgencia:
+                case EstadoEncomiendaEnum.PendienteRetiroCD:
+                case EstadoEncomiendaEnum.PendienteRetiroAgencia:
+                case EstadoEncomiendaEnum.Cancelada:
+                    return Guia.EstadoGuia.NoRetirada;
+
+                // Por defecto, considerar no entregada
+                default:
+                    return Guia.EstadoGuia.NoEntregada;
+            }
+        }
+
+        private TipoHDREnum MapTipoHDR(HDR.TipoHDR tipo)
+        {
+            return tipo == HDR.TipoHDR.Entrega ? TipoHDREnum.Entrega : TipoHDREnum.Retiro;
+        }
 
 
 
-
+        /*
         private HDR.TipoHDR TipoEquivalenteA(TipoHDREnum tipo)
         {
             //TODO: completar con equivalencias.
@@ -202,6 +272,13 @@ namespace Grupo_E.GestionarFletero
             //TODO: completar con equivalencias.
             return Guia.EstadoGuia.Retirada; //devuelvo cualquier cosa pa q compile.
         }
-    }
 
+        private TipoHDREnum MapTipoHDR(HDR.TipoHDR tipo)
+        {
+            return tipo == HDR.TipoHDR.Entrega ? TipoHDREnum.Entrega : TipoHDREnum.Retiro;
+        }
+    }
+        */
+
+    }
 }
