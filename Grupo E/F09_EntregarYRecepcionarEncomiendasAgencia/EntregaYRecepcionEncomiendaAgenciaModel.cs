@@ -13,14 +13,37 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 {
 	internal class EntregaYRecepcionEncomiendaAgenciaModel
 	{
-        public readonly Dictionary<int, GuiaDeEncomiendas> data;
+        public readonly Dictionary<string, GuiaDeEncomiendas> data;
 
+    
         public EntregaYRecepcionEncomiendaAgenciaModel()
         {
-            var f1 = new Fletero { Nombre = "Juan", Apellido = "López", DNI = 20111222 };
-            var f2 = new Fletero { Nombre = "Sofía", Apellido = "Martínez", DNI = 30999888 };
+            data = new Dictionary<string, GuiaDeEncomiendas>();
 
-            data = new Dictionary<int, GuiaDeEncomiendas>
+            foreach (EncomiendaEntidad encomienda  in EncomiendaAlmacen.Encomienda)
+            {
+                data.Add(encomienda.Tracking, new GuiaDeEncomiendas
+                {
+                    TrackingId = encomienda.Tracking,
+                    EstadoEnvio = (EstadoDeEnvio)encomienda.Estado,
+                    AgenciaDestino = encomienda.AgenciaDestino,
+                    TamañoBulto = encomienda.TipoBulto.ToString(),
+                    FleteroAsignado = FleteroAlmacen.Fletero
+                        .FirstOrDefault(f =>
+                            HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr =>
+                                hdr.DniFleteroAsignado == f.DniFletero &&
+                                hdr.Encomiendas.Contains(encomienda.Tracking)))
+                        ?.DniFletero ?? 0
+
+
+                });
+            }
+
+            
+      
+
+
+            /* data = new Dictionary<int, GuiaDeEncomiendas>
             {
                 [1001] = new GuiaDeEncomiendas
                 {
@@ -100,6 +123,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                     TamañoBulto = "M",
                     FleteroAsignado = f1
                 },
+            */
 
 
 

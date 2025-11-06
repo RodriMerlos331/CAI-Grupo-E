@@ -54,11 +54,11 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
 
          
 
-            foreach (KeyValuePair<int, GuiaDeEncomiendas> numGuia in modelo.data)
+            foreach (KeyValuePair<string, GuiaDeEncomiendas> numGuia in modelo.data)
             {
                 GuiaDeEncomiendas guia = numGuia.Value;
 
-                if (guia.FleteroAsignado.DNI == dni)
+                if (guia.FleteroAsignado == dni)
                 {
                     if (guia.EstadoEnvio == EstadoDeEnvio.RuteadaRetiroAgencia)
                     {
@@ -88,14 +88,14 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
 
              foreach (ListViewItem item in GuiasAEntregarListView.Items)
                {
-                   int trackingId = int.Parse(item.Text);
-                   modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.ImpuestaPendienteRetiroAgencia;
+                string trackingId = ""; 
+                modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.ImpuestaPendienteRetiroAgencia;
                }
 
                foreach (ListViewItem item in GuiasARecibirListView.Items)
                {
 
-                   int trackingId = int.Parse(item.Text);
+                 string trackingId = "";
                    modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.PendienteRetiroAgencia;
 
                }
