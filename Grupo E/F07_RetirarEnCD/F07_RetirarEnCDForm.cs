@@ -1,154 +1,123 @@
-﻿using Grupo_E.F07_RetirarEnCD;
+﻿using Grupo_E.Almacenes;
+using Grupo_E.F07_RetirarEnCD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grupo_E.RetirarEnCD
 {
-    public partial class F07_RetirarEnCDForm : Form
+    public partial class RetirarEnCDForm : Form
     {
-        private readonly RetirarEnCDModel modelo = new RetirarEnCDModel();
+        private F07_RetirarEnCDModelo modelo;
 
-        public F07_RetirarEnCDForm()
+        public RetirarEnCDForm()
         {
             InitializeComponent();
-            HabilitarControlesDestinatario(false);
+            modelo = new F07_RetirarEnCDModelo();
         }
 
-        private void HabilitarControlesDestinatario(bool habilitar)
+        private void btnLimpiarFiltro_Click(object sender, EventArgs e)
         {
-            NombreText.Enabled = habilitar;
-            ApellidoText.Enabled = habilitar;
-            DNIText.Enabled = habilitar;
-            btnEntregar.Enabled = habilitar;
-
-            if (!habilitar)
-            {
-                NombreText.Clear();
-                ApellidoText.Clear();
-                DNIText.Clear();
-        
-            }
-        }
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            NumeroTrackingText.Clear();
-            HabilitarControlesDestinatario(false);
-            NumeroTrackingText.Focus();
+            txtNumeroDeTracking.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtDNI.Clear();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            HabilitarControlesDestinatario(false);
-            if (string.IsNullOrWhiteSpace(NumeroTrackingText.Text))
+            if (string.IsNullOrWhiteSpace(txtNumeroDeTracking.Text))
             {
-                MessageBox.Show("Debe ingresar un número de tracking para realizar la búsqueda.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                NumeroTrackingText.Focus();
+                MessageBox.Show("El campo número de tracking no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            int numeroDeTracking;
-            if (!int.TryParse(NumeroTrackingText.Text, out numeroDeTracking) || numeroDeTracking <= 0)
+            if (modelo.ExisteEncomiendaEnCDActual(txtNumeroDeTracking.Text))
             {
-                MessageBox.Show("El número de tracking debe ser un número entero válido y positivo.", "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                NumeroTrackingText.Clear();
-                NumeroTrackingText.Focus();
-                return;
-            }
-
-            var clienteEncontrado = modelo.BuscarEncomiendaPorTracking(numeroDeTracking);
-
-            if (clienteEncontrado != null) 
-            {
-                this.Tag = clienteEncontrado;
-                MessageBox.Show("La encomienda está en la agencia. Por favor, complete los datos del destinatario para la entrega.", "Búsqueda Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HabilitarControlesDestinatario(true);
-                NombreText.Focus();
+                MessageBox.Show("Encomienda encontrada en este Centro de Distribución.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("La encomienda con el número de tracking ingresado NO está disponible para retiro en este Centro de Distribución.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se encontró una encomienda con ese número de tracking en este Centro de Distribución.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnEntregar_Click(object sender, EventArgs e)
+        private void btnEntregarEncomienda_Click(object sender, EventArgs e)
         {
-            var clienteEsperado = this.Tag as DatosCliente;
-            if (clienteEsperado == null)
+            if (string.IsNullOrWhiteSpace(txtNumeroDeTracking.Text))
             {
-                MessageBox.Show("Debe ingresar un número de tracking para realizar la búsqueda.", "Error de Flujo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                NumeroTrackingText.Focus();
+                MessageBox.Show("El campo número de tracking no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // 2. Validación de campos vacíos para Nombre y Apellido
-            if (string.IsNullOrWhiteSpace(NombreText.Text) || string.IsNullOrWhiteSpace(ApellidoText.Text))
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MessageBox.Show("Debe completar todos los datos del destinatario para entregar la encomienda.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (string.IsNullOrWhiteSpace(NombreText.Text)) NombreText.Focus();
-                else ApellidoText.Focus();
+                MessageBox.Show("El campo Nombre no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // 3. Validación de DNI: Numérico, positivo y con 8 dígitos
-            int dniIngresado;
-            if (!int.TryParse(DNIText.Text, out dniIngresado) || dniIngresado <= 0 || DNIText.Text.Length != 8)
+            if (string.IsNullOrWhiteSpace(txtApellido.Text))
             {
-                MessageBox.Show("DNI inválido. Debe ser un número entero positivo de exactamente 8 dígitos.", "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DNIText.Focus();
+                MessageBox.Show("El campo Apellido no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // 4.Coincidencia de datos
-            if (NombreText.Text.Trim().ToUpper() != clienteEsperado.Nombre.ToUpper() ||
-                ApellidoText.Text.Trim().ToUpper() != clienteEsperado.Apellido.ToUpper() ||
-                dniIngresado != clienteEsperado.DNI)
+            if (string.IsNullOrWhiteSpace(txtDNI.Text))
             {
-                MessageBox.Show("Los datos ingresados NO coinciden con los datos registrados para el destinatario de esta encomienda.", "Error de Coincidencia de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El campo DNI no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // 5. Confirmación de Entrega (solo si todas las validaciones pasaron)
-            var confirmacion = MessageBox.Show(
-                $"¿Confirma la entrega de la encomienda {clienteEsperado.NumeroTracking} al destinatario {clienteEsperado.Nombre} {clienteEsperado.Apellido}?",
-                "Confirmar Entrega",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (confirmacion == DialogResult.Yes)
+            if (!int.TryParse(txtDNI.Text, out int dni))
             {
-                modelo.EntregarEncomienda(clienteEsperado);
-                MessageBox.Show("Entrega de encomienda registrada y finalizada con éxito.", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnLimpiar_Click(sender, e);
-                this.Tag = null;
+                MessageBox.Show("El campo DNI debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (modelo.ChequearEncomiendaCD(
+                    txtNumeroDeTracking.Text,
+                    txtNombre.Text,
+                    txtApellido.Text,
+                    dni))
+            {
+                MessageBox.Show("La encomienda fue validada correctamente y está lista para ser entregada en el CD.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNumeroDeTracking.Clear();
+                txtNombre.Clear();
+                txtApellido.Clear();
+                txtDNI.Clear();
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show(
-                "¿Desea cancelar la operación? Los datos ingresados no se guardarán.",
-                "Confirmación",
+                "¿Realmente desea salir y volver al menú principal?",
+                "Confirmar salida",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
 
             if (result == DialogResult.Yes)
+            {
                 this.Close();
+            }
         }
 
-        private void NumeroTrackingText_TextChanged(object sender, EventArgs e)
+        private void txtNumeroDeTracking_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RetirarEnCDForm_Load(object sender, EventArgs e)
         {
 
         }
     }
-
-
 }

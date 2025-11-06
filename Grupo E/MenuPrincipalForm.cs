@@ -99,7 +99,18 @@ namespace Grupo_E
 
         private void btnRetirarEnCD_Click(object sender, EventArgs e)
         {
-            using (var f = new RetirarEnCD.F07_RetirarEnCDForm())
+            if (CentroDeDistribucionAlmacen.CentroDistribucionActual == null)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar un Centro de Distribución antes de ingresar a Retiro en CD.",
+                    "Centro de Distribución no seleccionado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            using (var f = new RetirarEnCD.RetirarEnCDForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
                 f.ShowDialog(this);

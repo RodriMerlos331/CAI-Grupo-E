@@ -104,7 +104,7 @@
     <Compile Include="F05_GestionarFletero\HDR.cs" />
     <Compile Include="F05_GestionarFletero\Transportista.cs" />
     <Compile Include="F07_RetirarEnCD\DatosCliente.cs" />
-    <Compile Include="F07_RetirarEnCD\RetirarEnCDModel.cs" />
+    <Compile Include="F07_RetirarEnCD\F07_RetirarEnCDModelo.cs" />
     <Compile Include="F08_ConsultarEstadoEncomienda\EstadoDeEncomiedaForm.cs">
       <SubType>Form</SubType>
     </Compile>
