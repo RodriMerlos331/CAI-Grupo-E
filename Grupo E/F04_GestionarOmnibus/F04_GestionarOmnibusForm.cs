@@ -122,9 +122,10 @@ namespace Grupo_E.GestionarOmnibus
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //consultar con andres como hacer para que esa patente no vuelva a aparecer.
 
-           
+            modelo.AceptarGestionOmnibus(EncomiendasASubir, EncomiendasABajar);
+
+
             // Mensaje de confirmación
             MessageBox.Show("Rendición registrada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

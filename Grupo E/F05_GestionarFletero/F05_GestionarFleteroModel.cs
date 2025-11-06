@@ -209,6 +209,8 @@ namespace Grupo_E.GestionarFletero
                 HDRDistribucionUMAlmacen.HDRDistribucionUM.Add(nuevaEntidad);
             }
 
+            
+
             return true;
         }
 

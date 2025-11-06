@@ -19,7 +19,7 @@ namespace Grupo_E.GestionarOmnibus
 
         // Conversión de tipo de bulto a equivalentes XL
 
-        private decimal EquivalenteXL(TipoBultoEnum tipo)
+       /* private decimal EquivalenteXL(TipoBultoEnum tipo)
         {
             switch (tipo)
             {
@@ -29,10 +29,10 @@ namespace Grupo_E.GestionarOmnibus
                 case TipoBultoEnum.XL: return 1.0m;    // 20 kg
                 default: return 0;
             }
-        }
+        }*/
 
         //Capacidad máxima (en equivalentes XL) según arrendamiento
-        private decimal CapacidadMaximaXLPorArrendamiento(TipoArrendamientoEnum tipo)
+        /*private decimal CapacidadMaximaXLPorArrendamiento(TipoArrendamientoEnum tipo)
         {
             switch (tipo)
             {
@@ -42,12 +42,12 @@ namespace Grupo_E.GestionarOmnibus
                 case TipoArrendamientoEnum.D: return 3m;
                 default: return 0m;
             }
-        }
+        }*/
 
 
         //  Selección por capacidad (prioriza por fecha de imposición)
 
-        private List<EncomiendaEntidad> SeleccionarPorCapacidad(List<EncomiendaEntidad> candidatas, decimal capacidadXL)
+        /*private List<EncomiendaEntidad> SeleccionarPorCapacidad(List<EncomiendaEntidad> candidatas, decimal capacidadXL)
         {
             var seleccionadas = new List<EncomiendaEntidad>();
             decimal acumulado = 0;
@@ -68,7 +68,7 @@ namespace Grupo_E.GestionarOmnibus
             }
 
             return seleccionadas;
-        }
+        }*/
 
         internal List<EncomiendasASubir> EncomiendasASubir(string patente)
         {
@@ -91,7 +91,7 @@ namespace Grupo_E.GestionarOmnibus
             // Estados de HDR válidos para embarcar
             var codParadasSet = paradas.Select(p => p.CodigoParada).ToList();
             var hdrsServicio = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
-                .Where(h => (h.estadoHDR == EstadoHDREnum.Asignada || h.estadoHDR == EstadoHDREnum.EnTransito)
+                .Where(h => (h.estadoHDR == EstadoHDREnum.Asignada)
                             && codParadasSet.Contains(h.CodigoParada))
                 .ToList();
 
@@ -101,7 +101,7 @@ namespace Grupo_E.GestionarOmnibus
                 .ToList();
 
             // Capacidad máxima del ómnibus
-            var capacidadXL = CapacidadMaximaXLPorArrendamiento(omni.Tipo);
+           // var capacidadXL = CapacidadMaximaXLPorArrendamiento(omni.Tipo);
 
             // validaciones a cumplir:
             //  Estado Admitida
@@ -115,11 +115,11 @@ namespace Grupo_E.GestionarOmnibus
                 .ToList();
 
             // Selección por capacidad con prioridad por FechaImposicion
-            var seleccionadas = SeleccionarPorCapacidad(candidatas, capacidadXL);
+           // var seleccionadas = SeleccionarPorCapacidad(candidatas, capacidadXL);
 
 
             var resultado = new List<EncomiendasASubir>();
-            foreach (var e in seleccionadas.OrderBy(x => x.FechaImposicion))
+            foreach (var e in candidatas.OrderBy(x => x.FechaImposicion))
             {
                 var hdr = hdrsServicio.FirstOrDefault(h => (h.Encomiendas ?? new List<string>())
                                                            .Any(n => n.ToString() == e.Tracking));
@@ -194,11 +194,13 @@ namespace Grupo_E.GestionarOmnibus
             var bajarSet = EncomiendasABajar;
             var subirSet = EncomiendasASubir;
             var trackingsBajar = bajarSet.Select(e => e.Tracking).ToList();
+            var hdrBajar = bajarSet.Select(e => e.IdHdr).ToList();
             var trackingsSubir = subirSet.Select(e => e.Tracking).ToList();
+            var hdrSubir = subirSet.Select(e => e.IdHdr).ToList();
 
             foreach (var tracking in trackingsBajar)
             {
-                //tengo que ir al almacen de HDr comparo las listas de encomiendas con mi tracking sicoincide lo tomo a esa hdr y hago el cambio de estado a cumplida
+                 
                 var encomienda = EncomiendaAlmacen.Encomienda.FirstOrDefault(e => e.Tracking == tracking);
                 if (encomienda != null)
                 {
@@ -210,18 +212,68 @@ namespace Grupo_E.GestionarOmnibus
                             FechaPrevia = DateTime.Now,
                             UbicacionPrevia = encomienda.CodCDActual,
                         });
-                    encomienda.Estado = !string.IsNullOrEmpty(encomienda.DireccionDestinatario)
-                                     ? EstadoEncomiendaEnum.PendienteEntregaDomicilio
-                                     :!string.IsNullOrEmpty(encomienda.AgenciaDestino)
-                                     ? EstadoEncomiendaEnum.PendienteEntregaAgencia
-                                     :EstadoEncomiendaEnum.PendienteRetiroCD;
 
-                    encomienda.CodCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
+                    if(encomienda.CodCentroDistribucionDestino == CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD )
+                    {
+                        encomienda.Estado = !string.IsNullOrEmpty(encomienda.DireccionDestinatario)
+                                     ? EstadoEncomiendaEnum.PendienteEntregaDomicilio
+                                     : !string.IsNullOrEmpty(encomienda.AgenciaDestino)
+                                     ? EstadoEncomiendaEnum.PendienteEntregaAgencia
+                                     : EstadoEncomiendaEnum.PendienteRetiroCD;
+
+                    }
+                    else
+                    {
+                        encomienda.Estado = EstadoEncomiendaEnum.EnTransitoUMDestino;
+                    }
+
+
+                        encomienda.CodCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
                 }
             }
+            foreach (var numeroHDR in hdrBajar)
+            {
+                var hdr = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
+                    .FirstOrDefault(h => h.NumeroHDRMD.ToString() == numeroHDR);
+                if (hdr != null)
+                {
+                    hdr.estadoHDR = EstadoHDREnum.Cumplida;
+                }
+            }
 
+            foreach (var tracking in trackingsSubir)
+            {
+                var encomienda = EncomiendaAlmacen.Encomienda.FirstOrDefault(e => e.Tracking == tracking);
+                if (encomienda != null)
+                {
+                    encomienda.HistorialCambios
+                        .Add(new Historial
+                        {
+                            Tracking = encomienda.Tracking,
+                            EstadoPrevio = encomienda.Estado,
+                            FechaPrevia = DateTime.Now,
+                            UbicacionPrevia = encomienda.CodCDActual,
+                        });
+                    if(encomienda.CodCentroDistribucionOrigen == CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD )
+                    {
+                        encomienda.Estado = EstadoEncomiendaEnum.EnTransitoMD;
+                    }
 
+                    encomienda.CodCDActual = null;
+                }
+            }
+            foreach (var numeroHDR in hdrSubir)
+            {
+                var hdr = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
+                    .FirstOrDefault(h => h.NumeroHDRMD.ToString() == numeroHDR);
+                if (hdr != null)
+                {
+                    hdr.estadoHDR = EstadoHDREnum.EnTransito;
+                }
+            }
+
+            return true;
         }
     }
 }

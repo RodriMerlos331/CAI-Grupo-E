@@ -25,7 +25,7 @@ namespace Grupo_E.Almacenes
         public string AgenciaDestino { get; set; }
         public string DatosRetiroADomicilio { get; set; }
         public string CodCDActual { get; set; }
-        public List<int> ParadasRuta { get; set; }
+        public List<int> ParadasRuta { get; set; } 
 
         //esto no podría ir directamente en historial??
         public DateTime FechaImposicion { get; set; }
