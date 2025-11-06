@@ -34,7 +34,8 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 
             var trackingId = txtIdTracking.Text;
 
-          
+            Historial.Items.Clear();
+
 
             if (modelo.data.ContainsKey(trackingId))
             {

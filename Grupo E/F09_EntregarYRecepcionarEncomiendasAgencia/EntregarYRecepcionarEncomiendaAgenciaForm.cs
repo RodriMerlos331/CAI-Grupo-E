@@ -42,7 +42,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
             }
 
             int dni;
-            
+
 
             if (!int.TryParse(DNITxt.Text.Trim(), out dni))
             {
@@ -52,22 +52,9 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                 return;
             }
 
-            var result = modelo.ObtenerListasParaForm(dni);
-            var aEntregar = result.Item1;
-            var aRecibir = result.Item2;
+         
 
-            GuiasAEntregarListView.Items.Clear();
-            GuiasARecibirListView.Items.Clear();
-
-            foreach (var enc in aEntregar)
-                if (!string.IsNullOrWhiteSpace(enc.Tracking))
-                    GuiasAEntregarListView.Items.Add(new ListViewItem(enc.Tracking.Trim()));
-
-            foreach (var enc in aRecibir)
-                if (!string.IsNullOrWhiteSpace(enc.Tracking))
-                    GuiasARecibirListView.Items.Add(new ListViewItem(enc.Tracking.Trim()));
-
-            /*foreach (KeyValuePair<int, GuiaDeEncomiendas> numGuia in modelo.data)
+            foreach (KeyValuePair<int, GuiaDeEncomiendas> numGuia in modelo.data)
             {
                 GuiaDeEncomiendas guia = numGuia.Value;
 
@@ -84,7 +71,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                             new ListViewItem(guia.TrackingId.ToString()));
                     }
                 }
-            }*/
+            }
         }
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
@@ -97,51 +84,22 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
 
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
-            var aEntregar = GuiasAEntregarListView.Items
-                 .Cast<ListViewItem>()
-                 .Select(i => (i.Text ?? "").Trim())
-                 .Where(t => t.Length > 0)
-                 .ToList();
+            
 
-            var aRecibir = GuiasARecibirListView.Items
-                .Cast<ListViewItem>()
-                .Select(i => (i.Text ?? "").Trim())
-                .Where(t => t.Length > 0)
-                .ToList();
-
-            var result = modelo.ConfirmarCambiosDesdeListas(aEntregar, aRecibir);
-            int aEnTransitoUMOrigen = result.Item1;
-            int aPendienteRetiroAgencia = result.Item2;
-
-            GuiasAEntregarListView.Items.Clear();
-            GuiasARecibirListView.Items.Clear();
-            DNITxt.Clear();
-            DNITxt.Focus();
-
-            MessageBox.Show(
-            $"Actualizadas {aEnTransitoUMOrigen} a EnTransitoUMOrigen y {aPendienteRetiroAgencia} a PendienteRetiroAgencia.",
-            "Operación completada",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
-
-
-
-
-
-            /*   foreach (ListViewItem item in GuiasAEntregarListView.Items)
+             foreach (ListViewItem item in GuiasAEntregarListView.Items)
                {
                    int trackingId = int.Parse(item.Text);
-                   //modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.ImpuestaPendienteRetiroAgencia;
+                   modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.ImpuestaPendienteRetiroAgencia;
                }
 
                foreach (ListViewItem item in GuiasARecibirListView.Items)
                {
 
                    int trackingId = int.Parse(item.Text);
-                   //modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.PendienteRetiroAgencia;
+                   modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.PendienteRetiroAgencia;
 
                }
-            */
+            
         }
     }
 }

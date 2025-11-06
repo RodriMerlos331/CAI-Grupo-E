@@ -13,116 +13,97 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 {
 	internal class EntregaYRecepcionEncomiendaAgenciaModel
 	{
-        private static string Norm(string s) => (s ?? "").Trim().ToUpperInvariant();
+        public readonly Dictionary<int, GuiaDeEncomiendas> data;
 
-        public Tuple<List<EncomiendaEntidad>, List<EncomiendaEntidad>> ObtenerListasParaForm(int dni)
+        public EntregaYRecepcionEncomiendaAgenciaModel()
         {
-            // Validar fletero
-            var fleteros = FleteroAlmacen.Fletero ?? new List<FleteroEntidad>();
-            var fletero = fleteros.FirstOrDefault(f => f.DniFletero == dni);
-            if (fletero == null)
+            var f1 = new Fletero { Nombre = "Juan", Apellido = "López", DNI = 20111222 };
+            var f2 = new Fletero { Nombre = "Sofía", Apellido = "Martínez", DNI = 30999888 };
+
+            data = new Dictionary<int, GuiaDeEncomiendas>
             {
-                MessageBox.Show("No existe un fletero registrado con ese DNI.", "Atención",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return Tuple.Create(new List<EncomiendaEntidad>(), new List<EncomiendaEntidad>());
-            }
-
-            /*
-           // Validar agencia actual
-            var agencia = AgenciaAlmacen.AgenciaActual;
-            if (agencia == null)
-            {
-                MessageBox.Show("No hay una Agencia Actual seleccionada.", "Atención",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return Tuple.Create(new List<EncomiendaEntidad>(), new List<EncomiendaEntidad>());
-            }
-            var nomAgencia = Norm(agencia.NombreAgencia); */
-
-            // HDR donde el fletero este asignado saco los trackings trackings
-            var hdrs = HDRDistribucionUMAlmacen.HDRDistribucionUM ?? new List<HDRDistribucionUMEntidad>();
-            var trackings = hdrs
-                .Where(h => h.DniFleteroAsignado == dni)
-                .SelectMany(h => h.Encomiendas ?? Enumerable.Empty<string>())
-                .Where(t => !string.IsNullOrWhiteSpace(t))
-                .Select(t => t.Trim())
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .ToList();
-
-            if (trackings.Count == 0)
-                return Tuple.Create(new List<EncomiendaEntidad>(), new List<EncomiendaEntidad>());
-
-            // hago el Join con Encomiendas para comparar aquellas encomiedas que si tengo asigandas y traigo entidades en lugar de strings
-            var encomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
-            var set = new HashSet<string>(trackings, StringComparer.OrdinalIgnoreCase);
-            var delFletero = encomiendas
-                .Where(e => !string.IsNullOrWhiteSpace(e.Tracking) && set.Contains(e.Tracking.Trim()))
-                .ToList();
-
-            //  Filtrar por agencia y estado
-            var aEntregar = delFletero
-                .Where(e =>
-                    //Norm(e.AgenciaOrigen) == nomAgencia &&
-                    e.Estado == EstadoEncomiendaEnum.RuteadaRetiroAgencia)
-                .ToList();
-
-            var aRecibir = delFletero
-                .Where(e =>
-                    //Norm(e.AgenciaDestino) == nomAgencia &&
-                    e.Estado == EstadoEncomiendaEnum.PendienteEntregaAgencia)
-                .ToList();
-
-            return Tuple.Create(aEntregar, aRecibir);
-        }
-
-        public Tuple<int, int> ConfirmarCambiosDesdeListas(IEnumerable<string> trackingsAEntregar, IEnumerable<string> trackingsARecibir)
-        {
-            int aEnTransitoUMOrigen = 0;
-            int aPendienteRetiroAgencia = 0;
-
-            var encomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
-
-            var aEntregarKeys = (trackingsAEntregar ?? Enumerable.Empty<string>())
-                .Where(t => !string.IsNullOrWhiteSpace(t))
-                .Select(t => t.Trim())
-                .ToHashSet(StringComparer.OrdinalIgnoreCase);
-
-            var aRecibirKeys = (trackingsARecibir ?? Enumerable.Empty<string>())
-                .Where(t => !string.IsNullOrWhiteSpace(t))
-                .Select(t => t.Trim())
-                .ToHashSet(StringComparer.OrdinalIgnoreCase);
-
-            foreach (var enc in encomiendas)
-            {
-                var tk = (enc.Tracking ?? "").Trim();
-                if (tk.Length == 0) continue;
-
-                if (aEntregarKeys.Contains(tk) &&
-                    enc.Estado == EstadoEncomiendaEnum.RuteadaRetiroAgencia)
+                [1001] = new GuiaDeEncomiendas
                 {
-                    enc.Estado = EstadoEncomiendaEnum.EnTransitoUMOrigen;
-                    aEnTransitoUMOrigen++;
-                }
-                else if (aRecibirKeys.Contains(tk) &&
-                         enc.Estado == EstadoEncomiendaEnum.PendienteEntregaAgencia)
+                    TrackingId = 1001,
+                    EstadoEnvio = EstadoDeEnvio.RuteadaRetiroAgencia,
+                    CUIT = "20-42296338-4",
+                    NombreDestinatario = "Roberto",
+                    ApellidoDestinatario = "Gonzales",
+                    DNIDestinatario = 40943084,
+                    LocalidadDestino = "Córdoba Capital",
+                    AgenciaDestino = "Patio Olmo",
+                    TamañoBulto = "XL",
+                    FleteroAsignado = f1
+                },
+                [1002] = new GuiaDeEncomiendas
                 {
-                    enc.Estado = EstadoEncomiendaEnum.PendienteRetiroAgencia;
-                    aPendienteRetiroAgencia++;
-                }
-            }
+                    TrackingId = 1002,
+                    EstadoEnvio = EstadoDeEnvio.RuteadaEntregaAgencia,
+                    CUIT = "30-12345678-9",
+                    NombreDestinatario = "María",
+                    ApellidoDestinatario = "Pérez",
+                    DNIDestinatario = 30123456,
+                    LocalidadDestino = "Córdoba Capital",
+                    AgenciaDestino = "Patio Olmo",
+                    TamañoBulto = "M",
+                    FleteroAsignado = f1
+                },
+                [1003] = new GuiaDeEncomiendas
+                {
+                    TrackingId = 1003,
+                    EstadoEnvio = EstadoDeEnvio.RuteadaRetiroAgencia,
+                    CUIT = "27-87654321-0",
+                    NombreDestinatario = "Diego",
+                    ApellidoDestinatario = "Ramírez",
+                    DNIDestinatario = 28999888,
+                    LocalidadDestino = "Córdoba Capital",
+                    AgenciaDestino = "Patio Olmo",
+                    TamañoBulto = "L",
+                    FleteroAsignado = f2
+                },
+                [1004] = new GuiaDeEncomiendas
+                {
+                    TrackingId = 1004,
+                    EstadoEnvio = EstadoDeEnvio.RuteadaEntregaAgencia,
+                    CUIT = "23-11223344-5",
+                    NombreDestinatario = "Lucía",
+                    ApellidoDestinatario = "Suárez",
+                    DNIDestinatario = 37222111,
+                    LocalidadDestino = "Córdoba Capital",
+                    AgenciaDestino = "Patio Olmo",
+                    TamañoBulto = "S",
+                    FleteroAsignado = f2
+                },
+                [1005] = new GuiaDeEncomiendas
+                {
+                    TrackingId = 1005,
+                    EstadoEnvio = EstadoDeEnvio.RuteadaEntregaAgencia,
+                    CUIT = "20-99887766-3",
+                    NombreDestinatario = "Ana",
+                    ApellidoDestinatario = "Domínguez",
+                    DNIDestinatario = 33888777,
+                    LocalidadDestino = "Córdoba Capital",
+                    AgenciaDestino = "Patio Olmo",
+                    TamañoBulto = "XL",
+                    FleteroAsignado = f1
+                },
+                [1006] = new GuiaDeEncomiendas
+                {
+                    TrackingId = 1006,
+                    EstadoEnvio = EstadoDeEnvio.RuteadaRetiroAgencia,
+                    CUIT = "30-44556677-0",
+                    NombreDestinatario = "Carlos",
+                    ApellidoDestinatario = "Gómez",
+                    DNIDestinatario = 31222333,
+                    LocalidadDestino = "Córdoba Capital",
+                    AgenciaDestino = "Patio Olmo",
+                    TamañoBulto = "M",
+                    FleteroAsignado = f1
+                },
 
-            try
-            {
-                EncomiendaAlmacen.Grabar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo grabar el archivo de encomiendas.\n" + ex.Message,
-                    "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-            return Tuple.Create(aEnTransitoUMOrigen, aPendienteRetiroAgencia);
+
+            };
         }
-
-
     }
 }
