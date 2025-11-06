@@ -25,9 +25,9 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
         internal bool ValidarCUIT(string cuit)
         {
-            if (!Regex.IsMatch(cuit, @"^\d{2}-\d{8}-\d{2}$"))
+            if (!Regex.IsMatch(cuit, @"^\d{1,2}-\d{8}-\d{1,2}$"))
             {
-                MessageBox.Show("El CUIT debe tener el formato 00-00000000-00", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El CUIT debe tener el formato X-00000000-X, XX-00000000-X, X-00000000-XX o XX-00000000-XX", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
