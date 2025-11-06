@@ -8,10 +8,10 @@ namespace Grupo_E.Almacenes
 {
   public enum TipoBultoEnum
         {
-            S,
-            M,
-            L,
-            XL
+            S,//0
+            M, //1
+            L, //2
+            XL //3
         }
     
 }
