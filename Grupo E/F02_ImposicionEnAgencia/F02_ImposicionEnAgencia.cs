@@ -186,7 +186,8 @@ namespace Grupo_E.ImposicionEnAgencia
                     CuitText.Text,
                     DatosEntregaDomiclioText.Text,
                     TamanoBultoCbo.SelectedItem?.ToString(),
-                    DatosDestinatarioText.Text
+                    DatosDestinatarioText.Text,
+                    LocalidadCbo.SelectedItem?.ToString()
                 );
             }
             else if (AgenciaRb.Checked)

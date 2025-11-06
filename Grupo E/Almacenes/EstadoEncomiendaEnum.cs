@@ -44,8 +44,3 @@ namespace Grupo_E.Almacenes
         Entregada,
         Cancelada
         */
-5 Admitida-- donde se genera DatosFacturacion rendicionFletero (GestionarFletero despues de aceptar)
-Acá se asigna a una HDR de MD con EnCDDestino
-6 EnTransitoMD  omnibus (GEstionarOminbus dsp de aceptar) - aparace en encomiendas a subir
-7 PendienteRetiroEnCD  omnibus (GEstionarOminbus dsp de aceptar) - aparace en encomiendas a bajar
-12 Entragada - RetirarEnCd - dsp de entregarEncomienda
