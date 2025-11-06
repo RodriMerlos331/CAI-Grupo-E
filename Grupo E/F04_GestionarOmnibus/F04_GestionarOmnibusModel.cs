@@ -98,7 +98,7 @@ namespace Grupo_E.GestionarOmnibus
             // Estados de HDR válidos para embarcar
             var codParadasSet = paradas.Select(p => p.CodigoParada).ToHashSet();
             var hdrsServicio = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
-                .Where(h => (h.estadoHDR == EstadoHDREnum.Asignada || h.estadoHDR == EstadoHDREnum.EnTransito)
+                .Where(h => (h.estadoHDR == EstadoHDREnum.Asignada)
                             && codParadasSet.Contains(h.CodigoParada))
                 .ToList();
 

@@ -2,9 +2,16 @@
   {
     "NumeroHDRMD": 111,
     "estadoHDR": "EnTransito",
-    "Encomiendas": [ "CD01_10001", "CD01_20002" ],
+    "Encomiendas": [ "CD01_10001" ],
     "CodigoParada": 100,
-    "Destino": "Rosario"
+    "Destino": "Constitucion"
+  },
+  {
+    "NumeroHDRMD": 112,
+    "estadoHDR": "Asignada",
+    "Encomiendas": [ "CD01_20002" ],
+    "CodigoParada": 300,
+    "Destino": "Moron"
   },
   {
     "NumeroHDRMD": 5002,

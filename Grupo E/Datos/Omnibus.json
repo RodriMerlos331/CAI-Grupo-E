@@ -28,8 +28,17 @@
         "HoraLlegada": "2025-11-15T08:00:00",
         "HoraSalida": "2025-11-15T08:30:00",
         "HDRDistribucionMD": [ 111 ],
-        "ABajar": [ "CD01_10001" ], 
-        "ASubir": [ "CD01_20002" ] 
+        "ABajar": [ "CD01_10001" ],
+        "ASubir": [null ]
+      },
+      {
+        "CodigoCD": "CD01",
+        "CodigoParada": 300,
+        "HoraLlegada": "2025-11-15T08:00:00",
+        "HoraSalida": "2025-11-15T08:30:00",
+        "HDRDistribucionMD": [ 112 ],
+        "ABajar": [ null ],
+        "ASubir": [ "CD01_20002" ]
       }
     ]
   }
