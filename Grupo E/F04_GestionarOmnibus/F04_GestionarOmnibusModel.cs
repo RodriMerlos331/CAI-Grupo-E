@@ -16,9 +16,9 @@ namespace Grupo_E.GestionarOmnibus
         private Dictionary<string, List<EncomiendasASubir>> EncomiendasAEntregarPorPatente = new Dictionary<string, List<EncomiendasASubir>>();
 
 
-        
+
         // Conversión de tipo de bulto a equivalentes XL
-        
+
         private decimal EquivalenteXL(TipoBultoEnum tipo)
         {
             switch (tipo)
@@ -44,9 +44,9 @@ namespace Grupo_E.GestionarOmnibus
             }
         }
 
-        
+
         //  Selección por capacidad (prioriza por fecha de imposición)
-        
+
         private List<EncomiendaEntidad> SeleccionarPorCapacidad(List<EncomiendaEntidad> candidatas, decimal capacidadXL)
         {
             var seleccionadas = new List<EncomiendaEntidad>();
@@ -86,7 +86,7 @@ namespace Grupo_E.GestionarOmnibus
 
             // Paradas del servicio para el CD actual
             var paradas = omni.Paradas.Where(p => p.CodigoCD == cdActual).ToList();
-            
+
 
             // Estados de HDR válidos para embarcar
             var codParadasSet = paradas.Select(p => p.CodigoParada).ToList();
@@ -117,7 +117,7 @@ namespace Grupo_E.GestionarOmnibus
             // Selección por capacidad con prioridad por FechaImposicion
             var seleccionadas = SeleccionarPorCapacidad(candidatas, capacidadXL);
 
-           
+
             var resultado = new List<EncomiendasASubir>();
             foreach (var e in seleccionadas.OrderBy(x => x.FechaImposicion))
             {
@@ -184,11 +184,44 @@ namespace Grupo_E.GestionarOmnibus
 
             return resultado.Count > 0 ? resultado : null;
 
-            
+
         }
 
-        
+
+        internal bool AceptarGestionOmnibus(List<EncomiendasASubir> EncomiendasASubir, List<EncomiendasABajar> EncomiendasABajar)
+        {
+
+            var bajarSet = EncomiendasABajar;
+            var subirSet = EncomiendasASubir;
+            var trackingsBajar = bajarSet.Select(e => e.Tracking).ToList();
+            var trackingsSubir = subirSet.Select(e => e.Tracking).ToList();
+
+            foreach (var tracking in trackingsBajar)
+            {
+                //tengo que ir al almacen de HDr comparo las listas de encomiendas con mi tracking sicoincide lo tomo a esa hdr y hago el cambio de estado a cumplida
+                var encomienda = EncomiendaAlmacen.Encomienda.FirstOrDefault(e => e.Tracking == tracking);
+                if (encomienda != null)
+                {
+                    encomienda.HistorialCambios 
+                        .Add(new Historial
+                        {
+                            Tracking = encomienda.Tracking,
+                            EstadoPrevio = encomienda.Estado,
+                            FechaPrevia = DateTime.Now,
+                            UbicacionPrevia = encomienda.CodCDActual,
+                        });
+                    encomienda.Estado = !string.IsNullOrEmpty(encomienda.DireccionDestinatario)
+                                     ? EstadoEncomiendaEnum.PendienteEntregaDomicilio
+                                     :!string.IsNullOrEmpty(encomienda.AgenciaDestino)
+                                     ? EstadoEncomiendaEnum.PendienteEntregaAgencia
+                                     :EstadoEncomiendaEnum.PendienteRetiroCD;
+
+                    encomienda.CodCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
+
+                }
+            }
 
 
+        }
     }
 }
