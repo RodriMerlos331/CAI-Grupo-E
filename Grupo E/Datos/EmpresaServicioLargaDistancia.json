@@ -25,6 +25,17 @@
       }
 
     ]
+  },
+  {
+    "CuitEmpresaOmnibus": "30-11111111-1",
+    "RazonSocial": "Flechabus S.A.",
+    "Arrendamientos": [
+      {
+        "Tipo": "A",
+        "Costo": 80000.00,
+        "Mes": "2025-10-01T00:00:00"
+      }
+    ]
   }
 
 ]

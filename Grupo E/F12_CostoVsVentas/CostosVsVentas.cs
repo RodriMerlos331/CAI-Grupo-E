@@ -13,70 +13,93 @@ namespace FormResultadoCostoVsVentas
 {
     public partial class FormResultadoCostoVsVentas : Form
     {
-        private readonly CostosVsVentasModel modelo = new CostosVsVentasModel();
+        private readonly CostosVsVentasModel _modelo = new CostosVsVentasModel();
 
         public FormResultadoCostoVsVentas()
         {
             InitializeComponent();
         }
 
+        private void FormResultadoCostoVsVentas_Load(object sender, EventArgs e)
+        {
+            // Limito las fechas al día de hoy y dejo todo inicializado en "hoy"
+            dtpFechaInicial.MaxDate = DateTime.Today;
+            dtpFechaFinal.MaxDate = DateTime.Today;
+
+            dtpFechaInicial.Value = DateTime.Today;
+            dtpFechaFinal.Value = DateTime.Today;
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            ActualizarCamposResultado(new ResultadoCostosVentas());
+            string cuit = txtCuit.Text.Trim();
 
-            // Errores de Formato/Rango (Nivel 1 y 2) -> ADVERTENCIA
-
-            if (string.IsNullOrWhiteSpace(txtCuit.Text))
+            // --- Validaciones de front ---
+            if (string.IsNullOrWhiteSpace(cuit))
             {
-                MessageBox.Show("Debe ingresar un CUIT válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Debe ingresar un CUIT.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                txtCuit.Focus();
                 return;
             }
 
-            if (!ValidarFormatoCuit(txtCuit.Text))
+            if (!ValidarFormatoCuit(cuit))
             {
-                MessageBox.Show("Debe ingresar un CUIT válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Debe ingresar un CUIT válido con formato XX-XXXXXXXX-X.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                txtCuit.Focus();
                 return;
             }
 
-            if (dtpFechaInicial.Value.Date > dtpFechaFinal.Value.Date)
+            DateTime fechaDesde = dtpFechaInicial.Value.Date;
+            DateTime fechaHasta = dtpFechaFinal.Value.Date;
+
+            if (fechaDesde > fechaHasta)
             {
-                MessageBox.Show("Debe ingresar un rango de fechas válidas. La fecha inicial no puede ser posterior a la final.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "La fecha inicial no puede ser posterior a la fecha final.",
+                    "Error de validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                dtpFechaInicial.Focus();
                 return;
             }
 
-            var query = new Datos
-            {
-                Cuit = txtCuit.Text,
-                FechaInicial = dtpFechaInicial.Value.Date,
-                FechaFinal = dtpFechaFinal.Value.Date
-            };
-
+            // --- Llamada al modelo ---
             try
             {
-                var resultado = modelo.Consultar(query);
+                var query = new Datos
+                {
+                    Cuit = cuit,
+                    FechaInicial = fechaDesde,
+                    FechaFinal = fechaHasta
+                };
+
+                ResultadoCostosVentas resultado = _modelo.Consultar(query);
+
+                // Muestro en la pantalla
                 ActualizarCamposResultado(resultado);
             }
             catch (Exception ex)
             {
-                // Errores de Datos/Negocio (Nivel 4) -> ERROR CRÍTICO
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+                MessageBox.Show(
+                    ex.Message,
+                    "Error en la consulta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
 
-        private bool ValidarFormatoCuit(string cuit)
-        {
-            if (cuit.Length != 13 || !cuit.Contains("-"))
-            {
-                return false;
+                // Si hubo error, limpio el resultado
+                ActualizarCamposResultado(new ResultadoCostosVentas());
             }
-            return true;
-        }
-
-        private void ActualizarCamposResultado(ResultadoCostosVentas resultado)
-        {
-            txtNombreEmpresa.Text = resultado.NombreEmpresa;
-            txtTotalCostos.Text = (resultado.TotalCostos != 0) ? resultado.TotalCostos.ToString("C2") : string.Empty;
-            txtTotalVentas.Text = (resultado.TotalVentas != 0) ? resultado.TotalVentas.ToString("C2") : string.Empty;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -84,25 +107,50 @@ namespace FormResultadoCostoVsVentas
             txtCuit.Clear();
             dtpFechaInicial.Value = DateTime.Today;
             dtpFechaFinal.Value = DateTime.Today;
+
             ActualizarCamposResultado(new ResultadoCostosVentas());
+            txtCuit.Focus();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void FormResultadoCostoVsVentas_Load(object sender, EventArgs e)
+        // Validación simple de CUIT (formato XX-XXXXXXXX-X, 13 caracteres y 2 guiones)
+        private bool ValidarFormatoCuit(string cuit)
         {
-            dtpFechaInicial.MaxDate = DateTime.Today;
-            dtpFechaFinal.MaxDate = DateTime.Today;
+            if (string.IsNullOrWhiteSpace(cuit))
+                return false;
 
-            if (dtpFechaFinal.Value.Date > DateTime.Today)
+            if (cuit.Length != 13)
+                return false;
+
+            int guiones = 0;
+            foreach (char c in cuit)
             {
-                dtpFechaFinal.Value = DateTime.Today;
+                if (c == '-')
+                    guiones++;
             }
+
+            return guiones == 2;
         }
 
+        // Pinta los resultados en los TextBox de la sección "Resultado"
+        private void ActualizarCamposResultado(ResultadoCostosVentas resultado)
+        {
+            txtNombreEmpresa.Text = resultado.NombreEmpresa;
+
+            txtTotalCostos.Text = resultado.TotalCostos != 0m
+                ? resultado.TotalCostos.ToString("C2")
+                : string.Empty;
+
+            txtTotalVentas.Text = resultado.TotalVentas != 0m
+                ? resultado.TotalVentas.ToString("C2")
+                : string.Empty;
+        }
+
+        // Handler generado por el diseñador; lo dejamos vacío
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
         }

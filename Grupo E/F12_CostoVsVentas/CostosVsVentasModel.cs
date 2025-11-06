@@ -1,91 +1,95 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Grupo_E.Almacenes;
 
 namespace Grupo_E.F12_CostoVsVentas
 {
     internal class CostosVsVentasModel
     {
+        /// <summary>
+        /// Punto de entrada desde el Form.
+        /// Valida el CUIT, busca la empresa y calcula costos/ventas en el rango de fechas.
+        /// </summary>
         internal ResultadoCostosVentas Consultar(Datos query)
         {
-            (bool existe, string nombre) = BuscarEmpresa(query.Cuit);
-            if (!existe)
-            {
-                throw new Exception("No se encontró ninguna empresa con el CUIT ingresado.");
-            }
+            if (query == null)
+                throw new ArgumentNullException(nameof(query));
 
-            (decimal costos, decimal ventas) = ObtenerTotales(query.Cuit, query.FechaInicial, query.FechaFinal);
+            // 1) Buscar la empresa de servicios de larga distancia asociada al CUIT
+            EmpresaServicioLargaDistanciaEntidad empresa = BuscarEmpresaPorCuit(query.Cuit);
 
-            if (costos == 0m && ventas == 0m)
-            {
-                throw new Exception("No se encontraron registros para la empresa en el rango seleccionado.");
-            }
+            if (empresa == null)
+                throw new Exception("No se encontró ninguna empresa de larga distancia con el CUIT ingresado.");
+
+            // 2) Verificar que haya al menos un ómnibus con ese CUIT en OmnibusAlmacen
+            bool tieneOmnibus = (OmnibusAlmacen.Omnibus ?? new List<OmnibusEntidad>())
+                .Any(o => o.CuitEmpresaOmnibus == query.Cuit);
+
+            if (!tieneOmnibus)
+                throw new Exception("No hay ómnibus asociados a la empresa seleccionada.");
+
+            // 3) Calcular Costos y Ventas en el rango de fechas
+            (decimal totalCostos, decimal totalVentas) =
+                CalcularCostosYVentas(empresa, query.FechaInicial.Date, query.FechaFinal.Date);
 
             return new ResultadoCostosVentas
             {
-                NombreEmpresa = nombre,
-                TotalCostos = costos,
-                TotalVentas = ventas
+                NombreEmpresa = empresa.RazonSocial,
+                TotalCostos = totalCostos,
+                TotalVentas = totalVentas
             };
         }
 
-        private (bool Existe, string Nombre) BuscarEmpresa(string cuit)
+        /// <summary>
+        /// Obtiene la empresa de larga distancia por CUIT leyendo el almacén
+        /// EmpresaServicioLargaDistanciaAlmacen.
+        /// </summary>
+        private EmpresaServicioLargaDistanciaEntidad BuscarEmpresaPorCuit(string cuit)
         {
-            switch (cuit)
-            {
-                case "20-12345678-0":
-                    return (true, "Empresa Ejemplo S.A.");
-                case "30-11111111-1":
-                    return (true, "Nueva Empresa S.R.L.");
-                case "20-55555555-5":
-                    return (true, "Inversiones S.A.");
-                default:
-                    return (false, string.Empty);
-            }
+            var empresas = EmpresaServicioLargaDistanciaAlmacen.EmpresaServicioLargaDistancia
+                           ?? new List<EmpresaServicioLargaDistanciaEntidad>();
+
+            return empresas.FirstOrDefault(e => e.CuitEmpresaOmnibus == cuit);
         }
 
-        private (decimal Costos, decimal Ventas) ObtenerTotales(string cuit, DateTime fIni, DateTime fFin)
+        /// <summary>
+        /// Calcula:
+        /// - Costos: suma de los arrendamientos de la empresa en el rango [fechaDesde, fechaHasta].
+        /// - Ventas: suma del PrecioTotalEncomienda de las encomiendas entregadas en el mismo rango.
+        ///   Para las ventas se usa EncomiendaAlmacen + EncomiendaEntidad.EncomiendaFactura.
+        /// </summary>
+        private (decimal costos, decimal ventas) CalcularCostosYVentas(
+            EmpresaServicioLargaDistanciaEntidad empresa,
+            DateTime fechaDesde,
+            DateTime fechaHasta)
         {
-            var registros = new List<(string Cuit, DateTime Inicio, DateTime Fin, decimal Costo, decimal Venta)>();
+            decimal costos = 0m;
+            decimal ventas = 0m;
 
-
-            DateTime p1_inicio = new DateTime(2025, 1, 15);
-            DateTime p1_fin = new DateTime(2025, 3, 31);
-
-            DateTime p2_inicio = new DateTime(2025, 4, 5);
-            DateTime p2_fin = new DateTime(2025, 6, 30);
-
-            DateTime p3_inicio = new DateTime(2025, 7, 11);
-            DateTime p3_fin = new DateTime(2025, 10, 12);
-
-            registros.Add(("20-12345678-0", p1_inicio, p1_fin, 15000.00m, 28000.00m)); 
-            registros.Add(("20-12345678-0", p2_inicio, p2_fin, 12000.00m, 15000.00m)); 
-            registros.Add(("20-12345678-0", p3_inicio, p3_fin, 23000.00m, 52000.00m)); 
-
-            registros.Add(("30-11111111-1", p1_inicio, p1_fin, 3000.00m, 5000.00m));
-            registros.Add(("30-11111111-1", p2_inicio, p2_fin, 4000.00m, 3000.00m));
-            registros.Add(("30-11111111-1", p3_inicio, p3_fin, 3000.00m, 7000.00m));
-
-            registros.Add(("20-55555555-5", p1_inicio, p1_fin, 20000.00m, 40000.00m));
-            registros.Add(("20-55555555-5", p2_inicio, p2_fin, 25000.00m, 40000.00m));
-            registros.Add(("20-55555555-5", p3_inicio, p3_fin, 30000.00m, 70000.00m));
-
-            decimal costosTotales = 0m;
-            decimal ventasTotales = 0m;
-
-            var resultados = registros.Where(r =>
-                r.Cuit == cuit &&
-                r.Inicio >= fIni &&
-                r.Fin <= fFin
-            ).ToList();
-
-            if (resultados.Any())
+            // --- COSTOS ---
+            // Arrendamientos de la empresa de larga distancia cuyo Mes cae en el rango.
+            if (empresa.Arrendamientos != null)
             {
-                costosTotales = resultados.Sum(r => r.Costo);
-                ventasTotales = resultados.Sum(r => r.Venta);
+                costos = empresa.Arrendamientos
+                    .Where(a => a.Mes.Date >= fechaDesde && a.Mes.Date <= fechaHasta)
+                    .Sum(a => a.Costo);
             }
 
-            return (costosTotales, ventasTotales);
+            // --- VENTAS ---
+            // Encomiendas entregadas en el rango de fechas (uso FechaEntrega) 
+            // y con EncomiendaFactura calculada (PrecioTotalEncomienda).
+            var encomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
+
+            ventas = encomiendas
+                .Where(e =>
+                    e.FechaEntrega.HasValue &&
+                    e.FechaEntrega.Value.Date >= fechaDesde &&
+                    e.FechaEntrega.Value.Date <= fechaHasta &&
+                    e.EncomiendaFactura != null)
+                .Sum(e => e.EncomiendaFactura.PrecioTotalEncomienda);
+
+            return (costos, ventas);
         }
     }
 }
