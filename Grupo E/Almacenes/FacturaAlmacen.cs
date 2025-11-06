@@ -24,6 +24,7 @@ namespace Grupo_E.Almacenes
         public static void Grabar()
         {
             var FacturasJson = JsonConvert.SerializeObject(Facturas);
+            
             File.WriteAllText(@"Datos/Facturas.json", FacturasJson);
         }
     }

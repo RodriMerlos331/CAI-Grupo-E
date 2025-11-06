@@ -48,52 +48,18 @@ namespace Grupo_E.F10_GeneracionDeFacturas
         }
 
 
-        internal List<EncomiendaEntidad> BuscarEncomiendasNoFacturadasPorCUIT(string cuit, List<EncomiendaEntidad> todasLasEncomiendas)
+        internal List<EncomiendaEntidad> BuscarEncomiendasNoFacturadasPorCUIT(string cuit)
         {
-            if (todasLasEncomiendas == null || !todasLasEncomiendas.Any())
-            {
-                MessageBox.Show("No hay encomiendas disponibles para buscar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return new List<EncomiendaEntidad>();
-            }
-
-            string cuitNormalizado = new string(cuit.Where(char.IsDigit).ToArray());
-            DateTime hoy = DateTime.Today;
-            DateTime primerDiaMesActual = new DateTime(hoy.Year, hoy.Month, 1);
-
-            // Encomiendas no facturadas para el CUIT
-            var encomiendasNoFacturadas = todasLasEncomiendas
-                .Where(e =>
-                    !e.Facturada &&
-                    new string(e.CUITCliente.Where(char.IsDigit).ToArray()) == cuitNormalizado
-                ).ToList();
-
-            // De esas, las que cumplen con la fecha
-            var resultado = encomiendasNoFacturadas
-                .Where(e =>
-                    e.FechaEntrega.HasValue &&
-                    e.FechaEntrega.Value.Year > 1900 && // <-- Validación extra
-                    e.FechaEntrega.Value.Date < primerDiaMesActual
-                ).ToList();
-
-
-            if (!resultado.Any())
-            {
-                if (encomiendasNoFacturadas.Any())
-                {
-                    MessageBox.Show("Todas las encomiendas no facturadas para este CUIT tienen fecha de entrega posterior al último día del mes anterior.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No hay encomiendas no facturadas para este CUIT.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-
-            return resultado;
+            var todasLasEncomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
+            // Filtra por CUIT y no facturadas
+            return todasLasEncomiendas
+                .Where(e => e.CUITCliente == cuit && !e.Facturada)
+                .ToList();
         }
 
         internal List<EncomiendaFacturaDTO> PrepararFacturasParaForm(string cuit, List<EncomiendaEntidad> todasLasEncomiendas)
         {
-            var encomiendas = BuscarEncomiendasNoFacturadasPorCUIT(cuit, todasLasEncomiendas);
+            var encomiendas = BuscarEncomiendasNoFacturadasPorCUIT(cuit);
             var resultado = new List<EncomiendaFacturaDTO>();
 
             foreach (var encomienda in encomiendas)
@@ -180,7 +146,6 @@ namespace Grupo_E.F10_GeneracionDeFacturas
             {
                 encomienda.Facturada = true;
             }
-            EncomiendaAlmacen.Grabar();
         }
     }
 

@@ -38,10 +38,10 @@ namespace Grupo_E.GeneracionDeFacturas
             if (!modelo.ValidarCUIT(cuit))
                 return;
 
-            // Siempre toma la lista actualizada del almacén
-            var todasLasEncomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
+            // El modelo obtiene las encomiendas
+            var encomiendasNoFacturadas = modelo.BuscarEncomiendasNoFacturadasPorCUIT(cuit);
 
-            var facturas = modelo.PrepararFacturasParaForm(cuit, todasLasEncomiendas);
+            var facturas = modelo.PrepararFacturasParaForm(cuit, encomiendasNoFacturadas);
 
             listViewFactura.Items.Clear();
 
