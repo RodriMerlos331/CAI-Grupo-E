@@ -40,6 +40,8 @@ namespace Grupo_E.RetirarEnCD
             }
 
             encontrada.Estado = EstadoEncomiendaEnum.Entregada;
+            encontrada.FechaEntrega = DateTime.Now;
+
 
             return true;
         }

@@ -123,7 +123,8 @@ namespace Grupo_E.F10_GeneracionDeFacturas
             string cuitCliente,
             List<string> encomiendasIncluidas,
             decimal subtotal,
-            DateTime? fechaPago
+            DateTime? fechaPago,
+            List<EncomiendaEntidad> todasLasEncomiendas // <-- nuevo parámetro
         )
         {
             if (DatosGeneralesAlmacen.DatosGenerales == null || !DatosGeneralesAlmacen.DatosGenerales.Any())
@@ -144,7 +145,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
             // Cálculo correcto del IVA
             decimal ivaPorcentaje = 0;
             decimal.TryParse(ivaStr, out ivaPorcentaje);
-            ivaPorcentaje = ivaPorcentaje / 100m; // <-- CORRECCIÓN
+            ivaPorcentaje = ivaPorcentaje / 100m; // 
 
             decimal iva = subtotal * ivaPorcentaje;
             decimal total = subtotal + iva;
@@ -173,7 +174,13 @@ namespace Grupo_E.F10_GeneracionDeFacturas
 
             FacturaAlmacen.Facturas.Add(nuevaFactura);
             FacturaAlmacen.Grabar();
-    
+
+            // Marcar encomiendas seleccionadas como facturadas
+            foreach (var encomienda in todasLasEncomiendas.Where(e => encomiendasIncluidas.Contains(e.Tracking)))
+            {
+                encomienda.Facturada = true;
+            }
+            EncomiendaAlmacen.Grabar();
         }
     }
 

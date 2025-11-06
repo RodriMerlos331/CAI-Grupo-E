@@ -128,12 +128,16 @@ namespace Grupo_E.GeneracionDeFacturas
 
             DateTime? fechaPago = null; // O tu lógica si corresponde
 
+            // Obtiene la lista actualizada de encomiendas
+            var todasLasEncomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
+
             // Llama al modelo, que se encarga de buscar los datos generales y crear la factura
             modelo.GenerarFactura(
                 cuitCliente,
                 encomiendasIncluidas,
                 subtotal,
-                fechaPago
+                fechaPago,
+                todasLasEncomiendas // <-- parámetro agregado
             );
 
             MessageBox.Show("La factura se generó correctamente.", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);

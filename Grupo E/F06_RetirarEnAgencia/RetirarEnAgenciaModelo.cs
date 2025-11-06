@@ -42,6 +42,7 @@ namespace Grupo_E.RetirarEnAgencia
             }
 
                 encontrada.Estado = EstadoEncomiendaEnum.Entregada;
+                encontrada.FechaEntrega = DateTime.Now;
 
             return true;
         }
@@ -59,7 +60,7 @@ namespace Grupo_E.RetirarEnAgencia
 
             return encomiendas.Any(e =>
                 e.Tracking == tracking &&
-                e.AgenciaDestino== AgenciaAlmacen.AgenciaActual.CodigoAgencia &&
+                e.AgenciaDestino== AgenciaAlmacen.AgenciaActual.NombreAgencia &&
                 e.Estado == EstadoEncomiendaEnum.PendienteRetiroAgencia
             );
         }
