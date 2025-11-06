@@ -17,10 +17,9 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
         public EntregaYRecepcionEncomiendaAgenciaModel()
         {
-            var f1 = new Fletero { Nombre = "Juan", Apellido = "López", DNI = 20111222 };
-            var f2 = new Fletero { Nombre = "Sofía", Apellido = "Martínez", DNI = 30999888 };
+            
 
-            data = new Dictionary<int, GuiaDeEncomiendas>
+           /* data = new Dictionary<int, GuiaDeEncomiendas>
             {
                 [1001] = new GuiaDeEncomiendas
                 {
@@ -104,6 +103,11 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
 
             };
+
+            */
+
+
+
         }
     }
 }
