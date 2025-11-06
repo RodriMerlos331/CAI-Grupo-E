@@ -36,6 +36,7 @@ namespace Grupo_E.GeneracionDeFacturas
             string cuit = txtCUIT.Text.Trim();
 
             if (!modelo.ValidarCUIT(cuit))
+
                 return;
 
             // El modelo obtiene las encomiendas
@@ -126,7 +127,6 @@ namespace Grupo_E.GeneracionDeFacturas
                           + ParseImporteDecimal(item.SubItems[5].Text);
             }
 
-           
 
             // Llama al modelo, que se encarga de buscar los datos generales y crear la factura
             modelo.GenerarFactura(

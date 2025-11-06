@@ -51,10 +51,29 @@ namespace Grupo_E.F10_GeneracionDeFacturas
         internal List<EncomiendaEntidad> BuscarEncomiendasNoFacturadasPorCUIT(string cuit)
         {
             var todasLasEncomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
-            // Filtra por CUIT y no facturadas
-            return todasLasEncomiendas
+            DateTime primerDiaMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+
+            // Primer filtro: por CUIT y no facturadas
+            var encomiendasFiltradas = todasLasEncomiendas
                 .Where(e => e.CUITCliente == cuit && !e.Facturada)
                 .ToList();
+
+            var encomiendasConFechaValida = encomiendasFiltradas
+                .Where(e => e.FechaEntrega.HasValue && e.FechaEntrega.Value < primerDiaMes)
+                .ToList();
+
+            // Mostrar advertencia solo si hay encomiendas para el CUIT pero ninguna con fecha válida
+            if (!encomiendasConFechaValida.Any())
+            {
+                MessageBox.Show(
+                    "No hay encomiendas con fecha de entrega anterior al primer día del mes corriente.",
+                    "Advertencia",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
+
+            return encomiendasConFechaValida;
         }
 
         internal List<EncomiendaFacturaDTO> PrepararFacturasParaForm(string cuit, List<EncomiendaEntidad> todasLasEncomiendas)
