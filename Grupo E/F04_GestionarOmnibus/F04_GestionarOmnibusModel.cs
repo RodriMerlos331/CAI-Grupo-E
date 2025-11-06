@@ -70,9 +70,6 @@ namespace Grupo_E.GestionarOmnibus
             return seleccionadas;
         }
 
-
-        // Método principal
-
         internal List<EncomiendasASubir> EncomiendasASubir(string patente)
         {
             var pat = (patente ?? "").Trim().ToUpperInvariant();
@@ -106,7 +103,7 @@ namespace Grupo_E.GestionarOmnibus
             // Capacidad máxima del ómnibus
             var capacidadXL = CapacidadMaximaXLPorArrendamiento(omni.Tipo);
 
-            // Pool de candidatas:
+            // validaciones a cumplir:
             //  Estado Admitida
             //  Su ruta contiene alguna parada del servicio
             //  Y su tracking aparece en alguna HDR del servicio
@@ -151,8 +148,7 @@ namespace Grupo_E.GestionarOmnibus
             var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual?.CodigoCD;
 
             // Busco el omnibus con esa patente
-            var omni = OmnibusAlmacen.Omnibus
-                .FirstOrDefault(o => o.Patente.ToUpperInvariant() == pat);
+            var omni = OmnibusAlmacen.Omnibus.FirstOrDefault(o => o.Patente.ToUpperInvariant() == pat);
 
             if (omni == null || string.IsNullOrEmpty(cdActual))
             {
