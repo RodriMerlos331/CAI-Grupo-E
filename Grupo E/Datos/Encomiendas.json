@@ -297,5 +297,28 @@
       "ExtraEntrega": 25.0,
       "PrecioTotalEncomienda": 1675.0
     }
+  },
+  {
+    "Tracking": "TRK-001",
+    "FechaEntrega": "2025-10-10T12:00:00",
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 10000.00,
+      "ExtraRetiro": 0.00,
+      "ExtraAgencia": 500.00,
+      "ExtraEntrega": 0.00,
+      "PrecioTotalEncomienda": 10500.00
+    }
+  },
+  {
+    "Tracking": "TRK-002",
+    "FechaEntrega": "2025-10-20T15:30:00",
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 20000.00,
+      "ExtraRetiro": 0.00,
+      "ExtraAgencia": 0.00,
+      "ExtraEntrega": 0.00,
+      "PrecioTotalEncomienda": 20000.00
+    }
   }
+
 ]

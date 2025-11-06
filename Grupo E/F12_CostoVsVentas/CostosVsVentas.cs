@@ -19,16 +19,22 @@ namespace FormResultadoCostoVsVentas
         {
             InitializeComponent();
         }
-
+        
         private void FormResultadoCostoVsVentas_Load(object sender, EventArgs e)
         {
-            // Limito las fechas al día de hoy y dejo todo inicializado en "hoy"
+            // Dejo que las fechas se excedan del dia de "hoy"
+            dtpFechaInicial.MaxDate = DateTimePicker.MaximumDateTime;
+            dtpFechaFinal.MaxDate = DateTimePicker.MaximumDateTime;
+
+            /* No dejo que las fechas se excedan del dia de "hoy"
             dtpFechaInicial.MaxDate = DateTime.Today;
             dtpFechaFinal.MaxDate = DateTime.Today;
+            */
 
             dtpFechaInicial.Value = DateTime.Today;
             dtpFechaFinal.Value = DateTime.Today;
         }
+        
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
