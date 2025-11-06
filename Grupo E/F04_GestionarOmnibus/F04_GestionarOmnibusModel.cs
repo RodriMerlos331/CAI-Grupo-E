@@ -89,31 +89,27 @@ namespace Grupo_E.GestionarOmnibus
 
             // Paradas del servicio para el CD actual
             var paradas = omni.Paradas.Where(p => p.CodigoCD == cdActual).ToList();
-            if (paradas.Count == 0)
-            {
-                MessageBox.Show("No hay paradas para el CD actual.");
-                return null;
-            }
+            
 
             // Estados de HDR válidos para embarcar
-            var codParadasSet = paradas.Select(p => p.CodigoParada).ToHashSet();
+            var codParadasSet = paradas.Select(p => p.CodigoParada).ToList();
             var hdrsServicio = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
                 .Where(h => (h.estadoHDR == EstadoHDREnum.Asignada || h.estadoHDR == EstadoHDREnum.EnTransito)
                             && codParadasSet.Contains(h.CodigoParada))
                 .ToList();
 
-            // Conjunto de trackings ruteados en alguna HDR del servicio (Encomiendas int -> string)
+            // Conjunto de trackings ruteados en alguna HDR del servicio
             var trackingsRuteados = hdrsServicio
                 .SelectMany(h => (h.Encomiendas ?? new List<string>()).Select(n => n.ToString()))
-                .ToHashSet();
+                .ToList();
 
-            // Capacidad máxima del ómnibus (en equivalentes XL)
+            // Capacidad máxima del ómnibus
             var capacidadXL = CapacidadMaximaXLPorArrendamiento(omni.Tipo);
 
             // Pool de candidatas:
-            //  - Estado Admitida
-            //  - Su ruta contiene alguna parada del servicio
-            //  - Y su tracking aparece en alguna HDR del servicio (validación pedida)
+            //  Estado Admitida
+            //  Su ruta contiene alguna parada del servicio
+            //  Y su tracking aparece en alguna HDR del servicio
             var candidatas = EncomiendaAlmacen.Encomienda
                 .Where(e => e.Estado == EstadoEncomiendaEnum.Admitida
                             && e.ParadasRuta != null
@@ -124,7 +120,7 @@ namespace Grupo_E.GestionarOmnibus
             // Selección por capacidad con prioridad por FechaImposicion
             var seleccionadas = SeleccionarPorCapacidad(candidatas, capacidadXL);
 
-            // Proyección final con IdHdr = la HDR del servicio que contiene ese tracking (primera coincidencia)
+           
             var resultado = new List<EncomiendasASubir>();
             foreach (var e in seleccionadas.OrderBy(x => x.FechaImposicion))
             {
@@ -194,6 +190,9 @@ namespace Grupo_E.GestionarOmnibus
 
             
         }
+
         
+
+
     }
 }
