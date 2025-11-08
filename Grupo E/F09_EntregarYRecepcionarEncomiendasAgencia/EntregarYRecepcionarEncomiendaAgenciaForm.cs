@@ -60,11 +60,14 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
 
                 if (guia.FleteroAsignado == dni)
                 {
+
+                    //EntransitoUM: encomiendas que le doy al fletero y agenciaorigen = agencia actual
                     if (guia.EstadoEnvio == EstadoDeEnvio.RuteadaRetiroAgencia)
                     {
                         GuiasAEntregarListView.Items.Add(
                             new ListViewItem(guia.TrackingId.ToString()));
                     }
+                    //EnTransitoUMDestino: encomienda && agenciadestino = agencia actual
                     else if (guia.EstadoEnvio == EstadoDeEnvio.PendienteEntregaAgencia)
                     {
                         GuiasARecibirListView.Items.Add(
@@ -90,16 +93,19 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                {
                 string trackingId = ""; 
                 modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.ImpuestaPendienteRetiroAgencia;
-               }
+                //Pasa a "RetiradaAgenciaFletero"
+            }
 
-               foreach (ListViewItem item in GuiasARecibirListView.Items)
+            foreach (ListViewItem item in GuiasARecibirListView.Items)
                {
 
                  string trackingId = "";
                    modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.PendienteRetiroAgencia;
 
-               }
-            
+                //este está ok_!!!
+
+            }
+
         }
     }
 }
