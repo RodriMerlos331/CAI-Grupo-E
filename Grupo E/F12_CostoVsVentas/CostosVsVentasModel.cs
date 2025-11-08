@@ -67,7 +67,7 @@ namespace Grupo_E.F12_CostoVsVentas
             }
 
             // --- HDR MD de la empresa (a partir de los ómnibus) ---
-            /*
+            
             var hdrEmpresa = new HashSet<int>(
                 omnibusEmpresa
                     .Where(o => o.Paradas != null)
@@ -81,13 +81,10 @@ namespace Grupo_E.F12_CostoVsVentas
                 // No hay HDR MD asociados a la empresa -> no hay ventas atribuibles
                 return (costos, 0m);
             }
-            */
-            // --- VENTAS ---
+            *
             var encomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
 
-            ventas = 100;
-                /*
-                encomiendas
+            ventas =  encomiendas
                 .Where(e =>
                     e.FechaEntrega.HasValue &&
                     e.FechaEntrega.Value.Date >= fechaDesde &&
@@ -96,7 +93,7 @@ namespace Grupo_E.F12_CostoVsVentas
                     e.HistorialCambios != null &&
                     e.HistorialCambios.Any(h => hdrEmpresa.Contains(h.NumeroHDRMD)))
                 .Sum(e => e.EncomiendaFactura.PrecioTotalEncomienda);
-                */
+                
             return (costos, ventas);
         }
     }
