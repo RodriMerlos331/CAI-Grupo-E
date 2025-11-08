@@ -123,8 +123,11 @@ namespace Grupo_E.GestionarOmnibus
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
-            modelo.AceptarGestionOmnibus();
-
+            bool todoOk = modelo.AceptarGestionOmnibus();
+            if (!todoOk)
+            {
+                return; 
+            }
 
             // Mensaje de confirmación
             MessageBox.Show("Rendición registrada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

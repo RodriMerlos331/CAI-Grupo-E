@@ -10,5 +10,7 @@ namespace Grupo_E.Almacenes
     {
         public string CUIT { get; set; }
         public string Domicilio { get; set; }
+
+        public decimal AlquilerTerminal { get; set; }
     }
 }

@@ -44,11 +44,10 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 var origen = enc.CodLocalidadOrigen;
 
 
-                var destino =
-                    (CentroDeDistribucionAlmacen.CentroDeDistribucion ?? new List<CentroDeDistribucionEntidad>())
-                    .Where(cd => cd.CodigoCD == enc.CodCentroDistribucionDestino)
+                var destino = LocalidadAlmacen.Localidad
+                    .Where(loc => loc.CodigoLocalidad == enc.CodCentroDistribucionDestino)
                     .Select(cd => cd.CodigoLocalidad)
-                    .FirstOrDefault() ?? enc.CodCentroDistribucionDestino;
+                    .FirstOrDefault();
 
 
                 // Historial → Movimiento 

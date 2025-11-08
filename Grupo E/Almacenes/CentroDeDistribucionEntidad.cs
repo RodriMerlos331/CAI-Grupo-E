@@ -9,7 +9,7 @@ namespace Grupo_E.Almacenes
     internal class CentroDeDistribucionEntidad
     {
         public string CodigoCD { get; set; }
-        public string CodigoLocalidad { get; set; }
+        //public string CodigoLocalidad { get; set; }
         public string NombreTerminal { get; set; }
         decimal AlquilerMensualTerminal { get; set; }
     }

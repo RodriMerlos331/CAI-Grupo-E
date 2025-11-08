@@ -2,131 +2,151 @@
   {
     "CodigoAgencia": "AG01",
     "CodigoCD": "CD01",
-    "NombreAgencia": "Agencia Galerías Pacífico"
+    "NombreAgencia": "Agencia Galerías Pacífico",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG02",
     "CodigoCD": "CD01",
-    "NombreAgencia": "Agencia Abasto"
+    "NombreAgencia": "Agencia Abasto",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG03",
     "CodigoCD": "CD02",
-    "NombreAgencia": "Agencia Palermo"
+    "NombreAgencia": "Agencia Palermo",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG04",
     "CodigoCD": "CD02",
-    "NombreAgencia": "Agencia Belgrano"
-  },
-  {
-    "CodigoAgencia": "AG05",
-    "CodigoCD": "CD04",
-    "NombreAgencia": "Agencia Tolosa"
+    "NombreAgencia": "Agencia Belgrano",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG06",
     "CodigoCD": "CD04",
-    "NombreAgencia": "Agencia City Bell"
+    "NombreAgencia": "Agencia City Bell",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG07",
     "CodigoCD": "CD05",
-    "NombreAgencia": "Agencia Patio Olmos"
+    "NombreAgencia": "Agencia Patio Olmos",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG08",
     "CodigoCD": "CD05",
-    "NombreAgencia": "Agencia Dinosaurio Mall"
+    "NombreAgencia": "Agencia Dinosaurio Mall",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG09",
     "CodigoCD": "CD06",
-    "NombreAgencia": "Agencia Villa María Centro"
+    "NombreAgencia": "Agencia Villa María Centro",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG10",
     "CodigoCD": "CD06",
-    "NombreAgencia": "Agencia San Martín Villa María"
+    "NombreAgencia": "Agencia San Martín Villa María",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG11",
     "CodigoCD": "CD07",
-    "NombreAgencia": "Agencia Yerba Buena Shopping"
+    "NombreAgencia": "Agencia Yerba Buena Shopping",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG12",
     "CodigoCD": "CD07",
-    "NombreAgencia": "Agencia Barrio Sur"
+    "NombreAgencia": "Agencia Barrio Sur",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG13",
     "CodigoCD": "CD08",
-    "NombreAgencia": "Agencia Tafí Viejo Centro"
+    "NombreAgencia": "Agencia Tafí Viejo Centro",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG14",
     "CodigoCD": "CD08",
-    "NombreAgencia": "Agencia Villa Obrera"
+    "NombreAgencia": "Agencia Villa Obrera",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG15",
     "CodigoCD": "CD09",
-    "NombreAgencia": "Agencia Centenario Shopping Corrientes"
+    "NombreAgencia": "Agencia Centenario Shopping Corrientes",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG16",
     "CodigoCD": "CD09",
-    "NombreAgencia": "Agencia Laguna Seca"
+    "NombreAgencia": "Agencia Laguna Seca",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG17",
     "CodigoCD": "CD10",
-    "NombreAgencia": "Agencia Goya Centro"
+    "NombreAgencia": "Agencia Goya Centro",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG18",
     "CodigoCD": "CD10",
-    "NombreAgencia": "Agencia Plaza Mitre Goya"
+    "NombreAgencia": "Agencia Plaza Mitre Goya",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG19",
     "CodigoCD": "CD11",
-    "NombreAgencia": "Agencia Portal Patagonia"
+    "NombreAgencia": "Agencia Portal Patagonia",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG20",
     "CodigoCD": "CD11",
-    "NombreAgencia": "Agencia Shopping Neuquén"
+    "NombreAgencia": "Agencia Shopping Neuquén",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG21",
     "CodigoCD": "CD12",
-    "NombreAgencia": "Agencia Centro San Martín de los Andes"
+    "NombreAgencia": "Agencia Centro San Martín de los Andes",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG22",
     "CodigoCD": "CD12",
-    "NombreAgencia": "Agencia Chapelco"
+    "NombreAgencia": "Agencia Chapelco",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG23",
     "CodigoCD": "CD13",
-    "NombreAgencia": "Agencia Costanera Viedma"
+    "NombreAgencia": "Agencia Costanera Viedma",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG24",
     "CodigoCD": "CD13",
-    "NombreAgencia": "Agencia Centro Viedma"
+    "NombreAgencia": "Agencia Centro Viedma",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG25",
     "CodigoCD": "CD14",
-    "NombreAgencia": "Agencia Shopping Bariloche"
+    "NombreAgencia": "Agencia Shopping Bariloche",
+    "ComisionPorEncomienda": 0.05
   },
   {
     "CodigoAgencia": "AG26",
     "CodigoCD": "CD14",
-    "NombreAgencia": "Agencia Cerro Catedral"
+    "NombreAgencia": "Agencia Cerro Catedral",
+    "ComisionPorEncomienda": 0.05
   }
 ]

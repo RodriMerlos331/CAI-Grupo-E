@@ -13,6 +13,8 @@ namespace Grupo_E.Almacenes
         public decimal Debe { get; set; }
         public decimal Haber  { get; set; }
 
-        public List<int> Facturas { get; set; } = new List<int>();
+        //public List<int> Facturas { get; set; } = new List<int>();
+
+        public List<string> Facturas { get; set; } = new List<string>();
     }
 }

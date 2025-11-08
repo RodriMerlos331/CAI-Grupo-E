@@ -27,32 +27,33 @@ namespace Grupo_E.F03_ImposicionEnCD
 
 
         public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =>
-    LocalidadAlmacen.Localidad.ToDictionary(
-        loc => loc.Nombre,
-        loc =>
-        {
+     LocalidadAlmacen.Localidad.ToDictionary(
+         loc => loc.Nombre,
+         loc =>
+         {
+             var CDLocalidad = LocalidadAlmacen.Localidad
+                 .Where(l => l.Nombre == loc.Nombre)
+                 .Select(l => l.CodigoCD)
+                 .FirstOrDefault();
 
-            var cds = CentroDeDistribucionAlmacen.CentroDeDistribucion
-                        .Where(cd => cd.CodigoLocalidad == loc.CodigoLocalidad)
-                        .ToList();
+             var terminal = CentroDeDistribucionAlmacen.CentroDeDistribucion
+                 .Where(cd => cd.CodigoCD == CDLocalidad)
+                 .Select(cd => cd.NombreTerminal)
+                 .Distinct()
+                 .ToList();
 
-            var agencias = AgenciaAlmacen.Agencia
-                        .Where(a => cds.Any(cd => cd.CodigoCD == a.CodigoCD))
-                        .Select(a =>
-                            a.NombreAgencia)
-                        .Distinct()
-                        .ToList();
+             var agencias = AgenciaAlmacen.Agencia
+                                     .Where(a => terminal.Any(cd => a.CodigoCD == CDLocalidad))
+                                     .Select(a =>
+                                         a.NombreAgencia)
+                                     .Distinct()
+                                     .ToList();
 
-            var terminales = cds
-                        .Select(cd => cd.NombreTerminal)
-                        .Distinct()
-                        .ToList();
-
-            return (agencias, terminales);
-        });
+             return (agencias, terminal);
+         });
 
 
-       
+
         int ultimoNumero = EncomiendaAlmacen.Encomienda
           .Select(e => e.Tracking.Split('_').Last())
           .Select(n => int.Parse(n))
@@ -64,7 +65,11 @@ namespace Grupo_E.F03_ImposicionEnCD
         {
 
             var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
-            var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad;
+            var codLocalidadOrigen = LocalidadAlmacen.Localidad
+              .Where(l => l.CodigoCD == codCDActual)
+              .Select(l => l.CodigoLocalidad)
+              .FirstOrDefault();
+
             var codCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
             var ObtenerCDDestino = CentroDeDistribucionAlmacen.CentroDeDistribucion
@@ -81,7 +86,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
                 FechaAdmision = DateTime.Now,
-                FechaEntrega = null, //  no entregada
+                FechaEntrega = null, 
 
                 TipoBulto = tipoBulto,
                 NombreDestinatario = datosDestinatario,
@@ -100,8 +105,8 @@ namespace Grupo_E.F03_ImposicionEnCD
                 AgenciaOrigen = null,
                 DatosRetiroADomicilio = null,
 
-                //ejemplo cualquiera, en este caso la parada es retiro y 5 Grutas ??, pero debería generarse la ruta real, quizas desde ObtenerRuta?
-                ParadasRuta = new List<int> { 1, 5 },
+                RecorridoPlanificado = new List<ParadaPlanificada> (),
+                //por ahora vacío, pero debería generarse la ruta real, quizas desde ObtenerRuta?
 
                 Facturada = false,
 
@@ -109,17 +114,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             };
 
-
-            nuevaEncomienda.HistorialCambios.Add(new Historial
-            {
-                Tracking = nuevaEncomienda.Tracking,
-                FechaPrevia = DateTime.Now,
-                UbicacionPrevia = codCDActual,
-                FleteroAsignado = 0,
-                NumeroHDRUM = 0,
-                NumeroHDRMD = 0,
-                EstadoPrevio = EstadoEncomiendaEnum.Admitida
-            });
+         
 
             var tarifario = TarifarioAlmacen.Tarifario.FirstOrDefault();
 
@@ -156,7 +151,12 @@ namespace Grupo_E.F03_ImposicionEnCD
         public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario, string localidad)
         {
             var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
-            var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad;
+
+            var codLocalidadOrigen = LocalidadAlmacen.Localidad
+              .Where(l => l.CodigoCD == codCDActual)
+              .Select(l => l.CodigoLocalidad)
+              .FirstOrDefault();
+
             var codCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
             //lo sumé acá: pero querría hacerlo como se toma CD desde el menú
@@ -165,7 +165,10 @@ namespace Grupo_E.F03_ImposicionEnCD
                 .Select(l => l.CodigoLocalidad)
                 .FirstOrDefault();
 
-            var codCentroDistribucionDestino = ObtenerCodigoCDPrimerEncontrado(codLocalidadDestino);
+            var codCentroDistribucionDestino = LocalidadAlmacen.Localidad
+                .Where(l => l.Nombre == localidad)
+                .Select(l => l.CodigoCD)
+                .FirstOrDefault();
 
             var tipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto);
 
@@ -194,26 +197,13 @@ namespace Grupo_E.F03_ImposicionEnCD
                 AgenciaOrigen = null,
                 DatosRetiroADomicilio = null,
 
-                //ejemplo cualquiera, en este caso la parada es retiro y 5 Grutas ??, pero debería generarse la ruta real, quizas desde ObtenerRuta?
-                ParadasRuta = new List<int> { 1, 5 },
+                RecorridoPlanificado = new List<ParadaPlanificada>(),
 
                 Facturada = false,
 
                 HistorialCambios = new List<Historial>(),
 
                 };
-
-
-            nuevaEncomienda.HistorialCambios.Add(new Historial
-            {
-                Tracking = nuevaEncomienda.Tracking,
-                FechaPrevia = DateTime.Now,
-                UbicacionPrevia = codCDActual,
-                FleteroAsignado = 0,
-                NumeroHDRUM = 0,
-                NumeroHDRMD = 0,
-                EstadoPrevio = EstadoEncomiendaEnum.Admitida
-            });
 
             var tarifario = TarifarioAlmacen.Tarifario.FirstOrDefault();
 
@@ -250,38 +240,18 @@ namespace Grupo_E.F03_ImposicionEnCD
         }
 
 
-        /*
-        public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
-        {
-            ImposicionAgencia nuevaImposicion = new ImposicionAgencia
-            {
-                Tracking = "CD01AG01_" + (ultimoNumero++).ToString(),
-                CUIT = cuitCliente,
-                Agencia = agenciaDestino,
-                TamanoBulto = tamanoBulto,
-                DatosDestinatario = datosDestinatario
-            };
-
-            string mensaje =
-            "Guía impuesta exitosamente.\n\n" +
-            $"Tracking: {nuevaImposicion.Tracking}\n" +
-            $"CUIT del cliente: {nuevaImposicion.CUIT}\n" +
-            $"Agencia de destino: {nuevaImposicion.Agencia}\n" +
-            $"Tamaño del bulto: {nuevaImposicion.TamanoBulto}\n" +
-            $"Datos del destinatario: {nuevaImposicion.DatosDestinatario}";
-
-            MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-        */
-
-
 
 
         public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
         {
             var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
-            var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoLocalidad;
+
+            var codLocalidadOrigen = LocalidadAlmacen.Localidad
+              .Where(l => l.CodigoCD == codCDActual)
+              .Select(l => l.CodigoLocalidad)
+              .FirstOrDefault();
+
+
             var codCentroDistribucionOrigen = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
             //lo sumé acá: pero querría hacerlo como se toma CD desde el menú
@@ -323,7 +293,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 DatosRetiroADomicilio = null,
 
                 //ejemplo cualquiera, en este caso la parada es retiro y 5 Grutas ??, pero debería generarse la ruta real, quizas desde ObtenerRuta?
-                ParadasRuta = new List<int> { 1, 5 },
+                RecorridoPlanificado = new List<ParadaPlanificada>(),
 
                 Facturada = false,
 
@@ -332,16 +302,7 @@ namespace Grupo_E.F03_ImposicionEnCD
             };
 
 
-            nuevaEncomienda.HistorialCambios.Add(new Historial
-            {
-                Tracking = nuevaEncomienda.Tracking,
-                FechaPrevia = DateTime.Now,
-                UbicacionPrevia = codCDActual,
-                FleteroAsignado = 0,
-                NumeroHDRUM = 0,
-                NumeroHDRMD = 0,
-                EstadoPrevio = EstadoEncomiendaEnum.Admitida
-            });
+           
 
             var tarifario = TarifarioAlmacen.Tarifario.FirstOrDefault();
 
@@ -377,32 +338,7 @@ namespace Grupo_E.F03_ImposicionEnCD
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
-        //Debería tener alguna logica que matchee direccion particular con CD más cercano?
-        private string ObtenerCodigoCDPrimerEncontrado(string codigoLocalidad)
-        {
-            return CentroDeDistribucionAlmacen.CentroDeDistribucion
-                       .First(cd => cd.CodigoLocalidad == codigoLocalidad)
-                       .CodigoCD;
-        }
-
-        private List<int> ObtenerParadasRutaBasica(string codCDOrigen, string codCDDestino)
-        {
-            // Construyo un mapa simple CodigoCD -> CodigoParada (índice + 1)
-            var mapa = CentroDeDistribucionAlmacen.CentroDeDistribucion
-                        .Select((cd, idx) => new { cd.CodigoCD, CodigoParada = idx + 1 })
-                        .ToDictionary(x => x.CodigoCD, x => x.CodigoParada);
-
-            int paradaOrigen = mapa[codCDOrigen];
-            int paradaDestino = mapa[codCDDestino];
-
-            // Ruta mínima: primera parada (origen) y última (destino)
-            if (paradaOrigen == paradaDestino)
-                return new List<int> { paradaOrigen };
-
-            return new List<int> { paradaOrigen, paradaDestino };
-        }
-
+       
        
     }
 }

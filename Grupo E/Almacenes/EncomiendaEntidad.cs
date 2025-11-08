@@ -25,47 +25,40 @@ namespace Grupo_E.Almacenes
         public string AgenciaDestino { get; set; }
         public string DatosRetiroADomicilio { get; set; }
         public string CodCDActual { get; set; }
-        public List<int> ParadasRuta { get; set; } 
+        //public List<int> ParadasRuta { get; set; } 
 
-        //esto no podría ir directamente en historial??
+        public List<ParadaPlanificada> RecorridoPlanificado { get; set; } = new List<ParadaPlanificada>();
         public DateTime FechaImposicion { get; set; }
         public DateTime? FechaAdmision { get; set; }
         public DateTime? FechaEntrega { get; set; }
+        public bool Facturada { get; set; }
 
-       
-
-     
         public EncomiendaFactura EncomiendaFactura { get; set; }
 
         public List <Historial> HistorialCambios { get; set; } = new List<Historial>();
 
-        public bool Facturada { get; set; }
-        public void GenerarFactura(
-      TarifarioEntidad tarifario,
-      bool incluirRetiro,
-      bool incluirEntrega,
-      bool incluirAgencia)
-        {
-            var precioBase = tarifario.PreciosPorOrigenDestinos
-                .FirstOrDefault(p =>
-                    p.Tipo == TipoBulto &&
-                    p.CodigoCDOrigen == CodCentroDistribucionOrigen &&
-                    p.CodigoCDDestino == CodCentroDistribucionDestino)?.Precio ?? 0;
-
-            var extraRetiro = incluirRetiro ? tarifario.ExtraRetiro : 0;
-            var extraEntrega = incluirEntrega ? tarifario.ExtraEntregaDomicilio : 0;
-            var extraAgencia = incluirAgencia ? tarifario.ExtraAgencia : 0;
-
-            EncomiendaFactura = new EncomiendaFactura
+        public void GenerarFactura(TarifarioEntidad tarifario,bool incluirRetiro,bool incluirEntrega,bool incluirAgencia)
             {
-                PrecioCombinacionTamanoOrigenDestino = precioBase,
-                ExtraRetiro = extraRetiro,
-                ExtraEntrega = extraEntrega,
-                ExtraAgencia = extraAgencia,
-                PrecioTotalEncomienda = precioBase + extraRetiro + extraEntrega + extraAgencia
-            };
+                var precioBase = tarifario.PreciosPorOrigenDestinos
+                    .FirstOrDefault(p =>
+                        p.Tipo == TipoBulto &&
+                        p.CodigoCDOrigen == CodCentroDistribucionOrigen &&
+                        p.CodigoCDDestino == CodCentroDistribucionDestino)?.Precio ?? 0;
 
-        }
+                var extraRetiro = incluirRetiro ? tarifario.ExtraRetiro : 0;
+                var extraEntrega = incluirEntrega ? tarifario.ExtraEntregaDomicilio : 0;
+                var extraAgencia = incluirAgencia ? tarifario.ExtraAgencia : 0;
+
+                EncomiendaFactura = new EncomiendaFactura
+                {
+                    PrecioCombinacionTamanoOrigenDestino = precioBase,
+                    ExtraRetiro = extraRetiro,
+                    ExtraEntrega = extraEntrega,
+                    ExtraAgencia = extraAgencia,
+                    PrecioTotalEncomienda = precioBase + extraRetiro + extraEntrega + extraAgencia
+                };
+
+            }
     }
 }
 

@@ -2,61 +2,73 @@
   {
     "CodigoLocalidad": "CABA",
     "Provincia": "Buenos aires",
-    "Nombre": "CABA"
+    "Nombre": "CABA",
+    "CodigoCD": "CD01"
   },
   {
     "CodigoLocalidad": "LP",
     "Provincia": "Buenos aires",
-    "Nombre": "La Plata"
+    "Nombre": "La Plata",
+    "CodigoCD": "CD04"
   },
   {
     "CodigoLocalidad": "CorC",
     "Provincia": "Cordoba",
-    "Nombre": "Cordoba Cápital"
+    "Nombre": "Cordoba Cápital",
+    "CodigoCD": "CD05"
   },
   {
     "CodigoLocalidad": "VM",
     "Provincia": "Cordoba",
-    "Nombre": "Villa María"
+    "Nombre": "Villa María",
+    "CodigoCD": "CD06"
   },
   {
     "CodigoLocalidad": "SMT",
     "Provincia": "Tucumán",
-    "Nombre": "San Miguel de Tucumán"
+    "Nombre": "San Miguel de Tucumán",
+    "CodigoCD": "CD07"
   },
   {
     "CodigoLocalidad": "TV",
     "Provincia": "Tucumán",
-    "Nombre": "Tafí Viejo"
+    "Nombre": "Tafí Viejo",
+    "CodigoCD": "CD08"
   },
   {
     "CodigoLocalidad": "CC",
     "Provincia": "Corrientes",
-    "Nombre": "Corrientes Capital"
+    "Nombre": "Corrientes Capital",
+    "CodigoCD": "CD09"
   },
   {
     "CodigoLocalidad": "GY",
     "Provincia": "Corrientes",
-    "Nombre": "Goya"
+    "Nombre": "Goya",
+    "CodigoCD": "CD10"
   },
   {
     "CodigoLocalidad": "NC",
     "Provincia": "Neuquén",
-    "Nombre": "Neuquén Capital"
+    "Nombre": "Neuquén Capital",
+    "CodigoCD": "CD11"
   },
   {
     "CodigoLocalidad": "SM",
     "Provincia": "Neuquén",
-    "Nombre": "San Martín de los Andes"
+    "Nombre": "San Martín de los Andes",
+    "CodigoCD": "CD12"
   },
   {
     "CodigoLocalidad": "RN",
     "Provincia": "Río Negro",
-    "Nombre": "Viedma"
+    "Nombre": "Viedma",
+    "CodigoCD": "CD13"
   },
   {
     "CodigoLocalidad": "BRC",
     "Provincia": "Río Negro",
-    "Nombre": "San Carlos de Bariloche"
+    "Nombre": "San Carlos de Bariloche",
+    "CodigoCD": "CD14"
   }
 ]

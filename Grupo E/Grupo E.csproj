@@ -80,6 +80,7 @@
     <Compile Include="Almacenes\LocalidadEntidad.cs" />
     <Compile Include="Almacenes\OmnibusAlmacen.cs" />
     <Compile Include="Almacenes\OmnibusEntidad.cs" />
+    <Compile Include="Almacenes\ParadaPlanificada.cs" />
     <Compile Include="Almacenes\PreciosPorOrigenDestino.cs" />
     <Compile Include="Almacenes\ServicioParada.cs" />
     <Compile Include="Almacenes\TarifarioAlmacen.cs" />

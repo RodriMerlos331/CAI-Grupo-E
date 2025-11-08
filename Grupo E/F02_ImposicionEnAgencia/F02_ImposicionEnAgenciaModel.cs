@@ -31,26 +31,26 @@ namespace Grupo_E.F02_ImposicionEnAgencia
         loc => loc.Nombre,
         loc =>
         {
+            var CDLocalidad = LocalidadAlmacen.Localidad
+                .Where(l => l.Nombre == loc.Nombre)
+                .Select(l => l.CodigoCD)
+                .FirstOrDefault();
 
-            var cds = CentroDeDistribucionAlmacen.CentroDeDistribucion
-                        .Where(cd => cd.CodigoLocalidad == loc.CodigoLocalidad)
-                        .ToList();
+            var terminal = CentroDeDistribucionAlmacen.CentroDeDistribucion
+                .Where(cd => cd.CodigoCD == CDLocalidad)
+                .Select(cd => cd.NombreTerminal)
+                .Distinct()
+                .ToList();
 
             var agencias = AgenciaAlmacen.Agencia
-                        .Where(a => cds.Any(cd => cd.CodigoCD == a.CodigoCD))
-                        .Select(a =>
-                            a.NombreAgencia)
-                        .Distinct()
-                        .ToList();
+                                    .Where(a => terminal.Any(cd => a.CodigoCD == CDLocalidad))
+                                    .Select(a =>
+                                        a.NombreAgencia)
+                                    .Distinct()
+                                    .ToList();
 
-            var terminales = cds
-                        .Select(cd => cd.NombreTerminal)
-                        .Distinct()
-                        .ToList();
-
-            return (agencias, terminales);
+            return (agencias, terminal);
         });
-
 
 
         int ultimoNumero = EncomiendaAlmacen.Encomienda
@@ -65,10 +65,11 @@ namespace Grupo_E.F02_ImposicionEnAgencia
             
             var codCentroDistribucionOrigen = AgenciaAlmacen.AgenciaActual.CodigoCD;
             var codAgenciaActual = AgenciaAlmacen.AgenciaActual.CodigoAgencia;
-            var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDeDistribucion
-                .Where(cd => cd.CodigoCD == codCentroDistribucionOrigen)
-                .Select(cd => cd.CodigoLocalidad)
-                .FirstOrDefault();
+
+            var codLocalidadOrigen = LocalidadAlmacen.Localidad
+               .Where(l => l.CodigoCD == codCentroDistribucionOrigen)
+               .Select(l => l.CodigoLocalidad)
+               .FirstOrDefault();
 
             var ObtenerCDDestino = CentroDeDistribucionAlmacen.CentroDeDistribucion
                     .Where(cd => cd.NombreTerminal == centroDistribucionDestino)
@@ -107,7 +108,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
                 DatosRetiroADomicilio = null,
 
                 //ejemplo cualquiera, en este caso la parada es retiro y 5 Grutas ??, pero debería generarse la ruta real, quizas desde ObtenerRuta?
-                ParadasRuta = new List<int>(),
+                RecorridoPlanificado = new List<ParadaPlanificada>(),
 
                 Facturada = false,
 
@@ -116,18 +117,6 @@ namespace Grupo_E.F02_ImposicionEnAgencia
                 EncomiendaFactura = null,
 
             };
-
-
-            nuevaEncomienda.HistorialCambios.Add(new Historial
-            {
-                Tracking = nuevaEncomienda.Tracking,
-                FechaPrevia = DateTime.Now,
-                UbicacionPrevia = null,
-                FleteroAsignado = 0,
-                NumeroHDRUM = 0,
-                NumeroHDRMD = 0,
-                EstadoPrevio = EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia
-            });
 
             
             EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
@@ -151,18 +140,21 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
             var codAgenciaActual = AgenciaAlmacen.AgenciaActual.CodigoAgencia;
             var codCentroDistribucionOrigen = AgenciaAlmacen.AgenciaActual.CodigoCD;
-            var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDeDistribucion
-                .Where(cd => cd.CodigoCD == codCentroDistribucionOrigen)
-                .Select(cd => cd.CodigoLocalidad)
-                .FirstOrDefault();
+
+            var codLocalidadOrigen = LocalidadAlmacen.Localidad
+               .Where(l => l.CodigoCD == codCentroDistribucionOrigen)
+               .Select(l => l.CodigoLocalidad)
+               .FirstOrDefault();
 
             var codLocalidadDestino = LocalidadAlmacen.Localidad
                            .Where(l => l.Nombre == localidad)
                            .Select(l => l.CodigoLocalidad)
                            .FirstOrDefault();
 
-            var codCentroDistribucionDestino = ObtenerCodigoCDPrimerEncontrado(codLocalidadDestino);
-            var CDDestino = codCentroDistribucionDestino;
+            var codCentroDistribucionDestino = LocalidadAlmacen.Localidad
+                            .Where(l => l.Nombre == localidad)
+                            .Select(l => l.CodigoCD)
+                            .FirstOrDefault();
             var tipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto);
 
             var nuevaEncomienda = new EncomiendaEntidad
@@ -182,7 +174,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
                 CodCDActual = null,
                 CodLocalidadOrigen = codLocalidadOrigen,
                 CodCentroDistribucionOrigen = codCentroDistribucionOrigen,
-                CodCentroDistribucionDestino = CDDestino,
+                CodCentroDistribucionDestino = codCentroDistribucionDestino,
 
                 Estado = EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia,
 
@@ -190,7 +182,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
                 AgenciaOrigen = codAgenciaActual,
                 DatosRetiroADomicilio = null,
 
-                ParadasRuta = new List<int>(),
+                RecorridoPlanificado = new List<ParadaPlanificada>(),
 
                 Facturada = false,
 
@@ -199,18 +191,6 @@ namespace Grupo_E.F02_ImposicionEnAgencia
                 EncomiendaFactura = null,
 
             };
-
-
-            nuevaEncomienda.HistorialCambios.Add(new Historial
-            {
-                Tracking = nuevaEncomienda.Tracking,
-                FechaPrevia = DateTime.Now,
-                UbicacionPrevia = null,
-                FleteroAsignado = 0,
-                NumeroHDRUM = 0,
-                NumeroHDRMD = 0,
-                EstadoPrevio = EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia
-            });
 
 
             EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
@@ -236,10 +216,10 @@ namespace Grupo_E.F02_ImposicionEnAgencia
         {
             var codAgenciaActual = AgenciaAlmacen.AgenciaActual.CodigoAgencia;
             var codCentroDistribucionOrigen = AgenciaAlmacen.AgenciaActual.CodigoCD;
-            var codLocalidadOrigen = CentroDeDistribucionAlmacen.CentroDeDistribucion
-                .Where(cd => cd.CodigoCD == codCentroDistribucionOrigen)
-                .Select(cd => cd.CodigoLocalidad)
-                .FirstOrDefault();
+            var codLocalidadOrigen = LocalidadAlmacen.Localidad
+               .Where(l => l.CodigoCD == codCentroDistribucionOrigen)
+               .Select(l => l.CodigoLocalidad)
+               .FirstOrDefault();
             var ObtenerCDDestino = AgenciaAlmacen.Agencia
                                 .Where(a => a.NombreAgencia == agenciaDestino)
                                 .Select(a => a.CodigoCD)
@@ -276,7 +256,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
                 AgenciaOrigen = codAgenciaActual,
                 DatosRetiroADomicilio = null,
 
-                ParadasRuta = new List<int>(),
+                RecorridoPlanificado = new List<ParadaPlanificada>(),
 
                 Facturada = false,
 
@@ -285,18 +265,6 @@ namespace Grupo_E.F02_ImposicionEnAgencia
                 EncomiendaFactura = null,
 
             };
-
-
-            nuevaEncomienda.HistorialCambios.Add(new Historial
-            {
-                Tracking = nuevaEncomienda.Tracking,
-                FechaPrevia = DateTime.Now,
-                UbicacionPrevia = null,
-                FleteroAsignado = 0,
-                NumeroHDRUM = 0,
-                NumeroHDRMD = 0,
-                EstadoPrevio = EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia
-            });
 
 
             EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
@@ -316,29 +284,5 @@ namespace Grupo_E.F02_ImposicionEnAgencia
         }
 
 
-        //Debería tener alguna logica que matchee direccion particular con CD más cercano?
-        private string ObtenerCodigoCDPrimerEncontrado(string codigoLocalidad)
-        {
-            return CentroDeDistribucionAlmacen.CentroDeDistribucion
-                       .First(cd => cd.CodigoLocalidad == codigoLocalidad)
-                       .CodigoCD;
-        }
-
-        private List<int> ObtenerParadasRutaBasica(string codCDOrigen, string codCDDestino)
-        {
-            // Construyo un mapa simple CodigoCD -> CodigoParada (índice + 1)
-            var mapa = CentroDeDistribucionAlmacen.CentroDeDistribucion
-                        .Select((cd, idx) => new { cd.CodigoCD, CodigoParada = idx + 1 })
-                        .ToDictionary(x => x.CodigoCD, x => x.CodigoParada);
-
-            int paradaOrigen = mapa[codCDOrigen];
-            int paradaDestino = mapa[codCDDestino];
-
-            // Ruta mínima: primera parada (origen) y última (destino)
-            if (paradaOrigen == paradaDestino)
-                return new List<int> { paradaOrigen };
-
-            return new List<int> { paradaOrigen, paradaDestino };
-        }
     }
 }

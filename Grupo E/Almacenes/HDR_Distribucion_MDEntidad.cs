@@ -12,10 +12,10 @@ namespace Grupo_E.Almacenes
         public EstadoHDREnum estadoHDR { get; set; }
         public List<string> Encomiendas { get; set; } = new List<string>();
 
-        //Origen?
-        public int CodigoParada { get; set; }
+        public string ServicioID { get; set; }
 
-        //Destino?
-        public string Destino { get; set; }
+        public string CdDesde { get; set; }
+
+        public string CdHasta { get; set; }
     }
 }
