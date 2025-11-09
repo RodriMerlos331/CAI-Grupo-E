@@ -95,7 +95,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                         ExtraRetiro = encomienda.EncomiendaFactura.ExtraRetiro.ToString("C"),
                         ExtraEntrega = encomienda.EncomiendaFactura.ExtraEntrega.ToString("C"),
                         ExtraAgencia = encomienda.EncomiendaFactura.ExtraAgencia.ToString("C"),
-                        PrecioTotal = encomienda.EncomiendaFactura.PrecioTotalEncomienda.ToString("C")
+                        PrecioTotal = encomienda.EncomiendaFactura.PrecioTotalEncomienda.ToString("C") //revisar
                     });
                 }
              
@@ -153,7 +153,6 @@ namespace Grupo_E.F10_GeneracionDeFacturas
             };
 
             FacturaAlmacen.Facturas.Add(nuevaFactura);
-            FacturaAlmacen.Grabar();
 
             // Marcar encomiendas seleccionadas como facturadas
             foreach (var encomienda in todasLasEncomiendas.Where(e => encomiendasIncluidas.Contains(e.Tracking)))

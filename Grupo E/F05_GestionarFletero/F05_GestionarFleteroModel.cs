@@ -98,12 +98,6 @@ namespace Grupo_E.GestionarFletero
                 .Select(e => e.Tracking)
                 .ToList();
 
-            if (!encomiendasRetiro.Any() && !encomiendasEntrega.Any())
-            {
-                MessageBox.Show("No se encontraron encomiendas pendientes para generar HDR (ni de retiro ni de entrega).",
-                    "Sin encomiendas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return new List<HDR>();
-            }
 
             if (!encomiendasRetiro.Any())
             {
@@ -258,26 +252,6 @@ namespace Grupo_E.GestionarFletero
             return tipo == HDR.TipoHDR.Entrega ? TipoHDREnum.Entrega : TipoHDREnum.Retiro;
         }
 
-
-
-        /*
-        private HDR.TipoHDR TipoEquivalenteA(TipoHDREnum tipo)
-        {
-            //TODO: completar con equivalencias.
-            return HDR.TipoHDR.Entrega; //devuelvo cualquier cosa pa q compile.
-        }
-        private Guia.EstadoGuia EstadoEquivalenteA(EstadoEncomiendaEnum estado)
-        {
-            //TODO: completar con equivalencias.
-            return Guia.EstadoGuia.Retirada; //devuelvo cualquier cosa pa q compile.
-        }
-
-        private TipoHDREnum MapTipoHDR(HDR.TipoHDR tipo)
-        {
-            return tipo == HDR.TipoHDR.Entrega ? TipoHDREnum.Entrega : TipoHDREnum.Retiro;
-        }
-    }
-        */
 
     }
 }
