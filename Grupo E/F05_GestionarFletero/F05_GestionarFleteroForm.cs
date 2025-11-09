@@ -35,7 +35,7 @@ namespace Grupo_E.GestionarFletero
             if (hdrs.Count == 0)
             {
                 MessageBox.Show("No se encontraron HDR a rendir para el DNI ingresado");
-                return;
+                //return;
             }
 
             foreach (var hdr in hdrs)
@@ -211,36 +211,41 @@ namespace Grupo_E.GestionarFletero
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
 
-          
 
             var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
 
             if (HDRARendir.Count == 0)
             {
-                MessageBox.Show("No hay HDR para rendir.");
-                return;
+                MessageBox.Show("No hay HDR para rendir");
+                //return;
+            }
+            else
+            { 
+
+                string resumen = "Se marcarán como rendidas las siguientes HDR, con sus estados (Cumplida o no Cumplida):\n";
+
+                foreach (var hdr in HDRARendir)
+                {
+                    string estado = hdr.Cumplida ? "Cumplida" : "No Cumplida";
+                    resumen += $"HDR Nro: {hdr.NumeroHDR}, Estado: {estado}\n";
+                }
+
+                MessageBox.Show(resumen, "Resumen de Rendición", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                foreach (var hdr in HDRARendir)
+                {
+                    hdr.Rendida = true;
+                }
+
             }
 
-            string resumen = "Se marcarán como rendidas las siguientes HDR, con sus estados (Cumplida o no Cumplida):\n";
 
-            foreach (var hdr in HDRARendir)
-            {
-                string estado = hdr.Cumplida ? "Cumplida" : "No Cumplida";
-                resumen += $"HDR Nro: {hdr.NumeroHDR}, Estado: {estado}\n";
-            }
-
-            MessageBox.Show(resumen, "Resumen de Rendición", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            foreach (var hdr in HDRARendir)
-            {
-                hdr.Rendida = true;
-            }
 
             bool todoOk = modelo.Aceptar();
             if (!todoOk)
             {
-                return; //el modelo ya tiro un msgbox.
+                return; 
             }
 
             MessageBox.Show("Cambios guardados correctamente.");

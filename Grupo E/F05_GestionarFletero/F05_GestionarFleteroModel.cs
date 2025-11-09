@@ -1,5 +1,6 @@
 ﻿using Grupo_E.Almacenes;
 using Grupo_E.F05_GestionarFletero;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -70,14 +71,16 @@ namespace Grupo_E.GestionarFletero
         }
         public List<HDR> ObtenerHDRGeneracionPorTransportista(int dni)
         {
+           
+
             var fletero = FleteroAlmacen.Fletero
                 .FirstOrDefault(f => f.DniFletero == dni);
+
 
             if (fletero == null)
             {
                 MessageBox.Show("No se encontró un fletero con el DNI ingresado.",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return new List<HDR>();
             }
 
             var cdsFletero = fletero.CodCDAsociados;
@@ -98,6 +101,27 @@ namespace Grupo_E.GestionarFletero
                 .Select(e => e.Tracking)
                 .ToList();
 
+            foreach (var encomienda in EncomiendaAlmacen.Encomienda
+                .Where(e => encomiendasRetiro.Contains(e.Tracking)))
+            {
+                var estadoPrevio = encomienda.Estado;
+
+                if (estadoPrevio == EstadoEncomiendaEnum.ImpuestaPendienteRetiroDomicilio)
+                    encomienda.Estado = EstadoEncomiendaEnum.RuteadaRetiroDomicilio;
+                else if (estadoPrevio == EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia)
+                    encomienda.Estado = EstadoEncomiendaEnum.RuteadaRetiroAgencia;
+
+                encomienda.HistorialCambios.Add(new Historial
+                {
+                    Tracking = encomienda.Tracking,
+                    FechaPrevia = encomienda.FechaImposicion,
+                    UbicacionPrevia = null,
+                    FleteroAsignado = 0,
+                    NumeroHDRUM = 0, 
+                    NumeroHDRMD = 0,
+                    EstadoPrevio = estadoPrevio
+                });
+            }
 
             if (!encomiendasRetiro.Any())
             {
@@ -116,6 +140,8 @@ namespace Grupo_E.GestionarFletero
             int proximoNumeroHDR = HDRDistribucionUMAlmacen.HDRDistribucionUM.Any()
                 ? HDRDistribucionUMAlmacen.HDRDistribucionUM.Max(h => h.NumeroHDRUM) + 1
                 : 1000;
+
+            //Faltaría Group by retiro = domicilio o agencia??
 
             if (encomiendasRetiro.Any())
             {
@@ -178,14 +204,10 @@ namespace Grupo_E.GestionarFletero
 
                 entidad.Rendida = hdr.Rendida;
                 entidad.Cumplida = hdr.Cumplida;
-
-                entidad.ActualizarEstado(hdr.Cumplida);
             }
 
             foreach (var hdr in HDRGeneracion)
             {
-                if (HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(h => h.NumeroHDRUM == hdr.NumeroHDR))
-                    continue;
 
                 var nuevaEntidad = new HDRDistribucionUMEntidad
                 {
@@ -200,6 +222,135 @@ namespace Grupo_E.GestionarFletero
                 HDRDistribucionUMAlmacen.HDRDistribucionUM.Add(nuevaEntidad);
             }
 
+            //Actualizar estados de encomiendas para HDR de retiro rendidas
+
+            var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
+
+            foreach (var hdr in HDRRendicion.Where(h => h.Tipo == HDR.TipoHDR.Retiro && h.Cumplida))
+            {
+                foreach (var guia in hdr.Guias)
+                {
+                    var encomienda = EncomiendaAlmacen.Encomienda
+                        .FirstOrDefault(e => e.Tracking == guia.CodigoGuia);
+
+                    var estadoPrevio = encomienda.Estado;
+
+                    encomienda.Estado = EstadoEncomiendaEnum.Admitida;
+                    encomienda.CodCDActual = cdActual;
+                    encomienda.FechaAdmision = DateTime.Now;
+
+                    var tarifario = TarifarioAlmacen.Tarifario.FirstOrDefault();
+                    if (tarifario != null)
+                    {
+                        bool incluirRetiro = !string.IsNullOrEmpty(encomienda.DatosRetiroADomicilio);
+                        bool incluirEntrega = !string.IsNullOrEmpty(encomienda.DireccionDestinatario);
+                        bool incluirAgencia = !string.IsNullOrEmpty(encomienda.AgenciaDestino);
+
+                        encomienda.GenerarFactura(tarifario, incluirRetiro, incluirEntrega, incluirAgencia);
+                    }
+
+                    encomienda.RecorridoPlanificado = new List<ParadaPlanificada>();
+
+                    encomienda.HistorialCambios.Add(new Historial
+                    {
+                        Tracking = encomienda.Tracking,
+                        FechaPrevia = DateTime.Now, //Chequear qué poner en fecha previa:
+                        UbicacionPrevia = null,
+                        FleteroAsignado = hdr.DniTransportista,
+                        NumeroHDRUM = hdr.NumeroHDR,
+                        NumeroHDRMD = 0,
+                        EstadoPrevio = estadoPrevio
+                    });
+                }
+            }
+
+            //Actualizar estados de encomiendas para HDR de entrega cumplidas
+
+            foreach (var hdr in HDRRendicion.Where(h => h.Tipo == HDR.TipoHDR.Entrega && h.Cumplida))
+            {
+                foreach (var guia in hdr.Guias)
+                {
+                    var encomienda = EncomiendaAlmacen.Encomienda
+                        .FirstOrDefault(e => e.Tracking == guia.CodigoGuia);
+
+                    var estadoPrevio = encomienda.Estado;
+                    var UbicacionPrevia = encomienda.CodCDActual;
+
+                    encomienda.Estado = EstadoEncomiendaEnum.Entregada;
+                    encomienda.FechaEntrega = DateTime.Now;
+
+
+                    encomienda.HistorialCambios.Add(new Historial
+                    {
+                        Tracking = encomienda.Tracking,
+                        FechaPrevia = DateTime.Now, //Chequear qué poner en fecha previa:
+                        UbicacionPrevia = null,
+                        FleteroAsignado = hdr.DniTransportista,
+                        NumeroHDRUM = hdr.NumeroHDR,
+                        NumeroHDRMD = 0,
+                        EstadoPrevio = estadoPrevio
+                    });
+                }
+            }
+
+            //Actualizar estados de encomiendas para HDR de Retiro Generadas
+            foreach (var hdr in HDRGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro))
+            {
+                foreach (var guia in hdr.Guias)
+                {
+                    var encomienda = EncomiendaAlmacen.Encomienda
+                        .FirstOrDefault(e => e.Tracking == guia.CodigoGuia);
+
+
+                    var estadoPrevio = encomienda.Estado;
+
+                    if (estadoPrevio == EstadoEncomiendaEnum.RuteadaRetiroDomicilio ||
+                        estadoPrevio == EstadoEncomiendaEnum.RuteadaRetiroAgencia)
+                    {
+                        encomienda.Estado = EstadoEncomiendaEnum.EnTransitoUMOrigen;
+                        encomienda.FechaAdmision = DateTime.Now;
+
+                        encomienda.HistorialCambios.Add(new Historial
+                        {
+                            Tracking = encomienda.Tracking,
+                            FechaPrevia = DateTime.Now,
+                            UbicacionPrevia = encomienda.CodCentroDistribucionOrigen,
+                            FleteroAsignado = hdr.DniTransportista,
+                            NumeroHDRUM = hdr.NumeroHDR,
+                            NumeroHDRMD = 0,
+                            EstadoPrevio = estadoPrevio
+                        });
+                    }
+                }
+            }
+
+            //Actualizar estados encomiendas para HDR de entrega generadas
+
+            foreach (var hdr in HDRGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Entrega))
+            {
+                foreach (var guia in hdr.Guias)
+                {
+                    var encomienda = EncomiendaAlmacen.Encomienda
+                        .FirstOrDefault(e => e.Tracking == guia.CodigoGuia);
+
+
+                    var estadoPrevio = encomienda.Estado;
+
+                    encomienda.Estado = EstadoEncomiendaEnum.EnTransitoUMDestino;
+                    encomienda.CodCDActual = null;
+
+                        encomienda.HistorialCambios.Add(new Historial
+                        {
+                            Tracking = encomienda.Tracking,
+                            FechaPrevia = DateTime.Now, //REVISAR
+                            UbicacionPrevia = encomienda.CodCentroDistribucionOrigen,
+                            FleteroAsignado = 0,
+                            NumeroHDRUM =0,
+                            NumeroHDRMD = 0,
+                            EstadoPrevio = estadoPrevio
+                        });
+                    }
+                }
             
 
             return true;

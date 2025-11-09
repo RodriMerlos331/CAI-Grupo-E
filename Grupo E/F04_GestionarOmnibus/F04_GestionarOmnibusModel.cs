@@ -144,8 +144,20 @@ namespace Grupo_E.GestionarOmnibus
 
                 foreach (var encomienda in encomiendas)
                 {
+                    var estadoPrevio = encomienda.Estado;
                     encomienda.Estado = EstadoEncomiendaEnum.EnTransitoMD; 
                     encomienda.CodCDActual =null;  //null mientras está en transito
+
+                    encomienda.HistorialCambios.Add(new Historial
+                    {
+                        Tracking = encomienda.Tracking,
+                        FechaPrevia = (DateTime)encomienda.FechaAdmision,
+                        UbicacionPrevia = cdActual,
+                        FleteroAsignado = 0,
+                        NumeroHDRUM = 0,
+                        NumeroHDRMD = 0,
+                        EstadoPrevio = estadoPrevio
+                    }); 
                 }
             }
 

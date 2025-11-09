@@ -15,6 +15,7 @@ namespace Grupo_E.Almacenes
         public bool Rendida { get; set; }
         public List<string> Encomiendas { get; set; }
 
+        /*
         public void ActualizarEstado(bool cumplida)
         {
             
@@ -39,6 +40,7 @@ namespace Grupo_E.Almacenes
                 
             }
         }
+        */
 
     }
 }

@@ -138,9 +138,9 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
         public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario, string datosRetiro, string localidadDestino, string localidadOrigen)
         {
 
-            var codLocalidadDestino = LocalidadAlmacen.Localidad
+            var codCentroDistribucionDestino = LocalidadAlmacen.Localidad
                 .Where(l => l.Nombre == localidadDestino)
-                .Select(l => l.CodigoLocalidad)
+                .Select(l => l.CodigoCD)
                 .FirstOrDefault();
 
             var codLocalidadOrigen = LocalidadAlmacen.Localidad
@@ -153,12 +153,8 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                .Select(l => l.CodigoCD)
                .FirstOrDefault();
 
-            var codCentroDistribucionDestino = LocalidadAlmacen.Localidad
-               .Where(l => l.Nombre == codLocalidadDestino)
-               .Select(l => l.CodigoCD)
-               .FirstOrDefault();
+        
 
-            var CDDestino = codCentroDistribucionDestino;
             var tipoBulto = (TipoBultoEnum)Enum.Parse(typeof(TipoBultoEnum), tamanoBulto);
 
             var nuevaEncomienda = new EncomiendaEntidad
@@ -178,7 +174,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                 CodCDActual = null,
                 CodLocalidadOrigen = codLocalidadOrigen,
                 CodCentroDistribucionOrigen = codCentroDistribucionOrigen,
-                CodCentroDistribucionDestino = CDDestino,
+                CodCentroDistribucionDestino = codCentroDistribucionDestino,
 
                 Estado = EstadoEncomiendaEnum.ImpuestaPendienteRetiroDomicilio,
 
@@ -206,7 +202,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                 "Tracking: " + nuevaEncomienda.Tracking + "\n" +
                 "CUIT del cliente: " + nuevaEncomienda.CUITCliente + "\n" +
                 "Direccion particular destino: " + nuevaEncomienda.DireccionDestinatario + "\n" +
-                "Dirección particular origen" + nuevaEncomienda.DatosRetiroADomicilio + "\n" +
+                "Dirección particular origen: " + nuevaEncomienda.DatosRetiroADomicilio + "\n" +
                 "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
                 "Datos del destinatario: " + datosDestinatario + "\n\n";
 

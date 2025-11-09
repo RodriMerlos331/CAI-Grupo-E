@@ -8,7 +8,7 @@ namespace Grupo_E.Almacenes
 {
     public class ParadaPlanificada
     {
-        public int ServicioId { get; set; }
+        public string ServicioId { get; set; }
 
         public string CodigoCDOrigen { get; set; }
 

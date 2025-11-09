@@ -91,7 +91,7 @@ namespace Grupo_E.ImposicionEnCallCenter
         {
             TerminalesCCcmb.SelectedIndex = -1;
             TerminalesCCcmb.Text = "";
-            LocalidadCCcmb.SelectedIndex = -1;
+//            LocalidadCCcmb.SelectedIndex = -1;
             if (ParticularCCrb.Checked)
             {
                 ParticularCCgrb.Enabled = true;
@@ -209,7 +209,7 @@ namespace Grupo_E.ImposicionEnCallCenter
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
                     DatosDestinatarioCCtxt.Text,
                     DatosRetiroCCtxt.Text,
-                    LocalidadCCcmb.SelectedItem?.ToString(),
+                    LocalidadCCcmb.SelectedItem.ToString(),
                     LocalidadCCcmbOrigen.SelectedItem.ToString()
                 );
             }

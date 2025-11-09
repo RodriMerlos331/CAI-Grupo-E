@@ -27,6 +27,9 @@ namespace Grupo_E
             HDRDistribucionUMAlmacen.Grabar();
             HDR_Distribucion_MDAlmacen.Grabar();
             OmnibusAlmacen.Grabar();
+            FleteroAlmacen.Grabar();
+            TarifarioAlmacen.Grabar();
+
 
         }
     }
