@@ -1,6 +1,7 @@
 ﻿using Grupo_E.Almacenes;
 using Grupo_E.ConsultarEstadoEncomienda;
 using Grupo_E.EntregarYRecepcionarEncomiendaAgencia;
+using Grupo_E.F05_GestionarFletero;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,21 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 {
 	internal class EntregaYRecepcionEncomiendaAgenciaModel
 	{
-        public readonly Dictionary<string, GuiaDeEncomiendas> data;
+        public Dictionary<string, GuiaDeEncomiendas> data;
 
-    
-        public EntregaYRecepcionEncomiendaAgenciaModel()
+
+        internal Dictionary<string, GuiaDeEncomiendas> BuscarEnomiendaFletero (int dni)
         {
             data = new Dictionary<string, GuiaDeEncomiendas>();
 
-            foreach (EncomiendaEntidad encomienda  in EncomiendaAlmacen.Encomienda)
+            foreach (EncomiendaEntidad encomienda in EncomiendaAlmacen.Encomienda)
             {
                 data.Add(encomienda.Tracking, new GuiaDeEncomiendas
                 {
                     TrackingId = encomienda.Tracking,
                     EstadoEnvio = (EstadoDeEnvio)encomienda.Estado,
                     AgenciaDestino = encomienda.AgenciaDestino,
+                    AgenciaOrigen = encomienda.AgenciaOrigen,
                     TamañoBulto = encomienda.TipoBulto.ToString(),
                     FleteroAsignado = FleteroAlmacen.Fletero
                         .FirstOrDefault(f =>
@@ -37,100 +39,64 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
 
                 });
+
             }
 
-            
-      
+            return data;    
+        }
 
+        public List<GuiaDeEncomiendas> EncomiendasAEntregar(int dni)
+        {
 
-            /* data = new Dictionary<int, GuiaDeEncomiendas>
+            List<GuiaDeEncomiendas> encomiendasAEntregar = new List<GuiaDeEncomiendas>();
+
+            foreach (var encomienda in BuscarEnomiendaFletero(dni))
             {
-                [1001] = new GuiaDeEncomiendas
+                if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMOrigen && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen)
                 {
-                    TrackingId = 1001,
-                    EstadoEnvio = EstadoDeEnvio.RuteadaRetiroAgencia,
-                    CUIT = "20-42296338-4",
-                    NombreDestinatario = "Roberto",
-                    ApellidoDestinatario = "Gonzales",
-                    DNIDestinatario = 40943084,
-                    LocalidadDestino = "Córdoba Capital",
-                    AgenciaDestino = "Patio Olmo",
-                    TamañoBulto = "XL",
-                    FleteroAsignado = f1
-                },
-                [1002] = new GuiaDeEncomiendas
+                    encomiendasAEntregar.Add 
+                    (
+                        new GuiaDeEncomiendas
+                        {
+                            TrackingId = encomienda.Value.TrackingId,
+                            EstadoEnvio = encomienda.Value.EstadoEnvio,
+                            AgenciaDestino = encomienda.Value.AgenciaDestino,
+                            AgenciaOrigen = encomienda.Value.AgenciaOrigen,
+                            TamañoBulto = encomienda.Value.TamañoBulto,
+                            FleteroAsignado = encomienda.Value.FleteroAsignado
+                        }
+                    );
+                }
+            }
+
+            return encomiendasAEntregar;
+        }
+
+        public List<GuiaDeEncomiendas> EncomiendasARecibir(int dni)
+        {
+            List<GuiaDeEncomiendas> encomiendasARecibir = new List<GuiaDeEncomiendas>();
+
+            foreach (var encomienda in BuscarEnomiendaFletero(dni))
+            {
+                if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMOrigen && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen)
                 {
-                    TrackingId = 1002,
-                    EstadoEnvio = EstadoDeEnvio.RuteadaEntregaAgencia,
-                    CUIT = "30-12345678-9",
-                    NombreDestinatario = "María",
-                    ApellidoDestinatario = "Pérez",
-                    DNIDestinatario = 30123456,
-                    LocalidadDestino = "Córdoba Capital",
-                    AgenciaDestino = "Patio Olmo",
-                    TamañoBulto = "M",
-                    FleteroAsignado = f1
-                },
-                [1003] = new GuiaDeEncomiendas
-                {
-                    TrackingId = 1003,
-                    EstadoEnvio = EstadoDeEnvio.RuteadaRetiroAgencia,
-                    CUIT = "27-87654321-0",
-                    NombreDestinatario = "Diego",
-                    ApellidoDestinatario = "Ramírez",
-                    DNIDestinatario = 28999888,
-                    LocalidadDestino = "Córdoba Capital",
-                    AgenciaDestino = "Patio Olmo",
-                    TamañoBulto = "L",
-                    FleteroAsignado = f2
-                },
-                [1004] = new GuiaDeEncomiendas
-                {
-                    TrackingId = 1004,
-                    EstadoEnvio = EstadoDeEnvio.RuteadaEntregaAgencia,
-                    CUIT = "23-11223344-5",
-                    NombreDestinatario = "Lucía",
-                    ApellidoDestinatario = "Suárez",
-                    DNIDestinatario = 37222111,
-                    LocalidadDestino = "Córdoba Capital",
-                    AgenciaDestino = "Patio Olmo",
-                    TamañoBulto = "S",
-                    FleteroAsignado = f2
-                },
-                [1005] = new GuiaDeEncomiendas
-                {
-                    TrackingId = 1005,
-                    EstadoEnvio = EstadoDeEnvio.RuteadaEntregaAgencia,
-                    CUIT = "20-99887766-3",
-                    NombreDestinatario = "Ana",
-                    ApellidoDestinatario = "Domínguez",
-                    DNIDestinatario = 33888777,
-                    LocalidadDestino = "Córdoba Capital",
-                    AgenciaDestino = "Patio Olmo",
-                    TamañoBulto = "XL",
-                    FleteroAsignado = f1
-                },
-                [1006] = new GuiaDeEncomiendas
-                {
-                    TrackingId = 1006,
-                    EstadoEnvio = EstadoDeEnvio.RuteadaRetiroAgencia,
-                    CUIT = "30-44556677-0",
-                    NombreDestinatario = "Carlos",
-                    ApellidoDestinatario = "Gómez",
-                    DNIDestinatario = 31222333,
-                    LocalidadDestino = "Córdoba Capital",
-                    AgenciaDestino = "Patio Olmo",
-                    TamañoBulto = "M",
-                    FleteroAsignado = f1
-                },
-            */
+                    encomiendasARecibir.Add
+                    (
+                        new GuiaDeEncomiendas
+                        {
+                            TrackingId = encomienda.Value.TrackingId,
+                            EstadoEnvio = encomienda.Value.EstadoEnvio,
+                            AgenciaDestino = encomienda.Value.AgenciaDestino,
+                            AgenciaOrigen = encomienda.Value.AgenciaOrigen,
+                            TamañoBulto = encomienda.Value.TamañoBulto,
+                            FleteroAsignado = encomienda.Value.FleteroAsignado
+                        }
 
+                    );
+                }
+            }
 
-
-           
-
-
-
+            return encomiendasARecibir;
         }
     }
 }

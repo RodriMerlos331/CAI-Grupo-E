@@ -16,7 +16,8 @@
         PendienteRetiroAgencia,  //11
         Entregada, //12
         NoEntregada, //13
-        Cancelada //14
+        Cancelada,//14
+        RetiradaAgenciaFletero //15
 
 
     }

@@ -17,6 +17,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
         public string ApellidoDestinatario { get; set; }
         public int DNIDestinatario { get; set; }
         public string LocalidadDestino { get; set; }
+        public string AgenciaOrigen { get; set; }
         public string AgenciaDestino { get; set; }
         public string TamañoBulto { get; set; }
         public int FleteroAsignado { get; set; }

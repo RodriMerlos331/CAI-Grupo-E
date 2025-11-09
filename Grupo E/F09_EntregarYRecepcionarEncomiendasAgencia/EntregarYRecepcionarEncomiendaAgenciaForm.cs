@@ -1,4 +1,5 @@
-﻿using Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia;
+﻿using Grupo_E.F05_GestionarFletero;
+using Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,9 +53,20 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                 return;
             }
 
-         
 
-            foreach (KeyValuePair<string, GuiaDeEncomiendas> numGuia in modelo.data)
+            foreach (var encomienda in modelo.EncomiendasAEntregar(dni))
+            {
+                GuiasAEntregarListView.Items.Add(
+                    new ListViewItem(encomienda.TrackingId.ToString()));
+            }
+
+            foreach (var encomienda in modelo.EncomiendasARecibir(dni))
+            {
+                GuiasARecibirListView.Items.Add(
+                    new ListViewItem(encomienda.TrackingId.ToString()));
+            }
+
+            /* foreach (KeyValuePair<string, GuiaDeEncomiendas> numGuia in modelo.data)
             {
                 GuiaDeEncomiendas guia = numGuia.Value;
 
@@ -62,7 +74,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                 {
 
                     //EntransitoUM: encomiendas que le doy al fletero y agenciaorigen = agencia actual
-                    if (guia.EstadoEnvio == EstadoDeEnvio.RuteadaRetiroAgencia)
+                    if (guia.EstadoEnvio == EstadoDeEnvio.EntransitoUM)
                     {
                         GuiasAEntregarListView.Items.Add(
                             new ListViewItem(guia.TrackingId.ToString()));
@@ -73,8 +85,8 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                         GuiasARecibirListView.Items.Add(
                             new ListViewItem(guia.TrackingId.ToString()));
                     }
-                }
-            }
+                } 
+             } */
         }
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
