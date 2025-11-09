@@ -17,7 +17,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
         public Dictionary<string, GuiaDeEncomiendas> data;
 
 
-        internal Dictionary<string, GuiaDeEncomiendas> BuscarEnomiendaFletero (int dni)
+        internal Dictionary<string, GuiaDeEncomiendas> BuscarEncomiendaFletero (int dni)
         {
             data = new Dictionary<string, GuiaDeEncomiendas>();
 
@@ -50,7 +50,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
             List<GuiaDeEncomiendas> encomiendasAEntregar = new List<GuiaDeEncomiendas>();
 
-            foreach (var encomienda in BuscarEnomiendaFletero(dni))
+            foreach (var encomienda in BuscarEncomiendaFletero(dni))
             {
                 if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMOrigen && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen)
                 {
@@ -76,7 +76,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
         {
             List<GuiaDeEncomiendas> encomiendasARecibir = new List<GuiaDeEncomiendas>();
 
-            foreach (var encomienda in BuscarEnomiendaFletero(dni))
+            foreach (var encomienda in BuscarEncomiendaFletero(dni))
             {
                 if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMOrigen && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen)
                 {
