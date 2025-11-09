@@ -7,7 +7,10 @@ namespace Grupo_E.F12_CostoVsVentas
 {
     internal class CostosVsVentasModel
     {
-        
+        /// <summary>
+        /// Punto de entrada desde el Form.
+        /// Valida el CUIT, busca la empresa y calcula costos/ventas en el rango de fechas.
+        /// </summary>
         internal ResultadoCostosVentas Consultar(Datos query)
         {
             if (query == null)
@@ -39,7 +42,10 @@ namespace Grupo_E.F12_CostoVsVentas
             };
         }
 
-        
+        /// <summary>
+        /// Obtiene la empresa de larga distancia por CUIT leyendo el almacén
+        /// EmpresaServicioLargaDistanciaAlmacen.
+        /// </summary>
         private EmpresaServicioLargaDistanciaEntidad BuscarEmpresaPorCuit(string cuit)
         {
             var empresas = EmpresaServicioLargaDistanciaAlmacen.EmpresaServicioLargaDistancia
@@ -48,7 +54,13 @@ namespace Grupo_E.F12_CostoVsVentas
             return empresas.FirstOrDefault(e => e.CuitEmpresaOmnibus == cuit);
         }
 
-        
+        /// <summary>
+        /// Calcula:
+        /// - Costos: suma de los arrendamientos de la empresa en el rango [fechaDesde, fechaHasta].
+        /// - Ventas: suma del PrecioTotalEncomienda de las encomiendas entregadas en el mismo rango
+        ///           y que hayan viajado en alguna HDR MD asociada a un ServicioID
+        ///           de ómnibus de la empresa.
+        /// </summary>
         private (decimal costos, decimal ventas) CalcularCostosYVentas(
             EmpresaServicioLargaDistanciaEntidad empresa,
             List<OmnibusEntidad> omnibusEmpresa,
@@ -59,6 +71,7 @@ namespace Grupo_E.F12_CostoVsVentas
             decimal ventas = 0m;
 
             // --- COSTOS ---
+            // Arrendamientos de la empresa cuyo Mes cae en el rango de fechas elegido.
             if (empresa.Arrendamientos != null)
             {
                 costos = empresa.Arrendamientos
@@ -66,34 +79,65 @@ namespace Grupo_E.F12_CostoVsVentas
                     .Sum(a => a.Costo);
             }
 
-            // --- HDR MD de la empresa (a partir de los ómnibus) ---
-            
-            var hdrEmpresa = new HashSet<int>(
-                omnibusEmpresa
-                    .Where(o => o.Paradas != null)
-                    .SelectMany(o => o.Paradas)
-                    .Where(p => p.HDRDistribucionMD != null)
-                    .SelectMany(p => p.HDRDistribucionMD)
-            );
+            // --- SERVICIOS DE LA EMPRESA ---
+            // Sacamos los ServicioID de los ómnibus de la empresa (evitando nulos y repetidos).
+            var serviciosEmpresa = omnibusEmpresa
+                .Select(o => o.ServicioID)
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .Distinct()
+                .ToList();
+
+            if (!serviciosEmpresa.Any())
+            {
+                // La empresa tiene ómnibus pero ninguno con ServicioID definido.
+                // No podemos atribuir ventas a ningún servicio.
+                return (costos, 0m);
+            }
+
+            // --- HDR MD asociadas a esos servicios ---
+            var hdrTodas = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
+                           ?? new List<HDR_Distribucion_MDEntidad>();
+
+            var hdrEmpresa = hdrTodas
+                .Where(h => !string.IsNullOrWhiteSpace(h.ServicioID)
+                            && serviciosEmpresa.Contains(h.ServicioID))
+                .ToList();
 
             if (!hdrEmpresa.Any())
             {
-                // No hay HDR MD asociados a la empresa -> no hay ventas atribuibles
+                // No hay HDR para los servicios de la empresa -> no hay ventas atribuibles
                 return (costos, 0m);
             }
-            *
+
+            // --- TRACKINGS de encomiendas que viajaron en esos HDR ---
+            var trackingsEmpresa = new HashSet<string>(
+                hdrEmpresa
+                    .SelectMany(h => h.Encomiendas ?? new List<string>())
+                    .Where(t => !string.IsNullOrWhiteSpace(t))
+            );
+
+            if (!trackingsEmpresa.Any())
+            {
+                // No hay encomiendas asociadas a las HDR de la empresa
+                return (costos, 0m);
+            }
+
+            // --- VENTAS ---
+            // Tomamos solo las encomiendas:
+            // - cuyo Tracking está en los HDR de la empresa
+            // - que tienen EncomiendaFactura
+            // - y cuya FechaEntrega está en el rango elegido
             var encomiendas = EncomiendaAlmacen.Encomienda ?? new List<EncomiendaEntidad>();
 
-            ventas =  encomiendas
+            ventas = encomiendas
                 .Where(e =>
+                    e.EncomiendaFactura != null &&
                     e.FechaEntrega.HasValue &&
                     e.FechaEntrega.Value.Date >= fechaDesde &&
                     e.FechaEntrega.Value.Date <= fechaHasta &&
-                    e.EncomiendaFactura != null &&
-                    e.HistorialCambios != null &&
-                    e.HistorialCambios.Any(h => hdrEmpresa.Contains(h.NumeroHDRMD)))
+                    trackingsEmpresa.Contains(e.Tracking))
                 .Sum(e => e.EncomiendaFactura.PrecioTotalEncomienda);
-                
+
             return (costos, ventas);
         }
     }

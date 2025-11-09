@@ -430,111 +430,25 @@
     "Facturada": false
   },
   {
-    "Tracking": "CVP_001",
-    "CodLocalidadOrigen": "CABA",
-    "CodCentroDistribucionOrigen": "CD01",
-    "CodCentroDistribucionDestino": "CD05",
-    "Estado": 7,
-    "TipoBulto": 1,
-    "CUITCliente": "30-65478912-3",
-    "DNIDestinatario": 40123456,
-    "NombreDestinatario": "Cliente 1",
-    "ApellidoDestinatario": "Plusmar",
-    "DireccionDestinatario": "Av. San Martín 1000",
-    "AgenciaOrigen": null,
-    "AgenciaDestino": null,
-    "CodCDActual": "CD01",
-    "ParadasRuta": [ 700 ],
-    "FechaImposicion": "2025-07-15T10:00:00",
-    "FechaAdmision": "2025-07-15T11:00:00",
-    "FechaEntrega": "2025-07-16T09:00:00",
+    "Tracking": "CD09_001",
+    "FechaEntrega": "2025-10-06T16:20:00",
     "EncomiendaFactura": {
-      "PrecioCombinacionTamanoOrigenDestino": 12500,
-      "ExtraRetiro": 0,
-      "ExtraAgencia": 0,
-      "ExtraEntrega": 0,
-      "PrecioTotalEncomienda": 12500
-    },
-    "HistorialCambios": [
-      {
-        "Tracking": "CVP_001",
-        "FechaPrevia": "2025-07-15T11:00:00",
-        "UbicacionPrevia": "CD01",
-        "NumeroHDRMD": 2001
-      }
-    ],
-    "Facturada": false
+      "PrecioTotalEncomienda": 15000.0
+    }
   },
   {
-    "Tracking": "CVP_002",
-    "CodLocalidadOrigen": "CABA",
-    "CodCentroDistribucionOrigen": "CD01",
-    "CodCentroDistribucionDestino": "CD05",
-    "Estado": 7,
-    "TipoBulto": 1,
-    "CUITCliente": "30-65478912-3",
-    "DNIDestinatario": 40123457,
-    "NombreDestinatario": "Cliente 2",
-    "ApellidoDestinatario": "Plusmar",
-    "DireccionDestinatario": "Av. Cabildo 500",
-    "AgenciaOrigen": null,
-    "AgenciaDestino": null,
-    "CodCDActual": "CD01",
-    "ParadasRuta": [ 700 ],
-    "FechaImposicion": "2025-08-20T10:00:00",
-    "FechaAdmision": "2025-08-20T11:00:00",
-    "FechaEntrega": "2025-08-21T09:00:00",
+    "Tracking": "CD01_30003",
+    "FechaEntrega": "2025-10-10T12:00:00",
     "EncomiendaFactura": {
-      "PrecioCombinacionTamanoOrigenDestino": 12500,
-      "ExtraRetiro": 0,
-      "ExtraAgencia": 0,
-      "ExtraEntrega": 0,
-      "PrecioTotalEncomienda": 12500
-    },
-    "HistorialCambios": [
-      {
-        "Tracking": "CVP_002",
-        "FechaPrevia": "2025-08-20T11:00:00",
-        "UbicacionPrevia": "CD01",
-        "NumeroHDRMD": 2088
-      }
-    ],
-    "Facturada": false
+      "PrecioTotalEncomienda": 14000.0
+    }
   },
   {
-    "Tracking": "CVP_003",
-    "CodLocalidadOrigen": "CABA",
-    "CodCentroDistribucionOrigen": "CD01",
-    "CodCentroDistribucionDestino": "CD05",
-    "Estado": 7,
-    "TipoBulto": 1,
-    "CUITCliente": "30-65478912-3",
-    "DNIDestinatario": 40123458,
-    "NombreDestinatario": "Cliente 3",
-    "ApellidoDestinatario": "Plusmar",
-    "DireccionDestinatario": "Av. Rivadavia 900",
-    "AgenciaOrigen": null,
-    "AgenciaDestino": null,
-    "CodCDActual": "CD01",
-    "ParadasRuta": [ 700 ],
-    "FechaImposicion": "2025-10-10T10:00:00",
-    "FechaAdmision": "2025-10-10T11:00:00",
-    "FechaEntrega": "2025-10-11T09:00:00",
+    "Tracking": "CD01_40004",
+    "FechaEntrega": "2025-10-25T15:30:00",
     "EncomiendaFactura": {
-      "PrecioCombinacionTamanoOrigenDestino": 12450,
-      "ExtraRetiro": 0,
-      "ExtraAgencia": 0,
-      "ExtraEntrega": 0,
-      "PrecioTotalEncomienda": 12450
-    },
-    "HistorialCambios": [
-      {
-        "Tracking": "CVP_003",
-        "FechaPrevia": "2025-10-10T11:00:00",
-        "UbicacionPrevia": "CD01",
-        "NumeroHDRMD": 2001
-      }
-    ],
-    "Facturada": false
+      "PrecioTotalEncomienda": 11500.0
+    }
   }
+
 ]
