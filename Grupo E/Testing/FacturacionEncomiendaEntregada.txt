@@ -1,0 +1,25 @@
+﻿SIEMRPE CAMINO FELIZ :) 
+
+1. Pantalla GeneracionFactura:
+
+Ingreso:
+
+- CUIT: 307XXXXXXX
+Filtros seleccionados
+
+2. Te muestra:
+
+CD01, que tiene PrecioTotal = 1500,00
+Y suma = 12000
+
+3. Termina el programa (cierro)
+
+en el archivo facturas.json (del bin) ahora debería una encomienda con:
+id: jjjj
+monto: iiii
+
+
+
+
+
+
