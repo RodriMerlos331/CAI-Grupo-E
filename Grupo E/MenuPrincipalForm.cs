@@ -52,6 +52,17 @@ namespace Grupo_E
 
         private void btnImposicionEnAgencia_Click(object sender, EventArgs e)
         {
+            if (AgenciaAlmacen.AgenciaActual == null)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar una agencia antes de ingresar a Imposición en Agencia.",
+                    "Agencia no seleccionada",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
             using (var f = new ImposicionEnAgencia.F02_ImposicionEnAgencia())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
@@ -61,6 +72,16 @@ namespace Grupo_E
 
         private void btnImposicionEnCD_Click(object sender, EventArgs e)
         {
+            if (CentroDeDistribucionAlmacen.CentroDistribucionActual == null)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar un Centro de Distribución antes de ingresar a Imposición en CD.",
+                    "Centro de Distribución no seleccionado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
             using (var f = new ImposicionEnCD.F03_ImposicionCDForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
@@ -136,6 +157,16 @@ namespace Grupo_E
 
         private void btnGestionarFletero_Click(object sender, EventArgs e)
         {
+            if (CentroDeDistribucionAlmacen.CentroDistribucionActual == null)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar un Centro de Distribución antes de ingresar a Gestionar Fletero",
+                    "Centro de Distribución no seleccionado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
             using (var f = new GestionarFletero.F05_GestionarFleteroForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
@@ -145,6 +176,16 @@ namespace Grupo_E
 
         private void btnGestionarOmnibus_Click(object sender, EventArgs e)
         {
+            if (CentroDeDistribucionAlmacen.CentroDistribucionActual == null)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar un Centro de Distribución antes de ingresar a Gestionar Omnibus.",
+                    "Centro de Distribución no seleccionado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
             using (var f = new GestionarOmnibus.F04_GestionarOmnibusForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;
