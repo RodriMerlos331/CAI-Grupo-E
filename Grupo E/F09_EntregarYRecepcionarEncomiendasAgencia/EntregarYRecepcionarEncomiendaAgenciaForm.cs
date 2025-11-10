@@ -99,24 +99,27 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
 
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
-            
+            modelo.AceptarCambiosEncomiendas();
 
+            /*
              foreach (ListViewItem item in GuiasAEntregarListView.Items)
-               {
+             {
                 string trackingId = ""; 
-                modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.ImpuestaPendienteRetiroAgencia;
+                modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.RetiradaAgenciaFletero;
                 //Pasa a "RetiradaAgenciaFletero"
-            }
+             }
 
             foreach (ListViewItem item in GuiasARecibirListView.Items)
-               {
+            {
 
                  string trackingId = "";
-                   modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.PendienteRetiroAgencia;
+                 modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.PendienteRetiroAgencia;
 
                 //este está ok_!!!
 
             }
+
+            */
 
         }
     }

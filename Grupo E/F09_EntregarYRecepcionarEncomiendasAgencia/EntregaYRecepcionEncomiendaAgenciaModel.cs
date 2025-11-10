@@ -15,7 +15,8 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 	internal class EntregaYRecepcionEncomiendaAgenciaModel
 	{
         public Dictionary<string, GuiaDeEncomiendas> data;
-
+        public List<GuiaDeEncomiendas> encomiendasAEntregar;
+        public List<GuiaDeEncomiendas> encomiendasARecibir;
 
         internal Dictionary<string, GuiaDeEncomiendas> BuscarEncomiendaFletero (int dni)
         {
@@ -97,6 +98,78 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
             }
 
             return encomiendasARecibir;
+        }
+
+        public void AceptarCambiosEncomiendas ()
+        {
+            if(encomiendasAEntregar == null && encomiendasARecibir == null)
+            {
+                MessageBox.Show("No hay encomiendas para recibir o entregar.");
+                return;
+            }
+            else
+            {
+                foreach (var encomienda in encomiendasAEntregar)
+                {
+                    var encomiendaAlmacen = EncomiendaAlmacen.Encomienda
+                        .FirstOrDefault(e => e.Tracking == encomienda.TrackingId);
+                      
+                    var nuevoHistorial = new Historial
+                    {
+                        Tracking = encomiendaAlmacen.Tracking,
+                        FechaPrevia = DateTime.Now,
+                        UbicacionPrevia = AgenciaAlmacen.AgenciaActual.NombreAgencia,
+                        FleteroAsignado = encomienda.FleteroAsignado,
+                        NumeroHDRUM = HDRDistribucionUMAlmacen.HDRDistribucionUM
+                            .FirstOrDefault(h => h.Encomiendas.Contains(encomienda.TrackingId))?.NumeroHDRUM ?? 0,
+                        NumeroHDRMD = 0, 
+                        EstadoPrevio = encomiendaAlmacen.Estado
+                    };
+
+                    encomiendaAlmacen.HistorialCambios.Add(nuevoHistorial);
+
+                    encomiendaAlmacen.Estado = EstadoEncomiendaEnum.RetiradaAgenciaFletero;
+
+                    var hdr = HDRDistribucionUMAlmacen.HDRDistribucionUM
+                        .FirstOrDefault(h => h.Encomiendas.Contains(encomienda.TrackingId));
+                    if (hdr != null)
+                    {
+                        hdr.Cumplida = true;
+                    }
+                }
+
+                foreach (var encomienda in encomiendasARecibir)
+                {
+                    var encomiendaAlmacen = EncomiendaAlmacen.Encomienda
+                        .FirstOrDefault(e => e.Tracking == encomienda.TrackingId);
+
+                    var nuevoHistorial = new Historial
+                    {
+                        Tracking = encomiendaAlmacen.Tracking,
+                        FechaPrevia = DateTime.Now,
+                        UbicacionPrevia = encomiendaAlmacen.CodCDActual,
+                        FleteroAsignado = encomienda.FleteroAsignado,
+                        NumeroHDRUM = HDRDistribucionUMAlmacen.HDRDistribucionUM
+                            .FirstOrDefault(h => h.Encomiendas.Contains(encomienda.TrackingId))?.NumeroHDRUM ?? 0,
+                        NumeroHDRMD = 0,
+                        EstadoPrevio = encomiendaAlmacen.Estado
+                    };
+
+                    encomiendaAlmacen.HistorialCambios.Add(nuevoHistorial);
+
+                    encomiendaAlmacen.Estado = EstadoEncomiendaEnum.PendienteRetiroAgencia;
+
+                    var hdr = HDRDistribucionUMAlmacen.HDRDistribucionUM
+                        .FirstOrDefault(h => h.Encomiendas.Contains(encomienda.TrackingId));
+                    if (hdr != null)
+                    {
+                        hdr.Cumplida = true;
+                    }
+                }
+
+            }
+                
+
         }
     }
 }
