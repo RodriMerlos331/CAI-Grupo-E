@@ -79,7 +79,9 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
             foreach (var encomienda in BuscarEncomiendaFletero(dni))
             {
-                if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMOrigen && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen)
+                if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMDestino && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen 
+                 
+                    && HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr => hdr.Encomiendas.Contains(encomienda.Value.TrackingId) && hdr.Tipo == Tipo.Retiro))
                 {
                     encomiendasARecibir.Add
                     (
@@ -129,13 +131,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                     encomiendaAlmacen.HistorialCambios.Add(nuevoHistorial);
 
                     encomiendaAlmacen.Estado = EstadoEncomiendaEnum.RetiradaAgenciaFletero;
-
-                    var hdr = HDRDistribucionUMAlmacen.HDRDistribucionUM
-                        .FirstOrDefault(h => h.Encomiendas.Contains(encomienda.TrackingId));
-                    if (hdr != null)
-                    {
-                        hdr.Cumplida = true;
-                    }
+                   
                 }
 
                 foreach (var encomienda in encomiendasARecibir)
@@ -158,13 +154,6 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                     encomiendaAlmacen.HistorialCambios.Add(nuevoHistorial);
 
                     encomiendaAlmacen.Estado = EstadoEncomiendaEnum.PendienteRetiroAgencia;
-
-                    var hdr = HDRDistribucionUMAlmacen.HDRDistribucionUM
-                        .FirstOrDefault(h => h.Encomiendas.Contains(encomienda.TrackingId));
-                    if (hdr != null)
-                    {
-                        hdr.Cumplida = true;
-                    }
                 }
 
             }

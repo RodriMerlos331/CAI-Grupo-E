@@ -54,7 +54,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                 return;
             }
 
-
+            // se imprime en ambas listas corregir
             foreach (var encomienda in modelo.EncomiendasAEntregar(dni))
             {
                 GuiasAEntregarListView.Items.Add(
@@ -67,27 +67,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
                     new ListViewItem(encomienda.TrackingId.ToString()));
             }
 
-            /* foreach (KeyValuePair<string, GuiaDeEncomiendas> numGuia in modelo.data)
-            {
-                GuiaDeEncomiendas guia = numGuia.Value;
-
-                if (guia.FleteroAsignado == dni)
-                {
-
-                    //EntransitoUM: encomiendas que le doy al fletero y agenciaorigen = agencia actual
-                    if (guia.EstadoEnvio == EstadoDeEnvio.EntransitoUM)
-                    {
-                        GuiasAEntregarListView.Items.Add(
-                            new ListViewItem(guia.TrackingId.ToString()));
-                    }
-                    //EnTransitoUMDestino: encomienda && agenciadestino = agencia actual
-                    else if (guia.EstadoEnvio == EstadoDeEnvio.PendienteEntregaAgencia)
-                    {
-                        GuiasARecibirListView.Items.Add(
-                            new ListViewItem(guia.TrackingId.ToString()));
-                    }
-                } 
-             } */
+           
         }
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
@@ -101,26 +81,6 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
             modelo.AceptarCambiosEncomiendas();
-
-            /*
-             foreach (ListViewItem item in GuiasAEntregarListView.Items)
-             {
-                string trackingId = ""; 
-                modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.RetiradaAgenciaFletero;
-                //Pasa a "RetiradaAgenciaFletero"
-             }
-
-            foreach (ListViewItem item in GuiasARecibirListView.Items)
-            {
-
-                 string trackingId = "";
-                 modelo.data[trackingId].EstadoEnvio = EstadoDeEnvio.PendienteRetiroAgencia;
-
-                //este está ok_!!!
-
-            }
-
-            */
 
         }
 
