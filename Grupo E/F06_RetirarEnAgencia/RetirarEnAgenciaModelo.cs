@@ -60,7 +60,7 @@ namespace Grupo_E.RetirarEnAgencia
 
             return encomiendas.Any(e =>
                 e.Tracking == tracking &&
-                e.AgenciaDestino== AgenciaAlmacen.AgenciaActual.NombreAgencia &&
+                e.AgenciaDestino== AgenciaAlmacen.AgenciaActual.CodigoAgencia &&
                 e.Estado == EstadoEncomiendaEnum.PendienteRetiroAgencia
             );
         }
