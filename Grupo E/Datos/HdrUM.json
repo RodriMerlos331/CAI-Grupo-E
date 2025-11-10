@@ -1,2 +1,22 @@
 [
+  {
+    "NumeroHDRUM": 1000,
+    "Tipo": 0,
+    "DniFleteroAsignado": 46890123,
+    "Cumplida": false,
+    "Rendida": false,
+    "Encomiendas": [
+      "AG07_1"
+    ]
+  },
+  {
+    "NumeroHDRUM": 1001,
+    "Tipo": 0,
+    "DniFleteroAsignado": 41239876,
+    "Cumplida": true,
+    "Rendida": true,
+    "Encomiendas": [
+      "CD09_1"
+    ]
+  }
 ]

@@ -48,5 +48,30 @@
       }
 
     ]
+  },
+  {
+    "ServicioID": "BRC_COR",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC234",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD14",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-11-20T10:30:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-11-20T20:30:00",
+        "FechaYHoraSale": "2025-11-21T21:30:00"
+      },
+      {
+        "CodigoCD": "CD07",
+        "FechaYHoraLlega": "2025-11-22T10:30:00",
+        "FechaYHoraSale": null
+      }
+
+    ]
   }
 ]

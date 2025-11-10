@@ -1,8 +1,10 @@
 [
   {
-    "NumeroHDRMD": 2001,
-    "estadoHDR": "Cumplida",
-    "Encomiendas": [ "CD09_001", "CD01_30003", "CD01_40004" ],
+    "NumeroHDRMD": 1001,
+    "estadoHDR": 1,
+    "Encomiendas": [
+      "CD09_1"
+    ],
     "ServicioID": "CABA_CORRIENTESCAPITAL",
     "CdDesde": "CD01",
     "CdHasta": "CD09"
