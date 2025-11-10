@@ -19,6 +19,7 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
     {
 
         private readonly EntregaYRecepcionEncomiendaAgenciaModel modelo = new EntregaYRecepcionEncomiendaAgenciaModel();    
+        
         public EntregarYRecepcionarEncomiendaAgenciaForm()
         {
             InitializeComponent();
@@ -121,6 +122,11 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
 
             */
 
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
