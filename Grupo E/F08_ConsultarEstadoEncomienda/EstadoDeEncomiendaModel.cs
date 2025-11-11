@@ -40,7 +40,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                        : (enc.FechaAdmision > DateTime.MinValue ? enc.FechaAdmision : enc.FechaImposicion));
 
 
-                // Origen y destino 
+                // Origen y destino //CD13_8
                 var origen = LocalidadAlmacen.Localidad
                     .Where(loc => loc.CodigoLocalidad == enc.CodCentroDistribucionOrigen)
                     .Select(cd => cd.Nombre)
@@ -78,7 +78,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                     EstadoActual = (EstadoEnvio)Enum.Parse(typeof(EstadoEnvio), enc.Estado.ToString(), true),
                     FechaHoraUltimoCambio = fechaUlt,
                     LocalidadActual = enc.CodCDActual,
-                    Origen = origen,
+                    Origen = origen, 
                     Destino = destino,
                     TipoDeBulto = enc.TipoBulto.ToString(),
                     Historial = movimientos

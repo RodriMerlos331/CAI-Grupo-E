@@ -22,6 +22,6 @@ CD11_7 queda a         EnTransitoUMOrigen, //4 y codCd actual en null
 
 HDR:
 
-1003 y 1004 rendidas y cumplidas en true
+Verificar que las HDR con NumeroHDR: 1003 y 1004 queden en rendidas y cumplidas como true.
 se crea 1005 rendida cumplida en flase , de tipo Retiro (0) con CD11_7 asignada
 

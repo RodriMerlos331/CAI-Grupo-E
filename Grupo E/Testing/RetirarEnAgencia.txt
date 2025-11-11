@@ -3,7 +3,7 @@
     2-Tocar opcion "Retiro en Agencia"
 
 2. Pantalla Retiro en Agencia
-    1- Ingresar número de tracking: AG01_01
+    1- Ingresar número de tracking: AG01_1
     2- Presionar botón "Buscar"
     3- Verificar que se muestra un cartel con la leyenda "Encomienda encontrada en esta agencia"
     4-Ingresar en el campo nombre del destinatario: "Juan"
@@ -14,9 +14,8 @@
 
 3. Finalizar el programa
     Archivo Encomiendas.json
-        -Verificar que la encomienda AG01_01 tiene el parámetro Estado:12 
+        -Verificar que la encomienda AG01_1 tiene el parámetro Estado:12 
         -Verificar que el parametro fecha de entrega corresponde al momento en que se presiono el boton "Confirmar Retiro"
-        - Verificar que el campo FechaRetiro corresponde al momento en que se realizó el retiro
 
 
 
