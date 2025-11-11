@@ -1,0 +1,39 @@
+﻿
+
+Pantalla Entregar y Recepcionar encomienda en agencia:
+
+1. Ingreso:
+
+ Ingreso el DNI del feltero: 37765432
+ Presionar el boton "Buscar"
+
+ 2. Me muestra:
+
+ List View "Guias a entregar al fletero": CD01_1
+ List View "Guias a recibir del fletero": AG10_1
+ Presiona el boton "Aceptar"
+
+ 3.Cierra el programa
+ En el archivo encomiendas.json (del bin) ahora debería contar con los sigueintes estados:
+ - La encomienda CD01_1 con estado "RetiradaAgenciaFletero"
+ - La encomienda AG10_1 con estado "PendienteRetiroAgencia"
+
+ La encomienda AG10_1 debe contar con un nuevo historial agregado:
+ -Estado: EnTransitoUMDestino,
+ -FechaHora: Fecha y hora del estado anterior
+ -Ubicacion: CD01
+ -Fletero Asiganado: 37765432
+ -HDR: 1002
+
+ -Fecha y hora del nuevo estado: DateTime.Now
+ -Ubicacion: actual agencia (AG10)
+
+ La encomienda CD01_1 debe contar con un nuevo historial agregado:
+ -Estado: EnTransitoUMOrigen,
+ -FechaHora: Fecha y hora del estado anterior
+ -Ubicacion: AG10
+ -Fletero Asiganado: 37765432
+ -HDR: 1001
+
+ -Fecha y hora del nuevo estado: DateTime.Now
+ -Ubicacion: null
