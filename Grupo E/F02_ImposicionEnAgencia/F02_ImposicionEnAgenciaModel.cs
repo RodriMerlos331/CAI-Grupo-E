@@ -54,10 +54,9 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
 
         int ultimoNumero = EncomiendaAlmacen.Encomienda
-          .Select(e => e.Tracking.Split('_').Last())
-          .Select(n => int.Parse(n))
-          .DefaultIfEmpty(1)
-          .Max();
+            .Select(e => int.Parse(e.Tracking.Split('_').Last()))
+            .DefaultIfEmpty(0)
+            .Max();
 
 
         public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
@@ -84,7 +83,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
             var nuevaEncomienda = new EncomiendaEntidad
             {
-                Tracking = CDDestino + "_" + (ultimoNumero++).ToString(),
+                Tracking = CDDestino + "_" + (ultimoNumero + 1).ToString(),
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
                 FechaAdmision = null,
@@ -159,7 +158,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
             var nuevaEncomienda = new EncomiendaEntidad
             {
-                Tracking = "DOM" + "_" + (ultimoNumero++).ToString(),
+                Tracking = "DOM" + "_" + (ultimoNumero + 1).ToString(),
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
                 FechaAdmision = null,
@@ -233,7 +232,7 @@ namespace Grupo_E.F02_ImposicionEnAgencia
 
             var nuevaEncomienda = new EncomiendaEntidad
             {
-                Tracking = CodAgenciaDestino + "_" + (ultimoNumero++).ToString(),
+                Tracking = CodAgenciaDestino + "_" + (ultimoNumero + 1).ToString(),
                 CUITCliente = cuitCliente,
                 FechaImposicion = DateTime.Now,
                 FechaAdmision = null,
