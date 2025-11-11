@@ -42,13 +42,13 @@ namespace Grupo_E.ConsultarEstadoEncomienda
 
                 // Origen y destino //CD13_8
                 var origen = LocalidadAlmacen.Localidad
-                    .Where(loc => loc.CodigoLocalidad == enc.CodCentroDistribucionOrigen)
+                    .Where(loc => loc.CodigoCD == enc.CodCentroDistribucionOrigen)
                     .Select(cd => cd.Nombre)
                     .FirstOrDefault();
 
 
                 var destino = LocalidadAlmacen.Localidad
-                    .Where(loc => loc.CodigoLocalidad == enc.CodCentroDistribucionDestino)
+                    .Where(loc => loc.CodigoCD == enc.CodCentroDistribucionDestino)
                     .Select(cd => cd.Nombre)
                     .FirstOrDefault();
 
