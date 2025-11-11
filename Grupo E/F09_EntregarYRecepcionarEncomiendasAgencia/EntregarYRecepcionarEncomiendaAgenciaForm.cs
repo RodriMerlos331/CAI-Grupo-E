@@ -81,7 +81,10 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
             modelo.AceptarCambiosEncomiendas();
-
+            DNITxt.Clear();
+            GuiasAEntregarListView.Items.Clear();
+            GuiasARecibirListView.Items.Clear();
+            DNITxt.Focus();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

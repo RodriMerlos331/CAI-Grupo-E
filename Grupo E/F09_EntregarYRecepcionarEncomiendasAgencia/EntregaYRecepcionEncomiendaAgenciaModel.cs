@@ -15,8 +15,8 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 	internal class EntregaYRecepcionEncomiendaAgenciaModel
 	{
         public Dictionary<string, GuiaDeEncomiendas> data;
-        public List<GuiaDeEncomiendas> encomiendasAEntregar;
-        public List<GuiaDeEncomiendas> encomiendasARecibir;
+        public List<GuiaDeEncomiendas> encomAEntregar;
+        public List<GuiaDeEncomiendas> encomARecibir;
 
         internal Dictionary<string, GuiaDeEncomiendas> BuscarEncomiendaFletero (int dni)
         {
@@ -53,7 +53,8 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
             foreach (var encomienda in BuscarEncomiendaFletero(dni))
             {
-                if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMOrigen && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen)
+                if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMOrigen && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen
+                    && HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr => hdr.Encomiendas.Contains(encomienda.Value.TrackingId) && hdr.Tipo == TipoHDREnum.Retiro))
                 {
                     encomiendasAEntregar.Add 
                     (
@@ -70,6 +71,8 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                 }
             }
 
+            encomAEntregar = encomiendasAEntregar;
+
             return encomiendasAEntregar;
         }
 
@@ -79,9 +82,9 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
             foreach (var encomienda in BuscarEncomiendaFletero(dni))
             {
-                if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMDestino && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen 
+                if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMDestino && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaDestino
                  
-                    && HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr => hdr.Encomiendas.Contains(encomienda.Value.TrackingId) && hdr.Tipo == TipoHDREnum.Retiro))
+                    && HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr => hdr.Encomiendas.Contains(encomienda.Value.TrackingId) && hdr.Tipo == TipoHDREnum.Entrega))
                 {
                     encomiendasARecibir.Add
                     (
@@ -99,19 +102,21 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                 }
             }
 
+           encomARecibir = encomiendasARecibir;
+
             return encomiendasARecibir;
         }
 
         public void AceptarCambiosEncomiendas ()
         {
-            if(encomiendasAEntregar == null && encomiendasARecibir == null)
+            if(encomAEntregar == null && encomARecibir == null)
             {
                 MessageBox.Show("No hay encomiendas para recibir o entregar.");
                 return;
             }
             else
             {
-                foreach (var encomienda in encomiendasAEntregar)
+                foreach (var encomienda in encomAEntregar)
                 {
                     var encomiendaAlmacen = EncomiendaAlmacen.Encomienda
                         .FirstOrDefault(e => e.Tracking == encomienda.TrackingId);
@@ -134,7 +139,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                    
                 }
 
-                foreach (var encomienda in encomiendasARecibir)
+                foreach (var encomienda in encomARecibir)
                 {
                     var encomiendaAlmacen = EncomiendaAlmacen.Encomienda
                         .FirstOrDefault(e => e.Tracking == encomienda.TrackingId);
@@ -155,7 +160,24 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
                     encomiendaAlmacen.Estado = EstadoEncomiendaEnum.PendienteRetiroAgencia;
                 }
+                var mensaje = "";
 
+                if (encomAEntregar != null && encomAEntregar.Count > 0)
+                {
+                    var entregadas = string.Join(", ", encomAEntregar.Select(e => e.TrackingId));
+                    mensaje += $"Se entregaron las siguientes encomiendas:\n{entregadas}\n\n";
+                }
+
+                if (encomARecibir != null && encomARecibir.Count > 0)
+                {
+                    var recibidas = string.Join(", ", encomARecibir.Select(e => e.TrackingId));
+                    mensaje += $"Se recibieron las siguientes encomiendas:\n{recibidas}\n";
+                }
+
+                if (mensaje != "")
+                {
+                    MessageBox.Show(mensaje, "Operación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
                 
 
