@@ -73,5 +73,44 @@
       }
 
     ]
+  },
+  {
+    "ServicioID": "LP_CABA",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "AAA111",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD04",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-11-20T10:30:00"
+      },
+      {
+        "CodigoCD": "CD01",
+        "FechaYHoraLlega": "2025-11-20T20:30:00",
+        "FechaYHoraSale": null
+      }
+
+    ]
+  },
+  {
+    "ServicioID": "RETIRO_VILLAMARIA",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "BBB111",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD01",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-11-20T10:30:00"
+      },
+      {
+        "CodigoCD": "CD06",
+        "FechaYHoraLlega": "2025-11-20T20:30:00",
+        "FechaYHoraSale": null
+      }
+    ]
   }
 ]

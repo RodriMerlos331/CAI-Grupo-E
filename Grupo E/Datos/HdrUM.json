@@ -1,22 +1,32 @@
 [
   {
     "NumeroHDRUM": 1000,
-    "Tipo": 0,
-    "DniFleteroAsignado": 46890123,
-    "Cumplida": false,
-    "Rendida": false,
+    "Tipo": 1,
+    "DniFleteroAsignado": 12345678,
+    "Cumplida": true,
+    "Rendida": true,
     "Encomiendas": [
-      "AG07_1"
+      "AG01_1"
     ]
   },
   {
     "NumeroHDRUM": 1001,
     "Tipo": 0,
-    "DniFleteroAsignado": 41239876,
-    "Cumplida": true,
-    "Rendida": true,
+    "DniFleteroAsignado": 37765432,
+    "Cumplida": false,
+    "Rendida": false,
     "Encomiendas": [
-      "CD09_1"
+      "CD01_1"
+    ]
+  },
+  {
+    "NumeroHDRUM": 1002,
+    "Tipo": 1,
+    "DniFleteroAsignado": 37765432,
+    "Cumplida": false,
+    "Rendida": false,
+    "Encomiendas": [
+      "AG10_1"
     ]
   }
 ]

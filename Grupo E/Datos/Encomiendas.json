@@ -1,44 +1,65 @@
 [
   {
-    "Tracking": "AG07_1",
-    "CodLocalidadOrigen": "BRC",
-    "CodCentroDistribucionOrigen": "CD14",
-    "CodCentroDistribucionDestino": "CD05",
-    "Estado": 4,
+    "Tracking": "AG01_1",
+    "CodLocalidadOrigen": "LP",
+    "CodCentroDistribucionOrigen": "CD04",
+    "CodCentroDistribucionDestino": "CD01",
+    "Estado": 11,
     "TipoBulto": 0,
     "CUITCliente": "30-19283746-4",
-    "DNIDestinatario": 1234567,
-    "NombreDestinatario": "Juan Perez 1234567",
-    "ApellidoDestinatario": "Juan Perez 1234567",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Juan Pérez 12345678",
+    "ApellidoDestinatario": "Juan Pérez 12345678",
     "DireccionDestinatario": null,
-    "AgenciaOrigen": "AG26",
-    "AgenciaDestino": "AG07",
+    "AgenciaOrigen": null,
+    "AgenciaDestino": "AG01",
     "DatosRetiroADomicilio": null,
     "CodCDActual": null,
-    "RecorridoPlanificado": [],
-    "FechaImposicion": "2025-11-10T16:15:44.6463731-03:00",
-    "FechaAdmision": "2025-11-10T16:23:05.7807785-03:00",
+    "RecorridoPlanificado": [
+      {
+        "ServicioId": "LP_CABA",
+        "CodigoCDOrigen": "CD04",
+        "CodigoCDDestino": "CD01"
+      }
+    ],
+    "FechaImposicion": "2025-11-10T20:15:02.4094659-03:00",
+    "FechaAdmision": "2025-11-10T20:15:02.4114678-03:00",
     "FechaEntrega": null,
     "Facturada": false,
-    "EncomiendaFactura": null,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 1000.0,
+      "ExtraRetiro": 0.0,
+      "ExtraAgencia": 1200.0,
+      "ExtraEntrega": 0.0,
+      "PrecioTotalEncomienda": 2200.0
+    },
     "HistorialCambios": [
       {
-        "Tracking": "AG07_1",
-        "FechaPrevia": "2025-11-10T16:15:44.6463731-03:00",
-        "UbicacionPrevia": null,
+        "Tracking": "AG01_1",
+        "FechaPrevia": "2025-11-10T20:15:02.4114678-03:00",
+        "UbicacionPrevia": "CD04",
         "FleteroAsignado": 0,
         "NumeroHDRUM": 0,
         "NumeroHDRMD": 0,
-        "EstadoPrevio": 1
+        "EstadoPrevio": 5
       },
       {
-        "Tracking": "AG07_1",
-        "FechaPrevia": "2025-11-10T16:23:05.7807785-03:00",
-        "UbicacionPrevia": "CD14",
-        "FleteroAsignado": 46890123,
+        "Tracking": "AG01_1",
+        "FechaPrevia": "2025-11-10T20:34:13.8456402-03:00",
+        "UbicacionPrevia": "CD04",
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 0,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 9
+      },
+      {
+        "Tracking": "AG01_1",
+        "FechaPrevia": "2025-11-10T20:34:28.601504-03:00",
+        "UbicacionPrevia": null,
+        "FleteroAsignado": 12345678,
         "NumeroHDRUM": 1000,
         "NumeroHDRMD": 0,
-        "EstadoPrevio": 3
+        "EstadoPrevio": 10
       }
     ]
   },
@@ -51,12 +72,12 @@
     "TipoBulto": 0,
     "CUITCliente": "30-19283746-4",
     "DNIDestinatario": 12345678,
-    "NombreDestinatario": "Prueba prueba 12345678",
-    "ApellidoDestinatario": "Prueba prueba 12345678",
+    "NombreDestinatario": "Juan Pérez 12345678",
+    "ApellidoDestinatario": "Juan Pérez 12345678",
     "DireccionDestinatario": null,
     "AgenciaOrigen": null,
     "AgenciaDestino": null,
-    "DatosRetiroADomicilio": "Prueba prueba 1111",
+    "DatosRetiroADomicilio": null,
     "CodCDActual": "CD09",
     "RecorridoPlanificado": [
       {
@@ -65,53 +86,115 @@
         "CodigoCDDestino": "CD09"
       }
     ],
-    "FechaImposicion": "2025-11-09T19:11:05.2939098-03:00",
-    "FechaAdmision": "2025-11-09T19:12:24.022119-03:00",
+    "FechaImposicion": "2025-11-10T20:39:08.9359894-03:00",
+    "FechaAdmision": "2025-11-10T20:39:08.9359894-03:00",
     "FechaEntrega": null,
     "Facturada": false,
     "EncomiendaFactura": {
       "PrecioCombinacionTamanoOrigenDestino": 1300.0,
-      "ExtraRetiro": 1750.0,
+      "ExtraRetiro": 0.0,
       "ExtraAgencia": 0.0,
       "ExtraEntrega": 0.0,
-      "PrecioTotalEncomienda": 3050.0
+      "PrecioTotalEncomienda": 1300.0
     },
     "HistorialCambios": [
       {
         "Tracking": "CD09_1",
-        "FechaPrevia": "2025-11-09T19:11:05.2939098-03:00",
-        "UbicacionPrevia": null,
-        "FleteroAsignado": 0,
-        "NumeroHDRUM": 0,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 0
-      },
-      {
-        "Tracking": "CD09_1",
-        "FechaPrevia": "2025-11-09T19:11:42.0685371-03:00",
-        "UbicacionPrevia": "CD01",
-        "FleteroAsignado": 12345678,
-        "NumeroHDRUM": 1000,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 2
-      },
-      {
-        "Tracking": "CD09_1",
-        "FechaPrevia": "2025-11-09T19:12:24.0476787-03:00",
-        "UbicacionPrevia": null,
-        "FleteroAsignado": 12345678,
-        "NumeroHDRUM": 1000,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 4
-      },
-      {
-        "Tracking": "CD09_1",
-        "FechaPrevia": "2025-11-09T19:12:24.022119-03:00",
+        "FechaPrevia": "2025-11-10T20:39:08.9359894-03:00",
         "UbicacionPrevia": "CD01",
         "FleteroAsignado": 0,
         "NumeroHDRUM": 0,
         "NumeroHDRMD": 0,
         "EstadoPrevio": 5
+      }
+    ]
+  },
+  {
+    "Tracking": "CD01_1",
+    "CodLocalidadOrigen": "VM",
+    "CodCentroDistribucionOrigen": "CD06",
+    "CodCentroDistribucionDestino": "CD01",
+    "Estado": 4,
+    "TipoBulto": 0,
+    "CUITCliente": "30-87651234-0",
+    "DNIDestinatario": 23456789,
+    "NombreDestinatario": "Maria Tucson 23456789",
+    "ApellidoDestinatario": "Maria Tucson 23456789",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": "AG10",
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "RecorridoPlanificado": [],
+    "FechaImposicion": "2025-11-10T20:48:24.2782101-03:00",
+    "FechaAdmision": "2025-11-10T20:49:18.2828482-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": null,
+    "HistorialCambios": [
+      {
+        "Tracking": "CD01_1",
+        "FechaPrevia": "2025-11-10T20:48:24.2782101-03:00",
+        "UbicacionPrevia": null,
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 0,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 1
+      },
+      {
+        "Tracking": "CD01_1",
+        "FechaPrevia": "2025-11-10T20:49:18.2828482-03:00",
+        "UbicacionPrevia": "CD06",
+        "FleteroAsignado": 37765432,
+        "NumeroHDRUM": 1001,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 3
+      }
+    ]
+  },
+  {
+    "Tracking": "AG10_1",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD01",
+    "CodCentroDistribucionDestino": "CD06",
+    "Estado": 10,
+    "TipoBulto": 0,
+    "CUITCliente": "20-99887766-5",
+    "DNIDestinatario": 34567891,
+    "NombreDestinatario": "Alica Rosa 34567891",
+    "ApellidoDestinatario": "Alica Rosa 34567891",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": "AG10",
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "RecorridoPlanificado": [
+      {
+        "ServicioId": "RETIRO_VILLAMARIA",
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD06"
+      }
+    ],
+    "FechaImposicion": "2025-11-10T20:55:33.0176459-03:00",
+    "FechaAdmision": "2025-11-10T20:55:33.0176459-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 1200.0,
+      "ExtraRetiro": 0.0,
+      "ExtraAgencia": 1200.0,
+      "ExtraEntrega": 0.0,
+      "PrecioTotalEncomienda": 2400.0
+    },
+    "HistorialCambios": [
+      {
+        "Tracking": "AG10_1",
+        "FechaPrevia": "2025-11-10T21:11:20.0880822-03:00",
+        "UbicacionPrevia": "CD01",
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 0,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 9
       }
     ]
   }

@@ -266,6 +266,7 @@ namespace Grupo_E.GestionarFletero
 
             //Actualizar estados de encomiendas para HDR de entrega cumplidas
 
+            //Actualizar estados de encomiendas para HDR de entrega cumplidas
             foreach (var hdr in HDRRendicion.Where(h => h.Tipo == HDR.TipoHDR.Entrega && h.Cumplida))
             {
                 foreach (var guia in hdr.Guias)
@@ -273,18 +274,35 @@ namespace Grupo_E.GestionarFletero
                     var encomienda = EncomiendaAlmacen.Encomienda
                         .FirstOrDefault(e => e.Tracking == guia.CodigoGuia);
 
+                    if (encomienda == null) continue;
+
                     var estadoPrevio = encomienda.Estado;
-                    var UbicacionPrevia = encomienda.CodCDActual;
+                    var ubicacionPrevia = encomienda.CodCDActual;
 
-                    encomienda.Estado = EstadoEncomiendaEnum.Entregada;
-                    encomienda.FechaEntrega = DateTime.Now;
+                    // Determinar próximo estado según destino
+                    if (encomienda.AgenciaDestino != null)
+                    {
+                        // La encomienda queda pendiente de retiro en agencia
+                        encomienda.Estado = EstadoEncomiendaEnum.PendienteRetiroAgencia;
+                    }
+                    else if (encomienda.DireccionDestinatario != null)
+                    {
+                        // Fue entregada a domicilio
+                        encomienda.Estado = EstadoEncomiendaEnum.Entregada;
+                        encomienda.FechaEntrega = DateTime.Now;
+                    }
+                    else
+                    {
+                        // No hay agencia destino ni datos de domicilio
+                        encomienda.Estado = EstadoEncomiendaEnum.PendienteRetiroCD;
+                    }
 
-
+                    // Registrar cambio en historial
                     encomienda.HistorialCambios.Add(new Historial
                     {
                         Tracking = encomienda.Tracking,
-                        FechaPrevia = DateTime.Now, //Chequear qué poner en fecha previa:
-                        UbicacionPrevia = null,
+                        FechaPrevia = DateTime.Now,
+                        UbicacionPrevia = ubicacionPrevia,
                         FleteroAsignado = hdr.DniTransportista,
                         NumeroHDRUM = hdr.NumeroHDR,
                         NumeroHDRMD = 0,
@@ -292,6 +310,7 @@ namespace Grupo_E.GestionarFletero
                     });
                 }
             }
+
 
             //Actualizar estados de encomiendas para HDR de Retiro Generadas
             foreach (var hdr in HDRGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro))

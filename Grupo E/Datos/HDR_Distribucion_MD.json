@@ -3,10 +3,31 @@
     "NumeroHDRMD": 1001,
     "estadoHDR": 1,
     "Encomiendas": [
+      "AG01_1"
+    ],
+    "ServicioID": "LP_CABA",
+    "CdDesde": "CD04",
+    "CdHasta": "CD01"
+  },
+  {
+    "NumeroHDRMD": 1002,
+    "estadoHDR": 1,
+    "Encomiendas": [
       "CD09_1"
     ],
     "ServicioID": "CABA_CORRIENTESCAPITAL",
     "CdDesde": "CD01",
     "CdHasta": "CD09"
+  },
+  {
+    "NumeroHDRMD": 1003,
+    "estadoHDR": 0,
+    "Encomiendas": [
+      "AG10_1"
+    ],
+    "ServicioID": "RETIRO_VILLAMARIA",
+    "CdDesde": "CD01",
+    "CdHasta": "CD06"
   }
+
 ]

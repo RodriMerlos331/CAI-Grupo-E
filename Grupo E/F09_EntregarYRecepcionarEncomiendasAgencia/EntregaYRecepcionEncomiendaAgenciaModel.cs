@@ -81,7 +81,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
             {
                 if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMDestino && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen 
                  
-                    && HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr => hdr.Encomiendas.Contains(encomienda.Value.TrackingId) && hdr.Tipo == Tipo.Retiro))
+                    && HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr => hdr.Encomiendas.Contains(encomienda.Value.TrackingId) && hdr.Tipo == TipoHDREnum.Retiro))
                 {
                     encomiendasARecibir.Add
                     (

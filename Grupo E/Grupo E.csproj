@@ -291,8 +291,9 @@
       <DependentUpon>F07_RetirarEnCDForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Testing\" />
+    <Content Include="Testing\FacturacionEncomiendaEntregada.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
