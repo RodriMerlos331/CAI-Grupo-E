@@ -160,7 +160,24 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
                     encomiendaAlmacen.Estado = EstadoEncomiendaEnum.PendienteRetiroAgencia;
                 }
+                var mensaje = "";
 
+                if (encomAEntregar != null && encomAEntregar.Count > 0)
+                {
+                    var entregadas = string.Join(", ", encomAEntregar.Select(e => e.TrackingId));
+                    mensaje += $"Se entregaron las siguientes encomiendas:\n{entregadas}\n\n";
+                }
+
+                if (encomARecibir != null && encomARecibir.Count > 0)
+                {
+                    var recibidas = string.Join(", ", encomARecibir.Select(e => e.TrackingId));
+                    mensaje += $"Se recibieron las siguientes encomiendas:\n{recibidas}\n";
+                }
+
+                if (mensaje != "")
+                {
+                    MessageBox.Show(mensaje, "Operación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
                 
 
