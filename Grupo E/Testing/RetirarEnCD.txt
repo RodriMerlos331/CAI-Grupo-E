@@ -1,0 +1,20 @@
+1. Menú principal
+    1- Seleccionar en el desplegable  Centro de distribucion Terminal de ómnibus de Corrientes Capital¨
+    2-Tocar opcion "Retiro en Centro de Distribución"
+
+2. Pantalla Retiro en Agencia
+    1- Ingresar número de tracking: CD09_1
+    2- Presionar botón "Buscar"
+    3- Verificar que se muestra un cartel con la leyenda "Encomienda encontrada en este "
+    4-Ingresar en el campo nombre del destinatario: "Juan"
+    5-Ingresar en el campo apellido del destinatario: "Perez"
+    6- Ingresar en el campo DNI del destinatario: "12345678"
+    7- Presionar botón ¨Entregar encomienda"
+    8- Verificar que se muestra un cartel con la leyenda "La encomienda ha sido entregada"
+
+3. Finalizar el programa
+    Archivo Encomiendas.json
+        -Verificar que la encomienda CD09_1 tiene el parámetro Estado:12 
+        -Verificar que el parametro fecha de entrega corresponde al momento en que se presiono el botón ¨Entregar encomienda"
+        - Verificar que el campo FechaRetiro corresponde al momento en que se realizó el retiro
+

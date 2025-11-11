@@ -28,5 +28,25 @@
     "Encomiendas": [
       "AG10_1"
     ]
+  },
+  {
+    "NumeroHDRUM": 1003,
+    "Tipo": 0,
+    "DniFleteroAsignado": 44678901,
+    "Cumplida": false,
+    "Rendida": false,
+    "Encomiendas": [
+      "CD13_5"
+    ]
+  },
+  {
+    "NumeroHDRUM": 1004,
+    "Tipo": 1,
+    "DniFleteroAsignado": 44678901,
+    "Cumplida": false,
+    "Rendida": false,
+    "Encomiendas": [
+      "AG21_6"
+    ]
   }
 ]

@@ -1,1 +1,34 @@
 ﻿
+1. En patanlla Gestionar omnibus, busco patente:
+
+CD: CD01 (Retiro)
+Patente: DDD222
+
+Deberían figurarme a subir: CD07_3 y CD05_4
+
+Aceptar:
+Se generarán dos HDR:
+- 1005 para el servicio RETIRO_TUC Desde CD01 hasta CD07
+- 1006 para el servico RETIRO_TUC desde CD01 hasta CD05
+
+Ahora:
+CD05 (Córdoba capital) busco = patente y debería fijarme solo para bajar:
+Encomeinda CD05_4 y HDR 1006
+Y al darle aceptar
+
+Por ultimo:
+CD07 (Tucuman)
+Busco =patente y debería figurarme para bajar CD07_3
+Al aceptar debería marcarse como cumplida HDR 1006
+
+Post cerrar: 
+En archivos:
+encomiendas: Ambas pendientesretiroCD (7) cada una con su respectivo CD actul
+CD05_4 cdActual CD05
+CD07_3 con CD actual CD07
+HDRMD:
+1005 y 1006 estadoHDR = 1 y con servicioId: RETIRO_TUC
+1005: Con CD07_3 desde CD01 hasta CD07
+1006: Con CD05_4 desde CD01 hasta CD05
+
+

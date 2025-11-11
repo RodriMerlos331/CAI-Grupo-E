@@ -1,0 +1,27 @@
+﻿
+En CDActual = CD12  (Nequen, San Martín de los Andres)
+Busco fletero 44678901
+
+1. HDR rendicion: 1003 de retiro y 1004 de entrega
+2. Guias: No entregadas: AG21_6
+
+Marco como completas ambas
+
+En generacion HDR 1005 para CD11_7
+
+Al darle aceptar:
+
+post finalizar:
+
+
+En encomiendas.json:
+AG21_6 pasa  a estado PendienteRetiroAgencia
+CD13_5 pasa a estado Admitida (5)  en CDActual
+CD11_7 queda a         EnTransitoUMOrigen, //4 y codCd actual en null
+
+
+HDR:
+
+1003 y 1004 rendidas y cumplidas en true
+se crea 1005 rendida cumplida en flase , de tipo Retiro (0) con CD11_7 asignada
+
