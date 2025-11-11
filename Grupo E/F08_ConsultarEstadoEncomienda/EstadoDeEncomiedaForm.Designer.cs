@@ -100,6 +100,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // 
             // grbEstado
             // 
+            this.grbEstado.Controls.Add(this.Localidadlbl);
             this.grbEstado.Controls.Add(this.lblBulto);
             this.grbEstado.Controls.Add(this.Bultolbl);
             this.grbEstado.Controls.Add(this.lblDestino);
@@ -107,7 +108,6 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.grbEstado.Controls.Add(this.lblOrigen);
             this.grbEstado.Controls.Add(this.Origenlbl);
             this.grbEstado.Controls.Add(this.lblUbicacionActual);
-            this.grbEstado.Controls.Add(this.Localidadlbl);
             this.grbEstado.Controls.Add(this.lblFechaUltimo);
             this.grbEstado.Controls.Add(this.EstadoFechalbl);
             this.grbEstado.Controls.Add(this.lblEstadoActual);

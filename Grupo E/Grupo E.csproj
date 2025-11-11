@@ -293,6 +293,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Testing\EntregarYRecepcionarEncomeindaEnAgencia.txt" />
     <Content Include="Testing\FacturacionEncomiendaEntregada.txt" />
     <Content Include="Testing\GestionarFletero.txt" />
     <Content Include="Testing\GestionarOmnibus.txt" />
