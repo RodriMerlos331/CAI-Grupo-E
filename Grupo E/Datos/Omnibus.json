@@ -112,5 +112,24 @@
         "FechaYHoraSale": null
       }
     ]
+  },
+  {
+    "ServicioID": "NEUQUEN_VIEDMA",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "CCC111",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD11",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-10-9T10:30:00"
+      },
+      {
+        "CodigoCD": "CD13",
+        "FechaYHoraLlega": "2025-10-10T20:30:00",
+        "FechaYHoraSale": null
+      }
+    ]
   }
 ]

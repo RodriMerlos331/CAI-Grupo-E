@@ -28,6 +28,16 @@
     "ServicioID": "RETIRO_VILLAMARIA",
     "CdDesde": "CD01",
     "CdHasta": "CD06"
+  },
+  {
+    "NumeroHDRMD": 1004,
+    "estadoHDR": 1,
+    "Encomiendas": [
+      "CD13_2"
+    ],
+    "ServicioID": "NEUQUEN_VIEDMA",
+    "CdDesde": "CD11",
+    "CdHasta": "CD13"
   }
 
 ]
