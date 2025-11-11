@@ -2,6 +2,8 @@
 
 Pantalla Entregar y Recepcionar encomienda en agencia:
 
+Selecciono agencia "Agencia San Martin Villa Maria"
+
 1. Ingreso:
 
  Ingreso el DNI del feltero: 37765432
@@ -10,216 +12,21 @@ Pantalla Entregar y Recepcionar encomienda en agencia:
  2. Me muestra:
 
  List View "Guias a entregar al fletero": CD01_1
- Vista del Json.
-
- {
-    "Tracking": "CD01_1",
-    "CodLocalidadOrigen": "VM",
-    "CodCentroDistribucionOrigen": "CD06",
-    "CodCentroDistribucionDestino": "CD01",
-    "Estado": 4,
-    "TipoBulto": 0,
-    "CUITCliente": "30-87651234-0",
-    "DNIDestinatario": 23456789,
-    "NombreDestinatario": "Maria Tucson 23456789",
-    "ApellidoDestinatario": "Maria Tucson 23456789",
-    "DireccionDestinatario": null,
-    "AgenciaOrigen": "AG10",
-    "AgenciaDestino": null,
-    "DatosRetiroADomicilio": null,
-    "CodCDActual": null,
-    "RecorridoPlanificado": [],
-    "FechaImposicion": "2025-11-10T20:48:24.2782101-03:00",
-    "FechaAdmision": "2025-11-10T20:49:18.2828482-03:00",
-    "FechaEntrega": null,
-    "Facturada": false,
-    "EncomiendaFactura": null,
-    "HistorialCambios": [
-      {
-        "Tracking": "CD01_1",
-        "FechaPrevia": "2025-11-10T20:48:24.2782101-03:00",
-        "UbicacionPrevia": null,
-        "FleteroAsignado": 0,
-        "NumeroHDRUM": 0,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 1
-      },
-      {
-        "Tracking": "CD01_1",
-        "FechaPrevia": "2025-11-10T20:49:18.2828482-03:00",
-        "UbicacionPrevia": "CD06",
-        "FleteroAsignado": 37765432,
-        "NumeroHDRUM": 1001,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 3
-      }
-    ]
-  },
 
  List View "Guias a recibir del fletero": AG10_1
 
- Vista del Json:
-
- {
-    "Tracking": "AG10_1",
-    "CodLocalidadOrigen": "CABA",
-    "CodCentroDistribucionOrigen": "CD01",
-    "CodCentroDistribucionDestino": "CD06",
-    "Estado": 10,
-    "TipoBulto": 0,
-    "CUITCliente": "20-99887766-5",
-    "DNIDestinatario": 34567891,
-    "NombreDestinatario": "Alica Rosa 34567891",
-    "ApellidoDestinatario": "Alica Rosa 34567891",
-    "DireccionDestinatario": null,
-    "AgenciaOrigen": null,
-    "AgenciaDestino": "AG10",
-    "DatosRetiroADomicilio": null,
-    "CodCDActual": null,
-    "RecorridoPlanificado": [
-      {
-        "ServicioId": "RETIRO_VILLAMARIA",
-        "CodigoCDOrigen": "CD01",
-        "CodigoCDDestino": "CD06"
-      }
-    ],
-    "FechaImposicion": "2025-11-10T20:55:33.0176459-03:00",
-    "FechaAdmision": "2025-11-10T20:55:33.0176459-03:00",
-    "FechaEntrega": null,
-    "Facturada": false,
-    "EncomiendaFactura": {
-      "PrecioCombinacionTamanoOrigenDestino": 1200.0,
-      "ExtraRetiro": 0.0,
-      "ExtraAgencia": 1200.0,
-      "ExtraEntrega": 0.0,
-      "PrecioTotalEncomienda": 2400.0
-    },
-    "HistorialCambios": [
-      {
-        "Tracking": "AG10_1",
-        "FechaPrevia": "2025-11-10T21:11:20.0880822-03:00",
-        "UbicacionPrevia": "CD01",
-        "FleteroAsignado": 0,
-        "NumeroHDRUM": 0,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 9
-      }
-    ]
-  },
-
  Presiona el boton "Aceptar"
 
+ Muestra mensaje: 
+ ""
+ ""
+
  3.Cierra el programa
+
+ Y dentro del BIN:
+
+ La encomienda  CD01_1 debería quedar en estado 15  - OK
+ La AG10_1 debería quedar en 11 - OK
+
+ Historial: Debería figurar HDR previas, y estados previos
  
- Los JSOn de las encomeindas cambian de la sigueinte manera:
-
-
- {
-    "Tracking": "CD01_1",
-    "CodLocalidadOrigen": "VM",
-    "CodCentroDistribucionOrigen": "CD06",
-    "CodCentroDistribucionDestino": "CD01",
-    "Estado": 15,
-    "TipoBulto": 0,
-    "CUITCliente": "30-87651234-0",
-    "DNIDestinatario": 23456789,
-    "NombreDestinatario": "Maria Tucson 23456789",
-    "ApellidoDestinatario": "Maria Tucson 23456789",
-    "DireccionDestinatario": null,
-    "AgenciaOrigen": "AG10",
-    "AgenciaDestino": null,
-    "DatosRetiroADomicilio": null,
-    "CodCDActual": null,
-    "RecorridoPlanificado": [],
-    "FechaImposicion": "2025-11-10T20:48:24.2782101-03:00",
-    "FechaAdmision": "2025-11-10T20:49:18.2828482-03:00",
-    "FechaEntrega": null,
-    "Facturada": false,
-    "EncomiendaFactura": null,
-    "HistorialCambios": [
-      {
-        "Tracking": "CD01_1",
-        "FechaPrevia": "DateTime.Now",
-        "UbicacionPrevia": "CA10",
-        "FleteroAsignado": 37765432,
-        "NumeroHDRUM": 1002,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 4
-      }
-      {
-        "Tracking": "CD01_1",
-        "FechaPrevia": "2025-11-10T20:49:18.2828482-03:00",
-        "UbicacionPrevia": "CD06",
-        "FleteroAsignado": 37765432,
-        "NumeroHDRUM": 1001,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 3
-      }
-      {
-        "Tracking": "CD01_1",
-        "FechaPrevia": "2025-11-10T20:48:24.2782101-03:00",
-        "UbicacionPrevia": null,
-        "FleteroAsignado": 0,
-        "NumeroHDRUM": 0,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 1
-      },
-    ]
-  },
-
-
- {
-    "Tracking": "AG10_1",
-    "CodLocalidadOrigen": "CABA",
-    "CodCentroDistribucionOrigen": "CD01",
-    "CodCentroDistribucionDestino": "CD06",
-    "Estado": 11,
-    "TipoBulto": 0,
-    "CUITCliente": "20-99887766-5",
-    "DNIDestinatario": 34567891,
-    "NombreDestinatario": "Alica Rosa 34567891",
-    "ApellidoDestinatario": "Alica Rosa 34567891",
-    "DireccionDestinatario": null,
-    "AgenciaOrigen": null,
-    "AgenciaDestino": "AG10",
-    "DatosRetiroADomicilio": null,
-    "CodCDActual": null,
-    "RecorridoPlanificado": [
-      {
-        "ServicioId": "RETIRO_VILLAMARIA",
-        "CodigoCDOrigen": "CD01",
-        "CodigoCDDestino": "CD06"
-      }
-    ],
-    "FechaImposicion": "2025-11-10T20:55:33.0176459-03:00",
-    "FechaAdmision": "2025-11-10T20:55:33.0176459-03:00",
-    "FechaEntrega": null,
-    "Facturada": false,
-    "EncomiendaFactura": {
-      "PrecioCombinacionTamanoOrigenDestino": 1200.0,
-      "ExtraRetiro": 0.0,
-      "ExtraAgencia": 1200.0,
-      "ExtraEntrega": 0.0,
-      "PrecioTotalEncomienda": 2400.0
-    },
-    "HistorialCambios": [
-       {
-        "Tracking": "AG10_1",
-        "FechaPrevia": "DateTime.Now",
-        "UbicacionPrevia": null,
-        "FleteroAsignado": 37765432,
-        "NumeroHDRUM": 1001,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 10
-      }
-      {
-        "Tracking": "AG10_1",
-        "FechaPrevia": "2025-11-10T21:11:20.0880822-03:00",
-        "UbicacionPrevia": "CD01",
-        "FleteroAsignado": 0,
-        "NumeroHDRUM": 0,
-        "NumeroHDRMD": 0,
-        "EstadoPrevio": 9
-      }
-    ]
-  },
