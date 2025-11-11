@@ -18,15 +18,15 @@ Selecciono agencia "Agencia San Martin Villa Maria"
  Presiona el boton "Aceptar"
 
  Muestra mensaje: 
- ""
- ""
+ "Se entregaron las siguientes encomiendas:CD01_1 "
+ "Se recibieron las siguientes encomiendas:AG10_1"
 
  3.Cierra el programa
 
  Y dentro del BIN:
 
- La encomienda  CD01_1 debería quedar en estado 15  - OK
- La AG10_1 debería quedar en 11 - OK
+ Verificar que la encomienda CD01_1 debería quedar en estado 15  
+ Verificar que la encomeinda AG10_1 debería quedar en estado 11 
 
- Historial: Debería figurar HDR previas, y estados previos
+ 
  
