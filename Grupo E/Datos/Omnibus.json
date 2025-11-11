@@ -131,5 +131,49 @@
         "FechaYHoraSale": null
       }
     ]
+  },
+  {
+    "ServicioID": "RETIRO_TUC",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "DDD222",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD01",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-9T10:30:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-12-10T20:30:00",
+        "FechaYHoraSale": "2025-12-10T21:30:00"
+      },
+      {
+        "CodigoCD": "CD07",
+        "FechaYHoraLlega": "2025-12-11T22:30:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "RIONEGRO_NEUQUEN",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "EEE111",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD13",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-9T10:30:00"
+      },
+      {
+        "CodigoCD": "CD12",
+        "FechaYHoraLlega": "2025-12-11T22:30:00",
+        "FechaYHoraSale": null
+      }
+    ]
   }
+
 ]

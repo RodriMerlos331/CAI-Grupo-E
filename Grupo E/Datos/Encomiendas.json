@@ -243,5 +243,201 @@
         "EstadoPrevio": 5
       }
     ]
+  },
+  {
+    "Tracking": "CD07_3",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD01",
+    "CodCentroDistribucionDestino": "CD07",
+    "Estado": 5,
+    "TipoBulto": 2,
+    "CUITCliente": "23-65432109-8",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Martina Perez 12345678",
+    "ApellidoDestinatario": "Martina Perez 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": "CD01",
+    "RecorridoPlanificado": [
+      {
+        "ServicioId": "RETIRO_TUC",
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD07"
+      }
+    ],
+    "FechaImposicion": "2025-11-11T16:37:33.9646071-03:00",
+    "FechaAdmision": "2025-11-11T16:37:33.9646071-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 2380.0,
+      "ExtraRetiro": 0.0,
+      "ExtraAgencia": 0.0,
+      "ExtraEntrega": 0.0,
+      "PrecioTotalEncomienda": 2380.0
+    },
+    "HistorialCambios": []
+  },
+  {
+    "Tracking": "CD05_4",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD01",
+    "CodCentroDistribucionDestino": "CD05",
+    "Estado": 5,
+    "TipoBulto": 3,
+    "CUITCliente": "23-65432109-8",
+    "DNIDestinatario": 56478912,
+    "NombreDestinatario": "Juan Fernandez 56478912",
+    "ApellidoDestinatario": "Juan Fernandez 56478912",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": "CD01",
+    "RecorridoPlanificado": [
+      {
+        "ServicioId": "RETIRO_TUC",
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD05"
+      }
+    ],
+    "FechaImposicion": "2025-11-11T16:38:07.6190757-03:00",
+    "FechaAdmision": "2025-11-11T16:38:07.6190757-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 2520.0,
+      "ExtraRetiro": 0.0,
+      "ExtraAgencia": 0.0,
+      "ExtraEntrega": 0.0,
+      "PrecioTotalEncomienda": 2520.0
+    },
+    "HistorialCambios": []
+  },
+  {
+    "Tracking": "CD13_5",
+    "CodLocalidadOrigen": "SM",
+    "CodCentroDistribucionOrigen": "CD12",
+    "CodCentroDistribucionDestino": "CD13",
+    "Estado": 4,
+    "TipoBulto": 0,
+    "CUITCliente": "23-65432109-8",
+    "DNIDestinatario": 22225555,
+    "NombreDestinatario": "Jose Perez 22225555",
+    "ApellidoDestinatario": "Jose Perez 22225555",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": "AG21",
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "RecorridoPlanificado": [],
+    "FechaImposicion": "2025-11-11T17:20:23.0530783-03:00",
+    "FechaAdmision": "2025-11-11T17:22:32.4988407-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": null,
+    "HistorialCambios": [
+      {
+        "Tracking": "CD13_5",
+        "FechaPrevia": "2025-11-11T17:20:23.0530783-03:00",
+        "UbicacionPrevia": null,
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 0,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 1
+      },
+      {
+        "Tracking": "CD13_5",
+        "FechaPrevia": "2025-11-11T17:22:32.4988407-03:00",
+        "UbicacionPrevia": "CD12",
+        "FleteroAsignado": 44678901,
+        "NumeroHDRUM": 1003,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 3
+      }
+    ]
+  },
+  {
+    "Tracking": "AG21_6",
+    "CodLocalidadOrigen": "RN",
+    "CodCentroDistribucionOrigen": "CD13",
+    "CodCentroDistribucionDestino": "CD12",
+    "Estado": 10,
+    "TipoBulto": 1,
+    "CUITCliente": "27-38951233-5",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Elena Tarta 12345678",
+    "ApellidoDestinatario": "Elena Tarta 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": "AG21",
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "RecorridoPlanificado": [
+      {
+        "ServicioId": "RIONEGRO_NEUQUEN",
+        "CodigoCDOrigen": "CD13",
+        "CodigoCDDestino": "CD12"
+      }
+    ],
+    "FechaImposicion": "2025-11-11T17:32:32.7531223-03:00",
+    "FechaAdmision": "2025-11-11T17:32:32.7531223-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 1300.0,
+      "ExtraRetiro": 0.0,
+      "ExtraAgencia": 1200.0,
+      "ExtraEntrega": 0.0,
+      "PrecioTotalEncomienda": 2500.0
+    },
+    "HistorialCambios": [
+      {
+        "Tracking": "AG21_6",
+        "FechaPrevia": "2025-11-11T17:32:32.7531223-03:00",
+        "UbicacionPrevia": "CD13",
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 0,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 5
+      },
+      {
+        "Tracking": "AG21_6",
+        "FechaPrevia": "2025-11-11T17:36:14.9128678-03:00",
+        "UbicacionPrevia": "CD13",
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 0,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 9
+      }
+    ]
+  },
+  {
+    "Tracking": "CD11_7",
+    "CodLocalidadOrigen": "SM",
+    "CodCentroDistribucionOrigen": "CD12",
+    "CodCentroDistribucionDestino": "CD11",
+    "Estado": 1,
+    "TipoBulto": 3,
+    "CUITCliente": "23-65432109-8",
+    "DNIDestinatario": 77778888,
+    "NombreDestinatario": "Tomas Hernandez 77778888",
+    "ApellidoDestinatario": "Tomas Hernandez 77778888",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": "AG21",
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "RecorridoPlanificado": [],
+    "FechaImposicion": "2025-11-11T17:40:50.0919421-03:00",
+    "FechaAdmision": null,
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": null,
+    "HistorialCambios": []
   }
+
+
 ]

@@ -38,6 +38,16 @@
     "ServicioID": "NEUQUEN_VIEDMA",
     "CdDesde": "CD11",
     "CdHasta": "CD13"
+  },
+  {
+    "NumeroHDRMD": 1005,
+    "estadoHDR": 1,
+    "Encomiendas": [
+      "AG21_6"
+    ],
+    "ServicioID": "RIONEGRO_NEUQUEN",
+    "CdDesde": "CD13",
+    "CdHasta": "CD12"
   }
 
 ]
