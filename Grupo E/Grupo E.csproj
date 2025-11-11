@@ -295,6 +295,7 @@
   <ItemGroup>
     <Content Include="Testing\EntregarYRecepcionarEncomeindaEnAgencia.txt" />
     <Content Include="Testing\FacturacionEncomiendaEntregada.txt" />
+    <Content Include="Testing\GestionarOmnibus.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
