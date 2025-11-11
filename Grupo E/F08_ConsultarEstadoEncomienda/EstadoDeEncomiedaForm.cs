@@ -88,6 +88,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 case EstadoEnvio.EnTransitoUMDestino: return "En camino a domicilio de destino";
                 case EstadoEnvio.Entregada: return "Entregada";
                 case EstadoEnvio.Cancelada: return "Cancelado";
+                case EstadoEnvio.RetiradaAgenciaFletero: return "Retirada de agencia por fletero";
                 default: return estado.ToString();
             }
         }
