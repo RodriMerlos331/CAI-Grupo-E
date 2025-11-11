@@ -1,0 +1,23 @@
+1. Menú principal
+    1- Seleccionar agencia ¨Galerias Pacifico¨
+    2-Tocar opcion "Retiro en Agencia"
+
+2. Pantalla Retiro en Agencia
+    1- Ingresar número de tracking: AG01_01
+    2- Presionar botón "Buscar"
+    3- Verificar que se muestra un cartel con la leyenda "Encomienda encontrada en esta agencia"
+    4-Ingresar en el campo nombre del destinatario: "Juan"
+    5-Ingresar en el campo apellido del destinatario: "Perez"
+    6- Ingresar en el campo DNI del destinatario: "12345678"
+    7- Presionar botón Entregar encomienda"
+    8- Verificar que se muestra un cartel con la leyenda "La encomienda ha sido entregada"
+
+3. Finalizar el programa
+    Archivo Encomiendas.json
+        -Verificar que la encomienda AG01_01 tiene el parámetro Estado:12 
+        -Verificar que el parametro fecha de entrega corresponde al momento en que se presiono el boton "Confirmar Retiro"
+        - Verificar que el campo FechaRetiro corresponde al momento en que se realizó el retiro
+
+
+
+
