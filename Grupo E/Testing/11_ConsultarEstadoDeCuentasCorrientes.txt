@@ -17,6 +17,7 @@
     Saldo deudor: 12.100,00
     Saldo acreedor: 14.100,00
 
+
 3- Termina el programa 
 
     1- Tocar boton Salir
