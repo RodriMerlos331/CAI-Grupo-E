@@ -17,6 +17,7 @@ Selecciono agencia "Agencia San Martin Villa Maria"
  Presiona el boton "Aceptar"
 
  Muestra mensaje: 
+
  "Se entregaron las siguientes encomiendas:CD01_1 "
  "Se recibieron las siguientes encomiendas:AG10_1"
 

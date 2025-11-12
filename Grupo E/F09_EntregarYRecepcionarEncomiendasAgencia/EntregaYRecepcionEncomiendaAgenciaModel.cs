@@ -22,26 +22,36 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
         {
             data = new Dictionary<string, GuiaDeEncomiendas>();
 
-            foreach (EncomiendaEntidad encomienda in EncomiendaAlmacen.Encomienda)
+            if (FleteroAlmacen.Fletero.All(f => f.DniFletero != dni))
             {
-                data.Add(encomienda.Tracking, new GuiaDeEncomiendas
+                MessageBox.Show("El DNI ingresado no corresponde a ningún fletero.");
+                return null;
+            }
+            else
+            {
+                foreach (EncomiendaEntidad encomienda in EncomiendaAlmacen.Encomienda)
                 {
-                    TrackingId = encomienda.Tracking,
-                    EstadoEnvio = (EstadoDeEnvio)encomienda.Estado,
-                    AgenciaDestino = encomienda.AgenciaDestino,
-                    AgenciaOrigen = encomienda.AgenciaOrigen,
-                    TamañoBulto = encomienda.TipoBulto.ToString(),
-                    FleteroAsignado = FleteroAlmacen.Fletero
-                        .FirstOrDefault(f =>
-                            HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr =>
-                                hdr.DniFleteroAsignado == f.DniFletero &&
-                                hdr.Encomiendas.Contains(encomienda.Tracking)))
-                        ?.DniFletero ?? 0
+                    data.Add(encomienda.Tracking, new GuiaDeEncomiendas
+                    {
+                        TrackingId = encomienda.Tracking,
+                        EstadoEnvio = (EstadoDeEnvio)encomienda.Estado,
+                        AgenciaDestino = encomienda.AgenciaDestino,
+                        AgenciaOrigen = encomienda.AgenciaOrigen,
+                        TamañoBulto = encomienda.TipoBulto.ToString(),
+                        FleteroAsignado = FleteroAlmacen.Fletero
+                            .FirstOrDefault(f =>
+                                HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr =>
+                                    hdr.DniFleteroAsignado == f.DniFletero &&
+                                    hdr.Encomiendas.Contains(encomienda.Tracking)))
+                            ?.DniFletero ?? 0
 
 
-                });
+                    });
+
+                }
 
             }
+                
 
             return data;    
         }
@@ -51,7 +61,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
 
             List<GuiaDeEncomiendas> encomiendasAEntregar = new List<GuiaDeEncomiendas>();
 
-            foreach (var encomienda in BuscarEncomiendaFletero(dni))
+            foreach (var encomienda in BuscarEncomiendaFletero(dni) ?? Enumerable.Empty<KeyValuePair<string, GuiaDeEncomiendas>>())
             {
                 if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMOrigen && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaOrigen
                     && HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr => hdr.Encomiendas.Contains(encomienda.Value.TrackingId) && hdr.Tipo == TipoHDREnum.Retiro))
@@ -80,7 +90,7 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
         {
             List<GuiaDeEncomiendas> encomiendasARecibir = new List<GuiaDeEncomiendas>();
 
-            foreach (var encomienda in BuscarEncomiendaFletero(dni))
+            foreach (var encomienda in BuscarEncomiendaFletero(dni) ?? Enumerable.Empty<KeyValuePair<string, GuiaDeEncomiendas>>())
             {
                 if (encomienda.Value.EstadoEnvio == EstadoDeEnvio.EnTransitoUMDestino && AgenciaAlmacen.AgenciaActual.CodigoAgencia == encomienda.Value.AgenciaDestino
                  
