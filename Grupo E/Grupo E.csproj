@@ -293,8 +293,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Testing\ConsultarCostosYVentas.txt" />
     <Content Include="Testing\EntregarYRecepcionarEncomeindaEnAgencia.txt" />
     <Content Include="Testing\FacturacionEncomiendaEntregada.txt" />
+    <Content Include="Testing\ConsultarEstadoDeCuentasCorrientes.txt" />
     <Content Include="Testing\GeneraciónDeFacturas.txt" />
     <Content Include="Testing\GestionarFletero.txt" />
     <Content Include="Testing\GestionarOmnibus.txt" />

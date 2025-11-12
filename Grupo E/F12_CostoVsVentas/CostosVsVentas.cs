@@ -79,7 +79,6 @@ namespace FormResultadoCostoVsVentas
                 return;
             }
 
-            // --- Llamada al modelo ---
             try
             {
                 var query = new Datos
@@ -91,7 +90,6 @@ namespace FormResultadoCostoVsVentas
 
                 ResultadoCostosVentas resultado = _modelo.Consultar(query);
 
-                // Muestro en la pantalla
                 ActualizarCamposResultado(resultado);
             }
             catch (Exception ex)
@@ -102,7 +100,6 @@ namespace FormResultadoCostoVsVentas
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
-                // Si hubo error, limpio el resultado
                 ActualizarCamposResultado(new ResultadoCostosVentas());
             }
         }
@@ -153,7 +150,6 @@ namespace FormResultadoCostoVsVentas
                 : string.Empty;
         }
 
-        // Handler generado por el diseñador; lo dejamos vacío
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
         }
