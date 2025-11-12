@@ -3,7 +3,7 @@
 	1-CUIT : 30-19283746-4
 	2-Boton Buscar
 	3- Clickear checkbox encomienda nro de tracking CD13_2 para que quede seleccionada
-	4- Verificar label importe muestra ¨$1000¨
+	4- Verificar label importe muestra ¨$9.600,00¨
 	5- Boton Generar Factura
 
 2. Finalizar el programa
@@ -16,9 +16,9 @@
     "EncomiendasIncluidas": [
       "CD13_2"   
     ],
-    "Subtotal": 1000.00,
-    "Iva": 210.0000,
-    "Total": 1210.0000
+    "Subtotal":9600.00,
+    "Iva": 2016.0000,
+    "Total": 11616.0000
     "CodigoDeAutorizacionElectronica": "CAE789012",
     "FechadePago": null
 
@@ -26,6 +26,3 @@
 
   -Verificar que la encomienda CD13_2 tiene el parametro Facturada
 
-  Comentarios:
-
-  Revisar total queda en 100000

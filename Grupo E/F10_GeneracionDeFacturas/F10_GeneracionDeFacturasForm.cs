@@ -86,7 +86,7 @@ namespace Grupo_E.GeneracionDeFacturas
             }
 
             decimal total = modelo.CalcularTotalImportes(importes);
-            lblSumaImporte.Text = $"Total: ${total:N2}";
+            lblSumaImporte.Text = $"Total: {total.ToString("C", new CultureInfo("es-AR"))}";
         }
 
         private decimal ParseImporteDecimal(string texto)
