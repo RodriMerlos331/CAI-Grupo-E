@@ -1,0 +1,51 @@
+﻿
+
+Pantalla Consultar Estado Encomienda en agencia:
+
+1. Ingreso:
+
+ Ingreso el numero de guia: CD13_8
+ Presionar el boton "Buscar"
+
+ 2. Me muestra:
+
+ Groupbox "Informacion del pedido"
+  Campo "Estado actual": Entregada
+  Campo "Fecha/Hora del ultimo movimiento": 14/10/2025 13:45:15
+  Campo "Ubicacion actual": null
+  Campo "Origen": Neuquen Capital
+  Campo "Destino": Viedma
+  Campo "Tipo de bulto": S
+ 
+ Groupbox "Historial"
+Fila 1:
+ Columna "Estado": Entregada
+ Columna "Fecha/Hora del movimiento previo": 14/10/2025 13:45:15
+ Columna "Ubicacion": null
+ Columna "Transportista asignado": null
+ Columna "Hoja de ruta": null
+Fila 2:
+ Columna "Estado": Pendiente de retiro en CD de destino
+ Columna "Fecha/Hora del movimiento previo": 13/10/2025 13:45:15
+ Columna "Ubicacion": CD13
+ Columna "Transportista asignado": null
+ Columna "Hoja de ruta": null
+Fila 3:
+ Columna "Estado": En transito
+ Columna "Fecha/Hora del movimiento previo": 12/10/2025 13:45:15
+ Columna "Ubicacion": null
+ Columna "Transportista asignado": null
+ Columna "Hoja de ruta": 1005
+Fila 4:
+ Columna "Estado": Admitida en centro de distribucion
+ Columna "Fecha/Hora del movimiento previo": 9/10/2025 13:45:15
+ Columna "Ubicacion": CD11
+ Columna "Transportista asignado": null
+ Columna "Hoja de ruta": null
+
+ 
+Presiona el boton "Salir"
+
+  3.Cierra el programa
+
+  Esta pantalla esta destina a solo realizar consultas de estado, no aplica ningun cambio en las encomiendas, solo consulta.

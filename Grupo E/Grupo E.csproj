@@ -306,6 +306,7 @@
     <Content Include="Testing\00_PlanTesting.txt" />
     <Content Include="Testing\06_RetirarEnAgencia.txt" />
     <Content Include="Testing\07_RetirarEnCD.txt" />
+    <Content Include="Testing\08_ConsultarEstadoEncomienda.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
