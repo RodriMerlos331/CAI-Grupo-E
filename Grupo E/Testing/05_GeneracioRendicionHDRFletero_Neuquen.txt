@@ -1,0 +1,45 @@
+﻿
+01. Menú prinicipal:
+	1 - Seleccionar como "Centro de distribución actual": "San Martín de los Andres"
+
+
+02. Pantalla "Gestionar fletero"
+
+	1 - Busco fletero 44678901
+	2 - Verifico que figuren para rendir:HDR 1003 de retiro y 1004 de entrega
+	3 - Guias no entregadas: AG21_6
+	4 - Marco como cumplidas ambas HDR (checkbox)
+	5 - Corroborar Guias No entregadas quede vacío y Guías a admitir contenga CD13_5
+	5 - Corrobar que figuren en generacion: HDR 1005 para la guía CD11_7
+	6 - Botón  "Aceptar"
+
+03 - Cierro programa
+
+04 - Verificar archivos:
+
+En encomiendas.json:
+	AG21_6: 
+		- Pase a estado PendienteRetiroAgencia (11)
+		- CdActual = null
+	CD13_5:
+		- Pasa a estado Admitida (5)
+		- CDActual: CD12
+
+	CD11_7:
+		- Pasa a estado EnTransitoUMOrigen (4) 
+		- CdActual = null
+
+
+En HDRUM.json:
+
+	HDR 1003 (asociada a CD13_5 ) y 1004 (asociada a AG21_6) Se hayan actualizado sus estados a:
+		- Cumplida = true
+		- Rendida = true
+
+	HDR 1005 (asociada a CD11_7): Se haya generado correctamente con:
+		- Tipo: Retiro (0)
+		- Cumplida = false
+		- Rendida = false
+
+
+

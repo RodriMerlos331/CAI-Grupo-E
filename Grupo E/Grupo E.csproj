@@ -293,18 +293,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Testing\ConsultarCostosYVentas.txt" />
-    <Content Include="Testing\EntregarYRecepcionarEncomeindaEnAgencia.txt" />
-    <Content Include="Testing\FacturacionEncomiendaEntregada.txt" />
-    <Content Include="Testing\ConsultarEstadoDeCuentasCorrientes.txt" />
-    <Content Include="Testing\GeneraciónDeFacturas.txt" />
-    <Content Include="Testing\GestionarFletero.txt" />
-    <Content Include="Testing\GestionarOmnibus.txt" />
-    <Content Include="Testing\ImpoCCDestinoACD.txt" />
-    <Content Include="Testing\Imposicion.txt" />
-    <Content Include="Testing\ImposicionAgencia.txt" />
-    <Content Include="Testing\RetirarEnAgencia.txt" />
-    <Content Include="Testing\RetirarEnCD.txt" />
+    <Content Include="Testing\12_ConsultarCostosYVentas.txt" />
+    <Content Include="Testing\09_EntregarYRecepcionarEncomeindaEnAgencia.txt" />
+    <Content Include="Testing\10_FacturacionEncomiendaEntregadaABORRAR.txt" />
+    <Content Include="Testing\11_ConsultarEstadoDeCuentasCorrientes.txt" />
+    <Content Include="Testing\10_GeneraciónDeFacturas.txt" />
+    <Content Include="Testing\05_GeneracioRendicionHDRFletero_Neuquen.txt" />
+    <Content Include="Testing\04_DespachoOmnibus_Recorrido_Retiro_Tucuman .txt" />
+    <Content Include="Testing\01_RetiroDOM_EntregaCD.txt" />
+    <Content Include="Testing\02_ImposicionCD_EntregaAgencia.txt" />
+    <Content Include="Testing\03_RetiroAgencia_EntregaDOM.txt" />
+    <Content Include="Testing\00_PlanTesting.txt" />
+    <Content Include="Testing\06_RetirarEnAgencia.txt" />
+    <Content Include="Testing\07_RetirarEnCD.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

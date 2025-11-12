@@ -1,0 +1,34 @@
+﻿
+01. Menú principal:
+
+	1 - Verificar en desplegable Centro de distribucion actual:
+		- Primero: Retiro
+		- Último: "Terminal de ómnibus de San Carlos de Bariloche"
+	2 - Seleccionar Centro de distribución actual "Terminal de ómnibus de Villa María"
+
+02. Pantalla "Imposición en CD":
+	1 - CUIT cliente: 27-38951233-5
+	2 - Localidad Destino: San Miguel de Tucuman
+	3 - Seleccionar como destino "Agencia"
+	4 - Verificar unicamente quede habilitado el groupBox de "Agencia"
+	5 - Verificar en desplegable de Agencias unicamente figuren: "Agencia Yerba Buena Shopping" y "Agencia Barrio Sur"
+	6 - Seleccionar "Agencia Yerba Buena Shopping"
+	7 - Datos destinatario: Completar con "Juan Perez 12345678"
+	8 - Seleccionar tamaño del bulto: L 
+	9 - Aceptar
+
+03. Finalizar y cerrar programa
+
+04. Verificar en archivos:
+
+Encomiendas.json:
+
+	- Tracking: AG11_9
+	- Localidad origen: Villa María (VM)
+	- CodCentroDistribucionOrigen: CD06
+	- CodCentroDistribucionDestino: CD07
+	- AgenciaDestino: AG11
+	- Estado: 5 (Admitida)
+	- EncomiendaFactura: El único extra debería ser ExtraAgencia. 
+
+
