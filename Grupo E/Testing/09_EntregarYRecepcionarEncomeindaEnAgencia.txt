@@ -23,7 +23,7 @@ Selecciono agencia "Agencia San Martin Villa Maria"
 
  3.Cierra el programa
 
- Y dentro del BIN:
+ Y dentro del BIN buscar en "Encomiendas.json":
 
  Verificar que la encomienda CD01_1 debería quedar en estado 15  
  Verificar que la encomeinda AG10_1 debería quedar en estado 11 
