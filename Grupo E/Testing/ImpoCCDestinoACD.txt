@@ -1,0 +1,60 @@
+﻿
+01. Pantalla "Imposición en Call Center":
+
+	1 - CUIT: 27-38951233-5
+	2 - Localidad Destino: Cordoba Cápital
+	3 - Seleccionar como destino "Centro de distribución"
+	4 - VERIFICAR quede habilitado unicamente el groupBox de "Centro de distribución"
+	5 - En terminales, VERIFICAR que unicamente figure: "Terminal de ómnibus de Córdoba Capital"
+	6 - Datos destinatario: Completar con "Juan Perez 12345678"
+	7 - Seleccionar como Localidad Origen: "Corrientes Capital"
+	8 - Completar datos retiro "Maria Guemez 23456789"
+	9 - Seleccionar tamaño del bulto: S
+	10 - Confirmar cambios: Botón "Aceptar"
+
+
+02. Volver al menú principal
+
+	1 -  Seleccionar como "Centro de distribución actual": "Terminal de ómnibus de Corrientes Capital"
+
+	2 - Seleccionar del menú "Gestionar fletero"
+
+03. Pantalla "Gestionar fletero":
+
+	1 -  Ingresar DNI del fletero: 41239876
+
+	2. - La encomienda impuesta en el paso 1 debería figurar como "A retirar"
+
+	3 - Botón "Aceptar"
+
+	4 - Vuelvo a buscar el mismo DNI del fletero: 41239876
+
+	5 - Encomienda debería figurar ahora para "Rendir"
+
+	6 - Marco  HDR de la encomienda de retiro como "Cumplida" (Checkbox)
+
+	7 - Botón "Aceptar"
+
+04. Cierro el programa
+
+05. En Bin > Datos corroborar los siguientes archivos:
+
+	En "Encomiendas.JSON" confirmar se haya creado la encomienda con los datos ingresados en el paso 1.
+	Los datos a corroborar son:
+		- Tracking:  CD05_9
+		- Localidad origen: Corrientes Capital (CC)
+		- "CodCentroDistribucionOrigen": "CD09",
+		- "CodCentroDistribucionDestino": "CD05"
+		- "Estado": 5 (Admitida)
+		- Como es con destino a CD, AgenciaDestino y DireccionDestinatario deberían figurar en null
+		- Como incluye retiro, en EncomiendaFactura el ExtraRetiro debería estar completo, el resto vacios. 
+		- ACLARACION: RecorridoPlanficado debería figurar, pero aún no se desarrolló el ruteo.	
+
+
+	En "HdrUM.JSON" confirmar se haya creado el HDR de retiro con los datos del fletero y encomienda correspondiente, debería estar como cumplida. 
+		- DniFleteroAsignado: 41239876
+		- "NumeroHDRUM": 1005
+		- Tipo 0 (Retiro)
+
+
+

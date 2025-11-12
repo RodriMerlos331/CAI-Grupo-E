@@ -409,6 +409,7 @@ namespace Grupo_E.GestionarFletero
                 case EstadoEncomiendaEnum.PendienteRetiroCD:
                 case EstadoEncomiendaEnum.PendienteRetiroAgencia:
                 case EstadoEncomiendaEnum.Cancelada:
+                case EstadoEncomiendaEnum.RetiradaAgenciaFletero:
                     return Guia.EstadoGuia.NoRetirada;
 
                 // Por defecto, considerar no entregada

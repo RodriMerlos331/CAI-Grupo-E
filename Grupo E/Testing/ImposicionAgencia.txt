@@ -1,0 +1,78 @@
+﻿
+01. Menú principal:
+
+	1 - VERIFICAR en desplebale "Agencia actual": 
+			 - Primero: Agencia Galerías Pacífico
+			-  Último: Agencia Cerro Catedral
+	2 -	Seleccionar: "Agencia actual": "Agencia Galerías Pacífico"  (AG01)
+
+02. Pantalla "Imposición en Agencia":
+
+	1 - CUIT: 27-38951233-5
+	2 - Localidad Destino: Neuquén Cápital (CD11)
+	3 - Seleccionar como destino "Dirección particular"
+	4 - VERIFICAR quede habilitado unicamente el groupBox de "Dirección Particular"
+	5 - Datos destinatario: Completar con "Juan Perez 12345678"
+	6 - Dirección particular: "Avenida prueba 1234
+	7 - Seleccionar tamaño del bulto: S
+	8 - Confirmar cambios: Botón "Aceptar"
+
+02. Volver al menú principal
+
+	1 -  Seleccionar como "Centro de distribución actual": "Retiro" (CD01)
+
+	2 - Seleccionar del menú "Gestionar fletero"
+
+03. Pantalla "Gestionar fletero":
+
+	1 -  Ingresar DNI del fletero: 12345678
+
+	2. - La encomienda impuesta en el paso 1 debería figurar como "A retirar" (DOM_9) con la HDR 1005
+
+	3 - Botón "Aceptar"
+
+04. Volver al menú principal
+	1 - Seleccionar como Agencia Actual  "Agencia Galerías Pacífico"  (AG01)
+	2 - Seleccionar del menú "EntregaYRecepcionAgencia"
+
+05. Pantalla "Entrega y Recepción en Agencia":
+	1 - Ingresar DNI del fletero: 12345678
+	2-  La encomienda impuesta en el paso 1 debería figurar como "A entregar" (Tracking: DOM_9)
+	3. Botón "Aceptar"
+
+06. Volver al menú principal
+	1 -  Seleccionar como "Centro de distribución actual": "Retiro" (CD01)
+
+	2 - Seleccionar del menú "Gestionar fletero"
+
+	
+07. Pantalla Gestionar Fletero:
+	1 -  Vuelvo a buscar el mismo DNI del fletero: 12345678
+
+	2- Encomienda DOM_9 debería figurar ahora para "Rendir" HDR 1005
+
+	3 - Marco  HDR de la encomienda de retiro como "Cumplida" (Checkbox)
+
+	4 - Botón "Aceptar"
+
+08. Cierro el programa
+
+05. En Bin > Debug > Datos corroborar los siguientes archivos:
+
+	En "Encomiendas.JSON" confirmar se haya creado la encomienda con los datos ingresados en el paso 1.
+	Los datos a corroborar son:
+		- Tracking:  DOM_9
+		- Localidad origen: CABA
+		- "CodCentroDistribucionOrigen": "CD01",
+		- "CodCentroDistribucionDestino": "CD11"
+		- "AgenciaOrigen": "AG01"
+		- "Estado": 5 (Admitida)
+		- Como es con destino a domicilio:  DireccionDestinatario debería figurar completo, 
+		- Como incluye entrega a domicilio, en EncomiendaFactura el ExtraEntrega debería estar completo, el resto en cero. 
+		- ACLARACION: RecorridoPlanficado debería figurar, pero aún no se desarrolló el ruteo, por eso dividimos los casos de prueba previo a ruteo y post ruteo. 
+
+
+	En "HdrUM.JSON" confirmar se haya creado el HDR de retiro con los datos del fletero y encomienda correspondiente, debería estar como cumplida. 
+		- DniFleteroAsignado: 12345678
+		- "NumeroHDRUM": 1005
+		- Tipo 0 (Retiro)

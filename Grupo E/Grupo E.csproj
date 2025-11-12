@@ -298,7 +298,9 @@
     <Content Include="Testing\GeneraciónDeFacturas.txt" />
     <Content Include="Testing\GestionarFletero.txt" />
     <Content Include="Testing\GestionarOmnibus.txt" />
+    <Content Include="Testing\ImpoCCDestinoACD.txt" />
     <Content Include="Testing\Imposicion.txt" />
+    <Content Include="Testing\ImposicionAgencia.txt" />
     <Content Include="Testing\RetirarEnAgencia.txt" />
     <Content Include="Testing\RetirarEnCD.txt" />
     <Content Include="Testing\TextFile1.txt" />
