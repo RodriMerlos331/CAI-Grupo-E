@@ -1,0 +1,24 @@
+        
+1- Pantalla Estado de Cuentas Corrientes
+
+	1- Poner Fecha desde: 01/10/2025
+    2- Poner Fecha hasta: 31/10/2025
+    3- Poner CUIT: 30-19283746-4
+	4- Elegir Estado de factura: "Todas"
+    5- Tocar boton Buscar
+
+ 2- Te muestra:
+
+    Verificar que se vea en la pantalla:
+    Fecha de emisión: 10/10/2025 / N° de Factura: 00000004 / Estado: "Pendiente" / Debe: 12.100,00 / Haber: 0,00 / Saldo: 12.100,00
+    Fecha de emisión: 20/10/2025 / N° de Factura: 00000005 / Estado: "Pagada" / Debe: 0,00 / Haber: 6.050,00 / Saldo: 6.050,00
+    Fecha de emisión: 20/10/2025 / N° de Factura: 00000006 / Estado: "Pagada" / Debe: 0,00 / Haber: 8.050,00 / Saldo: -2.000,00
+
+    Saldo deudor: 12.100,00
+    Saldo acreedor: 14.100,00
+
+3- Termina el programa 
+
+    1- Tocar boton Salir
+
+

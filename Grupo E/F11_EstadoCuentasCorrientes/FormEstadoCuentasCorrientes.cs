@@ -63,8 +63,6 @@ namespace Grupo_E.EstadoCuentasCorrientes
             cmbEstado.Items.Add("Todas");
             cmbEstado.Items.Add("Pendiente");
             cmbEstado.Items.Add("Pagada");
-            // ya no usamos "Vencida"
-            // cmbEstado.Items.Add("Vencida");
             cmbEstado.SelectedIndex = 0;
         }
 
@@ -98,9 +96,6 @@ namespace Grupo_E.EstadoCuentasCorrientes
             DateTime fechaHasta = dtpFechaHasta.Value.Date;
             string estadoFiltro = cmbEstado.SelectedItem?.ToString() ?? "Todas";
 
-            // El modelo ahora devuelve dos saldos por salida (deudor/acreedor).
-            // No los usamos para los totales de abajo (se calculan en PresentarResultados),
-            // pero es necesario proporcionar las variables out según la firma del método.
             try
             {
                 decimal saldoDeudorModelo;
@@ -136,10 +131,8 @@ namespace Grupo_E.EstadoCuentasCorrientes
 
             foreach (var m in movimientos)
             {
-                // saldo acumulado por fila
                 saldoActual = saldoActual + m.Debe - m.Haber;
 
-                // acumulamos totales para mostrar abajo
                 totalDebe += m.Debe;
                 totalHaber += m.Haber;
 
@@ -153,13 +146,11 @@ namespace Grupo_E.EstadoCuentasCorrientes
                 lvMovimientos.Items.Add(item);
             }
 
-            // mostramos totales de Debe/Haber en los textboxes inferiores
             ActualizarSaldosTotales(totalDebe, totalHaber);
         }
 
         private void ActualizarSaldosTotales(decimal totalDeudor, decimal totalAcreedor)
         {
-            // Mostramos directamente las sumas de las columnas Debe y Haber
             txtSaldoDeudor.Text = totalDeudor.ToString("C2");
             txtSaldoAcreedor.Text = totalAcreedor.ToString("C2");
         }
@@ -198,7 +189,7 @@ namespace Grupo_E.EstadoCuentasCorrientes
 
         private void lvMovimientos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Por ahora no hace nada
+
         }
     }
 }

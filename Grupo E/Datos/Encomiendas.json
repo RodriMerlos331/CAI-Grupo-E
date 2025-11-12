@@ -226,11 +226,11 @@
     "FechaEntrega": "2025-10-10T13:52:03.1405403-03:00",
     "Facturada": false,
     "EncomiendaFactura": {
-      "PrecioCombinacionTamanoOrigenDestino": 1000.0,
+      "PrecioCombinacionTamanoOrigenDestino": 9600.0,
       "ExtraRetiro": 0.0,
       "ExtraAgencia": 0.0,
       "ExtraEntrega": 0.0,
-      "PrecioTotalEncomienda": 1000.0
+      "PrecioTotalEncomienda": 9600.0
     },
     "HistorialCambios": [
       {
