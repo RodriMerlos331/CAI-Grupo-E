@@ -15,8 +15,3 @@ Luego, se desarrollaron casos de prueba para entrega en destino y para gestionar
 Selección desplegables CD y Agencias: Ya se testean en casos 2 y 3, no es necesario repetir en los demás casos de prueba.
 
 
-
-Pendientes (ESTO BORRAR PARA ENTREGA):
-revisar msjs de error en pantallas
-botones cancelar
-estetica ???
