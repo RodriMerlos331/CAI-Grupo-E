@@ -168,9 +168,10 @@
             this.lblSumaImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblSumaImporte.Location = new System.Drawing.Point(30, 510);
             this.lblSumaImporte.Name = "lblSumaImporte";
-            this.lblSumaImporte.Size = new System.Drawing.Size(87, 17);
+            this.lblSumaImporte.Size = new System.Drawing.Size(98, 25);
             this.lblSumaImporte.TabIndex = 9;
             this.lblSumaImporte.Text = "Total: $0";
+            this.lblSumaImporte.Click += new System.EventHandler(this.lblSumaImporte_Click);
             // 
             // F10_GeneracionDeFacturasForm
             // 

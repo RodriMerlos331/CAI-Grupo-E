@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Grupo_E.GeneracionDeFacturas
 {
@@ -93,11 +94,8 @@ namespace Grupo_E.GeneracionDeFacturas
             // Elimina el símbolo de moneda y los espacios
             string limpio = texto.Replace("$", "").Trim();
 
-            // Elimina los puntos (separador de miles)
-            limpio = limpio.Replace(",", "");
-
-            // Ahora la coma queda como separador decimal
-            decimal.TryParse(limpio, out decimal valor);
+            // Usa la cultura argentina para interpretar correctamente el número
+            decimal.TryParse(limpio, NumberStyles.Any, new System.Globalization.CultureInfo("es-AR"), out decimal valor);
             return valor;
         }
 
@@ -157,6 +155,11 @@ namespace Grupo_E.GeneracionDeFacturas
             {
                 this.Close();
             }
+        }
+
+        private void lblSumaImporte_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

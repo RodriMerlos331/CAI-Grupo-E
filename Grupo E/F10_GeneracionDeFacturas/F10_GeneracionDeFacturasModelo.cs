@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -80,6 +81,7 @@ namespace Grupo_E.F10_GeneracionDeFacturas
         {
             var encomiendas = BuscarEncomiendasNoFacturadasPorCUIT(cuit);
             var resultado = new List<EncomiendaFacturaDTO>();
+            var cultura = new CultureInfo("es-AR");
 
             foreach (var encomienda in encomiendas)
             {
@@ -91,11 +93,11 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                         FechaAdmision = encomienda.FechaAdmision.HasValue && encomienda.FechaAdmision.Value.Year > 1
                             ? encomienda.FechaAdmision.Value.ToString("dd/MM/yyyy")
                             : "",
-                        Importe = encomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino.ToString("C"),
-                        ExtraRetiro = encomienda.EncomiendaFactura.ExtraRetiro.ToString("C"),
-                        ExtraEntrega = encomienda.EncomiendaFactura.ExtraEntrega.ToString("C"),
-                        ExtraAgencia = encomienda.EncomiendaFactura.ExtraAgencia.ToString("C"),
-                        PrecioTotal = encomienda.EncomiendaFactura.PrecioTotalEncomienda.ToString("C") //revisar
+                        Importe = encomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino.ToString("C", cultura),
+                        ExtraRetiro = encomienda.EncomiendaFactura.ExtraRetiro.ToString("C", cultura),
+                        ExtraEntrega = encomienda.EncomiendaFactura.ExtraEntrega.ToString("C", cultura),
+                        ExtraAgencia = encomienda.EncomiendaFactura.ExtraAgencia.ToString("C", cultura),
+                        PrecioTotal = encomienda.EncomiendaFactura.PrecioTotalEncomienda.ToString("C", cultura)
                     });
                 }
              
