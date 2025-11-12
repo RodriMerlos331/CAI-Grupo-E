@@ -12,4 +12,4 @@
 
 3- Termina el programa 
 
-    1- Tocar botón Salir
+    1- Tocar boton Salir
