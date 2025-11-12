@@ -18,3 +18,4 @@ Pendientes (ESTO BORRAR PARA ENTREGA):
 revisar msjs de error en pantallas
 botones cancelar
 estetica ???
+Pantalla Conri: Seleccionar todas las encomiendas de un cliente
