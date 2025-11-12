@@ -295,7 +295,6 @@
   <ItemGroup>
     <Content Include="Testing\12_ConsultarCostosYVentas.txt" />
     <Content Include="Testing\09_EntregarYRecepcionarEncomeindaEnAgencia.txt" />
-    <Content Include="Testing\10_FacturacionEncomiendaEntregadaABORRAR.txt" />
     <Content Include="Testing\11_ConsultarEstadoDeCuentasCorrientes.txt" />
     <Content Include="Testing\10_GeneraciónDeFacturas.txt" />
     <Content Include="Testing\05_GeneracioRendicionHDRFletero_Neuquen.txt" />

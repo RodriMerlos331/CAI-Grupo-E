@@ -6,6 +6,8 @@ Historial de cambios: Pendiente registrar estado actual en vez de estado previo
 HDR UM: Group By DatosDestinatario.
 Datos destinatario: Separar textBox
 Devoluciones: No desarrollado
+Facturas (incluir devoluciones): No desarrollado
+Omnibus: Ni capacidad máxima ni order by fecha imposición - No desarrollado
 
 
 Aclaraciones:
