@@ -172,7 +172,7 @@ namespace Grupo_E.ImposicionEnAgencia
             this.DireccionParticularGrb.TabIndex = 40;
             this.DireccionParticularGrb.TabStop = false;
             this.DireccionParticularGrb.Text = "Direccion particular";
-            this.DireccionParticularGrb.Enter += new System.EventHandler(this.grbParticular_Enter);
+            //this.DireccionParticularGrb.Enter += new System.EventHandler(this.grbParticular_Enter);
             // 
             // DatosEntregaDomiclioText
             // 
@@ -370,11 +370,11 @@ namespace Grupo_E.ImposicionEnAgencia
 
 
    
-
+        /*
         private void grbParticular_Enter(object sender, EventArgs e)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
 
         private void ImposicionEnAgencia_Load(object sender, EventArgs e)

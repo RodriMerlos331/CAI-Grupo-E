@@ -1,0 +1,93 @@
+﻿
+Se hará la imposición de 3 encomiendas en una misma corrida, para el mismo cliente 27-38951233-5:
+
+Verificar en menú principal que desplegables:
+
+Centro de distribucion actual:
+Primero: Retiro
+Último: "Terminal de ómnibus de San Carlos de Bariloche"
+
+Agencia actual:
+Primero: Agencia Galerías Pacífico
+Último: Agencia Cerro Catedral
+
+Verificar para cada una de las pantallas de imposicion que:
+
+- Desplegables localidad destino y localidad origen:
+Primer localidad: CABA
+Última locadlidad: San Carlos De Bariloche
+
+- Desplegable tamaño del bulto figuren:
+S, M , L , XL
+
+
+A. Pantalla "Imposición en Call Center", completar con los siguientes datos:
+- CUIT cliente: 27-38951233-5
+- Localidad: Cordoba Cápital
+- Seleccionar como destino "Centro de distribución"
+- Verificar quede habilitado el groupBox de "Centro de distribución"
+- En terminales, verificar que unicamente figure: "Terminal de ómnibus de Córdoba Capital"
+- Datos destinatario: Completar con "Juan Perez 12345678"
+- Seleccionar como Localidad Origen: "Corrientes Capital"
+- Completar datos retiro "Maria Guemez 23456789"
+- Seleccionar tamaño del bulto: S
+Botón "Aceptar"
+Confirmar figure siguiente mensaje:
+
+En Gestionar fletero , seleccionar antes CD09 (Terminal de ómnibus de Corrientes Capital) buscar fletero 41239876 y confirmar encomienda X figure como a retirar: enocmienda con HDR generada
+Aceptar
+Busco mismo DNI debería figurar ahora para rendir
+marco como rendida:
+encomienda debería quedar:
+
+
+
+
+
+Cerrar esta pantalla
+
+Volver al menú principal
+
+B. Imposicion en agencia
+1.  Seleccionar como "Agencia actual": "Agencia Galerías Pacífico" 
+2. Seleccionar "Imposición en Agencia" del menú principal
+3. Completar datos:
+- CUIT cliente: 27-38951233-5
+- Localidad: Neuquén Cápital
+- Seleccionar como destino "Dirección particular"
+- Verificar unicamente quede habilitado el groupBox de "Dirección particlar"
+- Datos destinatario: Completar con "Juan Perez 12345678"
+- Dirección particular: "Avenida prueba 1234"
+- Completar datos retiro "Maria Guemez 23456789"
+- Seleccionar tamaño del bulto: M
+
+4. Aceptar
+5. Verificar mensaje de imposicion
+6. Volver al menú principal
+
+C. Imposición en CD:
+1. Seleccionar Centro de distribución actual "Terminal de ómnibus de Villa María"
+2. Seleccionar del menú "Imposición en CD"
+3. Completar datos:
+- CUIT cliente: 27-38951233-5
+- Localidad: San Miguel de Tucuman
+- Seleccionar como destino "Agencia"
+- Verificar unicamente quede habilitado el groupBox de "Agencia"
+- Verificar en desplegable de Agencias unicamente figuren: "Agencia Yerba Buena Shopping" y "Agencia Barrio Sur"
+- Seleccionar "Agencia Yerba Buena Shopping"
+- Datos destinatario: Completar con "Juan Perez 12345678"
+- Dirección particular: "Avenida prueba 1234"
+- Completar datos retiro "Maria Guemez 23456789"
+- Seleccionar tamaño del bulto: L
+
+4. Aceptar
+5. Verificar mensaje de imposición
+6. Cerrar pantalla
+
+
+Una vez finalizadas las tres imposiciones cerrar el programa y verificar en el bin la creación de las siguientes encomiendas:
+
+
+
+
+
