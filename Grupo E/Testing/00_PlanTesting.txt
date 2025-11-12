@@ -14,4 +14,7 @@ Al no contar con el ruteo, los casos de prueba de imposiciones llegan "hasta" ad
 Luego, se desarrollaron casos de prueba para entrega en destino y para gestionar omnibus con encomiendas precargadas. 
 Selección desplegables CD y Agencias: Ya se testean en casos 2 y 3, no es necesario repetir en los demás casos de prueba.
 
-
+Pendientes (ESTO BORRAR PARA ENTREGA):
+revisar msjs de error en pantallas
+botones cancelar
+estetica ???
