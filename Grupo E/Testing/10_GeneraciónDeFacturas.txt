@@ -2,27 +2,31 @@
 1.Pantalla Generación de Facturas
 	1-CUIT : 30-19283746-4
 	2-Boton Buscar
-	3- Clickear checkbox encomienda nro de tracking CD13_2 para que quede seleccionada
-	4- Verificar label importe muestra ¨$9.600,00¨
+	3- Clickear  los checkbox  nro de tracking CD13_2  y AG23_9 para que queden seleccionadas
+	4- Verificar label importe muestra ¨$11.800,00¨
 	5- Boton Generar Factura
 
 2. Finalizar el programa
-    Archivo Facturas.Json 
+   
+   En el BIN Archivo Facturas.Json 
 	-Verificar que se genero la factura con los siguientes datos:
 	"NroFactura": "00000007",
-    "CuitTutasa": "30-55555555-5",
+    "CuitTutasa": "20-12345678-10",
     "CuitCliente":30-19283746-4,
     "FechaEmision": que sea igual al momento en el que se toco el Boton Generar Factura,
     "EncomiendasIncluidas": [
       "CD13_2"   
+      AG23_9
     ],
-    "Subtotal":9600.00,
-    "Iva": 2016.0000,
-    "Total": 11616.0000
+    "Subtotal":11800.00,
+    "Iva": 2478.0000,
+    "Total":14278
     "CodigoDeAutorizacionElectronica": "CAE789012",
     "FechadePago": null
 
-  Archivo Encomiendas.Json 
+  En el BIN Archivo Encomiendas.Json 
 
-  -Verificar que la encomienda CD13_2 tiene el parametro Facturada
+  -Verificar que la encomienda CD13_2 Facturada=True
+  -Verificar que la encomienda AG23_9 Facturada=True
 
+  
