@@ -190,7 +190,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Name = "EntregarYRecepcionarEncomiendaAgenciaForm";
-            this.Text = "C";
+            this.Text = "Entregar y Recepcionar en Agencia";
             this.Load += new System.EventHandler(this.EntregarYRecepcionarEncomiendaAgenciaForm_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

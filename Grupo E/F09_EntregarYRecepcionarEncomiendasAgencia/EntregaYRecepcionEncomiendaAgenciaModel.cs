@@ -27,31 +27,26 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                 MessageBox.Show("El DNI ingresado no corresponde a ningún fletero.");
                 return null;
             }
-            else
+
+            var trackingsAsignados = HDRDistribucionUMAlmacen.HDRDistribucionUM
+                .Where(hdr => hdr.DniFleteroAsignado == dni)
+                .SelectMany(hdr => hdr.Encomiendas)
+                .ToList();
+
+            foreach (EncomiendaEntidad encomienda in EncomiendaAlmacen.Encomienda
+                .Where(e => trackingsAsignados.Contains(e.Tracking)))
             {
-                foreach (EncomiendaEntidad encomienda in EncomiendaAlmacen.Encomienda)
+                data.Add(encomienda.Tracking, new GuiaDeEncomiendas
                 {
-                    data.Add(encomienda.Tracking, new GuiaDeEncomiendas
-                    {
-                        TrackingId = encomienda.Tracking,
-                        EstadoEnvio = (EstadoDeEnvio)encomienda.Estado,
-                        AgenciaDestino = encomienda.AgenciaDestino,
-                        AgenciaOrigen = encomienda.AgenciaOrigen,
-                        TamañoBulto = encomienda.TipoBulto.ToString(),
-                        FleteroAsignado = FleteroAlmacen.Fletero
-                            .FirstOrDefault(f =>
-                                HDRDistribucionUMAlmacen.HDRDistribucionUM.Any(hdr =>
-                                    hdr.DniFleteroAsignado == f.DniFletero &&
-                                    hdr.Encomiendas.Contains(encomienda.Tracking)))
-                            ?.DniFletero ?? 0
+                      TrackingId = encomienda.Tracking,
+                      EstadoEnvio = (EstadoDeEnvio)encomienda.Estado,
+                      AgenciaDestino = encomienda.AgenciaDestino,
+                      AgenciaOrigen = encomienda.AgenciaOrigen,
+                      TamañoBulto = encomienda.TipoBulto.ToString(),
+                      FleteroAsignado = dni
+                });
 
-
-                    });
-
-                }
-
-            }
-                
+            }     
 
             return data;    
         }
