@@ -87,7 +87,7 @@ namespace Grupo_E.RetirarEnCD
                     txtApellido.Text,
                     dni))
             {
-                MessageBox.Show("La encomienda fue validada correctamente y está lista para ser entregada en el CD.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Encomienda  entregada en el CD.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNumeroDeTracking.Clear();
                 txtNombre.Clear();
                 txtApellido.Clear();

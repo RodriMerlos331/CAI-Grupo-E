@@ -86,7 +86,7 @@ namespace Grupo_E.RetirarEnAgencia
                     txtApellido.Text,
                     dni))
             {
-                MessageBox.Show("La encomienda fue validada correctamente y está lista para ser entregada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Encomienda entregada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNumeroDeTracking.Clear();
                 txtNombre.Clear();
                 txtApellido.Clear();
