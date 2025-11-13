@@ -17,7 +17,7 @@ Se generarán dos HDR:
 
 
 
-03. Vuelvo al menú principal:1 - Seleccionar como "Centro de distribución actual": "Córdoba Capital"
+03. Vuelvo al menú principal: 1 - Seleccionar como "Centro de distribución actual": "Córdoba Capital"
 
 04. Pantalla "Gestionar Omnibus"
 	1 - Patente: DDD222

@@ -7,6 +7,8 @@ Datos destinatario: Separar textBox
 Devoluciones: No desarrollado
 Facturas (incluir devoluciones): No desarrollado
 Omnibus: Ni capacidad máxima ni order by fecha imposición - No desarrollado
+Patente omnibus: Sensible a mayúsculas/minúsculas - No desarrollado
+Direcciones de retiro prestablecidas por cliente: No desarrollado
 
 
 Aclaraciones:

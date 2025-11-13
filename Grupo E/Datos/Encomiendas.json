@@ -721,6 +721,83 @@
     "Facturada": false,
     "EncomiendaFactura": null,
     "HistorialCambios": []
+  },
+  {
+    "Tracking": "CD04_14",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD01",
+    "CodCentroDistribucionDestino": "CD04",
+    "Estado": 5,
+    "TipoBulto": 0,
+    "CUITCliente": "27-38951233-5",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Juan Perez 12345678",
+    "ApellidoDestinatario": "Juan Perez 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": "CD01",
+    "RecorridoPlanificado": [
+      {
+        "ServicioId": "RETIRO_LAPLATA",
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD04"
+      }
+    ],
+    "FechaImposicion": "2025-11-13T19:33:00.5142961-03:00",
+    "FechaAdmision": "2025-11-13T19:33:00.5142961-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 1000.0,
+      "ExtraRetiro": 0.0,
+      "ExtraAgencia": 0.0,
+      "ExtraEntrega": 0.0,
+      "PrecioTotalEncomienda": 1000.0
+    },
+    "HistorialCambios": []
+  },
+  {
+    "Tracking": "CD12_15",
+    "CodLocalidadOrigen": "CABA",
+    "CodCentroDistribucionOrigen": "CD01",
+    "CodCentroDistribucionDestino": "CD12",
+    "Estado": 5,
+    "TipoBulto": 0,
+    "CUITCliente": "27-38951233-5",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Sofia Juan 12345678",
+    "ApellidoDestinatario": "Sofia Juan 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": "CD01",
+    "RecorridoPlanificado": [
+      {
+        "ServicioId": "RETIRO_LAPLATA",
+        "CodigoCDOrigen": "CD01",
+        "CodigoCDDestino": "CD04"
+      },
+      {
+        "ServicioId": "LAPLATA_SANMARTIN",
+        "CodigoCDOrigen": "CD04",
+        "CodigoCDDestino": "CD12"
+      }
+    ],
+    "FechaImposicion": "2025-11-13T19:34:03.1717897-03:00",
+    "FechaAdmision": "2025-11-13T19:34:03.1717897-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": {
+      "PrecioCombinacionTamanoOrigenDestino": 1500.0,
+      "ExtraRetiro": 0.0,
+      "ExtraAgencia": 0.0,
+      "ExtraEntrega": 0.0,
+      "PrecioTotalEncomienda": 1500.0
+    },
+    "HistorialCambios": []
   }
 
 ]
