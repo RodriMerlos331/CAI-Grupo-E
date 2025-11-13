@@ -36,7 +36,7 @@ En HDRUM.json:
 		- Cumplida = true
 		- Rendida = true
 
-	HDR 1005 (asociada a CD11_7): Se haya generado correctamente con:
+	HDR 1006 (asociada a CD11_7): Se haya generado correctamente con:
 		- Tipo: Retiro (0)
 		- Cumplida = false
 		- Rendida = false

@@ -48,5 +48,36 @@
     "Encomiendas": [
       "AG21_6"
     ]
+  },
+  {
+    "NumeroHDRUM": 1005,
+    "Tipo": 1,
+    "DniFleteroAsignado": 45789012,
+    "Cumplida": true,
+    "Rendida": true,
+    "Encomiendas": [
+      "AG23_9"
+    ]
+  },
+  {
+    "NumeroHDRUM": 1006,
+    "Tipo": 0,
+    "DniFleteroAsignado": 46890123,
+    "Cumplida": false,
+    "Rendida": false,
+    "Encomiendas": [
+      "CD07_10"
+    ]
+  },
+  {
+    "NumeroHDRUM": 1007,
+    "Tipo": 0,
+    "DniFleteroAsignado": 46890123,
+    "Cumplida": false,
+    "Rendida": false,
+    "Encomiendas": [
+      "CD08_11"
+    ]
   }
+
 ]

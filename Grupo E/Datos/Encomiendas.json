@@ -514,7 +514,7 @@
     ]
   },
   {
-    "Tracking": "CD13_9",
+    "Tracking": "AG23_9",
     "CodLocalidadOrigen": "NC",
     "CodCentroDistribucionOrigen": "CD11",
     "CodCentroDistribucionDestino": "CD13",
@@ -526,7 +526,7 @@
     "ApellidoDestinatario": "Tomas Javier 12345678",
     "DireccionDestinatario": null,
     "AgenciaOrigen": null,
-    "AgenciaDestino": null,
+    "AgenciaDestino": "AG23",
     "DatosRetiroADomicilio": null,
     "CodCDActual": null,
     "RecorridoPlanificado": [
@@ -549,7 +549,7 @@
     },
     "HistorialCambios": [
       {
-        "Tracking": "CD13_9",
+        "Tracking": "AG23_9",
         "FechaPrevia": "2025-10-9T13:45:15.7026893-03:00",
         "UbicacionPrevia": "CD11",
         "FleteroAsignado": 0,
@@ -558,7 +558,7 @@
         "EstadoPrevio": 5
       },
       {
-        "Tracking": "CD13_9",
+        "Tracking": "AG23_9",
         "FechaPrevia": "2025-10-12T13:45:15.7026893-03:00",
         "UbicacionPrevia": null,
         "FleteroAsignado": 0,
@@ -567,7 +567,7 @@
         "EstadoPrevio": 6
       },
       {
-        "Tracking": "CD13_9",
+        "Tracking": "AG23_9",
         "FechaPrevia": "2025-10-13T13:45:15.7026893-03:00",
         "UbicacionPrevia": "CD13",
         "FleteroAsignado": 0,
@@ -576,7 +576,7 @@
         "EstadoPrevio": 7
       },
       {
-        "Tracking": "CD13_9",
+        "Tracking": "AG23_9",
         "FechaPrevia": "2025-10-14T13:45:15.7026893-03:00",
         "UbicacionPrevia": null,
         "FleteroAsignado": 0,
@@ -586,6 +586,92 @@
       }
 
 
+    ]
+  },
+  {
+    "Tracking": "CD07_10",
+    "CodLocalidadOrigen": "BRC",
+    "CodCentroDistribucionOrigen": "CD14",
+    "CodCentroDistribucionDestino": "CD07",
+    "Estado": 4,
+    "TipoBulto": 0,
+    "CUITCliente": "30-55555555-9",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Juan Perez 12345678",
+    "ApellidoDestinatario": "Juan Perez 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": "AG25",
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "RecorridoPlanificado": [],
+    "FechaImposicion": "2025-11-13T16:47:12.7319243-03:00",
+    "FechaAdmision": "2025-11-13T16:47:58.2326707-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": null,
+    "HistorialCambios": [
+      {
+        "Tracking": "CD07_10",
+        "FechaPrevia": "2025-11-13T16:47:12.7319243-03:00",
+        "UbicacionPrevia": null,
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 0,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 1
+      },
+      {
+        "Tracking": "CD07_10",
+        "FechaPrevia": "2025-11-13T16:47:58.2326707-03:00",
+        "UbicacionPrevia": "CD14",
+        "FleteroAsignado": 46890123,
+        "NumeroHDRUM": 1006,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 3
+      }
+    ]
+  },
+  {
+    "Tracking": "CD08_11",
+    "CodLocalidadOrigen": "BRC",
+    "CodCentroDistribucionOrigen": "CD14",
+    "CodCentroDistribucionDestino": "CD08",
+    "Estado": 4,
+    "TipoBulto": 0,
+    "CUITCliente": "30-55555555-9",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Juan Perez 12345678",
+    "ApellidoDestinatario": "Juan Perez 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": "AG25",
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "RecorridoPlanificado": [],
+    "FechaImposicion": "2025-11-13T16:47:12.7319243-03:00",
+    "FechaAdmision": "2025-11-13T16:47:58.2326707-03:00",
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": null,
+    "HistorialCambios": [
+      {
+        "Tracking": "CD08_11",
+        "FechaPrevia": "2025-11-13T16:47:12.7319243-03:00",
+        "UbicacionPrevia": null,
+        "FleteroAsignado": 0,
+        "NumeroHDRUM": 0,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 1
+      },
+      {
+        "Tracking": "CD08_11",
+        "FechaPrevia": "2025-11-13T16:47:58.2326707-03:00",
+        "UbicacionPrevia": "CD14",
+        "FleteroAsignado": 46890123,
+        "NumeroHDRUM": 1006,
+        "NumeroHDRMD": 0,
+        "EstadoPrevio": 3
+      }
     ]
   }
 
