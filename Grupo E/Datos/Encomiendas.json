@@ -673,8 +673,54 @@
         "EstadoPrevio": 3
       }
     ]
+  },
+  {
+    "Tracking": "CD01_12",
+    "CodLocalidadOrigen": "GY",
+    "CodCentroDistribucionOrigen": "CD10",
+    "CodCentroDistribucionDestino": "CD01",
+    "Estado": 1,
+    "TipoBulto": 1,
+    "CUITCliente": "30-55555555-9",
+    "DNIDestinatario": 22225555,
+    "NombreDestinatario": "Martin Juanete 22225555",
+    "ApellidoDestinatario": "Martin Juanete 22225555",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": "AG18",
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": null,
+    "CodCDActual": null,
+    "RecorridoPlanificado": [],
+    "FechaImposicion": "2025-11-13T17:27:13.9294636-03:00",
+    "FechaAdmision": null,
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": null,
+    "HistorialCambios": []
+  },
+  {
+    "Tracking": "CD10_13",
+    "CodLocalidadOrigen": "CC",
+    "CodCentroDistribucionOrigen": "CD09",
+    "CodCentroDistribucionDestino": "CD10",
+    "Estado": 0,
+    "TipoBulto": 0,
+    "CUITCliente": "27-38951233-5",
+    "DNIDestinatario": 12345678,
+    "NombreDestinatario": "Tomas Retya 12345678",
+    "ApellidoDestinatario": "Tomas Retya 12345678",
+    "DireccionDestinatario": null,
+    "AgenciaOrigen": null,
+    "AgenciaDestino": null,
+    "DatosRetiroADomicilio": "Avenida Prueba 1234",
+    "CodCDActual": null,
+    "RecorridoPlanificado": [],
+    "FechaImposicion": "2025-11-13T17:46:49.4326563-03:00",
+    "FechaAdmision": null,
+    "FechaEntrega": null,
+    "Facturada": false,
+    "EncomiendaFactura": null,
+    "HistorialCambios": []
   }
-
-
 
 ]
