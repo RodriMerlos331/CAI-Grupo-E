@@ -293,6 +293,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Testing\01_RetiroDOM2Encomiendas.txt" />
+    <Content Include="Testing\05_GestionarFleteroDosEncomiendasRetirarMismaAgencia.txt" />
     <Content Include="Testing\09_EntregarYRecepcionarEncomeindaEnAgencia02.txt" />
     <Content Include="Testing\12_ConsultarCostosYVentas.txt" />
     <Content Include="Testing\09_EntregarYRecepcionarEncomeindaEnAgencia01.txt" />

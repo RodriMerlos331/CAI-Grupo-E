@@ -1,0 +1,45 @@
+﻿
+Aclaración: Verificaciones de imposicion en testing anteriores.
+Acá se busca probar generación de HDR UM para retiro a domicilio. 
+
+
+01. Pantalla "Imposición en Call Center":
+
+	1 - CUIT: 27-38951233-5
+	2 - Localidad Destino: Cordoba Cápital
+	3 - Seleccionar como destino "Centro de distribución"
+	4 - Terminal: "Terminal de ómnibus de Córdoba Capital"
+	6 - Datos destinatario: "Juan Perez 12345678"
+	7 - Localidad Origen: "Corrientes Capital"
+	8 - Datos retiro "Avenida Prueba 1234"
+	9 - Tamaño del bulto: S
+	10 - Confirmar cambios: Botón "Aceptar"
+
+02. Volver al menú principal
+	1 -  Seleccionar como "Centro de distribución actual": "Corrientes Capital"
+	2 - Seleccionar del menú "Gestionar fletero"
+
+03. Pantalla "Gestionar fletero":
+
+	1 - Buscar DNI 41239876
+	2 - VERIFICAR se genere una única HDR  (1008) que incluya la encomienda impuesta (CD05_14) y una previa que tenía la mismo dirección particular de retiro:
+	CD10_13
+
+	que contiene los mismos datos de retiro. 
+	3 - Botón "Aceptar"
+
+04. Cierro el programa
+
+05. VERIFICAR en Bin > Datos los siguientes archivos:
+
+Encomiendas.json:
+
+CD05_14 se haya creado y esté en estado 4
+
+Y CD10_13 haya actualizado también su estado a 4
+
+En HDRUM.json:
+Verificar se haya creado una unica HDR (1008) que incluya ambas encomiendas (CD05_14 y CD10_13) con:
+		- Tipo: Retiro (0)
+		- Cumplida = false
+		- Rendida = false
