@@ -19,7 +19,7 @@ namespace FormResultadoCostoVsVentas
         {
             InitializeComponent();
         }
-        
+
         private void FormResultadoCostoVsVentas_Load(object sender, EventArgs e)
         {
             // Dejo que las fechas se excedan del dia de "hoy"
@@ -34,7 +34,6 @@ namespace FormResultadoCostoVsVentas
             dtpFechaInicial.Value = DateTime.Today;
             dtpFechaFinal.Value = DateTime.Today;
         }
-        
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -90,6 +89,16 @@ namespace FormResultadoCostoVsVentas
 
                 ResultadoCostosVentas resultado = _modelo.Consultar(query);
 
+                // ⬇️ Validación pedida: si no hay costos ni ventas en el rango, avisar.
+                if (resultado != null && resultado.TotalCostos == 0m && resultado.TotalVentas == 0m)
+                {
+                    MessageBox.Show(
+                        "No se registran costos ni ventas para el rango de fechas seleccionado.",
+                        "Sin resultados",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+
                 ActualizarCamposResultado(resultado);
             }
             catch (Exception ex)
@@ -139,13 +148,13 @@ namespace FormResultadoCostoVsVentas
 
         private void ActualizarCamposResultado(ResultadoCostosVentas resultado)
         {
-            txtNombreEmpresa.Text = resultado.NombreEmpresa;
+            txtNombreEmpresa.Text = resultado?.NombreEmpresa ?? string.Empty;
 
-            txtTotalCostos.Text = resultado.TotalCostos != 0m
+            txtTotalCostos.Text = (resultado != null && resultado.TotalCostos != 0m)
                 ? resultado.TotalCostos.ToString("C2")
                 : string.Empty;
 
-            txtTotalVentas.Text = resultado.TotalVentas != 0m
+            txtTotalVentas.Text = (resultado != null && resultado.TotalVentas != 0m)
                 ? resultado.TotalVentas.ToString("C2")
                 : string.Empty;
         }

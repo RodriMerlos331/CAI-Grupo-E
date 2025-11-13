@@ -1,4 +1,6 @@
         
+CU 1)
+
 1- Pantalla Costos Vs Ventas
 
 	1- Poner CUIT: 30-65478912-3
@@ -9,6 +11,25 @@
  2- Te muestra:
 
     Verificar que se vea en la pantalla: Emrpresa: Plusmar S.A. / Costos: 8.800,00 / Ventas: 9.600,00
+
+3- Termina el programa 
+
+    1- Tocar boton Salir
+
+        
+CU 2)
+
+1- Pantalla Costos Vs Ventas
+
+	1- Poner CUIT: 30-65478912-3
+    2- Poner Fecha desde: 01/11/2025
+    3- Poner Fecha hasta: 13/11/2025
+    5- Tocar boton Buscar
+
+ 2- Te muestra:
+
+    Mensaje de error: "No se registraron costos ni ventas para el rango de fechas seleccionado."
+    Verificar que se vea en la pantalla: Emrpresa: Plusmar S.A. / Costos:  / Ventas: 
 
 3- Termina el programa 
 
