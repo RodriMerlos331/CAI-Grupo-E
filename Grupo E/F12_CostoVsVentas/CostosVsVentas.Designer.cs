@@ -47,7 +47,7 @@
             this.lblCUIT.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.lblCUIT.Location = new System.Drawing.Point(10, 22);
             this.lblCUIT.Name = "lblCUIT";
-            this.lblCUIT.Size = new System.Drawing.Size(38, 17);
+            this.lblCUIT.Size = new System.Drawing.Size(33, 13);
             this.lblCUIT.TabIndex = 1;
             this.lblCUIT.Text = "CUIT:";
             this.lblCUIT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -57,7 +57,7 @@
             this.txtCuit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCuit.Location = new System.Drawing.Point(54, 20);
             this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(143, 25);
+            this.txtCuit.Size = new System.Drawing.Size(143, 21);
             this.txtCuit.TabIndex = 2;
             // 
             // btnConsultar
@@ -92,14 +92,14 @@
             this.dtpFechaFinal.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.dtpFechaFinal.Location = new System.Drawing.Point(595, 20);
             this.dtpFechaFinal.Name = "dtpFechaFinal";
-            this.dtpFechaFinal.Size = new System.Drawing.Size(184, 25);
+            this.dtpFechaFinal.Size = new System.Drawing.Size(184, 21);
             this.dtpFechaFinal.TabIndex = 6;
             // 
             // dtpFechaInicial
             // 
             this.dtpFechaInicial.Location = new System.Drawing.Point(307, 20);
             this.dtpFechaInicial.Name = "dtpFechaInicial";
-            this.dtpFechaInicial.Size = new System.Drawing.Size(184, 25);
+            this.dtpFechaInicial.Size = new System.Drawing.Size(184, 21);
             this.dtpFechaInicial.TabIndex = 5;
             // 
             // label2
@@ -108,9 +108,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.label2.Location = new System.Drawing.Point(516, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Feha hasta:";
+            this.label2.Text = "Fecha hasta:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
@@ -119,9 +119,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.label1.Location = new System.Drawing.Point(223, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Feha desde:";
+            this.label1.Text = "Fecha desde:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dgvResultados
@@ -145,7 +145,7 @@
             this.txtTotalVentas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalVentas.Location = new System.Drawing.Point(427, 28);
             this.txtTotalVentas.Name = "txtTotalVentas";
-            this.txtTotalVentas.Size = new System.Drawing.Size(102, 25);
+            this.txtTotalVentas.Size = new System.Drawing.Size(102, 21);
             this.txtTotalVentas.TabIndex = 9;
             // 
             // txtTotalCostos
@@ -153,7 +153,7 @@
             this.txtTotalCostos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalCostos.Location = new System.Drawing.Point(252, 28);
             this.txtTotalCostos.Name = "txtTotalCostos";
-            this.txtTotalCostos.Size = new System.Drawing.Size(102, 25);
+            this.txtTotalCostos.Size = new System.Drawing.Size(102, 21);
             this.txtTotalCostos.TabIndex = 8;
             this.txtTotalCostos.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -162,7 +162,7 @@
             this.txtNombreEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreEmpresa.Location = new System.Drawing.Point(80, 28);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
-            this.txtNombreEmpresa.Size = new System.Drawing.Size(102, 25);
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(102, 21);
             this.txtNombreEmpresa.TabIndex = 7;
             // 
             // label5
@@ -170,7 +170,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(379, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 17);
+            this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 2;
             this.label5.Text = "Ventas:";
             // 
@@ -179,7 +179,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(203, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 17);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Costos:";
             // 
@@ -188,7 +188,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(18, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 17);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Empresa:";
             // 
@@ -216,7 +216,7 @@
             // 
             // FormResultadoCostoVsVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 243);
             this.Controls.Add(this.btnLimpiar);

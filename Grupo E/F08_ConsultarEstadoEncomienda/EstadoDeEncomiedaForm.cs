@@ -84,9 +84,10 @@ namespace Grupo_E.ConsultarEstadoEncomienda
                 case EstadoEnvio.PendienteRetiroCD: return "Pendiente de retiro en CD de destino";
                 case EstadoEnvio.PendienteEntregaDomicilio: return "Pendiente a entregar a domicilio";
                 case EstadoEnvio.PendienteEntregaAgencia: return "Ruteada para entrega a agencia";
+                case EstadoEnvio.EnTransitoUMDestino: return "En camino de ultima milla";
                 case EstadoEnvio.PendienteRetiroAgencia: return "Pendiente de retiro en agencia por el destinatario";
-                case EstadoEnvio.EnTransitoUMDestino: return "En camino a domicilio de destino";
                 case EstadoEnvio.Entregada: return "Entregada";
+                case EstadoEnvio.NoEntregada: return "No Entregada";
                 case EstadoEnvio.Cancelada: return "Cancelado";
                 case EstadoEnvio.RetiradaAgenciaFletero: return "Retirada de agencia por fletero";
                 default: return estado.ToString();
