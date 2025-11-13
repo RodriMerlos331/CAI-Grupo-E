@@ -183,8 +183,12 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                 {
                     MessageBox.Show(mensaje, "Operación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
+
                 
+                encomAEntregar?.Clear();
+                encomARecibir?.Clear();
+            }
+
 
         }
     }

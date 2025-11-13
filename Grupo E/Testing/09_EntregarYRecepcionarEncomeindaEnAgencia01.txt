@@ -1,14 +1,14 @@
 ﻿
 Pantalla Entregar y Recepcionar encomienda en agencia:
 
-Selecciono agencia "Agencia San Martin Villa Maria"
+1. Selecciono agencia "Agencia San Martin Villa Maria"
 
-1. Ingreso:
+2. Ingreso:
 
  Ingreso el DNI del feltero: 37765432
  Presionar el boton "Buscar"
 
- 2. Me muestra:
+ 3. Me muestra:
 
  List View "Guias a entregar al fletero": CD01_1
 
@@ -21,7 +21,7 @@ Selecciono agencia "Agencia San Martin Villa Maria"
  "Se entregaron las siguientes encomiendas:CD01_1 "
  "Se recibieron las siguientes encomiendas:AG10_1"
 
- 3.Cierra el programa
+ 4.Cierra el programa
 
  Y dentro del BIN buscar en "Encomiendas.json":
 

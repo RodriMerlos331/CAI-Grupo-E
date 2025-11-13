@@ -1,0 +1,29 @@
+﻿
+Pantalla Entregar y Recepcionar encomienda en agencia:
+
+1. Selecciono agencia "Agencia Shopping Bariloche"
+
+2. Ingreso:
+
+ Ingreso el DNI del feltero: 46890123
+ Presionar el boton "Buscar"
+
+ 3. Me muestra:
+
+ List View "Guias a entregar al fletero": CD07_10, CD08_11
+
+ List View "Guias a recibir del fletero": vacio
+
+ Presiona el boton "Aceptar"
+
+ Muestra mensaje: 
+
+ "Se entregaron las siguientes encomiendas:CD07_10, CD08_11"
+ 
+
+ 4.Cierra el programa
+
+ Y dentro del BIN buscar en "Encomiendas.json":
+
+ Verificar que la encomienda CD07_10 debería quedar en estado 15  
+ Verificar que la encomeinda CD08_11 debería quedar en estado 15 
