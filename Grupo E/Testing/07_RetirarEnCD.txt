@@ -13,6 +13,7 @@
     8- Verificar que se muestra un cartel con la leyenda "La encomienda ha sido entregada"
 
 3. Finalizar el programa
+4. En Bin > Datos corroborar los siguientes archivos:
     Archivo Encomiendas.json
         -Verificar que la encomienda CD09_1 tiene el parámetro Estado:12 
         -Verificar que el parametro fecha de entrega corresponde al momento en que se presiono el botón ¨Entregar encomienda"

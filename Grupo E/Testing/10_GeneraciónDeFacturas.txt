@@ -7,8 +7,10 @@
 	5- Boton Generar Factura
 
 2. Finalizar el programa
+
+3.En Bin > Datos corroborar los siguientes archivos:
    
-   En el BIN Archivo Facturas.Json 
+     Archivo Facturas.Json 
 	-Verificar que se genero la factura con los siguientes datos:
 	"NroFactura": "00000007",
     "CuitTutasa": "20-12345678-10",
@@ -24,7 +26,7 @@
     "CodigoDeAutorizacionElectronica": "CAE789012",
     "FechadePago": null
 
-  En el BIN Archivo Encomiendas.Json 
+ Archivo Encomiendas.Json 
 
   -Verificar que la encomienda CD13_2 Facturada=True
   -Verificar que la encomienda AG23_9 Facturada=True
