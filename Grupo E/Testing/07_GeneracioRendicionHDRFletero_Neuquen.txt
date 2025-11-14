@@ -6,11 +6,11 @@
 02. Pantalla "Gestionar fletero"
 
 	1 - Busco fletero 44678901
-	2 - Verifico que figuren para rendir:HDR 1003 de retiro y 1004 de entrega
-	3 - Guias no entregadas: AG21_6
+	2 - VERIFICAR que figuren para rendir:HDR 1003 de retiro y 1004 de entrega
+	3 - VERIFICAR: Guias no entregadas: AG21_6
 	4 - Marco como cumplidas ambas HDR (checkbox)
-	5 - Corroborar Guias No entregadas quede vacío y Guías a admitir contenga CD13_5
-	5 - Corrobar que figuren en generacion: HDR 1005 para la guía CD11_7
+	5 - VERIFICAR Guias No entregadas quede vacío y Guías a admitir contenga CD13_5
+	5 - VERIFICAR que figuren generadas: HDR 1008 para la guía CD11_7
 	6 - Botón  "Aceptar"
 
 03 - Cierro programa
@@ -36,7 +36,7 @@ En HDRUM.json:
 		- Cumplida = true
 		- Rendida = true
 
-	HDR 1006 (asociada a CD11_7): Se haya generado correctamente con:
+	HDR 1008 (asociada a CD11_7): Se haya generado correctamente con:
 		- Tipo: Retiro (0)
 		- Cumplida = false
 		- Rendida = false

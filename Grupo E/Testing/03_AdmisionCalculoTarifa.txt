@@ -16,6 +16,7 @@
 	7 - Datos destinatario: Completar con "Juan Perez 12345678"
 	8 - Seleccionar tamaño del bulto: L 
 	9 - Aceptar
+	10 - VERIFICAR el precio total en el mensaje sea de 2900
 
 03. Finalizar y cerrar programa
 
@@ -23,12 +24,26 @@
 
 Encomiendas.json:
 
-	- Tracking: AG11_9
+	- Tracking: AG11_16
 	- Localidad origen: Villa María (VM)
 	- CodCentroDistribucionOrigen: CD06
 	- CodCentroDistribucionDestino: CD07
 	- AgenciaDestino: AG11
 	- Estado: 5 (Admitida)
 	- EncomiendaFactura: El único extra debería ser ExtraAgencia. 
+
+Tarifario.json:
+
+Verificar el precioCombinacionOrigen coincida con:
+
+{
+      "Tipo": 2,
+      "CodigoCDOrigen": "CD06",
+      "CodigoCDDestino": "CD07",
+      "Precio": 1700
+	  
+}
+
+Y que extra con: "ExtraAgencia": 1200
 
 

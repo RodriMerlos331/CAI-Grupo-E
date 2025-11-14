@@ -1,0 +1,57 @@
+﻿
+01. Menú principal:
+
+	1 -	Seleccionar: "Agencia actual": "Agencia Plaza Mitre Goya" 
+
+02. Pantalla "Imposición en Agencia":
+
+	1 - CUIT: 27-38951233-5
+	2 - Localidad Destino: Corrientes capital
+	3 - Seleccionar como destino "Centro de distribución"
+	4 - Terminal: Terminal de ómnibus de Corrientes Capital
+	5 - Datos destinatario: Completar con "Juan Perez 12345678"
+	6 - Seleccionar tamaño del bulto: S
+	7 - Confirmar cambios: Botón "Aceptar"
+
+02. Volver al menú principal
+
+	1 -  Seleccionar como "Centro de distribución actual": "Terminal de ómnibus de Goya"
+
+	2 - Seleccionar del menú "Gestionar fletero"
+
+
+03. Pantalla "Gestionar fletero":
+
+	1 -  Ingresar DNI del fletero: 42345678
+
+	2. - VERIFICAR la encomienda impuesta en el paso 1 figure como "A retirar" (CD01_12) , junto CD09_16
+
+	3 -  VERIFICAR se haya generado una única HDR (1008) que incluya ambas encomiendas (CD01_12 y CD09_16) a retirar de la misma agencia
+
+	3 - Botón "Aceptar"
+
+
+04. Cierro el programa
+
+05. En Bin > Debug > Datos corroborar los siguientes archivos:
+
+en encomindas.json:
+ambas con estado 4 (EnTransitoUMOrigen)
+y con AgenciaOrigen AG18
+
+en hdrUm.json:
+encomienda CD01_12
+
+una sola HDR 1008 que contenga:
+
+{
+        "NumeroHDRUM": 1008,
+        "Tipo": 0,
+        "DniFleteroAsignado": 42345678,
+        "Cumplida": false,
+        "Rendida": false,
+        "Encomiendas": [
+            "CD01_12",
+            "CD09_13"
+        ]
+    }

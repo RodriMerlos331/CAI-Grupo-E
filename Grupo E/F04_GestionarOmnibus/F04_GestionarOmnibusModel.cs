@@ -90,8 +90,6 @@ namespace Grupo_E.GestionarOmnibus
         {
             var omnibusActual = OmnibusAlmacen.Omnibus
         .FirstOrDefault(o => o.Patente == patente);
-
-            
             var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
             var hdrsParaEsteCD = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD

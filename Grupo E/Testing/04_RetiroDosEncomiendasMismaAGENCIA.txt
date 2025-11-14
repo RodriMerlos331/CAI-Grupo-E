@@ -27,7 +27,7 @@
 
 	1 -  Ingresar DNI del fletero: 12345678
 
-	2. - La encomienda impuesta en el paso 1 debería figurar como "A retirar" (DOM_9) con la HDR 1005
+	2. - VERIFICAR la encomienda impuesta en el paso 1 figure como "A retirar" (DOM_16) con la HDR 1008
 
 	3 - Botón "Aceptar"
 
@@ -37,7 +37,7 @@
 
 05. Pantalla "Entrega y Recepción en Agencia":
 	1 - Ingresar DNI del fletero: 12345678
-	2-  La encomienda impuesta en el paso 1 debería figurar como "A entregar" (Tracking: DOM_9)
+	2-  VERIFICAR la encomienda impuesta en el paso 1  figure como "A entregar" (Tracking: DOM_16)
 	3. Botón "Aceptar"
 
 06. Volver al menú principal
@@ -47,9 +47,9 @@
 
 	
 07. Pantalla Gestionar Fletero:
-	1 -  Vuelvo a buscar el mismo DNI del fletero: 12345678
+	1 - Vuelvo a buscar el mismo DNI del fletero: 12345678
 
-	2- Encomienda DOM_9 debería figurar ahora para "Rendir" HDR 1005
+	2- VERIFICAR Encomienda DOM_16  figurae ahora para "Rendir" HDR 1008
 
 	3 - Marco  HDR de la encomienda de retiro como "Cumplida" (Checkbox)
 
@@ -59,9 +59,9 @@
 
 05. En Bin > Debug > Datos corroborar los siguientes archivos:
 
-	En "Encomiendas.JSON" confirmar se haya creado la encomienda con los datos ingresados en el paso 1.
+	En "Encomiendas.JSON" VERIFICAR se haya creado la encomienda con los datos ingresados en el paso 1.
 	Los datos a corroborar son:
-		- Tracking:  DOM_9
+		- Tracking:  DOM_16
 		- Localidad origen: CABA
 		- "CodCentroDistribucionOrigen": "CD01",
 		- "CodCentroDistribucionDestino": "CD11"
@@ -72,7 +72,7 @@
 		- ACLARACION: RecorridoPlanficado debería figurar, pero aún no se desarrolló el ruteo, por eso dividimos los casos de prueba previo a ruteo y post ruteo. 
 
 
-	En "HdrUM.JSON" confirmar se haya creado el HDR de retiro con los datos del fletero y encomienda correspondiente, debería estar como cumplida. 
+	En "HdrUM.JSON" VERIFICAR se haya creado el HDR de retiro con los datos del fletero y encomienda correspondiente, VERIFICAR esté como cumplida. 
 		- DniFleteroAsignado: 12345678
-		- "NumeroHDRUM": 1005
+		- "NumeroHDRUM": 1008
 		- Tipo 0 (Retiro)

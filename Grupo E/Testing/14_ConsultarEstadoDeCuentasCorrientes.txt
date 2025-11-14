@@ -1,6 +1,4 @@
         
--------CU 1)
-
 1- Pantalla Estado de Cuentas Corrientes
 
 	1- Poner Fecha desde: 01/10/2025
@@ -27,27 +25,3 @@
 En Facturas.json se puede verificar que hay dos facturas para el "CuitCliente": "30-19283746-4", con "FechadePago": "2025-10-25T00:00:00" con 
 un "Total" de 6.050,00 y 8.050,00 respectivamente, y una factura sin "FechadePago" con "Total" de 12.100,00
 
--------CU 2)
-
-1- Pantalla Estado de Cuentas Corrientes
-
-	1- Poner Fecha desde: 01/10/2025
-    2- Poner Fecha hasta: 31/10/2025
-    3- Poner CUIT: 30-19283746-4
-	4- Elegir Estado de factura: "Pendiente"
-    5- Tocar boton Buscar
-
- 2- Te muestra:
-
-    Verificar que se vea en la pantalla:
-    Fecha de emisión: 10/10/2025 / N° de Factura: 00000004 / Estado: "Pendiente" / Debe: 12.100,00 / Haber: 0,00 / Saldo: 12.100,00
-
-    Saldo deudor: $ 12.100,00
-    Saldo acreedor: $ 0.00
-
-
-3- Termina el programa 
-
-    1- Tocar boton Salir
-
-En Facturas.json se puede verificar que hay una factura para el "CuitCliente": "30-19283746-4", sin "FechadePago" con "Total" de 12.100,00

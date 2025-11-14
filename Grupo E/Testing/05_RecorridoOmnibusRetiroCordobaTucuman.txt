@@ -1,0 +1,58 @@
+﻿
+01. Menú prinicipal:
+	1 - Seleccionar como "Centro de distribución actual": "Retiro"
+
+02. Pantalla "Gestionar Omnibus"
+
+	1 - Patente: DDD222
+	2 - Buscar
+	3 - VERIFICAR que figuren para subir las encomiendas:
+		- CD07_3
+		- CD05_4
+	4 - Botón  "Aceptar"
+
+Se generarán dos HDR:
+- 1006 para el servicio RETIRO_TUC Desde CD01 hasta CD07
+- 1007 para el servico RETIRO_TUC desde CD01 hasta CD05
+
+
+
+03. Vuelvo al menú principal:
+	1 - Seleccionar como "Centro de distribución actual": "Córdoba Capital"
+	2 - Vuevlo a pantalla "Gestionar omnibus"
+
+
+04. Pantalla "Gestionar Omnibus"
+	1 - Patente: DDD222
+	2 - Buscar
+	3 - VERIFICAR que figure para bajar la encomienda:
+		- CD05_4 (HDR 1007)
+	4 - Botón  "Aceptar"
+	
+
+05. Volver al menú principal:
+
+	1 - Seleccionar como "Centro de distribución actual": "Terminal de ómnibus de San Miguel de Tucumán"
+
+06. Pantalla "Gestionar Omnibus"
+
+	1 - Patente: DDD222
+	2 - Buscar
+	3 - VERIFICAR que figure para bajar la encomienda:
+		- CD07_3 (HDR 1006)
+	4 - Botón  "Aceptar"
+
+07. Cierro programa
+
+08. Verificar archivos:
+
+	Encomiendas.JSON:
+		- Ambas encomiendasfigurar como "Pendiente retiro CD" (Estado 7)
+		- CD05_4 con CodCentroDistribucionActual = CD05
+		- CD07_3 con CodCentroDistribucionActual = CD07
+
+	HDR_Distribucion_MD.JSON:
+		- Ambas HDR (1006 y 1007)  figurar como "Cumplida" (estadoHDR = 1), y asignadas al servicio RETIRO_TUC
+		- 1006: Con CD07_3 desde CD01 hasta CD07
+		- 1007: Con CD05_4 desde CD01 hasta CD05
+	

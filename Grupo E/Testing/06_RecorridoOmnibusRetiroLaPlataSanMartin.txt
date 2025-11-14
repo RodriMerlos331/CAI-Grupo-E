@@ -1,0 +1,61 @@
+﻿
+01. Menú prinicipal:
+	1 - Seleccionar como "Centro de distribución actual": "Retiro"
+
+02. Pantalla "Gestionar Omnibus"
+
+	1 - Patente: GGG222
+	2 - Buscar
+	3 - VERIFICAR que figuren para subir las encomiendas:
+		- CD12_15
+		- CD04_14
+	4 - Botón  "Aceptar"
+
+03. Vuelvo al menú principal:
+	1 - Seleccionar como "Centro de distribución actual": "La Plata"
+    2 - Vuevlo a pantalla "Gestionar omnibus"
+
+04. Pantalla "Gestionar Omnibus"
+	1 - Patente: GGG222
+	2 - Buscar
+	3 - VERIFICAR que figure para bajar la encomienda:
+		- CD04_14
+        - CD12_15
+	4 - Botón  "Aceptar"
+    5 - Botón "Limpiar"
+    7 - Busco dentro de mismo CD , otra patente: ABC222
+    8 - VERIFICAR ahora figure para subir:
+        -    CD12_15
+
+05. Cierro programa
+
+06. VERIFICAR archivos:
+
+Encomiendas.JSON
+
+    - CD04_14 en estado pendiente retiro cd (7)
+    - CD12_15 en estado entransitoMD (6)
+
+HDR_Distribucion_MD.JSON:
+
+{
+        "NumeroHDRMD": 1006,
+        "estadoHDR": 1,
+        "Encomiendas": [
+            "CD04_14",
+            "CD12_15"
+        ],
+        "ServicioID": "RETIRO_LAPLATA",
+        "CdDesde": "CD01",
+        "CdHasta": "CD04"
+    },
+    {
+        "NumeroHDRMD": 1007,
+        "estadoHDR": 0,
+        "Encomiendas": [
+            "CD12_15"
+        ],
+        "ServicioID": "LAPLATA_SANMARTIN",
+        "CdDesde": "CD04",
+        "CdHasta": "CD12"
+    }

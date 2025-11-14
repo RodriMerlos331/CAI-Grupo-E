@@ -10,7 +10,8 @@
 
 3.En Bin > Datos corroborar los siguientes archivos:
    
-     Archivo Facturas.Json 
+Archivo Facturas.Json 
+
 	-Verificar que se genero la factura con los siguientes datos:
 	"NroFactura": "00000007",
     "CuitTutasa": "20-12345678-10",
@@ -28,7 +29,12 @@
 
  Archivo Encomiendas.Json 
 
-  -Verificar que la encomienda CD13_2 Facturada=True
-  -Verificar que la encomienda AG23_9 Facturada=True
+  - Verificar que la encomienda CD13_2 Facturada=True
+  - Verificar que la encomienda efectivament cuenta con PrecioTotalEncomienda =  9600.0
+  - Verificar que la encomienda AG23_9 Facturada=True
+  - Verificar que la encomienda efectivament cuenta con PrecioTotalEncomienda =  2200.0
+  - Verificar que la suma de los PreciosTotalesDeEncomienda de ambas encomiendas da 11800.0 
+
+
 
   
