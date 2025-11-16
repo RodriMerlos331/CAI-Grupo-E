@@ -1,1 +1,4 @@
-﻿
+﻿- patente no existe: OK
+- cd no seleccionado
+- no hay nada para subir/ bajar
+- omnibus ya pasó por ese cd?

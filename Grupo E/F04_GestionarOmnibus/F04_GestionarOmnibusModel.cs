@@ -24,101 +24,122 @@ namespace Grupo_E.GestionarOmnibus
 
             var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
-            var paradaActual = omnibusActual.Paradas
-                    .FirstOrDefault(p => p.CodigoCD == cdActual);
+            var encomiendasASubir = new List<EncomiendasASubir>();
 
-            var encomiendasASubirEntidad = EncomiendaAlmacen.Encomienda
-         .Where(e =>
-             e.CodCDActual == cdActual &&
-             e.RecorridoPlanificado.Any(rp =>
-                 rp.ServicioId.ToString() == omnibusActual.ServicioID &&
-                 rp.CodigoCDOrigen == cdActual
+            if (omnibusActual != null)
+            {
+
+
+                var paradaActual = omnibusActual.Paradas
+                        .FirstOrDefault(p => p.CodigoCD == cdActual);
+
+                var encomiendasASubirEntidad = EncomiendaAlmacen.Encomienda
+             .Where(e =>
+                 e.CodCDActual == cdActual &&
+                 e.RecorridoPlanificado.Any(rp =>
+                     rp.ServicioId.ToString() == omnibusActual.ServicioID &&
+                     rp.CodigoCDOrigen == cdActual
+                 )
              )
-         )
-         .ToList();
+             .ToList();
 
-            var gruposPorDestino = encomiendasASubirEntidad
-        .GroupBy(e =>
-            e.RecorridoPlanificado
-             .First(rp => rp.CodigoCDOrigen == cdActual).CodigoCDDestino
-        );
-            var hdrsGeneradas = new List<HDR_Distribucion_MDEntidad>();
+                var gruposPorDestino = encomiendasASubirEntidad
+            .GroupBy(e =>
+                e.RecorridoPlanificado
+                 .First(rp => rp.CodigoCDOrigen == cdActual).CodigoCDDestino
+            );
+                var hdrsGeneradas = new List<HDR_Distribucion_MDEntidad>();
 
-            int ultimoNumeroHDR = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
-       .Select(h => h.NumeroHDRMD)
-       .DefaultIfEmpty(1000)
-       .Max();
+                int ultimoNumeroHDR = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
+           .Select(h => h.NumeroHDRMD)
+           .DefaultIfEmpty(1000)
+           .Max();
 
-            //Creo HDR para cada destino del servicioID al cual estoy subiendo la encomienda
+                //Creo HDR para cada destino del servicioID al cual estoy subiendo la encomienda
 
-            foreach (var grupo in gruposPorDestino)
-            {
-                var hdr = new HDR_Distribucion_MDEntidad
+                foreach (var grupo in gruposPorDestino)
                 {
-                    NumeroHDRMD = ++ultimoNumeroHDR,
-                    estadoHDR = EstadoHDREnum.Asignada, // al darle aceptar debería pasar a EnTransito
-                    ServicioID = omnibusActual.ServicioID,
-                    CdDesde = cdActual,
-                    CdHasta = grupo.Key,
-                    Encomiendas = grupo.Select(e => e.Tracking).ToList()
-                };
+                    var hdr = new HDR_Distribucion_MDEntidad
+                    {
+                        NumeroHDRMD = ++ultimoNumeroHDR,
+                        estadoHDR = EstadoHDREnum.Asignada, // al darle aceptar debería pasar a EnTransito
+                        ServicioID = omnibusActual.ServicioID,
+                        CdDesde = cdActual,
+                        CdHasta = grupo.Key,
+                        Encomiendas = grupo.Select(e => e.Tracking).ToList()
+                    };
 
-                hdrsGeneradas.Add(hdr);
-                HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD.Add(hdr);
+                    hdrsGeneradas.Add(hdr);
+                    HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD.Add(hdr);
+                }
+
+                encomiendasASubir = hdrsGeneradas
+             .SelectMany(hdr => hdr.Encomiendas.Select(tracking =>
+             {
+                 var encomienda = encomiendasASubirEntidad.First(e => e.Tracking == tracking);
+
+                 return new EncomiendasASubir
+                 {
+                     IdHdr = hdr.NumeroHDRMD.ToString(),
+                     Tracking = encomienda.Tracking,
+                     TipoDeBulto = encomienda.TipoBulto.ToString()
+                 };
+             }))
+             .ToList();
+
+                return encomiendasASubir;
             }
-
-            var encomiendasASubir = hdrsGeneradas
-        .SelectMany(hdr => hdr.Encomiendas.Select(tracking =>
-        {
-            var encomienda = encomiendasASubirEntidad.First(e => e.Tracking == tracking);
-
-            return new EncomiendasASubir
+            else
             {
-                IdHdr = hdr.NumeroHDRMD.ToString(),
-                Tracking = encomienda.Tracking,
-                TipoDeBulto = encomienda.TipoBulto.ToString()
-            };
-        }))
-        .ToList();
+                return encomiendasASubir;
 
-            return encomiendasASubir;
-
-
+            }
         }
-
         internal List<EncomiendasABajar> EncomiendasABajar(string patente)
         {
             var omnibusActual = OmnibusAlmacen.Omnibus
         .FirstOrDefault(o => o.Patente == patente);
+
             var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
-            var hdrsParaEsteCD = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
-                .Where(hdr =>
-                    hdr.ServicioID == omnibusActual.ServicioID &&
-                    hdr.CdHasta == cdActual &&
-                    hdr.estadoHDR == EstadoHDREnum.EnTransito
-                )
-                .ToList();
+            var encomiendasABajar = new List<EncomiendasABajar>();
 
-            
-            var encomiendasABajarEntidad = EncomiendaAlmacen.Encomienda
-                .Where(e => hdrsParaEsteCD.Any(h => h.Encomiendas.Contains(e.Tracking)))
-                .ToList();
+            if (omnibusActual != null)
+            {
 
-           
-            var encomiendasABajar = hdrsParaEsteCD
-                .SelectMany(hdr => hdr.Encomiendas.Select(tracking =>
-                {
-                    var encomienda = encomiendasABajarEntidad.FirstOrDefault(e => e.Tracking == tracking);
+                var hdrsParaEsteCD = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
+                    .Where(hdr =>
+                        hdr.ServicioID == omnibusActual.ServicioID &&
+                        hdr.CdHasta == cdActual &&
+                        hdr.estadoHDR == EstadoHDREnum.EnTransito
+                    )
+                    .ToList();
 
-                    return new EncomiendasABajar
+
+                var encomiendasABajarEntidad = EncomiendaAlmacen.Encomienda
+                    .Where(e => hdrsParaEsteCD.Any(h => h.Encomiendas.Contains(e.Tracking)))
+                    .ToList();
+
+
+                //var encomiendasABajar = hdrsParaEsteCD
+                encomiendasABajar = hdrsParaEsteCD
+                    .SelectMany(hdr => hdr.Encomiendas.Select(tracking =>
                     {
-                        IdHdr = hdr.NumeroHDRMD.ToString(),
-                        Tracking = encomienda?.Tracking,
-                        TipoDeBulto = encomienda?.TipoBulto.ToString()
-                    };
-                }))
-                .ToList();
+                        var encomienda = encomiendasABajarEntidad.FirstOrDefault(e => e.Tracking == tracking);
+
+                        return new EncomiendasABajar
+                        {
+                            IdHdr = hdr.NumeroHDRMD.ToString(),
+                            Tracking = encomienda?.Tracking,
+                            TipoDeBulto = encomienda?.TipoBulto.ToString()
+                        };
+                    }))
+                    .ToList();
+            }
+            else
+            {
+                MessageBox.Show("Omnibus no encontrado.");
+            }
 
             return encomiendasABajar;
 
