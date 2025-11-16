@@ -1,4 +1,23 @@
 ﻿- patente no existe: OK
-- cd no seleccionado
-- no hay nada para subir/ bajar
-- omnibus ya pasó por ese cd?
+- patente vacio: tira msj de error, pero NO debería dejarme el campos como deshabilitado
+- cd no seleccionado: OK
+- no hay nada para subir/ bajar: OK
+- Aceptar cuando no hubo cambios?
+
+
+limpio filtros ok, ahora contador debería quedar en cero 
+busco patente, limpio filtros y le doy a aceptar??
+texto patente habilitado o inhabilitado?
+dos rendiciones seguidas??
+
+Patente vacía → debe avisar que falta ingresar patente
+Patente inexistente → debe avisar que el ómnibus no existe y no continuar
+Sin encomiendas a bajar → debe mostrar "No hay encomiendas a bajar"
+Sin encomiendas a subir → debe mostrar "No hay encomiendas a subir"
+Sin encomiendas en total → ambas listas vacías, contadores en 0, no permitir aceptar
+Ómnibus sin parada en el CD actual → no deben aparecer encomiendas a subir
+No hay HDR para rendir → en Aceptar debe avisar "No hay cambios para rendir"
+Buscar luego Limpiar luego Aceptar → debe avisar que no hay cambios para rendir
+Buscar con resultados, luego cambiar patente a otra sin resultados → debe limpiar y no mezclar listas
+Solo encomiendas a bajar o solo encomiendas a subir → debe permitir aceptar normalmente
+Aceptar con listas vacías → debe avisar que no hay cambios para rendir

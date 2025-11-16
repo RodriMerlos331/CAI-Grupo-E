@@ -138,7 +138,7 @@ namespace Grupo_E.GestionarOmnibus
             }
             else
             {
-                MessageBox.Show("Omnibus no encontrado.");
+                MessageBox.Show("No existe un omnibus con dicha patente");
             }
 
             return encomiendasABajar;
