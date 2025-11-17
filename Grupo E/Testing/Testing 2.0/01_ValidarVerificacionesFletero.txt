@@ -1,0 +1,6 @@
+﻿
+
+buscar dni de fletero q no corresponde a este CD?
+buscar dni nuevo sin antes guardar anterior
+limpiar antes de guardar?
+guardar sin cambios?

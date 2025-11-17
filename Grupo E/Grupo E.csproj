@@ -313,6 +313,7 @@
     <Content Include="Testing\11_ConsultarEstadoEncomienda.txt" />
     <Content Include="Testing\12_CostosVsVentas1.txt" />
     <Content Include="Testing\Testing 2.0\00_ValidarVerificacionesOmnibus.txt" />
+    <Content Include="Testing\Testing 2.0\01_ValidarVerificacionesFletero.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
