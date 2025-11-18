@@ -113,7 +113,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bajar";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // lstBajar
             // 
@@ -125,10 +124,9 @@
             this.lstBajar.Location = new System.Drawing.Point(6, 62);
             this.lstBajar.Name = "lstBajar";
             this.lstBajar.Size = new System.Drawing.Size(411, 101);
-            this.lstBajar.TabIndex = 14;
+            this.lstBajar.TabIndex = 15;
             this.lstBajar.UseCompatibleStateImageBehavior = false;
             this.lstBajar.View = System.Windows.Forms.View.Details;
-            this.lstBajar.SelectedIndexChanged += new System.EventHandler(this.lstBajar_SelectedIndexChanged);
             // 
             // columnHeader13
             // 
@@ -138,7 +136,7 @@
             // columnHeader22
             // 
             this.columnHeader22.Text = "Numero de Tracking";
-            this.columnHeader22.Width = 282;
+            this.columnHeader22.Width = 191;
             // 
             // columnHeader25
             // 
@@ -165,7 +163,6 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Subir";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // lstSubir
             // 
@@ -174,13 +171,12 @@
             this.columnHeader2,
             this.columnHeader3});
             this.lstSubir.HideSelection = false;
-            this.lstSubir.Location = new System.Drawing.Point(10, 55);
+            this.lstSubir.Location = new System.Drawing.Point(6, 57);
             this.lstSubir.Name = "lstSubir";
             this.lstSubir.Size = new System.Drawing.Size(408, 101);
             this.lstSubir.TabIndex = 17;
             this.lstSubir.UseCompatibleStateImageBehavior = false;
             this.lstSubir.View = System.Windows.Forms.View.Details;
-            this.lstSubir.SelectedIndexChanged += new System.EventHandler(this.lstSubir_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -190,7 +186,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Numero de Tracking";
-            this.columnHeader2.Width = 285;
+            this.columnHeader2.Width = 189;
             // 
             // columnHeader3
             // 
@@ -239,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 522);
+            this.ClientSize = new System.Drawing.Size(463, 533);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
@@ -248,7 +244,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "F04_GestionarOmnibusForm";
             this.Text = "Gestionar Transporte Omnibus";
-            this.Load += new System.EventHandler(this.F04_GestionarOmnibusForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

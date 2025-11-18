@@ -1,14 +1,15 @@
 ﻿- patente no existe: OK
-- patente vacio: tira msj de error, pero NO debería dejarme el campos como deshabilitado
+- patente vacio: tira msj de error, pero NO debería dejarme el campos como deshabilitado OK
 - cd no seleccionado: OK
 - no hay nada para subir/ bajar: OK
-- Aceptar cuando no hubo cambios?
+- Aceptar cuando no hubo cambios? OK
+- Sumé que datos persistan solo al momento de aceptar: MEJORA
 
 
 limpio filtros ok, ahora contador debería quedar en cero 
 busco patente, limpio filtros y le doy a aceptar??
 texto patente habilitado o inhabilitado?
-dos rendiciones seguidas??
+dos rendiciones seguidas?? OK
 
 Patente vacía → debe avisar que falta ingresar patente
 Patente inexistente → debe avisar que el ómnibus no existe y no continuar
@@ -21,3 +22,51 @@ Buscar luego Limpiar luego Aceptar → debe avisar que no hay cambios para rendi
 Buscar con resultados, luego cambiar patente a otra sin resultados → debe limpiar y no mezclar listas
 Solo encomiendas a bajar o solo encomiendas a subir → debe permitir aceptar normalmente
 Aceptar con listas vacías → debe avisar que no hay cambios para rendir
+
+
+prueba: 
+01. buscar dos veces patente DDD222 en retiro
+	"no hay encomiendas a bajar"
+	y solo HDR 1006 y 1007 generadas
+	acetpar
+	salgo:
+	bin: efectivmamente se crearon una sola vez, 1006 y 1007
+
+
+02. darle aceptar sin haber buscado nada:
+
+	Me tira mensaje de no hay cambios para guardar
+
+03. Busco patente que no existe: (AB123)
+
+	msj no existe
+
+04.  busco en retiro patente que no tiene nada:
+AB123CD
+no hay encomiendas a bajar ni a subir
+aceptar -- no hay cambios para guardar
+
+
+05. si busco patente DDD222 en retiro y le doy limpiar y busco de nuevo:
+
+OK, mismas HDR y mismas encomiendas
+
+06. Busco patente DDD222 , le doy limpiar y dsp acpetar
+SOLO guarda cambios visibles en pantalla:
+voy a bin: NO se crearon HDR 1006 y 1007
+
+
+07. Busco AB123CD en retiro, patente existe, CD asociado, pero no hay nada para subir y bajar:
+msj de error
+aceptar: no hay cambios para guardar
+
+
+08. buscar DDD222, limpiar y buscar:
+todo OK
+
+09. busco DDD222, acepto y vuelvo a buscar
+no hay nada para subir y bajar
+
+
+
+

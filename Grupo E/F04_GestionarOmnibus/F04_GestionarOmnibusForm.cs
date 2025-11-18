@@ -15,18 +15,38 @@ namespace Grupo_E.GestionarOmnibus
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            
             string patente = txtPatente.Text;
-            txtPatente.Enabled = false;
-            // Validar que el campo no esté vacío
+            //txtPatente.Enabled = false;
+
+            // 1. Validar que el campo no esté vacío
             if (string.IsNullOrWhiteSpace(patente))
             {
                 MessageBox.Show("Por favor ingrese un número de patente");
                 return;
             }
 
-            // Buscar encomiendas a recepcionar
+            //2. Validar que el omnibus exista:
+
+            /*
+            if( modelo.BuscarOmnibus(patente) == null)
+            {
+                MessageBox.Show("El ómnibus con la patente ingresada no existe.");
+                return;
+            }
+            */
+            if (!modelo.ValidarOmnibus(patente))
+            {
+                txtPatente.Clear();
+                return;
+            }
+
+            //3. Validar hay encomiendas a bajar y a subir:
+
             var encomiendasARecepcionar = modelo.EncomiendasABajar(patente);
-            if (encomiendasARecepcionar != null)
+            var encomiendasAEntregar = modelo.EncomiendasASubir(patente);
+
+            if (encomiendasARecepcionar.Any())
             {
                 lstBajar.Items.Clear();
                 foreach (var guia in encomiendasARecepcionar)
@@ -37,10 +57,10 @@ namespace Grupo_E.GestionarOmnibus
                     lstBajar.Items.Add(listItem);
                 }
             }
+            
 
-            // Buscar encomiendas a entregar
-            var encomiendasAEntregar = modelo.EncomiendasASubir(patente);
-            if (encomiendasAEntregar != null)
+
+            if (encomiendasAEntregar.Any())
             {
                 lstSubir.Items.Clear();
                 foreach (var guiaEntrega in encomiendasAEntregar)
@@ -51,13 +71,19 @@ namespace Grupo_E.GestionarOmnibus
                     lstSubir.Items.Add(listItem);
                 }
             }
+            
+
+            if (!encomiendasAEntregar.Any() && !encomiendasARecepcionar.Any())
+            {
+                MessageBox.Show("No hay encomiendas para subir, ni para bajar para la pantente: " + patente);
+            }
 
             ActualizarContadores();
         }
 
     
 
-        private void ActualizarContadores() //contadores de la cantidad de encomiendas
+        private void ActualizarContadores() 
         {
             int recepcionCount = 0;
             int despachoCount = 0;
@@ -65,46 +91,25 @@ namespace Grupo_E.GestionarOmnibus
             if (lstBajar != null) recepcionCount = lstBajar.Items.Count;
             if (lstSubir != null) despachoCount = lstSubir.Items.Count;
 
-            // Actualizo labels (ajustá los nombres si son distintos)
             lblCantidadRecepcion.Text = $"Encomiendas: {recepcionCount}";
             lblCantidadDespacho.Text = $"Encomiendas: {despachoCount}";
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e) //Limpiar el textbox de patente
         {
-            txtPatente.Enabled = true;  
+            LimpiarPantalla();
 
-            // 1) Limpiar el textbox de patente
-            if (txtPatente != null)
-            {
-                txtPatente.Clear();
-                txtPatente.Focus();
-            }
+        }
 
-            // 2) Limpiar los list view
-            try
-            {
-                if (lstBajar != null)
-                    lstBajar.Items.Clear();
+        public void LimpiarPantalla()
+        {
+            txtPatente.Clear();
 
-                if (lstSubir != null)
-                    lstSubir.Items.Clear();
-            }
-            catch { /* ignoro si no existen */ }
+            lstBajar.Items.Clear();
+            lstSubir.Items.Clear();
 
-            
-            try
-            {
-                if (lstBajar != null)
-                    lstBajar.Items.Clear();
-
-                if (lstSubir != null)
-                    lstSubir.Items.Clear();
-            }
-            catch { /* ignoro si no existen */ }
-
-            // 4) Resetear labels informativos (ajustá nombres si los tenés distintos)
-
+            lblCantidadRecepcion.Text = "Encomiendas: 0";
+            lblCantidadDespacho.Text = "Encomiendas: 0";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) 
@@ -115,37 +120,30 @@ namespace Grupo_E.GestionarOmnibus
 
             if (result == DialogResult.Yes)
             {
-                this.Close(); // cierra el form
+                this.Close(); 
             }
-            // si el usuario responde No, no hace nada y vuelve a la pantalla
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
+            if(lstBajar.Items.Count == 0 && lstSubir.Items.Count == 0)
+            {
+                MessageBox.Show("No hay cambios para guardar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             bool todoOk = modelo.AceptarGestionOmnibus();
+
             if (!todoOk)
             {
                 return; 
             }
 
-            // Mensaje de confirmación
+            
             MessageBox.Show("Rendición registrada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Limpiar textbox y ListViews
-            if (txtPatente != null)
-            {
-                txtPatente.Clear();
-                txtPatente.Focus();
-            }
-            try
-            {
-                if (lstBajar != null) lstBajar.Items.Clear();
-                if (lstSubir != null) lstSubir.Items.Clear();
-            }
-            catch {}
-
-            // 5) Resetear labels si corresponde
+            LimpiarPantalla();
         }
 
 
@@ -155,29 +153,7 @@ namespace Grupo_E.GestionarOmnibus
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
 
-        }
-
-        private void lstBajar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstSubir_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void F04_GestionarOmnibusForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
