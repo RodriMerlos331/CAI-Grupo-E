@@ -1,6 +1,15 @@
 ﻿
+no se selecciona CD - OK
 
-buscar dni de fletero q no corresponde a este CD?
+buscar dni de fletero q no corresponde a este CD? - no pasa nada
+
+ejemplo: ingreso 44678901 buscar
+figuran 1003 y 1004 a rendir y 1008 para generar, si vuelvo a buscar 44678901 no me aparecen para generar más
+en el buscar se genera
+le doy limpiar
+pero si le doy a aceptar se guardan cambios iguales
+
+
 buscar dni nuevo sin antes guardar anterior
 limpiar antes de guardar?
 guardar sin cambios?
