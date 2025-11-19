@@ -263,29 +263,48 @@ namespace Grupo_E.GestionarFletero
             var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
             var HDRGeneradas = modelo.ObtenerHDRGeneracionPorTransportista();
 
-            if (HDRARendir.Count == 0 && HDRGeneradas.Count == 0)
+
+            //me baso en que solo guardo lo que muestro en pantalla
+            if (NuevasGuiasEntregarListView.Items.Count == 0 && NuevasGuiasRetirarListView.Items.Count == 0
+                && NuevasHDREntregarListView.Items.Count == 0 && NuevasHDRRetirarListViews.Items.Count == 0
+                && HDRAsignadasListView.Items.Count == 0 && GuiasNoEntregadasListView.Items.Count == 0
+                && GuiasRetiradasListView.Items.Count == 0)
             {
-                MessageBox.Show("No hay nuevos cambios a guardar");
-                //return;
+                MessageBox.Show("No hay cambios para guardar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             else
-            { 
-
-                string resumen = "Se marcarán como rendidas las siguientes HDR, con sus estados (Cumplida o no Cumplida):\n";
-
-                foreach (var hdr in HDRARendir)
+            {
+                if (HDRARendir.Count > 0)
                 {
-                    string estado = hdr.Cumplida ? "Cumplida" : "No Cumplida";
-                    resumen += $"HDR Nro: {hdr.NumeroHDR}, Estado: {estado}\n";
+
+                    string resumen = "Se marcarán como rendidas las siguientes HDR, con sus estados (Cumplida o no Cumplida):\n";
+
+                    foreach (var hdr in HDRARendir)
+                    {
+                        string estado = hdr.Cumplida ? "Cumplida" : "No Cumplida";
+                        resumen += $"HDR Nro: {hdr.NumeroHDR}, Estado: {estado}\n";
+                    }
+
+                    MessageBox.Show(resumen, "Resumen de Rendición", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    foreach (var hdr in HDRARendir)
+                    {
+                        hdr.Rendida = true;
+                    }
                 }
-
-                MessageBox.Show(resumen, "Resumen de Rendición", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                foreach (var hdr in HDRARendir)
+                if (HDRGeneradas.Count > 0)
                 {
-                    hdr.Rendida = true;
+                    string resumen = "Se generarán las siguientes HDR:\n";
+
+                    foreach (var hdr in HDRGeneradas)
+                    {
+                        resumen += $"HDR Nro: {hdr.NumeroHDR}, Tipo: {hdr.Tipo}\n";
+                    }
+
+                    MessageBox.Show(resumen, "Resumen de Generación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }

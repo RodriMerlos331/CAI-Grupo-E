@@ -38,10 +38,24 @@ __
 
 impongo una en "Agencia Goya Centro", fletero es 42345678,. terminal omnibus goya:
 
-04. BUSCO 44678901(san martin), le doy a limpiar y aceptar:
+04. BUSCO 44678901(san martin), le doy a limpiar y aceptar: REVISAR
 
 busco 44678901
+limpiar
+guardar
+error
+solo guardo lo q muestro por pantalla
 
+
+05. Estoy con fletero 47901234 y busco 12345678 en CD01 (retiro)
+busco 47901234 - muestra CD01_12
+no doy a aceptar
+busco 12345678 muestra CD01_12 OK pq ambos ttrabajan para este CD
+ahora le doy a ceptar 
+si busco 12345678 me figura asignada
+no acepto
+busco de nuevo 47901234
+no me figura CD01_12, ya fue asignada al otro fletero
 
 
 
