@@ -3,7 +3,7 @@
 - cd no seleccionado: OK
 - no hay nada para subir/ bajar: OK
 - Aceptar cuando no hubo cambios? OK
-- Sumé que datos persistan solo al momento de aceptar: MEJORA
+- Sumé que datos persistan solo al momento de aceptar: MEJORA sumada
 
 
 limpio filtros ok, ahora contador debería quedar en cero 
