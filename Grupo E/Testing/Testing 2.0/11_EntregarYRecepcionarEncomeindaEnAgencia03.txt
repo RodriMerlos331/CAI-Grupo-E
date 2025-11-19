@@ -1,0 +1,63 @@
+﻿
+Pantalla Entregar y Recepcionar encomienda en agencia:
+
+1. NO selecciono agencia "Agencia Shopping Bariloche"
+
+2. Presiono el boton de "Entregar y Recepcionar encomienda en agencia"
+
+3. Muestra mensaje de error: "Debe seleccionar una agencia antes de ingresar a Entregar y Recepcionar en Agencia."
+
+-----------------------------
+
+1. Selecciono agencia "Agencia San Martin Villa Maria"
+
+2. Ingreso:
+
+ Ingreso el DNI del feltero: 00000000
+ Presionar el boton "Buscar"
+
+3. Me muestra mensaje de error: "El DNI ingresado no corresponde a ningun fletero" 
+
+-----------------------------
+
+1. Selecciono agencia "Agencia San Martin Villa Maria"
+
+2. Ingreso:
+
+ Ingreso en DNI la palabra (para probar string): fletero 
+ Presionar el boton "Buscar"
+
+3. Me muestra mensaje de error: "Ingrese un DNI valido"
+
+-----------------------------
+
+1. Selecciono agencia "Agencia San Martin Villa Maria"
+
+2. No ingreso ningun valor en DNI
+
+3. Presionar el boton "Buscar"
+
+4. Me muestra mensaje de error: "Ingrese un DNI"
+
+-----------------------------
+
+1. Selecciono agencia "Agencia San Martin Villa Maria"
+
+2. Ingreso:
+
+ Ingreso el DNI del feltero: 37765432
+ Presionar el boton "Buscar"
+
+3. Me muestra:
+
+ List View "Guias a entregar al fletero": CD01_1
+
+ List View "Guias a recibir del fletero": AG10_1
+
+4. Presiono el boton "Cancelar"
+
+ Muestra el mensaje: "¿Realmente desea salir y volver al menú principal? No se realizara ningun cambio"
+
+ No se aplica ningun cambio en bin "Encomiendas.json"
+
+ Las encomiendas CD01_1 y AG10_1 permanecen en sus estados originales 4 y 10.

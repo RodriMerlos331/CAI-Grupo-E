@@ -27,6 +27,8 @@ namespace Grupo_E.F09_EntregarYRecepcionarEncomiendasAgencia
                 MessageBox.Show("El DNI ingresado no corresponde a ningún fletero.");
                 return null;
             }
+            
+            
 
             var trackingsAsignados = HDRDistribucionUMAlmacen.HDRDistribucionUM
                 .Where(hdr => hdr.DniFleteroAsignado == dni)

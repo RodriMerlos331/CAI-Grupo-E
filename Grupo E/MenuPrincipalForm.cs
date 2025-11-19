@@ -91,6 +91,16 @@ namespace Grupo_E
 
         private void btnRendicionHDRAgencia_Click(object sender, EventArgs e)
         {
+            if (AgenciaAlmacen.AgenciaActual == null)
+            {
+                MessageBox.Show(
+                    "Debe seleccionar una agencia antes de ingresar a Entregar y Recepcionar en Agencia.",
+                    "Agencia no seleccionada",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
             using (var f = new EntregarYRecepcionarEncomiendaAgencia.EntregarYRecepcionarEncomiendaAgenciaForm())
             {
                 f.StartPosition = FormStartPosition.CenterParent;

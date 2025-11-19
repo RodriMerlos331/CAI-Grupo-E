@@ -89,7 +89,19 @@ namespace Grupo_E.EntregarYRecepcionarEncomiendaAgencia
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            var result = MessageBox.Show(
+                "¿Realmente desea salir y volver al menú principal? No se realizara ningun cambio",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+
         }
     }
 }

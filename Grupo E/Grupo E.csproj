@@ -296,7 +296,7 @@
     <Content Include="Testing\02_RetiroDosEncomiendasMismoDOM.txt" />
     <Content Include="Testing\06_RecorridoOmnibusRetiroLaPlataSanMartin.txt" />
     <Content Include="Testing\08_GestionarFleteroDosEncomiendasRetirarMismaAgencia.txt" />
-    <Content Include="Testing\12_EntregarYRecepcionarEncomeindaEnAgencia02.txt" />
+    <Content Include="Testing\11_EntregarYRecepcionarEncomeindaEnAgencia02.txt" />
     <Content Include="Testing\11_ConsultarEstadoCuentaCorriente.txt" />
     <Content Include="Testing\15_ConsultarCostosYVentas.txt" />
     <Content Include="Testing\11_EntregarYRecepcionarEncomeindaEnAgencia01.txt" />
@@ -311,10 +311,11 @@
     <Content Include="Testing\09_RetirarEnAgencia.txt" />
     <Content Include="Testing\10_RetirarEnCD.txt" />
     <Content Include="Testing\11_ConsultarEstadoEncomienda.txt" />
-    <Content Include="Testing\12_CostosVsVentas.txt" />
+    <Content Include="Testing\16_CostosVsVentas.txt" />
     <Content Include="Testing\Testing 2.0\00_ValidarVerificacionesOmnibus.txt" />
     <Content Include="Testing\Testing 2.0\01_ValidarVerificacionesFletero.txt" />
     <Content Include="Testing\Testing 2.0\02_ValidarVerificacionesImposicion.txt" />
+    <Content Include="Testing\Testing 2.0\11_EntregarYRecepcionarEncomeindaEnAgencia03.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
