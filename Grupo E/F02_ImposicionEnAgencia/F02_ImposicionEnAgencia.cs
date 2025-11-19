@@ -55,6 +55,8 @@ namespace Grupo_E.ImposicionEnAgencia
             AgenciaCbo.SelectedIndex = -1;
             TerminalesCbo.SelectedIndex = -1;
             DatosEntregaDomiclioText.Text = "";
+            TerminalesCbo.Text = "";
+            AgenciaCbo.Text = "";
 
             string localidadSeleccionada = LocalidadCbo.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(localidadSeleccionada))

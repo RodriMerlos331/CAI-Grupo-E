@@ -66,9 +66,14 @@ namespace Grupo_E.ImposicionEnCallCenter
             AgenciasCCcmb.Items.Clear();
             TerminalesCCcmb.Items.Clear();
 
+
             AgenciasCCcmb.SelectedIndex = -1;
             TerminalesCCcmb.SelectedIndex = -1;
             DatosDomicilioCCtxt.Text = "";
+            AgenciasCCcmb.SelectedIndex = -1;
+            TerminalesCCcmb.SelectedIndex = -1;
+            TerminalesCCcmb.Text = "";
+            AgenciasCCcmb.Text = "";
 
 
             string localidadSeleccionada = LocalidadCCcmb.SelectedItem?.ToString();
@@ -91,7 +96,7 @@ namespace Grupo_E.ImposicionEnCallCenter
         {
             TerminalesCCcmb.SelectedIndex = -1;
             TerminalesCCcmb.Text = "";
-//            LocalidadCCcmb.SelectedIndex = -1;
+
             if (ParticularCCrb.Checked)
             {
                 ParticularCCgrb.Enabled = true;

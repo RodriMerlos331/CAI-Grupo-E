@@ -1,1 +1,10 @@
-﻿
+﻿cuit:
+30-19283746-4
+
+imposicion:
+- si no elijo tira error 
+- si no pongo cuit tira error
+- sumamos que se puedan imponer varias juntas??
+
+01. si campo tipo de destino, me cambia bien
+02. elijo desitno la plata - cd - terminal la plata , cambio de destino - cambia desplegable - FIXEADO
