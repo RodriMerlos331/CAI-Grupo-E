@@ -1,4 +1,4 @@
-        
+
 1.Pantalla Generación de Facturas
 	1-CUIT : 30-19283746-4
 	2-Boton Buscar
@@ -35,6 +35,142 @@ Archivo Facturas.Json
   - Verificar que la encomienda efectivament cuenta con PrecioTotalEncomienda =  2200.0
   - Verificar que la suma de los PreciosTotalesDeEncomienda de ambas encomiendas da 11800.0 
 
+ 
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-  
+
+ 1.Pantalla Generación de Facturas
+	1-CUIT : 001234456700
+	2-Boton Buscar
+	3- Verificar que se muestra este mensaje:El CUIT debe tener el formato X-00000000-X, XX-00000000-X, X-00000000-XX o XX-00000000-XX"
+
+ 2. Finalizar el programa
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+
+1.Pantalla Generación de Facturas
+	1-CUIT : 
+	2-Boton Buscar
+	3- Verificar que se muestra este mensaje:El CUIT debe tener el formato X-00000000-X, XX-00000000-X, X-00000000-XX o XX-00000000-XX"
+
+ 2. Finalizar el programa
+
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ 1.Pantalla Generación de Facturas
+	1-CUIT : 30-19283746-4
+	2-Boton Buscar
+	3- Boton Generar Factura
+    4-Verificar que se muestra este mensaje:Debe seleccionar al menos una encomienda para generar la factura.
+2. Finalizar el programa
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+1.Pantalla Generación de Facturas
+	1-CUIT : 30-19283746-4
+	2-Boton Buscar
+	3- Clickear  los checkbox  nro de tracking CD13_2  y AG23_9 para que queden seleccionadas
+	4- Verificar label importe muestra ¨$11.800,00¨
+	5- Boton Generar Factura
+    6--CUIT : 30-19283746-4
+    7-Boton Buscar
+    8- Verificar que se muestra este mensaje:No hay encomiendas con fecha de entrega anterior al primer día del mes corriente.
+
+    2. Finalizar el programa
+
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1.Pantalla Generación de Facturas
+	1-CUIT : 30-19283746-4
+	2-Boton Buscar
+	3- Clickear  los checkbox  nro de tracking CD13_2  y AG23_9 para que queden seleccionadas
+	4- Verificar label importe muestra ¨$11.800,00¨
+    5-  Modificar campo CUIT  a 20-12345678-10
+	6- Boton Generar Factura
+
+2. Finalizar el programa
+
+3.En Bin > Datos corroborar los siguientes archivos:
+   
+Archivo Facturas.Json 
+
+	-Verificar que se genero la factura con los siguientes datos:
+	"NroFactura": "00000007",
+    "CuitTutasa": "20-12345678-10",
+    "CuitCliente":30-19283746-4
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    
+
+1.Pantalla Generación de Facturas
+	1-CUIT : 30-19283746-4
+	2-Boton Buscar
+	3- Clickear  los checkbox  nro de tracking CD13_2 
+	4- Verificar label importe muestra ¨$9.600,00¨
+    5- Boton Generar Factura
+	7-CUIT : 30-19283746-4
+	8-Boton Buscar
+	9- Clickear  los checkbox  nro de tracking AG23_9 
+	10- Verificar label importe muestra ¨$2.200,00¨
+    11- Boton Generar Factura
+
+2. Finalizar el programa
+
+3.En Bin > Datos corroborar los siguientes archivos:
+   
+Archivo Facturas.Json 
+
+	-Verificar que se generaron las facturas con los siguientes datos:
+{
+    "NroFactura": "00000007",
+    "CuitTutasa": "20-12345678-10",
+    "CuitCliente": "30-19283746-4",
+    "FechaEmision": "2025-11-19T17:17:40.0705321-03:00",
+    "EncomiendasIncluidas": [
+      "CD13_2"
+    ],
+    "Subtotal": 9600.00,
+    "Iva": 2016.0000,
+    "Total": 11616.0000,
+    "CodigoDeAutorizacionElectronica": "CAE789012",
+    "FechadePago": null
+  },
+  {
+    "NroFactura": "00000008",
+    "CuitTutasa": "20-12345678-10",
+    "CuitCliente": "30-19283746-4",
+    "FechaEmision": "2025-11-19T17:17:47.9987612-03:00",
+    "EncomiendasIncluidas": [
+      "AG23_9"
+    ],
+    "Subtotal": 2200.00,
+    "Iva": 462.0000,
+    "Total": 2662.0000,
+    "CodigoDeAutorizacionElectronica": "CAE789012",
+    "FechadePago": null
+  }
+
+
+
+
+
+
+
+
+
