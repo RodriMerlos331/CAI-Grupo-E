@@ -15,32 +15,5 @@ namespace Grupo_E.Almacenes
         public bool Rendida { get; set; }
         public List<string> Encomiendas { get; set; }
 
-        /*
-        public void ActualizarEstado(bool cumplida)
-        {
-            
-            foreach (var tracking in Encomiendas)
-            {
-                var encomienda = EncomiendaAlmacen.Encomienda
-                    .FirstOrDefault(e => e.Tracking == tracking);
-
-                if (Tipo == TipoHDREnum.Entrega)
-                {
-                    encomienda.Estado = cumplida
-                        ? EstadoEncomiendaEnum.Entregada
-                        : EstadoEncomiendaEnum.NoEntregada; // devuelve al remitente??? O sumo estado devolucion?? cómo se qúé tiene q ir de nuevo al CD origen?
-                }
-
-                else if (Tipo == TipoHDREnum.Retiro)
-                {
-                    encomienda.Estado = cumplida
-                        ? EstadoEncomiendaEnum.Admitida
-                        : EstadoEncomiendaEnum.Cancelada; // cancela guía siempre que no se retira??
-                }
-                
-            }
-        }
-        */
-
     }
 }

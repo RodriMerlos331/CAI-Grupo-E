@@ -69,71 +69,42 @@ namespace Grupo_E.GestionarFletero
                 .ToList();
 
         }
+
         public List<HDR> ObtenerHDRGeneracionPorTransportista(int dni)
         {
-           
-
-            var fletero = FleteroAlmacen.Fletero
-                .FirstOrDefault(f => f.DniFletero == dni);
-
-
+            var fletero = FleteroAlmacen.Fletero.FirstOrDefault(f => f.DniFletero == dni);
             if (fletero == null)
             {
                 MessageBox.Show("No se encontró un fletero con el DNI ingresado.",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<HDR>();
             }
 
+            dniActual = dni;
             var cdsFletero = fletero.CodCDAsociados;
 
-            var encomiendasRetiro = EncomiendaAlmacen.Encomienda
+            var encomiendas = EncomiendaAlmacen.Encomienda
                 .Where(e =>
-                    (e.Estado == EstadoEncomiendaEnum.ImpuestaPendienteRetiroDomicilio ||
-                     e.Estado == EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia)
-            && cdsFletero.Contains(e.CodCentroDistribucionOrigen))
-                .Select(e => e.Tracking)
+                    cdsFletero.Contains(e.CodCentroDistribucionOrigen) ||
+                    cdsFletero.Contains(e.CodCentroDistribucionDestino))
                 .ToList();
 
-            var encomiendasEntrega = EncomiendaAlmacen.Encomienda
-                .Where(e =>
-                    (e.Estado == EstadoEncomiendaEnum.PendienteEntregaDomicilio ||
-                     e.Estado == EstadoEncomiendaEnum.PendienteEntregaAgencia)
-            && cdsFletero.Contains(e.CodCentroDistribucionDestino))
-                .Select(e => e.Tracking)
-                .ToList();
+            // AGRUPACIÓN SEGÚN ESTADO Y DESTINO
+            var gruposRetiroDomicilio = encomiendas
+                .Where(e => e.Estado == EstadoEncomiendaEnum.ImpuestaPendienteRetiroDomicilio)
+                .GroupBy(e => e.DatosRetiroADomicilio);
 
-            foreach (var encomienda in EncomiendaAlmacen.Encomienda
-                .Where(e => encomiendasRetiro.Contains(e.Tracking)))
-            {
-                var estadoPrevio = encomienda.Estado;
+            var gruposRetiroAgencia = encomiendas
+                .Where(e => e.Estado == EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia)
+                .GroupBy(e => e.AgenciaOrigen);
 
-                if (estadoPrevio == EstadoEncomiendaEnum.ImpuestaPendienteRetiroDomicilio)
-                    encomienda.Estado = EstadoEncomiendaEnum.RuteadaRetiroDomicilio;
-                else if (estadoPrevio == EstadoEncomiendaEnum.ImpuestaPendienteRetiroAgencia)
-                    encomienda.Estado = EstadoEncomiendaEnum.RuteadaRetiroAgencia;
+            var gruposEntregaDomicilio = encomiendas
+                .Where(e => e.Estado == EstadoEncomiendaEnum.PendienteEntregaDomicilio)
+                .GroupBy(e => e.DireccionDestinatario);
 
-                encomienda.HistorialCambios.Add(new Historial
-                {
-                    Tracking = encomienda.Tracking,
-                    FechaPrevia = encomienda.FechaImposicion,
-                    UbicacionPrevia = null,
-                    FleteroAsignado = 0,
-                    NumeroHDRUM = 0, 
-                    NumeroHDRMD = 0,
-                    EstadoPrevio = estadoPrevio
-                });
-            }
-
-            if (!encomiendasRetiro.Any())
-            {
-                MessageBox.Show("No se encontraron encomiendas pendientes de retiro para este fletero.",
-                    "Sin retiros", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            if (!encomiendasEntrega.Any())
-            {
-                MessageBox.Show("No se encontraron encomiendas pendientes de entrega para este fletero.",
-                    "Sin entregas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            var gruposEntregaAgencia = encomiendas
+                .Where(e => e.Estado == EstadoEncomiendaEnum.PendienteEntregaAgencia)
+                .GroupBy(e => e.AgenciaDestino);
 
             var hdrGeneradas = new List<HDRDistribucionUMEntidad>();
 
@@ -141,55 +112,80 @@ namespace Grupo_E.GestionarFletero
                 ? HDRDistribucionUMAlmacen.HDRDistribucionUM.Max(h => h.NumeroHDRUM) + 1
                 : 1000;
 
-            //Faltaría Group by retiro = domicilio o agencia??
-
-            if (encomiendasRetiro.Any())
+            //  Crear HDR por cada agrupación de RETIRO – DOMICILIO
+            foreach (var grupo in gruposRetiroDomicilio)
             {
-                var hdrRetiro = new HDRDistribucionUMEntidad
+                hdrGeneradas.Add(new HDRDistribucionUMEntidad
                 {
                     NumeroHDRUM = proximoNumeroHDR++,
-                    Tipo = TipoHDREnum.Retiro,  // 0
+                    Tipo = TipoHDREnum.Retiro,
                     DniFleteroAsignado = dni,
                     Cumplida = false,
                     Rendida = false,
-                    Encomiendas = encomiendasRetiro
-                };
-
-                hdrGeneradas.Add(hdrRetiro);
+                    Encomiendas = grupo.Select(e => e.Tracking).ToList()
+                });
             }
 
-            if (encomiendasEntrega.Any())
+            //  Crear HDR por cada agrupación de RETIRO – AGENCIA
+            foreach (var grupo in gruposRetiroAgencia)
             {
-                var hdrEntrega = new HDRDistribucionUMEntidad
+                hdrGeneradas.Add(new HDRDistribucionUMEntidad
                 {
                     NumeroHDRUM = proximoNumeroHDR++,
-                    Tipo = TipoHDREnum.Entrega,  // 1
+                    Tipo = TipoHDREnum.Retiro,
                     DniFleteroAsignado = dni,
                     Cumplida = false,
                     Rendida = false,
-                    Encomiendas = encomiendasEntrega
-                };
-
-                hdrGeneradas.Add(hdrEntrega);
+                    Encomiendas = grupo.Select(e => e.Tracking).ToList()
+                });
             }
 
+            // Crear HDR por cada agrupación de ENTREGA – DOMICILIO
+            foreach (var grupo in gruposEntregaDomicilio)
+            {
+                hdrGeneradas.Add(new HDRDistribucionUMEntidad
+                {
+                    NumeroHDRUM = proximoNumeroHDR++,
+                    Tipo = TipoHDREnum.Entrega,
+                    DniFleteroAsignado = dni,
+                    Cumplida = false,
+                    Rendida = false,
+                    Encomiendas = grupo.Select(e => e.Tracking).ToList()
+                });
+            }
+
+            // Crear HDR por cada agrupación de ENTREGA – AGENCIA
+            foreach (var grupo in gruposEntregaAgencia)
+            {
+                hdrGeneradas.Add(new HDRDistribucionUMEntidad
+                {
+                    NumeroHDRUM = proximoNumeroHDR++,
+                    Tipo = TipoHDREnum.Entrega,
+                    DniFleteroAsignado = dni,
+                    Cumplida = false,
+                    Rendida = false,
+                    Encomiendas = grupo.Select(e => e.Tracking).ToList()
+                });
+            }
+
+            // Convertimos a HDR auxiliar (tu clase de form)
             HDRGeneracion = hdrGeneradas.Select(h => new HDR
             {
                 Cumplida = false,
                 DniTransportista = dniActual,
                 Guias = h.Encomiendas
-                              .Select(e => EncomiendaAlmacen.Encomienda.Single(en => en.Tracking == e))
-                              .Select(e => new Guia
-                              {
-                                  CodigoGuia = e.Tracking,
-                                  Estado = EstadoEquivalenteA(e.Estado),
-                                  NumeroHDR = h.NumeroHDRUM
-                              }).ToList(),
+                            .Select(t => EncomiendaAlmacen.Encomienda.Single(e => e.Tracking == t))
+                            .Select(e => new Guia
+                            {
+                                CodigoGuia = e.Tracking,
+                                Estado = EstadoEquivalenteA(e.Estado),
+                                NumeroHDR = h.NumeroHDRUM
+                            })
+                            .ToList(),
                 NumeroHDR = h.NumeroHDRUM,
                 Rendida = false,
                 Tipo = TipoEquivalenteA(h.Tipo)
-            })
-            .ToList();
+            }).ToList();
 
             return HDRGeneracion;
         }
@@ -265,8 +261,6 @@ namespace Grupo_E.GestionarFletero
             }
 
             //Actualizar estados de encomiendas para HDR de entrega cumplidas
-
-            //Actualizar estados de encomiendas para HDR de entrega cumplidas
             foreach (var hdr in HDRRendicion.Where(h => h.Tipo == HDR.TipoHDR.Entrega && h.Cumplida))
             {
                 foreach (var guia in hdr.Guias)
@@ -319,13 +313,13 @@ namespace Grupo_E.GestionarFletero
                 {
                     var encomienda = EncomiendaAlmacen.Encomienda
                         .FirstOrDefault(e => e.Tracking == guia.CodigoGuia);
-
-
                     var estadoPrevio = encomienda.Estado;
 
+                    /*
                     if (estadoPrevio == EstadoEncomiendaEnum.RuteadaRetiroDomicilio ||
                         estadoPrevio == EstadoEncomiendaEnum.RuteadaRetiroAgencia)
                     {
+                    */
                         encomienda.Estado = EstadoEncomiendaEnum.EnTransitoUMOrigen;
                         encomienda.FechaAdmision = DateTime.Now;
 
@@ -339,9 +333,10 @@ namespace Grupo_E.GestionarFletero
                             NumeroHDRMD = 0,
                             EstadoPrevio = estadoPrevio
                         });
-                    }
+                    //}
                 }
             }
+
 
             //Actualizar estados encomiendas para HDR de entrega generadas
 

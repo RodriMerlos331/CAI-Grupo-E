@@ -136,7 +136,7 @@ namespace Grupo_E.GestionarFletero
             this.groupBox3.Controls.Add(this.HDRAsignadasListView);
             this.groupBox3.Location = new System.Drawing.Point(10, 106);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(779, 250);
+            this.groupBox3.Size = new System.Drawing.Size(779, 260);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rendición";
@@ -227,7 +227,6 @@ namespace Grupo_E.GestionarFletero
             this.HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             this.HDRAsignadasListView.View = System.Windows.Forms.View.Details;
             this.HDRAsignadasListView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.HDRAsignadasListView_ItemChecked_1);
-            this.HDRAsignadasListView.SelectedIndexChanged += new System.EventHandler(this.HDRAsignadasListView_SelectedIndexChanged);
             // 
             // NroHDRCol1
             // 
@@ -270,7 +269,7 @@ namespace Grupo_E.GestionarFletero
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(10, 372);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(779, 296);
+            this.groupBox1.Size = new System.Drawing.Size(779, 306);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generación";
@@ -396,7 +395,6 @@ namespace Grupo_E.GestionarFletero
             this.Controls.Add(this.groupBox2);
             this.Name = "F05_GestionarFleteroForm";
             this.Text = "RendicionHojasDeRuta";
-            this.Load += new System.EventHandler(this.F05_GestionarFleteroForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);

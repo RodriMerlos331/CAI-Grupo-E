@@ -1,6 +1,7 @@
 ﻿using Grupo_E.F05_GestionarFletero;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,9 +16,6 @@ namespace Grupo_E.GestionarFletero
             InitializeComponent();
         }
 
-        private void F05_GestionarFleteroForm_Load(object sender, EventArgs e)
-        {
-        }
 
         private void BuscarBtn_Click(object sender, EventArgs e)
         {
@@ -28,6 +26,8 @@ namespace Grupo_E.GestionarFletero
             }
 
             HDRAsignadasListView.Items.Clear();
+            HDRAsignadasListView.BackColor = SystemColors.Window;
+
 
             //RENDICION 
             var hdrs = modelo.ObtenerHDRRendicionPorTransportista(dni);
@@ -35,6 +35,7 @@ namespace Grupo_E.GestionarFletero
             if (hdrs.Count == 0)
             {
                 MessageBox.Show("No se encontraron HDR a rendir para el DNI ingresado");
+                HDRAsignadasListView.BackColor = Color.LightGray;
                 //return;
             }
 
@@ -50,13 +51,28 @@ namespace Grupo_E.GestionarFletero
             var guiasNoRetiradas = modelo.ObtenerGuiasDeHDRNoCumplidas(dni, HDR.TipoHDR.Retiro);
 
             GuiasNoEntregadasListView.Items.Clear();
+            GuiasNoEntregadasListView.BackColor = SystemColors.Window;
+            GuiasRetiradasListView.BackColor = SystemColors.Window;
 
-            foreach (var guia in guiasNoEntregadas)
+            if (guiasNoEntregadas.Count == 0)
             {
-                var item = new ListViewItem(guia.NumeroHDR.ToString());
-                item.SubItems.Add(guia.CodigoGuia.ToString());
-                GuiasNoEntregadasListView.Items.Add(item);
+                GuiasNoEntregadasListView.BackColor = Color.LightGray;
             }
+            else
+            {
+                foreach (var guia in guiasNoEntregadas)
+                {
+                    var item = new ListViewItem(guia.NumeroHDR.ToString());
+                    item.SubItems.Add(guia.CodigoGuia.ToString());
+                    GuiasNoEntregadasListView.Items.Add(item);
+                }
+            }
+
+            if (guiasNoRetiradas.Count == 0)
+            {
+                GuiasRetiradasListView.BackColor = Color.LightGray;
+            }
+            
 
             NuevasHDREntregarListView.Items.Clear();
             NuevasHDRRetirarListViews.Items.Clear();
@@ -69,33 +85,53 @@ namespace Grupo_E.GestionarFletero
             var hdrsEntrega = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Entrega).ToList();
             var hdrsRetiro = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro).ToList();
 
+            NuevasHDREntregarListView.BackColor = SystemColors.Window;
+            NuevasHDRRetirarListViews.BackColor = SystemColors.Window;
+            NuevasGuiasEntregarListView.BackColor = SystemColors.Window;
+            NuevasGuiasRetirarListView.BackColor = SystemColors.Window;
 
-            foreach (var hdr in hdrsEntrega)
+            if (hdrsEntrega.Count == 0)
             {
-                var item = new ListViewItem(hdr.NumeroHDR.ToString());
-                NuevasHDREntregarListView.Items.Add(item);
-
-                foreach (var guia in hdr.Guias)
+                NuevasHDREntregarListView.BackColor = Color.LightGray;
+                NuevasGuiasEntregarListView.BackColor = Color.LightGray;
+            }
+            else
+            { 
+                foreach (var hdr in hdrsEntrega)
                 {
-                    var guiaItem = new ListViewItem(hdr.NumeroHDR.ToString());
-                    guiaItem.SubItems.Add(guia.CodigoGuia);
-                    NuevasGuiasEntregarListView.Items.Add(guiaItem);
+                    var item = new ListViewItem(hdr.NumeroHDR.ToString());
+                    NuevasHDREntregarListView.Items.Add(item);
+
+                    foreach (var guia in hdr.Guias)
+                    {
+                        var guiaItem = new ListViewItem(hdr.NumeroHDR.ToString());
+                        guiaItem.SubItems.Add(guia.CodigoGuia);
+                        NuevasGuiasEntregarListView.Items.Add(guiaItem);
+                    }
                 }
             }
 
-            foreach (var hdr in hdrsRetiro)
+            if (hdrsRetiro.Count == 0)
             {
-                var item = new ListViewItem(hdr.NumeroHDR.ToString());
-                NuevasHDRRetirarListViews.Items.Add(item);
+                NuevasHDRRetirarListViews.BackColor = Color.LightGray;
+                NuevasGuiasRetirarListView.BackColor = Color.LightGray;
+            }
+            else
+            { 
 
-                foreach (var guia in hdr.Guias)
+                foreach (var hdr in hdrsRetiro)
                 {
-                    var guiaItem = new ListViewItem(hdr.NumeroHDR.ToString());
-                    guiaItem.SubItems.Add(guia.CodigoGuia);
-                    NuevasGuiasRetirarListView.Items.Add(guiaItem);
+                    var item = new ListViewItem(hdr.NumeroHDR.ToString());
+                    NuevasHDRRetirarListViews.Items.Add(item);
+
+                    foreach (var guia in hdr.Guias)
+                    {
+                        var guiaItem = new ListViewItem(hdr.NumeroHDR.ToString());
+                        guiaItem.SubItems.Add(guia.CodigoGuia);
+                        NuevasGuiasRetirarListView.Items.Add(guiaItem);
+                    }
                 }
             }
-
         }
 
         private void HDRAsignadasListView_ItemChecked_1(object sender, ItemCheckedEventArgs e)
@@ -182,6 +218,13 @@ namespace Grupo_E.GestionarFletero
             NuevasHDRRetirarListViews.Items.Clear();
             NuevasGuiasEntregarListView.Items.Clear();
             NuevasGuiasRetirarListView.Items.Clear();
+            NuevasHDREntregarListView.BackColor = SystemColors.Window;
+            NuevasHDRRetirarListViews.BackColor = SystemColors.Window;
+            NuevasGuiasEntregarListView.BackColor = SystemColors.Window;
+            NuevasGuiasRetirarListView.BackColor = SystemColors.Window;
+            GuiasNoEntregadasListView.BackColor = SystemColors.Window;
+            GuiasRetiradasListView.BackColor = SystemColors.Window;
+            HDRAsignadasListView.BackColor = SystemColors.Window;
 
         }
 
@@ -258,14 +301,18 @@ namespace Grupo_E.GestionarFletero
             NuevasHDRRetirarListViews.Items.Clear();
             NuevasGuiasEntregarListView.Items.Clear();
             NuevasGuiasRetirarListView.Items.Clear();
+            NuevasHDREntregarListView.BackColor = SystemColors.Window;
+            NuevasHDRRetirarListViews.BackColor = SystemColors.Window;
+            NuevasGuiasEntregarListView.BackColor = SystemColors.Window;
+            NuevasGuiasRetirarListView.BackColor = SystemColors.Window;
+            GuiasNoEntregadasListView.BackColor = SystemColors.Window;
+            GuiasRetiradasListView.BackColor = SystemColors.Window;
+            HDRAsignadasListView.BackColor = SystemColors.Window;
 
 
         }
 
-        private void HDRAsignadasListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 
