@@ -311,7 +311,7 @@
     <Content Include="Testing\09_RetirarEnAgencia.txt" />
     <Content Include="Testing\10_RetirarEnCD.txt" />
     <Content Include="Testing\11_ConsultarEstadoEncomienda.txt" />
-    <Content Include="Testing\12_CostosVsVentas1.txt" />
+    <Content Include="Testing\12_CostosVsVentas.txt" />
     <Content Include="Testing\Testing 2.0\00_ValidarVerificacionesOmnibus.txt" />
     <Content Include="Testing\Testing 2.0\01_ValidarVerificacionesFletero.txt" />
   </ItemGroup>

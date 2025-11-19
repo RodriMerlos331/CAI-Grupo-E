@@ -1,3 +1,4 @@
+---Caso Feliz
         
 1- Pantalla Estado de Cuentas Corrientes
 
@@ -7,7 +8,7 @@
 	4- Elegir Estado de factura: "Todas"
     5- Tocar boton Buscar
 
- 2- Te muestra:
+2- Te muestra:
 
     Verificar que se vea en la pantalla:
     Fecha de emisión: 10/10/2025 / N° de Factura: 00000004 / Estado: "Pendiente" / Debe: 12.100,00 / Haber: 0,00 / Saldo: 12.100,00
@@ -25,3 +26,82 @@
 En Facturas.json se puede verificar que hay dos facturas para el "CuitCliente": "30-19283746-4", con "FechadePago": "2025-10-25T00:00:00" con 
 un "Total" de 6.050,00 y 8.050,00 respectivamente, y una factura sin "FechadePago" con "Total" de 12.100,00
 
+---Caso de prueba 1 – CUIT inexistente
+
+1- Pantalla Estado de Cuentas Corrientes
+
+	1- Poner Fecha desde: 01/10/2025
+    2- Poner Fecha hasta: 31/10/2025
+    3- Poner CUIT: 30-00000000-0
+	4- Elegir Estado de factura: "Todas"
+    5- Tocar boton Buscar
+
+2- Te muestra:
+
+    1- Mensaje de error: 
+    "No se encontraron movimientos para el cliente con CUIT: 30-00000000-0."
+    2- Tocar boton Aceptar
+
+3- Termina el programa 
+
+    1- Tocar boton Salir
+
+---Caso de prueba 2 – Fecha Desde mayor que Fecha Hasta
+
+1- Pantalla Estado de Cuentas Corrientes
+
+	1- Poner Fecha desde: 31/10/2025
+    2- Poner Fecha hasta: 01/10/2025
+    3- Poner CUIT: 30-19283746-4
+	4- Elegir Estado de factura: "Todas"
+    5- Tocar boton Buscar
+
+2- Te muestra:
+
+    1- Mensaje de error: 
+    "La 'Fecha desde' no puede ser posterior a la 'Fecha hasta'."
+    2- Tocar boton Aceptar
+
+3- Termina el programa 
+
+    1- Tocar boton Salir
+
+---Caso de prueba 3 – Formato de CUIT inválido
+
+1- Pantalla Estado de Cuentas Corrientes
+
+	1- Poner Fecha desde: 01/10/2025
+    2- Poner Fecha hasta: 31/10/2025
+    3- Poner CUIT: ABC123
+	4- Elegir Estado de factura: "Todas"
+    5- Tocar boton Buscar
+
+2- Te muestra:
+
+    1- Mensaje de error: 
+    "El formato del CUIT es incorrecto."
+    2- Tocar boton Aceptar
+
+3- Termina el programa 
+
+    1- Tocar boton Salir
+
+---Caso de prueba 4 – Cliente con facturas pero fuera del rango
+
+1- Pantalla Estado de Cuentas Corrientes
+
+	1- Poner Fecha desde: 01/11/2025
+    2- Poner Fecha hasta: 18/11/2025
+    3- Poner CUIT: 30-19283746-4
+	4- Elegir Estado de factura: "Todas"
+    5- Tocar boton Buscar
+
+2- Te muestra:
+
+    1- Mensaje de error: 
+    "No se encontraron movimientos para el cliente con CUIT: 30-19283746-4."
+    2- Tocar boton Aceptar
+
+3- Termina el programa 
+
+    1- Tocar boton Salir
