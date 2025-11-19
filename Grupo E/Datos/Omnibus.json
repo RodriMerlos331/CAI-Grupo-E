@@ -1,32 +1,21 @@
 [
   {
-    "ServicioID": "CABA_CORRIENTESCAPITAL",
-    "CuitEmpresaOmnibus": "30-65478912-3",
-    "Patente": "AB123CD",
+    "ServicioID": "RETIRO_LAPLATA",
+    "CuitEmpresaOmnibus": "30-11111111-1",
+    "Patente": "GGG222",
     "Tipo": 0,
     "CapacidadActual": 20,
     "Paradas": [
       {
         "CodigoCD": "CD01",
         "FechaYHoraLlega": null,
-        "FechaYHoraSale": "2025-11-15T08:30:00"
+        "FechaYHoraSale": "2025-12-09T10:30:00"
       },
       {
-        "CodigoCD": "CD05",
-        "FechaYHoraLlega": "2025-11-16T08:30:00",
-        "FechaYHoraSale": "2025-11-16T10:30:00"
-      },
-      {
-        "CodigoCD": "CD07",
-        "FechaYHoraLlega": "2025-11-18T08:30:00",
-        "FechaYHoraSale": "2025-11-18T10:30:00"
-      },
-      {
-        "CodigoCD": "CD09",
-        "FechaYHoraLlega": "2025-11-19T08:30:00",
+        "CodigoCD": "CD04",
+        "FechaYHoraLlega": "2025-12-09T10:30:00",
         "FechaYHoraSale": null
       }
-
     ]
   },
   {
@@ -46,32 +35,6 @@
         "FechaYHoraLlega": "2025-11-21T10:30:00",
         "FechaYHoraSale": null
       }
-
-    ]
-  },
-  {
-    "ServicioID": "BRC_COR",
-    "CuitEmpresaOmnibus": "30-65478912-3",
-    "Patente": "ABC234",
-    "Tipo": 0,
-    "CapacidadActual": 20,
-    "Paradas": [
-      {
-        "CodigoCD": "CD14",
-        "FechaYHoraLlega": null,
-        "FechaYHoraSale": "2025-11-20T10:30:00"
-      },
-      {
-        "CodigoCD": "CD05",
-        "FechaYHoraLlega": "2025-11-20T20:30:00",
-        "FechaYHoraSale": "2025-11-21T21:30:00"
-      },
-      {
-        "CodigoCD": "CD07",
-        "FechaYHoraLlega": "2025-11-22T10:30:00",
-        "FechaYHoraSale": null
-      }
-
     ]
   },
   {
@@ -91,7 +54,6 @@
         "FechaYHoraLlega": "2025-11-20T20:30:00",
         "FechaYHoraSale": null
       }
-
     ]
   },
   {
@@ -123,7 +85,7 @@
       {
         "CodigoCD": "CD11",
         "FechaYHoraLlega": null,
-        "FechaYHoraSale": "2025-10-9T10:30:00"
+        "FechaYHoraSale": "2025-10-09T10:30:00"
       },
       {
         "CodigoCD": "CD13",
@@ -133,63 +95,39 @@
     ]
   },
   {
-    "ServicioID": "RETIRO_TUC",
+    "ServicioID": "BARILOCHE_CORDOBA",
     "CuitEmpresaOmnibus": "30-65478912-3",
-    "Patente": "DDD222",
+    "Patente": "ABC302",
     "Tipo": 0,
     "CapacidadActual": 20,
     "Paradas": [
       {
-        "CodigoCD": "CD01",
+        "CodigoCD": "CD14",
         "FechaYHoraLlega": null,
-        "FechaYHoraSale": "2025-12-9T10:30:00"
+        "FechaYHoraSale": "2025-12-04T06:30:00"
       },
       {
         "CodigoCD": "CD05",
-        "FechaYHoraLlega": "2025-12-10T20:30:00",
-        "FechaYHoraSale": "2025-12-10T21:30:00"
+        "FechaYHoraLlega": "2025-12-04T18:00:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "TAFI_TUCUMAN",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC303",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD08",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-05T08:00:00"
       },
       {
         "CodigoCD": "CD07",
-        "FechaYHoraLlega": "2025-12-11T22:30:00",
-        "FechaYHoraSale": null
-      }
-    ]
-  },
-  {
-    "ServicioID": "RIONEGRO_NEUQUEN",
-    "CuitEmpresaOmnibus": "30-65478912-3",
-    "Patente": "EEE111",
-    "Tipo": 0,
-    "CapacidadActual": 20,
-    "Paradas": [
-      {
-        "CodigoCD": "CD13",
-        "FechaYHoraLlega": null,
-        "FechaYHoraSale": "2025-12-9T10:30:00"
-      },
-      {
-        "CodigoCD": "CD12",
-        "FechaYHoraLlega": "2025-12-11T22:30:00",
-        "FechaYHoraSale": null
-      }
-    ]
-  },
-  {
-    "ServicioID": "RETIRO_LAPLATA",
-    "CuitEmpresaOmnibus": "30-11111111-1",
-    "Patente": "GGG222",
-    "Tipo": 0,
-    "CapacidadActual": 20,
-    "Paradas": [
-      {
-        "CodigoCD": "CD01",
-        "FechaYHoraLlega": null,
-        "FechaYHoraSale": "2025-12-9T10:30:00"
-      },
-      {
-        "CodigoCD": "CD04",
-        "FechaYHoraLlega": "2025-12-9T10:30:00",
+        "FechaYHoraLlega": "2025-12-05T08:40:00",
         "FechaYHoraSale": null
       }
     ]
@@ -204,14 +142,267 @@
       {
         "CodigoCD": "CD04",
         "FechaYHoraLlega": null,
-        "FechaYHoraSale": "2025-12-9T10:30:00"
+        "FechaYHoraSale": "2025-12-09T10:30:00"
       },
       {
         "CodigoCD": "CD12",
-        "FechaYHoraLlega": "2025-12-9T10:30:00",
+        "FechaYHoraLlega": "2025-12-09T10:30:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "RIONEGRO_NEUQUEN",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "EEE111",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD13",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-09T10:30:00"
+      },
+      {
+        "CodigoCD": "CD12",
+        "FechaYHoraLlega": "2025-12-11T22:30:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "BARILOCHE_TUCUMAN",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC309",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD07",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-05T12:00:00"
+      },
+      {
+        "CodigoCD": "CD08",
+        "FechaYHoraLlega": "2025-12-05T12:40:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "GOYA_CORDOBA",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC304",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD10",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-06T05:00:00"
+      },
+      {
+        "CodigoCD": "CD09",
+        "FechaYHoraLlega": "2025-12-06T08:00:00",
+        "FechaYHoraSale": "2025-12-06T09:00:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-12-06T16:00:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "RETIRO_TUC",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "DDD222",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD01",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-09T10:30:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-12-10T20:30:00",
+        "FechaYHoraSale": "2025-12-10T21:30:00"
+      },
+      {
+        "CodigoCD": "CD07",
+        "FechaYHoraLlega": "2025-12-11T22:30:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "SANMARTIN_CORDOBA",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC301",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD12",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-03T07:00:00"
+      },
+      {
+        "CodigoCD": "CD13",
+        "FechaYHoraLlega": "2025-12-03T11:00:00",
+        "FechaYHoraSale": "2025-12-03T13:00:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-12-03T20:00:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "VILLAMARIA_TUCUMAN",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC305",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD06",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-07T09:00:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-12-07T10:30:00",
+        "FechaYHoraSale": "2025-12-07T11:30:00"
+      },
+      {
+        "CodigoCD": "CD07",
+        "FechaYHoraLlega": "2025-12-07T18:00:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "NEUQUEN_CABA",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC300",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD11",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-01T08:00:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-12-01T18:00:00",
+        "FechaYHoraSale": "2025-12-01T20:00:00"
+      },
+      {
+        "CodigoCD": "CD01",
+        "FechaYHoraLlega": "2025-12-02T08:00:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "CABA_NEUQUEN",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC306",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD01",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-02T18:00:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-12-03T06:00:00",
+        "FechaYHoraSale": "2025-12-03T07:00:00"
+      },
+      {
+        "CodigoCD": "CD11",
+        "FechaYHoraLlega": "2025-12-03T17:00:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "CORDOBA_BARILOCHE",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC308",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-05T05:00:00"
+      },
+      {
+        "CodigoCD": "CD14",
+        "FechaYHoraLlega": "2025-12-05T17:00:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "CORDOBA_SANMARTIN",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "ABC307",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-12-04T07:00:00"
+      },
+      {
+        "CodigoCD": "CD13",
+        "FechaYHoraLlega": "2025-12-04T14:00:00",
+        "FechaYHoraSale": "2025-12-04T15:00:00"
+      },
+      {
+        "CodigoCD": "CD12",
+        "FechaYHoraLlega": "2025-12-04T19:00:00",
+        "FechaYHoraSale": null
+      }
+    ]
+  },
+  {
+    "ServicioID": "CABA_CORRIENTESCAPITAL",
+    "CuitEmpresaOmnibus": "30-65478912-3",
+    "Patente": "AB123CD",
+    "Tipo": 0,
+    "CapacidadActual": 20,
+    "Paradas": [
+      {
+        "CodigoCD": "CD01",
+        "FechaYHoraLlega": null,
+        "FechaYHoraSale": "2025-11-15T08:30:00"
+      },
+      {
+        "CodigoCD": "CD05",
+        "FechaYHoraLlega": "2025-11-16T08:30:00",
+        "FechaYHoraSale": "2025-11-16T10:30:00"
+      },
+      {
+        "CodigoCD": "CD07",
+        "FechaYHoraLlega": "2025-11-18T08:30:00",
+        "FechaYHoraSale": "2025-11-18T10:30:00"
+      },
+      {
+        "CodigoCD": "CD09",
+        "FechaYHoraLlega": "2025-11-19T08:30:00",
         "FechaYHoraSale": null
       }
     ]
   }
-
 ]

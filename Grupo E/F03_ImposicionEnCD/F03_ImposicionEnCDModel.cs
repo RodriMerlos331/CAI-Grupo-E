@@ -123,6 +123,20 @@ namespace Grupo_E.F03_ImposicionEnCD
                 incluirEntrega: false,
                 incluirAgencia: false);
 
+            var ruta = ObtenerRuta( nuevaEncomienda.CodCentroDistribucionOrigen, nuevaEncomienda.CodCentroDistribucionDestino);
+
+            if (ruta == null)
+            {
+                MessageBox.Show(
+                    $"No existe una ruta posible entre {nuevaEncomienda.CodCentroDistribucionOrigen} y {nuevaEncomienda.CodCentroDistribucionDestino}"
+                );
+
+                return;
+            }
+
+            // Cargar la ruta en la encomienda
+            nuevaEncomienda.RecorridoPlanificado = ruta;
+
             EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
 
 
@@ -336,8 +350,93 @@ namespace Grupo_E.F03_ImposicionEnCD
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-       
-       
+        // Este método es el que vas a llamar desde la admisión.
+        // Crea una lista de CDs visitados (vacía) y arranca la búsqueda recursiva.
+        public List<ParadaPlanificada> ObtenerRuta(string origen, string destino)
+        {
+            // Lista para registrar todos los CDs que ya visité
+            // Evita que el algoritmo se meta en ciclos (CD01 → CD05 → CD01 → ...)
+            var visitados = new List<string>();
+
+            // Llamo al algoritmo recursivo real
+            return BuscarRutaRec(origen, destino, visitados);
+        }
+
+        private List<ParadaPlanificada> BuscarRutaRec(string origen, string destino, List<string> visitados)
+        {
+            // Si ya visité este CD, NO vuelvo a explorarlo (evita ciclos infinitos)
+            if (visitados.Contains(origen))
+                return null;
+
+            // Marco este CD como visitado
+            visitados.Add(origen);
+
+            // Busco todos los servicios (ómnibus) donde aparece este CD como parada
+            var servicios = OmnibusAlmacen.Omnibus
+                .Where(o => o.Paradas.Any(p => p.CodigoCD == origen))
+                .ToList();
+
+            // Recorro cada servicio que pasa por el CD actual
+            foreach (var servicio in servicios)
+            {
+                var paradas = servicio.Paradas;
+
+                // Encuentro en qué posición del servicio aparece el CD origen
+                var idxOrigen = paradas.FindIndex(p => p.CodigoCD == origen);
+
+                // Por seguridad (aunque no debería pasar)
+                if (idxOrigen == -1)
+                    continue;
+
+                // SOLO avanzo hacia adelante en las paradas del servicio
+                for (int i = idxOrigen + 1; i < paradas.Count; i++)
+                {
+                    var paradaDestino = paradas[i].CodigoCD;
+
+                    // CASO 1: La parada que encontré es EXACTAMENTE el destino final
+                    if (paradaDestino == destino)
+                    {
+                        // Devuelvo una ruta de UN solo tramo
+                        return new List<ParadaPlanificada>
+                {
+                    new ParadaPlanificada
+                    {
+                        ServicioId = servicio.ServicioID,
+                        CodigoCDOrigen = origen,
+                        CodigoCDDestino = destino
+                    }
+                };
+                    }
+
+                    // CASO 2: La parada NO es el destino → sigo buscando desde ahí
+                    // Llamada recursiva
+                    var rutaResto = BuscarRutaRec(paradaDestino, destino, visitados);
+
+                    // Si la búsqueda recursiva encontró un camino...
+                    if (rutaResto != null)
+                    {
+                        // Creo el tramo actual
+                        var tramoActual = new ParadaPlanificada
+                        {
+                            ServicioId = servicio.ServicioID,
+                            CodigoCDOrigen = origen,
+                            CodigoCDDestino = paradaDestino
+                        };
+
+                        // La ruta completa es: este tramo + el resto encontrado recursivamente
+                        var ruta = new List<ParadaPlanificada>();
+                        ruta.Add(tramoActual);
+                        ruta.AddRange(rutaResto);
+
+                        return ruta;
+                    }
+                }
+            }
+
+            // Si ningún servicio sirvió, no hay ruta desde este origen
+            return null;
+        }
+
     }
 }
 
