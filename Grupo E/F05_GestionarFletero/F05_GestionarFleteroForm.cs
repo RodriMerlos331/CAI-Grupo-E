@@ -27,10 +27,12 @@ namespace Grupo_E.GestionarFletero
 
             HDRAsignadasListView.Items.Clear();
             HDRAsignadasListView.BackColor = SystemColors.Window;
-
+            //SUMAR VALIDACION SI NO EXISTE
 
             //RENDICION 
             var hdrs = modelo.ObtenerHDRRendicionPorTransportista(dni);
+
+            
 
             if (hdrs.Count == 0)
             {
