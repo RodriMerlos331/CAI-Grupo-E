@@ -70,9 +70,9 @@ namespace Grupo_E.GestionarFletero
 
         }
 
-        public List<HDR> ObtenerHDRGeneracionPorTransportista(int dni)
+        public List<HDR> ObtenerHDRGeneracionPorTransportista()
         {
-            var fletero = FleteroAlmacen.Fletero.FirstOrDefault(f => f.DniFletero == dni);
+            var fletero = FleteroAlmacen.Fletero.FirstOrDefault(f => f.DniFletero == dniActual);
             if (fletero == null)
             {
                 MessageBox.Show("No se encontró un fletero con el DNI ingresado.",
@@ -80,7 +80,7 @@ namespace Grupo_E.GestionarFletero
                 return new List<HDR>();
             }
 
-            dniActual = dni;
+            //dniActual = dni;
             var cdsFletero = fletero.CodCDAsociados;
 
             var encomiendas = EncomiendaAlmacen.Encomienda
@@ -119,7 +119,7 @@ namespace Grupo_E.GestionarFletero
                 {
                     NumeroHDRUM = proximoNumeroHDR++,
                     Tipo = TipoHDREnum.Retiro,
-                    DniFleteroAsignado = dni,
+                    DniFleteroAsignado = dniActual,
                     Cumplida = false,
                     Rendida = false,
                     Encomiendas = grupo.Select(e => e.Tracking).ToList()
@@ -133,7 +133,7 @@ namespace Grupo_E.GestionarFletero
                 {
                     NumeroHDRUM = proximoNumeroHDR++,
                     Tipo = TipoHDREnum.Retiro,
-                    DniFleteroAsignado = dni,
+                    DniFleteroAsignado = dniActual,
                     Cumplida = false,
                     Rendida = false,
                     Encomiendas = grupo.Select(e => e.Tracking).ToList()
@@ -147,7 +147,7 @@ namespace Grupo_E.GestionarFletero
                 {
                     NumeroHDRUM = proximoNumeroHDR++,
                     Tipo = TipoHDREnum.Entrega,
-                    DniFleteroAsignado = dni,
+                    DniFleteroAsignado = dniActual,
                     Cumplida = false,
                     Rendida = false,
                     Encomiendas = grupo.Select(e => e.Tracking).ToList()
@@ -161,7 +161,7 @@ namespace Grupo_E.GestionarFletero
                 {
                     NumeroHDRUM = proximoNumeroHDR++,
                     Tipo = TipoHDREnum.Entrega,
-                    DniFleteroAsignado = dni,
+                    DniFleteroAsignado = dniActual,
                     Cumplida = false,
                     Rendida = false,
                     Encomiendas = grupo.Select(e => e.Tracking).ToList()

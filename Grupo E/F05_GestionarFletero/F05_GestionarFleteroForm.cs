@@ -81,7 +81,7 @@ namespace Grupo_E.GestionarFletero
 
 
             //GENERACION
-            var hdrGeneracion = modelo.ObtenerHDRGeneracionPorTransportista(dni);
+            var hdrGeneracion = modelo.ObtenerHDRGeneracionPorTransportista();
             var hdrsEntrega = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Entrega).ToList();
             var hdrsRetiro = hdrGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro).ToList();
 
@@ -94,6 +94,7 @@ namespace Grupo_E.GestionarFletero
             {
                 NuevasHDREntregarListView.BackColor = Color.LightGray;
                 NuevasGuiasEntregarListView.BackColor = Color.LightGray;
+                MessageBox.Show("No hay nuevas encomiendas a ser entregadas");
             }
             else
             { 
@@ -115,7 +116,10 @@ namespace Grupo_E.GestionarFletero
             {
                 NuevasHDRRetirarListViews.BackColor = Color.LightGray;
                 NuevasGuiasRetirarListView.BackColor = Color.LightGray;
+                MessageBox.Show("No hay nuevas encomiendas a ser retiradas");
+
             }
+
             else
             { 
 
@@ -243,25 +247,28 @@ namespace Grupo_E.GestionarFletero
                 MessageBox.Show("Operación cancelada correctamente.");
                 this.Close();
             }
+            /*
             else
             {
                 MessageBox.Show("La operación continúa.");
             }
+            */
         }
 
 
-        //REVISAR SI EL GUARDADO ESTÁ OK ASÍ:
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
 
 
             var HDRARendir = modelo.ObtenerHDRRendicionTransportistaActual();
+            var HDRGeneradas = modelo.ObtenerHDRGeneracionPorTransportista();
 
-            if (HDRARendir.Count == 0)
+            if (HDRARendir.Count == 0 && HDRGeneradas.Count == 0)
             {
-                MessageBox.Show("No hay HDR para rendir");
+                MessageBox.Show("No hay nuevos cambios a guardar");
                 //return;
             }
+
             else
             { 
 
@@ -291,7 +298,7 @@ namespace Grupo_E.GestionarFletero
                 return; 
             }
 
-            MessageBox.Show("Cambios guardados correctamente.");
+            //MessageBox.Show("Cambios guardados correctamente.");
 
             DNIText.Text = "";
             HDRAsignadasListView.Items.Clear();
