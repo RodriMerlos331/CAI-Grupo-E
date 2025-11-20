@@ -206,6 +206,11 @@
     <Compile Include="F07_RetirarEnCD\F07_RetirarEnCDForm.Designer.cs">
       <DependentUpon>F07_RetirarEnCDForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -290,6 +295,10 @@
     <EmbeddedResource Include="F07_RetirarEnCD\F07_RetirarEnCDForm.resx">
       <DependentUpon>F07_RetirarEnCDForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -322,6 +331,8 @@
     <Content Include="Testing\Testing 2.0\07_RetirarAgencia.txt" />
     <Content Include="Testing\Testing 2.0\08_RetirarCD.txt" />
     <Content Include="Testing\Testing 2.0\09_GeneracionFactura.txt" />
+    <Content Include="Testing\Testing 2.0\10_CuentaCorriente.txt" />
+    <Content Include="Testing\Testing 2.0\11_CostosVsVentas.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

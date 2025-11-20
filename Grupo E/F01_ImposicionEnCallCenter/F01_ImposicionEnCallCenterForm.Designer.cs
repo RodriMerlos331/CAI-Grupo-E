@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F01_ImposicionEnCallCenterForm));
             this.DatosRetiroCCgrb = new System.Windows.Forms.GroupBox();
             this.LocalidadCCcmbOrigen = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.AceptarImpoCCbtn = new System.Windows.Forms.Button();
             this.CuitImpoCClbl = new System.Windows.Forms.Label();
             this.Clientegrb = new System.Windows.Forms.GroupBox();
+            this.ListadoClientesCC = new System.Windows.Forms.ComboBox();
             this.AgenciaCCrb = new System.Windows.Forms.RadioButton();
             this.CDCCrb = new System.Windows.Forms.RadioButton();
             this.ParticularCCrb = new System.Windows.Forms.RadioButton();
@@ -54,16 +56,15 @@
             this.DatosDomicilioCCtxt = new System.Windows.Forms.TextBox();
             this.CiudadDestinoCClbl = new System.Windows.Forms.Label();
             this.DatosDestinatarioCCgrb = new System.Windows.Forms.GroupBox();
+            this.DniDestinatarioTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ApellidoDestinatarioTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.NombreDestinatarioTxt = new System.Windows.Forms.TextBox();
             this.NombreDestinatariolbl = new System.Windows.Forms.Label();
             this.CentroDistribucionCCgrb = new System.Windows.Forms.GroupBox();
             this.TerminalesCCcmb = new System.Windows.Forms.ComboBox();
             this.TerminalesCClbl = new System.Windows.Forms.Label();
-            this.ListadoClientesCC = new System.Windows.Forms.ComboBox();
-            this.ApellidoDestinatarioTxt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DniDestinatarioTxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.DatosRetiroCCgrb.SuspendLayout();
             this.Clientegrb.SuspendLayout();
             this.DatosDestinoCCgrb.SuspendLayout();
@@ -123,23 +124,25 @@
             // 
             // CancelarImpoCCbtn
             // 
+            this.CancelarImpoCCbtn.BackColor = System.Drawing.Color.Pink;
             this.CancelarImpoCCbtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelarImpoCCbtn.Location = new System.Drawing.Point(792, 604);
+            this.CancelarImpoCCbtn.Location = new System.Drawing.Point(800, 604);
             this.CancelarImpoCCbtn.Name = "CancelarImpoCCbtn";
             this.CancelarImpoCCbtn.Size = new System.Drawing.Size(110, 23);
             this.CancelarImpoCCbtn.TabIndex = 39;
             this.CancelarImpoCCbtn.Text = "Cancelar";
-            this.CancelarImpoCCbtn.UseVisualStyleBackColor = true;
+            this.CancelarImpoCCbtn.UseVisualStyleBackColor = false;
             this.CancelarImpoCCbtn.Click += new System.EventHandler(this.CancelarImpoCCbtn_Click);
             // 
             // AceptarImpoCCbtn
             // 
-            this.AceptarImpoCCbtn.Location = new System.Drawing.Point(670, 604);
+            this.AceptarImpoCCbtn.BackColor = System.Drawing.Color.PaleGreen;
+            this.AceptarImpoCCbtn.Location = new System.Drawing.Point(684, 604);
             this.AceptarImpoCCbtn.Name = "AceptarImpoCCbtn";
             this.AceptarImpoCCbtn.Size = new System.Drawing.Size(110, 23);
             this.AceptarImpoCCbtn.TabIndex = 38;
             this.AceptarImpoCCbtn.Text = "Aceptar";
-            this.AceptarImpoCCbtn.UseVisualStyleBackColor = true;
+            this.AceptarImpoCCbtn.UseVisualStyleBackColor = false;
             this.AceptarImpoCCbtn.Click += new System.EventHandler(this.AceptarImpoAgenciabtn_Click);
             // 
             // CuitImpoCClbl
@@ -155,12 +158,21 @@
             // 
             this.Clientegrb.Controls.Add(this.ListadoClientesCC);
             this.Clientegrb.Controls.Add(this.CuitImpoCClbl);
+            this.Clientegrb.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Clientegrb.Location = new System.Drawing.Point(9, 11);
             this.Clientegrb.Name = "Clientegrb";
             this.Clientegrb.Size = new System.Drawing.Size(906, 75);
             this.Clientegrb.TabIndex = 34;
             this.Clientegrb.TabStop = false;
             this.Clientegrb.Text = "Cliente";
+            // 
+            // ListadoClientesCC
+            // 
+            this.ListadoClientesCC.FormattingEnabled = true;
+            this.ListadoClientesCC.Location = new System.Drawing.Point(45, 32);
+            this.ListadoClientesCC.Name = "ListadoClientesCC";
+            this.ListadoClientesCC.Size = new System.Drawing.Size(849, 21);
+            this.ListadoClientesCC.TabIndex = 2;
             // 
             // AgenciaCCrb
             // 
@@ -203,9 +215,9 @@
             this.DatosDestinoCCgrb.Controls.Add(this.ParticularCCrb);
             this.DatosDestinoCCgrb.Controls.Add(this.CDCCrb);
             this.DatosDestinoCCgrb.Controls.Add(this.AgenciaCCrb);
-            this.DatosDestinoCCgrb.Location = new System.Drawing.Point(6, 164);
+            this.DatosDestinoCCgrb.Location = new System.Drawing.Point(9, 164);
             this.DatosDestinoCCgrb.Name = "DatosDestinoCCgrb";
-            this.DatosDestinoCCgrb.Size = new System.Drawing.Size(903, 63);
+            this.DatosDestinoCCgrb.Size = new System.Drawing.Size(906, 63);
             this.DatosDestinoCCgrb.TabIndex = 32;
             this.DatosDestinoCCgrb.TabStop = false;
             this.DatosDestinoCCgrb.Text = "Datos de destino";
@@ -331,16 +343,48 @@
             this.DatosDestinatarioCCgrb.Controls.Add(this.label2);
             this.DatosDestinatarioCCgrb.Controls.Add(this.NombreDestinatarioTxt);
             this.DatosDestinatarioCCgrb.Controls.Add(this.NombreDestinatariolbl);
-            this.DatosDestinatarioCCgrb.Location = new System.Drawing.Point(17, 429);
+            this.DatosDestinatarioCCgrb.Location = new System.Drawing.Point(9, 429);
             this.DatosDestinatarioCCgrb.Name = "DatosDestinatarioCCgrb";
-            this.DatosDestinatarioCCgrb.Size = new System.Drawing.Size(477, 76);
+            this.DatosDestinatarioCCgrb.Size = new System.Drawing.Size(485, 76);
             this.DatosDestinatarioCCgrb.TabIndex = 44;
             this.DatosDestinatarioCCgrb.TabStop = false;
             this.DatosDestinatarioCCgrb.Text = "Datos de destinatario";
             // 
+            // DniDestinatarioTxt
+            // 
+            this.DniDestinatarioTxt.Location = new System.Drawing.Point(327, 50);
+            this.DniDestinatarioTxt.Name = "DniDestinatarioTxt";
+            this.DniDestinatarioTxt.Size = new System.Drawing.Size(124, 20);
+            this.DniDestinatarioTxt.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(329, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "DNI";
+            // 
+            // ApellidoDestinatarioTxt
+            // 
+            this.ApellidoDestinatarioTxt.Location = new System.Drawing.Point(165, 50);
+            this.ApellidoDestinatarioTxt.Name = "ApellidoDestinatarioTxt";
+            this.ApellidoDestinatarioTxt.Size = new System.Drawing.Size(124, 20);
+            this.ApellidoDestinatarioTxt.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(168, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Apellido";
+            // 
             // NombreDestinatarioTxt
             // 
-            this.NombreDestinatarioTxt.Location = new System.Drawing.Point(3, 50);
+            this.NombreDestinatarioTxt.Location = new System.Drawing.Point(10, 47);
             this.NombreDestinatarioTxt.Name = "NombreDestinatarioTxt";
             this.NombreDestinatarioTxt.Size = new System.Drawing.Size(124, 20);
             this.NombreDestinatarioTxt.TabIndex = 3;
@@ -348,7 +392,7 @@
             // NombreDestinatariolbl
             // 
             this.NombreDestinatariolbl.AutoSize = true;
-            this.NombreDestinatariolbl.Location = new System.Drawing.Point(6, 30);
+            this.NombreDestinatariolbl.Location = new System.Drawing.Point(10, 30);
             this.NombreDestinatariolbl.Name = "NombreDestinatariolbl";
             this.NombreDestinatariolbl.Size = new System.Drawing.Size(44, 13);
             this.NombreDestinatariolbl.TabIndex = 0;
@@ -383,51 +427,12 @@
             this.TerminalesCClbl.TabIndex = 10;
             this.TerminalesCClbl.Text = "Terminales (Centros de distribución) en localidad";
             // 
-            // ListadoClientesCC
-            // 
-            this.ListadoClientesCC.FormattingEnabled = true;
-            this.ListadoClientesCC.Location = new System.Drawing.Point(45, 32);
-            this.ListadoClientesCC.Name = "ListadoClientesCC";
-            this.ListadoClientesCC.Size = new System.Drawing.Size(849, 21);
-            this.ListadoClientesCC.TabIndex = 2;
-            // 
-            // ApellidoDestinatarioTxt
-            // 
-            this.ApellidoDestinatarioTxt.Location = new System.Drawing.Point(165, 50);
-            this.ApellidoDestinatarioTxt.Name = "ApellidoDestinatarioTxt";
-            this.ApellidoDestinatarioTxt.Size = new System.Drawing.Size(124, 20);
-            this.ApellidoDestinatarioTxt.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(168, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Apellido";
-            // 
-            // DniDestinatarioTxt
-            // 
-            this.DniDestinatarioTxt.Location = new System.Drawing.Point(327, 50);
-            this.DniDestinatarioTxt.Name = "DniDestinatarioTxt";
-            this.DniDestinatarioTxt.Size = new System.Drawing.Size(124, 20);
-            this.DniDestinatarioTxt.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(329, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "DNI";
-            // 
             // F01_ImposicionEnCallCenterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 634);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(922, 639);
             this.Controls.Add(this.CentroDistribucionCCgrb);
             this.Controls.Add(this.BultoCCgrb);
             this.Controls.Add(this.ParticularCCgrb);
@@ -439,6 +444,7 @@
             this.Controls.Add(this.DestinoCCgrb);
             this.Controls.Add(this.DatosDestinoCCgrb);
             this.Controls.Add(this.DatosRetiroCCgrb);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "F01_ImposicionEnCallCenterForm";
             this.Text = "Imposicion En Call Center";
