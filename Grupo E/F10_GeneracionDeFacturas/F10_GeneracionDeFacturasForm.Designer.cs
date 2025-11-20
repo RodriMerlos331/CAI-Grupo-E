@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F10_GeneracionDeFacturasForm));
             this.listViewFactura = new System.Windows.Forms.ListView();
             this.colNroTracking = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colFecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,13 +46,14 @@
             this.colExtraRetiro,
             this.colExtraEntrega,
             this.colAgencia});
-            this.listViewFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.listViewFactura.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewFactura.FullRowSelect = true;
             this.listViewFactura.GridLines = true;
             this.listViewFactura.HideSelection = false;
-            this.listViewFactura.Location = new System.Drawing.Point(30, 166);
+            this.listViewFactura.Location = new System.Drawing.Point(27, 133);
+            this.listViewFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewFactura.Name = "listViewFactura";
-            this.listViewFactura.Size = new System.Drawing.Size(1210, 329);
+            this.listViewFactura.Size = new System.Drawing.Size(1076, 264);
             this.listViewFactura.TabIndex = 5;
             this.listViewFactura.UseCompatibleStateImageBehavior = false;
             this.listViewFactura.View = System.Windows.Forms.View.Details;
@@ -89,9 +91,11 @@
             // 
             // btnFacturar
             // 
-            this.btnFacturar.Location = new System.Drawing.Point(729, 642);
+            this.btnFacturar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturar.Location = new System.Drawing.Point(648, 514);
+            this.btnFacturar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFacturar.Name = "btnFacturar";
-            this.btnFacturar.Size = new System.Drawing.Size(254, 43);
+            this.btnFacturar.Size = new System.Drawing.Size(226, 34);
             this.btnFacturar.TabIndex = 6;
             this.btnFacturar.Text = "Generar factura";
             this.btnFacturar.UseVisualStyleBackColor = true;
@@ -99,9 +103,11 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(988, 642);
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(878, 514);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(254, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(226, 34);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -113,29 +119,31 @@
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(30, 25);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(27, 20);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(1212, 109);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1077, 87);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar cliente";
             // 
             // txtCUIT
             // 
-            this.txtCUIT.Location = new System.Drawing.Point(80, 59);
-            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCUIT.Location = new System.Drawing.Point(71, 47);
+            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(703, 26);
+            this.txtCUIT.Size = new System.Drawing.Size(625, 30);
             this.txtCUIT.TabIndex = 4;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(1012, 55);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(900, 47);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(190, 35);
+            this.btnLimpiar.Size = new System.Drawing.Size(172, 30);
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar filtro";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -143,10 +151,11 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(810, 55);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(720, 47);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(194, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(172, 30);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -155,34 +164,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 32);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.Size = new System.Drawing.Size(48, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "CUIT";
             // 
             // lblSumaImporte
             // 
             this.lblSumaImporte.AutoSize = true;
-            this.lblSumaImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblSumaImporte.Location = new System.Drawing.Point(30, 510);
+            this.lblSumaImporte.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSumaImporte.Location = new System.Drawing.Point(27, 408);
             this.lblSumaImporte.Name = "lblSumaImporte";
-            this.lblSumaImporte.Size = new System.Drawing.Size(98, 25);
+            this.lblSumaImporte.Size = new System.Drawing.Size(109, 31);
             this.lblSumaImporte.TabIndex = 9;
             this.lblSumaImporte.Text = "Total: $0";
             this.lblSumaImporte.Click += new System.EventHandler(this.lblSumaImporte_Click);
             // 
             // F10_GeneracionDeFacturasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 702);
+            this.ClientSize = new System.Drawing.Size(1131, 562);
             this.Controls.Add(this.lblSumaImporte);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnFacturar);
             this.Controls.Add(this.listViewFactura);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "F10_GeneracionDeFacturasForm";
             this.Text = "Generación de facturas";
             this.Load += new System.EventHandler(this.GeneracionDeFacturas_Load);
