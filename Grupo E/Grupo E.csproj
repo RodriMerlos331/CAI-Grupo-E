@@ -319,6 +319,9 @@
     <Content Include="Testing\Testing 2.0\04_EncomiendasNoEntregadas.txt" />
     <Content Include="Testing\Testing 2.0\05_MejorasUI.txt" />
     <Content Include="Testing\Testing 2.0\06_EntregarYRecepcionarEncomeindaEnAgencia03.txt" />
+    <Content Include="Testing\Testing 2.0\07_RetirarAgencia.txt" />
+    <Content Include="Testing\Testing 2.0\08_RetirarCD.txt" />
+    <Content Include="Testing\Testing 2.0\09_GeneracionFactura.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
