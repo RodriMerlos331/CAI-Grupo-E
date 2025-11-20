@@ -321,6 +321,26 @@ namespace Grupo_E.GestionarFletero
             }
 
 
+            //Actualizar estados de encomiendas para HDR de entrega no cumplidas
+            /*
+            foreach (var hdr in HDRRendicion.Where(h => h.Tipo == HDR.TipoHDR.Entrega && !h.Cumplida))
+            {
+                foreach (var guia in hdr.Guias)
+                {
+                    var encomienda = EncomiendaAlmacen.Encomienda
+                        .FirstOrDefault(e => e.Tracking == guia.CodigoGuia);
+
+                    if (encomienda == null) continue;
+
+                    //SAQUÉ el HISTORIAL
+
+                    encomienda.Estado = EstadoEncomiendaEnum.NoEntregada;
+
+
+                }
+            }
+            */
+
             //Actualizar estados de encomiendas para HDR de Retiro Generadas
             foreach (var hdr in HDRGeneracion.Where(h => h.Tipo == HDR.TipoHDR.Retiro))
             {
