@@ -103,7 +103,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 AgenciaOrigen = null,
                 DatosRetiroADomicilio = null,
 
-                RecorridoPlanificado = new List<ParadaPlanificada> (),
+                //RecorridoPlanificado = new List<ParadaPlanificada> (),
                 //por ahora vacío, pero debería generarse la ruta real, quizas desde ObtenerRuta?
 
                 Facturada = false,
@@ -125,7 +125,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
             var ruta = ObtenerRuta( nuevaEncomienda.CodCentroDistribucionOrigen, nuevaEncomienda.CodCentroDistribucionDestino);
 
-            /*
+            
             if (ruta == null)
             {
                 MessageBox.Show(
@@ -134,7 +134,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
                 return;
             }
-            */
+            
 
             nuevaEncomienda.RecorridoPlanificado = ruta;
 
@@ -210,7 +210,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 AgenciaOrigen = null,
                 DatosRetiroADomicilio = null,
 
-                RecorridoPlanificado = new List<ParadaPlanificada>(),
+                //RecorridoPlanificado = new List<ParadaPlanificada>(),
 
                 Facturada = false,
 
@@ -228,6 +228,21 @@ namespace Grupo_E.F03_ImposicionEnCD
                 incluirRetiro: false,
                 incluirEntrega: true,
                 incluirAgencia: false);
+
+            var ruta = ObtenerRuta(nuevaEncomienda.CodCentroDistribucionOrigen, nuevaEncomienda.CodCentroDistribucionDestino);
+
+
+            if (ruta == null)
+            {
+                MessageBox.Show(
+                    $"No existe una ruta posible entre {nuevaEncomienda.CodCentroDistribucionOrigen} y {nuevaEncomienda.CodCentroDistribucionDestino}"
+                );
+
+                return;
+            }
+
+
+            nuevaEncomienda.RecorridoPlanificado = ruta;
 
             EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
 
@@ -306,7 +321,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 DatosRetiroADomicilio = null,
 
                 //ejemplo cualquiera, en este caso la parada es retiro y 5 Grutas ??, pero debería generarse la ruta real, quizas desde ObtenerRuta?
-                RecorridoPlanificado = new List<ParadaPlanificada>(),
+                //RecorridoPlanificado = new List<ParadaPlanificada>(),
 
                 Facturada = false,
 
@@ -327,6 +342,21 @@ namespace Grupo_E.F03_ImposicionEnCD
                 incluirRetiro: false,
                 incluirEntrega: false,
                 incluirAgencia: true);
+
+            var ruta = ObtenerRuta(nuevaEncomienda.CodCentroDistribucionOrigen, nuevaEncomienda.CodCentroDistribucionDestino);
+
+
+            if (ruta == null)
+            {
+                MessageBox.Show(
+                    $"No existe una ruta posible entre {nuevaEncomienda.CodCentroDistribucionOrigen} y {nuevaEncomienda.CodCentroDistribucionDestino}"
+                );
+
+                return;
+            }
+
+
+            nuevaEncomienda.RecorridoPlanificado = ruta;
 
             EncomiendaAlmacen.Encomienda.Add(nuevaEncomienda);
 
@@ -351,10 +381,9 @@ namespace Grupo_E.F03_ImposicionEnCD
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        
+
         public List<ParadaPlanificada> ObtenerRuta(string origen, string destino)
         {
-
             var visitados = new List<string>();
             return BuscarRutaRec(origen, destino, visitados);
         }
@@ -373,18 +402,17 @@ namespace Grupo_E.F03_ImposicionEnCD
             foreach (var servicio in servicios)
             {
                 var paradas = servicio.Paradas;
+                int idxOrigen = paradas.FindIndex(p => p.CodigoCD == origen);
 
-                var idxOrigen = paradas.FindIndex(p => p.CodigoCD == origen);
-
-              /*
-                if (idxOrigen == -1)
+                if (idxOrigen < 0)
                     continue;
-              */
 
-                for (int i = idxOrigen + 1; i < paradas.Count; i++)
+                // 🚍 Consolidar tramo dentro del mismo servicio
+                for (int idxDestino = paradas.Count - 1; idxDestino > idxOrigen; idxDestino--)
                 {
-                    var paradaDestino = paradas[i].CodigoCD;
+                    string paradaDestino = paradas[idxDestino].CodigoCD;
 
+                    // Caso 1: Lo encontramos directo
                     if (paradaDestino == destino)
                     {
                         return new List<ParadaPlanificada>
@@ -398,29 +426,28 @@ namespace Grupo_E.F03_ImposicionEnCD
                 };
                     }
 
-                   
-                    var rutaResto = BuscarRutaRec(paradaDestino, destino, visitados);
+                    // Caso 2: No es el destino pero podemos seguir desde ahí
+                    var copiaVisitados = new List<string>(visitados);
+                    var rutaResto = BuscarRutaRec(paradaDestino, destino, copiaVisitados);
 
                     if (rutaResto != null)
                     {
-                        var tramoActual = new ParadaPlanificada
+                        rutaResto.Insert(0, new ParadaPlanificada
                         {
                             ServicioId = servicio.ServicioID,
                             CodigoCDOrigen = origen,
                             CodigoCDDestino = paradaDestino
-                        };
+                        });
 
-                        var ruta = new List<ParadaPlanificada>();
-                        ruta.Add(tramoActual);
-                        ruta.AddRange(rutaResto);
-
-                        return ruta;
+                        return rutaResto;
                     }
                 }
             }
 
             return null;
         }
+
+
 
     }
 }

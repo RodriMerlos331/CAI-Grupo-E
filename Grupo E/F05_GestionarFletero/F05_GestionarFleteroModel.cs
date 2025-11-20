@@ -245,7 +245,22 @@ namespace Grupo_E.GestionarFletero
                         encomienda.GenerarFactura(tarifario, incluirRetiro, incluirEntrega, incluirAgencia);
                     }
 
-                    encomienda.RecorridoPlanificado = new List<ParadaPlanificada>();
+                    //encomienda.RecorridoPlanificado = new List<ParadaPlanificada>();
+                    var ruta = ObtenerRuta(encomienda.CodCentroDistribucionOrigen, encomienda.CodCentroDistribucionDestino);
+
+
+                    //revisar pq esto haría q no se guarde nada ??
+                    if (ruta == null)
+                    {
+                        MessageBox.Show(
+                            $"No existe una ruta posible entre {encomienda.CodCentroDistribucionOrigen} y {encomienda.CodCentroDistribucionDestino}"
+                        );
+
+                        return false;
+                    }
+
+
+                    encomienda.RecorridoPlanificado = ruta;
 
                     encomienda.HistorialCambios.Add(new Historial
                     {
@@ -371,6 +386,72 @@ namespace Grupo_E.GestionarFletero
         }
 
 
+        public List<ParadaPlanificada> ObtenerRuta(string origen, string destino)
+        {
+            var visitados = new List<string>();
+            return BuscarRutaRec(origen, destino, visitados);
+        }
+
+        private List<ParadaPlanificada> BuscarRutaRec(string origen, string destino, List<string> visitados)
+        {
+            if (visitados.Contains(origen))
+                return null;
+
+            visitados.Add(origen);
+
+            var servicios = OmnibusAlmacen.Omnibus
+                .Where(o => o.Paradas.Any(p => p.CodigoCD == origen))
+                .ToList();
+
+            foreach (var servicio in servicios)
+            {
+                var paradas = servicio.Paradas;
+                int idxOrigen = paradas.FindIndex(p => p.CodigoCD == origen);
+
+                if (idxOrigen < 0)
+                    continue;
+
+                // 🚍 Consolidar tramo dentro del mismo servicio
+                for (int idxDestino = paradas.Count - 1; idxDestino > idxOrigen; idxDestino--)
+                {
+                    string paradaDestino = paradas[idxDestino].CodigoCD;
+
+                    // Caso 1: Lo encontramos directo
+                    if (paradaDestino == destino)
+                    {
+                        return new List<ParadaPlanificada>
+                {
+                    new ParadaPlanificada
+                    {
+                        ServicioId = servicio.ServicioID,
+                        CodigoCDOrigen = origen,
+                        CodigoCDDestino = destino
+                    }
+                };
+                    }
+
+                    // Caso 2: No es el destino pero podemos seguir desde ahí
+                    var copiaVisitados = new List<string>(visitados);
+                    var rutaResto = BuscarRutaRec(paradaDestino, destino, copiaVisitados);
+
+                    if (rutaResto != null)
+                    {
+                        rutaResto.Insert(0, new ParadaPlanificada
+                        {
+                            ServicioId = servicio.ServicioID,
+                            CodigoCDOrigen = origen,
+                            CodigoCDDestino = paradaDestino
+                        });
+
+                        return rutaResto;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+
         private HDR.TipoHDR TipoEquivalenteA(TipoHDREnum tipo)
         {
             // Mapear TipoHDREnum -> HDR.TipoHDR
@@ -417,6 +498,8 @@ namespace Grupo_E.GestionarFletero
         {
             return tipo == HDR.TipoHDR.Entrega ? TipoHDREnum.Entrega : TipoHDREnum.Retiro;
         }
+
+
 
 
     }
