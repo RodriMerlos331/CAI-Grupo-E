@@ -192,11 +192,32 @@ namespace Grupo_E.ImposicionEnCallCenter
                 return;
             }
 
-            if (string.IsNullOrEmpty(DatosDestinatarioCCtxt.Text))
+            if (string.IsNullOrEmpty(NombreDestinatarioTxt.Text))
             {
-                MessageBox.Show("Debe ingresar un los datos del destinatario.");
+                MessageBox.Show("Debe ingresar el nombre del destinatario.");
                 return;
             }
+
+            if(string.IsNullOrEmpty(ApellidoDestinatarioTxt.Text))
+            {
+                MessageBox.Show("Debe ingresar el Apellido del destinatario.");
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(DniDestinatarioTxt.Text))
+            {
+                MessageBox.Show("Debe ingresar el DNI del destinatario.");
+                return;
+            }
+
+            if(!int.TryParse(DniDestinatarioTxt.Text, out int dni) || dni <= 0)
+            {
+                MessageBox.Show("El DNI del destinatario debe ser un número válido mayor a cero.");
+                return;
+            }
+
+
 
             if (string.IsNullOrEmpty(DatosRetiroCCtxt.Text))
             {
@@ -222,7 +243,9 @@ namespace Grupo_E.ImposicionEnCallCenter
                     cuit.ToString(),
                     TerminalesCCcmb.SelectedItem?.ToString(),
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
-                    DatosDestinatarioCCtxt.Text,
+                    NombreDestinatarioTxt.Text,
+                    ApellidoDestinatarioTxt.Text,
+                    dni,
                     DatosRetiroCCtxt.Text,
                     LocalidadCCcmbOrigen.SelectedItem.ToString()
                 );
@@ -243,7 +266,9 @@ namespace Grupo_E.ImposicionEnCallCenter
                     cuit.ToString(),
                     DatosDomicilioCCtxt.Text,
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
-                    DatosDestinatarioCCtxt.Text,
+                    NombreDestinatarioTxt.Text,
+                    ApellidoDestinatarioTxt.Text,
+                    dni,
                     DatosRetiroCCtxt.Text,
                     LocalidadCCcmb.SelectedItem.ToString(),
                     LocalidadCCcmbOrigen.SelectedItem.ToString()
@@ -263,7 +288,9 @@ namespace Grupo_E.ImposicionEnCallCenter
                     cuit.ToString(),
                     AgenciasCCcmb.SelectedItem?.ToString(),
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
-                    DatosDestinatarioCCtxt.Text,
+                   NombreDestinatarioTxt.Text,
+                    ApellidoDestinatarioTxt.Text,
+                    dni,
                     DatosRetiroCCtxt.Text,
                     LocalidadCCcmbOrigen.SelectedItem.ToString()
                 );
@@ -294,7 +321,11 @@ namespace Grupo_E.ImposicionEnCallCenter
 
             TamanoBultoCCcmb.SelectedIndex = -1;
 
-            DatosDestinatarioCCtxt.Clear();
+            NombreDestinatarioTxt.Clear();
+
+            ApellidoDestinatarioTxt.Clear();
+
+            DniDestinatarioTxt.Clear();
 
             DatosRetiroCCtxt.Clear();
         }

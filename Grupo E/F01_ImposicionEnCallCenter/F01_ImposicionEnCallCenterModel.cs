@@ -64,7 +64,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
              .Max();
 
 
-        public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario, string datosRetiro, string localidadOrigen)
+        public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string nombreD , string apellidoD, int dniD, string datosRetiro, string localidadOrigen)
         {
 
             var codLocalidadOrigen = LocalidadAlmacen.Localidad
@@ -95,10 +95,10 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                 FechaEntrega = null,
 
                 TipoBulto = tipoBulto,
-                NombreDestinatario = datosDestinatario,
-                ApellidoDestinatario = datosDestinatario,
+                NombreDestinatario = nombreD,
+                ApellidoDestinatario = apellidoD,
                 DireccionDestinatario = null,
-                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                DNIDestinatario = dniD,
 
                 CodCDActual = null,
                 CodLocalidadOrigen = codLocalidadOrigen,
@@ -132,13 +132,13 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                 "CUIT del cliente: " + nuevaEncomienda.CUITCliente + "\n" +
                 "Centro de distribución destino: " + centroDistribucionDestino + "\n" +
                 "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
-                "Datos del destinatario: " + datosDestinatario + "\n\n";
+                "Nombre del destinatario: " + nombreD + "\n\n";
 
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario, string datosRetiro, string localidadDestino, string localidadOrigen)
+        public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string nombreD, string apellidoD, int dniD, string datosRetiro, string localidadDestino, string localidadOrigen)
         {
 
             var codCentroDistribucionDestino = LocalidadAlmacen.Localidad
@@ -169,10 +169,10 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                 FechaEntrega = null, //  no entregada
 
                 TipoBulto = tipoBulto,
-                NombreDestinatario = datosDestinatario,
-                ApellidoDestinatario = datosDestinatario,
+                NombreDestinatario = nombreD,
+                ApellidoDestinatario = apellidoD,
                 DireccionDestinatario = direccionParticular,
-                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                DNIDestinatario = dniD,
 
                 CodCDActual = null,
                 CodLocalidadOrigen = codLocalidadOrigen,
@@ -207,13 +207,13 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                 "Direccion particular destino: " + nuevaEncomienda.DireccionDestinatario + "\n" +
                 "Dirección particular origen: " + nuevaEncomienda.DatosRetiroADomicilio + "\n" +
                 "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
-                "Datos del destinatario: " + datosDestinatario + "\n\n";
+                "Nombre del destinatario: " + nombreD + "\n\n";
 
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario, string datosRetiro, string localidadOrigen)
+        public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string nombreD, string apellidoD, int dniD, string datosRetiro, string localidadOrigen)
         {
 
             var codLocalidadOrigen = LocalidadAlmacen.Localidad
@@ -246,10 +246,10 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                 FechaEntrega = null,
 
                 TipoBulto = tipoBulto,
-                NombreDestinatario = datosDestinatario,
-                ApellidoDestinatario = datosDestinatario,
+                NombreDestinatario = nombreD,
+                ApellidoDestinatario = apellidoD,
                 DireccionDestinatario = null,
-                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                DNIDestinatario = dniD,
 
                 CodCDActual = null,
                 CodLocalidadOrigen = codLocalidadOrigen,
@@ -282,7 +282,7 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
                 "CUIT del cliente: " + nuevaEncomienda.CUITCliente + "\n" +
                 "Agencia destino: " + nuevaEncomienda.CodCentroDistribucionDestino + "\n" +
                 "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
-                "Datos del destinatario: " + datosDestinatario + "\n\n";
+                "Nombre del destinatario: " + nombreD + "\n\n";
 
 
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
