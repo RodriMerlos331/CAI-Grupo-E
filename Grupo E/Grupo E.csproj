@@ -296,10 +296,10 @@
     <Content Include="Testing\02_RetiroDosEncomiendasMismoDOM.txt" />
     <Content Include="Testing\06_RecorridoOmnibusRetiroLaPlataSanMartin.txt" />
     <Content Include="Testing\08_GestionarFleteroDosEncomiendasRetirarMismaAgencia.txt" />
-    <Content Include="Testing\11_EntregarYRecepcionarEncomeindaEnAgencia02.txt" />
+    <Content Include="Testing\18_EntregarYRecepcionarEncomeindaEnAgencia02.txt" />
     <Content Include="Testing\11_ConsultarEstadoCuentaCorriente.txt" />
     <Content Include="Testing\15_ConsultarCostosYVentas.txt" />
-    <Content Include="Testing\11_EntregarYRecepcionarEncomeindaEnAgencia01.txt" />
+    <Content Include="Testing\17_EntregarYRecepcionarEncomeindaEnAgencia01.txt" />
     <Content Include="Testing\14_ConsultarEstadoDeCuentasCorrientes.txt" />
     <Content Include="Testing\13_GeneraciónDeFacturas.txt" />
     <Content Include="Testing\07_GeneracioRendicionHDRFletero_Neuquen.txt" />
@@ -310,7 +310,7 @@
     <Content Include="Testing\00_PlanTesting.txt" />
     <Content Include="Testing\09_RetirarEnAgencia.txt" />
     <Content Include="Testing\10_RetirarEnCD.txt" />
-    <Content Include="Testing\11_ConsultarEstadoEncomienda.txt" />
+    <Content Include="Testing\12_ConsultarEstadoEncomienda.txt" />
     <Content Include="Testing\16_CostosVsVentas.txt" />
     <Content Include="Testing\Testing 2.0\00_ValidarVerificacionesOmnibus.txt" />
     <Content Include="Testing\Testing 2.0\01_ValidarVerificacionesFletero.txt" />
@@ -318,7 +318,7 @@
     <Content Include="Testing\Testing 2.0\03_Ruteo.txt" />
     <Content Include="Testing\Testing 2.0\04_EncomiendasNoEntregadas.txt" />
     <Content Include="Testing\Testing 2.0\05_MejorasUI.txt" />
-    <Content Include="Testing\Testing 2.0\11_EntregarYRecepcionarEncomeindaEnAgencia03.txt" />
+    <Content Include="Testing\Testing 2.0\06_EntregarYRecepcionarEncomeindaEnAgencia03.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
