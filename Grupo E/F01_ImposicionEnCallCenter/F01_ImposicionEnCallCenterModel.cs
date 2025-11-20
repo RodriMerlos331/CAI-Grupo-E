@@ -21,7 +21,12 @@ namespace Grupo_E.F01_ImposicionEnCallCenter
 
 
 
-        public Dictionary<string, string> clientes => ClienteAlmacen.Cliente.ToDictionary(c => c.CUIT, c => c.Domicilio);
+        //public Dictionary<string, string> clientes => ClienteAlmacen.Cliente.ToDictionary(c => c.CUIT, c => c.RazonSocial);
+
+        public List<string> ClientesLista =>
+            ClienteAlmacen.Cliente
+                .Select(c => $"{c.CUIT} , {c.RazonSocial}")
+                .ToList();
 
 
 

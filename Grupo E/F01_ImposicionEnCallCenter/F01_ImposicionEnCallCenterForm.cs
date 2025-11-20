@@ -52,6 +52,14 @@ namespace Grupo_E.ImposicionEnCallCenter
                 TamanoBultoCCcmb.Items.Add(tamaño);
             }
 
+            foreach (string cliente in modelo.ClientesLista)
+            {
+                ListadoClientesCC.Items.Add(cliente);
+            }
+
+            ListadoClientesCC.DropDownStyle = ComboBoxStyle.DropDown;
+            ListadoClientesCC.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            ListadoClientesCC.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             //Esto lo hizo copilot y no termino de entender: Preguntar
             ParticularCCrb.CheckedChanged += ParticularCCrb_CheckedChanged;
@@ -132,21 +140,39 @@ namespace Grupo_E.ImposicionEnCallCenter
 
         private void AceptarImpoAgenciabtn_Click(object sender, EventArgs e)
         {
-            
 
+
+            if (ListadoClientesCC.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un cliente");
+                return;
+            }
+
+            /*
             if (string.IsNullOrEmpty(CUITClienteCCtxt.Text))
             {
                 MessageBox.Show("El CUIT no puede estar vacío");
                 return;
-            }
+            }*/
 
             //Chequeo si existe cliente:
 
+            /*
             if (!modelo.clientes.ContainsKey(CUITClienteCCtxt.Text))
             {
                 MessageBox.Show("El CUIT ingresado no corresponde a un cliente registrado");
                 return;
             }
+            */
+
+
+
+            if (ListadoClientesCC.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un cliente de la lista.");
+                return;
+            }
+
 
             if (!CDCCrb.Checked && !ParticularCCrb.Checked && !AgenciaCCrb.Checked)
             {
@@ -178,6 +204,8 @@ namespace Grupo_E.ImposicionEnCallCenter
                 return;
             }
 
+            var clienteSeleccionado = ListadoClientesCC.SelectedItem?.ToString();
+            var cuit = clienteSeleccionado?.Split(',')[0].Trim();
 
             if (CDCCrb.Checked)
             {
@@ -187,8 +215,11 @@ namespace Grupo_E.ImposicionEnCallCenter
                     return;
                 }
 
+                
+
                 modelo.ImposicionConDestinoACD(
-                    CUITClienteCCtxt.Text,
+                    //CUITClienteCCtxt.Text,
+                    cuit.ToString(),
                     TerminalesCCcmb.SelectedItem?.ToString(),
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
                     DatosDestinatarioCCtxt.Text,
@@ -209,7 +240,7 @@ namespace Grupo_E.ImposicionEnCallCenter
                 }
 
                 modelo.ImposicionDomicilioParticular(
-                    CUITClienteCCtxt.Text,
+                    cuit.ToString(),
                     DatosDomicilioCCtxt.Text,
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
                     DatosDestinatarioCCtxt.Text,
@@ -229,7 +260,7 @@ namespace Grupo_E.ImposicionEnCallCenter
                 }
 
                 modelo.ImposicionEnAgencia(
-                    CUITClienteCCtxt.Text,
+                    cuit.ToString(),
                     AgenciasCCcmb.SelectedItem?.ToString(),
                     TamanoBultoCCcmb.SelectedItem?.ToString(),
                     DatosDestinatarioCCtxt.Text,
@@ -244,7 +275,7 @@ namespace Grupo_E.ImposicionEnCallCenter
 
         private void LimpiarCampos()
         {
-            CUITClienteCCtxt.Clear();
+            ListadoClientesCC.SelectedIndex = -1;
 
             LocalidadCCcmb.SelectedIndex = -1;
 

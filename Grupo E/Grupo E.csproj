@@ -317,6 +317,7 @@
     <Content Include="Testing\Testing 2.0\02_ValidarVerificacionesImposicion.txt" />
     <Content Include="Testing\Testing 2.0\03_Ruteo.txt" />
     <Content Include="Testing\Testing 2.0\04_EncomiendasNoEntregadas.txt" />
+    <Content Include="Testing\Testing 2.0\05_MejorasUI.txt" />
     <Content Include="Testing\Testing 2.0\11_EntregarYRecepcionarEncomeindaEnAgencia03.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

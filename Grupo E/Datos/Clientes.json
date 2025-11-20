@@ -1,30 +1,37 @@
 [
   {
     "CUIT": "30-19283746-4",
-    "Domicilio": "Av. Corrientes 4500, CABA"
+    "Domicilio": "Av. Corrientes 4500, CABA",
+      "RazonSocial": "Librería El Ateneo SRL"
   },
   {
     "CUIT": "30-87651234-0",
-    "Domicilio": "Bv. San Juan 1200, Córdoba Capital"
+    "Domicilio": "Bv. San Juan 1200, Córdoba Capital",
+    "RazonSocial": "Distribuidor Bebidas SA"
   },
   {
     "CUIT": "20-99887766-5",
-    "Domicilio": "Av. 25 de Mayo 620, Corrientes Capital"
+    "Domicilio": "Av. 25 de Mayo 620, Corrientes Capital",
+    "RazonSocial": "Juguetería Patito Feo SRL"
   },
   {
     "CUIT": "27-38951233-5",
-    "Domicilio": "Av. Olascoaga 750, Neuquén Capital"
+    "Domicilio": "Av. Olascoaga 750, Neuquén Capital",
+    "RazonSocial": "Vinoteca Tuntun SRL"
   },
   {
     "CUIT": "30-55555555-9",
-    "Domicilio": "Av. San Martín 100, San Carlos de Bariloche"
+    "Domicilio": "Av. San Martín 100, San Carlos de Bariloche",
+    "RazonSocial": "Camisas y camisones SA"
   },
   {
     "CUIT": "23-65432109-8",
-    "Domicilio": "Calle Belgrano 210, San Miguel de Tucumán"
+    "Domicilio": "Calle Belgrano 210, San Miguel de Tucumán",
+    "RazonSocial": "Mardigraf SRL"
   },
   {
     "CUIT": "20-45651288-8",
-    "Domicilio": "Av. 7 y 50, La Plata"
+    "Domicilio": "Av. 7 y 50, La Plata",
+    "RazonSocial": "El osito Azul SA"
   }
 ]
