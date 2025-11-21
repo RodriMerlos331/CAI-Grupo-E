@@ -366,17 +366,17 @@
     <Content Include="Testing\10_RetirarEnCD.txt" />
     <Content Include="Testing\12_ConsultarEstadoEncomienda.txt" />
     <Content Include="Testing\16_CostosVsVentas.txt" />
-    <Content Include="Testing\Testing 2.0\00_ValidarVerificacionesOmnibus.txt" />
-    <Content Include="Testing\Testing 2.0\01_ValidarVerificacionesFletero.txt" />
-    <Content Include="Testing\Testing 2.0\02_AdmisionRuteo.txt" />
-    <Content Include="Testing\Testing 2.0\03_TESTINGINTEGRALCONRUTEO.txt" />
-    <Content Include="Testing\Testing 2.0\05_MejorasEnEstaVersion.txt" />
-    <Content Include="Testing\Testing 2.0\06_EntregarYRecepcionarEncomeindaEnAgencia03.txt" />
-    <Content Include="Testing\Testing 2.0\07_RetirarAgencia.txt" />
-    <Content Include="Testing\Testing 2.0\08_RetirarCD.txt" />
-    <Content Include="Testing\Testing 2.0\09_GeneracionFactura.txt" />
-    <Content Include="Testing\Testing 2.0\10_CuentaCorriente.txt" />
-    <Content Include="Testing\Testing 2.0\11_CostosVsVentas.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\00_ValidarVerificacionesOmnibus.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\01_ValidarVerificacionesFletero.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\02_AdmisionRuteo.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\03_TESTINGINTEGRALCONRUTEO.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\05_MejorasEnEstaVersion.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\06_EntregarYRecepcionarEncomeindaEnAgencia03.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\07_RetirarAgencia.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\08_RetirarCD.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\09_GeneracionFactura.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\10_CuentaCorriente.txt" />
+    <Content Include="Testing\Testing y mejoras V 2.0\11_CostosVsVentas.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
