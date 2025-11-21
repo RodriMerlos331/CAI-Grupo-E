@@ -1,6 +1,5 @@
 ---Caso Feliz
 
-
 1- Pantalla Costos Vs Ventas
 
 	1- Poner CUIT: 30-65478912-3
@@ -63,58 +62,3 @@ Dentro de Omnibus.json buscar 30-65478912-3 y servicios dentro de la fecha busca
       "PrecioTotalEncomienda": 9600.0
     }
 
----Caso de prueba 1 – CUIT inexistente
-
-1- Pantalla Costos Vs Ventas
-
-	1- Poner CUIT: 30-00000000-0
-    2- Poner Fecha desde: 01/10/2025
-    3- Poner Fecha hasta: 31/10/2025
-    4- Tocar boton Buscar
-
-2- Te muestra:
-
-    1- Mensaje de error: 
-    "No se encontró ninguna empresa de larga distancia con el CUIT ingresado."
-    2- Tocar boton Aceptar
-
-3- Termina el programa 
-
-    1- Tocar boton Salir
-
----Caso de prueba 2 – Sin CUIT 
-
-1- Pantalla Costos Vs Ventas
-
-    1- Poner Fecha desde: 01/10/2025
-    2- Poner Fecha hasta: 31/10/2025
-    3- Tocar boton Buscar
-
-2- Te muestra:
-
-    1- Mensaje de error: 
-    "Debe ingresar un CUIT."
-    2- Tocar boton Aceptar
-
-3- Termina el programa 
-
-    1- Tocar boton Salir
-
----Caso de prueba 3 – Fecha Desde mayor que Fecha Hasta
-
-1- Pantalla Estado de Cuentas Corrientes
-
-	1- Poner CUIT: 30-65478912-3
-    2- Poner Fecha desde: 31/10/2025
-    3- Poner Fecha hasta: 01/11/2025
-    5- Tocar boton Buscar
-
-2- Te muestra:
-
-    1- Mensaje de error: 
-    "La Fecha incial no puede ser posterior a la final."
-    2- Tocar boton Aceptar
-
-3- Termina el programa 
-
-    1- Tocar boton Salir

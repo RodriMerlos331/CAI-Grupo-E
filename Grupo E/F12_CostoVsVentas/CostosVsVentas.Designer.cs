@@ -20,6 +20,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormResultadoCostoVsVentas));
             this.lblCUIT = new System.Windows.Forms.Label();
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             this.lblCUIT.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.lblCUIT.Location = new System.Drawing.Point(10, 22);
             this.lblCUIT.Name = "lblCUIT";
-            this.lblCUIT.Size = new System.Drawing.Size(33, 13);
+            this.lblCUIT.Size = new System.Drawing.Size(38, 17);
             this.lblCUIT.TabIndex = 1;
             this.lblCUIT.Text = "CUIT:";
             this.lblCUIT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -57,18 +58,19 @@
             this.txtCuit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCuit.Location = new System.Drawing.Point(54, 20);
             this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(143, 21);
+            this.txtCuit.Size = new System.Drawing.Size(143, 25);
             this.txtCuit.TabIndex = 2;
             // 
             // btnConsultar
             // 
+            this.btnConsultar.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.btnConsultar.Location = new System.Drawing.Point(12, 77);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(397, 30);
             this.btnConsultar.TabIndex = 7;
             this.btnConsultar.Text = "Buscar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // groupBox1
@@ -92,14 +94,14 @@
             this.dtpFechaFinal.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.dtpFechaFinal.Location = new System.Drawing.Point(595, 20);
             this.dtpFechaFinal.Name = "dtpFechaFinal";
-            this.dtpFechaFinal.Size = new System.Drawing.Size(184, 21);
+            this.dtpFechaFinal.Size = new System.Drawing.Size(184, 25);
             this.dtpFechaFinal.TabIndex = 6;
             // 
             // dtpFechaInicial
             // 
             this.dtpFechaInicial.Location = new System.Drawing.Point(307, 20);
             this.dtpFechaInicial.Name = "dtpFechaInicial";
-            this.dtpFechaInicial.Size = new System.Drawing.Size(184, 21);
+            this.dtpFechaInicial.Size = new System.Drawing.Size(184, 25);
             this.dtpFechaInicial.TabIndex = 5;
             // 
             // label2
@@ -108,7 +110,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.label2.Location = new System.Drawing.Point(516, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Fecha hasta:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,7 +121,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.label1.Location = new System.Drawing.Point(223, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Fecha desde:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -145,7 +147,7 @@
             this.txtTotalVentas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalVentas.Location = new System.Drawing.Point(427, 28);
             this.txtTotalVentas.Name = "txtTotalVentas";
-            this.txtTotalVentas.Size = new System.Drawing.Size(102, 21);
+            this.txtTotalVentas.Size = new System.Drawing.Size(102, 25);
             this.txtTotalVentas.TabIndex = 9;
             // 
             // txtTotalCostos
@@ -153,7 +155,7 @@
             this.txtTotalCostos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalCostos.Location = new System.Drawing.Point(252, 28);
             this.txtTotalCostos.Name = "txtTotalCostos";
-            this.txtTotalCostos.Size = new System.Drawing.Size(102, 21);
+            this.txtTotalCostos.Size = new System.Drawing.Size(102, 25);
             this.txtTotalCostos.TabIndex = 8;
             this.txtTotalCostos.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -162,7 +164,7 @@
             this.txtNombreEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreEmpresa.Location = new System.Drawing.Point(80, 28);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
-            this.txtNombreEmpresa.Size = new System.Drawing.Size(102, 21);
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(102, 25);
             this.txtNombreEmpresa.TabIndex = 7;
             // 
             // label5
@@ -170,7 +172,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(379, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(49, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "Ventas:";
             // 
@@ -179,7 +181,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(203, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Costos:";
             // 
@@ -188,35 +190,37 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(18, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(62, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Empresa:";
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.btnSalir.Location = new System.Drawing.Point(724, 207);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(82, 25);
             this.btnSalir.TabIndex = 13;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.btnLimpiar.Location = new System.Drawing.Point(415, 77);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(391, 30);
             this.btnLimpiar.TabIndex = 14;
             this.btnLimpiar.Text = "Limpiar Filtros";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FormResultadoCostoVsVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 243);
             this.Controls.Add(this.btnLimpiar);
@@ -226,6 +230,7 @@
             this.Controls.Add(this.btnConsultar);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormResultadoCostoVsVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

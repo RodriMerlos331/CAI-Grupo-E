@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEstadoCuentasCorrientes));
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
@@ -79,7 +80,7 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(609, 36);
+            this.cmbEstado.Location = new System.Drawing.Point(609, 38);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(217, 23);
             this.cmbEstado.TabIndex = 3;
@@ -88,7 +89,7 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.lblEstado.Location = new System.Drawing.Point(606, 20);
+            this.lblEstado.Location = new System.Drawing.Point(609, 21);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(98, 15);
             this.lblEstado.TabIndex = 2;
@@ -96,34 +97,37 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.btnBuscar.Location = new System.Drawing.Point(12, 74);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(404, 34);
+            this.btnBuscar.Size = new System.Drawing.Size(404, 30);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiarFiltros
             // 
+            this.btnLimpiarFiltros.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLimpiarFiltros.Location = new System.Drawing.Point(422, 74);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            this.btnLimpiarFiltros.Size = new System.Drawing.Size(405, 34);
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(405, 30);
             this.btnLimpiarFiltros.TabIndex = 4;
             this.btnLimpiarFiltros.Text = "Limpiar Filtros";
-            this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltros.UseVisualStyleBackColor = false;
             this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.btnSalir.Location = new System.Drawing.Point(665, 598);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(161, 34);
+            this.btnSalir.Size = new System.Drawing.Size(161, 30);
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // grpboxBusqueda
@@ -150,7 +154,7 @@
             // 
             this.lblFechaHasta.AutoSize = true;
             this.lblFechaHasta.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.lblFechaHasta.Location = new System.Drawing.Point(193, 19);
+            this.lblFechaHasta.Location = new System.Drawing.Point(196, 21);
             this.lblFechaHasta.Name = "lblFechaHasta";
             this.lblFechaHasta.Size = new System.Drawing.Size(69, 15);
             this.lblFechaHasta.TabIndex = 8;
@@ -169,7 +173,7 @@
             // txtCuitCliente
             // 
             this.txtCuitCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCuitCliente.Location = new System.Drawing.Point(380, 36);
+            this.txtCuitCliente.Location = new System.Drawing.Point(380, 38);
             this.txtCuitCliente.Name = "txtCuitCliente";
             this.txtCuitCliente.Size = new System.Drawing.Size(223, 23);
             this.txtCuitCliente.TabIndex = 6;
@@ -178,7 +182,7 @@
             // 
             this.lblCuitCliente.AutoSize = true;
             this.lblCuitCliente.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.lblCuitCliente.Location = new System.Drawing.Point(377, 21);
+            this.lblCuitCliente.Location = new System.Drawing.Point(380, 21);
             this.lblCuitCliente.Name = "lblCuitCliente";
             this.lblCuitCliente.Size = new System.Drawing.Size(90, 15);
             this.lblCuitCliente.TabIndex = 0;
@@ -299,6 +303,7 @@
             this.Controls.Add(this.btnSalir);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
