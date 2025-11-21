@@ -63,7 +63,6 @@ namespace Grupo_E.F10_GeneracionDeFacturas
                 .Where(e => e.FechaEntrega.HasValue && e.FechaEntrega.Value < primerDiaMes)
                 .ToList();
 
-            // Mostrar advertencia solo si hay encomiendas para el CUIT pero ninguna con fecha válida
             if (!encomiendasConFechaValida.Any())
             {
                 MessageBox.Show(
