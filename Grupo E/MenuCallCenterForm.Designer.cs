@@ -39,24 +39,26 @@
             // 
             // btnImposicionEnCallCenter
             // 
+            this.btnImposicionEnCallCenter.BackColor = System.Drawing.Color.LightGray;
             this.btnImposicionEnCallCenter.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImposicionEnCallCenter.Location = new System.Drawing.Point(88, 160);
             this.btnImposicionEnCallCenter.Name = "btnImposicionEnCallCenter";
             this.btnImposicionEnCallCenter.Size = new System.Drawing.Size(189, 36);
             this.btnImposicionEnCallCenter.TabIndex = 9;
             this.btnImposicionEnCallCenter.Text = "Imposicion en Call Center";
-            this.btnImposicionEnCallCenter.UseVisualStyleBackColor = true;
+            this.btnImposicionEnCallCenter.UseVisualStyleBackColor = false;
             this.btnImposicionEnCallCenter.Click += new System.EventHandler(this.btnImposicionEnCallCenter_Click);
             // 
             // btnConsultarEstado
             // 
+            this.btnConsultarEstado.BackColor = System.Drawing.Color.LightGray;
             this.btnConsultarEstado.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarEstado.Location = new System.Drawing.Point(297, 160);
             this.btnConsultarEstado.Name = "btnConsultarEstado";
             this.btnConsultarEstado.Size = new System.Drawing.Size(189, 36);
             this.btnConsultarEstado.TabIndex = 10;
             this.btnConsultarEstado.Text = "Consultar estado de encomienda";
-            this.btnConsultarEstado.UseVisualStyleBackColor = true;
+            this.btnConsultarEstado.UseVisualStyleBackColor = false;
             this.btnConsultarEstado.Click += new System.EventHandler(this.btnConsultarEstado_Click);
             // 
             // groupBox2

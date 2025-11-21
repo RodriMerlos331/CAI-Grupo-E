@@ -43,46 +43,50 @@
             // 
             // btnMenuAgencia
             // 
+            this.btnMenuAgencia.BackColor = System.Drawing.Color.LightGray;
             this.btnMenuAgencia.Font = new System.Drawing.Font("Liberation Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuAgencia.Location = new System.Drawing.Point(280, 20);
+            this.btnMenuAgencia.Location = new System.Drawing.Point(286, 32);
             this.btnMenuAgencia.Name = "btnMenuAgencia";
             this.btnMenuAgencia.Size = new System.Drawing.Size(189, 36);
             this.btnMenuAgencia.TabIndex = 2;
             this.btnMenuAgencia.Text = "Agencia";
-            this.btnMenuAgencia.UseVisualStyleBackColor = true;
+            this.btnMenuAgencia.UseVisualStyleBackColor = false;
             this.btnMenuAgencia.Click += new System.EventHandler(this.btnMenuAgencia_Click);
             // 
             // btnMenuCentroDistribución
             // 
+            this.btnMenuCentroDistribución.BackColor = System.Drawing.Color.LightGray;
             this.btnMenuCentroDistribución.Font = new System.Drawing.Font("Liberation Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuCentroDistribución.Location = new System.Drawing.Point(22, 86);
+            this.btnMenuCentroDistribución.Location = new System.Drawing.Point(28, 98);
             this.btnMenuCentroDistribución.Name = "btnMenuCentroDistribución";
             this.btnMenuCentroDistribución.Size = new System.Drawing.Size(189, 36);
             this.btnMenuCentroDistribución.TabIndex = 3;
             this.btnMenuCentroDistribución.Text = "Centro de distribución";
-            this.btnMenuCentroDistribución.UseVisualStyleBackColor = true;
+            this.btnMenuCentroDistribución.UseVisualStyleBackColor = false;
             this.btnMenuCentroDistribución.Click += new System.EventHandler(this.btnMenuCentroDistribución_Click);
             // 
             // btnMenuAdministracion
             // 
+            this.btnMenuAdministracion.BackColor = System.Drawing.Color.LightGray;
             this.btnMenuAdministracion.Font = new System.Drawing.Font("Liberation Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuAdministracion.Location = new System.Drawing.Point(280, 86);
+            this.btnMenuAdministracion.Location = new System.Drawing.Point(286, 98);
             this.btnMenuAdministracion.Name = "btnMenuAdministracion";
             this.btnMenuAdministracion.Size = new System.Drawing.Size(189, 36);
             this.btnMenuAdministracion.TabIndex = 4;
             this.btnMenuAdministracion.Text = "Administración financiera";
-            this.btnMenuAdministracion.UseVisualStyleBackColor = true;
+            this.btnMenuAdministracion.UseVisualStyleBackColor = false;
             this.btnMenuAdministracion.Click += new System.EventHandler(this.btnMenuAdministracion_Click);
             // 
             // btnMenuCallCenter
             // 
+            this.btnMenuCallCenter.BackColor = System.Drawing.Color.LightGray;
             this.btnMenuCallCenter.Font = new System.Drawing.Font("Liberation Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuCallCenter.Location = new System.Drawing.Point(22, 20);
+            this.btnMenuCallCenter.Location = new System.Drawing.Point(28, 32);
             this.btnMenuCallCenter.Name = "btnMenuCallCenter";
             this.btnMenuCallCenter.Size = new System.Drawing.Size(189, 36);
             this.btnMenuCallCenter.TabIndex = 5;
             this.btnMenuCallCenter.Text = "Call center";
-            this.btnMenuCallCenter.UseVisualStyleBackColor = true;
+            this.btnMenuCallCenter.UseVisualStyleBackColor = false;
             this.btnMenuCallCenter.Click += new System.EventHandler(this.btnMenuCallCenter_Click);
             // 
             // label1
@@ -111,6 +115,7 @@
             this.groupBox1.Controls.Add(this.btnMenuAdministracion);
             this.groupBox1.Controls.Add(this.btnMenuCentroDistribución);
             this.groupBox1.Controls.Add(this.btnMenuAgencia);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(29, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(508, 155);

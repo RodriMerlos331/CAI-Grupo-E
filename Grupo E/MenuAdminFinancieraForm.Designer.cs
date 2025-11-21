@@ -41,46 +41,50 @@
             // 
             // btnConsultarEstado
             // 
+            this.btnConsultarEstado.BackColor = System.Drawing.Color.LightGray;
             this.btnConsultarEstado.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarEstado.Location = new System.Drawing.Point(45, 134);
             this.btnConsultarEstado.Name = "btnConsultarEstado";
             this.btnConsultarEstado.Size = new System.Drawing.Size(189, 36);
             this.btnConsultarEstado.TabIndex = 2;
             this.btnConsultarEstado.Text = "Consultar estado de encomienda";
-            this.btnConsultarEstado.UseVisualStyleBackColor = true;
+            this.btnConsultarEstado.UseVisualStyleBackColor = false;
             this.btnConsultarEstado.Click += new System.EventHandler(this.btnConsultarEstado_Click);
             // 
             // btnCostosVsVentas
             // 
+            this.btnCostosVsVentas.BackColor = System.Drawing.Color.LightGray;
             this.btnCostosVsVentas.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCostosVsVentas.Location = new System.Drawing.Point(286, 134);
             this.btnCostosVsVentas.Name = "btnCostosVsVentas";
             this.btnCostosVsVentas.Size = new System.Drawing.Size(189, 36);
             this.btnCostosVsVentas.TabIndex = 3;
             this.btnCostosVsVentas.Text = "Costos y Ventas";
-            this.btnCostosVsVentas.UseVisualStyleBackColor = true;
+            this.btnCostosVsVentas.UseVisualStyleBackColor = false;
             this.btnCostosVsVentas.Click += new System.EventHandler(this.btnCostosVsVentas_Click);
             // 
             // btnEstadoCuentasCorrientes
             // 
+            this.btnEstadoCuentasCorrientes.BackColor = System.Drawing.Color.LightGray;
             this.btnEstadoCuentasCorrientes.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoCuentasCorrientes.Location = new System.Drawing.Point(45, 210);
             this.btnEstadoCuentasCorrientes.Name = "btnEstadoCuentasCorrientes";
             this.btnEstadoCuentasCorrientes.Size = new System.Drawing.Size(189, 36);
             this.btnEstadoCuentasCorrientes.TabIndex = 4;
             this.btnEstadoCuentasCorrientes.Text = "Estado de Cuentas Corrientes";
-            this.btnEstadoCuentasCorrientes.UseVisualStyleBackColor = true;
+            this.btnEstadoCuentasCorrientes.UseVisualStyleBackColor = false;
             this.btnEstadoCuentasCorrientes.Click += new System.EventHandler(this.btnEstadoCuentasCorrientes_Click);
             // 
             // btnGeneracionDeFacturas
             // 
+            this.btnGeneracionDeFacturas.BackColor = System.Drawing.Color.LightGray;
             this.btnGeneracionDeFacturas.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGeneracionDeFacturas.Location = new System.Drawing.Point(286, 210);
             this.btnGeneracionDeFacturas.Name = "btnGeneracionDeFacturas";
             this.btnGeneracionDeFacturas.Size = new System.Drawing.Size(189, 36);
             this.btnGeneracionDeFacturas.TabIndex = 5;
             this.btnGeneracionDeFacturas.Text = "Generacion de facturas";
-            this.btnGeneracionDeFacturas.UseVisualStyleBackColor = true;
+            this.btnGeneracionDeFacturas.UseVisualStyleBackColor = false;
             this.btnGeneracionDeFacturas.Click += new System.EventHandler(this.btnGeneracionDeFacturas_Click);
             // 
             // groupBox2

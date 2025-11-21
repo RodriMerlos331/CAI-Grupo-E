@@ -43,46 +43,50 @@
             // 
             // btnImposicionEnAgencia
             // 
+            this.btnImposicionEnAgencia.BackColor = System.Drawing.Color.LightGray;
             this.btnImposicionEnAgencia.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImposicionEnAgencia.Location = new System.Drawing.Point(285, 165);
             this.btnImposicionEnAgencia.Name = "btnImposicionEnAgencia";
             this.btnImposicionEnAgencia.Size = new System.Drawing.Size(189, 36);
             this.btnImposicionEnAgencia.TabIndex = 8;
             this.btnImposicionEnAgencia.Text = "Imposicion en Agencia";
-            this.btnImposicionEnAgencia.UseVisualStyleBackColor = true;
+            this.btnImposicionEnAgencia.UseVisualStyleBackColor = false;
             this.btnImposicionEnAgencia.Click += new System.EventHandler(this.btnImposicionEnAgencia_Click);
             // 
             // btnRendicionHDRAgencia
             // 
+            this.btnRendicionHDRAgencia.BackColor = System.Drawing.Color.LightGray;
             this.btnRendicionHDRAgencia.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRendicionHDRAgencia.Location = new System.Drawing.Point(76, 221);
             this.btnRendicionHDRAgencia.Name = "btnRendicionHDRAgencia";
             this.btnRendicionHDRAgencia.Size = new System.Drawing.Size(189, 36);
             this.btnRendicionHDRAgencia.TabIndex = 11;
             this.btnRendicionHDRAgencia.Text = "Entrega y recepcion en Agencia";
-            this.btnRendicionHDRAgencia.UseVisualStyleBackColor = true;
+            this.btnRendicionHDRAgencia.UseVisualStyleBackColor = false;
             this.btnRendicionHDRAgencia.Click += new System.EventHandler(this.btnRendicionHDRAgencia_Click);
             // 
             // btnRetirarEnAgencia
             // 
+            this.btnRetirarEnAgencia.BackColor = System.Drawing.Color.LightGray;
             this.btnRetirarEnAgencia.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetirarEnAgencia.Location = new System.Drawing.Point(285, 221);
             this.btnRetirarEnAgencia.Name = "btnRetirarEnAgencia";
             this.btnRetirarEnAgencia.Size = new System.Drawing.Size(189, 36);
             this.btnRetirarEnAgencia.TabIndex = 12;
             this.btnRetirarEnAgencia.Text = "Retiro en Agencia";
-            this.btnRetirarEnAgencia.UseVisualStyleBackColor = true;
+            this.btnRetirarEnAgencia.UseVisualStyleBackColor = false;
             this.btnRetirarEnAgencia.Click += new System.EventHandler(this.btnRetirarEnAgencia_Click);
             // 
             // btnConsultarEstado
             // 
+            this.btnConsultarEstado.BackColor = System.Drawing.Color.LightGray;
             this.btnConsultarEstado.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarEstado.Location = new System.Drawing.Point(76, 165);
             this.btnConsultarEstado.Name = "btnConsultarEstado";
             this.btnConsultarEstado.Size = new System.Drawing.Size(189, 36);
             this.btnConsultarEstado.TabIndex = 13;
             this.btnConsultarEstado.Text = "Consultar estado de encomienda";
-            this.btnConsultarEstado.UseVisualStyleBackColor = true;
+            this.btnConsultarEstado.UseVisualStyleBackColor = false;
             this.btnConsultarEstado.Click += new System.EventHandler(this.btnConsultarEstado_Click);
             // 
             // label4

@@ -44,57 +44,62 @@
             // 
             // btnGestionarFletero
             // 
+            this.btnGestionarFletero.BackColor = System.Drawing.Color.LightGray;
             this.btnGestionarFletero.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionarFletero.Location = new System.Drawing.Point(54, 154);
             this.btnGestionarFletero.Name = "btnGestionarFletero";
             this.btnGestionarFletero.Size = new System.Drawing.Size(189, 33);
             this.btnGestionarFletero.TabIndex = 6;
             this.btnGestionarFletero.Text = "Gestion de fleteros";
-            this.btnGestionarFletero.UseVisualStyleBackColor = true;
+            this.btnGestionarFletero.UseVisualStyleBackColor = false;
             this.btnGestionarFletero.Click += new System.EventHandler(this.btnGestionarFletero_Click);
             // 
             // btnGestionarOmnibus
             // 
+            this.btnGestionarOmnibus.BackColor = System.Drawing.Color.LightGray;
             this.btnGestionarOmnibus.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionarOmnibus.Location = new System.Drawing.Point(263, 154);
             this.btnGestionarOmnibus.Name = "btnGestionarOmnibus";
             this.btnGestionarOmnibus.Size = new System.Drawing.Size(189, 33);
             this.btnGestionarOmnibus.TabIndex = 7;
             this.btnGestionarOmnibus.Text = "Gestion de Omnibus";
-            this.btnGestionarOmnibus.UseVisualStyleBackColor = true;
+            this.btnGestionarOmnibus.UseVisualStyleBackColor = false;
             this.btnGestionarOmnibus.Click += new System.EventHandler(this.btnGestionarOmnibus_Click);
             // 
             // btnImposicionEnCD
             // 
+            this.btnImposicionEnCD.BackColor = System.Drawing.Color.LightGray;
             this.btnImposicionEnCD.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImposicionEnCD.Location = new System.Drawing.Point(54, 210);
             this.btnImposicionEnCD.Name = "btnImposicionEnCD";
             this.btnImposicionEnCD.Size = new System.Drawing.Size(189, 33);
             this.btnImposicionEnCD.TabIndex = 10;
             this.btnImposicionEnCD.Text = "Imposicion en Centro de Distribucion";
-            this.btnImposicionEnCD.UseVisualStyleBackColor = true;
+            this.btnImposicionEnCD.UseVisualStyleBackColor = false;
             this.btnImposicionEnCD.Click += new System.EventHandler(this.btnImposicionEnCD_Click);
             // 
             // btnRetirarEnCD
             // 
+            this.btnRetirarEnCD.BackColor = System.Drawing.Color.LightGray;
             this.btnRetirarEnCD.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetirarEnCD.Location = new System.Drawing.Point(263, 210);
             this.btnRetirarEnCD.Name = "btnRetirarEnCD";
             this.btnRetirarEnCD.Size = new System.Drawing.Size(189, 33);
             this.btnRetirarEnCD.TabIndex = 13;
             this.btnRetirarEnCD.Text = "Retiro en Centro de Distribucion";
-            this.btnRetirarEnCD.UseVisualStyleBackColor = true;
+            this.btnRetirarEnCD.UseVisualStyleBackColor = false;
             this.btnRetirarEnCD.Click += new System.EventHandler(this.btnRetirarEnCD_Click);
             // 
             // btnConsultarEstado
             // 
+            this.btnConsultarEstado.BackColor = System.Drawing.Color.LightGray;
             this.btnConsultarEstado.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarEstado.Location = new System.Drawing.Point(152, 265);
             this.btnConsultarEstado.Name = "btnConsultarEstado";
             this.btnConsultarEstado.Size = new System.Drawing.Size(189, 33);
             this.btnConsultarEstado.TabIndex = 14;
             this.btnConsultarEstado.Text = "Consultar estado de encomienda";
-            this.btnConsultarEstado.UseVisualStyleBackColor = true;
+            this.btnConsultarEstado.UseVisualStyleBackColor = false;
             this.btnConsultarEstado.Click += new System.EventHandler(this.btnConsultarEstado_Click);
             // 
             // label3
