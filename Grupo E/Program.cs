@@ -17,11 +17,12 @@ namespace Grupo_E
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrincipalForm()); // <-- Menú como formulario inicial
-           
-            
-            
-           
+            //Application.Run(new MenuPrincipalForm()); // <-- Menú como formulario inicial
+            Application.Run(new MenuInicialForm()); // <-- Menú inicial como formulario inicial
+
+
+
+
             EncomiendaAlmacen.Grabar();
             FacturaAlmacen.Grabar();
             HDRDistribucionUMAlmacen.Grabar();

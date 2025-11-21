@@ -166,11 +166,41 @@
     </Compile>
     <Compile Include="F12_CostoVsVentas\CostosVsVentasModel.cs" />
     <Compile Include="F12_CostoVsVentas\Datos.cs" />
-    <Compile Include="MenuPrincipalForm.cs">
+    <Compile Include="MenuAdminFinancieraForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipalForm.Designer.cs">
-      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
+    <Compile Include="MenuAdminFinancieraForm.Designer.cs">
+      <DependentUpon>MenuAdminFinancieraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAgenciaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAgenciaForm.Designer.cs">
+      <DependentUpon>MenuAgenciaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCallCenterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCallCenterForm.Designer.cs">
+      <DependentUpon>MenuCallCenterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCentroDistribucionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCentroDistribucionForm.Designer.cs">
+      <DependentUpon>MenuCentroDistribucionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuInicialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuInicialForm.Designer.cs">
+      <DependentUpon>MenuInicialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipalFormDEPRECADO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipalFormDEPRECADO.Designer.cs">
+      <DependentUpon>MenuPrincipalFormDEPRECADO.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -277,8 +307,23 @@
     <EmbeddedResource Include="F03_ImposicionEnCD\F03_ImposicionCDForm.resx">
       <DependentUpon>F03_ImposicionCDForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipalForm.resx">
-      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
+    <EmbeddedResource Include="MenuAdminFinancieraForm.resx">
+      <DependentUpon>MenuAdminFinancieraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgenciaForm.resx">
+      <DependentUpon>MenuAgenciaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCallCenterForm.resx">
+      <DependentUpon>MenuCallCenterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCentroDistribucionForm.resx">
+      <DependentUpon>MenuCentroDistribucionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuInicialForm.resx">
+      <DependentUpon>MenuInicialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipalFormDEPRECADO.resx">
+      <DependentUpon>MenuPrincipalFormDEPRECADO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F09_EntregarYRecepcionarEncomiendasAgencia\EntregarYRecepcionarEncomiendaAgenciaForm.resx">
       <DependentUpon>EntregarYRecepcionarEncomiendaAgenciaForm.cs</DependentUpon>

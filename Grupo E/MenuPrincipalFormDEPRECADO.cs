@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Grupo_E
 {
-    public partial class MenuPrincipalForm : Form
+    public partial class MenuPrincipalFormDEPRECADO : Form
     {
-        public MenuPrincipalForm()
+        public MenuPrincipalFormDEPRECADO()
         {
             InitializeComponent();
 
