@@ -99,7 +99,7 @@ namespace Grupo_E.GestionarOmnibus
             lblCantidadDespacho.Text = $"Encomiendas: {despachoCount}";
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e) //Limpiar el textbox de patente
+        private void btnLimpiar_Click(object sender, EventArgs e) 
         {
             LimpiarPantalla();
 

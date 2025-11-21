@@ -1,0 +1,6 @@
+﻿Mejoras en esta versión:
+
+Se sumó menú
+Se sumó group by en hdr um
+Se sumó ruteo MD de encomiendas
+Se realizaron mejoras en la UI de varios formularios

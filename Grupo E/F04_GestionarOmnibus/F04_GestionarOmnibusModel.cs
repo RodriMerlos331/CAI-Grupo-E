@@ -16,6 +16,7 @@ namespace Grupo_E.GestionarOmnibus
         
         private List<HDR_Distribucion_MDEntidad> hdrsParaEsteCD = new List<HDR_Distribucion_MDEntidad>(); //A BAJAR
 
+
         internal List<EncomiendasABajar> EncomiendasABajar(string patente)
         {
             var omnibusActual = OmnibusAlmacen.Omnibus
@@ -71,21 +72,18 @@ namespace Grupo_E.GestionarOmnibus
                 )
                 .ToList();
 
-            // Agrupar encomiendas por destino (para un HDR por destino)
             var gruposPorDestino = encomiendasASubirEntidad
                 .GroupBy(e =>
                     e.RecorridoPlanificado
                      .First(rp => rp.CodigoCDOrigen == cdActual).CodigoCDDestino
                 );
 
-            // Último número HDR existente
             int ultimoNumeroHDR = HDR_Distribucion_MDAlmacen.HDR_Distribucion_MD
                 .Select(h => h.NumeroHDRMD)
                 .DefaultIfEmpty(1000)
                 .Max();
 
-            // *** IMPORTANTE ***
-            // Limpiamos los HDR pendientes antes de generar nuevos, así cada busqueda no me pisa la anterior generada
+
             HDRsASubirPendientes.Clear();
 
             foreach (var grupo in gruposPorDestino)
@@ -121,18 +119,6 @@ namespace Grupo_E.GestionarOmnibus
 
             return encomiendasASubir;
         }
-
-
-
-
-        /*
-        public OmnibusEntidad BuscarOmnibus(string patente)
-        {
-            return OmnibusAlmacen.Omnibus
-                .FirstOrDefault(o => o.Patente == patente);
-        }
-        */
-
         public bool ValidarOmnibus(string patente)
         {
             var omnibus = OmnibusAlmacen.Omnibus
@@ -166,12 +152,6 @@ namespace Grupo_E.GestionarOmnibus
 
             return true;
         }
-
-
-
-
-
-        // SOLO acá se persiste TODO lo pendiente
         public bool AceptarGestionOmnibus()
         {
             var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
