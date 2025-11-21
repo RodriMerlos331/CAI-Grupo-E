@@ -30,6 +30,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EstadoDeEncomiendaForm));
             this.grbBusquedaEncomienda = new System.Windows.Forms.GroupBox();
             this.lbTracking = new System.Windows.Forms.Label();
             this.btnEstadoBusqueda = new System.Windows.Forms.Button();
@@ -308,6 +309,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.Controls.Add(this.grbHistorial);
             this.Controls.Add(this.grbEstado);
             this.Controls.Add(this.grbBusquedaEncomienda);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EstadoDeEncomiendaForm";
             this.Text = "Estado de Encomienda";
             this.grbBusquedaEncomienda.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntregarYRecepcionarEncomiendaAgenciaForm));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.GuiasARecibirListView = new System.Windows.Forms.ListView();
             this.TrackingRetiroCol2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -198,6 +199,7 @@
             this.Controls.Add(this.AceptarBtn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EntregarYRecepcionarEncomiendaAgenciaForm";
             this.Text = "Entregar y Recepcionar en Agencia";
             this.Load += new System.EventHandler(this.EntregarYRecepcionarEncomiendaAgenciaForm_Load);
