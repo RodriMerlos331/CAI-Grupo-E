@@ -32,6 +32,7 @@ namespace Grupo_E.GestionarFletero
         private void InitializeComponent()
         {
             System.Windows.Forms.ColumnHeader HDRaRetirarCol;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F05_GestionarFleteroForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.LimpiarBtn = new System.Windows.Forms.Button();
             this.BuscarBtn = new System.Windows.Forms.Button();
@@ -92,22 +93,24 @@ namespace Grupo_E.GestionarFletero
             // 
             // LimpiarBtn
             // 
+            this.LimpiarBtn.BackColor = System.Drawing.Color.LightGray;
             this.LimpiarBtn.Location = new System.Drawing.Point(542, 44);
             this.LimpiarBtn.Name = "LimpiarBtn";
             this.LimpiarBtn.Size = new System.Drawing.Size(212, 20);
             this.LimpiarBtn.TabIndex = 13;
             this.LimpiarBtn.Text = "Limpiar";
-            this.LimpiarBtn.UseVisualStyleBackColor = true;
+            this.LimpiarBtn.UseVisualStyleBackColor = false;
             this.LimpiarBtn.Click += new System.EventHandler(this.LimpiarBtn_Click);
             // 
             // BuscarBtn
             // 
+            this.BuscarBtn.BackColor = System.Drawing.Color.LightGray;
             this.BuscarBtn.Location = new System.Drawing.Point(276, 43);
             this.BuscarBtn.Name = "BuscarBtn";
             this.BuscarBtn.Size = new System.Drawing.Size(212, 21);
             this.BuscarBtn.TabIndex = 12;
             this.BuscarBtn.Text = "Buscar";
-            this.BuscarBtn.UseVisualStyleBackColor = true;
+            this.BuscarBtn.UseVisualStyleBackColor = false;
             this.BuscarBtn.Click += new System.EventHandler(this.BuscarBtn_Click);
             // 
             // label1
@@ -239,22 +242,24 @@ namespace Grupo_E.GestionarFletero
             // 
             // AceptarBtn
             // 
-            this.AceptarBtn.Location = new System.Drawing.Point(582, 684);
+            this.AceptarBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.AceptarBtn.Location = new System.Drawing.Point(583, 684);
             this.AceptarBtn.Name = "AceptarBtn";
-            this.AceptarBtn.Size = new System.Drawing.Size(72, 20);
+            this.AceptarBtn.Size = new System.Drawing.Size(90, 31);
             this.AceptarBtn.TabIndex = 10;
             this.AceptarBtn.Text = "Aceptar";
-            this.AceptarBtn.UseVisualStyleBackColor = true;
+            this.AceptarBtn.UseVisualStyleBackColor = false;
             this.AceptarBtn.Click += new System.EventHandler(this.AceptarBtn_Click);
             // 
             // CancelarBtn
             // 
-            this.CancelarBtn.Location = new System.Drawing.Point(717, 684);
+            this.CancelarBtn.BackColor = System.Drawing.Color.Pink;
+            this.CancelarBtn.Location = new System.Drawing.Point(697, 684);
             this.CancelarBtn.Name = "CancelarBtn";
-            this.CancelarBtn.Size = new System.Drawing.Size(72, 20);
+            this.CancelarBtn.Size = new System.Drawing.Size(92, 31);
             this.CancelarBtn.TabIndex = 11;
             this.CancelarBtn.Text = "Cancelar";
-            this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.UseVisualStyleBackColor = false;
             this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // groupBox1
@@ -387,14 +392,15 @@ namespace Grupo_E.GestionarFletero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 713);
+            this.ClientSize = new System.Drawing.Size(804, 729);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CancelarBtn);
             this.Controls.Add(this.AceptarBtn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F05_GestionarFleteroForm";
-            this.Text = "RendicionHojasDeRuta";
+            this.Text = "Gestión de transportistas";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);

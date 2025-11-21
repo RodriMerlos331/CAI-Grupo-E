@@ -387,7 +387,7 @@
             this.Controls.Add(this.grbDatosDestinatario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F03_ImposicionCDForm";
-            this.Text = "Atención al cliente";
+            this.Text = "Admisión";
             this.Load += new System.EventHandler(this.F03_ImposicionCDForm_Load);
             this.DireccionParticularGrb.ResumeLayout(false);
             this.DireccionParticularGrb.PerformLayout();

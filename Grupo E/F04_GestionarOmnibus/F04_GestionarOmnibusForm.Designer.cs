@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F04_GestionarOmnibusForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -60,6 +61,7 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtPatente);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 18);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 90);
@@ -69,29 +71,33 @@
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.LightGray;
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.MenuText;
             this.btnLimpiar.Location = new System.Drawing.Point(304, 37);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 23);
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar filtro";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.LightGray;
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.MenuText;
             this.btnBuscar.Location = new System.Drawing.Point(190, 37);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(109, 23);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtPatente
             // 
             this.txtPatente.Location = new System.Drawing.Point(10, 39);
             this.txtPatente.Name = "txtPatente";
-            this.txtPatente.Size = new System.Drawing.Size(176, 20);
+            this.txtPatente.Size = new System.Drawing.Size(176, 21);
             this.txtPatente.TabIndex = 1;
             // 
             // label1
@@ -99,7 +105,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(49, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Patente";
             // 
@@ -107,6 +113,7 @@
             // 
             this.groupBox2.Controls.Add(this.lstBajar);
             this.groupBox2.Controls.Add(this.lblCantidadRecepcion);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(15, 122);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(422, 172);
@@ -148,7 +155,7 @@
             this.lblCantidadRecepcion.AutoSize = true;
             this.lblCantidadRecepcion.Location = new System.Drawing.Point(7, 25);
             this.lblCantidadRecepcion.Name = "lblCantidadRecepcion";
-            this.lblCantidadRecepcion.Size = new System.Drawing.Size(91, 13);
+            this.lblCantidadRecepcion.Size = new System.Drawing.Size(105, 15);
             this.lblCantidadRecepcion.TabIndex = 0;
             this.lblCantidadRecepcion.Text = "Encomiendas: XX";
             // 
@@ -156,7 +163,7 @@
             // 
             this.groupBox3.Controls.Add(this.lstSubir);
             this.groupBox3.Controls.Add(this.lblCantidadDespacho);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(15, 314);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(422, 164);
@@ -198,7 +205,7 @@
             this.lblCantidadDespacho.AutoSize = true;
             this.lblCantidadDespacho.Location = new System.Drawing.Point(6, 25);
             this.lblCantidadDespacho.Name = "lblCantidadDespacho";
-            this.lblCantidadDespacho.Size = new System.Drawing.Size(91, 13);
+            this.lblCantidadDespacho.Size = new System.Drawing.Size(105, 15);
             this.lblCantidadDespacho.TabIndex = 1;
             this.lblCantidadDespacho.Text = "Encomiendas: XX";
             // 
@@ -213,37 +220,40 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(15, 485);
+            this.btnAceptar.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAceptar.Location = new System.Drawing.Point(247, 505);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(209, 29);
+            this.btnAceptar.Size = new System.Drawing.Size(88, 21);
             this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(230, 485);
+            this.btnCancelar.BackColor = System.Drawing.Color.Pink;
+            this.btnCancelar.Location = new System.Drawing.Point(341, 505);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(207, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(91, 21);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // F04_GestionarOmnibusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 533);
+            this.ClientSize = new System.Drawing.Size(463, 538);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F04_GestionarOmnibusForm";
-            this.Text = "Gestionar Transporte Omnibus";
+            this.Text = "Gestión Omnibus";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
