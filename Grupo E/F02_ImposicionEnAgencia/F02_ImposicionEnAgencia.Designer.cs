@@ -30,6 +30,7 @@ namespace Grupo_E.ImposicionEnAgencia
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F02_ImposicionEnAgencia));
             this.TamañoBultoGrb = new System.Windows.Forms.GroupBox();
             this.TamanoBultoCbo = new System.Windows.Forms.ComboBox();
             this.lbTamañoBulto = new System.Windows.Forms.Label();
@@ -43,13 +44,17 @@ namespace Grupo_E.ImposicionEnAgencia
             this.DatosEntregaDomiclioText = new System.Windows.Forms.TextBox();
             this.lbCiudadDestino = new System.Windows.Forms.Label();
             this.ClienteGrb = new System.Windows.Forms.GroupBox();
-            this.CuitText = new System.Windows.Forms.TextBox();
+            this.ListadoClientesCC = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DestinoGrb = new System.Windows.Forms.GroupBox();
             this.LocalidadCbo = new System.Windows.Forms.ComboBox();
             this.lbLocalidad = new System.Windows.Forms.Label();
             this.DatosDestinatarioGrb = new System.Windows.Forms.GroupBox();
-            this.DatosDestinatarioText = new System.Windows.Forms.TextBox();
+            this.DniDestinatarioTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ApellidoDestinatarioTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.NombreDestinatarioTxt = new System.Windows.Forms.TextBox();
             this.lbNombreDestinatario = new System.Windows.Forms.Label();
             this.AgenciaGrb = new System.Windows.Forms.GroupBox();
             this.AgenciaCbo = new System.Windows.Forms.ComboBox();
@@ -128,7 +133,6 @@ namespace Grupo_E.ImposicionEnAgencia
             this.CentroDistribucionRb.TabStop = true;
             this.CentroDistribucionRb.Text = "Centro de distribucion";
             this.CentroDistribucionRb.UseVisualStyleBackColor = true;
-           
             // 
             // AgenciaRb
             // 
@@ -140,26 +144,27 @@ namespace Grupo_E.ImposicionEnAgencia
             this.AgenciaRb.TabStop = true;
             this.AgenciaRb.Text = "Agencia";
             this.AgenciaRb.UseVisualStyleBackColor = true;
-           
             // 
             // CancelarBtn
             // 
+            this.CancelarBtn.BackColor = System.Drawing.Color.Pink;
             this.CancelarBtn.Location = new System.Drawing.Point(863, 482);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(109, 23);
             this.CancelarBtn.TabIndex = 42;
             this.CancelarBtn.Text = "Cancelar";
-            this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.UseVisualStyleBackColor = false;
             this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // AceptarBtn
             // 
+            this.AceptarBtn.BackColor = System.Drawing.Color.LightGreen;
             this.AceptarBtn.Location = new System.Drawing.Point(724, 482);
             this.AceptarBtn.Name = "AceptarBtn";
             this.AceptarBtn.Size = new System.Drawing.Size(109, 23);
             this.AceptarBtn.TabIndex = 41;
             this.AceptarBtn.Text = "Aceptar";
-            this.AceptarBtn.UseVisualStyleBackColor = true;
+            this.AceptarBtn.UseVisualStyleBackColor = false;
             this.AceptarBtn.Click += new System.EventHandler(this.AceptarBtn_Click);
             // 
             // DireccionParticularGrb
@@ -172,7 +177,6 @@ namespace Grupo_E.ImposicionEnAgencia
             this.DireccionParticularGrb.TabIndex = 40;
             this.DireccionParticularGrb.TabStop = false;
             this.DireccionParticularGrb.Text = "Direccion particular";
-            //this.DireccionParticularGrb.Enter += new System.EventHandler(this.grbParticular_Enter);
             // 
             // DatosEntregaDomiclioText
             // 
@@ -186,14 +190,14 @@ namespace Grupo_E.ImposicionEnAgencia
             this.lbCiudadDestino.AutoSize = true;
             this.lbCiudadDestino.Location = new System.Drawing.Point(8, 26);
             this.lbCiudadDestino.Name = "lbCiudadDestino";
-            this.lbCiudadDestino.Size = new System.Drawing.Size(297, 13);
+            this.lbCiudadDestino.Size = new System.Drawing.Size(253, 13);
             this.lbCiudadDestino.TabIndex = 8;
-            this.lbCiudadDestino.Text = "Ciudad / Codigo Postal / Calle / Altura / Piso / Departamento";
+            this.lbCiudadDestino.Text = "Codigo Postal / Calle / Altura / Piso / Departamento";
             this.lbCiudadDestino.Click += new System.EventHandler(this.lbCiudadDestino_Click);
             // 
             // ClienteGrb
             // 
-            this.ClienteGrb.Controls.Add(this.CuitText);
+            this.ClienteGrb.Controls.Add(this.ListadoClientesCC);
             this.ClienteGrb.Controls.Add(this.label1);
             this.ClienteGrb.Location = new System.Drawing.Point(10, 12);
             this.ClienteGrb.Name = "ClienteGrb";
@@ -202,12 +206,13 @@ namespace Grupo_E.ImposicionEnAgencia
             this.ClienteGrb.TabStop = false;
             this.ClienteGrb.Text = "Cliente";
             // 
-            // CuitText
+            // ListadoClientesCC
             // 
-            this.CuitText.Location = new System.Drawing.Point(45, 25);
-            this.CuitText.Name = "CuitText";
-            this.CuitText.Size = new System.Drawing.Size(896, 20);
-            this.CuitText.TabIndex = 1;
+            this.ListadoClientesCC.FormattingEnabled = true;
+            this.ListadoClientesCC.Location = new System.Drawing.Point(45, 29);
+            this.ListadoClientesCC.Name = "ListadoClientesCC";
+            this.ListadoClientesCC.Size = new System.Drawing.Size(896, 21);
+            this.ListadoClientesCC.TabIndex = 1;
             // 
             // label1
             // 
@@ -250,7 +255,11 @@ namespace Grupo_E.ImposicionEnAgencia
             // 
             // DatosDestinatarioGrb
             // 
-            this.DatosDestinatarioGrb.Controls.Add(this.DatosDestinatarioText);
+            this.DatosDestinatarioGrb.Controls.Add(this.DniDestinatarioTxt);
+            this.DatosDestinatarioGrb.Controls.Add(this.label4);
+            this.DatosDestinatarioGrb.Controls.Add(this.ApellidoDestinatarioTxt);
+            this.DatosDestinatarioGrb.Controls.Add(this.label3);
+            this.DatosDestinatarioGrb.Controls.Add(this.NombreDestinatarioTxt);
             this.DatosDestinatarioGrb.Controls.Add(this.lbNombreDestinatario);
             this.DatosDestinatarioGrb.Location = new System.Drawing.Point(493, 327);
             this.DatosDestinatarioGrb.Name = "DatosDestinatarioGrb";
@@ -259,21 +268,53 @@ namespace Grupo_E.ImposicionEnAgencia
             this.DatosDestinatarioGrb.TabStop = false;
             this.DatosDestinatarioGrb.Text = "Datos de destinatario";
             // 
-            // DatosDestinatarioText
+            // DniDestinatarioTxt
             // 
-            this.DatosDestinatarioText.Location = new System.Drawing.Point(11, 42);
-            this.DatosDestinatarioText.Name = "DatosDestinatarioText";
-            this.DatosDestinatarioText.Size = new System.Drawing.Size(447, 20);
-            this.DatosDestinatarioText.TabIndex = 3;
+            this.DniDestinatarioTxt.Location = new System.Drawing.Point(339, 42);
+            this.DniDestinatarioTxt.Name = "DniDestinatarioTxt";
+            this.DniDestinatarioTxt.Size = new System.Drawing.Size(119, 20);
+            this.DniDestinatarioTxt.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(336, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "DNI";
+            // 
+            // ApellidoDestinatarioTxt
+            // 
+            this.ApellidoDestinatarioTxt.Location = new System.Drawing.Point(181, 42);
+            this.ApellidoDestinatarioTxt.Name = "ApellidoDestinatarioTxt";
+            this.ApellidoDestinatarioTxt.Size = new System.Drawing.Size(119, 20);
+            this.ApellidoDestinatarioTxt.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(178, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Apellido";
+            // 
+            // NombreDestinatarioTxt
+            // 
+            this.NombreDestinatarioTxt.Location = new System.Drawing.Point(11, 42);
+            this.NombreDestinatarioTxt.Name = "NombreDestinatarioTxt";
+            this.NombreDestinatarioTxt.Size = new System.Drawing.Size(119, 20);
+            this.NombreDestinatarioTxt.TabIndex = 3;
             // 
             // lbNombreDestinatario
             // 
             this.lbNombreDestinatario.AutoSize = true;
             this.lbNombreDestinatario.Location = new System.Drawing.Point(8, 26);
             this.lbNombreDestinatario.Name = "lbNombreDestinatario";
-            this.lbNombreDestinatario.Size = new System.Drawing.Size(122, 13);
+            this.lbNombreDestinatario.Size = new System.Drawing.Size(44, 13);
             this.lbNombreDestinatario.TabIndex = 0;
-            this.lbNombreDestinatario.Text = "Nombre / Apellido / DNI";
+            this.lbNombreDestinatario.Text = "Nombre";
             // 
             // AgenciaGrb
             // 
@@ -346,6 +387,7 @@ namespace Grupo_E.ImposicionEnAgencia
             this.Controls.Add(this.ClienteGrb);
             this.Controls.Add(this.DestinoGrb);
             this.Controls.Add(this.DatosDestinatarioGrb);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F02_ImposicionEnAgencia";
             this.Text = "Imposición en Agencia";
             this.TamañoBultoGrb.ResumeLayout(false);
@@ -403,13 +445,12 @@ namespace Grupo_E.ImposicionEnAgencia
         private System.Windows.Forms.TextBox DatosEntregaDomiclioText;
         private System.Windows.Forms.Label lbCiudadDestino;
         private System.Windows.Forms.GroupBox ClienteGrb;
-        private System.Windows.Forms.TextBox CuitText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox DestinoGrb;
         private System.Windows.Forms.ComboBox LocalidadCbo;
         private System.Windows.Forms.Label lbLocalidad;
         private System.Windows.Forms.GroupBox DatosDestinatarioGrb;
-        private System.Windows.Forms.TextBox DatosDestinatarioText;
+        private System.Windows.Forms.TextBox NombreDestinatarioTxt;
         private System.Windows.Forms.Label lbNombreDestinatario;
         private System.Windows.Forms.GroupBox AgenciaGrb;
         private System.Windows.Forms.ComboBox AgenciaCbo;
@@ -417,5 +458,10 @@ namespace Grupo_E.ImposicionEnAgencia
         private System.Windows.Forms.GroupBox CentroDistribucionGrb;
         private System.Windows.Forms.ComboBox TerminalesCbo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox ListadoClientesCC;
+        private System.Windows.Forms.TextBox DniDestinatarioTxt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox ApellidoDestinatarioTxt;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -142,11 +142,7 @@ namespace Grupo_E.ImposicionEnCallCenter
         {
 
 
-            if (ListadoClientesCC.SelectedItem == null)
-            {
-                MessageBox.Show("Debe seleccionar un cliente");
-                return;
-            }
+          
 
             /*
             if (string.IsNullOrEmpty(CUITClienteCCtxt.Text))

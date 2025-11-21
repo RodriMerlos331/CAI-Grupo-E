@@ -48,7 +48,16 @@ namespace Grupo_E.ImposicionEnCD
             {
                 TamanoBultoCbo.Items.Add(tamaño);
             }
-            
+
+            foreach (string cliente in modelo.ClientesLista)
+            {
+                ListadoClientesCC.Items.Add(cliente);
+            }
+
+            ListadoClientesCC.DropDownStyle = ComboBoxStyle.DropDown;
+            ListadoClientesCC.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            ListadoClientesCC.AutoCompleteSource = AutoCompleteSource.ListItems;
+
 
             //Esto lo hizo copilot y no termino de entender: Preguntar
             DomicilioRb.CheckedChanged += DomicilioRb_CheckedChanged;
@@ -135,17 +144,9 @@ namespace Grupo_E.ImposicionEnCD
             //Validaciones previas a pasarle al modelo:
             //No tendría sentido que primero busque el cliente y que si no lo encuentra ahí directamente no me deje avanzar? 
 
-            if (string.IsNullOrEmpty(CuitText.Text))
+            if (ListadoClientesCC.SelectedItem == null)
             {
-                MessageBox.Show("El CUIT no puede estar vacío");
-                return;
-            }
-
-            //Chequeo si existe cliente:
-
-            if (!modelo.clientes.ContainsKey(CuitText.Text))
-            {
-                MessageBox.Show("El CUIT ingresado no corresponde a un cliente registrado");
+                MessageBox.Show("Debe seleccionar un cliente de la lista.");
                 return;
             }
 
@@ -171,15 +172,35 @@ namespace Grupo_E.ImposicionEnCD
                 return;
             }
 
-            if (string.IsNullOrEmpty(DatosDestinatarioText.Text))
+            if (string.IsNullOrEmpty(NombreDestinatarioTxt.Text))
             {
-                MessageBox.Show("Debe ingresar un los datos del destinatario.");
+                MessageBox.Show("Debe ingresar el nombre del destinatario.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(ApellidoDestinatarioTxt.Text))
+            {
+                MessageBox.Show("Debe ingresar el Apellido del destinatario.");
                 return;
             }
 
 
+            if (string.IsNullOrEmpty(DniDestinatarioTxt.Text))
+            {
+                MessageBox.Show("Debe ingresar el DNI del destinatario.");
+                return;
+            }
 
-            if(CentroDistribucionRb.Checked)
+            if (!int.TryParse(DniDestinatarioTxt.Text, out int dni) || dni <= 0)
+            {
+                MessageBox.Show("El DNI del destinatario debe ser un número válido mayor a cero.");
+                return;
+            }
+
+            var clienteSeleccionado = ListadoClientesCC.SelectedItem?.ToString();
+            var cuit = clienteSeleccionado?.Split(',')[0].Trim();
+
+            if (CentroDistribucionRb.Checked)
             {
                 if(TerminalesCbo.SelectedItem == null)
                 {
@@ -188,10 +209,12 @@ namespace Grupo_E.ImposicionEnCD
                 }
 
                 modelo.ImposicionConDestinoACD(
-                    CuitText.Text,
+                    cuit.ToString(),
                     TerminalesCbo.SelectedItem?.ToString(),
                     TamanoBultoCbo.SelectedItem?.ToString(),
-                    DatosDestinatarioText.Text
+                    NombreDestinatarioTxt.Text,
+                    ApellidoDestinatarioTxt.Text,
+                    dni
                 );
 
             }
@@ -207,10 +230,12 @@ namespace Grupo_E.ImposicionEnCD
                 }
 
                 modelo.ImposicionDomicilioParticular(
-                    CuitText.Text,
+                    cuit.ToString(),
                     DatosEntregaDomiclioText.Text,
                     TamanoBultoCbo.SelectedItem?.ToString(),
-                    DatosDestinatarioText.Text,
+                    NombreDestinatarioTxt.Text,
+                    ApellidoDestinatarioTxt.Text,
+                    dni,
                     LocalidadCbo.SelectedItem?.ToString()
                 );
 
@@ -227,10 +252,12 @@ namespace Grupo_E.ImposicionEnCD
                 }
 
                 modelo.ImposicionEnAgencia(
-                    CuitText.Text,
+                     cuit.ToString(),
                     AgenciaCbo.SelectedItem?.ToString(),
                     TamanoBultoCbo.SelectedItem?.ToString(),
-                    DatosDestinatarioText.Text
+                    NombreDestinatarioTxt.Text,
+                    ApellidoDestinatarioTxt.Text,
+                    dni
                 );
 
             }
@@ -242,7 +269,7 @@ namespace Grupo_E.ImposicionEnCD
 
         private void LimpiarCampos()
         {
-            CuitText.Clear();
+            ListadoClientesCC.SelectedIndex = -1;
 
             LocalidadCbo.SelectedIndex = -1;
 
@@ -260,9 +287,11 @@ namespace Grupo_E.ImposicionEnCD
             DireccionParticularGrb.Enabled = false;
 
             TamanoBultoCbo.SelectedIndex = -1;
+            NombreDestinatarioTxt.Clear();
 
+            ApellidoDestinatarioTxt.Clear();
 
-            DatosDestinatarioText.Clear();
+            DniDestinatarioTxt.Clear();
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)

@@ -20,10 +20,12 @@ namespace Grupo_E.F03_ImposicionEnCD
                                                .Select(t => t.ToString())
                                                .ToArray();
 
-      
 
-        public Dictionary<string, string> clientes => ClienteAlmacen.Cliente.ToDictionary(c => c.CUIT, c => c.Domicilio);
 
+        public List<string> ClientesLista =>
+                   ClienteAlmacen.Cliente
+                       .Select(c => $"{c.CUIT} , {c.RazonSocial}")
+                       .ToList();
 
 
         public Dictionary<string, (List<string> Agencias, List<string> Terminales)> Localidades =>
@@ -59,7 +61,7 @@ namespace Grupo_E.F03_ImposicionEnCD
             .Max();
 
 
-        public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string datosDestinatario)
+        public void ImposicionConDestinoACD(string cuitCliente, string centroDistribucionDestino, string tamañoBulto, string nombreD, string apellidoD, int dniD)
         {
 
             var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
@@ -87,10 +89,10 @@ namespace Grupo_E.F03_ImposicionEnCD
                 FechaEntrega = null, 
 
                 TipoBulto = tipoBulto,
-                NombreDestinatario = datosDestinatario,
-                ApellidoDestinatario = datosDestinatario,
+                NombreDestinatario = nombreD,
+                ApellidoDestinatario = apellidoD,
                 DireccionDestinatario = null,
-                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                DNIDestinatario = dniD,
 
                 CodCDActual = codCDActual,
                 CodLocalidadOrigen = codLocalidadOrigen,
@@ -148,7 +150,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 "CUIT del cliente: " + nuevaEncomienda.CUITCliente + "\n" +
                 "Centro de distribución destino: " + centroDistribucionDestino + "\n" +
                 "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
-                "Datos del destinatario: " + datosDestinatario + "\n\n" +
+                "Datos del destinatario: " + dniD + "\n\n" +
 
                 "---- PRECIO TOTAL DE LA ENCOMIENDA ----\n" +
                 "Precio base (combinación tamaño/origen/destino): $" + nuevaEncomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino + "\n" +
@@ -161,7 +163,7 @@ namespace Grupo_E.F03_ImposicionEnCD
             MessageBox.Show(mensaje, "Imposición registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string datosDestinatario, string localidad)
+        public void ImposicionDomicilioParticular(string cuitCliente, string direccionParticular, string tamanoBulto, string nombreD, string apellidoD, int dniD, string localidad)
         {
             var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
@@ -194,10 +196,10 @@ namespace Grupo_E.F03_ImposicionEnCD
                 FechaEntrega = null, //  no entregada
 
                 TipoBulto = tipoBulto,
-                NombreDestinatario = datosDestinatario,
-                ApellidoDestinatario = datosDestinatario,
+                NombreDestinatario = nombreD,
+                ApellidoDestinatario = apellidoD,
                 DireccionDestinatario = direccionParticular,
-                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                DNIDestinatario = dniD,
 
                 CodCDActual = codCDActual,
                 CodLocalidadOrigen = codLocalidadOrigen,
@@ -254,7 +256,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 "CUIT del cliente: " + nuevaEncomienda.CUITCliente + "\n" +
                 "Dirección particular de destino: " + nuevaEncomienda.DireccionDestinatario + "\n" +
                 "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
-                "Datos del destinatario: " + datosDestinatario + "\n\n" +
+                "Datos del destinatario: " + dniD + "\n\n" +
 
         "---- PRECIO TOTAL DE LA ENCOMIENDA ----\n" +
         "Precio base (combinación tamaño/origen/destino): $" + nuevaEncomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino + "\n" +
@@ -270,7 +272,7 @@ namespace Grupo_E.F03_ImposicionEnCD
 
 
 
-        public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string datosDestinatario)
+        public void ImposicionEnAgencia(string cuitCliente, string agenciaDestino, string tamanoBulto, string nombreD, string apellidoD, int dniD)
         {
             var codCDActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
 
@@ -304,10 +306,10 @@ namespace Grupo_E.F03_ImposicionEnCD
                 FechaEntrega = null, //  no entregada
 
                 TipoBulto = tipoBulto,
-                NombreDestinatario = datosDestinatario,
-                ApellidoDestinatario = datosDestinatario,
+                NombreDestinatario = nombreD,
+                ApellidoDestinatario = apellidoD,
                 DireccionDestinatario = null,
-                DNIDestinatario = int.Parse(new string(datosDestinatario.Where(char.IsDigit).ToArray())),
+                DNIDestinatario = dniD,
 
                 CodCDActual = codCDActual,
                 CodLocalidadOrigen = codLocalidadOrigen,
@@ -368,7 +370,7 @@ namespace Grupo_E.F03_ImposicionEnCD
                 "CUIT del cliente: " + nuevaEncomienda.CUITCliente + "\n" +
                 "Agencia de destino: " + agenciaDestino + "\n" +
                 "Tamaño del bulto: " + nuevaEncomienda.TipoBulto + "\n" +
-                "Datos del destinatario: " + datosDestinatario + "\n\n" +
+                "Datos del destinatario: " + dniD + "\n\n" +
 
         "---- PRECIO TOTAL DE LA ENCOMIENDA ----\n" +
         "Precio base (combinación tamaño/origen/destino): $" + nuevaEncomienda.EncomiendaFactura.PrecioCombinacionTamanoOrigenDestino + "\n" +
