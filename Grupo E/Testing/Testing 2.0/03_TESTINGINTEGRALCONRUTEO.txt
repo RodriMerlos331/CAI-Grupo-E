@@ -74,91 +74,91 @@
 
 14. VERIFICAR en encomiendas.JSON el tracking "CD07_16"
 
-{
-        "Tracking": "CD07_16",
-        "CodLocalidadOrigen": "SM",
-        "CodCentroDistribucionOrigen": "CD12",
-        "CodCentroDistribucionDestino": "CD07",
-        "Estado": 12,
-        "TipoBulto": 0,
-        "CUITCliente": "30-19283746-4",
-        "DNIDestinatario": 12345678,
-        "NombreDestinatario": "Juan",
-        "ApellidoDestinatario": "Perez",
-        "DireccionDestinatario": null,
-        "AgenciaOrigen": "AG22",
-        "AgenciaDestino": null,
-        "DatosRetiroADomicilio": null,
-        "CodCDActual": "CD07",
-        "RecorridoPlanificado": [
-            {
-                "ServicioId": "SANMARTIN_CORDOBA",
-                "CodigoCDOrigen": "CD12",
-                "CodigoCDDestino": "CD05"
-            },
-            {
-                "ServicioId": "RETIRO_TUC",
-                "CodigoCDOrigen": "CD05",
-                "CodigoCDDestino": "CD07"
+        {
+                "Tracking": "CD07_16",
+                "CodLocalidadOrigen": "SM",
+                "CodCentroDistribucionOrigen": "CD12",
+                "CodCentroDistribucionDestino": "CD07",
+                "Estado": 12,
+                "TipoBulto": 0,
+                "CUITCliente": "30-19283746-4",
+                "DNIDestinatario": 12345678,
+                "NombreDestinatario": "Juan",
+                "ApellidoDestinatario": "Perez",
+                "DireccionDestinatario": null,
+                "AgenciaOrigen": "AG22",
+                "AgenciaDestino": null,
+                "DatosRetiroADomicilio": null,
+                "CodCDActual": "CD07",
+                "RecorridoPlanificado": [
+                    {
+                        "ServicioId": "SANMARTIN_CORDOBA",
+                        "CodigoCDOrigen": "CD12",
+                        "CodigoCDDestino": "CD05"
+                    },
+                    {
+                        "ServicioId": "RETIRO_TUC",
+                        "CodigoCDOrigen": "CD05",
+                        "CodigoCDDestino": "CD07"
+                    }
+                ],
+                "FechaImposicion": "2025-11-21T10:17:09.7527383-03:00",
+                "FechaAdmision": "2025-11-21T10:22:22.5792187-03:00",
+                "FechaEntrega": "2025-11-21T10:28:20.3600287-03:00",
+                "Facturada": false,
+                "EncomiendaFactura": {
+                    "PrecioCombinacionTamanoOrigenDestino": 1400.0,
+                    "ExtraRetiro": 0.0,
+                    "ExtraAgencia": 0.0,
+                    "ExtraEntrega": 0.0,
+                    "PrecioTotalEncomienda": 1400.0
+                },
+                "HistorialCambios": [
+                    {
+                        "Tracking": "CD07_16",
+                        "FechaPrevia": "2025-11-21T10:19:54.832747-03:00",
+                        "UbicacionPrevia": "CD12",
+                        "FleteroAsignado": 44678901,
+                        "NumeroHDRUM": 1009,
+                        "NumeroHDRMD": 0,
+                        "EstadoPrevio": 1
+                    },
+                    {
+                        "Tracking": "CD07_16",
+                        "FechaPrevia": "2025-11-21T10:20:49.8685302-03:00",
+                        "UbicacionPrevia": "Agencia Chapelco",
+                        "FleteroAsignado": 44678901,
+                        "NumeroHDRUM": 1009,
+                        "NumeroHDRMD": 0,
+                        "EstadoPrevio": 4
+                    },
+                    {
+                        "Tracking": "CD07_16",
+                        "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
+                        "UbicacionPrevia": null,
+                        "FleteroAsignado": 44678901,
+                        "NumeroHDRUM": 1009,
+                        "NumeroHDRMD": 0,
+                        "EstadoPrevio": 15
+                    },
+                    {
+                        "Tracking": "CD07_16",
+                        "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
+                        "UbicacionPrevia": "CD12",
+                        "FleteroAsignado": 0,
+                        "NumeroHDRUM": 0,
+                        "NumeroHDRMD": 1006,
+                        "EstadoPrevio": 5
+                    },
+                    {
+                        "Tracking": "CD07_16",
+                        "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
+                        "UbicacionPrevia": "CD05",
+                        "FleteroAsignado": 0,
+                        "NumeroHDRUM": 0,
+                        "NumeroHDRMD": 1007,
+                        "EstadoPrevio": 6
+                    }
+                ]
             }
-        ],
-        "FechaImposicion": "2025-11-21T10:17:09.7527383-03:00",
-        "FechaAdmision": "2025-11-21T10:22:22.5792187-03:00",
-        "FechaEntrega": "2025-11-21T10:28:20.3600287-03:00",
-        "Facturada": false,
-        "EncomiendaFactura": {
-            "PrecioCombinacionTamanoOrigenDestino": 1400.0,
-            "ExtraRetiro": 0.0,
-            "ExtraAgencia": 0.0,
-            "ExtraEntrega": 0.0,
-            "PrecioTotalEncomienda": 1400.0
-        },
-        "HistorialCambios": [
-            {
-                "Tracking": "CD07_16",
-                "FechaPrevia": "2025-11-21T10:19:54.832747-03:00",
-                "UbicacionPrevia": "CD12",
-                "FleteroAsignado": 44678901,
-                "NumeroHDRUM": 1009,
-                "NumeroHDRMD": 0,
-                "EstadoPrevio": 1
-            },
-            {
-                "Tracking": "CD07_16",
-                "FechaPrevia": "2025-11-21T10:20:49.8685302-03:00",
-                "UbicacionPrevia": "Agencia Chapelco",
-                "FleteroAsignado": 44678901,
-                "NumeroHDRUM": 1009,
-                "NumeroHDRMD": 0,
-                "EstadoPrevio": 4
-            },
-            {
-                "Tracking": "CD07_16",
-                "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
-                "UbicacionPrevia": null,
-                "FleteroAsignado": 44678901,
-                "NumeroHDRUM": 1009,
-                "NumeroHDRMD": 0,
-                "EstadoPrevio": 15
-            },
-            {
-                "Tracking": "CD07_16",
-                "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
-                "UbicacionPrevia": "CD12",
-                "FleteroAsignado": 0,
-                "NumeroHDRUM": 0,
-                "NumeroHDRMD": 1006,
-                "EstadoPrevio": 5
-            },
-            {
-                "Tracking": "CD07_16",
-                "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
-                "UbicacionPrevia": "CD05",
-                "FleteroAsignado": 0,
-                "NumeroHDRUM": 0,
-                "NumeroHDRMD": 1007,
-                "EstadoPrevio": 6
-            }
-        ]
-    }
 
