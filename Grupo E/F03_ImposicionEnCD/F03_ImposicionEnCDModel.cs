@@ -409,12 +409,10 @@ namespace Grupo_E.F03_ImposicionEnCD
                 if (idxOrigen < 0)
                     continue;
 
-                // 🚍 Consolidar tramo dentro del mismo servicio
                 for (int idxDestino = paradas.Count - 1; idxDestino > idxOrigen; idxDestino--)
                 {
                     string paradaDestino = paradas[idxDestino].CodigoCD;
 
-                    // Caso 1: Lo encontramos directo
                     if (paradaDestino == destino)
                     {
                         return new List<ParadaPlanificada>
@@ -428,7 +426,6 @@ namespace Grupo_E.F03_ImposicionEnCD
                 };
                     }
 
-                    // Caso 2: No es el destino pero podemos seguir desde ahí
                     var copiaVisitados = new List<string>(visitados);
                     var rutaResto = BuscarRutaRec(paradaDestino, destino, copiaVisitados);
 

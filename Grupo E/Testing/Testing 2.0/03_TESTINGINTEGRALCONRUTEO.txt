@@ -1,0 +1,164 @@
+﻿Se implementó el ruteo de encomiendas, a continuación caso de testing integral:
+
+01. Menú principal
+
+02. Menú "Agencia"
+
+    1 - Agencia actual: Agencia Chapelco
+    2 - Imposición en agencia
+
+03. Pantalla imposición en agencia: 
+
+    1 - Seleccionar un cliente valido de la lista
+    2 - Seleccionar Localidad Destino: "San Miguel de Tucuman"
+    3 - Datos de destino: Centro de Distribución
+    4 - Terminal de omnibus de San Miguel
+    5 - Datos destinatario: Juan Perez 12345678
+    6 - Tamaño bulto: S
+    7 - Aceptar - VERIFICAR mensaje de imposición para tracking CD07_16
+
+04. Volver a Menú Principal > Menú Centro de Distribución > Selecciono "Terminal de ómnibus de San Martín de los Andes" > Gestión de fleteros:
+
+    1 - Busco fletero: 44678901
+    2 - VERIFICAR figure para retirar CD07_16 HDR 1009
+    3 - Aceptar
+
+05. Volver a Menú Principal > Menú Agencia > Selecciono " Agencia Chapelco" > Entrega y recepción en agencia:
+
+    1 - Busco fletero: 44678901
+    2 - VERIFICAR figure para entregar CD07_16
+    3 - Aceptar
+
+06. Volver a Menú Principal > Menú Centro de Distribución > Selecciono "Terminal de ómnibus de San Martín de los Andes" > Gestión de fleteros:
+
+    1 - Busco fletero: 44678901
+    2 - VERIFICAR figure para rendir CD07_16 HDR 1009
+    3 - Marco como cumplida CD07_16 HDR 1009
+    4 - Aceptar
+
+07. Volver a Menú Centro de Distribución  > Selecciono "Terminal de ómnibus de San Martín de los Andes" > Gestión de omnibus:
+
+    1 - Busco pantente: ABC301
+    2 - VERIFICAR figure para subir CD07_16
+    3 - Aceptar
+
+08. Volver a Menú Centro de Distribución  > Selecciono "Terminal de ómnibus de San Martín de los Andes" > Gestión de omnibus:
+    1 - Busco pantente: ABC301
+    2 - VERIFICAR figure para bajar CD07_16
+    3 - Aceptar
+
+09. Volver a Menú Centro de Distribución  > Selecciono "Terminal de ómnibus de Córdoba capital" > Gestión de omnibus:
+    1 - Busco pantente: ABC301
+    2 - VERIFICAR figure para bajar CD07_16
+    3 - Aceptar
+
+10. Volver a Menú Centro de Distribución  > Selecciono "Terminal de ómnibus de Córdoba capital" > Gestión de omnibus:
+    1 - Busco pantente: DDD222
+    2 - VERIFICAR figure para subir CD07_16, con nueva HDR (1007)
+    3 - Aceptar
+
+11. Volver a Menú Centro de Distribución  > Selecciono "Terminal de ómnibus de San Miguel de tucuman" > Gestión de omnibus:
+    1 - Busco pantente: DDD222
+    2 - VERIFICAR figure para bajar CD07_16, con nueva HDR (1007)
+    3 - Aceptar
+
+12. Volver a Menú Centro de Distribución  > Selecciono "Terminal de ómnibus de San Miguel de tucuman" > Entrega en CD:
+    1 - Busco pantente: CD07_16
+    2 - VERIFICAR figure en este CD
+    3 - Completo datos de retiro: Juan Perez 12345678
+    4 - Aceptar
+    5 - VERIFICAR mensaje encomienda entregada
+
+
+13. Finalizo programa
+
+14. VERIFICAR en encomiendas.JSON el tracking "CD07_16"
+
+{
+        "Tracking": "CD07_16",
+        "CodLocalidadOrigen": "SM",
+        "CodCentroDistribucionOrigen": "CD12",
+        "CodCentroDistribucionDestino": "CD07",
+        "Estado": 12,
+        "TipoBulto": 0,
+        "CUITCliente": "30-19283746-4",
+        "DNIDestinatario": 12345678,
+        "NombreDestinatario": "Juan",
+        "ApellidoDestinatario": "Perez",
+        "DireccionDestinatario": null,
+        "AgenciaOrigen": "AG22",
+        "AgenciaDestino": null,
+        "DatosRetiroADomicilio": null,
+        "CodCDActual": "CD07",
+        "RecorridoPlanificado": [
+            {
+                "ServicioId": "SANMARTIN_CORDOBA",
+                "CodigoCDOrigen": "CD12",
+                "CodigoCDDestino": "CD05"
+            },
+            {
+                "ServicioId": "RETIRO_TUC",
+                "CodigoCDOrigen": "CD05",
+                "CodigoCDDestino": "CD07"
+            }
+        ],
+        "FechaImposicion": "2025-11-21T10:17:09.7527383-03:00",
+        "FechaAdmision": "2025-11-21T10:22:22.5792187-03:00",
+        "FechaEntrega": "2025-11-21T10:28:20.3600287-03:00",
+        "Facturada": false,
+        "EncomiendaFactura": {
+            "PrecioCombinacionTamanoOrigenDestino": 1400.0,
+            "ExtraRetiro": 0.0,
+            "ExtraAgencia": 0.0,
+            "ExtraEntrega": 0.0,
+            "PrecioTotalEncomienda": 1400.0
+        },
+        "HistorialCambios": [
+            {
+                "Tracking": "CD07_16",
+                "FechaPrevia": "2025-11-21T10:19:54.832747-03:00",
+                "UbicacionPrevia": "CD12",
+                "FleteroAsignado": 44678901,
+                "NumeroHDRUM": 1009,
+                "NumeroHDRMD": 0,
+                "EstadoPrevio": 1
+            },
+            {
+                "Tracking": "CD07_16",
+                "FechaPrevia": "2025-11-21T10:20:49.8685302-03:00",
+                "UbicacionPrevia": "Agencia Chapelco",
+                "FleteroAsignado": 44678901,
+                "NumeroHDRUM": 1009,
+                "NumeroHDRMD": 0,
+                "EstadoPrevio": 4
+            },
+            {
+                "Tracking": "CD07_16",
+                "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
+                "UbicacionPrevia": null,
+                "FleteroAsignado": 44678901,
+                "NumeroHDRUM": 1009,
+                "NumeroHDRMD": 0,
+                "EstadoPrevio": 15
+            },
+            {
+                "Tracking": "CD07_16",
+                "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
+                "UbicacionPrevia": "CD12",
+                "FleteroAsignado": 0,
+                "NumeroHDRUM": 0,
+                "NumeroHDRMD": 1006,
+                "EstadoPrevio": 5
+            },
+            {
+                "Tracking": "CD07_16",
+                "FechaPrevia": "2025-11-21T10:22:22.5792187-03:00",
+                "UbicacionPrevia": "CD05",
+                "FleteroAsignado": 0,
+                "NumeroHDRUM": 0,
+                "NumeroHDRMD": 1007,
+                "EstadoPrevio": 6
+            }
+        ]
+    }
+

@@ -15,7 +15,8 @@ namespace Grupo_E.GestionarOmnibus
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+
+
             string patente = txtPatente.Text;
             //txtPatente.Enabled = false;
 
@@ -43,12 +44,15 @@ namespace Grupo_E.GestionarOmnibus
 
             //3. Validar hay encomiendas a bajar y a subir:
 
+            lstBajar.Items.Clear();
+            lstSubir.Items.Clear(); 
+
             var encomiendasARecepcionar = modelo.EncomiendasABajar(patente);
             var encomiendasAEntregar = modelo.EncomiendasASubir(patente);
 
             if (encomiendasARecepcionar.Any())
             {
-                lstBajar.Items.Clear();
+                //lstBajar.Items.Clear();
                 foreach (var guia in encomiendasARecepcionar)
                 {
                     ListViewItem listItem = new ListViewItem(guia.IdHdr);
@@ -62,7 +66,7 @@ namespace Grupo_E.GestionarOmnibus
 
             if (encomiendasAEntregar.Any())
             {
-                lstSubir.Items.Clear();
+                //lstSubir.Items.Clear();
                 foreach (var guiaEntrega in encomiendasAEntregar)
                 {
                     ListViewItem listItem = new ListViewItem(guiaEntrega.IdHdr);

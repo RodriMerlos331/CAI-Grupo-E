@@ -22,6 +22,44 @@ namespace Grupo_E.GestionarFletero
             HDRGeneracion = new List<HDR>();
         }
 
+
+        public bool ValidarFletero(int dni)
+        {
+            var fletero = FleteroAlmacen.Fletero
+                .FirstOrDefault(f => f.DniFletero== dni);
+
+            if (fletero == null)
+            {
+                MessageBox.Show(
+                    "El fletero con el DNI ingresado no existe.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return false;
+            }
+
+            var cdActual = CentroDeDistribucionAlmacen.CentroDistribucionActual.CodigoCD;
+
+            //bool pasaPorCD = omnibus.Paradas.Any(p => p.CodigoCD == cdActual);
+
+            bool EsCdFletero = fletero.CodCDAsociados.Contains(cdActual);
+
+            if (!EsCdFletero)
+            {
+                MessageBox.Show(
+                    $"El fletero {dni} no pasa por el Centro de Distribución actual ({cdActual}).",
+                    "Fletero no asociado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return false;
+            }
+
+            return true;
+        }
+
+
         public List<HDR> ObtenerHDRRendicionPorTransportista(int dni)
         {
             dniActual = dni;
@@ -431,12 +469,10 @@ namespace Grupo_E.GestionarFletero
                 if (idxOrigen < 0)
                     continue;
 
-                // 🚍 Consolidar tramo dentro del mismo servicio
                 for (int idxDestino = paradas.Count - 1; idxDestino > idxOrigen; idxDestino--)
                 {
                     string paradaDestino = paradas[idxDestino].CodigoCD;
 
-                    // Caso 1: Lo encontramos directo
                     if (paradaDestino == destino)
                     {
                         return new List<ParadaPlanificada>
@@ -450,7 +486,6 @@ namespace Grupo_E.GestionarFletero
                 };
                     }
 
-                    // Caso 2: No es el destino pero podemos seguir desde ahí
                     var copiaVisitados = new List<string>(visitados);
                     var rutaResto = BuscarRutaRec(paradaDestino, destino, copiaVisitados);
 

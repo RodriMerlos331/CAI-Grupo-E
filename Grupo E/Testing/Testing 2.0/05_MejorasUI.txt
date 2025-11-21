@@ -16,3 +16,9 @@ public int DNIDestinatario { get; set; }
 
 ___
 cuit cliente pasa a ser un desplegable con clientes cargados en el sistema
+
+
+
+se sumó menú
+se sumó group by en hdr um
+se sumó ruteo

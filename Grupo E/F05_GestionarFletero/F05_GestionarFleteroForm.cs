@@ -22,7 +22,16 @@ namespace Grupo_E.GestionarFletero
             if (!int.TryParse(DNIText.Text, out int dni))
             {
                 MessageBox.Show("El DNI debe ser numerico");
+                LimpiarPantalla();
                 return;
+            }
+
+            if (!modelo.ValidarFletero(dni))
+            {
+                //txtPatente.Clear();
+                LimpiarPantalla();
+                return;
+                
             }
 
             HDRAsignadasListView.Items.Clear();
@@ -31,8 +40,6 @@ namespace Grupo_E.GestionarFletero
 
             //RENDICION 
             var hdrs = modelo.ObtenerHDRRendicionPorTransportista(dni);
-
-            
 
             if (hdrs.Count == 0)
             {
@@ -216,6 +223,12 @@ namespace Grupo_E.GestionarFletero
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
         {
+
+            LimpiarPantalla();
+        }
+
+        public void LimpiarPantalla()
+        {
             DNIText.Text = "";
             HDRAsignadasListView.Items.Clear();
             GuiasNoEntregadasListView.Items.Clear();
@@ -231,7 +244,6 @@ namespace Grupo_E.GestionarFletero
             GuiasNoEntregadasListView.BackColor = SystemColors.Window;
             GuiasRetiradasListView.BackColor = SystemColors.Window;
             HDRAsignadasListView.BackColor = SystemColors.Window;
-
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
@@ -321,21 +333,7 @@ namespace Grupo_E.GestionarFletero
 
             //MessageBox.Show("Cambios guardados correctamente.");
 
-            DNIText.Text = "";
-            HDRAsignadasListView.Items.Clear();
-            GuiasNoEntregadasListView.Items.Clear();
-            GuiasRetiradasListView.Items.Clear();
-            NuevasHDREntregarListView.Items.Clear();
-            NuevasHDRRetirarListViews.Items.Clear();
-            NuevasGuiasEntregarListView.Items.Clear();
-            NuevasGuiasRetirarListView.Items.Clear();
-            NuevasHDREntregarListView.BackColor = SystemColors.Window;
-            NuevasHDRRetirarListViews.BackColor = SystemColors.Window;
-            NuevasGuiasEntregarListView.BackColor = SystemColors.Window;
-            NuevasGuiasRetirarListView.BackColor = SystemColors.Window;
-            GuiasNoEntregadasListView.BackColor = SystemColors.Window;
-            GuiasRetiradasListView.BackColor = SystemColors.Window;
-            HDRAsignadasListView.BackColor = SystemColors.Window;
+            LimpiarPantalla();
 
 
         }

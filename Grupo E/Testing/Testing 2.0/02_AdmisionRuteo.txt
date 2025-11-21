@@ -1,0 +1,76 @@
+﻿01. Menú prinicial
+	
+    1 - Seleccionar "Centro de distribución" (Ir al menú)
+
+
+02. Menú "Centro de distribución"
+
+	1 - Seleccionar CD Actual: "Retiro"
+
+	2 - Seleccionar ""Gestión de omnibus" 
+
+03. Pantalla "Imposición CD"
+
+    1 - Seleccionar un cliente valido de la lista
+    2 - Seleccionar Localidad Destino: "Villa María"
+    3 - Datos de destino: Centro de Distribución
+    4 - Terminal de ómnibus de Villa María
+    5 - Datos destinatario: Juan Perez 12345678
+    6 - Tamaño bulto: S
+    7 - Aceptar - VERIFICAR mensaje de imposición para tracking CD07_16
+
+
+04. Cerrar programa y corroborar en Encomiendas.json que la encomienda fue creada correctamente con estado 5 (Admitida) y su correspondiente ruteo hacia CD de destino:
+
+"RecorridoPlanificado": [
+            {
+                "ServicioId": "RETIRO_VILLAMARIA",
+                "CodigoCDOrigen": "CD01",
+                "CodigoCDDestino": "CD06"
+            }
+        ]
+
+En este caso había un trayecto directo entre Retiro y Villa María.
+
+
+
+________
+
+01. Menú prinicial
+	
+    1 - Seleccionar "Centro de distribución" (Ir al menú)
+
+
+02. Menú "Centro de distribución"
+
+	1 - Seleccionar CD Actual: "San Martin de los Andes"
+
+	2 - Seleccionar "Imposición en CD" 
+
+03. Pantalla "Imposición CD"
+
+    1 - Seleccionar un cliente valido de la lista
+    2 - Seleccionar Localidad Destino: "San Miguel de Tucuman"
+    3 - Datos de destino: Centro de Distribución
+    4 - Terminal de omnibus de San Miguel
+    5 - Datos destinatario: Juan Perez 12345678
+    6 - Tamaño bulto: S
+    7 - Aceptar - VERIFICAR mensaje de imposición para tracking CD07_16
+
+
+04. Cerrar programa y corroborar en Encomiendas.json que la encomienda fue creada correctamente con estado 5 (Admitida) y su correspondiente ruteo hacia CD de destino:
+
+"RecorridoPlanificado": [
+            {
+                "ServicioId": "SANMARTIN_CORDOBA",
+                "CodigoCDOrigen": "CD12",
+                "CodigoCDDestino": "CD05"
+            },
+            {
+                "ServicioId": "RETIRO_TUC",
+                "CodigoCDOrigen": "CD05",
+                "CodigoCDDestino": "CD07"
+            }
+        ]
+
+En este caso si fue necesario un trasbordo en Córdoba capital.

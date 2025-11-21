@@ -1,72 +1,47 @@
-﻿- patente no existe: OK
-- patente vacio: tira msj de error, pero NO debería dejarme el campos como deshabilitado OK
-- cd no seleccionado: OK
-- no hay nada para subir/ bajar: OK
-- Aceptar cuando no hubo cambios? OK
-- Sumé que datos persistan solo al momento de aceptar: MEJORA sumada
+﻿Testeo de "caminos no felices" en F04_GestionarOmnibus
+
+01. Menú prinicial
+	
+    1 - Seleccionar "Centro de distribución" (Ir al menú)
 
 
-limpio filtros ok, ahora contador debería quedar en cero 
-busco patente, limpio filtros y le doy a aceptar??
-texto patente habilitado o inhabilitado?
-dos rendiciones seguidas?? OK
+02. Menú "Centro de distribución"
 
-Patente vacía → debe avisar que falta ingresar patente
-Patente inexistente → debe avisar que el ómnibus no existe y no continuar
-Sin encomiendas a bajar → debe mostrar "No hay encomiendas a bajar"
-Sin encomiendas a subir → debe mostrar "No hay encomiendas a subir"
-Sin encomiendas en total → ambas listas vacías, contadores en 0, no permitir aceptar
-Ómnibus sin parada en el CD actual → no deben aparecer encomiendas a subir
-No hay HDR para rendir → en Aceptar debe avisar "No hay cambios para rendir"
-Buscar luego Limpiar luego Aceptar → debe avisar que no hay cambios para rendir
-Buscar con resultados, luego cambiar patente a otra sin resultados → debe limpiar y no mezclar listas
-Solo encomiendas a bajar o solo encomiendas a subir → debe permitir aceptar normalmente
-Aceptar con listas vacías → debe avisar que no hay cambios para rendir
+	1 - No seleccionar CD actual en desplegable: VERIFICAR que de NO seleccionar un CD en desplegable, arroje mensaje de error. 
 
+	2 - Seleccionar CD Actual: "Retiro"
 
-prueba: 
-01. buscar dos veces patente DDD222 en retiro
-	"no hay encomiendas a bajar"
-	y solo HDR 1006 y 1007 generadas
-	acetpar
-	salgo:
-	bin: efectivmamente se crearon una sola vez, 1006 y 1007
+	3 - Seleccionar ""Gestión de omnibus" 
 
+03. Pantalla "Gestionar Ómnibus":
 
-02. darle aceptar sin haber buscado nada:
+		1 - Botón Buscar con textBox patente vacío: VERIFICAR mensaje de error
 
-	Me tira mensaje de no hay cambios para guardar
+		2 - Botón Buscar con patente inexistente (Ejemplo: "AAA895"): VERIFICAR mensaje de error
 
-03. Busco patente que no existe: (AB123)
+		3 - Botón Buscar con patente( XYZ123 ) que NO corresponde al CD actual: VERIFICAR mensaje de error
 
-	msj no existe
+		4 - Buscar patente GGG222 VERIFICAR se carguen encomiendas "A subir"
 
-04.  busco en retiro patente que no tiene nada:
-AB123CD
-no hay encomiendas a bajar ni a subir
-aceptar -- no hay cambios para guardar
+		5 - Sin limpiar pantalla, ni acpetar, buscar pantente BBB111
+
+		6 - VERIFICAR mensaje:  Patente corresponde al CD actual, pero no hay nada para subir/ bajar
+
+		7 - VERIFICAR no se cargue nada en los listView
+
+		8 -	Botón aceptar con pantalla vacía: VERIFICAR mensaje de "No hay cambios para guardar"
+
+		9 -  Busco de nuevo GGG222 , dos veces seguidas,	VERIFICAR que se arrojen exactamente mismos resultados (En Bin > Datos se puede chequear no se haya duplicado la creación de HDR)
+
+		10 - Busco patente DDD222 , le doy limpiar y dsp aceptar. VERIFICAR	 solo se guardan cambios visibles en pantalla
+
+		11 - Busco DDD222, acepto y vuelvo a buscar. VERIFICAR ahora no hay nada para subir y bajar
 
 
-05. si busco patente DDD222 en retiro y le doy limpiar y busco de nuevo:
+04. Cierro programa: VERIFICAR en HDR_MD.Json:
 
-OK, mismas HDR y mismas encomiendas
-
-06. Busco patente DDD222 , le doy limpiar y dsp acpetar
-SOLO guarda cambios visibles en pantalla:
-voy a bin: NO se crearon HDR 1006 y 1007
-
-
-07. Busco AB123CD en retiro, patente existe, CD asociado, pero no hay nada para subir y bajar:
-msj de error
-aceptar: no hay cambios para guardar
-
-
-08. buscar DDD222, limpiar y buscar:
-todo OK
-
-09. busco DDD222, acepto y vuelvo a buscar
-no hay nada para subir y bajar
-
+	- Que no se hayan duplicado HDRs
+	- Que solo se hayan guardado los cambios visibles en pantalla
 
 
 
