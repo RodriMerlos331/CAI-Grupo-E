@@ -51,10 +51,9 @@
             // 
             this.btnEntregarEncomienda.BackColor = System.Drawing.Color.PaleGreen;
             this.btnEntregarEncomienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntregarEncomienda.Location = new System.Drawing.Point(7, 402);
-            this.btnEntregarEncomienda.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEntregarEncomienda.Location = new System.Drawing.Point(5, 315);
             this.btnEntregarEncomienda.Name = "btnEntregarEncomienda";
-            this.btnEntregarEncomienda.Size = new System.Drawing.Size(248, 28);
+            this.btnEntregarEncomienda.Size = new System.Drawing.Size(186, 35);
             this.btnEntregarEncomienda.TabIndex = 11;
             this.btnEntregarEncomienda.Text = "Entregar encomienda";
             this.btnEntregarEncomienda.UseVisualStyleBackColor = false;
@@ -64,10 +63,9 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Pink;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(270, 402);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(202, 315);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(264, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(198, 35);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -82,11 +80,9 @@
             this.groupBox2.Controls.Add(this.txtApellido);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(7, 150);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(5, 122);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(528, 230);
+            this.groupBox2.Size = new System.Drawing.Size(396, 187);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de retiro";
@@ -94,55 +90,49 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 156);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(6, 127);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 20);
+            this.label4.Size = new System.Drawing.Size(31, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "DNI";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 98);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(6, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Apellido";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 42);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre";
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(12, 178);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDNI.Location = new System.Drawing.Point(9, 145);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(486, 27);
+            this.txtDNI.Size = new System.Drawing.Size(366, 23);
             this.txtDNI.TabIndex = 2;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(12, 119);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellido.Location = new System.Drawing.Point(9, 97);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(486, 27);
+            this.txtApellido.Size = new System.Drawing.Size(366, 23);
             this.txtApellido.TabIndex = 1;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(12, 64);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(9, 52);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(486, 27);
+            this.txtNombre.Size = new System.Drawing.Size(366, 23);
             this.txtNombre.TabIndex = 0;
             // 
             // groupBox1
@@ -153,69 +143,65 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(5, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(528, 123);
+            this.groupBox1.Size = new System.Drawing.Size(396, 100);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda del pedido en agencia";
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.LightGray;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(212, 58);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Location = new System.Drawing.Point(159, 37);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(151, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(113, 33);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiarFiltro
             // 
+            this.btnLimpiarFiltro.BackColor = System.Drawing.Color.LightGray;
             this.btnLimpiarFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarFiltro.Location = new System.Drawing.Point(370, 58);
-            this.btnLimpiarFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiarFiltro.Location = new System.Drawing.Point(278, 37);
             this.btnLimpiarFiltro.Name = "btnLimpiarFiltro";
-            this.btnLimpiarFiltro.Size = new System.Drawing.Size(151, 28);
+            this.btnLimpiarFiltro.Size = new System.Drawing.Size(113, 33);
             this.btnLimpiarFiltro.TabIndex = 1;
             this.btnLimpiarFiltro.Text = "Limpiar filtro";
-            this.btnLimpiarFiltro.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltro.UseVisualStyleBackColor = false;
             this.btnLimpiarFiltro.Click += new System.EventHandler(this.btnLimpiarFiltro_Click);
             // 
             // txtNumeroDeTracking
             // 
-            this.txtNumeroDeTracking.Location = new System.Drawing.Point(8, 58);
-            this.txtNumeroDeTracking.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumeroDeTracking.Location = new System.Drawing.Point(6, 47);
             this.txtNumeroDeTracking.Name = "txtNumeroDeTracking";
-            this.txtNumeroDeTracking.Size = new System.Drawing.Size(185, 27);
+            this.txtNumeroDeTracking.Size = new System.Drawing.Size(140, 23);
             this.txtNumeroDeTracking.TabIndex = 1;
             this.txtNumeroDeTracking.TextChanged += new System.EventHandler(this.txtNumeroDeTracking_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 20);
+            this.label1.Size = new System.Drawing.Size(132, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de tracking";
             // 
             // RetirarEnAgencia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 446);
+            this.ClientSize = new System.Drawing.Size(406, 362);
             this.Controls.Add(this.btnEntregarEncomienda);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RetirarEnAgencia";
             this.Text = "Retirar en agencia";
             this.groupBox2.ResumeLayout(false);

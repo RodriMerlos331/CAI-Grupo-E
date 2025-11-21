@@ -35,6 +35,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.btnEstadoBusqueda = new System.Windows.Forms.Button();
             this.txtIdTracking = new System.Windows.Forms.TextBox();
             this.grbEstado = new System.Windows.Forms.GroupBox();
+            this.Localidadlbl = new System.Windows.Forms.Label();
             this.lblBulto = new System.Windows.Forms.Label();
             this.Bultolbl = new System.Windows.Forms.Label();
             this.lblDestino = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.lblOrigen = new System.Windows.Forms.Label();
             this.Origenlbl = new System.Windows.Forms.Label();
             this.lblUbicacionActual = new System.Windows.Forms.Label();
-            this.Localidadlbl = new System.Windows.Forms.Label();
             this.lblFechaUltimo = new System.Windows.Forms.Label();
             this.EstadoFechalbl = new System.Windows.Forms.Label();
             this.lblEstadoActual = new System.Windows.Forms.Label();
@@ -65,6 +65,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.grbBusquedaEncomienda.Controls.Add(this.lbTracking);
             this.grbBusquedaEncomienda.Controls.Add(this.btnEstadoBusqueda);
             this.grbBusquedaEncomienda.Controls.Add(this.txtIdTracking);
+            this.grbBusquedaEncomienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbBusquedaEncomienda.Location = new System.Drawing.Point(15, 24);
             this.grbBusquedaEncomienda.Name = "grbBusquedaEncomienda";
             this.grbBusquedaEncomienda.Size = new System.Drawing.Size(681, 91);
@@ -77,25 +78,27 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.lbTracking.AutoSize = true;
             this.lbTracking.Location = new System.Drawing.Point(6, 22);
             this.lbTracking.Name = "lbTracking";
-            this.lbTracking.Size = new System.Drawing.Size(82, 13);
+            this.lbTracking.Size = new System.Drawing.Size(96, 15);
             this.lbTracking.TabIndex = 2;
             this.lbTracking.Text = "Numero de guia";
             // 
             // btnEstadoBusqueda
             // 
-            this.btnEstadoBusqueda.Location = new System.Drawing.Point(554, 37);
+            this.btnEstadoBusqueda.BackColor = System.Drawing.Color.LightGray;
+            this.btnEstadoBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadoBusqueda.Location = new System.Drawing.Point(554, 26);
             this.btnEstadoBusqueda.Name = "btnEstadoBusqueda";
-            this.btnEstadoBusqueda.Size = new System.Drawing.Size(116, 23);
+            this.btnEstadoBusqueda.Size = new System.Drawing.Size(116, 35);
             this.btnEstadoBusqueda.TabIndex = 1;
             this.btnEstadoBusqueda.Text = "Buscar";
-            this.btnEstadoBusqueda.UseVisualStyleBackColor = true;
+            this.btnEstadoBusqueda.UseVisualStyleBackColor = false;
             this.btnEstadoBusqueda.Click += new System.EventHandler(this.btnEstadoBusqueda_Click);
             // 
             // txtIdTracking
             // 
             this.txtIdTracking.Location = new System.Drawing.Point(6, 40);
             this.txtIdTracking.Name = "txtIdTracking";
-            this.txtIdTracking.Size = new System.Drawing.Size(532, 20);
+            this.txtIdTracking.Size = new System.Drawing.Size(532, 21);
             this.txtIdTracking.TabIndex = 0;
             // 
             // grbEstado
@@ -112,6 +115,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.grbEstado.Controls.Add(this.EstadoFechalbl);
             this.grbEstado.Controls.Add(this.lblEstadoActual);
             this.grbEstado.Controls.Add(this.Estadolbl);
+            this.grbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEstado.Location = new System.Drawing.Point(15, 121);
             this.grbEstado.Name = "grbEstado";
             this.grbEstado.Size = new System.Drawing.Size(681, 203);
@@ -120,12 +124,21 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.grbEstado.Text = "Informacion del pedido";
             this.grbEstado.Enter += new System.EventHandler(this.grbEstado_Enter);
             // 
+            // Localidadlbl
+            // 
+            this.Localidadlbl.AutoSize = true;
+            this.Localidadlbl.Location = new System.Drawing.Point(26, 88);
+            this.Localidadlbl.Name = "Localidadlbl";
+            this.Localidadlbl.Size = new System.Drawing.Size(101, 15);
+            this.Localidadlbl.TabIndex = 4;
+            this.Localidadlbl.Text = "Ubicacion actual:";
+            // 
             // lblBulto
             // 
             this.lblBulto.AutoSize = true;
             this.lblBulto.Location = new System.Drawing.Point(110, 170);
             this.lblBulto.Name = "lblBulto";
-            this.lblBulto.Size = new System.Drawing.Size(63, 13);
+            this.lblBulto.Size = new System.Drawing.Size(71, 15);
             this.lblBulto.TabIndex = 11;
             this.lblBulto.Text = "XXXXXXXX";
             // 
@@ -134,7 +147,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.Bultolbl.AutoSize = true;
             this.Bultolbl.Location = new System.Drawing.Point(26, 170);
             this.Bultolbl.Name = "Bultolbl";
-            this.Bultolbl.Size = new System.Drawing.Size(72, 13);
+            this.Bultolbl.Size = new System.Drawing.Size(81, 15);
             this.Bultolbl.TabIndex = 10;
             this.Bultolbl.Text = "Tipo de bulto:";
             // 
@@ -143,7 +156,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.lblDestino.AutoSize = true;
             this.lblDestino.Location = new System.Drawing.Point(78, 146);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(63, 13);
+            this.lblDestino.Size = new System.Drawing.Size(71, 15);
             this.lblDestino.TabIndex = 9;
             this.lblDestino.Text = "XXXXXXXX";
             // 
@@ -152,7 +165,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.Destinolbl.AutoSize = true;
             this.Destinolbl.Location = new System.Drawing.Point(26, 146);
             this.Destinolbl.Name = "Destinolbl";
-            this.Destinolbl.Size = new System.Drawing.Size(46, 13);
+            this.Destinolbl.Size = new System.Drawing.Size(52, 15);
             this.Destinolbl.TabIndex = 8;
             this.Destinolbl.Text = "Destino:";
             // 
@@ -161,7 +174,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.lblOrigen.AutoSize = true;
             this.lblOrigen.Location = new System.Drawing.Point(73, 117);
             this.lblOrigen.Name = "lblOrigen";
-            this.lblOrigen.Size = new System.Drawing.Size(63, 13);
+            this.lblOrigen.Size = new System.Drawing.Size(71, 15);
             this.lblOrigen.TabIndex = 7;
             this.lblOrigen.Text = "XXXXXXXX";
             // 
@@ -170,7 +183,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.Origenlbl.AutoSize = true;
             this.Origenlbl.Location = new System.Drawing.Point(26, 117);
             this.Origenlbl.Name = "Origenlbl";
-            this.Origenlbl.Size = new System.Drawing.Size(41, 13);
+            this.Origenlbl.Size = new System.Drawing.Size(47, 15);
             this.Origenlbl.TabIndex = 6;
             this.Origenlbl.Text = "Origen:";
             // 
@@ -179,26 +192,17 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.lblUbicacionActual.AutoSize = true;
             this.lblUbicacionActual.Location = new System.Drawing.Point(122, 88);
             this.lblUbicacionActual.Name = "lblUbicacionActual";
-            this.lblUbicacionActual.Size = new System.Drawing.Size(70, 13);
+            this.lblUbicacionActual.Size = new System.Drawing.Size(79, 15);
             this.lblUbicacionActual.TabIndex = 5;
             this.lblUbicacionActual.Text = "XXXXXXXXX";
             this.lblUbicacionActual.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // Localidadlbl
-            // 
-            this.Localidadlbl.AutoSize = true;
-            this.Localidadlbl.Location = new System.Drawing.Point(26, 88);
-            this.Localidadlbl.Name = "Localidadlbl";
-            this.Localidadlbl.Size = new System.Drawing.Size(90, 13);
-            this.Localidadlbl.TabIndex = 4;
-            this.Localidadlbl.Text = "Ubicacion actual:";
             // 
             // lblFechaUltimo
             // 
             this.lblFechaUltimo.AutoSize = true;
             this.lblFechaUltimo.Location = new System.Drawing.Point(212, 58);
             this.lblFechaUltimo.Name = "lblFechaUltimo";
-            this.lblFechaUltimo.Size = new System.Drawing.Size(113, 13);
+            this.lblFechaUltimo.Size = new System.Drawing.Size(121, 15);
             this.lblFechaUltimo.TabIndex = 3;
             this.lblFechaUltimo.Text = "XX/XX/XXXX   XX:XX";
             // 
@@ -207,7 +211,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.EstadoFechalbl.AutoSize = true;
             this.EstadoFechalbl.Location = new System.Drawing.Point(26, 58);
             this.EstadoFechalbl.Name = "EstadoFechalbl";
-            this.EstadoFechalbl.Size = new System.Drawing.Size(180, 13);
+            this.EstadoFechalbl.Size = new System.Drawing.Size(207, 15);
             this.EstadoFechalbl.TabIndex = 2;
             this.EstadoFechalbl.Text = "Fecha / Hora del ultimo movimiento: ";
             this.EstadoFechalbl.Click += new System.EventHandler(this.EstadoFechalbl_Click);
@@ -217,7 +221,7 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.lblEstadoActual.AutoSize = true;
             this.lblEstadoActual.Location = new System.Drawing.Point(110, 27);
             this.lblEstadoActual.Name = "lblEstadoActual";
-            this.lblEstadoActual.Size = new System.Drawing.Size(63, 13);
+            this.lblEstadoActual.Size = new System.Drawing.Size(71, 15);
             this.lblEstadoActual.TabIndex = 1;
             this.lblEstadoActual.Text = "XXXXXXXX";
             // 
@@ -226,13 +230,14 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             this.Estadolbl.AutoSize = true;
             this.Estadolbl.Location = new System.Drawing.Point(26, 27);
             this.Estadolbl.Name = "Estadolbl";
-            this.Estadolbl.Size = new System.Drawing.Size(78, 13);
+            this.Estadolbl.Size = new System.Drawing.Size(87, 15);
             this.Estadolbl.TabIndex = 0;
             this.Estadolbl.Text = "Estado actual: ";
             // 
             // grbHistorial
             // 
             this.grbHistorial.Controls.Add(this.Historial);
+            this.grbHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbHistorial.Location = new System.Drawing.Point(15, 340);
             this.grbHistorial.Name = "grbHistorial";
             this.grbHistorial.Size = new System.Drawing.Size(681, 231);
@@ -284,12 +289,14 @@ namespace Grupo_E.ConsultarEstadoEncomienda
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(580, 592);
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(580, 577);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(116, 23);
+            this.btnSalir.Size = new System.Drawing.Size(116, 38);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // EstadoDeEncomiendaForm
